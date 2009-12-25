@@ -1,14 +1,17 @@
 <%-- :mode=jsp: --%>
+<h1 style="background:url(../img/hero/tooltip.jpg) no-repeat -9px 25px">
+	jQuery Tooltip dynamic positioning
+</h1>
 
-<a name="dynamic"></a>
-<h2 class="plugin"><em>Plugin</em>: Dynamic</h2>
+<h2 class="effect first">Tooltip / <em>dynamic plugin</em></h2>
+
 
 <p>
 	Below you can see triggers whose tooltip is centered on the top edge of the trigger. <a href="#lower">Click here</a> to scroll a little lower and see how the tooltips behave now. We are using the <a href="${jqt}/tooltip.html#dynamic">dynamic plugin</a> which repositions our tooltips so that they are always visible in the viewport.
 </p>
 
 <a name="lower"></a>
-<%@ include file="${jqt}/demos/tooltip/dynamic.htm" %>
+<%@ include file="..//demos/tooltip/dynamic.htm" %>
 
 <p>
 	If there is no room on the top edge then the tooltip is shown on the bottom edge. The same happens on every edge of the tooltip: <samp>top, bottom, left</samp> and <samp>right</samp>. The opposite edge is always used.
