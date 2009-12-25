@@ -3,11 +3,26 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="/WEB-INF/flowplayer.tld" prefix="f" %>
 <%@ taglib uri="http://piimaa.org/jtags" prefix="j" %>
+<%@ page import="org.jtools.JMap" %>
+
+
+<%-- get demo pages into "demos" application context variable --%>
+<c:if test="${metadata == null || param.reload}">
+
+	<c:set var="json">
+		{tools = [<%@ include file="tools.js" %>]}
+	</c:set>
+	<%
+		String json = (String)pageContext.getAttribute("json");
+		application.setAttribute("metadata", new JMap(json));
+	%>
+</c:if>
+
 
 <%
 	String path = request.getServletPath().split("/")[2].replace(".html", "");
 	pageContext.setAttribute("isDoc",
-		"using,performance,search,release-notes,tabs,tooltip,scrollable,overlay,expose,flashembed,".indexOf(path +",") != -1
+		"documentation,search,release-notes,tabs,tooltip,scrollable,overlay,expose,flashembed,".indexOf(path +",") != -1
 	);		
 %>
 
@@ -20,6 +35,36 @@
 	text-decoration:underline !important;
 	color:black;
 	cursor:default;
+}
+
+/* toollist */
+#toollist {
+	margin:-10px 0 0 5px;
+}
+
+#right h3 {
+	border-bottom:1px solid #666;
+	margin-bottom:5px;
+}
+
+.t {
+	display:block;		
+	padding:4px 6px;
+	border-bottom:1px dotted #ccc;
+}
+
+.t:hover {
+	background-color:#efefef;		
+}
+
+.t.plugin {
+	padding-left:15px;
+	color:#777 !important;
+}
+
+.t.active {
+	background-color:#00559E;
+	color:#fff !important;	
 }
 </style>
 
@@ -39,7 +84,7 @@
 
 			<ul style="display:none">
 				<c:forEach items="${cat.demos}" var="demo">
-					<li> <a href="${jqt}-1.2.0/demos/${demo.path}">${demo.title}</a> </li>
+					<li> <a href="${jqt}/demos/${demo.path}">${demo.title}</a> </li>
 				</c:forEach>
 			</ul>
 
@@ -68,31 +113,28 @@
 		<h2>Documentation</h2>
 		
 		<ul>
-			<li><a href="${jqt}/using.html">User's Guide</a></li>
-			<li><a href="${jqt}/performance.html">Performance</a></li>			
+			<li><a href="${jqt}/documentation/index.html">User's Guide</a></li>
+			<li><a href="${jqt}/documentation/performance.html">Performance</a></li>			
 		</ul>  
 		
 		<div class="clear"></div>
 		 
 	</div>			
 	
-	<br />
+	<div id="toollist">
+		<c:forEach items="${metadata.tools}" var="tool" varStatus="i" begin="1">
+		
+			<c:if test="${!empty tool.cat}">
+				<h3>${tool.cat}</h3>
+			</c:if>
 	
-	<div class="box">
-		<h2>The Tools</h2> 
-		
-		<ul>
-			<li><a href="${jqt}/tabs.html">tabs</a></li>
-			<li><a href="${jqt}/tooltip.html">tooltip</a></li>	
-			<li><a href="${jqt}/scrollable.html">scrollable</a></li>
-			<li><a href="${jqt}/overlay.html">overlay</a></li>
-			<li><a href="${jqt}/expose.html">expose</a></li>
-			<li><a href="${jqt}/flashembed.html">flashembed</a></li>
-		</ul>  
-		
-		<div class="clear"></div>
-		
-	</div>		
+			<c:if test="${empty tool.cat}">
+				<a class="t ${!empty tool.plugin ? 'plugin' : ''}" href="${jqt}/${tool.www}">${tool.title}</a>
+			</c:if>
+				
+		</c:forEach>
+	</div>
+	
 
 	
 	<h3>Release Notes</h3>
@@ -108,7 +150,7 @@
 	
 	
 	<script>
-		$("#notes a[href=${req.path}]").addClass("active");
+		$("#right a[href=${req.path}]").addClass("active");
 	</script>
 		
 </c:if>	

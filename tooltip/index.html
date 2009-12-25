@@ -2,12 +2,12 @@
 <%-- :mode=jsp: --%>
 <c:set var="tool" value="tooltip"/>
 
-<h1 style="background:url(img/hero/tooltip.jpg) no-repeat -9px 25px">
+<h1 style="background:url(../img/hero/tooltip.jpg) no-repeat -9px 25px">
 	jQuery Tools / Tooltip - Tooltips done right
 </h1>
 
 <div style="margin:0px -5px">
-	<%@ include file="demos/tooltip/dynamic.htm" %>
+	<%@ include file="../demos/tooltip/dynamic.htm" %>
 </div>
 
 <h2>The Story</h2>
@@ -54,7 +54,7 @@
 	</c:forEach>
 </ul>
 
-<%@ include file="graphics.jsf" %>
+<%@ include file="../graphics.jsf" %>
 
 
 <img src="img/tooltip/black_arrow.png" alt="" />
@@ -578,12 +578,6 @@ function(done) {
 	Look at tooltip's <a href="/js${jqt}${jqt}.${tool}-${v[tool]}.js?download=true">source code</a> for more examples of the effects. The basic idea is to use your jQuery skills together with the API methods. Here you can see a demo about the <a href="${jqt}/demos/tooltip/custom-effect.html">custom sliding effect</a>.
 </p>
 
-<a name="plugins"></a>
-<h2 style="border-bottom:1px solid #333;margin-top:70px">Effects and Plugins</h2>
 
-
-<%@ include file="extensions/tooltip.slide.html" %>
-
-<%@ include file="extensions/tooltip.dynamic.html" %>
 
 

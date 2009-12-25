@@ -1,0 +1,46 @@
+<project name="jQuery.Tools" default="www">
+
+	<property name="jqt" value="../jquerytools"/>
+	<property file="${jqt}/build.properties" prefix="v"/>
+	<property name="www" value="/opt/flowplayer/webapp/tools-${v.tools}"/>
+	<property name="js" value="${www}/js"/>
+	<property name="build" value="${jqt}/build/${v.tools}"/>
+	
+	<!-- copy stuff under web folder -->
+	<target name="www">
+	
+		<!-- documentation -->
+		<mkdir dir="${www}"/>
+		<copy todir="${www}">
+			<fileset dir="."/>
+		</copy>
+
+		<copy file="demos/demos.js" tofile="${www}/../WEB-INF/demos-tools.js"/>
+		
+	</target>
+	
+	<!-- deploy -->
+	<target name="deploy" depends="www">
+		
+		<!-- zip -->
+		<zip destfile="${build}/tools-${v.tools}.zip"
+		     basedir="${build}"
+		     excludes="*.zip" />		
+		  
+		<!-- javascript -->
+		<mkdir dir="${js}"/> 
+		<copy todir="${js}">
+			<fileset dir="${build}"/>
+		</copy>
+		
+		<!-- properties -->
+		<copy file="${jqt}/build.properties" tofile="${www}/../WEB-INF/tools.properties"/>
+		
+	</target>
+
+	
+</project>
+
+
+
+

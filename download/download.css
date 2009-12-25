@@ -1,0 +1,75 @@
+div.tooltip {
+	background:#234 url(/img/global/gradient/h300.png) repeat-x;
+	width:200px;
+}
+
+div.tooltip h3 {
+	margin-top:0px;
+	color:#ffc;
+}
+
+div.tooltip a {
+	color:yellow;
+}
+
+label {
+	width:200px;
+	display:block;
+	padding:4px 0;
+	cursor:pointer;
+	color:#123;
+}
+
+#tool_jquery td {
+	border-bottom:30px solid #fff;
+}
+
+#tool_jquery label {
+	font-weight:bold;
+}
+
+#tool_js_core td {
+	padding-top:30px;
+}
+
+#combined td {
+	font-weight:bold;
+}
+
+#combined td em, #combined td a {
+	font-weight:normal;
+}
+
+#gzipped {
+	font-weight:bold;
+}
+
+#content h3 {
+	margin-top:20px;		
+}
+
+table.listing td {
+	padding:1px 2px;
+}
+
+.plugin td {
+	color:#666;                    
+}
+                                                                                                     
+.plugin label {
+	text-indent:15px;
+	color:#666;
+	font-size:11px;
+}
+
+.plugin a {
+	font-size:11px;
+}
+
+tr.selected {
+	background:#ECF9FA url(/img/global/gradient/h80.png) repeat-x;
+}
+
+tr.plugin.selected {
+	background-color:#FAFAFA;
+}
