@@ -62,7 +62,7 @@ $(function() {
 		onBeforeLoad: function() {
 
 			// grab wrapper element inside content
-			var wrap = this.getContent().find(".contentWrap");
+			var wrap = this.getOverlay().find(".contentWrap");
 
 			// load the page specified in the trigger
 			wrap.load(this.getTrigger().attr("href"));
