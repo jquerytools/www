@@ -1,146 +1,42 @@
+<%-- :mode=jsp: --%>
 
 <style>
+#tools_index #content {
+	background-image:none;
+	float:none;
+	margin-top:25px;
+	padding:0;
+	width:100%;		
+}
+
+.col {
+	margin:25px 40px 0 0;
+	width:470px;
+}
+
+.col p {
+	font-size:11px; 		
+	color:#555;
+}
+
 p.more {
-	font-weight:bold;
-	font-size:13px;
+	color:#000;		
 }
 
-#promo {
-	width:721px;
+.col img {
+	margin-bottom:50px !important;		
 }
 
-#hero {
-	height:330px;
-	background:url(img/hero/index.jpg) 0 -17px no-repeat;
-}
-
-#toolnavi {
-	text-align:center;
-	width:721px;
-	margin-top:10px;
-}
-
-#toolnavi a {
-	color:#999;
-	font-size:12px;
-	padding:2px 7px;
-	text-decoration:none;
-}
-
-#toolnavi a.current {
-	color:#000;
-}
-
-#description {
-	height:43px;
-	padding:15px;
-	background:#123;
-	margin-bottom:20px;
-}
-
-#description p {
-	display:none;
-	color:#fff;
-	text-shadow: 0.5px 0.5px 3px #000;
-	margin:0px;
-	font-size:11px;
-}
-
-#description a {
-	background:transparent url(${cdn}${jqt}/img/downloadnow.png) no-repeat scroll 0 0;
-	display:block;
-	height:44px;
-	overflow:hidden;
-	text-indent:-999em;
-	width:159px;
-}
-
-#description #see {
-	background-image: url(${cdn}${jqt}/img/seeitinaction.png);
-	float:left;
-	margin-right:10px;
-}
-
-#description a#see:hover {
-	background-position:0 -44px ;
-}
-
-#description a#see:focus {
-	background-position:0 -88px ;
-}
-
-#release {
-	color:#666;
-	margin:-14px 25px 10px 0;
-	text-align:right;
-}
-
-#release, #release a {
-	font-size:11px;
+#right {
+	display:none;		
 }
 </style>
 
+<script>$("#jqt1").addClass("active");</script>
 
-<div id="promo">
-
-	<div id="toolnavi">
-		<a href="index.html" class="current">intro</a>
-		<a href="tabs.html">tabs</a>
-		<a href="tooltip.html">tooltip</a>
-		<a href="overlay.html">overlay</a>
-		<a href="expose.html">expose</a>
-		<a href="scrollable.html">scrollable</a>
-		<a href="flashembed.html">flashembed</a>
-	</div>
-
-	<div id="hero"></div>
-
-	<div id="description">
-
-		<div class="col" style="width:300px">
-
-			<p style="display:block">
-				<strong>jQuery Tools</strong> is a collection of the most important user-interface components for today's websites. This single JavaScript file weighs only <span style="color:yellow">${v['tools.size']} Kb</span>
-			</p>
-
-			<p>
-				<strong>Tabs</strong> is the most popular JavaScript tool on the web. Tabs, horizontal tabs and accordions, finally done the right way.
-			</p>
-			<p>
-				Great looking <strong>tooltips</strong>. Big or small. Pluggable effects. Yet another crucial tool.
-			</p>
-			<p>
-				Visually appealing <strong>overlays</strong>. This tool is a significant part of the JavaScript/Web 2.0 landscape.
-			</p>
-			<p>
-				Make your HTML elements stand out by fading out the surrounding elements with the <strong>expose</strong> tool.
-			</p>
-			<p>
-				<strong>Scrollable</strong> is the most successfull tool in this library. It allows you to scroll your HTML in wildly different ways.
-			</p>
-			<p>
-				The role of JavaScript is rising with tremendous speed. However, Flash still has its place and you need a proper tool for embedding.
-			</p>
-
-		</div>
-
-		<div style="float:right;width:340px">
-			<a href="demos/index.html" id="see">See them in action</a>
-			<a href="download.html" id="download">Download jQuery Tools now</a>
-		</div>
-
-	</div>
-
-	<p id="release">
-		Version: ${v.tools}. <a href="${jqt}/release-notes/index.html">What's new?</a>
-	</p>
-
-</div>
-
-<br clear="all" />
-
-
-<div class="col50">
+<%@ include file="demos/scrollable/demo-area.htm" %>
+	
+<div class="col">
 
 	<h3 class="first blue">Essential tools for modern websites</h3>
 
@@ -155,7 +51,7 @@ p.more {
 	</p>
 
 	<p>
-		This library contains six of the most useful JavaScript tools available for today's website. The beauty of this library is that all of these tools can be used together, extended, configured and styled. In the end, you can have hundreds of different widgets and new personal ways of using the library.
+		This library contains the most useful JavaScript tools available for today's website. All of these tools can be used together, extended, configured and styled. You'll have many different widgets and new personal ways of using the library.
 	</p>
 
 	<p style="color:#bf17a2;font-weight:bold;">
@@ -164,40 +60,40 @@ p.more {
 
 </div>
 
-<div class="col50 last">
+<div class="col last">
 
-	<h3 class="first blue">Performance never seen before</h3>
+	<h3 class="first blue">Small size. Free CDN. High performance.</h3>
 
 	<p class="more">
-		This library weighs ${v['tools.size']} Kb. This is possible with good programming habits, compressed files and a Content Delivery Network (CDN).
+		This library weighs ${v.jqtSize}Kb. This is possible with good programming habits and compressed files
 	</p>
 
-	<img src="img/performance.jpg" style="float:left;margin-right:15px" />
+	<img src="img/performance.jpg" style="float:left;margin-right:25px" />
 
 	<p>
-		The file size is definitely not the primary reason why this library speeds up your site. The fact that this tool is a single file makes it performance friendly. According to Yahoo experts, this is the first rule for making highly responsive websites.
+		The file size is not the primary reason for high performance. The ability to combine tools into single file makes it performance friendly. According to Yahoo experts, this is the first rule for making highly responsive websites.
 	</p>
 
 	<p>
-		Yahoo's second rule state: "Use a Content Delivery Network". Well, we will give you one for free! It has been configured with the proper expire headers and compression settings making the file load with the maximum performance possible. You can use the CDN in every possible situation, including production environments.
+		Yahoo's second rule state: "Use a Content Delivery Network". Well, we will give you one for free! It has been configured with the proper expire headers and compression settings making the file load with the maximum performance possible. You can event use the CDN in production environments.
 	</p>
 
-</div>
+</div>                  
 
 <br clear="all" />
 
-<div class="col50 higher">
+<div class="col">
 
 	<h3 class="first blue">For beginners</h3>
 
 	<p class="more">
-		You don't need to be a programmer to use these tools. We have lots of demos you can explore and you can copy their source code to your site and things will work.
+		You don't need to be a programmer to use these tools. We have lots of demos and you can copy their source code to your site and things will work.
 	</p>
 
 	<img src="${jqt}/img/user_basic.png" style="float:left;margin:0 25px 10px 0" />
 
 	<p>
-		Our CSS files use minimal syntax and the crucial parts have been documented. You can use them as a template for your own work.
+		Our demos use minimal HTML, CSS and JavaScript syntax and the crucial parts have been documented. You can use them as a template for your own work.
 	</p>
 
 	<p>
@@ -205,12 +101,12 @@ p.more {
 	</p>
 
 	<p>
-		Each tool is used in a similar manner and by learning one tool you can easily learn the other tools. Can programming be any simpler?
+		Each tool is used in a similar manner and by learning one tool you can easily learn the other tools.
 	</p>
 
 </div>
 
-<div class="col50 last higher">
+<div class="col last">
 
 	<h3 class="first blue">For serious programmers</h3>
 
@@ -229,7 +125,7 @@ p.more {
 	</p>
 
 	<p>
-		And above all, the library is constantly maintained and updated. Expect to see new releases coming out on a regular basis. You are in good hands with jQuery Tools.
+		And above all, the library is constantly maintained and updated. Expect to see new releases coming out on a regular basis. The source code is hosted on Github. Enjoy!
 	</p>
 
 </div>
@@ -237,30 +133,3 @@ p.more {
 <br clear="all" />
 
 
-<script>
-$(function() {
-	var links = $("#toolnavi a");
-
-	links.click(function(e) {
-		var el = $(this);
-
-		// hero image
-		var base = el.attr("href").replace(".html", "");
-		$("#hero").fadeTo(0, 0).css("backgroundImage", "url(img/hero/" + base + ".jpg?_)").fadeTo("slow", 1);
-
-		// description
-		var i = links.index(el);
-		$("#description p").filter(":visible").slideUp().end().eq(i).slideDown();
-
-		$("#see").attr("href", i ? "demos/" + base + "/index.html" : "demos/");
-
-		// link
-		links.removeClass("current").eq(i).addClass("current");
-
-		return e.preventDefault();
-	});
-
-	$("#jqt1").addClass("active"); 
-	
-});
-</script>

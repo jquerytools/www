@@ -11,7 +11,7 @@
 </h1>
 
 <p>
-	After ten weeks of creative free time and two months of hard work it's time to shake up the web again. This version of jQuery Tools is even smaller than before: ${v['tools.size']} kB of (pollution free) web engine fuel. This was possible by stripping the non-essential parts of the tools into separate modules. Now jQuery Tools is the <strong>first framework to take full advantage of jQuery's powerful chaining technology</strong>. Let's take a look at this scrollable instance:
+	After ten weeks of creative free time and two months of hard work it's time to shake up the web again. This version of jQuery Tools is even smaller than before: ${v.jqtSize}kB of (pollution free) web engine fuel. This was possible by stripping the non-essential parts of the tools into separate modules. Now jQuery Tools is the <strong>first framework to take full advantage of jQuery's powerful chaining technology</strong>. Let's take a look at this scrollable instance:
 </p>
 
 <div style="margin:20px -15px">
@@ -257,13 +257,13 @@ $.tools.scrollable.conf.size = 4;
 
 <pii:code lang="html">
 <!-- the official jQuery Tools library (24.90 kB) -->
-<script src="${cdnt}/${v.tools}/jquery.tools.min.js"></script>
+<script src="${cdnt}/${v.jqt}/jquery.tools.min.js"></script>
 
-<!-- jQuery Tools without the jQuery library (${v['tools.size']} kB) -->
-<script src="${cdnt}/${v.tools}/tiny/jquery.tools.min.js"></script>
+<!-- jQuery Tools without the jQuery library (${v.jqtSize}kB) -->
+<script src="${cdnt}/${v.jqt}/tiny/jquery.tools.min.js"></script>
 
 <!-- Full jQuery Tools library. Includes all plugins and effects. (28.90 kB) -->
-<script src="${cdnt}/${v.tools}/full/jquery.tools.min.js"></script>
+<script src="${cdnt}/${v.jqt}/full/jquery.tools.min.js"></script>
 </pii:code>
 
 <p>
