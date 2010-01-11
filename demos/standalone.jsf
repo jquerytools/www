@@ -7,29 +7,25 @@
 	This is the jQuery Tools standalone demo, the fastest way to get started.
 	You can freely copy things on your site. All demos can be found here:
 
-	http://flowplayer.org${jqt}/demos/
+	http://flowplayer.org/demos/
 
-	- css files should not be referenced from flowplayer.org when in production
+	CSS files should not be referenced from flowplayer.org when in production
 
 	Enjoy!
 -->
 
 <head>
-	<!-- standalone page styling (can be removed)-->
-	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/standalone.css"/>
 
 	<title>jQuery Tools standalone demo</title>
-	<c:if test="${!context.production && param.debug}"><c:set var="qs">?debug=true</c:set></c:if><c:if test="${empty tools}"><!-- default set of jQuery Tools + jQuery ${v.jquery} -->
-	<script src="${cdnt}/${v.tools}/${!context.production ? 'default/' : ''}jquery.tools.min.js${qs}"></script>
-	</c:if>
-	<c:if test="${!empty tools}">
-	<!-- Full version of jQuery Tools + jQuery ${v.jquery} -->
-	<script src="${cdnt}/${v.tools}/full/jquery.tools.min.js${qs}"></script>
-	</c:if>
+
+	<!-- include the Tools -->
+	<script src="/tools/download/combine/1.2.0?select=full&debug=true"></script>
+
+	<!-- standalone page styling (can be removed)-->
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/standalone.css"/> 
+
 </head>
 
 <!-- without body tag IE may have unprodictable behaviours -->
 <body>
-
-<!-- now that jQuery Tools is included we can begin with the actual demo -->
 </c:if>

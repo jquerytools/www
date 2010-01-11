@@ -1,8 +1,9 @@
 {
+	title: 'ui',	
 	
-	title: 'demos',	
-	description: 'jquery.tools - The missing UI library for the Web',
+//{{{ UI 
 
+	
 //{{{ Tabs
 		
 	'1. Tabs': {
@@ -22,19 +23,7 @@
 			{		
 				path: 'tabs/skins.html',
 				title: '4 different skins with CSS'
-			},	
-			{		
-				path: 'tabs/ajax.html',
-				title: 'Loading tab contents with AJAX'
-			}, 		
-			{		
-				path: 'tabs/history.html',
-				title: 'Handling browsers back button'
-			}, 
-			{		
-				path: 'tabs/ajax-history.html',
-				title: 'AJAX:ed tabs with History support'
-			}, 		
+			},			
 			{		
 				path: 'tabs/mouseover.html',
 				title: 'Using mouseover to switch tabs'
@@ -42,7 +31,7 @@
 			{		
 				path: 'tabs/wizard.html',
 				title: 'Making Wizards with the Tabs'
-			},		 
+			},				
 			{		
 				path: 'tabs/accordion.html',
 				title: 'Making Accordions with the Tabs',
@@ -62,12 +51,28 @@
 				path: 'tabs/multiple.html',
 				title: 'Multiple Tabs and Accordion instances',
 				keywords: 'nested tabs, multiple accordions, nested accordions'
-			},					
+			},			
+			{		
+				path: 'tabs/history.html',
+				title: 'Handling browsers back button'
+			}, 
+			{		
+				path: 'tabs/ajax.html',
+				title: 'Loading tab contents with AJAX'
+			}, 
+			{		
+				path: 'tabs/ajax-history.html',
+				title: 'AJAX:ed tabs with History support'
+			}, 			
 			{		
 				path: 'tabs/slideshow.html',
 				title: 'Slideshow plugin for the Tabs',
 				keywords: 'jquery slideshow, javascript slideshow, javascript crossfade, slideshow plugin'
-			}			
+			}, 			
+			{		
+				path: 'tabs/growing-slideshow.html',
+				title: 'Lazyloading slideshow'
+			}				
 		] 
 	},
 //}}}
@@ -165,44 +170,9 @@
 //}}}
 
 
-
-//{{{ Expose
-
-	'4. Expose': {
-	
-		description: 'Make your HTML elements stand out',
-		keywords: 'expose html,expose html jquery,javascript expose,stand out html javascript,javascript expose plugin',
-		
-		demos: [	
-			{		
-				path: 'expose/index.html',
-				title: 'Minimal setup for expose'
-			},	
-			{		
-				path: 'expose/styling.html',
-				title: 'Styling the mask with a background image'
-			},			
-			{		
-				path: 'expose/form.html',
-				title: 'Exposing a form'
-			},			
-			{		
-				path: 'expose/video.html',
-				title: 'Exposing videos with a custom mask'
-			},
-			{		
-				path: 'expose/multiple.html',
-				title: 'Working with multiple exposes'
-			}			
-			
-		] 
-	},
-//}}}
-
-
 //{{{ Scrollable 
 
-	'5. Scrollable': {
+	'4. Scrollable': {
 	
 		description: 'Scroll your HTML with eye candy',
 		keywords: 'jquery scrolling,jquery scrollable,javascript scrolling,javascript scrolling plugin,jquery scrolling plugin,jquery scrollable plugin,scrolling html elements',
@@ -260,41 +230,220 @@
 //}}}
 
 
+//}}}
+
+},
+
+{
+	title: 'form',	
+
+//{{{ FORM 
+
+	'1. Validator': {
+	
+		description: 'HTML5 form validation made easy',
+		keywords: 'jquery validator, jquery form validation, jquery validation, form validation, html5 form validation',
+    
+		demos: [
+			{		
+				path: 'form/validator/index.html',
+				title: 'Minimal setup for Validator'
+			},
+			{		
+				path: 'form/validator/localize.html',
+				title: 'Localizing the Validator (french)'
+			},
+			{		
+				path: 'form/validator/custom-validators.html',
+				title: 'Using custom validators'
+			},
+			{		
+				path: 'form/validator/error-container.html',
+				title: 'Displaying all errors inside single DIV'
+			}
+		]
+	},
+	
+	'2. Styleable': {
+	
+		description: 'Form widgets + CSS made possible',
+		keywords: 'form css, styleable forms, customized form look, styleable forms, form skinning',
+    
+		demos: [
+			{		
+				path: 'form/styleable/index.html',
+				title: 'Minimal setup for Styleable'
+			},
+			{		
+				path: 'form/styleable/scripting.html',
+				title: 'Scripting styleable Forms'
+			},
+			{		
+				path: 'form/styleable/skin.html',
+				title: 'Alternate form skin'
+			}
+		]
+	},
+
+	'3. Slider': {
+	
+		description: 'The most important UI widget for the web',
+		keywords: 'javascript tabs, jquery tabs, javascript tabbed navigation, ajax tabs, tab history, jquery accordion',
+		
+		demos: [
+			{		
+				path: 'form/slider/index.html',
+				title: 'Minimal setup for horizontal slider'
+			},
+			{		
+				path: 'form/slider/vertical.html',
+				title: 'Minimal setup for vertical slider'
+			},
+			{		
+				path: 'form/slider/customize.html',
+				title: 'Customizing slider features'
+			},
+			{		
+				path: 'form/slider/skin.html',
+				title: 'Alternate slider skin'
+			},
+			{		
+				path: 'form/slider/scrollbar.html',
+				title: 'A custom scrollbar for a DIV'
+			}
+		]
+	},
+	
+	'4. Datepicker': {
+	
+		description: 'Small, compact, styleable HTML5 datepicker',
+		keywords: 'jquery datepicker, HTML5 datepicker, javascript datepicker, skinnable datepicker',
+		
+		demos: [
+			{		
+				path: 'form/datepicker/index.html',
+				title: 'Minimal setup for Datepicker'
+			},
+			{		
+				path: 'form/datepicker/customize.html',
+				title: 'Customizing Datepicker behaviour'
+			},
+			{		
+				path: 'form/datepicker/skin.html',
+				title: 'Alternate skin for Datepicker'
+			},
+			{		
+				path: 'form/datepicker/localize.html',
+				title: 'Localizing the Datepicker (french)'
+			}			
+		]
+	},	 
+
+	
+//}}}
+
+},
+
+{
+	title: 'toolbox',	
+	
+//{{{ TOOLBOX
+
+
+//{{{ Lazyload
+
+	'1. Lazyload': {
+	
+		description: 'Your pages can be (even) faster',
+		keywords: 'jquery lazyload, jquery ajax, jquery image preload, jquery onload, javascript lazyload',
+		
+		demos: [	
+			{		
+				path: 'form/lazyload/index.html',
+				title: 'Minimal setup for Lazyload'
+			},	
+			{		
+				path: 'form/lazyload/loaders.html',
+				title: 'Lazyloading different kinds of elements'
+			},	
+			{		
+				path: 'form/lazyload/customize.html',
+				title: 'Customising the Lazyload'
+			},	
+			{		
+				path: 'form/lazyload/grow.html',
+				title: 'The grow effect in Lazyload'
+			}
+		]
+	},
+	
+//}}}
+
+
+//{{{ Mask
+
+	'2. Mask': {
+	
+		description: 'Make your HTML elements stand out',
+		keywords: 'mask html,mask html jquery,javascript mask,stand out html javascript,javascript mask plugin',
+		
+		demos: [	
+			{		
+				path: 'toolbox/mask/index.html',
+				title: 'Minimal setup for mask'
+			},	
+			{		
+				path: 'toolbox/mask/styling.html',
+				title: 'Styling the mask with a background image'
+			},			
+			{		
+				path: 'toolbox/mask/form.html',
+				title: 'Exposing a form'
+			},			
+			{		
+				path: 'toolbox/mask/video.html',
+				title: 'Exposing videos with a custom mask'
+			}
+		] 
+	},
+//}}}
+
+
 //{{{ Flashembed
 
-	'6. Flashembed': {
+	'3. Flashembed': {
 	
 		description: 'The Future of Flash embedding',
 		keywords: 'javascript tabs, jquery tabs, javascript tabbed navigation, ajax tabs, tab history',
 		
 		demos: [	
 			{		
-				path: 'flashembed/index.html',
+				path: 'toolbox/flashembed/index.html',
 				title: 'Basics of Flash embedding'
 			},		
 			
 			{		
-				path: 'flashembed/jquery.html',
+				path: 'toolbox/flashembed/jquery.html',
 				title: 'Flashembed and jQuery'
 			},
 			
 			{		
-				path: 'flashembed/onclick.html',
+				path: 'toolbox/flashembed/onclick.html',
 				title: 'Loading Flash on mouse click'
 			}, 
 			
 			{		
-				path: 'flashembed/wmode.html',
+				path: 'toolbox/flashembed/wmode.html',
 				title: 'Placing HTML on top of a Flash object'
 			},	 
 			
 			{		
-				path: 'flashembed/fail.html',
+				path: 'toolbox/flashembed/fail.html',
 				title: 'Handling old Flash versions'
 			},		
 	
 			{		
-				path: 'flashembed/flowplayer.html',
+				path: 'toolbox/flashembed/flowplayer.html',
 				title: 'Flashembed and Flowplayer'
 			}		
 		] 
@@ -303,9 +452,12 @@
 //}}}
 
 
+//}}}
+
+
 //{{{ Combinations 
 
-	'7. Combinations': {
+	'Combinations': {
 	
 		description: 'Possibilities are endless. Get creative!',
 		keywords: 'javascript image gallery, javascript portfolio, image gallery, jquery image gallery',

@@ -22,12 +22,12 @@
 <%
 	String path = request.getServletPath().split("/")[2].replace(".html", "");
 	pageContext.setAttribute("isDoc",
-		"documentation,search,release-notes,tabs,tooltip,scrollable,overlay,expose,flashembed,".indexOf(path +",") != -1
+		"documentation,search,release-notes,tabs,tooltip,scrollable,overlay,toolbox,form,".indexOf(path +",") != -1
 	);		
 %>
 
 <c:set var="isForum" value="${fn:contains(req.path, '/forum/')}"/>
-<c:set var="showTweets" value="${fn:contains(req.path, 'download') || req.path == '/tools-1.2.0/index.html'}"/>
+<c:set var="showTweets" value="${fn:contains(req.path, 'download')}"/>
 	
 
 <style>
@@ -224,7 +224,7 @@
 	</a>
 </div>
 
-<%-- home & download --%>
+<%-- download page --%>
 <c:if test="${showTweets}">	
 	<div id="twitter"></div>
 </c:if>

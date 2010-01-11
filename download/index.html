@@ -24,12 +24,16 @@ $(function() {
 	els.change(function() {
 
 		// count size
-		var size = 0, count = 0;
+		var size = 0, 
+			 count = 0,
+			 tools = "";
+			 
 		els.filter(":checked").each(function() {
 
 			// 170 bytes for stripping down comment size
 			size += parseFloat($(this).val()) - 170;
 			count++;
+			tools += "&t=" + this.name;
 		});
 
 		// user information
@@ -37,13 +41,9 @@ $(function() {
 		$("#minified").html(Math.round(size / 10) / 100 + ' kb');
 		$("#gzipped") .html(Math.round(size * 0.0322) / 100 + ' kb <em>gzipped</em>');
 
-		// combination string
-		var tools = "";
-		els.each(function() {
-			tools += (this.checked) ? "x" : "_";
-		});
-
-		$("#downloadLink").attr("href", "/js${jqt}/${v.tools}/" +tools+ "/jquery.tools.min.js?download=true");
+		
+		// download link
+		$("#downloadLink").attr("href", "/tools/download/combine/${v.jqt}/jquery.tools.min.js?download=true" + tools);
 		$("#tokens").html(tools);
 
 
@@ -75,7 +75,7 @@ $(function() {
 	});
 
 	// default selection
-	$("#t_validator, #t_tabs, #t_tooltip, #t_scrollable, #t_overlay").each(function() {
+	$("#t_tabs, #t_tooltip, #t_scrollable, #t_overlay").each(function() {
 		$(this).find(":checkbox").click().triggerHandler("change");
 	});
 });
@@ -97,7 +97,7 @@ $(function() {
 </p>
 
 <pii:code lang="html">
-<script src="${cdnt}/${v.tools}/jquery.tools.min.js"></script>
+<script src="${cdnt}/${v.jqt}/jquery.tools.min.js"></script>
 </pii:code>
 
 <p>
@@ -105,15 +105,15 @@ $(function() {
 </p>
 
 <ol>
-	<c:forEach items="${metadata.tools}" var="tool" end="15" varStatus="i">
-		<c:if test="${empty tool.plugin}">
+	<c:forEach items="${metadata.tools}" var="tool" end="12" varStatus="i">
+		<c:if test="${empty tool.plugin && empty tool.cat}">
 			<li><a href="${tool.www}" ${i.index == 0 ? 'class="external"' : ''}>${tool.title}</a></li>
 		</c:if>
 	</c:forEach>
 </ol>
 
 <p>
-	The tools will be loaded with <a href="performance.html">maximum performance</a> no matter where your client is located on the globe. Without the jQuery library, the file size is roughly <strong>${v['tools.size']} Kb</strong> when gzipping is enabled on the server side. If you already have jQuery included on your page, you can simply remove it and use only this one <samp>script src</samp> statement.
+	The tools will be loaded with <a href="performance.html">maximum performance</a> no matter where your client is located on the globe. Without the jQuery library, the file size is roughly <strong>${v.jqtSize}Kb</strong> when gzipping is enabled on the server side. If you already have jQuery included on your page, you can simply remove it and use only this one <samp>script src</samp> statement.
 </p>
 
 <p>
@@ -144,32 +144,26 @@ $(function() {
 
 	<c:if test="${empty tool.cat}">
 	
-		<c:set var="source" value="/js/tools/${v.tools}/${tool.file}.js"/>
-		<c:set var="min" value="/js/tools/${v.tools}/${tool.file}.min.js"/>
-	
+		<c:set var="base" value="${jqt}/download/${v.jqt}/${tool.file}"/>
+		<c:set var="source" value="${base}.js"/>
+		<c:set var="min" value="${base}.min.js"/>
 	
 		<tr id="t_${tool.key}" ${!empty tool.plugin ? 'class="plugin"' : ''}>
 			<td>
 				<c:if test="${!empty tool.file}">
-					<label>
-						<input type="checkbox" name="tool" value="${f:fileLength(min)}" /> ${tool.title}
-					</label>					
+					<label>      
+						<input type="checkbox" name="${tool.key}" value="${f:fileLength(min)}" /> ${tool.title}
+					</label>					 
 				</c:if>
 				
 				<c:if test="${empty tool.file}">
 					<strong>${tool.title}</strong>
 				</c:if>
-			</td>
+			</td> 
 			<td><small>${tool.requires}</small></td>
 	
-			<%-- jQuery downloads --%>
-			<c:if test="${tool.name == 'jquery'}">
-				<td><a href="http://jqueryjs.googlecode.com/files/jquery-${v.jquery}.js">${f:fileSize(source)}</a></td>
-				<td><a href="http://jqueryjs.googlecode.com/files/jquery-${v.jquery}.min.js">${f:fileSize(min)}</a></td>
-			</c:if>
-	
-			<%-- other downloads --%>
-			<c:if test="${tool.name != 'jquery' && !empty tool.file}">
+			<%-- download links --%>
+			<c:if test="${!empty tool.file}">
 				<td><a href="${source}?download=true">${f:fileSize(source)}</a></td>
 				<td><a href="${min}?download=true">${f:fileSize(min)}</a></td>
 			</c:if>
@@ -209,7 +203,7 @@ $(function() {
 </p>
 
 <pii:code lang="html">
-<script src="${cdnt}/${v.tools}/full/jquery.tools.min.js"></script>
+<script src="${cdnt}/${v.jqt}/full/jquery.tools.min.js"></script>
 </pii:code>
 
 <p>
@@ -228,7 +222,7 @@ $(function() {
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/${v.jquery}/jquery.min.js"></script>
 
 <!-- Tabs, Tooltip, Scrollable, Overlay, Expose. No jQuery. -->
-<script src="${cdnt}/${v.tools}/tiny/jquery.tools.min.js"></script>
+<script src="${cdnt}/${v.jqt}/tiny/jquery.tools.min.js"></script>
 </pii:code>
 
 <p>
