@@ -359,19 +359,19 @@
 		
 		demos: [	
 			{		
-				path: 'form/lazyload/index.html',
+				path: 'toolbox/lazyload/index.html',
 				title: 'Minimal setup for Lazyload'
 			},	
 			{		
-				path: 'form/lazyload/loaders.html',
+				path: 'toolbox/lazyload/loaders.html',
 				title: 'Lazyloading different kinds of elements'
 			},	
 			{		
-				path: 'form/lazyload/customize.html',
+				path: 'toolbox/lazyload/customize.html',
 				title: 'Customising the Lazyload'
 			},	
 			{		
-				path: 'form/lazyload/grow.html',
+				path: 'toolbox/lazyload/grow.html',
 				title: 'The grow effect in Lazyload'
 			}
 		]

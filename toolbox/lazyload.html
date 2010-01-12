@@ -1,88 +1,363 @@
 
-jQuery Tools / Lazyload
-Your pages can be faster
+<style>
+.more {
+	font-size:16px;
+}
 
-DEMO: Lazyloaded Scrollable
+.col {
+	width:350px;
+	padding-right:10px;
+	border-right:1px solid #ccc;
+	margin-right:15px;
+	float:left;
+}
 
-Lazyload is an utility to take full control of loading of your performance heavy assets: images, background images and non visible HTML.
+.last {
+	margin:0;
+	padding:0;
+	border-right:0;
+}
 
+pre em {
+	color:green;		
+}
+</style>
 
-We need faster websites
-Lazyload enables you to control the loading of images, background images and HTML. If your page contains large images that 
-are not visible yet there is no need to load all of them beforehand. This tool defers the loading of your assets until you
-<em>really</em> need them making your pages work faster. Of course the tool itself weights only XXX kb when minified so it
-does not hurt performance by itself. 
+<h1>
+	jQuery Tools / Lazyload
+	<em>Your site can be (even) faster</em>
+</h1>
+ 
+<h2>DEMO: Lazyloaded Scrollable</h2>
+ 
+<p class="more">
+	Lazyload helps you control the loading of your performance heavy assets: images, background images and non visible HTML.
+</p> 
+ 
+<div class="col">
+	<h3>Faster loading of pages</h3>
 	
+	<p>
+		Lazyload enables you to control the loading of images, background images and HTML. If your page contains large images that are not visible yet there is no need to load all of them beforehand. This tool defers the loading of your assets until you <em>really</em> need them making your pages work faster. Of course the tool itself weights only XXX kb when minified so it does not hurt performance by itself. 
+	</p> 
+	 
 	
-Integrate to your existing pages
-Lazyload works out of the box. Add this call to your page <samp>$(":invisible").lazyload(true);</samp> and your done. 
-If you have lot's of images this will have instant effect for your site. Your images are not loaded until they become
-visible when user scrolls the page. View <a href="${jqt}/demos/util/lazyload.html">demo</a>.
+	<h3>Integrate to your existing pages</h3>
 	
-		
-Integrate to your JavaScript code
-Lazyload already gives enormous power for Tabs, Overlays, Scrollables and Tooltips. They can now load large amount of data from the server
-without consuming redundant bandwidth. You and can also extend your own JavaScript tools with Lazyload. There is a simple and powerfull 
-API and event model and you can add customized <a href="#loaders">loaders</a> and appearance <a href="#effects">effects</a> when needed.
+	<p>
+		Lazyload works out of the box. Add this call to your page <samp>$(":invisible").lazyload(true);</samp> and your done.  If you have lot's of images this will have instant effect for your site. Your images are not loaded until they become visible when user scrolls the page. View <a href="${jqt}/demos/toolbox/lazyload/index.html">demo</a>.
+	</p>
+</div>	 
+ 
+<div class="col last">
+	<h3>Integrate to your JavaScript code</h3>
 	
+	<p>
+		The main reason for developing this tool was to give a generic loading capability for Tabs, Overlays, Scrollables and Tooltips. They can now load heavy elements the server without consuming redundant bandwidth. You and can also extend your own JavaScript tools with Lazyload. There is a simple and powerfull API and event model and you can add customized <a href="#loaders">loaders</a> and appearance <a href="#effects">effects</a> when needed. 
+	</p>
 	
-Load anything
-Besides images you can also load any kind of HTML and if this loaded content contains more images they are also Lazyloaded!
-The whole bunch of HTML and images are not revealed until the whole mass is completely loaded. Of course a progress indicator is
-shown making your application responsive. 
+	<h3>Load anything</h3>
 	
+	<p>
+		Besides images you can also load any kind of HTML and if the loaded content contains more images they are also Lazyloaded! The whole mass of HTML and images are not revealed until they are all loaded. A progress indicator can be shown making your application responsive.   
+	</p>
 	
+</div>	 
+ 
+<br clear="all" />
+
+<a name="usage"></a>
+<h2>Usage</h2>
+
+<p>
+	Lazyloading can be enabled for all UI tools with the <samp>lazyload</samp> configuration variable. Many times simply setting it to <samp>true</samp> may be the only thing you need. For example:
+</p>
+
+<pii:code>
+// lazyload all images that are inside scrollable. load them only when they become visible
+$("#scroll").scrollable({
+	lazyload: true
+});
+</pii:code>
+
+<p>
+	You have to make sure that this tool has been included on your page. Lazyload can also be used as a standalone tool. Here are examples
+</p>
+
+<pii:code>
+// only load non-visible images when they become visible by scrolling
+$("img:invisible").lazyload(true);
+</pii:code>
+
+<pii:code>
+// initialize lazyloading for all elements with class name "defer"
+var api = $(".defer").lazyload({
+	fadeInSpeed: 400,
+	api: true
+});
+
+// load first five elements
+api.load(0, 5);
+
+// load all elements
+api.load();
+</pii:code>
+
 <h2>Demos</h2>
-- lazyloaded page: lazyload(true) --> assets will be shown when they become visible
-- basics of lazyloading: standalones from image, bgimage and HTML
-- customizing the loading (progress indicator, slow fade, onLoad, recursive)
-- Lazyloading overlay with the grow effect
 
-	
+<ul>
+	<c:forEach items="${f:getDemo(context.toolDemos2, 'toolbox/lazyload/index.html').category.demos}" var="demo">
+		<li> <a href="${jqt}/demos/${demo.path}">${demo.title}</a> </li>
+	</c:forEach>
+</ul>
+ 
+
+<h2>Loaders and effects</h2>
+ 
+<p>
+	The behaviour of this tool is based on loaders and effects. Loader is responsible of loading the element from the server and effect will show the element to the user after the loading is performed. Lazyload has three build-in loaders for images, background images and HTML and two effects called "show" and "grow". 
+</p>
+
+<p>
+	The HTML loader relies on followind kind of syntax
+</p>
+
+<pii:code lang="html">
+<!-- the container for loaded content. typically DIV -->
+<div>
+	<!-- the loaded content's URL is specified here -->
+	<a href="loaded-content.html">Search friendly content here</a>
+</div>
+</pii:code>
+
+<p>
+	So it's a wrapper element (typically DIV) enclosed with a single anchor tag where the loaded page is specified in <samp>href</samp> attribute. This is standard HTML and is viewable by search engines and JavaScript disabled browsers too.
+</p>
+
+
+<a name="configuration"></a>
 <h2>Configuration</h2>	
+ 
+<table class="listing">
 
-effect#'show'
-css#{
-	before: 'lazy',
+	<thead>
+		<tr>
+			<th>property</th>
+			<th>default</th>
+			<th>description</th>
+		</tr>
+	</thead>	
+	<tr>
+		<td class="code">css</td>
+		<td class="code">Object</td>
+		<td>
+			<p>
+				CSS class names being used in various states of a loadable element. 
+			</p>
+<pre>
+{
+	<em>// while element is being loaded</em>
 	loading: 'loading',
-	after: null,
+	
+	<em>// while element is being loaded</em>
+	before: undefined,
+	
+	<em>// while element is being loaded</em>
+	after: undefined,
+	
+	<em>// class name for the progress indicator</em>
 	progress: 'progress'
 }
-fadeInSpeed#'normal'
-progress#'Loading'
+</pre>
+		</td>
+	</tr>
+	<tr>
+		<td class="code">effect</td>
+		<td>'show'</td>
+		<td>
+			name of the display effect to be used after the element has been loaded. two build-in effects are provided: a simple "show" effect and a <a href="#grow">grow effect</a>.
+		</td>
+	</tr>
+	<tr>
+		<td class="code">fadeInSpeed</td>
+		<td>'normal'</td>
+		<td>
+			fade in speed for the "show" effect. a nonzero value causes the element to be gradually shown from zero to full opacity.
+		</td>
+	</tr>
+	<tr>
+		<td class="code">progress</td>
+		<td>'Loading'</td>
+		<td>
+			the text (or HTML code) to be used inside the progress indicator while an element is being loaded. HTML code allows you to use animated GIF's for example.
+		</td>
+	</tr>	
+</table> 
 
-
+<a name="grow"></a>
 <h3>Grow effect</h3>
-			
-growSpeed#'slow'
-growParent#'.grow'
+ 
+<p>
+	This effect performs an growing (or shrinking) animation for a specified parent element of the loadable element. The dimensions are determined from the element being loaded. This can be either image dimensions or if the loaded element is a HTML DIV for example the dimensions are CSS <samp>width</samp> and <samp>height</samp> dimensions are being used. This effect has it's own set of configuration properties as follows:
+</p>
 
-
+<table class="listing">
+	<tr>
+		<td class="code">growSpeed</td>
+		<td>'slow'</td>
+		<td>
+			the speed of the growing animatino
+		</td>
+	</tr>
+	<tr>
+		<td class="code">growParent</td>
+		<td class="code"></td>
+		<td>
+			jQuery selector for the closest parent element to be grown. by default the direct parent element is selected.
+		</td>
+	</tr>
+</table>
+ 
+<a name="api"></a> 
 <h2>Scripting API</h2>
+ 
 
-load
-getElements
-getConf
-getProgress
+<table class="listing">
+	<thead>
+		<tr>
+			<th>Method</th>
+			<th nowrap>Return value</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tr>
+		<td class="code">getConf()</td>
+		<td><code>Object</code></td>
+		<td>
+			returns the Lazyload configuration
+		</td>
+	</tr>	 
+	<tr>
+		<td class="code">getProgress()</td>
+		<td><code>jQuery</code></td>
+		<td>
+			returns the progress indicator element
+		</td>
+	</tr>
+	<tr>
+		<td class="code">load()</td>
+		<td><code>API</code></td>
+		<td>
+			perform loading
+		</td>
+	</tr>
+	<tr>
+		<td class="code">load(index)</td>
+		<td><code>API</code></td>
+		<td>
+			perform loading only for element specified by the index (stating from 0)
+		</td>
+	</tr>
+	<tr>
+		<td class="code">load(start, len)</td>
+		<td><code>API</code></td>
+		<td>
+			load <samp>len</samp> amount of elements beginning from <samp>start</samp> index
+		</td>
+	</tr>
+	<tr>
+		<td class="code">load(jQuery)</td>
+		<td><code>API</code></td>
+		<td>
+			load elements specified in the argument. the supplied elements must be contained on the initial set of lazyloaded elements
+		</td>
+	</tr>
 
-
+	<tr>
+		<td class="code">preload()</td>
+		<td><code>API</code></td>
+		<td>
+			this function performs the same functionality as <samp>load</samp> but does not execute the effect after the loading is done. accepts the same set of arguments as the <samp>load</samp> method.
+		</td>
+	</tr>
+	
+</table>
+ 
+<a name="events"></a>
 <h2>Events</h2>
+ 
+<p>
+	List of supported events. These can be supplied in configuration or using API or with jQuery <samp>bind</samp> method. Read more about <a href="${jqt}/documentation/index.html#events">jQuery Tools event model</a>.
+</p>
 
-onBeforeLoad
-onLoad
-onLoadAll
-onError
-bind
-one
-unbind
+<table class="listing">
+	<thead>
+		<tr>
+			<th>Event name</th>
+			<th>Description</th>
+		</tr>
+	</thead> 
+	
+	<tr>
+		<td class="code">onBeforeLoad</td>
+		<td>
+			when loading is about to begin
+		</td>
+	</tr>
+	<tr>
+		<td class="code">onError</td>
+		<td>
+			when an error occurred on individual element's loading. wrong url, timeout etc..
+		</td>
+	</tr>
+	<tr>
+		<td class="code">onLoad</td>
+		<td>
+			when individual element has been loaded. the loaded element is supplied in second argument
+		</td>
+	</tr>
+	<tr>
+		<td class="code">onLoadAll</td>
+		<td>
+			when all elements specified for <samp>load</samp> method has been loaded. loaded elements are supplied in second argument
+		</td>
+	</tr>
+	
+</table>
 
+
+<a name="loaders"></a> 
 <h2>Creating Loaders</h2>
+ 
+<p>
+	You can add new loaders with <samp>addLoader</samp> function. Here is a skeleton for a loader:
+</p>
 
-addLoader: function(matcher, initFn, loadFn) 
+<pii:code>
+// first argument is a jQuery selector that will have to match your element
+$.tools.lazyload.addLoader(".myselector", 
 
-
+	// initialize the matched element here
+	function(el) {
+		
+	
+	// perform loading of the element here. call done when loading is performed
+	}, function(el, done) {
+		
+	}
+); 
+</pii:code> 
+ 
+<a name="effects"></a>
 <h2>Creating Effects</h2>
+ 
+<p>
+	You can add new loaders with <samp>addLoader</samp> function. Here is a skeleton for an effect:
+</p>
 
-addEffect: function(name, fn) {			
-	effects[name] = fn;	
-}
+<pii:code>
+// first argument is the effect name. done function is called when the effect is performed
+$.tools.lazyload.addEffect("shake", function(el, done) {
+	el.animate({width: '+=20', height: '-=50'}, "slow", done);
+});
+</pii:code>

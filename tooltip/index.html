@@ -105,7 +105,7 @@ $("<trigger_selector>").tooltip({
 		<td class="code">api</td>
 		<td><code>false</code></td>
 		<td>
-			When this tool is initialized (constructed), the return value is a jQuery object associated with the selector. By setting this property to <samp>true</samp>, the return value is this tool's <a href="#api">JavaScript API</a> instead. If the selector returns multiple elements, the API of the <em>last</em> element will be returned. Read more about <a href="${jqt}/using.html#api">accessing the tool API</a> for more information.
+			When this tool is initialized (constructed), the return value is a jQuery object associated with the selector. By setting this property to <samp>true</samp>, the return value is this tool's <a href="#api">JavaScript API</a> instead. If the selector returns multiple elements, the API of the <em>last</em> element will be returned. Read more about <a href="${jqt}/documentation/index.html#api">accessing the tool API</a> for more information.
 		</td>
 	</tr>
 	<tr>
@@ -291,7 +291,7 @@ $("label").tooltip({
 </pii:code>
 
 <p>
-	See the <a href="using.html#callbacks">Using Callback Functions</a> section of the User's Guide for a more detailed dscription about this important topic.
+	See the <a href="documentation/index.html#callbacks">Using Callback Functions</a> section of the User's Guide for a more detailed dscription about this important topic.
 </p>
 
 <a name="events"></a>
@@ -360,7 +360,7 @@ $("label").tooltip({
 <h2>Scripting <em>API</em></h2>
 
 <p>
-	This tool has a useful API for scripters. A lot of effort has been put into it so that you can enrich the tooltip experience. You can get a handle to the API in numerous ways as described in the <a href="using.html#api">User's Manual</a>. Here is an example of how to access the API:
+	This tool has a useful API for scripters. A lot of effort has been put into it so that you can enrich the tooltip experience. You can get a handle to the API in numerous ways as described in the <a href="documentation/index.html#api">User's Manual</a>. Here is an example of how to access the API:
 </p>
 
 <pii:code>
@@ -435,10 +435,10 @@ api.show();
 		<td class="code">onBeforeShow(fn)</td>
 		<td><code>API</code></td>
 		<td>
-			Registers a new callback function that is triggered before the tooltip is shown. The callback is given as the argument. Returning <samp>false</samp> in the callback prevents the tooltip from showing. You can assign multiple <samp>onBeforeShow</samp> listeners with this command. See <a href="using.html#callbacks">using callbacks</a> for more information.
+			Registers a new callback function that is triggered before the tooltip is shown. The callback is given as the argument. Returning <samp>false</samp> in the callback prevents the tooltip from showing. You can assign multiple <samp>onBeforeShow</samp> listeners with this command. See <a href="documentation/index.html#callbacks">using callbacks</a> for more information.
 
 			<p>
-				The first <em>argument</em> for the callback function is the <a href="${jqt}/using.html#event_object">Event</a> object and the second is the tooltip position to be used. This is an object with values <samp>{top: integer, left: integer}</samp>.
+				The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second is the tooltip position to be used. This is an object with values <samp>{top: integer, left: integer}</samp>.
 			</p>
 		</td>
 	</tr>
@@ -467,14 +467,14 @@ api.show();
 		<td class="code">bind(names, fn)</td>
 		<td><code>API</code></td>
 		<td>
-			Register one or more callbacks to be triggered. See <a href="using.html#callbacks">using callbacks</a> for more information.
+			Register one or more callbacks to be triggered. See <a href="documentation/index.html#callbacks">using callbacks</a> for more information.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">unbind(names)</td>
 		<td><code>API</code></td>
 		<td>
-			Removes callback functions from the tool See <a href="using.html#callbacks">using callbacks</a> for more information.
+			Removes callback functions from the tool See <a href="documentation/index.html#callbacks">using callbacks</a> for more information.
 		</td>
 	</tr>
 </table>
