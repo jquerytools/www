@@ -78,7 +78,7 @@ div.panes img {
 		<strong>Built-in effects</strong> which include: <samp>default, fade, slide, ajax</samp> and <samp>horizontal</samp> and you can easily <a href="#effects">make your own effects</a> or modify the existing default effects.
 	</li>
 	<li>
-		<strong>Plugin framework</strong> Built-in plugins include: <a href="#slideshow">slideshow</a> and <a href="#history">history</a> and you can easily <a href="${jqt}/using.html#plugins">make your own plugins</a>.
+		<strong>Plugin framework</strong> Built-in plugins include: <a href="#slideshow">slideshow</a> and <a href="#history">history</a> and you can easily <a href="${jqt}/documentation/index.html#plugins">make your own plugins</a>.
 	</li>
 	<li>
 		<strong>Cross linking</strong>. If the tab content areas contain any anchor links to other tab's content areas, the correct tab is automatically opened when those links are clicked.
@@ -228,7 +228,7 @@ $("<tabs_selector>").tabs("<pane_selector>", {
 		<td class="code">api</td>
 		<td><code>false</code></td>
 		<td>
-			When this tool is initialized (constructed), the return value is a jQuery object associated with the selector. By setting this property to <samp>true</samp>, the return value is this tool's <a href="#api">JavaScript API</a> instead. If the selector returns multiple elements, the API of the <em>last</em> element will be returned. Read more about <a href="${jqt}/using.html#api">accessing the tool API</a>.
+			When this tool is initialized (constructed), the return value is a jQuery object associated with the selector. By setting this property to <samp>true</samp>, the return value is this tool's <a href="#api">JavaScript API</a> instead. If the selector returns multiple elements, the API of the <em>last</em> element will be returned. Read more about <a href="${jqt}/documentation/index.html#api">accessing the tool API</a>.
 		</td>
 	</tr>
 	<tr>
@@ -386,7 +386,7 @@ $("#tabs2").tabs("#panes2 > div");
 </p>
 
 <p>
-	The first <em>argument</em> for the callback function is the <a href="${jqt}/using.html#event_object">Event</a> object and the second argument is the index number of the tab being clicked. Here is an example of an <samp>onBeforeClick</samp> callback function:
+	The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second argument is the index number of the tab being clicked. Here is an example of an <samp>onBeforeClick</samp> callback function:
 </p>
 
 <pii:code>
@@ -401,7 +401,7 @@ $("ul.tabs").tabs({
 </pii:code>
 
 <p>
-	See the <a href="using.html#callbacks">Using Callback Functions</a> section from the User's Guide for a more detailed description about this important topic.
+	See the <a href="documentation/index.html#callbacks">Using Callback Functions</a> section from the User's Guide for a more detailed description about this important topic.
 </p>
 
 
@@ -409,7 +409,7 @@ $("ul.tabs").tabs({
 <h2>Scripting <em>API</em></h2>
 
 <p>
-	This tool has a useful API for scripters. A lot of effort has been put into it so that you can enrich the tabbing experience. You can get a handle to the API in numerous ways as described in the <a href="using.html#api">User's Manual</a>. Here is an example of how to access the API:
+	This tool has a useful API for scripters. A lot of effort has been put into it so that you can enrich the tabbing experience. You can get a handle to the API in numerous ways as described in the <a href="documentation/index.html#api">User's Manual</a>. Here is an example of how to access the API:
 </p>
 
 
@@ -510,7 +510,7 @@ api.onClick(function(index) {
 			Registers a new callback function that is triggered before a tab is clicked. The callback is given as the argument. Returning <samp>false</samp> or calling <samp>event.preventDefault</samp> in the callback prevents the tab from opening.
 
 			<p>
-				The first <em>argument</em> for the callback function is the <a href="${jqt}/using.html#event_object">Event</a> object and the second argument is the index number of the tab being clicked. You can assign multiple callback functions with this command.
+				The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second argument is the index number of the tab being clicked. You can assign multiple callback functions with this command.
 			</p>
 		</td>
 	</tr>
@@ -521,7 +521,7 @@ api.onClick(function(index) {
 			Registers a new callback function that is triggered after a tab is clicked. The callback is given as the argument.
 
 			<p>
-				The first <em>argument</em> for the callback function is the <a href="${jqt}/using.html#event_object">Event</a> object and the second argument is the index number of the tab being clicked. You can assign multiple <samp>onClick</samp> listeners with this command.
+				The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second argument is the index number of the tab being clicked. You can assign multiple <samp>onClick</samp> listeners with this command.
 			</p>
 		</td>
 	</tr>
@@ -529,14 +529,14 @@ api.onClick(function(index) {
 		<td class="code">bind(names, fn)</td>
 		<td><code>API</code></td>
 		<td>
-			Register one or more callbacks to be triggered. See <a href="using.html#callbacks">using callbacks</a> for more information.
+			Register one or more callbacks to be triggered. See <a href="documentation/index.html#callbacks">using callbacks</a> for more information.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">unbind(names)</td>
 		<td><code>API</code></td>
 		<td>
-			Removes callback functions from the tool See <a href="using.html#callbacks">using callbacks</a> for more information.
+			Removes callback functions from the tool See <a href="documentation/index.html#callbacks">using callbacks</a> for more information.
 		</td>
 	</tr>
 </table>

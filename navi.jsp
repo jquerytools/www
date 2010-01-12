@@ -77,7 +77,7 @@
 		}
 	</style>
 	
-	<c:forEach items="${context.toolDemos.categories}" var="cat" varStatus="i">
+	<c:forEach items="${req.demo.category.categories}" var="cat" varStatus="i">
 
 		<div class="box">
 			<h2>${cat.title}</h2>
@@ -97,6 +97,7 @@
 	<script>
 		$("#right").tabs("#right ul", {tabs: 'h2', initialIndex: ${req.demo.category.index}});
 		$("#right h2").eq(${req.demo.category.index}).addClass("active");
+		$("#right a[href=" + location.pathname + "]").addClass("selected");
 	</script>
 	
 	

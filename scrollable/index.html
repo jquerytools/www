@@ -85,7 +85,7 @@ $("JQUERY SELECTOR").scrollable({
 		<td class="code">api</td>
 		<td><code>false</code></td>
 		<td>
-			When this tool is initialized (constructed), the return value is a jQuery object associated with the selector. By setting this property to <samp>true</samp>, the return value is this tool's <a href="#api">JavaScript API</a> instead. If the selector returns multiple elements, the API of the <em>last</em> element will be returned. Read more about <a href="${jqt}/using.html#api">accessing the tool API</a> for more information.
+			When this tool is initialized (constructed), the return value is a jQuery object associated with the selector. By setting this property to <samp>true</samp>, the return value is this tool's <a href="#api">JavaScript API</a> instead. If the selector returns multiple elements, the API of the <em>last</em> element will be returned. Read more about <a href="${jqt}/documentation/index.html#api">accessing the tool API</a> for more information.
 		</td>
 	</tr>
 	<tr>
@@ -243,7 +243,7 @@ instance.reload();
 			This callback function is triggered before items are scrolled. A function which returns <samp>false</samp> will prevent scrolling from taking place.
 
 			<p>
-				The first <em>argument</em> for the callback function is the <a href="${jqt}/using.html#event_object">Event</a> object and the second is the index number the item being seeked to.
+				The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second is the index number the item being seeked to.
 			</p>
 
 			<p>
@@ -258,7 +258,7 @@ instance.reload();
 			This callback function is triggered after items have been scrolled.
 
 			<p>
-				The first <em>argument</em> for the callback function is the <a href="${jqt}/using.html#event_object">Event</a> object and the second is the index number the item being seeked to.
+				The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second is the index number the item being seeked to.
 			</p>
 		</td>
 	</tr>
@@ -269,7 +269,7 @@ instance.reload();
 			<strong>Since 1.1.2</strong>. This callback function is triggered just before the items start scrolling. This occurs between the <samp>onBeforeSeek</samp> and <samp>onBeforeSeek</samp> events. All API methods rely on the fact that the scollable is already at its target position. By returning <samp>false</samp> inside this function you can prevent the disabling of the navigational elements. If you want to disable the seeking animation you must return <samp>false</samp> inside the <samp>onBeforeSeek</samp> event.
 
 			<p>
-				The first <em>argument</em> for the callback function is the <a href="${jqt}/using.html#event_object">Event</a> object and the second is the index number the item being seeked to.
+				The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second is the index number the item being seeked to.
 			</p>
 		</td>
 	</tr>
@@ -335,7 +335,7 @@ $("div.scrollable").scrollable({
 </pii:code>
 
 <p>
-	See the <a href="using.html#callbacks">Using Callback Functions</a> section of the User's Guide for a more detailed description about this important topic.
+	See the <a href="documentation/index.html#callbacks">Using Callback Functions</a> section of the User's Guide for a more detailed description about this important topic.
 </p>
 
 
@@ -343,7 +343,7 @@ $("div.scrollable").scrollable({
 <h2>Scripting <em>API</em></h2>
 
 <p>
-	scrollable has a clean and well-designed API for scripters, with which it is possible to enrich the scrolling user experience. You can get a handle to the API in numerous ways as described in the <a href="using.html#api">User's Manual</a>. Here is an example of how to access the API:
+	scrollable has a clean and well-designed API for scripters, with which it is possible to enrich the scrolling user experience. You can get a handle to the API in numerous ways as described in the <a href="documentation/index.html#api">User's Manual</a>. Here is an example of how to access the API:
 </p>
 
 <pii:code>
@@ -584,14 +584,14 @@ api.next(function() {
 		<td class="code">bind(names, fn)</td>
 		<td><code>API</code></td>
 		<td>
-			Register one or more callbacks to be triggered. See <a href="using.html#callbacks">using callbacks</a> for more information.
+			Register one or more callbacks to be triggered. See <a href="documentation/index.html#callbacks">using callbacks</a> for more information.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">unbind(names)</td>
 		<td><code>API</code></td>
 		<td>
-			Removes callback functions from the tool See <a href="using.html#callbacks">using callbacks</a> for more information.
+			Removes callback functions from the tool See <a href="documentation/index.html#callbacks">using callbacks</a> for more information.
 		</td>
 	</tr>
 </table>

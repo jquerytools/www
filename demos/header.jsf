@@ -27,7 +27,7 @@ $(function() {
 	</style>
 	
 	<c:set var="tool" value="${fn:substringBefore(req.demo.path, '/')}"/>
-
+	
 	<h1 style="background-image:url(${jqt}/img/hero/${tool == 'combine' ? 'index' : tool}.jpg)">
 		${req.demo.title}
 	</h1>	
