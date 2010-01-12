@@ -65,7 +65,7 @@ $("ul.tabs").tabs("> .pane");
 </p>
 
 <p>
-	Our jQuery selector: <samp>&gt; .pane</samp> searches for panes under the wrapper element. If we had used a simple selector such as <samp>.pane</samp> the second Tabs would have selected all the panes that are under the parent <samp>div.wrap</samp>. This would have contained 12 different panes alltogether because those nested tabs are also contained by the <samp>DIV</samp> with the <samp>wrap</samp> class. This is why we need to select only the <em>direct</em> children under the wrapper with the <samp>&gt; .pane</samp> selector.
+	Our jQuery selector: <samp>&gt; .pane</samp> searches for panes under the wrapper element. If we had used a simple selector such as <samp>.pane</samp> the second Tabs would have selected all the panes that are under the parent <samp>div.wrap</samp>. This would have contained 12 different panes altogether because those nested tabs are also contained by the <samp>DIV</samp> with the <samp>wrap</samp> class. This is why we need to select only the <em>direct</em> children under the wrapper with the <samp>&gt; .pane</samp> selector.
 </p>
 
 <p>
@@ -91,7 +91,7 @@ $(".accordion").tabs(".pane", {tabs: 'h2', effect: 'slide'});
 <h3>HTML coding</h3>
 
 <p>
-This time you don't have to worry about additional parent elements since in accordion setup the Tabs and panes are already inside the same parene element. Our HTML setup is identical to the previous <a href="accordion.html">accordion setup</a> but here we use CSS class names instead of <samp>ID</samp>'s so that we can deal with multiple elements. Here is the structure for the above accordions:
+This time you don't have to worry about additional parent elements since in accordion setup the Tabs and panes are already inside the same parent element. Our HTML setup is identical to the previous <a href="accordion.html">accordion setup</a> but here we use CSS class names instead of <samp>ID</samp>s so that we can deal with multiple elements. Here is the structure for the above accordions:
 </p>
 
 <pii:code lang="html">
