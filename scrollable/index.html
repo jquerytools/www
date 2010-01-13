@@ -113,7 +113,7 @@ $("JQUERY SELECTOR").scrollable({
 		<td class="code">globalNav</td>
 		<td><code>false</code></td>
 		<td>
-			 By default the navigational elements needs to have a <a href="#multiple">mutual wrapper element</a> with the scrollable itself. Enable this variable if your navigational elements are not placed under the the same parent element than the scrollable so that they can be found.
+			 By default the navigational elements needs to have a <a href="#multiple">mutual wrapper element</a> with the scrollable itself. Enable this variable if your navigational elements are not placed under the same parent element than the scrollable so that they can be found.
 		</td>
 	</tr>
 	<tr>
@@ -134,7 +134,7 @@ $("JQUERY SELECTOR").scrollable({
 			</p>
 
 			<p>
-				See <a href="demos/scrollable/">minimal setup</a> for an undertanding of the HTML setup for scrollable.
+				See <a href="demos/scrollable/">minimal setup</a> for an understanding of the HTML setup for scrollable.
 			</p>
 		</td>
 	</tr>
@@ -243,7 +243,7 @@ instance.reload();
 			This callback function is triggered before items are scrolled. A function which returns <samp>false</samp> will prevent scrolling from taking place.
 
 			<p>
-				The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second is the index number the item being seeked to.
+				The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second is the index number the item being sought to.
 			</p>
 
 			<p>
@@ -258,7 +258,7 @@ instance.reload();
 			This callback function is triggered after items have been scrolled.
 
 			<p>
-				The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second is the index number the item being seeked to.
+				The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second is the index number the item being sought to.
 			</p>
 		</td>
 	</tr>
@@ -266,10 +266,10 @@ instance.reload();
 		<td class="code">onStart</td>
 		<td><code></code></td>
 		<td>
-			<strong>Since 1.1.2</strong>. This callback function is triggered just before the items start scrolling. This occurs between the <samp>onBeforeSeek</samp> and <samp>onBeforeSeek</samp> events. All API methods rely on the fact that the scollable is already at its target position. By returning <samp>false</samp> inside this function you can prevent the disabling of the navigational elements. If you want to disable the seeking animation you must return <samp>false</samp> inside the <samp>onBeforeSeek</samp> event.
+			<strong>Since 1.1.2</strong>. This callback function is triggered just before the items start scrolling. This occurs between the <samp>onBeforeSeek</samp> and <samp>onBeforeSeek</samp> events. All API methods rely on the fact that the scrollable is already at its target position. By returning <samp>false</samp> inside this function you can prevent the disabling of the navigational elements. If you want to disable the seeking animation you must return <samp>false</samp> inside the <samp>onBeforeSeek</samp> event.
 
 			<p>
-				The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second is the index number the item being seeked to.
+				The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second is the index number the item being sought to.
 			</p>
 		</td>
 	</tr>
@@ -399,7 +399,7 @@ api.next(function() {
 		<td class="code">getClickIndex()</td>
 		<td><code>number</code></td>
 		<td>
-			<strong>since 1.1.1.</strong>. Returns the index number of the item that was clicked the last time. This is only available when the <samp>clickable</samp> configuration property is set to <samp>true</samp>.
+			<strong>since 1.1.1.</strong> Returns the index number of the item that was clicked the last time. This is only available when the <samp>clickable</samp> configuration property is set to <samp>true</samp>.
 		</td>
 	</tr>
 	<tr>
@@ -577,7 +577,7 @@ api.next(function() {
 		<td class="code">onReload(fn)</td>
 		<td><code>API</code></td>
 		<td>
-			Registers a new callback function that is triggered when a <samp>reload()</samp> call is made. This call is typically called when new items are added inder the <samp>items</samp> element. Note this call is made <em>once</em> when scrollable is initialized.
+			Registers a new callback function that is triggered when a <samp>reload()</samp> call is made. This call is typically called when new items are added under the <samp>items</samp> element. Note this call is made <em>once</em> when scrollable is initialized.
 		</td>
 	</tr>
 	<tr>
@@ -607,7 +607,7 @@ api.next(function() {
 		<samp>speed</samp> this argument is used to specify how long (in milliseconds) the scrolling animation lasts. This overrides the <samp>speed</samp> property specified in the configuration.
 	</li>
 	<li>
-		<samp>callback</samp> this argument is used to specify a function to be called when the scrolling animation finishes. This function is called <em>before</em> the <samp>onSeek</samp> function and it runs only once (as opposed to <samp>onBeforeSeek</samp> and <samp>onSeek</samp>, which are called every time a scolling animation takes place).
+		<samp>callback</samp> this argument is used to specify a function to be called when the scrolling animation finishes. This function is called <em>before</em> the <samp>onSeek</samp> function and it runs only once (as opposed to <samp>onBeforeSeek</samp> and <samp>onSeek</samp>, which are called every time a scrolling animation takes place).
 	</li>
 </ol>
 
