@@ -53,13 +53,13 @@ pre em {
 	<h3>Integrate to your JavaScript code</h3>
 	
 	<p>
-		The main reason for developing this tool was to give a generic loading capability for Tabs, Overlays, Scrollables and Tooltips. They can now load heavy elements the server without consuming redundant bandwidth. You and can also extend your own JavaScript tools with Lazyload. There is a simple and powerfull API and event model and you can add customized <a href="#loaders">loaders</a> and appearance <a href="#effects">effects</a> when needed. 
+		The main reason for developing this tool was to give a generic loading capability for Tabs, Overlays, Scrollables and Tooltips. They can now load heavy elements the server without consuming redundant bandwidth. You and can also extend your own JavaScript tools with Lazyload. There is a simple and powerful API and event model and you can add customized <a href="#loaders">loaders</a> and appearance <a href="#effects">effects</a> when needed. 
 	</p>
 	
 	<h3>Load anything</h3>
 	
 	<p>
-		Besides images you can also load any kind of HTML and if the loaded content contains more images they are also Lazyloaded! The whole mass of HTML and images are not revealed until they are all loaded. A progress indicator can be shown making your application responsive.   
+		Besides images you can also load any kind of HTML and if the loaded content contains more images they are also lazyloaded! The whole mass of HTML and images are not revealed until they are all loaded. A progress indicator can be shown making your application responsive.   
 	</p>
 	
 </div>	 
@@ -119,7 +119,7 @@ api.load();
 </p>
 
 <p>
-	The HTML loader relies on followind kind of syntax
+	The HTML loader relies on following kind of syntax:
 </p>
 
 <pii:code lang="html">
@@ -175,14 +175,14 @@ api.load();
 		<td class="code">effect</td>
 		<td>'show'</td>
 		<td>
-			name of the display effect to be used after the element has been loaded. two build-in effects are provided: a simple "show" effect and a <a href="#grow">grow effect</a>.
+			Name of the display effect to be used after the element has been loaded. Two built-in effects are provided: a simple "show" effect and a <a href="#grow">grow effect</a>.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">fadeInSpeed</td>
 		<td>'normal'</td>
 		<td>
-			fade in speed for the "show" effect. a nonzero value causes the element to be gradually shown from zero to full opacity.
+			Fade in speed for the "show" effect. A nonzero value causes the element to be gradually shown from zero to full opacity.
 		</td>
 	</tr>
 	<tr>
@@ -206,14 +206,14 @@ api.load();
 		<td class="code">growSpeed</td>
 		<td>'slow'</td>
 		<td>
-			the speed of the growing animatino
+			The speed of the growing animation.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">growParent</td>
 		<td class="code"></td>
 		<td>
-			jQuery selector for the closest parent element to be grown. by default the direct parent element is selected.
+			jQuery selector for the closest parent element to be grown. By default the direct parent element is selected.
 		</td>
 	</tr>
 </table>
@@ -234,42 +234,42 @@ api.load();
 		<td class="code">getConf()</td>
 		<td><code>Object</code></td>
 		<td>
-			returns the Lazyload configuration
+			Returns the Lazyload configuration.
 		</td>
 	</tr>	 
 	<tr>
 		<td class="code">getProgress()</td>
 		<td><code>jQuery</code></td>
 		<td>
-			returns the progress indicator element
+			Returns the progress indicator element.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">load()</td>
 		<td><code>API</code></td>
 		<td>
-			perform loading
+			Perform loading.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">load(index)</td>
 		<td><code>API</code></td>
 		<td>
-			perform loading only for element specified by the index (stating from 0)
+			Perform loading only for element specified by the index (stating from 0).
 		</td>
 	</tr>
 	<tr>
 		<td class="code">load(start, len)</td>
 		<td><code>API</code></td>
 		<td>
-			load <samp>len</samp> amount of elements beginning from <samp>start</samp> index
+			Load <samp>len</samp> amount of elements beginning from <samp>start</samp> index.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">load(jQuery)</td>
 		<td><code>API</code></td>
 		<td>
-			load elements specified in the argument. the supplied elements must be contained on the initial set of lazyloaded elements
+			Load elements specified in the argument. The supplied elements must be contained on the initial set of lazyloaded elements.
 		</td>
 	</tr>
 
@@ -277,7 +277,7 @@ api.load();
 		<td class="code">preload()</td>
 		<td><code>API</code></td>
 		<td>
-			this function performs the same functionality as <samp>load</samp> but does not execute the effect after the loading is done. accepts the same set of arguments as the <samp>load</samp> method.
+			This function performs the same functionality as <samp>load</samp> but does not execute the effect after the loading is done. Accepts the same set of arguments as the <samp>load</samp> method.
 		</td>
 	</tr>
 	
@@ -301,25 +301,25 @@ api.load();
 	<tr>
 		<td class="code">onBeforeLoad</td>
 		<td>
-			when loading is about to begin
+			When loading is about to begin.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">onError</td>
 		<td>
-			when an error occurred on individual element's loading. wrong url, timeout etc..
+			When an error occurred on individual element's loading. Wrong url, timeout etc.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">onLoad</td>
 		<td>
-			when individual element has been loaded. the loaded element is supplied in second argument
+			When individual element has been loaded. The loaded element is supplied in second argument.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">onLoadAll</td>
 		<td>
-			when all elements specified for <samp>load</samp> method has been loaded. loaded elements are supplied in second argument
+			When all elements specified for <samp>load</samp> method has been loaded. Loaded elements are supplied in second argument.
 		</td>
 	</tr>
 	
