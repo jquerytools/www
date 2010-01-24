@@ -1,24 +1,6 @@
 
-<script>
-$(function() {
-	$("#content h2:gt(0)").each(function(i) {
-		$(this).prepend(i + 1 + ". ");
-	});
-});
-</script>
-
-<style>
-#content li.plus {
-	list-style-image:url(../img/plus.png);
-}
-#content li.minus {
-	list-style-image:url(../img/minus.png);
-}
-</style>
-
-<h1 style="background:url(../img/hero/usersguide.jpg) no-repeat 0 10px">
-	jQuery Tools Users Guide - Common practices for each of the tools
-</h1>
+<%-- :mode=jsp: --%>
+<%@ include file="tabs.jsf" %>
 
 <h2 class="first">In this document</h2>
 
@@ -34,7 +16,7 @@ $(function() {
 	<li><a href="#include">Including the Tools</a></li>
 	<li><a href="#initialize">Initializing the Tools</a></li>
 	<li><a href="#global_configuration">Making global configurations</a></li>
-	<li><a href="#extending">Extending the Tools with plugins and effects</a></li>
+	<li><a href="#extending">Using jQuery Tools plugins and effects</a></li>
 </ul>
 	
 
@@ -460,7 +442,6 @@ $("a[rel]").overlay({effect: 'default'});
 <pii:code>
 $.extend($.tools.overlay.conf, {
 	effect: 'apple',
-	api: true,
 	speed: 1000
 });
 </pii:code>
@@ -491,7 +472,7 @@ console.dir($.tools.overlay.conf);
 <!--{{{ Plugins and Effects -->
 
 <a name="extending"></a>
-<h2>Extending the Tools with <em>plugins and effects</em></h2>
+<h2>Using jQuery Tools <em>plugins and effects</em></h2>
 
 <p>
 	jQuery Tools is the first framework to take full advantage of the jQuery's powerful chaining technology. Here is an example of a chaining pattern

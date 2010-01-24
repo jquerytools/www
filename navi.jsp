@@ -66,6 +66,29 @@
 	background-color:#00559E;
 	color:#fff !important;	
 }
+
+#biglink {
+	display:block;
+	font-size:20px;
+	padding:5px 15px;
+	text-align:center;	
+}
+
+#biglink:hover strong {
+	text-decoration:underline;		
+}
+
+
+#biglink.current strong {
+	text-decoration:none !important;
+}
+	
+#biglink.current {
+	cursor:default; 	
+	background-color:#efefef;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
 </style>
 
 <%-- demos --%>
@@ -110,20 +133,10 @@
 		<script>$("#jqt4").addClass("active");</script>
 	</c:if>	
 	
-	<div class="box">
-		<h2>Using jQuery Tools</h2>
-		
-		<ul>
-			<li><a href="${jqt}/documentation/index.html">Introduction</a>
-			<li><a href="${jqt}/documentation/basics.html">The Basics</a>
-			<li><a href="${jqt}/documentation/events.html">Events</a></li>
-			<li><a href="${jqt}/documentation/advanced.html">Advanced Topics</a></li>
-			<li><a href="${jqt}/documentation/performance.html">Performance</a></li>			
-		</ul>  
-		
-		<div class="clear"></div>
-		 
-	</div>			
+	<a href="${jqt}/documentation/index.html" id="biglink">
+		jQuery Tools <br />
+		<strong style="color:#000; letter-spacing:-1px">USER'S GUIDE</strong>
+	</a>
 	
 	<div id="toollist">
 		<c:forEach items="${metadata.tools}" var="tool" varStatus="i" begin="1">

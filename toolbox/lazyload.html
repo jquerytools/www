@@ -38,7 +38,7 @@ pre em {
 	<h3>Faster loading of pages</h3>
 	
 	<p>
-		Lazyload enables you to control the loading of images, background images and HTML. If your page contains large images that are not visible yet there is no need to load all of them beforehand. This tool defers the loading of your assets until you <em>really</em> need them making your pages work faster. Of course the tool itself weights only XXX kb when minified so it does not hurt performance by itself. 
+		Lazyload enables you to control the loading of images, background images and HTML. If your page contains large images that are not visible yet there is no need to load all of them beforehand. This tool defers the loading of your assets until you <em>really</em> need them making your pages work faster. This differs from "regular" AJAX loading in a very important way: your content is there on the page for search engines.
 	</p> 
 	 
 	
@@ -66,22 +66,45 @@ pre em {
  
 <br clear="all" />
 
-<a name="usage"></a>
-<h2>Usage</h2>
+<a name="tools"></a>
+<h2>jQuery Tools and lazyload</h2>
 
 <p>
-	Lazyloading can be enabled for all UI tools with the <samp>lazyload</samp> configuration variable. Many times simply setting it to <samp>true</samp> may be the only thing you need. For example:
+	Lazyloading can be enabled for all <strong>UI Tools</strong> with the <samp>lazyload</samp> configuration variable. Many times simply setting it to <samp>true</samp> may be the only thing you need. For example:
 </p>
 
 <pii:code>
-// lazyload all images that are inside scrollable. load them only when they become visible
-$("#scroll").scrollable({
-	lazyload: true
-});
+$("#scroll").scrollable({ lazyload: true });
 </pii:code>
 
 <p>
-	You have to make sure that this tool has been included on your page. Lazyload can also be used as a standalone tool. Here are examples
+	This will find all images and background images inside scrollable root element and load them only when they become visible (by scrolling). You have to make sure that the lazyload tool has been included on your page. The <samp>lazyload</samp> configuration variable accepts following types of values:
+</p>
+
+<pii:code>
+// boolean: when set to true the tool lazyloads all images and background images
+lazyload: true
+
+// string: lazyload elements specified by a jQuery selector (within the tool)
+lazyload: '.myimages'
+
+// object: lazyload for all images and background images with a custom lazyload configuration 
+lazyload: {
+	effect: 'grow'
+}
+
+// object: lazyload selected elements with a custom lazyload configuration 
+lazyload: {
+	select: '.myimages',
+	effect: 'grow'
+}
+</pii:code>
+
+<a name="usage"></a>
+<h2>Lazyload as standalone tool</h2>
+
+<p>
+	Lazyload can also be used as a standalone tool. Here are examples
 </p>
 
 <pii:code>

@@ -229,46 +229,35 @@ $("JQUERY SELECTOR").expose({
 		When this tool is initialized (constructed), the return value is a jQuery object associated with the selector. By setting this property to <samp>true</samp>, the return value is the <a href="#api">JavaScript API</a> instead. If the selector returns multiple elements, the API of the <em>last</em> element will be returned. Read more about <a href="${jqt}/documentation/index.html#api">accessing the tool API</a> for more information.
 		</td>
 	</tr>
-</table>
 
-<a name="events"></a>
-<a name="callbacks"></a>
-<h2>Events</h2>
+	<tr><td colspan="3" style="background-color:#efefef"><a name="callbacks"></a></td></tr>
 
-<p>
-	Make sure you have read about <a href="${jqt}/documentation/events.html">Events in jQuery Tools</a>. All event listeners receives <a href="${jqt}/documentation/events.html#object">Event Object</a> as the first argument.
-</p>
-
-<table class="listing">
-	<thead>
-		<tr>
-			<th>event</th>
-			<th nowrap>When it occurs?</th>
-		</tr>
-	</thead>
-	
 	<tr>
 		<td class="code">onBeforeLoad</td>
+		<td><code></code></td>
 		<td>
-			before the masking effect
+			This callback function is triggered before the masking effect. Returning <samp>false</samp> or calling <samp>event.preventDefault</samp> in the callback prevents exposing from occurring.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">onLoad</td>
+		<td><code></code></td>
 		<td>
-			after the masking effect takes place.
+			This callback function is triggered after masking takes place.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">onBeforeClose</td>
+		<td><code></code></td>
 		<td>
-			before the mask is closed
+			This callback function is triggered before mask is closed. Returning <samp>false</samp> or calling <samp>event.preventDefault</samp> in the callback prevents it from closing.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">onClose</td>
+		<td><code></code></td>
 		<td>
-			when expose is closed
+			This callback function is triggered when mask is closed.
 		</td>
 	</tr>
 </table>
@@ -288,7 +277,6 @@ $("#myDiv").expose({
 	}
 });
 </pii:code>
-<a name="events"></a>
 
 
 <a name="api"></a>

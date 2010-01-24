@@ -1,0 +1,378 @@
+
+<%-- :mode=jsp: --%>
+<%@ include file="tabs.jsf" %>
+
+
+<h2 class="first">In this document</h2>
+
+<p>
+	This document describes common practices for each of the tools such as:
+</p>
+
+<ul>
+	<li><a href="#api">API</a></li>
+	<li><a href="#events">Events</a></li>
+	<li><a href="#plugins">Writing Plugins</a></li>
+</ul>
+
+<!--{{{ API -->
+
+<a name="api"></a>
+<h2>Application Programming Interface (<em>API</em>)</h2>
+
+<p>
+	Every tool has a well defined Application Programming Interface (API) that you can work with. This is one of the greatest strengths of this library. You can call tool methods and access their properties. The internal state is hidden and private variables are not accessible by the outer world which is what you would expect from good programming practice. You can get access to the API by using jQuery's <samp>data</samp> method. For example
+</p>
+
+<pii:code>
+// get access to the API
+var api = $("#scroller").data("scrollable");
+</pii:code>
+
+<p>
+	The argument to the <samp>data</samp> method is the tool's name. Once you have the API available, you can start calling it's methods. For example:
+</p>
+
+<pii:code>
+// we scroll two items forward
+api.move(2);
+
+// scroll to the beginning in 2000 milliseconds
+api.begin(2000)
+
+// do something upon scroll
+api.onSeek(function() {
+
+	// inside callbacks the "this" variable is a reference to the API
+	console.info("current position is: " + this.getIndex())
+});
+</pii:code>
+                                                
+<p>
+	It is natural to have a tool-specific API available when working with a certain widget. There are no redundant methods and typically you won't need, for example, the DOM manipluation methods that jQuery offers. You will want to stick with the methods that relate to the task at hand. There are getters, setters and methods that invoke actions. Invoking methods will always return the API itself so you can perform method chaining. For example:
+</p>
+
+<pii:code>
+// normal API coding that programmers are accustomed to
+var index = $("#example").data("tabs").click(1).getIndex();
+</pii:code>
+
+<p>
+	If your selector returns multiple instances and want to access a particular API, you can do following:
+</p>
+
+<pii:code>
+// select the correct instance with a jQuery selector
+var api = $(".scrollable:eq(2)").data("scrollable");
+
+// or with traversing methods. it is just a matter of taste
+api = $(".scrollable").eq(2).data("scrollable");
+</pii:code>
+
+
+<h3>jQuery UI <em>unified API</em></h3>
+
+<p>
+	jQuery UI has a so-called "unified API" which uses the following syntax for invoking methods:
+</p>
+
+<pii:code>
+// call select method for tabs
+$("ul.example").tabs("select", 1);
+</pii:code>
+
+<p>
+	API methods are called by supplying the method name as a string followed by method arguments. This kind of syntax is <strong>not</strong> supported by the Tools. To be honest, I think that this kind API design is fundamentally wrong. It has the following problems:
+</p>
+
+<ol>
+	<li>The syntax is unique to jQuery UI and people outside the UI community are not accustomed to it.</li>
+	<li>
+		The syntax is cubersome. For example, if you want to perform method chaining you have to write the following:
+		<samp>$("ul.example").tabs("select", 1).tabs("disable", 2);</samp>
+	</li>
+	<li>
+		The JavaScript engine cannot see typos. writing "selecct" does not produce any errors and makes it hard to debug.
+	</li>
+</ol>
+
+
+<div style="color:#444;margin-top:20px">
+	<h4 style="color:#666">Deprecated <samp>api</samp> property</h4>
+	
+	<p>
+		jQuery Tools versions below 1.2 used an "api" configuration property for accessing the api upon initialization. This property is now deprecated and will be removed in the next version. Also the ability to access the API by calling the tool constuctor again after the initialization is deprecated. The <samp>data</samp> method will only be supported after the next version.
+	</p>
+	
+</div>
+
+<!--}}}-->
+
+
+<!--{{{ Events -->
+
+<a name="events"></a>
+<h2>jQuery Tools Events</h2>
+
+<p>
+	Every tool is firing <em>events</em>. These are points in time where something critical happens on the tool. For example scrollable fires <samp>onSeek</samp> event every time a scrolling occurs. You can supply your own <em>event listeners</em> that are called every time an event occurs. These event listeners are normal JavaScript functions and are the most typical and effective way of extending the tools' behaviour. Event listeners are sometimes called <em>callback functions</em> and both are valid terms. 
+</p>
+
+<h3>Before and after events</h3>
+
+<p>
+	These tools provide both the <samp>onBefore</samp> event which occurs before some action is taken and the on event that occurs by the time (or after) an action takes place. You can have custom functionality bound to these events. All tools provide such events and they share a common naming policy. The <samp>onBefore</samp> event provides you with the possibility of cancelling the action. 
+</p>
+	
+
+<h3>Example</h3>
+
+<p>
+	This example demonstrates the <samp>onBeforeClick</samp> callback function for Tabs
+</p>
+
+<pii:code>
+$("#example").tabs(".panes > div", {
+
+	// here is a "normal" configuration variable
+	current: 'active,
+
+	// here is a callback function that is called before the tab is clicked
+	onBeforeClick: function(event, tabIndex) {
+
+		// the "this variable is a pointer to the API. You can do a lot with it.
+		var tabPanes = this.getPanes();
+
+		/*
+			By returning false here the default behaviour is cancelled.
+			This time another tab cannot be clicked when "terms" are not accepted
+		*/
+		return $(":checkbox[name=terms]").is(":checked");
+	}
+
+});
+</pii:code>
+
+
+<h3>Supplying Events</h3>
+	
+<p>
+	There are three different ways of supplying event listeners. 
+</p>		
+
+<h4>1. On configuration</h4>
+	
+<p>
+	You can supply your event listeners direcly on the configuration when the tool is initialized. For example
+</p>
+
+<pii:code>
+$(".tabs").tabs({
+
+	// do your own stuff here
+	onClick: function() {
+	
+		// "this" is a reference to the Tabs API
+		var tabPanes = this.getPanes();
+		
+	}
+});
+</pii:code>
+
+<p>
+	This is the most common way to supply callbacks and is suitable for most of the situations. The biggest drawback in this method is that you ca supply only one callback for the same event. You cannot for example supply two different <samp>onClick</samp> event listeners on the configuration. 
+</p>
+
+<p>
+	In the above example <samp>this</samp>- variable is a reference to the <a href="/tools/tabs/index.html#api">Tabs API</a>.
+</p>
+
+<h4>2. Using jQuery's <em>bind</em> method</h4>
+
+<p>
+	This is a standard way of assigning callback methods in jQuery land. Here is an example: 
+</p>
+	
+<pii:code>
+// first callback
+$(".tabs").bind("onClick", function() {
+
+	// "this" is a reference to the DOM element
+	var ulElement = this;
+	
+// another one
+}).bind("onClick", function() {
+	
+});
+</pii:code>
+
+<p>
+	The <samp>bind</samp> method can be called multiple times so that you can assign multiple <samp>onClick</samp> listeners for example. This is crucial when developing jQuery Tools plugins.
+</p>
+
+<p>
+	By using the <samp>bind</samp> method you can use the whole event binding arsenal that jQuery provides such as <a href="http://api.jquery.com/unbind" class="external">unbind</a> for removing event listeners and <a href="http://api.jquery.com/one" class="external">one</a> for calling your listener only once. The jQuery documentation for the <a href="http://api.jquery.com/bind" class="external">bind</a> method is a good reading and describes you the basics of event binding. It also talks about andvanced topics such as namespacing which are also valid in jQuery Tools. 
+</p>	
+	
+
+<p>
+	Inside your event listener <samp>this</samp>- variable is a reference to the DOM element returned by the jQuery selector just like jQuery programmers are accustomed to. 
+</p>
+
+<p>
+	By far the best thing about <samp>bind</samp> method is that you can bind the same event listener to multiple instances with the same call. If for example the selector <samp>.tabs</samp> on our above example returns multiple instances the <samp>bind</samp> method will assign the listener to all instances simultaneously. Also note that <samp>bind</samp> allows you to supply multiple events types with the same call. For example
+</p>
+
+<pii:code>
+// the same event listener is called before *and* after a tab is clicked
+$(".tabs").bind("onBeforeClick onClick", function() {
+	
+});
+</pii:code>
+
+<h4>3. Supplying listeners from API</h4>
+
+<p>
+	Each jQuery Tool allows you to supply the event listeners from the API. For example  
+</p>
+
+<pii:code>
+// grab the API with jQuery's data method
+var api = $(".tabs").data("tabs");
+
+// supply event listner
+api.onBeforeClick(function()  {
+	
+// supply another
+}).onClick(function() {
+	
+});
+</pii:code>
+
+<p>
+	Inside the event listner <samp>this</samp>- variable is a reference to the Tools API and you can chain the methods "normally". This syntax follows more traditional programming style that is more fluent and understandable for people outside jQuery community. 
+</p>
+	
+<pii:code>
+// loop trough the instances
+$(".tabs").each(function() {
+
+	// assign onClick listener to a single instance
+	$(this).data("tabs").onClick(function() {
+		
+	});
+	
+});
+</pii:code>
+
+
+<a name="object"></a>
+<a name="event_object"></a>
+<h3>The Event object</h3>
+
+<p>
+	Every callback function receives the <a href="http://api.jquery.com/category/events/event-object/" class="external">jQuery.Event</a> object as the first argument for the callback function. This event object standardizes the event processing according to the <a href="http://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-flow-cancelation" class="external">W3C standards</a>. Here are some things you can do with this object:
+</p>
+
+<pii:code>
+// the event object is the first argument for *all* callbacks in jQuery Tools
+api.onClick(function(event) {
+
+	// cancel the default action. same as returning false
+	event.preventDefault();
+
+	/* If you have multiple callbacks of the same type this prevents
+		the rest of the callbacks from being executed. */
+	event.stopImmediatePropagation();
+
+	// retrieve the value returned by the previous callback function
+	event.result;
+
+	// The timestamp (in milliseconds) of when the event was created.
+	event.timeStamp;
+
+	// mouse position when event was fired
+	var x = event.pageX;
+	var y = event.pageY;
+
+	// whether CTRL, ALT, SHIFT or ESC was being pressed
+	var alt = event.altKey,
+		 ctrl = event.ctrlKey,
+		 shift = event.shiftMey,
+		 esc = event.metaKey;
+
+
+	// the original triggering element
+	var element = e.originalTarget || e.srcElement;
+});
+</pii:code>
+
+<p>
+ 	Within the scope of jQuery Tools, the <samp>preventDefault()</samp> is identical to returning <samp>false</samp> from the callback. This is just a matter of style where the <samp>preventDefault()</samp> is the modern manner of cancelling.
+</p>
+
+<p>
+	You can get the handle to the actual element that fired the event with <samp>var element = e.originalTarget || e.srcElement;</samp>. For example, you can get a handle to the scrollable navigator item that was clicked inside the <samp>onSeek</samp> event.
+</p>
+
+<h3>A quick comparison with class-based inheritance</h3>
+
+<p>
+	Some programmers may argue that a better solution would have been to implement "classes" that users can "extend". Trust me, it's not. JavaScript is an inherently functional language, not an object-oriented one. Trying to mimic classical inherintance leads to poor design and makes programs longer and harder to understand. This is especially important in jQuery development because this library itself is highly dependent on callbacks and does not support any kind of inheritance. Functions are an easy, light-weight and effective way of extending behavior. Even newcomers can use them without understanding the anatomy of the JavaScript language.
+</p>
+<!--}}}-->
+
+
+<!--{{{ Creating plugins -->
+
+<a name="plugins"></a>
+<h2>Creating jQuery Tools <em>Plugins</em></h2>
+
+<p>
+	It is possible to implement jQuery plugins that are tightly integrated with jQuery Tools. These plugins would typically alter the default behaviour of the tool or they can add new functionality.  jQuery Tools plugins are authored just like normal jQuery plugins with the exception that inside your plugin you'll get a handle to the Tools programming API and possibly supply callback functions. The fact that the tools can have an unlimited number of callback functions registered is the backbone of plugin development. Here is a simple skeleton for a plugin that will track Google Analytics each time a tab is clicked:
+</p>
+
+<pii:code>
+// create jQuery plugin called "analytics"
+$.fn.analytics = function(tracker) {
+
+	// loop through each tab and enable analytics
+	return this.each(function() {
+
+		// get handle to tabs API.
+		var api = $(this).data("tabs");
+
+		// setup onClick listener for tabs
+		api.onClick(function(index)  {
+			tracker.trackEvent("tabs", "foo", index);
+		});
+
+	});
+};
+</pii:code>
+
+<p>
+	After you have this plugin included on your page, you can use the plugin in the following manner:
+</p>
+
+<pii:code>
+// initialize tabs and the analytics plugin. the Analytics tracker argument is defined elsewhere
+$("ul.tabs").tabs("div.panes > div").analytics(tracker);
+</pii:code>
+
+<p>
+	If you are a jQuery plugin developer, you can see that this follows the "standard" way of developing plugins. The interesting part is the retrieval of API with the <samp>var api = $(this).tabs();</samp> command. Instead of constructing new tabs, it will return the API. This is because tabs were already constructed. In fact our previous setup <em>requires</em> that the tabs are initialized before the analytics plugin, so you <strong>cannot</strong> write:
+</p>
+
+<pii:code>
+// this is wrong. the analytics plugin does not get access to the tabs API
+$("ul.tabs").analytics(tracker).tabs("div.panes > div");
+</pii:code>
+
+<p>
+	Here is a relatively sane writing about <a href="http://www.learningjquery.com/2007/10/a-plugin-development-pattern" class="external">developing jQuery plugins</a>. There are many plugins available on the <a href="download.html">download page</a>. You can take a look at their commented source code to get more understanding about the plugin development.
+</p>
+
+<!--}}}-->
+
+

@@ -1,0 +1,35 @@
+
+<script>
+$(function() { 
+	var page = location.href.split("/").pop().split("#").shift() || 'index.html';
+	$("ul.tabs a[href*=" +page+ "]").addClass("current");
+	$("#right ul a[href*=/configuration]").addClass("selected");	
+	$("#biglink").addClass("current").click(function() { return false; });
+});
+</script>
+
+<style>
+p.more, p.more a {
+	font-size:16px;
+	margin:20px 0;
+	letter-spacing:-1px;
+}
+#content .plus {
+	list-style-image:url(../img/plus.png);
+}
+#content .minus {
+	list-style-image:url(../img/minus.png);
+}
+</style>
+
+<h1 style="background:url(../img/hero/usersguide.jpg) no-repeat 0 10px;margin-bottom:-360px;">
+	jQuery Tools Users Guide - Common practices for each of the tools
+</h1>
+
+<ul class="tabs" style="position:relative;top:-25px;">
+	<li><a href="${jqt}/documentation/index.html">Introduction</a>
+	<li><a href="${jqt}/documentation/basics.html">The Basics</a>
+	<li><a class="w1" href="${jqt}/documentation/scripting.html">Scripting &amp; Events</a></li>
+	<li><a href="${jqt}/documentation/performance.html">Performance</a></li>		
+</ul>
+

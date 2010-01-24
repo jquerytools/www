@@ -1,14 +1,12 @@
+
+<%-- :mode=jsp: --%>
 <style>
-p.more, p.more a {
-	font-size:16px;
-	margin:20px 0;
-	letter-spacing:-1px;
+#content h1 {
+	background:transparent url(../img/hero/usersguide.jpg) no-repeat scroll -37px -16px;
 }
 </style>
 
-<h1 style="background-image:url(../img/hero/performance.jpg)">
-	jQuery Tools Performance - What makes these tools so fast?
-</h1>
+<%@ include file="tabs.jsf" %>
 
 <h2 class="first">
 	80-90% of the end-user response time is spent on the frontend. <br /><strong>Start there.</strong>
@@ -142,11 +140,11 @@ response.setHeader("Cache-Control", "max-age=315360000");
 
 
 <p class="more">
-	jQuery Tools are minified with the <a href="http://developer.yahoo.com/yui/compressor/" class="external">YUI Compressor</a>.
+	jQuery Tools are minified with the <a href="http://code.google.com/closure/compiler/" class="external">Google Closure Compiler</a>.
 </p>
 
 <p>
-	The YUI Compressor is a JavaScript minifier designed to be 100% safe and yield a higher compression-ratio than most other tools.
+	The Closure Compiler is a JavaScript minifier designed to be 100% safe and yield a higher compression-ratio than most other tools.
 </p>
 
 <p>
