@@ -19,9 +19,9 @@ jquerytools.org (1.3.0)
 
 nginx/nodejs
 
-This future version of the website is build with future technologies. http://nodejs.org is
-a powerfull JavaScript webserver (among other things). A perfect choise for this project.
+This future version of the website is built with future technologies. http://nodejs.org is
+a powerful JavaScript webserver (among other things). A perfect choice for this project.
 We hope that it matures and has a solid template engine when the technology switch happens.
-If not PHP or Ruby will be used. These are better choises for open source projects than Java.
+If not PHP or Ruby will be used. These are better choices for open source projects than Java.
 
 

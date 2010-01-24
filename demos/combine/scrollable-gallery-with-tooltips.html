@@ -16,7 +16,7 @@
 <h2>Scrollable with tooltips</h2>
 
 <p>
-	First we describe how you can add tooltips for scrollable items. Scrollable's HTML structure is the same as in the <a href="${jqt}/demos/scrollable/index.html">minimal setup</a> except that the scrollable images are now wrapped inside an <samp>A</samp> tag so that we can take advantage of their <samp>title</samp> and <samp>href</samp> attributes. The <samp>title</samp> attribute is used for tooltips and the <samp>href</samp> attribute contains the link to the larger version of the image to be overlayed.
+	First we describe how you can add tooltips for scrollable items. Scrollable's HTML structure is the same as in the <a href="${jqt}/demos/scrollable/index.html">minimal setup</a> except that the scrollable images are now wrapped inside an <samp>a</samp> tag so that we can take advantage of their <samp>title</samp> and <samp>href</samp> attributes. The <samp>title</samp> attribute is used for tooltips and the <samp>href</samp> attribute contains the link to the larger version of the image to be overlayed.
 </p>
 
 <h3>HTML Setup</h3>
@@ -110,7 +110,7 @@ $(".scrollable").scrollable().find("a").tooltip().overlay().gallery();
 </pii:code>
 
 <p>
-	We initialize our scrollable. Then we find all A tags inside it and enable tooltips for them. After that we setup the overlayed gallery for these same A tags.	That's it. A true demonstration of the power of jQuery Tools. Here is the complete JavaScript setup with commented configuration variables:
+	We initialize our scrollable. Then we find all <samp>a</samp> tags inside it and enable tooltips for them. After that we setup the overlayed gallery for these same <samp>a</samp> tags. That's it. A true demonstration of the power of jQuery Tools. Here is the complete JavaScript setup with commented configuration variables:
 </p>
 
 <pii:code>

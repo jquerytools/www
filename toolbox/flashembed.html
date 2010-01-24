@@ -16,7 +16,7 @@
 <h2>Motivation</h2>
 
 <p>
-	Today the role of JavaScript is rising on a tremendous speed. All major browser vendors are competing with each other to make the best JavaScript engine in the world. We can expect to see more and more JavaScript widgets and goodies to appear on the market. Not just these tools. Having said that Flash technology still has an imporant role on the Internet. Especially when you want to play videos there is virtually no competition.
+	Today the role of JavaScript is rising on a tremendous speed. All major browser vendors are competing with each other to make the best JavaScript engine in the world. We can expect to see more and more JavaScript widgets and goodies to appear on the market. Not just these tools. Having said that Flash technology still has an important role on the Internet. Especially when you want to play videos there is virtually no competition.
 </p>
 
 <p>
@@ -30,7 +30,7 @@
 		If you don't need anything special you don't have to study much.
 	</li>
 	<li>
-		<strong>JSON configuration</strong>. When supplying configuration for Flash objects, the values can be complex JavaScript objects with arrays, strings, functions and other objects. as opposed to the traditional XML-based configuration, this is simpler and much more flexible. In fact this was the main reason for developing this tool.
+		<strong>JSON configuration</strong>. When supplying configuration for Flash objects, the values can be complex JavaScript objects with arrays, strings, functions and other objects. As opposed to the traditional XML-based configuration, this is simpler and much more flexible. In fact this was the main reason for developing this tool.
 	</li>
 	<li>
 		<strong>jQuery support</strong>. flashembed is designed with scripters in mind. A polished programming API together with support for jQuery selectors has been built-in.
@@ -162,7 +162,7 @@ flashembed(container, configuration, flashvars);
 		<td class="code">w3c</td>
 		<td class="code">false</td>
 		<td>
-			if set to <samp>true</samp>, the tool switches to standards-based <samp>OBJECT</samp> syntax when generating HTML. You can find more information about this technical subject <a href="#html">here</a>.
+			if set to <samp>true</samp>, the tool switches to standards-based <samp>object</samp> syntax when generating HTML. You can find more information about this technical subject <a href="#html">here</a>.
 		</td>
 	</tr>
 	<tr>
@@ -178,7 +178,7 @@ flashembed(container, configuration, flashvars);
 	<tr>
 		<td class="code">bgcolor</td>
 		<td></td>
-		<td>The hexadecimal RGB value in the format of #RRGGBB. this specifies the background color of the movie.</td>
+		<td>The hexadecimal RGB value in the format of #RRGGBB. This specifies the background color of the movie.</td>
 	</tr>
 	<tr>
 		<td class="code">width</td>
@@ -297,7 +297,7 @@ $("jquery_selector").flashembed(configuration, flashvars);
 </pii:code>
 
 <p>
-	As you can see, there are a maximum of 2 arguments here and <samp>flashvars</samp> is optional as before. You can find information about jQuery selectors <a href="http://docs.jquery.com/Selectors">here</a>. Here is an example that will search all <samp>DIV</samp> elements with the class name "flash" and place a Flash object inside them:
+	As you can see, there are a maximum of 2 arguments here and <samp>flashvars</samp> is optional as before. You can find information about jQuery selectors <a href="http://docs.jquery.com/Selectors">here</a>. Here is an example that will search all <samp>div</samp> elements with the class name "flash" and place a Flash object inside them:
 </p>
 
 <pii:code>
@@ -388,7 +388,7 @@ flashembed.getHTML({src: 'my_object.swf', w3c: true}, {
 </pii:code>
 
 <p>
-	The last method <samp>getHTML</samp> is useful when you want to generate the <samp>OBJECT</samp> tag for your Flash objects so that you don't need to use JavaScript on your pages.
+	The last method <samp>getHTML</samp> is useful when you want to generate the <samp>object</samp> tag for your Flash objects so that you don't need to use JavaScript on your pages.
 </p>
 
 
@@ -470,7 +470,7 @@ flashembed("clock", {src: "/swf/clock.swf", w3c: true});
 </pii:code>
 
 <p>
-	This would appear to be a perfect solution, but there is one drawback. While every other browser is getting it right, IE/Windows is not streaming — it waits for the entire movie to download before playing it. This is fine for small movies, but for anything serious, the lack of streaming is unacceptable. This is why this flag is only suitable for standard freaks that are using small SWF files. The A List Apart document describes a workaround for this called "Flash satay" and you can read about it in the document.
+	This would appear to be a perfect solution, but there is one drawback. While every other browser is getting it right, IE/Windows is not streaming - it waits for the entire movie to download before playing it. This is fine for small movies, but for anything serious, the lack of streaming is unacceptable. This is why this flag is only suitable for standard freaks that are using small SWF files. The A List Apart document describes a workaround for this called "Flash satay" and you can read about it in the document.
 </p>
 
 

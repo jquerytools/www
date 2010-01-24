@@ -61,7 +61,7 @@ div.panes img {
 <h2>Motivation</h2>
 
 <div class="box petrol">
-	Tabs are the <em>most imporant UI widget on the web</em> and this tool is the best implementation you can find.
+	Tabs are the <em>most important UI widget on the web</em> and this tool is the best implementation you can find.
 </div>
 
 <p>
@@ -192,13 +192,13 @@ $("<tabs_selector>").tabs("<pane_selector>", {
 <h4>tabs_selector</h4>
 
 <p>
-	You select one or more root elements for the tabs with the <samp>tabs_selector</samp> which is a <a href="http://docs.jquery.com/Selectors" class="external">jQuery selector</a>. The root element is a <em>container</em> for individual tabs. By default, the tool searches for <samp>A</samp> tags inside the root element that will work as individual tabs. This can be changed with the <samp>tabs</samp> configuration option. The root element can be any HTML element such as <samp>DIV</samp>, <samp>UL</samp>, <samp>DL</samp> or <samp>TABLE</samp>.
+	You select one or more root elements for the tabs with the <samp>tabs_selector</samp> which is a <a href="http://docs.jquery.com/Selectors" class="external">jQuery selector</a>. The root element is a <em>container</em> for individual tabs. By default, the tool searches for <samp>a</samp> tags inside the root element that will work as individual tabs. This can be changed with the <samp>tabs</samp> configuration option. The root element can be any HTML element such as <samp>div</samp>, <samp>ul</samp>, <samp>dl</samp> or <samp>table</samp>.
 </p>
 
 <h4><em>1<sup>st</sup> argument:</em> pane_selector</h4>
 
 <p>
-	In Tabs terminology, the content areas for tabs are called "panes". The <samp>pane_selector</samp> selects the content areas that correspond to the individual tabs. For example, a selector: <samp>div.panes > div</samp> selects all <samp>DIV</samp> elements that are direct children of the <samp>DIV.panes</samp> element. The first pane is assigned to the first tab and second to the second tab and so on. This selector does not select any root element and it should return as many elements as you have tabs.
+	In Tabs terminology, the content areas for tabs are called "panes". The <samp>pane_selector</samp> selects the content areas that correspond to the individual tabs. For example, a selector: <samp>div.panes > div</samp> selects all <samp>div</samp> elements that are direct children of the <samp>div.panes</samp> element. The first pane is assigned to the first tab and second to the second tab and so on. This selector does not select any root element and it should return as many elements as you have tabs.
 </p>
 
 <p>
@@ -344,7 +344,7 @@ $(".tabs").tabs(".panes > div");
 </pii:code>
 
 <p>
-	Now all Tabs will work individually. Note that instantiating Tabs with one call as in above example is defferent than doing multiple separate identical calls. Of course you can always instantiate your Tabs separately but you need to supply different selector for the panes. For example:
+	Now all Tabs will work individually. Note that instantiating Tabs with one call as in above example is different than doing multiple separate identical calls. Of course you can always instantiate your Tabs separately but you need to supply different selector for the panes. For example:
 </p>
 
 <pii:code>
@@ -494,7 +494,7 @@ api.onClick(function(index) {
 <h2>Making custom effects</h2>
 
 <p>
-	If you want to make custom effects you should use the <samp>$.tools.tabs.addEffect</samp> method. This method is "static", meaning that you don't have to have the the tabs API (or instance) already loaded. You can add effects before any tabs are constructed.
+	If you want to make custom effects you should use the <samp>$.tools.tabs.addEffect</samp> method. This method is "static", meaning that you don't have to have the tabs API (or instance) already loaded. You can add effects before any tabs are constructed.
 </p>
 
 <p>

@@ -3,7 +3,7 @@
 <h2 class="plugin">Navigator plugin</h2>
 
 <p>
-	Navigator plugin will allow your users to more easily navigate between different pages in the scrollable. This plugin is convenient if you have lots of items in a scrollable list. Here is the navigator plugin in action:
+	The Navigator plugin will allow your users to more easily navigate between different pages in the scrollable. This plugin is convenient if you have lots of items in a scrollable list. Here is the navigator plugin in action:
 </p>
 
 <div class="demowrap">
@@ -78,11 +78,11 @@ $("jquery selector").scrollable().navigator({
 </pii:code>
 
 <p>
-	The items inside navigator can be anything such as LI, A, SPAN or P elements. By default the plugin uses the direct children as navigator items but you can supply <samp>naviItem</samp> configuration that will select the specified child elements to be used as navigator items.
+	The items inside navigator can be anything such as <samp>li</samp>, <samp>a</samp>, <samp>span</samp> or <samp>p</samp> elements. By default the plugin uses the direct children as navigator items but you can supply <samp>naviItem</samp> configuration that will select the specified child elements to be used as navigator items.
 </p>
 
 <p>
-	If you are using A tags inside the wrap and you supply <samp>href</samp> attributes for them you have the added benefit of automatically the seeking to the correct item when you enter the page with a matching "hash" on the URL. For example if you go to an URL  <samp>mypage.html#second</samp> for the above setup the scrollable will automatically seek to the Second item. You can see an example of this <a href="demos/scrollable/one-sized.html#plugins">here</a>. Note that the third tab is automatically opened.
+	If you are using <samp>a</samp> tags inside the wrap and you supply <samp>href</samp> attributes for them you have the added benefit of automatically the seeking to the correct item when you enter the page with a matching "hash" on the URL. For example if you go to an URL <samp>mypage.html#second</samp> for the above setup the scrollable will automatically seek to the Second item. You can see an example of this <a href="demos/scrollable/one-sized.html#plugins">here</a>. Note that the third tab is automatically opened.
 </p>
 
 <a name="navigator_configuration"></a>
@@ -127,7 +127,7 @@ $("jquery selector").scrollable().navigator({
 		<td><code></code></td>
 		<td>
 			<p>
-				The HTML element name for navigational items which are auto-populated inside the navigator. If none is supplied the <samp>A</samp> tag will be used.
+				The HTML element name for navigational items which are auto-populated inside the navigator. If none is supplied the <samp>a</samp> tag will be used.
 			</p>
 
 			<p>
@@ -139,7 +139,7 @@ $("jquery selector").scrollable().navigator({
 		<td class="code">idPrefix</td>
 		<td></td>
 		<td>
-			<string>since 1.1.2</string>. By supplying a value here the navigator generates an <samp>ID</samp> attribute for each item so that they can be uniquely styled with CSS. For example, the value "foo" generates the IDs: "foo0", "foo1", "foo2" and so on.
+			<string>since 1.1.2</string>. By supplying a value here the navigator generates an <samp>id</samp> attribute for each item so that they can be uniquely styled with CSS. For example, the value "foo" generates the IDs: "foo0", "foo1", "foo2" and so on.
 		</td>
 	</tr>
 	<tr>

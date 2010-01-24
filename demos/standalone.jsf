@@ -1,15 +1,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %><c:if test="${empty plain}"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<!-- DOCTYPE is always recommended. see: http://www.quirksmode.org/css/quirksmode.html -->
+<!-- DOCTYPE is always recommended. See: http://www.quirksmode.org/css/quirksmode.html -->
 
 <!--
-	This is the jQuery Tools standalone demo, the fastest way to get started.
-	You can freely copy things on your site. All demos can be found here:
+	This is a jQuery Tools standalone demo, the fastest way to get started.
+	All demos can be found here:
 
 	http://flowplayer.org/demos/
 
-	CSS files should not be referenced from flowplayer.org when in production
+	You are welcome to copy them to your site.
+
+	CSS files should not be referenced from flowplayer.org when in production.
 
 	Enjoy!
 -->
@@ -21,11 +23,11 @@
 	<!-- include the Tools -->
 	<script src="/tools/download/combine/1.2.0/jquery.tools.min.js?select=full&debug=true"></script>
 
-	<!-- standalone page styling (can be removed)-->
+	<!-- standalone page styling (can be removed) -->
 	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/standalone.css"/> 
 
 </head>
 
-<!-- without body tag IE may have unprodictable behaviours -->
+<!-- without body tag IE may exhibit unpredictable behaviour -->
 <body>
 </c:if>
