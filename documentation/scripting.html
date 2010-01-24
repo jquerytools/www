@@ -30,7 +30,7 @@ var api = $("#scroller").data("scrollable");
 </pii:code>
 
 <p>
-	The argument to the <samp>data</samp> method is the tool's name. Once you have the API available, you can start calling it's methods. For example:
+	The argument to the <samp>data</samp> method is the tool's name. Once you have the API available, you can start calling its methods. For example:
 </p>
 
 <pii:code>
@@ -195,7 +195,7 @@ $(".tabs").tabs({
 </p>
 
 <p>
-	In the above example <samp>this</samp>- variable is a reference to the <a href="/tools/tabs/index.html#api">Tabs API</a>.
+	In the above example the <samp>this</samp> variable is a reference to the <a href="/tools/tabs/index.html#api">Tabs API</a>.
 </p>
 
 <h4>2. Using jQuery's <em>bind</em> method</h4>
@@ -227,7 +227,7 @@ $(".tabs").bind("onClick", function() {
 	
 
 <p>
-	Inside your event listener <samp>this</samp>- variable is a reference to the DOM element returned by the jQuery selector just like jQuery programmers are accustomed to. 
+	Inside your event listener the <samp>this</samp> variable is a reference to the DOM element returned by the jQuery selector just like jQuery programmers are accustomed to.
 </p>
 
 <p>
@@ -244,14 +244,14 @@ $(".tabs").bind("onBeforeClick onClick", function() {
 <h4>3. Supplying listeners from API</h4>
 
 <p>
-	Each jQuery Tool allows you to supply the event listeners from the API. For example  
+	Each jQuery Tool allows you to supply the event listeners from the API. For example:
 </p>
 
 <pii:code>
 // grab the API with jQuery's data method
 var api = $(".tabs").data("tabs");
 
-// supply event listner
+// supply event listener
 api.onBeforeClick(function()  {
 	
 // supply another
@@ -261,7 +261,7 @@ api.onBeforeClick(function()  {
 </pii:code>
 
 <p>
-	Inside the event listner <samp>this</samp>- variable is a reference to the Tools API and you can chain the methods "normally". This syntax follows more traditional programming style that is more fluent and understandable for people outside jQuery community. 
+	Inside the event listener the <samp>this</samp> variable is a reference to the Tools API and you can chain the methods "normally". This syntax follows more traditional programming style that is more fluent and understandable for people outside jQuery community.
 </p>
 	
 <pii:code>
