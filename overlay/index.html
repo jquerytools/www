@@ -220,86 +220,57 @@ $("JQUERY SELECTOR").overlay({
 			Specifies how far from the top edge of the screen the overlay should be placed. Acceptable values are an integer number specifying a distance in pixels, a string (such as '15%') specifying a percentage value or "center" in which case the overlay is vertically centered. Percentage values work consistently in different screen resolutions.
 		</td>
 	</tr>
-	<tr><td colspan="3" style="background-color:#efefef"></td></tr>
 
+</table>
+
+
+<%--{{{ events --%>
+
+<a name="callbacks"></a>
+<a name="events"></a>
+<h2>Events</h2>
+
+<p>
+	Make sure you have read about <a href="${jqt}/documentation/events.html">Events in jQuery Tools</a>. All event listeners receives <a href="${jqt}/documentation/events.html#object">Event Object</a> as the first argument and there are no other arguments for Overlay.
+</p>
+
+<table class="listing">
+	<thead>
+		<tr>
+			<th>event</th>
+			<th nowrap>When it occurs?</th>
+		</tr>
+	</thead>
 	<tr>
-		<td class="code">onBeforeLoad</td>
-		<td><em>None</em></td>
+		<td class="code">onBeforeLoad</td>	
 		<td>
-			This callback function is triggered before the overlay is displayed. A function which returns <samp>false</samp> or calling <samp>event.preventDefault</samp> will prevent a particular overlay from being loaded.
+			before the overlay is displayed. The overlay has already been positioned at the location from where it will start animating.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">onLoad</td>
-		<td><em>None</em></td>
 		<td>
-			This callback function is triggered when the overlay has completely been shown and a particular overlay is in place.
+			when the overlay has completely been displayed
 		</td>
 	</tr>
 	<tr>
 		<td class="code">onBeforeClose</td>
-		<td><em>None</em></td>
 		<td>
-			This callback function is triggered before a particular overlay is closed. A function which returns <samp>false</samp> or calling <samp>event.preventDefault</samp> will prevent a particular overlay from being closed.
+			before the overlay is closed
 		</td>
 	</tr>
 	<tr>
 		<td class="code">onClose</td>
-		<td><em>None</em></td>
 		<td>
-			This callback function is triggered when a particular overlay is closed.
+			when the overlay is closed
 		</td>
 	</tr>
-	<tr>
-		<td class="code">onStart</td>
-		<td><em>None</em></td>
-		<td>
-			<strong>Since 1.1.2</strong>. This callback function is triggered just before the overlay starts appearing in an animated way. This happens between the <samp>onBeforeLoad</samp> and <samp>onLoad</samp> events. The overlay has already been positioned at the location from where it will start animating. This callback is not triggered if the loading action has been cancelled in <samp>onBeforeLoad</samp>.
-		</td>
-	</tr>
-
 </table>
+<%--}}}--%>
 
-<a name="callbacks"></a>
-<h3>Using callback functions</h3>
 
-<p>
-	Here is an example of an <samp>onLoad</samp> callback function. Inside any callback function the <samp>this</samp> variable is a pointer to the <a href="#api">overlay scripting API</a>:
-</p>
 
-<pii:code>
-$("button[rel]").overlay({
-
-	// hide trigger when the overlay is opened
-	onLoad: function(event) {
-		this.getTrigger().hide();
-	}
-});
-</pii:code>
-
-<p>
-	See the <a href="documentation/index.html#callbacks">Using Callback Functions</a> section in the User's Guide for more detailed dscription about this important topic.
-</p>
-
-<a name="close"></a>
-<h3>Defining custom close elements</h3>
-
-<p>
-	By default, a close button is auto-generated as the first element inside the container. Here is the generated HTML:
-</p>
-
-<pii:code lang="html">
-<!-- auto- generated close button -->
-<div class="close"></div>
-</pii:code>
-
-<p>
-	You can easily add more closing elements inside the overlay simply by assignin the CSS class name "close" to them. These elements can be styled and positioned any way you like inside the overlay.
-</p>
-
-</p>
-	If you supply a value for the <samp>close</samp> configuration variable, the close element is not auto-generated and you need to define the closing element(s) yourself.
-</p>
+<%--{{{ API --%>
 
 <a name="api"></a>
 <h2>Scripting <em>API</em></h2>
@@ -382,56 +353,38 @@ api = $("div.overlay").overlay();
 		</td>
 	</tr>
 
-	<tr><td colspan="3" style="background-color:#efefef"></td></tr>
-
-	<tr>
-		<td class="code">onBeforeLoad(fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Registers a new callback function that is triggered before the overlay is shown. The callback is given as the argument. Returning <samp>false</samp> or calling <samp>event.preventDefault</samp> in the callback will prevent the overlaying from taking place. You can assign multiple <samp>onBeforeLoad</samp> listeners with this command.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onLoad(fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Registers a new callback function that is triggered right after the overlay has been loaded. The callback is given as the argument. You can assign multiple <samp>onLoad</samp> listeners with this command.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onBeforeClose(fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Registers a new callback function that is triggered before the overlay is closed. The callback is given as the argument. Returning <samp>false</samp> or calling <samp>event.preventDefault</samp> in the callback will prevent the overlay from closing. You can assign multiple <samp>onBeforeClose</samp> listeners  with this command.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onClose(fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Registers a new callback function that is triggered after the overlay has been closed. The callback is given as the argument. You can assign multiple <samp>onClose</samp> listeners with this command.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">bind(names, fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Register one or more callbacks to be triggered. See <a href="documentation/index.html#callbacks">using callbacks</a> for more information.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">unbind(names)</td>
-		<td><code>API</code></td>
-		<td>
-			Removes callback functions from the tool See <a href="documentation/index.html#callbacks">using callbacks</a> for more information.
-		</td>
-	</tr>
 </table>
+
+<%--}}}--%>
+
+
+
+<a name="close"></a>
+<h3>Defining custom close elements</h3>
+
+<p>
+	By default, a close button is auto-generated as the first element inside the container. Here is the generated HTML:
+</p>
+
+<pii:code lang="html">
+<!-- auto- generated close button -->
+<div class="close"></div>
+</pii:code>
+
+<p>
+	You can easily add more closing elements inside the overlay simply by assignin the CSS class name "close" to them. These elements can be styled and positioned any way you like inside the overlay.
+</p>
+
+</p>
+	If you supply a value for the <samp>close</samp> configuration variable, the close element is not auto-generated and you need to define the closing element(s) yourself.
+</p>
+
+
 
 <a name="effects"></a>
 <h2>Making custom effects</h2>
 
-<p>
+<p>pointer
 	If you want to make custom effects you should use the <samp>$.tools.overlay.addEffect</samp> method. This method is "static", meaning that you don't have to have the the overlay API (or instance) already loaded. You can add effects before any overlays are initialized.
 </p>
 
@@ -476,13 +429,3 @@ $.tools.overlay.addEffect("myEffect",
 </p>
 
 
-<a name="effects_list"></a>
-<h2 style="border-bottom:1px solid #333;margin-top:70px">Effects</h2>
-
-<%@ include file="extensions/overlay.apple.html" %>
-
-
-<a name="plugins"></a>
-<h2 style="border-bottom:1px solid #333;margin-top:70px">Plugins</h2>
-
-<%@ include file="extensions/overlay.gallery.html" %>

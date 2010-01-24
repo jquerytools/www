@@ -302,24 +302,6 @@ $("<tabs_selector>").tabs("<pane_selector>", {
 		</td>
 	</tr>
 
-	<tr><td colspan="3" style="background-color:#efefef"></td></tr>
-
-	<tr>
-		<td class="code">onBeforeClick</td>
-		<td><code>null</code></td>
-		<td>
-			This callback function is triggered before a tab is clicked and returning <samp>false</samp> in the callback prevents the tab from opening. See <a href="#callbacks">using callbacks</a> for more information.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onClick</td>
-		<td><code>null</code></td>
-		<td>
-			This callback function is triggered after a tab is clicked. See <a href="#callbacks">using callbacks</a> for more information.
-		</td>
-	</tr>
-
-
 </table>
 
 <a name="multiple"></a>
@@ -379,31 +361,34 @@ $("#tabs2").tabs("#panes2 > div");
 
 
 <a name="callbacks"></a>
-<h3>Using callback functions</h3>
+<a name="events"></a>
+<h2>Events</h2>
 
 <p>
-	This tool supports two callback functions: <samp>onBeforeClick</samp> and <samp>onClick</samp>. Inside these callback functions the <samp>this</samp> variable is a pointer to the <a href="#api">scripting API</a>.
+	Make sure you have read about <a href="${jqt}/documentation/events.html">Events in jQuery Tools</a>. All event listeners receives <a href="${jqt}/documentation/events.html#object">Event Object</a> as the first argument.
 </p>
 
-<p>
-	The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second argument is the index number of the tab being clicked. Here is an example of an <samp>onBeforeClick</samp> callback function:
-</p>
-
-<pii:code>
-$("ul.tabs").tabs({
-
-	// add a class "current" to the active pane
-	onBeforeClick: function(event, tabIndex) {
-		this.getCurrentPane().addClass("current");
-	}
-
-});
-</pii:code>
-
-<p>
-	See the <a href="documentation/index.html#callbacks">Using Callback Functions</a> section from the User's Guide for a more detailed description about this important topic.
-</p>
-
+<table class="listing">
+	<thead>
+		<tr>
+			<th>event</th>
+			<th nowrap>When it occurs?</th>
+		</tr>
+	</thead>
+	
+	<tr>
+		<td class="code">onBeforeClick</td>
+		<td>
+			before a tab is clicked. second argument is the index number of the tab to be clicked
+		</td>
+	</tr>
+	<tr>
+		<td class="code">onClick</td>
+		<td>
+			after a tab is clicked. second argument is the index number of the tab being clicked
+		</td>
+	</tr>
+</table>
 
 <a name="api"></a>
 <h2>Scripting <em>API</em></h2>
@@ -501,42 +486,6 @@ api.onClick(function(index) {
 		<td><code>API</code></td>
 		<td>
 			Advances to the previous tab.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onBeforeClick(fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Registers a new callback function that is triggered before a tab is clicked. The callback is given as the argument. Returning <samp>false</samp> or calling <samp>event.preventDefault</samp> in the callback prevents the tab from opening.
-
-			<p>
-				The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second argument is the index number of the tab being clicked. You can assign multiple callback functions with this command.
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onClick(fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Registers a new callback function that is triggered after a tab is clicked. The callback is given as the argument.
-
-			<p>
-				The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second argument is the index number of the tab being clicked. You can assign multiple <samp>onClick</samp> listeners with this command.
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td class="code">bind(names, fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Register one or more callbacks to be triggered. See <a href="documentation/index.html#callbacks">using callbacks</a> for more information.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">unbind(names)</td>
-		<td><code>API</code></td>
-		<td>
-			Removes callback functions from the tool See <a href="documentation/index.html#callbacks">using callbacks</a> for more information.
 		</td>
 	</tr>
 </table>

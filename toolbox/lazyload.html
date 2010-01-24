@@ -282,22 +282,22 @@ api.load();
 	</tr>
 	
 </table>
- 
+
 <a name="events"></a>
 <h2>Events</h2>
- 
+
 <p>
-	List of supported events. These can be supplied in configuration or using API or with jQuery <samp>bind</samp> method. Read more about <a href="${jqt}/documentation/index.html#events">jQuery Tools event model</a>.
+	Make sure you have read about <a href="${jqt}/documentation/events.html">Events in jQuery Tools</a>. All event listeners receives <a href="${jqt}/documentation/events.html#object">Event Object</a> as the first argument.
 </p>
 
 <table class="listing">
 	<thead>
 		<tr>
-			<th>Event name</th>
-			<th>Description</th>
+			<th>event</th>
+			<th nowrap>When it occurs?</th>
 		</tr>
-	</thead> 
-	
+	</thead>
+
 	<tr>
 		<td class="code">onBeforeLoad</td>
 		<td>
@@ -307,7 +307,7 @@ api.load();
 	<tr>
 		<td class="code">onError</td>
 		<td>
-			when an error occurred on individual element's loading. wrong url, timeout etc..
+			when an error occurred on individual element's loading. wrong url, timeout etc.. the loaded element is supplied in second argument and the error is supplied in third argument
 		</td>
 	</tr>
 	<tr>

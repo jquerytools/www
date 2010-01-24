@@ -234,45 +234,6 @@ instance.reload();
 		<td>Whether items will be scrolled vertically. If set to <samp>false</samp>, items will be scrolled horizontally.</td>
 	</tr>
 
-	<tr><td colspan="3" style="background-color:#efefef"></td></tr>
-
-	<tr>
-		<td class="code">onBeforeSeek</td>
-		<td><code></code></td>
-		<td>
-			This callback function is triggered before items are scrolled. A function which returns <samp>false</samp> will prevent scrolling from taking place.
-
-			<p>
-				The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second is the index number the item being seeked to.
-			</p>
-
-			<p>
-				You have the ability to change the speed of the animation inside this function by changing the <samp>this.getConf().speed</samp> configuration option.
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onSeek</td>
-		<td><code></code></td>
-		<td>
-			This callback function is triggered after items have been scrolled.
-
-			<p>
-				The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second is the index number the item being seeked to.
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onStart</td>
-		<td><code></code></td>
-		<td>
-			<strong>Since 1.1.2</strong>. This callback function is triggered just before the items start scrolling. This occurs between the <samp>onBeforeSeek</samp> and <samp>onBeforeSeek</samp> events. All API methods rely on the fact that the scollable is already at its target position. By returning <samp>false</samp> inside this function you can prevent the disabling of the navigational elements. If you want to disable the seeking animation you must return <samp>false</samp> inside the <samp>onBeforeSeek</samp> event.
-
-			<p>
-				The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second is the index number the item being seeked to.
-			</p>
-		</td>
-	</tr>
 </table>
 
 <a name="multiple"></a>
@@ -314,30 +275,50 @@ $(".vertical").scrollable();
 </div>
 </pii:code>
 
+<%--{{{  Events --%>
 
+<a name="events"></a
 <a name="callbacks"></a>
-<h3>Using callback functions</h3>
+<h3>Events</h3>
 
 <p>
-	Here is an example of an <samp>onSeek</samp> callback function. Inside any callback function the <samp>this</samp> variable is a pointer to the scrollable scripting API.
+	Make sure you have read about <a href="${jqt}/documentation/events.html">Events in jQuery Tools</a>. All event listeners receives <a href="${jqt}/documentation/events.html#object">Event Object</a> as the first argument and the second argument is the index number of the scrollable being seeked to.
 </p>
 
-<pii:code>
-$("div.scrollable").scrollable({
-	onSeek: function() {
-		alert("current page is " + this.getPageIndex());
-	},
+<table class="listing">
+	<thead>
+		<tr>
+			<th>event</th>
+			<th nowrap>When it occurs?</th>
+		</tr>
+	</thead>
 
-	// another configuration variable as an example
-	clickable: false
+	<tr>
+		<td class="code">onBeforeSeek</td>
+		<td>
+			before items are scrolled. 
+			<p>
+				You have the ability to change the speed of the animation inside this function by changing the <samp>api.getConf().speed</samp> configuration option.
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td class="code">onSeek</td>
+		<td>
+			after items have been scrolled.
+		</td>
+	</tr>	
+	<tr>
+		<td class="code">onReload</td>
+		<td>
+			when a <samp>reload()</samp> call is made. This call is typically called when new items are added inder the <samp>items</samp> element. This call is made <em>once</em> when scrollable is initialized.
+		</td>
+	</tr>	
+</table>
+<%--}}}--%>
 
-});
-</pii:code>
-
-<p>
-	See the <a href="documentation/index.html#callbacks">Using Callback Functions</a> section of the User's Guide for a more detailed description about this important topic.
-</p>
-
+	
+<%--{{{  API--%>
 
 <a name="api"></a>
 <h2>Scripting <em>API</em></h2>
@@ -556,45 +537,9 @@ api.next(function() {
 			Programmatically "clicks" the item at the specified index. Scrolling takes place, the item is made active, and any event handlers are triggered.
 		</td>
 	</tr>
-
-	<tr><td colspan="3" style="background-color:#efefef"></td></tr>
-
-	<tr>
-		<td class="code">onBeforeSeek(fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Registers a new callback function that is triggered before items are scrolled. The callback is given as the argument. Returning <samp>false</samp> in the callback will prevent scrolling from taking place. You can assign multiple <samp>onBeforeSeek</samp> listeners with this command.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onSeek(fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Registers a new callback function that is triggered after items have been scrolled. The callback is given as the argument. You can assign multiple <samp>onSeek</samp> listeners with this command.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onReload(fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Registers a new callback function that is triggered when a <samp>reload()</samp> call is made. This call is typically called when new items are added inder the <samp>items</samp> element. Note this call is made <em>once</em> when scrollable is initialized.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">bind(names, fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Register one or more callbacks to be triggered. See <a href="documentation/index.html#callbacks">using callbacks</a> for more information.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">unbind(names)</td>
-		<td><code>API</code></td>
-		<td>
-			Removes callback functions from the tool See <a href="documentation/index.html#callbacks">using callbacks</a> for more information.
-		</td>
-	</tr>
 </table>
+
+<%--}}}--%>
 
 <h3 style="margin-top:15px">Arguments and return value</h3>
 
@@ -638,13 +583,6 @@ $("div.scrollable").scrollable().click(0).seekTo(2, 3000, function() {
 
 	<img src="img/scrollable/arrow/left_dark.png" style="margin-right:20px" />
 	<img src="img/scrollable/arrow/right_dark.png" style="margin-right:20px" />
-</p>
-
-<a name="plugins"></a>
-<h2 style="border-bottom:1px solid #333;margin-top:70px">Plugins</h2>
-
-<p>
-	You can find a <a href="demos/scrollable/plugins/index.html">demo page</a> that shows all of the plugins in action and their installation notes.
 </p>
 
 

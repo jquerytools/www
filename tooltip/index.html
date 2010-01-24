@@ -225,37 +225,6 @@ events: {
 		</td>
 	</tr>
 
-
-	<tr><td colspan="3" style="background-color:#efefef"></td></tr>
-
-	<tr>
-		<td class="code">onBeforeShow</td>
-		<td><code></code></td>
-		<td>
-			This callback function is triggered before the tooltip is shown. Returning <samp>false</samp> in the callback prevents the tooltip from appearing. The callback function receives one argument specifying the tooltip position to be used. This is an object with values <samp>{top: integer, left: integer}</samp>
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onShow</td>
-		<td><code></code></td>
-		<td>
-			This callback function is triggered after the tooltip is shown.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onBeforeHide</td>
-		<td><code></code></td>
-		<td>
-			This callback function is triggered before the tooltip is hidden. Returning <samp>false</samp> in the callback prevents it from hiding.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onHide</td>
-		<td><code></code></td>
-		<td>
-			This callback function is triggered when the tooltip is hidden.
-		</td>
-	</tr>
 </table>
 
 
@@ -273,10 +242,48 @@ events: {
 </p>
 
 <a name="callbacks"></a>
-<h3>Using callback functions</h3>
+<h2>Events</h2>
 
 <p>
-	Inside any callback function, the <samp>this</samp> variable is a pointer to the <a href="#api">tooltip scripting API</a>. Here is an example of an <samp>onShow</samp> callback function that fades out the trigger element when the tooltip is shown:
+	Make sure you have read about <a href="${jqt}/documentation/events.html">Events in jQuery Tools</a>. All event listeners receives <a href="${jqt}/documentation/events.html#object">Event Object</a> as the first argument.
+</p>
+
+<table class="listing">
+	<thead>
+		<tr>
+			<th>event</th>
+			<th nowrap>When it occurs?</th>
+		</tr>
+	</thead>
+	
+	<tr>
+		<td class="code">onBeforeShow</td>
+		<td>
+			before the tooltip is shown. second argument is the tooltip position to be used. This is an object with values <samp>{top: integer, left: integer}</samp>
+		</td>
+	</tr>
+	<tr>
+		<td class="code">onShow</td>
+		<td>
+			after the tooltip is shown.
+		</td>
+	</tr>
+	<tr>
+		<td class="code">onBeforeHide</td>
+		<td>
+			before the tooltip is hidden
+		</td>
+	</tr>
+	<tr>
+		<td class="code">onHide</td>
+		<td>
+			when the tooltip is hidden.
+		</td>
+	</tr>
+</table>	
+	
+<p>
+	Here is an example of an <samp>onShow</samp> callback function that fades out the trigger element when the tooltip is shown:
 </p>
 
 <pii:code>
@@ -289,10 +296,6 @@ $("label").tooltip({
 
 });
 </pii:code>
-
-<p>
-	See the <a href="documentation/index.html#callbacks">Using Callback Functions</a> section of the User's Guide for a more detailed dscription about this important topic.
-</p>
 
 <a name="events"></a>
 <h3>Event management</h3>
@@ -428,53 +431,6 @@ api.show();
 		<td><code>Object</code></td>
 		<td>
 			Returns the tooltip configuration.
-		</td>
-	</tr>
-
-	<tr>
-		<td class="code">onBeforeShow(fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Registers a new callback function that is triggered before the tooltip is shown. The callback is given as the argument. Returning <samp>false</samp> in the callback prevents the tooltip from showing. You can assign multiple <samp>onBeforeShow</samp> listeners with this command. See <a href="documentation/index.html#callbacks">using callbacks</a> for more information.
-
-			<p>
-				The first <em>argument</em> for the callback function is the <a href="${jqt}/documentation/index.html#event_object">Event</a> object and the second is the tooltip position to be used. This is an object with values <samp>{top: integer, left: integer}</samp>.
-			</p>
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onShow(fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Registers a new callback function that is triggered after the tooltip is shown. The callback is given as the argument. You can assign multiple <samp>onClick</samp> listeners with this command.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onBeforeHide(fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Registers a new callback function that is triggered before the tooltip is hidden. The callback is given as the argument. Returning <samp>false</samp> in the callback prevents the tooltip from hiding. You can assign multiple <samp>onBeforeHide</samp> listeners with this command.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onHide(fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Registers a new callback function that is triggered after the tooltip is hidden. The callback is given as the argument. You can assign multiple <samp>onHide</samp> listeners with this command.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">bind(names, fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Register one or more callbacks to be triggered. See <a href="documentation/index.html#callbacks">using callbacks</a> for more information.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">unbind(names)</td>
-		<td><code>API</code></td>
-		<td>
-			Removes callback functions from the tool See <a href="documentation/index.html#callbacks">using callbacks</a> for more information.
 		</td>
 	</tr>
 </table>

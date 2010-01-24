@@ -20,7 +20,7 @@
 	Start entering text on the fields below and you'll see the exposing effect:
 </p>
 
-<%@ include file="demos/expose/form.htm" %>
+<%@ include file="../demos/expose/form.htm" %>
 
 
 
@@ -229,46 +229,52 @@ $("JQUERY SELECTOR").expose({
 		When this tool is initialized (constructed), the return value is a jQuery object associated with the selector. By setting this property to <samp>true</samp>, the return value is the <a href="#api">JavaScript API</a> instead. If the selector returns multiple elements, the API of the <em>last</em> element will be returned. Read more about <a href="${jqt}/documentation/index.html#api">accessing the tool API</a> for more information.
 		</td>
 	</tr>
+</table>
 
+<a name="events"></a>
+<a name="callbacks"></a>
+<h2>Events</h2>
 
-	<tr><td colspan="3" style="background-color:#efefef"><a name="callbacks"></a></td></tr>
+<p>
+	Make sure you have read about <a href="${jqt}/documentation/events.html">Events in jQuery Tools</a>. All event listeners receives <a href="${jqt}/documentation/events.html#object">Event Object</a> as the first argument.
+</p>
 
+<table class="listing">
+	<thead>
+		<tr>
+			<th>event</th>
+			<th nowrap>When it occurs?</th>
+		</tr>
+	</thead>
+	
 	<tr>
 		<td class="code">onBeforeLoad</td>
-		<td><code></code></td>
 		<td>
-			This callback function is triggered before the exposing effect. Returning <samp>false</samp> or calling <samp>event.preventDefault</samp> in the callback prevents exposing from occurring.
+			before the masking effect
 		</td>
 	</tr>
 	<tr>
 		<td class="code">onLoad</td>
-		<td><code></code></td>
 		<td>
-			This callback function is triggered after exposing takes place.
+			after the masking effect takes place.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">onBeforeClose</td>
-		<td><code></code></td>
 		<td>
-			This callback function is triggered before exposing is closed. Returning <samp>false</samp> or calling <samp>event.preventDefault</samp> in the callback prevents it from closing.
+			before the mask is closed
 		</td>
 	</tr>
 	<tr>
 		<td class="code">onClose</td>
-		<td><code></code></td>
 		<td>
-			This callback function is triggered when expose is closed.
+			when expose is closed
 		</td>
 	</tr>
 </table>
 
-
-<a name="callbacks"></a>
-<h3>Using callback functions</h3>
-
 <p>
-	Here is an example of an <samp>onBeforeLoad</samp> callback function. Inside any callback function the <samp>this</samp> variable is a pointer to the <a href="#api">expose scripting API</a>.
+	Here is an example of an <samp>onBeforeLoad</samp> callback function given in configuration. Inside any callback function the <samp>this</samp> variable is a pointer to the <a href="#api">expose scripting API</a>.
 </p>
 
 <pii:code>
@@ -282,10 +288,7 @@ $("#myDiv").expose({
 	}
 });
 </pii:code>
-
-<p>
-	See the <a href="documentation/index.html#callbacks">Using Callback Functions</a> section in the User's Guide for a more detailed description about this important topic.
-</p>
+<a name="events"></a>
 
 
 <a name="api"></a>
@@ -364,51 +367,6 @@ api.onLoad(function() {
 		<td><code>Object</code></td>
 		<td>
 			Returns the exposing configuration.
-		</td>
-	</tr>
-
-	<tr><td colspan="3" style="background-color:#efefef"></td></tr>
-
-	<tr>
-		<td class="code">onBeforeLoad(fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Registers a new callback function that is triggered before the exposing effect. Returning <samp>false</samp> or calling <samp>event.preventDefault</samp> in the callback prevents exposing from occurring. The callback is given as the argument. You can assign multiple <samp>onBeforeLoad</samp> listeners with this command.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onLoad(fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Registers a new callback function that is triggered after exposing takes effect. The callback is given as the argument. You can assign multiple <samp>onLoad</samp> listeners with this command.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onBeforeClose(fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Registers a new callback function that is triggered before exposing is closed. Returning <samp>false</samp> or calling <samp>event.preventDefault</samp> in the callback prevents it from closing. The callback is given as the argument. You can assign multiple <samp>onBeforeClose</samp> listeners with this command.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onClose(fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Registers a new callback function that is triggered when exposing is closed. The callback is given as the argument. You can assign multiple <samp>onClose</samp> listeners with this command.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">bind(names, fn)</td>
-		<td><code>API</code></td>
-		<td>
-			Register one or more callbacks to be triggered. See <a href="documentation/index.html#callbacks">using callbacks</a> for more information.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">unbind(names)</td>
-		<td><code>API</code></td>
-		<td>
-			Removes callback functions from the tool. See <a href="documentation/index.html#callbacks">using callbacks</a> for more information.
 		</td>
 	</tr>
 

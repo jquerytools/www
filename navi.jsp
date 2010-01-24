@@ -111,10 +111,13 @@
 	</c:if>	
 	
 	<div class="box">
-		<h2>Documentation</h2>
+		<h2>Using jQuery Tools</h2>
 		
 		<ul>
-			<li><a href="${jqt}/documentation/index.html">User's Guide</a></li>
+			<li><a href="${jqt}/documentation/index.html">Introduction</a>
+			<li><a href="${jqt}/documentation/basics.html">The Basics</a>
+			<li><a href="${jqt}/documentation/events.html">Events</a></li>
+			<li><a href="${jqt}/documentation/advanced.html">Advanced Topics</a></li>
 			<li><a href="${jqt}/documentation/performance.html">Performance</a></li>			
 		</ul>  
 		
