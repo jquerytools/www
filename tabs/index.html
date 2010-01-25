@@ -291,7 +291,11 @@ $("<tabs_selector>").tabs("<pane_selector>", {
 		<td class="code">lazyload</td>
 		<td><code>false</code></td>
 		<td>
-			<strong>since 1.2.0</strong> Enables lazyloading for the Tabs. If you have large images or background images on the panes enabling this property will make your page load faster. Your heavy files will only be loaded from the server when they are displayed for the user. You can also lazyload complete HTML pages. Make sure that the lazyload tool is include on your page. 
+			<strong>since 1.2.0</strong> Enables lazyloading for the Tabs. If you have large images or background images on the panes enabling this property will make your page load faster. Those heavy files will not be loaded from the server before they are actually displayed for the user. Make sure that the lazyload tool is included on your page. 
+			
+			<p>
+				You can have one or more lazyloaded elements on a pane or the tab pane itself can have a background image. You can also lazyload complete HTML pages. 
+			</p>
 			
 			<p>
 				Take a look at lazyload <a href="${jqt}/toolbox/lazyload.html#tools">configuration possibilities</a> and a demo about <a href="${jqt}/demos/toolbox/lazyload/tabs.html">lazyloaded tabs</a>.

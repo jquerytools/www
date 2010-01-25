@@ -163,7 +163,6 @@ events: {
 
 		</td>
 	</tr>
-
 	<tr>
 		<td class="code">lazy</td>
 		<td><code>undefined</code></td>
@@ -171,6 +170,21 @@ events: {
 			<strong>Since 1.1.0.</strong> Waits to perform the tooltip initialization until the tooltip is first being used. If you have many tooltip elements on the page, this will make your page load faster. By default this is enabled if you have more than 20 tooltips on the page. You can explicitly enable or disable this feature by setting this to <samp>true</samp> or <samp>false</samp> respectively. Note: Currently this feature must be disabled when using it together with the <a href="#dynamic">dynamic</a> plugin.
 		</td>
 	</tr>
+	<tr>
+		<td class="code">lazyload</td>
+		<td><code>false</code></td>
+		<td>
+			<strong>since 1.2.0</strong> If you have large images or background images inside tooltips enabling this property will make your page load faster. Those heavy files will not be loaded from the server before they are actually displayed for the user. Make sure that the lazyload tool is included on your page. 
+			
+			<p>
+				You can have one or more lazyloaded elements inside a tooltip. You can also load complete HTML pages inside the tooltip.  
+			</p>
+			
+			<p>
+				Take a look at lazyload <a href="${jqt}/toolbox/lazyload.html#tools">configuration possibilities</a> and a demo about <a href="${jqt}/demos/toolbox/lazyload/tooltip.html">lazyloaded tooltip</a>.
+			</p>
+		</td>
+	</tr>	 	
 	<tr>
 		<td class="code">offset</td>
 		<td><code>[0, 0]</code></td>
