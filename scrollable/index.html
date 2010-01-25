@@ -127,7 +127,7 @@ $("JQUERY SELECTOR").scrollable({
 		<td class="code">items</td>
 		<td><code>".items"</code></td>
 		<td>
-			The scrollable root element is not directly used as a parent for the scrollable items. The root must have one nested element that contains the actual items. By default scrollable uses the <em>first and only element</em> inside the root to be used as a wrapper for the items. It does not have to have any particular CSS class name. A simple DIV is fine.
+			The scrollable root element is not directly used as a parent for the scrollable items. The root must have one nested element that contains the actual items. By default scrollable uses the <em>first and only element</em> inside the root to be used as a wrapper for the items. It does not have to have any particular CSS class name. A simple <samp>div</samp> is fine.
 
 			<p>
 				If you for some reason have multiple elements inside the root element, then scrollable looks for the element specified by this property. By default an element with the class name "items" is used, but you can use any jQuery selector you like in this property.
@@ -160,7 +160,7 @@ $("JQUERY SELECTOR").scrollable({
 			</p>
 
 <pii:code>
-// grab second scrollabe and it's API
+// grab second scrollabe and its API
 var instance = $(".horizontal").eq(1).scrollable();
 
 // disable keyboard
@@ -267,11 +267,11 @@ $(".vertical").scrollable();
 </pii:code>
 
 <p>
-	Now each of the scrollable uses the default selectors <samp>.next</samp> and <samp>.next</samp> to look for the navigational elements causing multiple elements to be returned. How do we know which navigational element controls which scrollable? The problem can be solved by enclosing each scrollable <em>and</em> it's navigational actions inside a mutual wrapper element. For example:
+	Now each of the scrollable uses the default selectors <samp>.next</samp> and <samp>.next</samp> to look for the navigational elements causing multiple elements to be returned. How do we know which navigational element controls which scrollable? The problem can be solved by enclosing each scrollable <em>and</em> its navigational actions inside a mutual wrapper element. For example:
 </p>
 
 <pii:code lang="html">
-<!-- 1st scrollable and it's navigational actions are wrapped inside an extra DIV -->
+<!-- 1st scrollable and its navigational actions are wrapped inside an extra DIV -->
 <div>
 	<a class="next"/>
 	<div class="scrollable">
@@ -297,21 +297,21 @@ $(".vertical").scrollable();
 <h3>Events</h3>
 
 <p>
-	Make sure you have read about <a href="${jqt}/documentation/events.html">Events in jQuery Tools</a>. All event listeners receives <a href="${jqt}/documentation/events.html#object">Event Object</a> as the first argument and the second argument is the index number of the scrollable being seeked to.
+	Make sure you have read about <a href="${jqt}/documentation/events.html">Events in jQuery Tools</a>. All event listeners receives <a href="${jqt}/documentation/events.html#object">Event Object</a> as the first argument and the second argument is the index number of the scrollable being sought to.
 </p>
 
 <table class="listing">
 	<thead>
 		<tr>
 			<th>event</th>
-			<th nowrap>When it occurs?</th>
+			<th nowrap>When does it occur?</th>
 		</tr>
 	</thead>
 
 	<tr>
 		<td class="code">onBeforeSeek</td>
 		<td>
-			before items are scrolled. 
+			Before items are scrolled.
 			<p>
 				You have the ability to change the speed of the animation inside this function by changing the <samp>api.getConf().speed</samp> configuration option.
 			</p>
@@ -320,13 +320,13 @@ $(".vertical").scrollable();
 	<tr>
 		<td class="code">onSeek</td>
 		<td>
-			after items have been scrolled.
+			After items have been scrolled.
 		</td>
 	</tr>	
 	<tr>
 		<td class="code">onReload</td>
 		<td>
-			when a <samp>reload()</samp> call is made. This call is typically called when new items are added inder the <samp>items</samp> element. This call is made <em>once</em> when scrollable is initialized.
+			When a <samp>reload()</samp> call is made. This call is typically called when new items are added under the <samp>items</samp> element. This call is made <em>once</em> when scrollable is initialized.
 		</td>
 	</tr>	
 </table>
