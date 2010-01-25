@@ -185,7 +185,7 @@ $(function() {
 
 	<ul>
 		<li>
-			new <samp>onStart</samp> callback function which is triggered just before the items start scrolling. This happens between <samp>onBeforeSeek</samp> and <samp>onBeforeSeek</samp> events. All API methods rely on the fact that the scollable is already on it's target position. By returning <samp>false</samp> inside this function you can prevent the disabling of the navigational elements.
+			new <samp>onStart</samp> callback function which is triggered just before the items start scrolling. This happens between <samp>onBeforeSeek</samp> and <samp>onBeforeSeek</samp> events. All API methods rely on the fact that the scollable is already on its target position. By returning <samp>false</samp> inside this function you can prevent the disabling of the navigational elements.
 		</li>
 		<li>
 			Ability to change the speed inside <samp>onBeforeSeek</samp> event. Thanks <a href="http://flowplayer.org${jqt}/forum/35/27451">blacktrash</a></li>
@@ -657,7 +657,7 @@ $(function() {
 		<li><samp>$.tools.addTabEffect()</samp> is no longer used for adding new custom effects. Use <samp>$.tools.tabs.addEffect()</samp> instead</li>
 		<li>fixed a bug where the last tab was opened if there was an unidentified hash value on the URL</li>
 		<li>
-			<samp>onClick</samp> event is called after the effect has *really* finished it's job. If the effect has animations the event is called <em>after</em> the animation has been finished. If you have made your own effects for tabs the implementation has <a href="tabs.html#effects">changed a bit</a>. Look for the <samp>done</samp> argument.
+			<samp>onClick</samp> event is called after the effect has *really* finished its job. If the effect has animations the event is called <em>after</em> the animation has been finished. If you have made your own effects for tabs the implementation has <a href="tabs.html#effects">changed a bit</a>. Look for the <samp>done</samp> argument.
 		</li>
 		<li>
 			The ability to instantiate multiple tabs or accordions <a href="${jqt}/demos/tabs/multiple.html">with a single call</a>
@@ -875,7 +875,7 @@ $(function() {
 	<ul>
 		<li>flashembed() can insert flash into page even thougt DOM has not been loaded yet. it incorporates an internal DOM checking utility. this way nested OBJECT's API is not returned and so it's designed to be used in simple embedding.</li>
 		<li>Fixed a bug on Safari when no flashvars was given.</li>
-		<li>Fixed a bug on IE where an id is required for object tag in order to access it's public API.</li>
+		<li>Fixed a bug on IE where an id is required for object tag in order to access its public API.</li>
 		<li>Lazy Loading was totally removed from this release - it is no longer marked as deprecated.</li>
 	</ul>
 
@@ -909,7 +909,7 @@ $(function() {
 
 	<ul>
 		<li>Lazy loading - so that your flash objects won't be loaded until certain event, usually click event</li>
-		<li>jQuery dependency is removed because this project is used in many different settings. of course jQuery is still strongly supported due to it's excellent selector syntax</li>
+		<li>jQuery dependency is removed because this project is used in many different settings. of course jQuery is still strongly supported due to its excellent selector syntax</li>
 		<li>Alternate content via custom function</li>
 	</ul>
 
