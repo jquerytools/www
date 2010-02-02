@@ -51,7 +51,7 @@ pre em {
 	<h3>Integrate to your existing pages</h3>
 	
 	<p>
-		Lazyload works out of the box. Add this call to your page <samp>$(":invisible").lazyload(true);</samp> and your done.  If you have lot's of images this will have instant effect for your site. Your images are not loaded until they become visible when user scrolls the page. View <a href="${jqt}/demos/toolbox/lazyload/index.html">demo</a>.
+		Lazyload works out of the box. Add this call to your page <samp>$(":invisible").lazyload(true);</samp> and your done.  If you have lots of images this will have instant effect for your site. Your images are not loaded until they become visible when user scrolls the page. View <a href="${jqt}/demos/toolbox/lazyload/index.html">demo</a>.
 	</p>
 </div>	 
  
@@ -144,7 +144,7 @@ api.load();
 <h2>Loaders and effects</h2>
  
 <p>
-	The behaviour of this tool is based on loaders and effects. Loader is responsible of loading the element from the server and effect will show the element to the user after the loading is performed. Lazyload has three built-in loaders for images, background images and HTML and two effects called "show" and "grow". 
+	The behaviour of this tool is based on loaders and effects. The loader is responsible of loading the element from the server and effect will show the element to the user after the loading is performed. Lazyload has three built-in loaders for images, background images and HTML and two effects called "show" and "grow".
 </p>
 
 <p>
@@ -227,7 +227,7 @@ api.load();
 <h3>Grow effect</h3>
  
 <p>
-	This effect performs an growing (or shrinking) animation for a specified parent element of the loadable element. The dimensions are determined from the element being loaded. This can be either image dimensions or if the loaded element is a HTML DIV for example the dimensions are CSS <samp>width</samp> and <samp>height</samp> dimensions are being used. This effect has it's own set of configuration properties as follows:
+	This effect performs an growing (or shrinking) animation for a specified parent element of the loadable element. The dimensions are determined from the element being loaded. This can be either image dimensions or, if the loaded element is a HTML <samp>div</samp> for example, the dimensions are CSS <samp>width</samp> and <samp>height</samp> dimensions are being used. This effect has its own set of configuration properties as follows:
 </p>
 
 <table class="listing">
@@ -277,28 +277,28 @@ api.load();
 		<td class="code">load()</td>
 		<td><code>API</code></td>
 		<td>
-			Perform loading.
+			Performs loading.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">load(index)</td>
 		<td><code>API</code></td>
 		<td>
-			Perform loading only for element specified by the index (stating from 0).
+			Performs loading only for the element specified by the index (starting from 0).
 		</td>
 	</tr>
 	<tr>
 		<td class="code">load(start, len)</td>
 		<td><code>API</code></td>
 		<td>
-			Load <samp>len</samp> amount of elements beginning from <samp>start</samp> index.
+			Loads the amount of <samp>len</samp> elements beginning from <samp>start</samp> index.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">load(jQuery)</td>
 		<td><code>API</code></td>
 		<td>
-			Load elements specified in the argument. The supplied elements must be contained on the initial set of lazyloaded elements.
+			Loads elements specified in the argument. The supplied elements must be contained in the initial set of lazyloaded elements.
 		</td>
 	</tr>
 
@@ -316,14 +316,14 @@ api.load();
 <h2>Events</h2>
 
 <p>
-	Make sure you have read about <a href="${jqt}/documentation/events.html">Events in jQuery Tools</a>. All event listeners receives <a href="${jqt}/documentation/events.html#object">Event Object</a> as the first argument.
+	Make sure you have read about <a href="${jqt}/documentation/events.html">Events in jQuery Tools</a>. All event listeners receive <a href="${jqt}/documentation/events.html#object">Event Object</a> as the first argument.
 </p>
 
 <table class="listing">
 	<thead>
 		<tr>
 			<th>event</th>
-			<th nowrap>When it occurs?</th>
+			<th nowrap>When does it occur?</th>
 		</tr>
 	</thead>
 
@@ -336,19 +336,19 @@ api.load();
 	<tr>
 		<td class="code">onError</td>
 		<td>
-			When an error occurred on individual element's loading. wrong url, timeout etc.. the loaded element is supplied in second argument and the error is supplied in third argument.
+			When an error occurred during an individual element's loading. Wrong url, timeout etc. The loaded element is supplied in the second argument and the error is supplied in the third argument.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">onLoad</td>
 		<td>
-			When individual element has been loaded. The loaded element is supplied in second argument.
+			When a specific element has been loaded. The loaded element is supplied in the second argument.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">onLoadAll</td>
 		<td>
-			When all elements specified for <samp>load</samp> method has been loaded. Loaded elements are supplied in second argument.
+			When all elements specified for <samp>load</samp> method have been loaded. Loaded elements are supplied in the second argument.
 		</td>
 	</tr>
 	
@@ -359,7 +359,7 @@ api.load();
 <h2>Creating Loaders</h2>
  
 <p>
-	You can add new loaders with <samp>addLoader</samp> function. Here is a skeleton for a loader:
+	You can add new loaders with the <samp>addLoader</samp> function. Here is a skeleton for a loader:
 </p>
 
 <pii:code>
@@ -381,7 +381,7 @@ $.tools.lazyload.addLoader(".myselector",
 <h2>Creating Effects</h2>
  
 <p>
-	You can add new loaders with <samp>addLoader</samp> function. Here is a skeleton for an effect:
+	You can add new loaders with the <samp>addEffect</samp> function. Here is a skeleton for an effect:
 </p>
 
 <pii:code>

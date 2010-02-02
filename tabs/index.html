@@ -70,21 +70,21 @@ div.panes img {
 
 <ul>
 	<li>
-		<strong>Simple to use</strong>. You need a single line of JavaScript to get started. There are no redundant features.</li>
+		<strong>Simple to use.</strong> You need a single line of JavaScript to get started. There are no redundant features.</li>
 	<li>
 		<strong>An effect framework</strong> which can be used to implement <a href="${jqt}/demos/tabs/accordion.html">vertical accordions</a>, <a href="${jqt}/demos/tabs/accordion-horizontal.html">horizontal accordions</a> and more.
 	</li>
 	<li>
-		<strong>Built-in effects</strong> which include: <samp>default, fade, slide, ajax</samp> and <samp>horizontal</samp> and you can easily <a href="#effects">make your own effects</a> or modify the existing default effects.
+		<strong>Built-in effects</strong> which include: <samp>default</samp>, <samp>fade</samp>, <samp>slide</samp>, <samp>ajax</samp> and <samp>horizontal</samp> and you can easily <a href="#effects">make your own effects</a> or modify the existing default effects.
 	</li>
 	<li>
-		<strong>Plugin framework</strong> Built-in plugins include: <a href="#slideshow">slideshow</a> and <a href="#history">history</a> and you can easily <a href="${jqt}/documentation/index.html#plugins">make your own plugins</a>.
+		<strong>Plugin framework.</strong> Built-in plugins include: <a href="#slideshow">slideshow</a> and <a href="#history">history</a> and you can easily <a href="${jqt}/documentation/index.html#plugins">make your own plugins</a>.
 	</li>
 	<li>
-		<strong>Cross linking</strong>. If the tab content areas contain any anchor links to other tab's content areas, the correct tab is automatically opened when those links are clicked.
+		<strong>Cross linking.</strong> If the tab content areas contain any anchor links to other tab's content areas, the correct tab is automatically opened when those links are clicked.
 	</li>
 	<li>
-		<strong>Lightweight</strong>. The JavaScript file is only 2.9 Kb when minified. Compare this to the jQuery UI library where you'll have to have 130 Kb of minified code to get tabs and accordions working.
+		<strong>Lightweight.</strong> The JavaScript file is only 2.9 Kb when minified. Compare this to the jQuery UI library where you'll have to have 130 Kb of minified code to get tabs and accordions working.
 	</li>
 </ul>
 
@@ -247,11 +247,11 @@ $("<tabs_selector>").tabs("<pane_selector>", {
 			</p>
 
 			<ul>
-				<li><samp>'default'</samp>: a simple show / hide effect. The default behaviour for tabs.</li>
+				<li><samp>'default'</samp>: a simple show/hide effect. The default behaviour for tabs.</li>
 				<li><samp>'fade'</samp>: the tab contents are gradually shown from zero to full opacity.</li>
-				<li><samp>'ajax'</samp>: loads tab contents from the server using AJAX. <a href="demos/tabs/ajax.html">View example</a></li>
+				<li><samp>'ajax'</samp>: loads tab contents from the server using AJAX. <a href="demos/tabs/ajax.html">View example</a>.</li>
 				<li><samp>'slide'</samp>: a vertical sliding effect, suitable for <a href="demos/tabs/accordion.html">accordions</a>.</li>
-				<li><samp>'horizontal'</samp> a horizontal sliding effect, suitable for <a href="demos/tabs/accordion-horizontal.html">horizontal accordions</a>.</li>
+				<li><samp>'horizontal'</samp>: a horizontal sliding effect, suitable for <a href="demos/tabs/accordion-horizontal.html">horizontal accordions</a>.</li>
 			</ul>
 
 			<p>
@@ -270,14 +270,14 @@ $("<tabs_selector>").tabs("<pane_selector>", {
 		<td class="code">fadeInSpeed</td>
 		<td><code>200</code></td>
 		<td>
-			<strong>since 1.0.1</strong> Only available when used together with the "fade" effect. This property defines how fast (in milliseconds) the opened pane reveals its content.
+			<strong>Since 1.0.1.</strong> Only available when used together with the "fade" effect. This property defines how fast (in milliseconds) the opened pane reveals its content.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">fadeOutSpeed</td>
 		<td><code>0</code></td>
 		<td>
-			<strong>since 1.1.0</strong> Only available when used together with the "fade" effect. This property defines how fast (in milliseconds) the opened pane hides its content. A positive value here will result in a cool "crossfade" effect which is demonstrated in this <a href="#slideshow">slideshow demo</a>.
+			<strong>Since 1.1.0.</strong> Only available when used together with the "fade" effect. This property defines how fast (in milliseconds) the opened pane hides its content. A positive value here will result in a cool "crossfade" effect which is demonstrated in this <a href="#slideshow">slideshow demo</a>.
 		</td>
 	</tr>
 	<tr>
@@ -291,7 +291,7 @@ $("<tabs_selector>").tabs("<pane_selector>", {
 		<td class="code">lazyload</td>
 		<td><code>false</code></td>
 		<td>
-			<strong>since 1.2.0</strong> Enables lazyloading for the Tabs. If you have large images or background images on the panes enabling this property will make your page load faster. Those heavy files will not be loaded from the server before they are actually displayed for the user. Make sure that the lazyload tool is included on your page. 
+			<strong>Since 1.2.0.</strong> Enables lazyloading for the Tabs. If you have large images or background images on the panes enabling this property will make your page load faster. Those heavy files will not be loaded from the server before they are actually displayed for the user. Make sure that the lazyload tool is included on your page.
 			
 			<p>
 				You can have one or more lazyloaded elements on a pane or the tab pane itself can have a background image. You can also lazyload complete HTML pages. 
@@ -306,7 +306,7 @@ $("<tabs_selector>").tabs("<pane_selector>", {
 		<td class="code">rotate</td>
 		<td><code>false</code></td>
 		<td>
-			<strong>since 1.1.0</strong> When the last tab is open and the <samp>next()</samp> API call is invoked, then the tabs will start from the beginning and when the first tab is open and the <samp>prev()</samp> call is invoked the tabs will advance to the last tab. This is demonstrated in the <a href="#slideshow">slideshow demo</a>.
+			<strong>Since 1.1.0.</strong> When the last tab is open and the <samp>next()</samp> API call is invoked, then the tabs will start from the beginning and when the first tab is open and the <samp>prev()</samp> call is invoked the tabs will advance to the last tab. This is demonstrated in the <a href="#slideshow">slideshow demo</a>.
 		</td>
 	</tr>
 	<tr>
@@ -387,20 +387,20 @@ $("#tabs2").tabs("#panes2 > div");
 	<thead>
 		<tr>
 			<th>event</th>
-			<th nowrap>When it occurs?</th>
+			<th nowrap>When does it occur?</th>
 		</tr>
 	</thead>
 	
 	<tr>
 		<td class="code">onBeforeClick</td>
 		<td>
-			before a tab is clicked. second argument is the index number of the tab to be clicked
+			Before a tab is clicked. The second argument is the index number of the tab to be clicked.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">onClick</td>
 		<td>
-			after a tab is clicked. second argument is the index number of the tab being clicked
+			After a tab is clicked. The second argument is the index number of the tab being clicked.
 		</td>
 	</tr>
 </table>
@@ -436,7 +436,7 @@ api.onClick(function(index) {
 		<tr>
 			<th>method</th>
 			<th nowrap>return value</th>
-			<th>description / example</th>
+			<th>description/example</th>
 		</tr>
 	</thead>
 
@@ -444,21 +444,21 @@ api.onClick(function(index) {
 		<td class="code">click(index)</td>
 		<td><code>API</code></td>
 		<td>
-			Activates the tab specified in the argument. The argument can be either an <samp>integer</samp> number specifying the tab index (starting from 0) or, when tabs are <samp>A</samp> tags, it can be the <samp>href</samp> attribute as a quoted <samp>string</samp>.
+			Activates the tab specified in the argument. The argument can be either an <samp>integer</samp> number specifying the tab index (starting from 0) or, when the tabs are <samp>a</samp> tags, it can be the <samp>href</samp> attribute as a quoted <samp>string</samp>.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">getConf()</td>
 		<td><code>Object</code></td>
 		<td>
-			<strong>since 1.0.1</strong>. Returns the configuration object for the tabs instance. This object can be modified and the changes are dynamically reflected in the behaviour of the tabs.
+			<strong>Since 1.0.1.</strong> Returns the configuration object for the tabs instance. This object can be modified and the changes are dynamically reflected in the behaviour of the tabs.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">getCurrentPane()</td>
 		<td><code>jQuery</code></td>
 		<td>
-			Returns current pane as a jQuery object.
+			Returns the current pane as a jQuery object.
 		</td>
 	</tr>
 	<tr>
@@ -526,7 +526,7 @@ $.tools.tabs.addEffect("myEffect", function(tabIndex, done) {
 </pii:code>
 
 <p>
-	Your effect function is given two arguments. First, <samp>tabIndex</samp>, is the tab index number and the second, <samp>done</samp>, is a function that you <em>must call</em> after your effect finishes its job. This can be accomplished by calling <samp>done.call();</samp> .
+	Your effect function accepts two arguments. The first, <samp>tabIndex</samp>, is the tab index number and the second, <samp>done</samp>, is a function that you <em>must call</em> after your effect finishes its job. This can be accomplished by calling <samp>done.call();</samp> .
 </p>
 
 <h3>The default effect</h3>

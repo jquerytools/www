@@ -44,7 +44,7 @@ ul.tabs a:hover {
 	color:#fff;	
 }
 
-/* active tab uses a class name "current". it's highlight is also done by moving the background image. */
+/* active tab uses a class name "current". its highlight is also done by moving the background image. */
 ul.tabs a.current, ul.tabs a.current:hover, ul.tabs li.current a {
 	background-position: -420px -62px;		
 	cursor:default !important; 

@@ -25,15 +25,15 @@
 <h2>The role of <em>HTML</em></h2>
 
 <p>
-	jQuery Tools is primarly developed for "normal" HTML developers. You either have an existing website or start with a new one and these tools are used to enhance it. The goal here is to use "progressive enhancement" so that browsers that do not support JavaScript at all can still visualize your content.
+	jQuery Tools is primarily developed for "normal" HTML developers. You either have an existing website or start with a new one and these tools are used to enhance it. The goal here is to use "progressive enhancement" so that browsers that do not support JavaScript at all can still visualize your content.
 </p>
 
 <p>
-	These tools are not bound to any specific HTML structure. For example, tabs can be constructed from <samp>UL</samp>, <samp>OL</samp>, <samp>DL</samp>, <samp>DIV</samp> or <samp>TABLE</samp> elements. The same is true of our other jQuery Tools as well. The most important thing is to <em>understand</em> what you are doing and what HTML element is suitable for which specific situation.
+	These tools are not bound to any specific HTML structure. For example, tabs can be constructed from <samp>ul</samp>, <samp>ol</samp>, <samp>dl</samp>, <samp>div</samp> or <samp>table</samp> elements. The same is true of our other jQuery Tools as well. The most important thing is to <em>understand</em> what you are doing and what HTML element is suitable for which specific situation.
 </p>
 
 <p>
-	All tools deal with a <em>root element</em> which is typically a <samp>DIV</samp> element, but it does not have to be. For example, a root element for an overlay is the one that contains all overlayed data. In every tool you can have <em>any</em> combination of HTML inside the root element such as images, forms, Flash objects and tables.
+	All tools deal with a <em>root element</em> which is typically a <samp>div</samp> element, but it does not have to be. For example, a root element for an overlay is the one that contains all overlayed data. In every tool you can have <em>any</em> combination of HTML inside the root element such as images, forms, Flash objects and tables.
 </p>
 
 <!--}}}-->
@@ -80,13 +80,13 @@ $("#content ul.tabs").tabs("div.panes > div", {
 <pii:code>
 $(document).ready(function() {
 
-	// put all your JavaScript wizardy here
+	// put all your JavaScript wizardry here
 
 });
 </pii:code>
 
 <p>
-	This might be the most important thing in jQuery. Everything inside it will load as soon as the document is scriptable but <em>before</em> the whole page contents such as images and Flash are loaded. Everything that you stick inside its brackets is ready to go at the earliest possible moment. An unlike traditional old-school "onload" attribute in BODY tag you can have multiple <samp>document.ready</samp> blocks on your page.
+	This might be the most important thing in jQuery. Everything inside it will load as soon as the document is scriptable but <em>before</em> the whole page contents such as images and Flash are loaded. Everything that you stick inside its brackets is ready to go at the earliest possible moment. And as opposed to the traditional old-school "onload" attribute in the <samp>body</samp> tag you can have multiple <samp>document.ready</samp> blocks on your page.
 </p>
 
 <p>
@@ -162,7 +162,7 @@ p {
 </pii:code>
 
 <p>
-	and they will always be shortened to
+	Instead it will always be shortened to:
 </p>
 
 <pii:code lang="css">
@@ -172,7 +172,7 @@ body, p {
 </pii:code>
 
 <p>
-	This was just a primitive example of good CSS practice, but is used extensively in our CSS files.
+	This was just a primitive example of good CSS practice, but it is used extensively in our CSS files.
 </p>
 <!--}}}-->
 
@@ -182,13 +182,13 @@ body, p {
 <h2>Graphic design and presentation</h2>
 
 <p>
-	Since you are not tied to any specific HTML/CSS structures, you have lots of freedom in designing the look and feel of the tools. When designing the presentation of these tools or basically anything on the web, you have three important but different approaches to choose from. Now think of designing a rounded box for any content or a tooltip background for example. You have to choose one design pattern and stick with it. Here are the advantages and disadvantages of these choises:
+	Since you are not tied to any specific HTML/CSS structures, you have lots of freedom in designing the look and feel of the tools. When designing the presentation of these tools or basically anything on the web, you have three important but different approaches to choose from. Now think of designing a rounded box for any content or a tooltip background for example. You have to choose one design pattern and stick with it. Here are the advantages and disadvantages of these choices:
 </p>
 
 <h3><em>1.</em> CSS-based design</h3>
 
 <p>
-	This approach depends primarly on CSS for the presentation. You'll use background colors, border colors and styling, web fonts and have only minimal use of graphics.
+	This approach depends primarily on CSS for the presentation. You'll use background colors, border colors and styling, web fonts and have only minimal use of graphics.
 </p>
 
 
@@ -208,7 +208,7 @@ body, p {
 </ul>
 
 <p>
-	There are lot's of new features in the latest CSS version such as rounded borders, gradient borders, shadows and opacity, but these are not yet supported by every major browser. Some of the demos on this site uses these CSS3 features. If you are using Firefox 3.5, Safari 4.0 or other CSS3 compatible browser please take a look at the <a href="demos/combine/scrollable-gallery-with-tooltips.html">scrollable gallery with tooltips</a> demo and click on the thumbnails. You'll see nice looking drop shadows on the overlay. As you can see you can create stunning looks by only using CSS and the design will also behave well on older browsers.
+	There are lots of new features in the latest CSS version such as rounded borders, gradient borders, shadows and opacity, but these are not yet supported by every major browser. Some of the demos on this site uses these CSS3 features. If you are using Firefox&nbsp;3.5, Safari&nbsp;4.0 or other CSS3 compatible browser please take a look at the <a href="demos/combine/scrollable-gallery-with-tooltips.html">scrollable gallery with tooltips</a> demo and click on the thumbnails. You'll see nice looking drop shadows on the overlay. As you can see you can create stunning looks by only using CSS and the design will also behave well on older browsers.
 </p>
 
 
@@ -220,13 +220,13 @@ body, p {
 
 <ul>
 	<li class="plus">
-		<strong>best visual control</strong>. Your design will look exactly how you want it to look. No compromises.
+		<strong>Best visual control.</strong> Your design will look exactly how you want it to look. No compromises.
 	</li>
 	<li class="minus">
-		<strong>fixed size</strong>. Your elements' width and height is fixed. You have to optimize the content to fit inside elements and for excessive content you must rely on scripting or scrollbars.
+		<strong>Fixed size.</strong> Your elements' width and height is fixed. You have to optimize the content to fit inside elements and for excessive content you must rely on scripting or scrollbars.
 	</li>
 	<li class="minus">
-		<strong>heavy</strong>. More kilobytes to download and more requests to the server. Heavy use of images will slow down your pages.
+		<strong>Heavy.</strong> More kilobytes to download and more requests to the server. Heavy use of images will slow down your pages.
 	</li>
 </ul>
 
@@ -239,10 +239,10 @@ body, p {
 
 <ul>
 	<li class="plus">
-		<strong>best of both worlds</strong>. Scalable elements that look good.
+		<strong>Best of both worlds.</strong> Scalable elements that look good.
 	</li>
 	<li class="minus">
-		<strong>lots of work</strong>. You must master CSS and a tight integration with the graphics designer is needed. This approach needs more planning.
+		<strong>Lots of work.</strong> You must master CSS, and a tight integration with the graphics designer is needed. This approach requires more planning.
 	</li>
 </ul>
 
@@ -355,7 +355,7 @@ console.dir($.tools);
 </p>
 
 <p>
-	You can see each tool you have included and their versions. You can also see plugins and effects and their versions if you have included any from the <a href="download.html#combine">download page</a>. If you inspect a little more about these global settings you will esee each tool's default configuration values which are discussed more on the important <a href="#global_configuration">global configuration</a> section.
+	You can see each tool you have included and their versions. You can also see plugins and effects and their versions if you have included any from the <a href="download.html#combine">download page</a>. If you inspect a little more about these global settings you will see each tool's default configuration values which are discussed more on the important <a href="#global_configuration">global configuration</a> section.
 </p>
 <!--}}}-->
 
@@ -384,7 +384,7 @@ $("#wrap").scrollable({
 <h3>Return value</h3>
 
 <p>
-	The constructor will always return the jQuery object that is a collection of the elements that are selected by the selector. This is how all proper jQuery plugins are recommended to behave. Again we use the scollable tool as our example:
+	The constructor will always return the jQuery object that is a collection of the elements that are selected by the selector. This is how all proper jQuery plugins are recommended to behave. Again we use the scrollable tool as our example:
 </p>
 
 <pii:code>
@@ -409,7 +409,7 @@ elements.someOtherPlugin().onClick(function() {
 <h2>Making global configurations</h2>
 
 <p>
-	Althought you can change the default settings of the tools by supplyig configuration on the initialization phase you may be using the same configuration settings over and over again. In this case you may want to change the default configuration variables for the tools so that you don't need to specify same setting every time. Here is an example of an global configuration setting
+	Although you can change the default settings of the tools by supplying configuration on the initialization phase you may be using the same configuration settings over and over again. In this case you may want to change the default configuration variables for the tools so that you don't need to specify same setting every time. Here is an example of a global configuration setting:
 </p>
 
 <pii:code>
@@ -427,7 +427,7 @@ $("a[rel]").overlay();
 </pii:code>
 
 <p>
-	Of course you can override these default settings just like before
+	Of course you can override these default settings just like before:
 </p>
 
 <pii:code>
@@ -436,7 +436,7 @@ $("a[rel]").overlay({effect: 'default'});
 </pii:code>
 
 <p>
-	Every tool has a global configuration under <samp>$.tools.[TOOL_NAME].conf</samp>. For example <samp>$.tools.tabs.conf</samp>. You can change many global settings simultaneously by using jQuery build-in <samp>$.extend</samp> method as follows:
+	Every tool has a global configuration under <samp>$.tools.[TOOL_NAME].conf</samp>. For example <samp>$.tools.tabs.conf</samp>. You can change many global settings simultaneously by using jQuery built-in <samp>$.extend</samp> method as follows:
 </p>
 
 <pii:code>
@@ -484,7 +484,7 @@ $("div.scroller").scrollable({size: 4}).infinite().autoscroll({interval: 4000});
 </pii:code>
 
 <p>
-	You take a one or more <samp>div.scroller</samp> elements from a page and make them scrollable. The scrollable tool has only the absolute nessessary features to make things scroll. If you want to have more features you can use plugins. In this example we used <samp>infinite</samp> plugin to make an infinite loop for the scrollable items so that there is no end or beginning for the scrollable items - you can scroll back and forward infinitely. The <samp>autoscroll</samp> plugin makes the items scroll automatically without any user interaction.
+	You take a one or more <samp>div.scroller</samp> elements from a page and make them scrollable. The scrollable tool has only the absolute necessary features to make things scroll. If you want to have more features you can use plugins. In this example we used <samp>infinite</samp> plugin to make an infinite loop for the scrollable items so that there is no end or beginning for the scrollable items - you can scroll back and forward infinitely. The <samp>autoscroll</samp> plugin makes the items scroll automatically without any user interaction.
 </p>
 
 <p>
@@ -496,7 +496,7 @@ $("div.scroller").scrollable({size: 4}).infinite().autoscroll({interval: 4000});
 </p>
 
 <p>
-	Every tool has a build-in plugin architecture and you can easily <a href="#plugin">write your own plugins</a>.
+	Every tool has a built-in plugin architecture and you can easily <a href="#plugin">write your own plugins</a>.
 </p>
 
 <a name="effects"></a>
