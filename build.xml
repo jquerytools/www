@@ -9,7 +9,7 @@
 	<property name="build" value="${jqt}/build/${v.tools}"/>
 	
 	<!-- copy stuff under web folder -->
-	<target name="www">
+	<target name="www" depends="jqt">
 	
 		<!-- documentation -->
 		<mkdir dir="${www}"/>
@@ -22,7 +22,7 @@
 	</target>
 	
 	<!-- deploy -->
-	<target name="deploy" depends="www">
+	<target name="jqt">
 		
 		<!-- zip -->
 		<zip destfile="${js}/tools.zip" basedir="${build}" />		

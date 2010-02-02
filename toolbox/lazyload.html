@@ -1,4 +1,6 @@
 
+<%-- :mode=jsp: --%>
+
 <style>
 .more {
 	font-size:16px;
@@ -28,12 +30,16 @@ pre em {
 	<em>Your site can be (even) faster</em>
 </h1>
  
-<h2>DEMO: Lazyloaded Scrollable</h2>
- 
-<p class="more">
-	Lazyload helps you control the loading of your performance heavy assets: images, background images and non visible HTML.
+<p class="more" style="margin-top:-2px">
+	Lazyload makes your pages faster by loading the heavy assets only when they are needed.
 </p> 
+
+<p style="color:#555">
+	On following Scrollable the images and background images are not loaded until they become visible.
+</p>
  
+<%@ include file="../demos/toolbox/lazyload/scrollable.htm" %>
+
 <div class="col">
 	<h3>Faster loading of pages</h3>
 	

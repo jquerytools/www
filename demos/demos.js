@@ -359,6 +359,14 @@
 		
 		demos: [	
 			{		
+				path: 'toolbox/lazyload/scrollable.html',
+				title: 'Lazyloaded scrollable'
+			},	
+			{		
+				path: 'toolbox/lazyload/overlay.html',
+				title: 'Lazyloaded overlay'
+			},				
+			{		
 				path: 'toolbox/lazyload/index.html',
 				title: 'Minimal setup for Lazyload'
 			},	

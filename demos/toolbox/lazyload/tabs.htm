@@ -1,0 +1,88 @@
+
+<%-- :mode=jsp: --%>
+<%@ include file="../../standalone.jsf" %>
+
+<style>
+.pane {
+	display:none;	
+}
+
+/* items inside navigator */
+.tabs a {
+	width:8px;
+	height:8px;
+	float:left;
+	margin:3px;
+	background:url(../../../img/scrollable/arrow/navigator.png) 0 0 no-repeat;
+	display:block;
+	font-size:1px;
+	cursor:pointer;
+}
+
+/* mouseover state */
+.tabs a:hover {
+	background-position:0 -8px;      
+}
+
+/* active state (current page state) */
+.tabs a.current {
+	background-position:0 -16px;     
+}
+
+#panes {
+	background-color:#000;	
+	width:400px;
+	height:300px;
+	position:absolute;
+	margin-top:15px
+}
+
+.progress {
+	color:#fff;		
+	margin:15px;
+	font-size:10px;
+}
+</style>
+
+<p class="tabs">
+	<a></a><a></a><a></a><a></a><a></a><a></a>
+</p>
+
+
+<div id="panes">
+
+	<div class="pane" style="background-image:url(http://farm4.static.flickr.com/3155/2636513939_cd75b704ec.jpg)">
+	
+	</div>
+	
+	<div class="pane" style="background-image:url(http://farm4.static.flickr.com/3105/2618870872_cf22d3cdb1.jpg)">
+	
+	</div>
+	
+	<div class="pane" style="background-image:url(http://farm4.static.flickr.com/3435/3276760045_742ebd4663.jpg)">
+	
+	</div>
+	
+	<div class="pane" style="background-image:url(http://farm4.static.flickr.com/3420/3755900866_95e61c6df2.jpg)">
+	
+	</div>
+	
+	<div class="pane" style="background-image:url(http://farm4.static.flickr.com/3247/2400693384_9e8776d482.jpg)">
+	
+	</div>
+	
+	<div class="pane" style="background-image:url(http://farm1.static.flickr.com/40/122343298_22333fb8e3.jpg)">
+	
+	</div>
+	
+</div>
+
+<script>
+$(".tabs").tabs(".pane",  {
+	lazyload:  {
+		effect: 'grow'		
+	}
+});
+</script>
+
+

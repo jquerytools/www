@@ -134,7 +134,7 @@
 {
 	key: 'form.validator',
 	title: 'Validator',
-	description: '20 year wait is over. HTML5 is here',
+	description: 'HTML5 input validation',
 	file: 'form/form.validator',
 	www: 'form/validator.html'
 },
@@ -142,7 +142,7 @@
 {
 	key: 'form.styleable',
 	title: 'Styleable',
-	description: 'Form widgets + CSS made possible',
+	description: 'Form inputs made styleable with CSS.',
 	file: 'form/form.styleable',
 	www: 'form/styleable.html'
 },
@@ -150,7 +150,7 @@
 {
 	key: 'form.datepicker',
 	title: 'Datepicker',
-	description: 'Small, compact, styleable HTML5 datepicker',
+	description: 'HTML5 &lt;input type="date" /&gt; for humans',
 	file: 'form/form.datepicker',
 	www: 'form/datepicker.html'
 },
@@ -158,7 +158,7 @@
 {
 	key: 'form.slider',
 	title: 'Slider',
-	description: 'HTML5 slider component',
+	description: 'HTML5 &lt;input type="range" /&gt; for humans',
 	file: 'form/form.slider',
 	www: 'form/slider.html',
 	requires: 'form.drag'

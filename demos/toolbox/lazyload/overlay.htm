@@ -1,0 +1,88 @@
+
+<%-- :mode=jsp: --%>
+<%@ include file="../../standalone.jsf" %>
+
+<style>
+#trigger {
+	cursor:pointer;		
+}
+
+.dialog {
+	padding:4px;
+	background-color:#357D3B;
+	position:absolute;
+	width: 1000px;
+	border:1px solid #fff;
+	font-family:'sans serif';
+	display:none;
+	
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+
+	-moz-box-shadow: 0 0 50px #357D3B;
+	-webkit-box-shadow: 0 0 50px #357D3B;		
+}
+
+.description {
+	position:absolute;
+	right:30px;
+	top:30px;
+	border:10px solid rgba(82, 82, 82, 0.6);
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;	
+}
+
+.description div {
+	width:280px;
+	padding:15px;	
+	background-color:#fff;	
+}
+
+.description h2 {
+	margin:0;
+	font-size:18px;
+}
+
+.description p {
+	font-size:11px;	
+}
+
+.close {
+	background-image:url(../../../img/overlay/close.png);
+	position:absolute;
+	right:-15px;
+	top:-15px;
+	cursor:pointer;
+	height:35px;
+	width:35px;
+}
+</style>
+
+<!-- trigger element -->
+<img id="trigger" src="http://farm1.static.flickr.com/37/78728184_0ffe2733e5_m.jpg" rel=".dialog"/>
+
+<div class="dialog">
+
+	<img src="http://farm1.static.flickr.com/37/78728184_0ffe2733e5_o.jpg">
+	
+	<div class="description">
+		<div>
+			<h2>Alexanderplatz</h2>
+			
+			<p>
+				Alexanderplatz is a large public square and transport hub in the Mitte (city centre) district of Berlin, near the river Spree and the Berliner Dom. Berliners often call it simply Alex, referring to a larger neighborhood stretching from Mollstraﬂe in the northeast to Spandauer Straﬂe and the City Hall in the southwest.
+			</p>
+			
+			<p style="color:#666">
+				Originally a cattle market, it was named in honor of a visit of the Russian Emperor Alexander I to Berlin on 25 October 1805. It gained a prominent role in the late 19th century with the construction of the station of the same name and a nearby public market, becoming a major commercial center. 
+			</p>
+		</div> 
+	</div>
+	
+</div>
+
+
+<script>
+$("#trigger").overlay({lazyload: false});
+</script>
+
