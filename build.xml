@@ -17,15 +17,13 @@
 			<fileset dir="."/>
 		</copy>
 
+		<!-- demos -->
 		<copy file="demos/demos.js" tofile="${www}/../WEB-INF/jqt-demos.js"/>
 		
 	</target>
 	
 	<!-- deploy -->
-	<target name="jqt">
-		
-		<!-- zip -->
-		<zip destfile="${js}/tools.zip" basedir="${build}" />		
+	<target name="jqt">	
 		  
 		<!-- javascript -->
 		<mkdir dir="${js}"/> 
@@ -33,11 +31,11 @@
 			<fileset dir="${build}"/>
 		</copy>
 		
+		<!-- zip -->
+		<zip destfile="${js}/tools.zip" basedir="${build}" />			
+		
 	</target>
 
 	
 </project>
-
-
-
 
