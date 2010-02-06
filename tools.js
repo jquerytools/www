@@ -6,9 +6,9 @@
 */
 {
 	key: 'jquery',
-	title: 'jQuery library',
-	description: 'All tools except flashembed are dependent on this library. Can alternatively be included from googleapis (see below)',
-	file: 'jquery-1.3.2',
+	title: 'jQuery 1.4.1.',
+	description: 'All tools depend on this library (except flashembed). Can alternatively be included from googleapis (see below)',
+	file: 'jquery-1.4.1',
 	www: 'http://jquery.com'
 },
 
@@ -136,7 +136,7 @@
 	title: 'Validator',
 	description: 'HTML5 input validation',
 	file: 'form/form.validator',
-	www: 'form/validator.html'
+	www: 'form/validator/index.html'
 },
 
 {
@@ -144,7 +144,7 @@
 	title: 'Styleable',
 	description: 'Form inputs made styleable with CSS.',
 	file: 'form/form.styleable',
-	www: 'form/styleable.html'
+	www: 'form/styleable/index.html'
 },
 
 {
@@ -152,7 +152,7 @@
 	title: 'Datepicker',
 	description: 'HTML5 &lt;input type="date" /&gt; for humans',
 	file: 'form/form.datepicker',
-	www: 'form/datepicker.html'
+	www: 'form/datepicker/index.html'
 },
 
 {
@@ -160,7 +160,7 @@
 	title: 'Slider',
 	description: 'HTML5 &lt;input type="range" /&gt; for humans',
 	file: 'form/form.slider',
-	www: 'form/slider.html',
+	www: 'form/slider/index.html',
 	requires: 'form.drag'
 },
 //}}}

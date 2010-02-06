@@ -372,7 +372,7 @@ $("ul.tabs").tabs("div.panes > div").analytics(tracker);
 </pii:code>
 
 <p>
-	If you are a jQuery plugin developer, you can see that this follows the "standard" way of developing plugins. The interesting part is the retrieval of API with the <samp>var api = $(this).tabs();</samp> command. Instead of constructing new tabs, it will return the API. This is because tabs were already constructed. In fact our previous setup <em>requires</em> that the tabs are initialized before the analytics plugin, so you <strong>cannot</strong> write:
+	If you are a jQuery plugin developer, you can see that this follows the "standard" way of developing plugins. Our setup requires that the tabs are initialized before the analytics plugin, so you <strong>cannot</strong> write:
 </p>
 
 <pii:code>

@@ -329,8 +329,8 @@
 				title: 'Customizing Datepicker behaviour'
 			},
 			{		
-				path: 'form/datepicker/skin.html',
-				title: 'Alternate skin for Datepicker'
+				path: 'form/datepicker/skins.html',
+				title: 'Alternate skins for Datepicker'
 			},
 			{		
 				path: 'form/datepicker/localize.html',

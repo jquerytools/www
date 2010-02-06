@@ -22,75 +22,13 @@
 <%
 	String path = request.getServletPath().split("/")[2].replace(".html", "");
 	pageContext.setAttribute("isDoc",
-		"documentation,search,release-notes,tabs,tooltip,scrollable,overlay,toolbox,form,".indexOf(path +",") != -1
+		"documentation,search,tabs,tooltip,scrollable,overlay,toolbox,form,".indexOf(path +",") != -1
 	);		
 %>
 
 <c:set var="isForum" value="${fn:contains(req.path, '/forum/')}"/>
-<c:set var="showTweets" value="${fn:contains(req.path, 'download')}"/>
+
 	
-
-<style>
-#right p.active a {
-	text-decoration:underline !important;
-	color:black;
-	cursor:default;
-}
-
-/* toollist */
-#toollist {
-	margin:-10px 0 0 5px;
-}
-
-#right h3 {
-	border-bottom:1px solid #666;
-	margin-bottom:5px;
-}
-
-.t {
-	display:block;		
-	padding:4px 6px;
-	border-bottom:1px dotted #ccc;
-}
-
-.t:hover {
-	background-color:#efefef;		
-}
-
-.t.plugin {
-	padding-left:15px;
-	color:#777 !important;
-}
-
-.t.active {
-	background-color:#00559E;
-	color:#fff !important;	
-}
-
-#biglink {
-	display:block;
-	font-size:20px;
-	padding:5px 15px;
-	text-align:center;	
-}
-
-#biglink:hover strong {
-	text-decoration:underline;		
-}
-
-
-#biglink.current strong {
-	text-decoration:none !important;
-}
-	
-#biglink.current {
-	cursor:default; 	
-	background-color:#efefef;
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px;
-}
-</style>
-
 <%-- demos --%>
 <c:if test="${!empty req.demo}">
 
@@ -134,11 +72,11 @@
 	</c:if>	
 	
 	<a href="${jqt}/documentation/index.html" id="biglink">
-		jQuery Tools <br />
-		<strong style="color:#000; letter-spacing:-1px">USER'S GUIDE</strong>
+		jQuery Tools 
+		<strong>USER'S GUIDE</strong>
 	</a>
 	
-	<div id="toollist">
+	<div id="rightnav">
 		<c:forEach items="${metadata.tools}" var="tool" varStatus="i" begin="1">
 		
 			<c:if test="${!empty tool.cat}">
@@ -151,26 +89,29 @@
 				
 		</c:forEach>
 	</div>
-	
-
-	
-	<h3>Release Notes</h3>
-	
-	<div id="notes">
-		<p><a href="${jqt}/release-notes/index.html">Version 1.2.0</a></p>
-		<p><a href="${jqt}/release-notes/version-1.1.2.html">Version 1.1.2</a></p>
-		<p><a href="${jqt}/release-notes/version-1.1.1.html">Version 1.1.1</a></p>
-		<p><a href="${jqt}/release-notes/version-1.1.0.html">Version 1.1.0</a></p>
-		<p><a href="${jqt}/release-notes/version-1.0.X.html">Versions 1.0.X</a></p>
-		<p><a href="${jqt}/release-notes/version-history.html">Full version history</a></p>			
-	</div>			
-	
-	
-	<script>
-		$("#right a[href=${req.path}]").addClass("active");
-	</script>
 		
 </c:if>	
+
+<c:if test="${fn:contains(req.path, '/release-notes')}">
+	
+	<div class="box">
+	
+		<h2>Release Notes</h2>
+		
+		<ul>
+			<li><a href="${jqt}/release-notes/index.html">Version 1.2.0</a></li>
+			<li><a href="${jqt}/release-notes/version-1.1.2.html">Version 1.1.2</a></li>
+			<li><a href="${jqt}/release-notes/version-1.1.1.html">Version 1.1.1</a></li>
+			<li><a href="${jqt}/release-notes/version-1.1.0.html">Version 1.1.0</a></li>
+			<li><a href="${jqt}/release-notes/version-1.0.X.html">Versions 1.0.X</a></li>
+			<li><a href="${jqt}/release-notes/version-history.html">Full version history</a></li>			
+		</ul>		
+	
+		<div class="clear"></div>
+		
+	</div>
+	
+</c:if>
 
 <%-- forum --%>
 <c:if test="${isForum}">
@@ -227,22 +168,13 @@
 	<script>
 		$("#jqt5").addClass("active");
 		$("#forumLink${param.forumId}").addClass("selected");
-	</script>	
-	
+	</script>	 
 	
 </c:if>
 
-<%-- twitter link --%>
-<div style="margin:color:#00519F;font-size:10px">
-	&nbsp; follow jQuery Tools on
-	<a href="http://twitter.com/jquerytools">
-		<img src="http://assets0.twitter.com/images/twitter_logo_header.png" 
-			title="Follow jQuery Tools on Twitter" />
-	</a>
-</div>
 
-<%-- download page --%>
-<c:if test="${showTweets}">	
-	<div id="twitter"></div>
-</c:if>
+<script>
+$("#right a[href=${req.path}]").addClass("active"); 
+</script>
+
 

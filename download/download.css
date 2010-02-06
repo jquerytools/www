@@ -1,14 +1,14 @@
-div.tooltip {
+.tooltip {
 	background:#234 url(/img/global/gradient/h300.png) repeat-x;
 	width:200px;
 }
 
-div.tooltip h3 {
+.tooltip h3 {
 	margin-top:0px;
 	color:#ffc;
 }
 
-div.tooltip a {
+.tooltip a {
 	color:yellow;
 }
 
@@ -42,10 +42,6 @@ label {
 
 #gzipped {
 	font-weight:bold;
-}
-
-#content h3 {
-	margin-top:20px;		
 }
 
 table.listing td {
