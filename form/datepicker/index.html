@@ -1,13 +1,8 @@
 <%-- :mode=jsp: --%>
 
-<style>
-.col 		{ width:350px; padding-right:10px; border-right:1px solid #ccc; margin-right:15px; float:left; }
-.last 	{ margin:0; padding:0; border-right:0; }
-</style>
-
 <%--{{{ Intro --%>
 
-<h1>
+<h1 style="background:url(${jqt}/img/hero/datepicker.jpg) no-repeat -14px 34px">
 	jQuery Datepicker @ jQuery Tools 
 	<em>HTML5 date input for humans</em>
 </h1>
@@ -16,7 +11,7 @@
 <img src="sample.jpg" style="margin-left:155px" />
 
 
-<div class="col">
+<div class="feat">
 
 	<h3>HTML5 date input</h3>
 	
@@ -34,7 +29,7 @@
 	
 </div>	 
  
-<div class="col last">
+<div class="feat last">
 
 	<h3>Styleable</h3>
 	
@@ -109,14 +104,14 @@
 		<td class="code">max</td>
 		<td>0</td>
 		<td>
-			maximum selectable date in rfc3339 format. for example: <samp>2015-11-25</samp>
+			maximum selectable date. this is either number of days from today (such as <samp>30</samp>) or the absolute date in rfc3339 format (eg. <samp>2015-11-25</samp>)
 		</td>
 	</tr>
 	<tr>
 		<td class="code">min</td>
 		<td>0</td>
 		<td>
-			minimum selectable date in rfc3339 format. for example: <samp>2004-02-20</samp>
+			minimum selectable date. this is either number of days from today (such as <samp>30</samp>) or the absolute date in rfc3339 format (eg. <samp>2015-11-25</samp>). 
 		</td>
 	</tr> 
 	<tr>
@@ -187,11 +182,15 @@
 	</tr>
 	<tr>
 		<td class="code">max</td>
-		<td>maximum selectable date in rfc3339 format. for example: <samp>2015-11-25</samp></td>
+		<td>
+			maximum selectable date. this is either number of days from today (such as <samp>30</samp>) or the absolute date in rfc3339 format (eg. <samp>2015-11-25</samp>). 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">min</td>
-		<td>miminum selectable date in rfc3339 format. for example: <samp>2005-02-23</samp></td>
+		<td>
+			miminum selectable date. this is either number of days from today (such as <samp>30</samp>) or the absolute date in rfc3339 format (eg. <samp>2015-11-25</samp>). 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">readonly</td>
@@ -570,6 +569,8 @@ $(".date").datepicker({
 <%--}}}--%>
 
 
+<%--{{{ Events--%>
+
 <a name="events"></a> 
 <h2>Events</h2>
 
@@ -617,7 +618,10 @@ $(":input.date").change(function(event, date) {
 		</td>
 	</tr> 
 </table>
+<%--}}}--%>
 
+
+<%--{{{ Localizing--%>
 
 <a name="localizing"></a> 
 <h2>Localizing</h2>
@@ -643,16 +647,18 @@ $.tools.datepicker.localize("en", {
 <pii:code>
 // example French localization
 $.tools.datepicker.localize("fr",  {
-	months: 'Janvier,Février,Mars,Avril,Mai,Juin,Juillet,Août,Septembre,Octobre,Novembre,Décembre', 
-	shortMonths: 	'Jan,Fév,Mar,Avr,Mai,Jun', 'Jul,Aoû,Sep,Oct,Nov,Déc',
+	months: 			'Janvier,F&eacute;vrier,Mars,Avril,Mai,Juin,Juillet,Ao&ucirc;t,' + 
+							'Septembre,Octobre,Novembre,D&eacute;cembre', 
+	shortMonths: 		'Jan,F&eacute;v,Mar,Avr,Mai,Jun,Jul,Ao&ucirc;,Sep,Oct,Nov,D&eacute;c',
 	days: 			'Dimanche,Lundi,Mardi,Mercredi,Jeudi,Vendredi,Samedi',
 	shortDays: 		'Dim,Lun,Mar,Mer,Jeu,Ven,Sam'	
 });
 </pii:code>
 
 <p>
-	Now you can use French language by supplying <samp>lang: 'fr'</samp> on your configuration. Or you can make French language the default language by editing <a href="${jqt}/documentation/basics.html#global_configuration">global configuration</a> as follows: <samp>$.tools.datepicker.conf.lang = 'fr';</samp> 
+	Notice that all special characters need to be escaped. I used <a href="http://www.pemberley.com/janeinfo/latin1.html" class="external">this list</a> to find the special entities for French characters. After the localization is in place you can use French language by supplying <samp>lang: 'fr'</samp> on your configuration. Or you can make French language the default language by editing <a href="${jqt}/documentation/basics.html#global_configuration">global configuration</a> as follows: <samp>$.tools.datepicker.conf.lang = 'fr';</samp> 
 </p>
 
 
+<%--}}}--%>
 

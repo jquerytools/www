@@ -1,0 +1,359 @@
+<%-- :mode=jsp: --%>
+
+<%--{{{ Intro --%>
+
+<h1>
+	jQuery Slider @ jQuery Tools 
+	<em>HTML5 range input for humans</em>
+</h1>
+
+<!-- a placeholder image to be replaced -->
+<img src="shot.png" />
+
+
+<div class="feat">
+
+	<h3>HTML5 range input</h3>
+	
+	<p>
+		HTML5 range input <samp>&lt;input type="range" /&gt;</samp> is currently supported by Opera and Safari and as a standard it will be implemented to the other browsers as well. This tool brings HTML5 range input for all browsers in consistent and standardized manner now. The range field is just like any other FORM filed which can be submitted.
+	</p> 
+	 
+	
+	<h3>For nerds and humans</h3>
+	
+	<p>
+		Call <samp>$(":range").slider();</samp> and all your HTML5 range inputs are working. End users can pick values by dragging a slider or with the keyboard arrow keys. Hackers can use <strong>VIM</strong> keyboard shortcuts to move slider backward and forward.
+	</p>
+
+	
+</div>	 
+ 
+<div class="feat last">
+
+	<h3>Styleable</h3>
+	
+	<p>
+		You can design sliders that fit to the overall feel of your site. You can use images and the latest CSS3 techniques if you like. Every bit of the slider is skinnable. Default CSS class names can be changed and you can design both horizontal and vertical sliders. Professional example skins are provided and you can freely use them.
+	</p>
+	
+	<h3>File size: <strong>1.90 kb!</strong></h3>
+	
+	<p>
+		With this size you'll get all you need: configurability, skinning, orientation, standards based behaviour, <a href="#api">scripting API</a> and an <a href="#events">event model</a>. And as a bonus you'll get a generig drag utility! Smaller codebase is easier to control and results to snappier behaviour.  
+	</p>	 
+
+	
+</div>	 
+ 
+<br clear="all" />
+<%--}}}--%>
+
+
+<h2>Demos</h2>
+
+<ul>
+	<c:forEach items="${f:getDemo(context.toolDemos2, 'form/slider/index.html').category.demos}" var="demo">
+		<li> <a href="${jqt}/demos/${demo.path}">${demo.title}</a> </li>
+	</c:forEach>
+</ul>
+ 
+<%--{{{ Configuration --%>
+
+<a name="configuration"></a>
+<h2>Configuration</h2>	
+ 
+<table class="listing">
+
+	<thead>
+		<tr>
+			<th>property</th>
+			<th>default</th>
+			<th>description</th>
+		</tr>
+	</thead>	
+
+	<tr>
+		<td class="code">accuracy</td>
+		<td>2</td>
+		<td>
+			for floating point numbers this is the amount of decimals
+		</td> 
+	</tr>
+	<tr>
+		<td class="code">css</td>
+		<td>Object</td>
+		<td>
+			CSS class names used by the generated slider. Here are the default values that you can change.
+<pre>
+css: { 
+	slider: 'slider', 
+	progress: 'progress', 
+	handle: 'handle'
+}
+</pre>
+		</td> 
+	</tr>
+	<tr>
+		<td class="code">hideInput</td>
+		<td>false</td>
+		<td>
+			whether the input is hidden and only the slider is visible
+		</td> 
+	</tr>
+	<tr>
+		<td class="code">keyboard</td>
+		<td>true</td>
+		<td>
+			whether keyboard shortcats are enabled
+		</td> 
+	</tr>
+	<tr>
+		<td class="code">max</td>
+		<td>100</td>
+		<td>
+			maximum value
+		</td> 
+	</tr>
+	<tr>
+		<td class="code">min</td>
+		<td>0</td>
+		<td>
+			minmum value
+		</td> 
+	</tr>
+	<tr>
+		<td class="code">speed</td>
+		<td>200</td>
+		<td>
+			animation speed for the drag handle when the slider is clicked
+		</td> 
+	</tr>
+	<tr>
+		<td class="code">step</td>
+		<td>0</td>
+		<td>
+			the amount steps the slider takes between min and max
+		</td> 
+	</tr>
+	<tr>
+		<td class="code">value</td>
+		<td>0</td>
+		<td>
+			initial value
+		</td> 
+	</tr>
+	<tr>
+		<td class="code">vertical</td>
+		<td>false</td>
+		<td>
+			enabling this makes the slider vertical
+		</td> 
+	</tr>
+	
+</table>
+
+<a name="attributes"></a>
+<h3>Input attributes</h3> 
+
+<p>
+	You can also configure the slider by supplying valid HTML5 attributes for the range input field. For example
+</p>
+
+<pii:code lang="html">
+<input type="range" value="40" min="20" max="400" step="20" />
+</pii:code>
+
+
+<table class="listing">
+
+	<thead>
+		<tr>
+			<th>attribute</th>
+			<th>description</th>
+		</tr> 
+	</thead>
+	
+	<tr>
+		<td class="code">disabled</td>
+		<td>whether the slider is completely disabled. both the slider and the input field is disabled. <samp>disabled</samp> attribute can be enabled and disabled dynamically by scripting.</td>
+	</tr>
+	<tr>
+		<td class="code">max</td>
+		<td>
+			maximum value
+		</td>
+	</tr>
+	<tr>
+		<td class="code">min</td>
+		<td>
+			miminum value
+		</td>
+	</tr>
+	<tr>
+		<td class="code">readonly</td>
+		<td>when enabled the slider is functional but the associative input field cannot be edited</td>
+	</tr>
+	<tr>
+		<td class="code">step</td>
+		<td>the amount steps the slider takes between min and max</td>
+	</tr>
+	
+	<tr>
+		<td class="code">value</td>
+		<td>initial value</td>
+	</tr>
+
+</table>
+<%--}}}--%>
+
+<%--{{{ Skinning --%>
+<a name="skinning"></a>
+<h2>Skinning</h2>
+
+<p>
+	Once slider is initialized a following kind of HTML layout is constructed:	
+</p>
+
+<pii:code>
+<div class="slider">
+	<div class="progress" style="width: 200px; display: block;"></div>
+	<a class="handle" style="left: 200px;"></a>
+</div>
+</pii:code>
+
+<p>
+	Here the slider has been dragged to position 200px and the progress bar follows. When it comes to skinning it's all aoubt making your CSS against this structure. Here is one <a href="${jqt}/css/slider/skin2.css">example skin</a> which uses only one background gradient image.
+</p>
+
+<%--}}}--%>
+
+
+<%--{{{ API  --%>
+  
+<a name="api"></a> 
+<h2>Scripting API</h2>
+ 
+<p>
+	First make sure you have familiarized yourself to <a href="${jqt}/documentation/scripting.html">jQuery Tools scripting</a>. 
+</p>
+
+<table class="listing">
+	<thead>
+		<tr>
+			<th>Method</th>
+			<th nowrap>Return value</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tr>
+		<td class="code">getConf</td>
+		<td><code>Object</code></td>
+		<td>
+			returns the configuration of the current instance
+		</td>
+	</tr>	 
+	<tr>
+		<td class="code">getHandle</td>
+		<td><code>jQuery</code></td>
+		<td>
+			returns the drag handle element
+		</td>
+	</tr>	 
+	<tr>
+		<td class="code">getInput</td>
+		<td><code>jQuery</code></td>
+		<td>
+			returns the input element
+		</td>
+	</tr>	 
+	<tr>
+		<td class="code">getProgress</td>
+		<td><code>jQuery</code></td>
+		<td>
+			returns the progress element. the one that "follows" the handle
+		</td>
+	</tr>	 
+	<tr>
+		<td class="code">getValue</td>
+		<td><code>Number</code></td>
+		<td>
+			returns the value of the slider
+		</td>
+	</tr>	 
+	<tr>
+		<td class="code">next</td>
+		<td><code>API</code></td>
+		<td>
+			advance to the next step (value)
+		</td>
+	</tr>	 
+	<tr>
+		<td class="code">prev</td>
+		<td><code>API</code></td>
+		<td>
+			back to previous step (value)
+		</td>
+	</tr>	 
+	<tr>
+		<td class="code">setValue(value)</td>
+		<td><code>API</code></td>
+		<td>
+			set the slider value to the one specified in the argument
+		</td>
+	</tr>	 
+	<tr>
+		<td class="code">step(amount)</td>
+		<td><code>API</code></td>
+		<td>
+			seek backward (negative value) or forward (positive value) with the amount specified in the argument
+		</td>
+	</tr>	 
+</table>
+
+<%--}}}--%>
+
+
+<%--{{{ Events--%>
+
+<a name="events"></a> 
+<h2>Events</h2>
+
+<p>
+	First make sure you have read about <a href="${jqt}/documentation/scripting.html#events">Events in jQuery Tools</a>. All event listeners receive <a href="${jqt}/documentation/scripting.html#event_object">Event Object</a> as the first argument. Here is an example:
+</p>
+
+<pii:code>
+// select all range inputs and assign an event listeners to them 
+$(":range").change(function(event, value) {
+	console.info("value changed to", value);
+});
+</pii:code>
+
+<table class="listing">
+	<thead>
+		<tr>
+			<th>event</th>
+			<th nowrap>When does it occur?</th>
+		</tr>
+	</thead>
+
+	<tr>
+		<td class="code">onSlide</td>
+		<td>
+			when sliding occurs. you can cancel the action by returning <samp>false</samp> or calling <samp>preventDefault()</samp> for the event object.
+		</td>
+	</tr>
+	<tr>
+		<td class="code">change</td>
+		<td>
+			when slider value is changed. Note that the name is the same as the jQuery's <samp>change</samp> method and you can bind the event directly with that function. For other event's you must use the <samp>bind</samp> method. This leads to more fluent syntax as seen on the example above.
+		</td>
+	</tr>
+
+</table>
+
+
+<%--}}}--%>
+
+
