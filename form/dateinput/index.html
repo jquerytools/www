@@ -2,8 +2,8 @@
 
 <%--{{{ Intro --%>
 
-<h1 style="background:url(${jqt}/img/hero/datepicker.jpg) no-repeat -14px 34px">
-	jQuery Datepicker @ jQuery Tools 
+<h1 style="background:url(${jqt}/img/hero/dateinput.jpg) no-repeat -14px 34px">
+	jQuery Dateinput @ jQuery Tools 
 	<em>HTML5 date input for humans</em>
 </h1>
 
@@ -23,7 +23,7 @@
 	<h3>For nerds and humans</h3>
 	
 	<p>
-		Call <samp>$(":date").datepicker();</samp> and all your HTML5 date inputs are working. End users can pick dates with the mouse or with the keyboard arrow keys. Hackers can use <strong>VIM</strong> keyboard shortcuts to havigate between dates and months.
+		Call <samp>$(":date").dateinput();</samp> and all your HTML5 date inputs are working. End users can pick dates with the mouse or with the keyboard arrow keys. Hackers can use <strong>VIM</strong> keyboard shortcuts to havigate between dates and months.
 	</p>
 
 	
@@ -53,7 +53,7 @@
 <h2>Demos</h2>
 
 <ul>
-	<c:forEach items="${f:getDemo(context.toolDemos2, 'form/datepicker/index.html').category.demos}" var="demo">
+	<c:forEach items="${f:getDemo(context.toolDemos2, 'form/dateinput/index.html').category.demos}" var="demo">
 		<li> <a href="${jqt}/demos/${demo.path}">${demo.title}</a> </li>
 	</c:forEach>
 </ul>
@@ -76,7 +76,7 @@
 		<td class="code">css</td>
 		<td>Object</td>
 		<td>
-			values for <samp>id</samp> and <samp>class</samp> attributes for the datepicker. See <a href="#skinning">skinning</a> for the details.
+			values for <samp>id</samp> and <samp>class</samp> attributes for the dateinput. See <a href="#skinning">skinning</a> for the details.
 		</td> 
 	</tr>
 	<tr>
@@ -118,7 +118,7 @@
 		<td class="code">offset</td>
 		<td>[0, 0]</td>
 		<td>
-			the datepicker is positioned right below the input field. you can fine tune the position with this property. For example, the value <samp>[10, -20]</samp> moves the tooltip position 10px downwards and 20px to the left. The first value modifies the vertical positioning from the top edge of the tooltip and the second value modifies the horizontal positioning from the left edge of the tooltip. Positive values move the tooltip downward and to the right, while negative values move the tooltip upward and to the left.
+			the dateinput is positioned right below the input field. you can fine tune the position with this property. For example, the value <samp>[10, -20]</samp> moves the tooltip position 10px downwards and 20px to the left. The first value modifies the vertical positioning from the top edge of the tooltip and the second value modifies the horizontal positioning from the left edge of the tooltip. Positive values move the tooltip downward and to the right, while negative values move the tooltip upward and to the left.
 		</td>
 	</tr>
 
@@ -133,7 +133,7 @@
 		<td class="code">speed</td>
 		<td>100</td>
 		<td>
-			the speed (in milliseconds) in chich the datepicker reveals itself
+			the speed (in milliseconds) in chich the dateinput reveals itself
 		</td>
 	</tr>   
 	<tr>
@@ -156,7 +156,7 @@
 <h3>Input attributes</h3> 
 
 <p>
-	You can also configure the datepicker by supplying attributes for the input field. For example
+	You can also configure the dateinput by supplying attributes for the input field. For example
 </p>
 
 <pii:code lang="html">
@@ -178,7 +178,7 @@
 	
 	<tr>
 		<td class="code">disabled</td>
-		<td>whether the datepicker is completely disabled. the user cannot focus the input element at all. this attribute can be enabled and disabled dynamically by scripting.</td>
+		<td>whether the dateinput is completely disabled. the user cannot focus the input element at all. this attribute can be enabled and disabled dynamically by scripting.</td>
 	</tr>
 	<tr>
 		<td class="code">max</td>
@@ -194,7 +194,7 @@
 	</tr>
 	<tr>
 		<td class="code">readonly</td>
-		<td>when enabled the datepicker can only be opened and browsed but no date can be selected. this attribute can be enabled and disabled dynamically by scripting.</td>
+		<td>when enabled the dateinput can only be opened and browsed but no date can be selected. this attribute can be enabled and disabled dynamically by scripting.</td>
 	</tr>
 	<tr>
 		<td class="code">value</td>
@@ -220,7 +220,7 @@
 </p>
 
 <pii:code>
-$(".date").datepicker({
+$(".date").dateinput({
 
 	// this is displayed for the user
 	format: 'You picked: dddd / dd.mm.yyyy',
@@ -299,14 +299,14 @@ $(".date").datepicker({
 <h2>Skinning</h2>
 
 <p>
-	Skinning is the same as writing CSS against the datepicker HTML layout. Here is an example <a href="${jqt}/css/datepicker/skin1.css">CSS file</a> and the <a href="layout.htm">default HTML layout</a>. This tool allows you to customize the id and class names with the <samp>css</samp> configuration option. For example  	
+	Skinning is the same as writing CSS against the dateinput HTML layout. Here is an example <a href="${jqt}/css/dateinput/skin1.css">CSS file</a> and the <a href="layout.htm">default HTML layout</a>. This tool allows you to customize the id and class names with the <samp>css</samp> configuration option. For example  	
 </p>
 
 <pii:code>
-$(".date").datepicker({
+$(".date").dateinput({
 	css: {
 		prefix: null,
-		root: 'datepicker',
+		root: 'dateinput',
 		head: 'pickhead',
 	}
 });
@@ -336,14 +336,14 @@ $(".date").datepicker({
 		<td>id</td>
 		<td><samp>div</samp></td>
 		<td><samp>pick</samp>root</td>
-		<td>root element for the datepicker</td>
+		<td>root element for the dateinput</td>
 	</tr>
 	<tr>
 		<td class="code">head</td>
 		<td>id</td>
 		<td><samp>div</samp></td>
 		<td><samp>pick</samp>head</td>
-		<td>datepicker header that contains next/prev month buttons and dropdowns</td>
+		<td>dateinput header that contains next/prev month buttons and dropdowns</td>
 	</tr>
 	<tr>
 		<td class="code">title</td>
@@ -490,21 +490,21 @@ $(".date").datepicker({
 		<td class="code">getInput</td>
 		<td><code>jQuery</code></td>
 		<td>
-			returns the input field associated with the datepicker
+			returns the input field associated with the dateinput
 		</td>
 	</tr>	 
 	<tr>
 		<td class="code">getPicker</td>
 		<td><code>jQuery</code></td>
 		<td>
-			returns the datepicker element
+			returns the dateinput element
 		</td>
 	</tr>	 
 	<tr>
 		<td class="code">hide</td>
 		<td><code>API</code></td>
 		<td>
-			hides the datepicker
+			hides the dateinput
 		</td>
 	</tr>	 
 	<tr>
@@ -553,7 +553,7 @@ $(".date").datepicker({
 		<td class="code">show</td>
 		<td><code>API</code></td>
 		<td>
-			show datepicker
+			show dateinput
 		</td>
 	</tr>	 
 	<tr>
@@ -596,13 +596,13 @@ $(":input.date").change(function(event, date) {
 	<tr>
 		<td class="code">onBeforeShow</td>
 		<td>
-			before datepicker is shown
+			before dateinput is shown
 		</td>
 	</tr>
 	<tr>
 		<td class="code">onShow</td>
 		<td>
-			after the datepicker is completely shown (after a possible animation)
+			after the dateinput is completely shown (after a possible animation)
 		</td>
 	</tr>
 	<tr>
@@ -614,7 +614,7 @@ $(":input.date").change(function(event, date) {
 	<tr>
 		<td class="code">onHide</td>
 		<td>
-			when a datepicker is closed
+			when a dateinput is closed
 		</td>
 	</tr> 
 </table>
@@ -627,12 +627,12 @@ $(":input.date").change(function(event, date) {
 <h2>Localizing</h2>
  
 <p>
-	You can localize the datepicker to your language with a static <samp>$.tools.datepicker.localize</samp> call after which you can use the datepicker with another language. The tool uses following call internally to enable English localization.
+	You can localize the dateinput to your language with a static <samp>$.tools.dateinput.localize</samp> call after which you can use the dateinput with another language. The tool uses following call internally to enable English localization.
 </p>
 
 <pii:code>
 // build-in localization
-$.tools.datepicker.localize("en", {
+$.tools.dateinput.localize("en", {
 	months: 'January,February,March,April,May,June,July,August,September,October,November,December', 
 	shortMonths: 	'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec',  
 	days: 			'Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday', 
@@ -646,7 +646,7 @@ $.tools.datepicker.localize("en", {
 
 <pii:code>
 // example French localization
-$.tools.datepicker.localize("fr",  {
+$.tools.dateinput.localize("fr",  {
 	months: 			'Janvier,F&eacute;vrier,Mars,Avril,Mai,Juin,Juillet,Ao&ucirc;t,' + 
 							'Septembre,Octobre,Novembre,D&eacute;cembre', 
 	shortMonths: 		'Jan,F&eacute;v,Mar,Avr,Mai,Jun,Jul,Ao&ucirc;,Sep,Oct,Nov,D&eacute;c',
@@ -656,7 +656,7 @@ $.tools.datepicker.localize("fr",  {
 </pii:code>
 
 <p>
-	Notice that all special characters need to be escaped. I used <a href="http://www.pemberley.com/janeinfo/latin1.html" class="external">this list</a> to find the special entities for French characters. After the localization is in place you can use French language by supplying <samp>lang: 'fr'</samp> on your configuration. Or you can make French language the default language by editing <a href="${jqt}/documentation/basics.html#global_configuration">global configuration</a> as follows: <samp>$.tools.datepicker.conf.lang = 'fr';</samp> 
+	Notice that all special characters need to be escaped. I used <a href="http://www.pemberley.com/janeinfo/latin1.html" class="external">this list</a> to find the special entities for French characters. After the localization is in place you can use French language by supplying <samp>lang: 'fr'</samp> on your configuration. Or you can make French language the default language by editing <a href="${jqt}/documentation/basics.html#global_configuration">global configuration</a> as follows: <samp>$.tools.dateinput.conf.lang = 'fr';</samp> 
 </p>
 
 

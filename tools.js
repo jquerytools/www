@@ -131,14 +131,6 @@
 },
 
 
-{
-	key: 'form.validator',
-	title: 'Validator',
-	description: 'HTML5 input validation for humans',
-	file: 'form/form.validator',
-	www: 'form/validator/index.html'
-},
-
 /*
 {
 	key: 'form.styleable',
@@ -150,21 +142,29 @@
 */
 
 {
-	key: 'form.datepicker',
-	title: 'Datepicker',
+	key: 'form.dateinput',
+	title: 'Dateinput',
 	description: 'HTML5 date input for humans',
-	file: 'form/form.datepicker',
-	www: 'form/datepicker/index.html'
+	file: 'form/form.dateinput',
+	www: 'form/dateinput/index.html'
 },
 
 {
-	key: 'form.slider',
-	title: 'Slider',
+	key: 'form.range',
+	title: 'Range',
 	description: 'HTML5 range input for humans',
-	file: 'form/form.slider',
-	www: 'form/slider/index.html',
-	requires: 'form.drag'
+	file: 'form/form.range',
+	www: 'form/range/index.html'
 },
+
+{
+	key: 'form.validator',
+	title: 'Validator',
+	description: 'HTML5 input validation for humans',
+	file: 'form/form.validator',
+	www: 'form/validator/index.html'
+},
+
 //}}}
 
 
@@ -173,14 +173,6 @@
 { 
 	cat: 'Toolbox', 
 	description: 'Important tools for your everyday scripting'
-},
-
-{
-	key: 'toolbox.drag',
-	title: 'Drag',
-	description: 'A generic drag support for jQuery',
-	file: 'toolbox/toolbox.drag',
-	www: 'toolbox/drag.html'
 },
 
 {

@@ -1,0 +1,228 @@
+
+#sheet { 
+	background:#fff url(../../../img/hero/dateinput.jpg) no-repeat 0 -52px; 
+	width:800px;
+	height:550px;
+	position:absolute;
+	-webkit-box-shadow: rgba(0,0,0,0.3) 0 1px 3px; 
+	-moz-box-shadow: rgba(0,0,0,0.3) 0 1px 3px; 	
+}
+
+.rounded, #sheet input, .error { 
+	border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-o-border-radius: 5px; 
+	-khtml-border-radius: 5px; 
+}
+
+
+/* layout */
+.pane {
+	width:570px;
+	margin:55px auto 0 auto; 
+	display:none;
+	padding-top:300px;	
+}
+
+
+#pane1 { 
+	padding-top:0;
+	display:block;
+}
+
+#pane2 {
+	background:rgba(255, 255, 255, 0.8) url(img/code.png) no-repeat 15px 15px;		
+}
+
+#pane3 {
+	background:rgba(255, 255, 255, 0.8) url(img/screenshot.jpg) no-repeat 15px -110px;	 
+}
+
+#pane4 {
+	background:rgba(255, 255, 255, 0.8) url(img/screenshot.jpg) no-repeat 15px -100px;	 
+}
+
+#pane5 {
+	background:rgba(255, 255, 255, 0.8) url(img/screenshot.jpg) no-repeat 0 -150px;		
+	padding-top:150px;	
+}
+
+#pane5 .description {
+	background-color:#fff;
+	padding:2px 10px;
+}
+
+/* the form */
+#myform {
+	background:rgba(0, 0, 20, 0.7);	
+	padding:15px; 
+}
+
+#myform p {
+	clear:left;	
+}
+
+fieldset {
+	float:left;
+	margin-left:15px;
+	padding:0;
+	border:0;
+	width:245px;
+}
+
+.last {
+	margin-right:0;
+}
+
+legend {
+	color:#fff;
+	font-size:20px;
+	text-shadow:0 1px 0 #000;
+	padding:0;
+	margin-bottom:-3px;
+}
+
+
+label {
+	display:block;		
+	margin:3px;
+	color:#ddd;
+	font-size:11px;
+	text-shadow:0 1px 0 #000;
+}
+
+input {
+	border:1px solid;
+	border-color:#ccc #ddd #ddd #ccc;	
+	padding:6px;
+	background-color:rgba(255, 255, 255, 0.9);	
+	font-size:15px;
+	color:#555;
+	text-shadow:0 1px 0 #fff;
+	width:100%;
+}
+
+input:focus {
+	background-color:#fff;	
+	color:#000;	
+}
+
+input[required] {
+	font-weight:bold;		
+}
+
+.error {
+	background-color:#E8FF6D;
+	padding:4px;
+}
+
+.error p {
+	margin:0;
+	padding:0;
+	display:inline;
+}
+
+.error {
+	-webkit-box-shadow: #000 0 0 12px; 
+	-moz-box-shadow: #000 0 0 12px; 		
+}
+
+/* CSS arrow */
+.error span {
+	border:10px solid;
+	border-color:#E8FF6D transparent transparent;
+	bottom:-17px;
+	display:block;
+	height:0;
+	left:10px;
+	position:absolute;
+	width:0;		
+}
+
+.invalid {
+	background-color:rgba(221, 233, 255, 0.898) !important;
+}
+
+.date {
+	width:193px;	
+	background:#666 none repeat scroll 0 0;
+	color:#fff;
+	text-shadow:0 0 1px #000;
+}
+
+.date:focus {
+	background-color:#333;		
+	color:#fff;
+}
+
+.picktrigger {
+	background:#333;
+	cursor:pointer;
+	display:block;
+	float:right;
+	height:32px;
+	width:32px;
+}
+
+.picktrigger:hover {
+	background:#000;		
+}
+
+.high {
+	padding:15px 0 0 15px;		
+	clear:both;
+}
+
+button {
+	background:#0150D1 url(img/h30.png) repeat-x 0 0;
+	border:1px solid #d1ddc7;
+	color:#fff;
+	font-size:14px;
+	font-weight:bold; 
+	padding:6px 15px;
+	text-align:center;
+	text-decoration:none;
+	text-shadow:0 1px 0 #000;
+	cursor:pointer;
+}
+
+button:hover {
+	background-position:0 -12px;
+}
+
+button:active {
+	background-position:0 -30px;
+}
+
+/* tabs */
+#navi {
+	background:#f4f4f4 url(img/navi.png) repeat-x 0 0;
+	position:absolute;
+	bottom:2px;
+	height:120px;
+	width:640px;
+	padding:0 80px;
+}
+
+#navi a  { 
+	display:block;
+	float:left;
+	text-align:center;
+	color:#666;
+	width:125px;
+	cursor:pointer;
+}
+
+#navi a.current {
+	background:url(img/arrow.png) no-repeat 50% 0;	
+}
+
+#navi a:hover {
+	color:#000;		
+}
+
+#navi img {
+	display:block;		
+	margin-top:10px;
+}

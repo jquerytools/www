@@ -264,6 +264,7 @@
 		]
 	},
 	
+/* 
 	'2. Styleable': {
 	
 		description: 'Form widgets + CSS made possible',
@@ -283,58 +284,60 @@
 				title: 'Alternate form skin'
 			}
 		]
-	},
+	}, 
+*/
 
-	'3. Slider': {
+
+	'2. Range': {
 	
-		description: 'The most important UI widget for the web',
-		keywords: 'javascript tabs, jquery tabs, javascript tabbed navigation, ajax tabs, tab history, jquery accordion',
+		description: 'HTML5 range input for humans',
+		keywords: 'HTML5 range input, jquery range, jquery slider, javascript range input, skinnable slider',
 		
 		demos: [
 			{		
-				path: 'form/slider/index.html',
-				title: 'Minimal setup for horizontal slider'
+				path: 'form/range/index.html',
+				title: 'Minimal setup for horizontal range'
 			},
 			{		
-				path: 'form/slider/vertical.html',
-				title: 'Minimal setup for vertical slider'
+				path: 'form/range/vertical.html',
+				title: 'Minimal setup for vertical range'
 			},
 			{		
-				path: 'form/slider/customize.html',
-				title: 'Customizing slider features'
+				path: 'form/range/customize.html',
+				title: 'Customizing range features'
 			},
 			{		
-				path: 'form/slider/skin.html',
-				title: 'Alternate slider skin'
+				path: 'form/range/skin.html',
+				title: 'Alternate range skin'
 			},
 			{		
-				path: 'form/slider/scrollbar.html',
+				path: 'form/range/scrollbar.html',
 				title: 'A custom scrollbar for a DIV'
 			}
 		]
 	},
 	
-	'4. Datepicker': {
+	'3. Dateinput': {
 	
-		description: 'Small, compact, styleable HTML5 datepicker',
-		keywords: 'jquery datepicker, HTML5 datepicker, javascript datepicker, skinnable datepicker',
+		description: 'HTML5 date input for humans',
+		keywords: 'jquery dateinput, jquery datepicker, HTML5 date input, javascript date input, skinnable datepicker',
 		
 		demos: [
 			{		
-				path: 'form/datepicker/index.html',
-				title: 'Minimal setup for Datepicker'
+				path: 'form/dateinput/index.html',
+				title: 'Minimal setup for Dateinput'
 			},
 			{		
-				path: 'form/datepicker/customize.html',
-				title: 'Customizing Datepicker behaviour'
+				path: 'form/dateinput/customize.html',
+				title: 'Customizing Dateinput behaviour'
 			},
 			{		
-				path: 'form/datepicker/skins.html',
-				title: 'Alternate skins for Datepicker'
+				path: 'form/dateinput/skins.html',
+				title: 'Alternate skins for Dateinput'
 			},
 			{		
-				path: 'form/datepicker/localize.html',
-				title: 'Localizing the Datepicker (french)'
+				path: 'form/dateinput/localize.html',
+				title: 'Localizing the Dateinput (french)'
 			}			
 		]
 	},	 

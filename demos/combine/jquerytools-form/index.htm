@@ -1,0 +1,202 @@
+
+<!-- 
+	todo
+	- ranges
+	- validation error
+	- overlay & mask	
+-->
+<style>
+body {
+	padding:50px;
+	background-color:#ddd;		
+	font-family:"sans serif";
+	font-size:11px;
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="stylesheet" type="text/css" href="/home/tipiirai/git/www/css/dateinput/skin1.css"/>
+<link rel="stylesheet" type="text/css" href="/home/tipiirai/git/www/css/range/skin2.css"/>
+
+<!--[if IE]>
+<style>
+.sheet { border: 1px solid; border-color: #e5e5e5 #dbdbdb #d2d2d2; }
+</style> 
+<![endif]-->
+
+
+<script src="/home/tipiirai/git/jquerytools/lib/jquery-1.4.js"></script>
+<script src="/home/tipiirai/git/jquerytools/src/tabs/tabs.js"></script>
+<script src="/home/tipiirai/git/jquerytools/src/form/form.validator.js"></script>
+<script src="/home/tipiirai/git/jquerytools/src/form/form.dateinput.js"></script>
+<script src="/home/tipiirai/git/jquerytools/src/form/form.range.js"></script>
+
+<script>
+$(function() {
+	// tabs
+	$("#navi").tabs(".pane", { effect: 'fade' });		
+	
+	// validator
+	$("form.rounded").validator({ position: 'top right', offset: [0, -180] });
+	
+	// dateinput
+	$(":date").dateinput({ trigger: true, format: 'dddd mmm yyyy', offset: [2, 0] });
+	
+	// range
+	$(":range").range();
+	
+});
+</script>
+
+
+<div id="sheet" class="rounded">
+
+<!--{{{ pane1 -->
+	
+	<div class="pane" id="pane1">
+		
+		<form class="rounded" id="myform">
+			
+			<fieldset>
+				<legend>contact information</legend>
+				<p>
+					<label>email</label>
+					<input type="email" required="true" class="invalid" />
+				</p>
+				<p>
+					<label>website</label>
+					<input type="url" required="true" />
+				</p>
+				<p>
+					<label>name</label>
+					<input type="text" required="true" />
+				</p>
+			</fieldset>
+			
+			<fieldset class="last">
+				<legend>server information</legend>
+				
+				<p>
+					<label>number of processors</label>
+					<input type="range" class="range" min="2" max="20" step="9" value="4"/>
+				</p>
+				
+				<p>
+					<label>disk size (GB)</label>
+					<input type="range" class="range" min="30" max="800" step="30" value="100"  />
+				</p>
+				<p>
+					<label>starting at</label>
+					<input type="date" value="Today" />
+				</p>
+			</fieldset>
+			
+			<p class="high">
+				<button class="rounded" type="submit">Order Now</button>
+			</p>
+		
+		</form>
+		
+		<div class="description">
+			This imaginary form is constructed with 100% HTML5 standard. No hacks or tweaks. The form works on all major browsers even in IE6. What's really amazing is that the form can have dateinputs and ranges even when JavaScript is disabled! All this with ${v.jqtFormSize} kB! 
+		</div>
+	
+	</div> 
+<!--}}}-->
+
+	
+	<div class="pane" id="pane2">
+		
+		<div class="description">
+			Here are all the input fields and scripting for the demo. You have a sane subset of the HTML5 and Web Forms 2.0 standards available. Now these complex but useful standards can be used by humans. 
+		</div>
+	</div>
+	
+	<div class="pane" id="pane3">
+		
+		<div class="description">
+			<strong>input[required] { border: 1px solid #333; }</strong>
+			
+			The form uses some of the features in CSS3 such as attribute selectors (above), rounded borders, RGBA coloring and box shadows. These make web developers' life much, much easier. Together with jQuery Tools and HTML5 standard we can finally make well behaving and good looking forms with ease. 20 year wait is over.  
+		</div>
+	</div>
+	
+	<div class="pane" id="pane4">
+		
+		<div class="description"> 	
+			By the time of writing Opera has the best native support for HTML5. Here is Opera with JavaScript disabled! The browser displays it's native date and range input controls. Browsers that does not natively support these special inputs will show show a normal text field so that the form is editable in all situations.
+		</div>
+	
+	</div>
+	
+	<div class="pane" id="pane5">
+		
+		<div class="description">
+			<p>
+				<strong>Now listen</strong>. Internet Explorer has fairly good JavaScript support so it's possible to make cross browser libraries like jQuery Tools. However IE has many issues with CSS and HTML. For this demo you need a lot of redundant images and dirty hacks. To make identical look for IE
+			</p>
+			
+			<ol>
+				<li>you need quite precisely 300% more development time and money</li>
+				<li>your application becomes harder to maintain so you also need 300% more time and money in the future</li>
+			</ol>
+			
+			<p>
+				Let me put this another way. There is absolutely no reason to make your pages look identical in IE anymore. Period. Respect the standards and let unstandard browsers do what they can. Luckily you don't have to compromise (a lot) with the functionalities. It's the looks that IE doesn't care about.
+			</p>
+		</div>
+	</div>
+	
+	
+	<div id="navi">
+		<a class="current">
+			<img src="img/ipad.png" />
+			The Form
+		</a>
+		<a>
+			<img src="img/ipad.png" />
+			The Code
+		</a>
+		<a>
+			<img src="img/ipad.png" />
+			User Experience
+		</a>
+		<a>
+			<img src="img/ipad.png" />
+			No JavaScript 
+		</a>
+		<a>
+			<img src="img/ipad.png" />
+			Unstandard clients
+		</a>
+	
+	</div>
+
+</div>
+
+<noscript>
+Source 
+	<!-- 
+		new HTML5 input types (email, url, range, date)
+		new standard attributes (points to required & pattern)
+	-->
+	<form>
+		<input type="email" required="true" />
+		<input type="url" required="true" />
+		<input type="text" required="true" pattern="[\w\s]+"/>
+		<input type="range" />
+		<input type="date" />
+	</form>	
+	
+	<!--
+		setup HTML5 validation. done. (validator)
+		some jQuery Tools + HTML5 music (dateinput, range)
+	-->
+	<script>
+		$("form").validator();
+		$(":date").dateinput();
+		$(":range").range();
+	</script>
+</noscript>
+
+	

@@ -3,7 +3,7 @@
 <%--{{{ Intro --%>
 
 <h1>
-	jQuery Slider @ jQuery Tools 
+	jQuery Range @ jQuery Tools 
 	<em>HTML5 range input for humans</em>
 </h1>
 
@@ -23,7 +23,7 @@
 	<h3>For nerds and humans</h3>
 	
 	<p>
-		Call <samp>$(":range").slider();</samp> and all your HTML5 range inputs are working. End users can pick values by dragging a slider or with the keyboard arrow keys. Hackers can use <strong>VIM</strong> keyboard shortcuts to move slider backward and forward.
+		Call <samp>$(":range").range();</samp> and all your HTML5 range inputs are working. End users can pick values by dragging a range or with the keyboard arrow keys. Hackers can use <strong>VIM</strong> keyboard shortcuts to move range backward and forward.
 	</p>
 
 	
@@ -34,7 +34,7 @@
 	<h3>Styleable</h3>
 	
 	<p>
-		You can design sliders that fit to the overall feel of your site. You can use images and the latest CSS3 techniques if you like. Every bit of the slider is skinnable. Default CSS class names can be changed and you can design both horizontal and vertical sliders. Professional example skins are provided and you can freely use them.
+		You can design ranges that fit to the overall feel of your site. You can use images and the latest CSS3 techniques if you like. Every bit of the range is skinnable. Default CSS class names can be changed and you can design both horizontal and vertical ranges. Professional example skins are provided and you can freely use them.
 	</p>
 	
 	<h3>File size: <strong>1.90 kb!</strong></h3>
@@ -50,10 +50,36 @@
 <%--}}}--%>
 
 
+<a name="usage"></a>
+<h2>Usage</h2>
+
+<p>
+	Here is a quick preview of how this tools is used.
+</p>
+
+<pii:code lang="html">
+<!-- styling for the range -->
+<link rel="stylesheet" type="text/css" href="range.css"/>
+
+<!-- couple of HTML5 range inputs with standard attributes -->
+<input type="range" name="range1" min="50" max="500" step="20" value="100" />
+<input type="range" name="range2" min="0" max="1500" step="50" value="450" />
+
+<!-- select all range inputs and make them ranges -->
+<script>
+$(":range").range();
+</script>
+</pii:code>
+
+<p>
+	After this you have cross browser range inputs available. The browser's build in range input is replaced by a normal text input to keep it from messing things up. Essentially the original range inputs are replaced by new input fields  where the type attribute has been changed to "text". To get into details take a look at the demo: <a href="${jqt}/demos/form/range/index.html">minimal setup for range input</a>. 
+</p>
+
+<a name="demos"></a>
 <h2>Demos</h2>
 
 <ul>
-	<c:forEach items="${f:getDemo(context.toolDemos2, 'form/slider/index.html').category.demos}" var="demo">
+	<c:forEach items="${f:getDemo(context.toolDemos2, 'form/range/index.html').category.demos}" var="demo">
 		<li> <a href="${jqt}/demos/${demo.path}">${demo.title}</a> </li>
 	</c:forEach>
 </ul>
@@ -75,37 +101,38 @@
 
 	<tr>
 		<td class="code">accuracy</td>
-		<td>2</td>
+		<td>0</td>
 		<td>
-			for floating point numbers this is the amount of decimals
+			for floating point numbers this is the amount of decimals. by default decimals are not shown.
 		</td> 
 	</tr>
 	<tr>
 		<td class="code">css</td>
 		<td>Object</td>
 		<td>
-			CSS class names used by the generated slider. Here are the default values that you can change.
-<pre>
+			CSS class names used by the generated range. Here are the default values that you can change.
+<pii:code lang="css">
 css: { 
-	slider: 'slider', 
-	progress: 'progress', 
-	handle: 'handle'
+	input:  'range', 			/* class name for the generated text input field */
+	slider: 'slider', 		/* class name for slider */
+	progress: 'progress', 	/* class name for progress bar  */
+	handle: 'handle'			/* class name for drag handle */
 }
-</pre>
+</pii:code>
 		</td> 
 	</tr>
 	<tr>
 		<td class="code">hideInput</td>
 		<td>false</td>
 		<td>
-			whether the input is hidden and only the slider is visible
+			whether the input is hidden and only the range is visible
 		</td> 
 	</tr>
 	<tr>
 		<td class="code">keyboard</td>
 		<td>true</td>
 		<td>
-			whether keyboard shortcats are enabled
+			whether keyboard shortcats are enabled. both arrow keys and VIM shortcuts are supported. page-up and page-down keys move the range with 10 x larger steps. 
 		</td> 
 	</tr>
 	<tr>
@@ -123,17 +150,24 @@ css: {
 		</td> 
 	</tr>
 	<tr>
+		<td class="code">progress</td>
+		<td>false</td>
+		<td>
+			whether progress bar is show and it's widt is adjusted accordingly. 
+		</td> 
+	</tr>	
+	<tr>
 		<td class="code">speed</td>
 		<td>200</td>
 		<td>
-			animation speed for the drag handle when the slider is clicked
+			animation speed for the drag handle when the range is clicked
 		</td> 
 	</tr>
 	<tr>
 		<td class="code">step</td>
 		<td>0</td>
 		<td>
-			the amount steps the slider takes between min and max
+			the amount steps the range takes between min and max
 		</td> 
 	</tr>
 	<tr>
@@ -147,7 +181,7 @@ css: {
 		<td class="code">vertical</td>
 		<td>false</td>
 		<td>
-			enabling this makes the slider vertical
+			enabling this makes the range vertical
 		</td> 
 	</tr>
 	
@@ -157,7 +191,7 @@ css: {
 <h3>Input attributes</h3> 
 
 <p>
-	You can also configure the slider by supplying valid HTML5 attributes for the range input field. For example
+	You can also configure the range by supplying valid HTML5 attributes for the range input field. For example
 </p>
 
 <pii:code lang="html">
@@ -176,7 +210,7 @@ css: {
 	
 	<tr>
 		<td class="code">disabled</td>
-		<td>whether the slider is completely disabled. both the slider and the input field is disabled. <samp>disabled</samp> attribute can be enabled and disabled dynamically by scripting.</td>
+		<td>whether the range is completely disabled. both the range and the input field is disabled. <samp>disabled</samp> attribute can be enabled and disabled dynamically by scripting.</td>
 	</tr>
 	<tr>
 		<td class="code">max</td>
@@ -192,11 +226,11 @@ css: {
 	</tr>
 	<tr>
 		<td class="code">readonly</td>
-		<td>when enabled the slider is functional but the associative input field cannot be edited</td>
+		<td>when enabled the range is functional but the associative input field cannot be edited</td>
 	</tr>
 	<tr>
 		<td class="code">step</td>
-		<td>the amount steps the slider takes between min and max</td>
+		<td>the amount steps the range takes between min and max</td>
 	</tr>
 	
 	<tr>
@@ -207,23 +241,25 @@ css: {
 </table>
 <%--}}}--%>
 
+
 <%--{{{ Skinning --%>
 <a name="skinning"></a>
 <h2>Skinning</h2>
 
 <p>
-	Once slider is initialized a following kind of HTML layout is constructed:	
+	Once range is initialized a following kind of HTML layout is constructed:	
 </p>
 
-<pii:code>
+<pii:code lang="html">
 <div class="slider">
 	<div class="progress" style="width: 200px; display: block;"></div>
 	<a class="handle" style="left: 200px;"></a>
 </div>
+<input type="text" value="4" step="9" max="20" min="2" class="range">
 </pii:code>
 
 <p>
-	Here the slider has been dragged to position 200px and the progress bar follows. When it comes to skinning it's all aoubt making your CSS against this structure. Here is one <a href="${jqt}/css/slider/skin2.css">example skin</a> which uses only one background gradient image.
+	There are two elements. The slider and the input. Inside slider there is a progress bar and a drag handle. Here the handle has been dragged to position 200px and the progress bar follows if it's enabled. The original range input is placed after the slider component with type attribute changed to "text". When it comes to skinning it's all aoubt making your CSS against this structure. Here is one <a href="${jqt}/css/range/skin2.css">example skin</a> which uses only one background gradient image.
 </p>
 
 <%--}}}--%>
@@ -278,7 +314,7 @@ css: {
 		<td class="code">getValue</td>
 		<td><code>Number</code></td>
 		<td>
-			returns the value of the slider
+			returns the value of the range
 		</td>
 	</tr>	 
 	<tr>
@@ -299,7 +335,7 @@ css: {
 		<td class="code">setValue(value)</td>
 		<td><code>API</code></td>
 		<td>
-			set the slider value to the one specified in the argument
+			set the range value to the one specified in the argument
 		</td>
 	</tr>	 
 	<tr>
@@ -341,13 +377,13 @@ $(":range").change(function(event, value) {
 	<tr>
 		<td class="code">onSlide</td>
 		<td>
-			when sliding occurs. you can cancel the action by returning <samp>false</samp> or calling <samp>preventDefault()</samp> for the event object.
+			when sliding occurs. you can cancel the action by returning <samp>false</samp> or calling <samp>preventDefault()</samp> for the event object. note that assigning this event listener is performance heavy and may affect to the smoothness of the sliding experience.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">change</td>
 		<td>
-			when slider value is changed. Note that the name is the same as the jQuery's <samp>change</samp> method and you can bind the event directly with that function. For other event's you must use the <samp>bind</samp> method. This leads to more fluent syntax as seen on the example above.
+			when range value is changed. Note that the name is the same as the jQuery's <samp>change</samp> method and you can bind the event directly with that function. For other event's you must use the <samp>bind</samp> method. This leads to more fluent syntax as seen on the example above.
 		</td>
 	</tr>
 
