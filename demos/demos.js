@@ -246,19 +246,19 @@
     
 		demos: [
 			{		
-				path: 'form/validator/index.html',
+				path: 'validator/index.html',
 				title: 'Minimal setup for Validator'
 			},
 			{		
-				path: 'form/validator/localize.html',
+				path: 'validator/localize.html',
 				title: 'Localizing the Validator (french)'
 			},
 			{		
-				path: 'form/validator/custom-validators.html',
+				path: 'validator/custom-validators.html',
 				title: 'Using custom validators'
 			},
 			{		
-				path: 'form/validator/error-container.html',
+				path: 'validator/error-container.html',
 				title: 'Displaying all errors inside single DIV'
 			}
 		]
@@ -272,15 +272,15 @@
     
 		demos: [
 			{		
-				path: 'form/styleable/index.html',
+				path: 'styleable/index.html',
 				title: 'Minimal setup for Styleable'
 			},
 			{		
-				path: 'form/styleable/scripting.html',
+				path: 'styleable/scripting.html',
 				title: 'Scripting styleable Forms'
 			},
 			{		
-				path: 'form/styleable/skin.html',
+				path: 'styleable/skin.html',
 				title: 'Alternate form skin'
 			}
 		]
@@ -291,27 +291,27 @@
 	'2. Range': {
 	
 		description: 'HTML5 range input for humans',
-		keywords: 'HTML5 range input, jquery range, jquery slider, javascript range input, skinnable slider',
+		keywords: 'HTML5 range input, jquery range, jquery rangeinput, javascript range input, skinnable rangeinput',
 		
 		demos: [
 			{		
-				path: 'form/range/index.html',
+				path: 'rangeinput/index.html',
 				title: 'Minimal setup for horizontal range'
 			},
 			{		
-				path: 'form/range/vertical.html',
+				path: 'rangeinput/vertical.html',
 				title: 'Minimal setup for vertical range'
 			},
 			{		
-				path: 'form/range/customize.html',
+				path: 'rangeinput/customize.html',
 				title: 'Customizing range features'
 			},
 			{		
-				path: 'form/range/skin.html',
+				path: 'rangeinput/skin.html',
 				title: 'Alternate range skin'
 			},
 			{		
-				path: 'form/range/scrollbar.html',
+				path: 'rangeinput/scrollbar.html',
 				title: 'A custom scrollbar for a DIV'
 			}
 		]
@@ -320,23 +320,23 @@
 	'3. Dateinput': {
 	
 		description: 'HTML5 date input for humans',
-		keywords: 'jquery dateinput, jquery datepicker, HTML5 date input, javascript date input, skinnable datepicker',
+		keywords: 'jquery dateinput, jquery dateinput, HTML5 date input, javascript date input, skinnable dateinput',
 		
 		demos: [
 			{		
-				path: 'form/dateinput/index.html',
+				path: 'dateinput/index.html',
 				title: 'Minimal setup for Dateinput'
 			},
 			{		
-				path: 'form/dateinput/customize.html',
+				path: 'dateinput/customize.html',
 				title: 'Customizing Dateinput behaviour'
 			},
 			{		
-				path: 'form/dateinput/skins.html',
+				path: 'dateinput/skins.html',
 				title: 'Alternate skins for Dateinput'
 			},
 			{		
-				path: 'form/dateinput/localize.html',
+				path: 'dateinput/localize.html',
 				title: 'Localizing the Dateinput (french)'
 			}			
 		]

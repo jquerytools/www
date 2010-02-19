@@ -1,12 +1,12 @@
 
 #wrapper {
-	background:#666 url(img/range/h300.png) repeat-x;
+	background:#666 url(img/rangeinput/h300.png) repeat-x;
 	padding:10px 20px;
 	width:510px; 
 	height:130px;
 }
 
-.slider { 
+.rangeinput { 
 	background:#333 url(h30.png) repeat-x 0 0; 
 	height:12px; 
 	position:relative; 

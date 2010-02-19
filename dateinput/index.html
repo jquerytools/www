@@ -53,7 +53,7 @@
 <h2>Demos</h2>
 
 <ul>
-	<c:forEach items="${f:getDemo(context.toolDemos2, 'form/dateinput/index.html').category.demos}" var="demo">
+	<c:forEach items="${f:getDemo(context.toolDemos2, 'dateinput/index.html').category.demos}" var="demo">
 		<li> <a href="${jqt}/demos/${demo.path}">${demo.title}</a> </li>
 	</c:forEach>
 </ul>

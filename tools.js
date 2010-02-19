@@ -122,7 +122,8 @@
 	},
 
 //}}}
-	
+
+
 
 //{{{ FORM
 { 
@@ -136,8 +137,8 @@
 	key: 'form.styleable',
 	title: 'Styleable',
 	description: 'Style your form widgets with CSS.',
-	file: 'form/form.styleable',
-	www: 'form/styleable/index.html'
+	file: 'form.styleable',
+	www: 'styleable/index.html'
 },
 */
 
@@ -145,24 +146,24 @@
 	key: 'form.dateinput',
 	title: 'Dateinput',
 	description: 'HTML5 date input for humans',
-	file: 'form/form.dateinput',
-	www: 'form/dateinput/index.html'
+	file: 'form.dateinput',
+	www: 'dateinput/index.html'
 },
 
 {
 	key: 'form.range',
 	title: 'Range',
 	description: 'HTML5 range input for humans',
-	file: 'form/form.range',
-	www: 'form/range/index.html'
+	file: 'form.range',
+	www: 'rangeinput/index.html'
 },
 
 {
 	key: 'form.validator',
 	title: 'Validator',
 	description: 'HTML5 input validation for humans',
-	file: 'form/form.validator',
-	www: 'form/validator/index.html'
+	file: 'form.validator',
+	www: 'validator/index.html'
 },
 
 //}}}

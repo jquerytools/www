@@ -72,14 +72,14 @@ $(":range").range();
 </pii:code>
 
 <p>
-	After this you have cross browser range inputs available. The browser's build in range input is replaced by a normal text input to keep it from messing things up. Essentially the original range inputs are replaced by new input fields  where the type attribute has been changed to "text". To get into details take a look at the demo: <a href="${jqt}/demos/form/range/index.html">minimal setup for range input</a>. 
+	After this you have cross browser range inputs available. The browser's build in range input is replaced by a normal text input to keep it from messing things up. Essentially the original range inputs are replaced by new input fields  where the type attribute has been changed to "text". To get into details take a look at the demo: <a href="${jqt}/demos/rangeinput/index.html">minimal setup for range input</a>. 
 </p>
 
 <a name="demos"></a>
 <h2>Demos</h2>
 
 <ul>
-	<c:forEach items="${f:getDemo(context.toolDemos2, 'form/range/index.html').category.demos}" var="demo">
+	<c:forEach items="${f:getDemo(context.toolDemos2, 'rangeinput/index.html').category.demos}" var="demo">
 		<li> <a href="${jqt}/demos/${demo.path}">${demo.title}</a> </li>
 	</c:forEach>
 </ul>
@@ -114,7 +114,7 @@ $(":range").range();
 <pii:code lang="css">
 css: { 
 	input:  'range', 			/* class name for the generated text input field */
-	slider: 'slider', 		/* class name for slider */
+	rangeinput: 'rangeinput', 		/* class name for rangeinput */
 	progress: 'progress', 	/* class name for progress bar  */
 	handle: 'handle'			/* class name for drag handle */
 }
@@ -251,7 +251,7 @@ css: {
 </p>
 
 <pii:code lang="html">
-<div class="slider">
+<div class="rangeinput">
 	<div class="progress" style="width: 200px; display: block;"></div>
 	<a class="handle" style="left: 200px;"></a>
 </div>
@@ -259,7 +259,7 @@ css: {
 </pii:code>
 
 <p>
-	There are two elements. The slider and the input. Inside slider there is a progress bar and a drag handle. Here the handle has been dragged to position 200px and the progress bar follows if it's enabled. The original range input is placed after the slider component with type attribute changed to "text". When it comes to skinning it's all aoubt making your CSS against this structure. Here is one <a href="${jqt}/css/range/skin2.css">example skin</a> which uses only one background gradient image.
+	There are two elements. The rangeinput and the input. Inside rangeinput there is a progress bar and a drag handle. Here the handle has been dragged to position 200px and the progress bar follows if it's enabled. The original range input is placed after the rangeinput component with type attribute changed to "text". When it comes to skinning it's all aoubt making your CSS against this structure. Here is one <a href="${jqt}/css/rangeinput/skin2.css">example skin</a> which uses only one background gradient image.
 </p>
 
 <%--}}}--%>
