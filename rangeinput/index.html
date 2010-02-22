@@ -37,10 +37,10 @@
 		You can design ranges that fit to the overall feel of your site. You can use images and the latest CSS3 techniques if you like. Every bit of the range is skinnable. Default CSS class names can be changed and you can design both horizontal and vertical ranges. Professional example skins are provided and you can freely use them.
 	</p>
 	
-	<h3>File size: <strong>1.90 kb!</strong></h3>
+	<h3>File size: <strong>2.20 kb!</strong></h3>
 	
 	<p>
-		With this size you'll get all you need: configurability, skinning, orientation, standards based behaviour, <a href="#api">scripting API</a> and an <a href="#events">event model</a>. And as a bonus you'll get a generig drag utility! Smaller codebase is easier to control and results to snappier behaviour.  
+		With this size you'll get all you need: configurability, skinning, orientation, standards based behaviour, <a href="#api">scripting API</a> and an <a href="#events">event model</a>. And as a bonus you'll get a generig dragging utility! Smaller codebase is easier to control and results to snappier behaviour.  
 	</p>	 
 
 	
@@ -100,13 +100,6 @@ $(":range").range();
 	</thead>	
 
 	<tr>
-		<td class="code">accuracy</td>
-		<td>0</td>
-		<td>
-			for floating point numbers this is the amount of decimals. by default decimals are not shown.
-		</td> 
-	</tr>
-	<tr>
 		<td class="code">css</td>
 		<td>Object</td>
 		<td>
@@ -150,6 +143,13 @@ css: {
 		</td> 
 	</tr>
 	<tr>
+		<td class="code">precision</td>
+		<td>0</td>
+		<td>
+			by default the value's precision (the amount of decimal numbers) is determined by the value of the <samp>step</samp> configuration option. For example a value <samp>0.01</samp> results to a precision value 2 (two decimals). You can override this automatic precision calculation with this configuration option.
+		</td> 
+	</tr>	
+	<tr>
 		<td class="code">progress</td>
 		<td>false</td>
 		<td>
@@ -165,9 +165,13 @@ css: {
 	</tr>
 	<tr>
 		<td class="code">step</td>
-		<td>0</td>
+		<td>'any'</td>
 		<td>
-			the amount steps the range takes between min and max
+			a number that defines the size of a single step (the granularity of the value) limiting the amount of allowed values. zero value or a string "any" disables stepping. The following range control only accepts values in the range 0..1, and allows 100 steps in that range:
+
+			<p>
+				<samp>&lt;input name=opacity type=range min=0 max=1 step="0.01"&gt;</samp>
+			</p>
 		</td> 
 	</tr>
 	<tr>
@@ -255,7 +259,7 @@ css: {
 	<div class="progress" style="width: 200px; display: block;"></div>
 	<a class="handle" style="left: 200px;"></a>
 </div>
-<input type="text" value="4" step="9" max="20" min="2" class="range">
+<input type="text" value="4" step="10" max="20" min="2" class="range">
 </pii:code>
 
 <p>
@@ -342,9 +346,60 @@ css: {
 		<td class="code">step(amount)</td>
 		<td><code>API</code></td>
 		<td>
-			seek backward (negative value) or forward (positive value) with the amount specified in the argument
+			changes the value by the value given in the <samp>step</samp> configuration option multiplied by <samp>amount</samp>. The default amount is 1. Negative value decreases the value and positive increases.
 		</td>
 	</tr>	 
+	<tr>
+		<td class="code">stepDown(amount)</td>
+		<td><code>API</code></td>
+		<td>
+			decreases the value with the amount of steps given in the argument. identical to <samp>step(-amount)</samp>. 
+		</td>
+	</tr>		
+	<tr>
+		<td class="code">stepUp(amount)</td>
+		<td><code>API</code></td>
+		<td>
+			increases the value with the amount of steps given in the argument. identical to <samp>step(amount)</samp>. 
+		</td>
+	</tr>		
+</table>
+
+<h3>DOM API</h3>
+
+<p>	
+	The official HTML5 range input defines a couple of <a href="http://dev.w3.org/html5/spec-author-view/common-input-element-attributes.html#common-input-element-apis" class="external">DOM methods and attributes</a> which are being enabled by this tool.
+</p>
+
+<table class="listing">
+	<thead>
+		<tr>
+			<th>Method</th>
+			<th nowrap>Return value</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tr>
+		<td class="code">stepDown(amount)</td>
+		<td><code></code></td>
+		<td>
+			decreases the value with the amount of steps given in the argument. identical to <samp>step(-amount)</samp> in the <a href="#api">api</a> 
+		</td>
+	</tr>		
+	<tr>
+		<td class="code">stepUp(amount)</td>
+		<td><code></code></td>
+		<td>
+			increases the value with the amount of steps given in the argument. identical to <samp>step(amount)</samp> in the <a href="#api">api</a> 
+		</td>
+	</tr>		
+	<tr>
+		<td class="code">valueAsNumber</td>
+		<td><code>number</code></td>
+		<td>
+			normal <samp>value</samp> property on the DOM always returns a string value. this HTML5 compatible <samp>valueAsNumber</samp> property contains the value as a floating point (or integer) number.
+		</td>
+	</tr>		
 </table>
 
 <%--}}}--%>

@@ -23,12 +23,15 @@
 	margin:55px auto 0 auto; 
 	display:none;
 	padding-top:300px;	
+	z-index:1;
+	position:relative;
 }
 
 
 #pane1 { 
 	padding-top:0;
 	display:block;
+	position:static;
 }
 
 #pane2 {
@@ -115,21 +118,12 @@ input[required] {
 .error {
 	background-color:#E8FF6D;
 	padding:4px;
-}
-
-.error p {
-	margin:0;
-	padding:0;
-	display:inline;
-}
-
-.error {
 	-webkit-box-shadow: #000 0 0 12px; 
 	-moz-box-shadow: #000 0 0 12px; 		
 }
 
 /* CSS arrow */
-.error span {
+.error em {
 	border:10px solid;
 	border-color:#E8FF6D transparent transparent;
 	bottom:-17px;

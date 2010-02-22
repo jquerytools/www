@@ -2,43 +2,67 @@
 <script src="/home/tipiirai/git/jquerytools/lib/jquery-1.4.js"></script>
 <script src="/home/tipiirai/git/jquerytools/src/validator/validator.js"></script>
 
-<link rel="stylesheet" type="text/css" href="form.css"/>
+<style>
+label {
+	font-size:11px;		
+}
 
-<form id="custom">
+label input {
+	display:block;	
+	margin-bottom:5px;	
+}
 
-	<label>
-		Password
-		<input type="password" name="password" oninvalid="myfunc()"/>
-	</label>
-	
-	<label>
-		Password check
-		<input type="password" name="password" equals="password" />
-	</label>
+.error {
+	width:220px;
+	background-color:#fff500;
+	font-size:11px;
+	padding:4px;
+	border:1px solid #ddd;
+}
+</style>
+
+<form id="myform">
+
+	<label> email * <input type="email" required="required" class="invalid" /> </label> 
+	<label> username * <input type="text" name="username" required="required" /> </label> 
+	<label> website * <input type="url" required="required" /> </label> 
+	<label> name * <input type="text" name="name" required="required" /> </label>  
+	<label> age <input type="number" name="age" size="4" /> </label>
+	<label> Password <input type="password" name="password" oninvalid="myfunc()"/> </label> 
+	<label> Password check <input type="password" name="password" equals="password" /> </label>
+
+	<p>
+		<button type="submit">Submit form</button>
+	</p>
 	
 </form>
 		
 <script> 
-function myfunc() {
-	console.info("my", this, arguments);		
-}
-// password strength
-$.tools.validator.fn(":password", function(el, value) {
-		return value.length > 5 ? true : {fi: "Password not strong enough" };
-});
-
 // generic equals function
-$.tools.validator.fn("[equals]", "Value not equal with the $1 field", function(el) {
-	var name = el.attr("equals"),
-		 field = this.getInputs().filter("[name=" + name + "]");
-		 
+$.tools.validator.fn("[data-equals]", "Value not equal with the $1 field", function(el) {
+	var name = el.attr("data-equals"),
+		 field = this.getInputs().filter("[name=" + name + "]"); 
 	return el.val() == field.val() ? true : [name]; 
 });
 
 
-// define new attribute and a proper error message for invalid value
-$.tools.validator.fn("[name=username]", "Username is already taken", function() {
+// minlength
+$.tools.validator.fn("[minlength]", function(el, value) {
+	return value.length <= el.attr("minlength") ? true : {     
+		en: "Password not strong enough",
+		fi: "Anna kinkkisempi salasana" 
+	};
+});
+
+$.tools.validator.fn("[number]", function() {
+			
+});
 	
+// define new attribute and a proper error message for invalid value
+$.tools.validator.fn("[unique]", "Username is already taken", function(el, value) {
+	$.getJSON("unique.jsp", {name: el.attr("name"), value: value}, function(json) {
+				
+	});
 });
 
 var validator= $("#custom input").validator().data("validator");
@@ -46,6 +70,22 @@ var validator= $("#custom input").validator().data("validator");
 $("[name=password]").oninvalid(function() {
 	var api = $(this).data("validator");
 	console.info(".--", arguments, api);
+});
+
+
+// define function matcher
+function myMatcher() {
+	return $(this).parents("form.register").length > 0;
+}
+
+// supply a key for the matcher
+myMatcher.key = "register-input";
+
+// use the "localized" matcher on our validator
+$.tools.validator.fn(myMatcher, "Please fix this value", function(el, v) {
+	
+	// do your validation. return true if the value is valid
+	return true;
 });
 
 </script>

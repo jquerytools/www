@@ -34,26 +34,20 @@ body {
 <script>
 $(function() {
 	// tabs
-	$("#navi").tabs(".pane", { effect: 'fade' });		
+	$("#navi").tabs(".pane");		
 	
 	// validator
-	$("form.rounded").validator({ position: 'top right', offset: [0, -180] });
+	$("#myform").validator({ 
+		message: '<div><em/></div>',
+		position: 'top left', 
+		offset: [0, 40] 
+	});
 	
 	// dateinput
 	$(":date").dateinput({ trigger: true, format: 'dddd mmm yyyy', offset: [2, 0] });
 	
-	// range
-	$(":range").rangeinput({
-			
-		onSlide: function(e, value) {
-			console.info(e, value);		
-		},
-		
-		change: function(e, value) {
-			console.info(e, value);
-		}
-				
-	});
+	// rangeinputs
+	$(":range").rangeinput();
 	
 });
 </script>
@@ -71,15 +65,15 @@ $(function() {
 				<legend>contact information</legend>
 				<p>
 					<label>email</label>
-					<input type="email" required="true" class="invalid" />
+					<input type="email" required="required" class="invalid" />
 				</p>
 				<p>
 					<label>website</label>
-					<input type="url" required="true" />
+					<input type="url" required="required" />
 				</p>
 				<p>
 					<label>name</label>
-					<input type="text" required="true" />
+					<input type="text" required="required" />
 				</p>
 			</fieldset>
 			
@@ -143,16 +137,17 @@ $(function() {
 		
 		<div class="description">
 			<p>
-				<strong>Now listen</strong>. Internet Explorer has fairly good JavaScript support so it's possible to make cross browser libraries like jQuery Tools. However IE has many issues with CSS and HTML. For this demo you need a lot of redundant images and dirty hacks. To make identical look for IE
+				<strong>Now listen</strong>. Internet Explorer has fairly good JavaScript support so it's possible to make cross browser libraries like jQuery Tools. However IE has many issues with CSS and HTML. For this demo you need a lot of redundant images and dirty hacks. To make somewhat similar look for IE
 			</p>
 			
 			<ol>
 				<li>you need quite precisely 300% more development time and money</li>
 				<li>your application becomes harder to maintain so you also need 300% more time and money in the future</li>
+				<li>all this 300% for what? your site will feel like IE6 on all browsers!</li>
 			</ol>
 			
 			<p>
-				Let me put this another way. There is absolutely no reason to make your pages look identical in IE anymore. Period. Respect the standards and let unstandard browsers do what they can. Luckily you don't have to compromise (a lot) with the functionalities. It's the looks that IE doesn't care about.
+				Let me put this another way. There is absolutely no good reason to develop identical look for IE6. Period. Respect the standards and let unstandard browsers do what they can. Luckily you don't have to compromise (a lot) with the functionalities. It's the looks that IE doesn't care about.
 			</p>
 		</div>
 	</div>

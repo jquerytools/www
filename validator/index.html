@@ -318,9 +318,9 @@ $("fieldset:eq(1)").attr("disabled", true);
 	</tr>
 	<tr>
 		<td class="code">message</td>
-		<td nowrap><code style="font-size:10px">'&lt;div&gt;&lt;span/&gt;&lt;/div&gt;'</code></td>
+		<td nowrap><code>'&lt;div/&gt;</td>
 		<td>
-			HTML layout for the error message. the nested <samp>span</samp> element inside the default layout is there for a rendering an arrows for example. you can specify as complex layout as you wish. the actual errors are <samp>p</samp> elements that are <em>appended</em> to the message's root element.
+			HTML layout for the error message. the actual errors are <samp>span</samp> elements that are <em>appended</em> to the message element. this configuration option allows you can specify as complex layout as you wish. you can for example add a nested <samp>div</samp> element as a placeholder for an arrow.
 		</td> 
 	</tr>
 	<tr>
@@ -339,14 +339,14 @@ $("fieldset:eq(1)").attr("disabled", true);
 	</tr>
 	<tr>
 		<td class="code">offset</td>
-		<td><code>[-10, 0]</code></td>
+		<td><code>[0, 0]</code></td>
 		<td>
 			Fine tunes the tooltip position specified with the <samp>position</samp> property. See the <a href="#positioning">positioning details</a> for more information.
 		</td> 
 	</tr>
 	<tr>
 		<td class="code">position</td>
-		<td><code>'top center'</code></td>
+		<td><code>'top left'</code></td>
 		<td>
 			specifies the position of the error message. See the <a href="#positioning">positioning details</a> for more information
 		</td> 
@@ -587,7 +587,7 @@ $.tools.validator.fn("[type=range]", "Value must be between $1 and $2", function
 $.tools.validator.fn(function()  {
 
 	// returning true means that a match was found
-	return $(this).parents("form.register).length > 0;
+	return $(this).parents("form.register").length > 0;
 
 // 2:nd argument is the actual validator function
 }, function(el, v) {
@@ -599,8 +599,40 @@ $.tools.validator.fn(function()  {
 </pii:code>
 
 <p>
-	Our matcher only select inputs that are within a FORM with class name "register". This is propably not a real world situation but hopefully you'll understand the power of function matchers.
+	Our matcher only select inputs that are within a FORM with class name "register". This is propably not a real world situation but it will show you how it works. You have a complete control over the selection. 
 </p>
+
+<h4>Localization &amp; function matchers</h4>
+
+<p>
+	You can return the error message from the validator function directly. If you wan to take advantage of the <samp>$.tools.validator.messages</samp> object on your localization we need to have a key for your matcher. The key is given as a property for the validator function as follows:
+</p>
+
+<pii:code>
+// define function matcher
+function myMatcher() {
+	return $(this).parents("form.register").length > 0;
+}
+
+// supply a key for the matcher
+myMatcher.key = "register-input";
+
+// use the "localized" matcher on our validator
+$.tools.validator.fn(myMatcher, "Please fix this value", function(el, v) {
+	
+	// do your validation. return true if the value is valid
+	return true;
+});
+
+<p>
+	After this you can see the custom validator on the <samp>$.tools.validator.messages</samp> object (last line):
+</p>
+
+<p>
+	<img src="img/messages-custom.gif" alt="Localization of the function matcher" />
+</p>
+
+</pii:code>
 
 <%--}}}--%>
 
