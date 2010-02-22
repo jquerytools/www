@@ -16,14 +16,14 @@
 	<h3>HTML5 range input</h3>
 	
 	<p>
-		HTML5 range input <samp>&lt;input type="range" /&gt;</samp> is currently supported by Opera and Safari and as a standard it will be implemented to the other browsers as well. This tool brings HTML5 range input for all browsers in consistent and standardized manner now. The range field is just like any other FORM filed which can be submitted.
+		HTML5 range input <samp>&lt;input type="range" /&gt;</samp> is currently supported by Opera and Safari, and being a standard it will be implemented in the other browsers as well. This tool brings HTML5 range input to all browsers in a consistent and standardized manner <em>now.</em> The range field is just like any other <samp>form</samp> field which can be submitted.
 	</p> 
 	 
 	
 	<h3>For nerds and humans</h3>
 	
 	<p>
-		Call <samp>$(":range").range();</samp> and all your HTML5 range inputs are working. End users can pick values by dragging a range or with the keyboard arrow keys. Hackers can use <strong>VIM</strong> keyboard shortcuts to move range backward and forward.
+		Call <samp>$(":range").range();</samp> and all your HTML5 range inputs are working. End users can pick values by dragging a range or using the keyboard arrow keys. Hackers can use <strong>VIM</strong> keyboard shortcuts to move the range back and forth.
 	</p>
 
 	
@@ -34,13 +34,13 @@
 	<h3>Styleable</h3>
 	
 	<p>
-		You can design ranges that fit to the overall feel of your site. You can use images and the latest CSS3 techniques if you like. Every bit of the range is skinnable. Default CSS class names can be changed and you can design both horizontal and vertical ranges. Professional example skins are provided and you can freely use them.
+		You can design ranges to fit the overall feel of your site. Use images and even the latest CSS3 techniques if you like. Every bit of the range is skinnable. The default CSS class names can be changed and you can design both horizontal and vertical ranges. Professional example skins are provided and you may use them for free.
 	</p>
 	
 	<h3>File size: <strong>2.20 kb!</strong></h3>
 	
 	<p>
-		With this size you'll get all you need: configurability, skinning, orientation, standards based behaviour, <a href="#api">scripting API</a> and an <a href="#events">event model</a>. And as a bonus you'll get a generig dragging utility! Smaller codebase is easier to control and results to snappier behaviour.  
+		It contains everything you need: configurability, skinning, orientation, standards based behaviour, <a href="#api">scripting API</a> and an <a href="#events">event model</a>. And as a bonus you'll get a generic drag utility! Last, but not least: A smaller codebase is easier to control and results in snappier behaviour.
 	</p>	 
 
 	
@@ -54,7 +54,7 @@
 <h2>Usage</h2>
 
 <p>
-	Here is a quick preview of how this tools is used.
+	Here is a quick preview of how this tool is used:
 </p>
 
 <pii:code lang="html">
@@ -72,7 +72,7 @@ $(":range").range();
 </pii:code>
 
 <p>
-	After this you have cross browser range inputs available. The browser's build in range input is replaced by a normal text input to keep it from messing things up. Essentially the original range inputs are replaced by new input fields  where the type attribute has been changed to "text". To get into details take a look at the demo: <a href="${jqt}/demos/rangeinput/index.html">minimal setup for range input</a>. 
+	Hereafter you have cross-browser range inputs available. The browser's built-in range input is replaced by a normal text input to keep it from messing things up. Essentially the original range inputs are replaced by new input fields  where the type attribute has been changed to "text". For further details take a look at the demo: <a href="${jqt}/demos/rangeinput/index.html">minimal setup for range input</a>.
 </p>
 
 <a name="demos"></a>
@@ -93,9 +93,9 @@ $(":range").range();
 
 	<thead>
 		<tr>
-			<th>property</th>
-			<th>default</th>
-			<th>description</th>
+			<th>Property</th>
+			<th>Default</th>
+			<th>Description</th>
 		</tr>
 	</thead>	
 
@@ -103,7 +103,7 @@ $(":range").range();
 		<td class="code">css</td>
 		<td>Object</td>
 		<td>
-			CSS class names used by the generated range. Here are the default values that you can change.
+			CSS class names used by the generated range. Here are the default values that you can change:
 <pii:code lang="css">
 css: { 
 	input:  'range', 			/* class name for the generated text input field */
@@ -118,56 +118,56 @@ css: {
 		<td class="code">hideInput</td>
 		<td>false</td>
 		<td>
-			whether the input is hidden and only the range is visible
+			Whether the input is hidden and only the range is visible.
 		</td> 
 	</tr>
 	<tr>
 		<td class="code">keyboard</td>
 		<td>true</td>
 		<td>
-			whether keyboard shortcats are enabled. both arrow keys and VIM shortcuts are supported. page-up and page-down keys move the range with 10 x larger steps. 
+			Whether keyboard shortcuts are enabled. Both arrow keys and VIM shortcuts are supported. The page-up and page-down keys move the range by 10 steps.
 		</td> 
 	</tr>
 	<tr>
 		<td class="code">max</td>
 		<td>100</td>
 		<td>
-			maximum value
+			Maximum value.
 		</td> 
 	</tr>
 	<tr>
 		<td class="code">min</td>
 		<td>0</td>
 		<td>
-			minmum value
+			Minimum value.
 		</td> 
 	</tr>
 	<tr>
 		<td class="code">precision</td>
 		<td>0</td>
 		<td>
-			by default the value's precision (the amount of decimal numbers) is determined by the value of the <samp>step</samp> configuration option. For example a value <samp>0.01</samp> results to a precision value 2 (two decimals). You can override this automatic precision calculation with this configuration option.
+			By default the value's precision (the amount of decimal places) is determined by the value of the <samp>step</samp> configuration option. For example a value <samp>0.01</samp> results in a precision value 2 (two decimal places). You can override the automatic precision calculation with this configuration option.
 		</td> 
 	</tr>	
 	<tr>
 		<td class="code">progress</td>
 		<td>false</td>
 		<td>
-			whether progress bar is show and it's widt is adjusted accordingly. 
+			Whether the progress bar is shown and its width is adjusted accordingly.
 		</td> 
 	</tr>	
 	<tr>
 		<td class="code">speed</td>
 		<td>200</td>
 		<td>
-			animation speed for the drag handle when the range is clicked
+			Animation speed for the drag handle when the range is clicked.
 		</td> 
 	</tr>
 	<tr>
 		<td class="code">step</td>
 		<td>'any'</td>
 		<td>
-			a number that defines the size of a single step (the granularity of the value) limiting the amount of allowed values. zero value or a string "any" disables stepping. The following range control only accepts values in the range 0..1, and allows 100 steps in that range:
+			A number that defines the size of a single step (the granularity of the value) limiting the amount of allowed values. zero value or a string "any" disables stepping. The following range control only accepts values in the range from 0 to 1 and allows 100 steps in that range:
 
 			<p>
 				<samp>&lt;input name=opacity type=range min=0 max=1 step="0.01"&gt;</samp>
@@ -178,14 +178,14 @@ css: {
 		<td class="code">value</td>
 		<td>0</td>
 		<td>
-			initial value
+			Initial value.
 		</td> 
 	</tr>
 	<tr>
 		<td class="code">vertical</td>
 		<td>false</td>
 		<td>
-			enabling this makes the range vertical
+			Enabling this makes the range vertical.
 		</td> 
 	</tr>
 	
@@ -195,7 +195,7 @@ css: {
 <h3>Input attributes</h3> 
 
 <p>
-	You can also configure the range by supplying valid HTML5 attributes for the range input field. For example
+	You can also configure the range by supplying valid HTML5 attributes for the range input field. For example:
 </p>
 
 <pii:code lang="html">
@@ -207,39 +207,39 @@ css: {
 
 	<thead>
 		<tr>
-			<th>attribute</th>
-			<th>description</th>
+			<th>Attribute</th>
+			<th>Description</th>
 		</tr> 
 	</thead>
 	
 	<tr>
 		<td class="code">disabled</td>
-		<td>whether the range is completely disabled. both the range and the input field is disabled. <samp>disabled</samp> attribute can be enabled and disabled dynamically by scripting.</td>
+		<td>Whether the range is completely disabled. Both the slider and the input field are disabled. The <samp>disabled</samp> attribute can be toggled dynamically by scripting.</td>
 	</tr>
 	<tr>
 		<td class="code">max</td>
 		<td>
-			maximum value
+			Maximum value.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">min</td>
 		<td>
-			miminum value
+			Minimum value.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">readonly</td>
-		<td>when enabled the range is functional but the associative input field cannot be edited</td>
+		<td>When enabled, the range is functional but the associative input field cannot be edited.</td>
 	</tr>
 	<tr>
 		<td class="code">step</td>
-		<td>the amount steps the range takes between min and max</td>
+		<td>The amount of steps the range takes between <samp>min</samp> and <samp>max</samp>.</td>
 	</tr>
 	
 	<tr>
 		<td class="code">value</td>
-		<td>initial value</td>
+		<td>Initial value.</td>
 	</tr>
 
 </table>
@@ -251,7 +251,7 @@ css: {
 <h2>Skinning</h2>
 
 <p>
-	Once range is initialized a following kind of HTML layout is constructed:	
+	Once the range is initialized the following kind of HTML layout is constructed:
 </p>
 
 <pii:code lang="html">
@@ -263,7 +263,7 @@ css: {
 </pii:code>
 
 <p>
-	There are two elements. The rangeinput and the input. Inside rangeinput there is a progress bar and a drag handle. Here the handle has been dragged to position 200px and the progress bar follows if it's enabled. The original range input is placed after the rangeinput component with type attribute changed to "text". When it comes to skinning it's all aoubt making your CSS against this structure. Here is one <a href="${jqt}/css/rangeinput/skin2.css">example skin</a> which uses only one background gradient image.
+	There are two elements. The rangeinput and the input. Inside the rangeinput there is a progress bar and a drag handle. Here the handle has been dragged to position 200px, and the progress bar follows if it is enabled. The original range input is placed after the rangeinput component with its type attribute changed to "text". When it comes to skinning it's all about making your CSS against this structure. Here is one <a href="${jqt}/css/rangeinput/skin2.css">example skin</a> which uses only one background gradient image.
 </p>
 
 <%--}}}--%>
@@ -275,7 +275,7 @@ css: {
 <h2>Scripting API</h2>
  
 <p>
-	First make sure you have familiarized yourself to <a href="${jqt}/documentation/scripting.html">jQuery Tools scripting</a>. 
+	First make sure you have familiarized yourself with <a href="${jqt}/documentation/scripting.html">jQuery Tools scripting</a>.
 </p>
 
 <table class="listing">
@@ -290,63 +290,63 @@ css: {
 		<td class="code">getConf</td>
 		<td><code>Object</code></td>
 		<td>
-			returns the configuration of the current instance
+			Returns the configuration of the current instance.
 		</td>
 	</tr>	 
 	<tr>
 		<td class="code">getHandle</td>
 		<td><code>jQuery</code></td>
 		<td>
-			returns the drag handle element
+			Returns the drag handle element.
 		</td>
 	</tr>	 
 	<tr>
 		<td class="code">getInput</td>
 		<td><code>jQuery</code></td>
 		<td>
-			returns the input element
+			Returns the input element.
 		</td>
 	</tr>	 
 	<tr>
 		<td class="code">getProgress</td>
 		<td><code>jQuery</code></td>
 		<td>
-			returns the progress element. the one that "follows" the handle
+			Returns the progress element. The one that "follows" the handle.
 		</td>
 	</tr>	 
 	<tr>
 		<td class="code">getValue</td>
 		<td><code>Number</code></td>
 		<td>
-			returns the value of the range
+			Returns the current value of the range.
 		</td>
 	</tr>	 
 	<tr>
 		<td class="code">next</td>
 		<td><code>API</code></td>
 		<td>
-			advance to the next step (value)
+			Advance to the next step (value).
 		</td>
 	</tr>	 
 	<tr>
 		<td class="code">prev</td>
 		<td><code>API</code></td>
 		<td>
-			back to previous step (value)
+			Back to previous step (value).
 		</td>
 	</tr>	 
 	<tr>
 		<td class="code">setValue(value)</td>
 		<td><code>API</code></td>
 		<td>
-			set the range value to the one specified in the argument
+			Sets the range value to the one specified in the argument.
 		</td>
 	</tr>	 
 	<tr>
 		<td class="code">step(amount)</td>
 		<td><code>API</code></td>
 		<td>
-			changes the value by the value given in the <samp>step</samp> configuration option multiplied by <samp>amount</samp>. The default amount is 1. Negative value decreases the value and positive increases.
+			Changes the range value by the value given in the <samp>step</samp> configuration option multiplied by <samp>amount</samp>. The default amount is 1. A negative value decreases the value and a positive value increases it.
 		</td>
 	</tr>	 
 	<tr>
@@ -411,11 +411,11 @@ css: {
 <h2>Events</h2>
 
 <p>
-	First make sure you have read about <a href="${jqt}/documentation/scripting.html#events">Events in jQuery Tools</a>. All event listeners receive <a href="${jqt}/documentation/scripting.html#event_object">Event Object</a> as the first argument. Here is an example:
+	First make sure you have read about <a href="${jqt}/documentation/scripting.html#events">Events in jQuery Tools</a>. All event listeners receive the <a href="${jqt}/documentation/scripting.html#event_object">Event Object</a> as the first argument. Here is an example:
 </p>
 
 <pii:code>
-// select all range inputs and assign an event listeners to them 
+// select all range inputs and assign event listeners to them
 $(":range").change(function(event, value) {
 	console.info("value changed to", value);
 });
@@ -424,7 +424,7 @@ $(":range").change(function(event, value) {
 <table class="listing">
 	<thead>
 		<tr>
-			<th>event</th>
+			<th>Event</th>
 			<th nowrap>When does it occur?</th>
 		</tr>
 	</thead>
@@ -432,13 +432,13 @@ $(":range").change(function(event, value) {
 	<tr>
 		<td class="code">onSlide</td>
 		<td>
-			when sliding occurs. you can cancel the action by returning <samp>false</samp> or calling <samp>preventDefault()</samp> for the event object. note that assigning this event listener is performance heavy and may affect to the smoothness of the sliding experience.
+			When sliding occurs. You can cancel the action by returning <samp>false</samp> or calling <samp>preventDefault()</samp> for the event object. Note that assigning this event listener is performance heavy and may affect the smoothness of the sliding experience.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">change</td>
 		<td>
-			when range value is changed. Note that the name is the same as the jQuery's <samp>change</samp> method and you can bind the event directly with that function. For other event's you must use the <samp>bind</samp> method. This leads to more fluent syntax as seen on the example above.
+			When the range value is changed. Note that the name is the same as the jQuery's <samp>change</samp> method and you can bind the event directly with that function. For other events you must use the <samp>bind</samp> method. This leads to more fluent syntax as shown in the example above.
 		</td>
 	</tr>
 
