@@ -20,7 +20,7 @@
 $(document).ready(function() {
 <c:set var="js">		
 // initialize scrollable together with the mousewheel plugin
-$("#${rootId}").scrollable().mousewheel();	
+$("#${rootId}").scrollable({ mousewheel: true });	
 </c:set>
 ${js}	
 });

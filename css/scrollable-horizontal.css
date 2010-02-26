@@ -29,6 +29,11 @@
 	clear:both;
 }
 
+.items div {
+	float:left;
+	width:680px;
+}
+
 /* single scrollable item */
 .scrollable img {
 	float:left;
@@ -47,8 +52,8 @@
 /* active item */
 .scrollable .active {
 	border:2px solid #000;
-	z-index:9999;
 	position:relative;
+	cursor:default;
 }
 
 

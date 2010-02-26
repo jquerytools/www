@@ -38,7 +38,7 @@ ${html}
 $(document).ready(function() {
 <c:set var="js">		
 // heeeeeeeeeeere we go.
-$("#${rootId}").scrollable({hoverClass: 'hover'}).circular().navigator().mousewheel().autoscroll({
+$("#${rootId}").scrollable({circular: true, mousewheel: true}).navigator().autoscroll({
 	steps: 5,
 	interval: 3000		
 });	

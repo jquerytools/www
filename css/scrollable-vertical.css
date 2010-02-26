@@ -21,7 +21,7 @@
 }
 
 /* single scrollable item */
-.items div {
+.item {
 	border-bottom:1px solid #ddd;
 	margin:10px 0;
 	padding:15px;
@@ -30,14 +30,14 @@
 }
 
 /* elements inside single item */
-.items img {
+.item img {
 	float:left;
 	margin-right:20px;
 	height:180px;
 	width:240px;
 }
 
-.items h3 {
+.item h3 {
 	margin:0 0 5px 0;
 	font-size:16px;
 	color:#456;
@@ -65,7 +65,7 @@
 	visibility:hidden;		
 }
 
-.nextPage {
+.next {
 	float:right;
 }	
 

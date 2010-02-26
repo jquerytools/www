@@ -97,7 +97,7 @@
 <!-- main navigator -->
 <ul id="main_navi">
 
-	<li>
+	<li class="active">
 		<img src="http://farm4.static.flickr.com/3278/2691545308_e7e817afb0_s.jpg"/>
 		<strong>Seagram Building</strong>
 		New York City, United States
@@ -219,7 +219,6 @@ $("#main").scrollable({
 
 	// basic settings
 	vertical: true,
-	size: 1,
 	clickable: false,
 
 	// up/down keys will always control this scrollable
@@ -227,18 +226,18 @@ $("#main").scrollable({
 
 	// assign left/right keys to the actively viewed scrollable
 	onSeek: function(event, i) {
-		horizontal.scrollable(i).focus();
+		horizontal.eq(i).data("scrollable").focus();
 	}
 
 // main navigator (thumbnail images)
 }).navigator("#main_navi");
 
 // horizontal scrollables. each one is circular and has its own navigator instance
-var horizontal = $(".scrollable").scrollable({size: 1}).circular().navigator(".navi");
+var horizontal = $(".scrollable").scrollable({size: 1, circular: true}).navigator(".navi");
 
 
 // when page loads setup keyboard focus on the first horzontal scrollable
-horizontal.eq(0).scrollable().focus();
+horizontal.eq(0).data("scrollable").focus();
 
 </c:set>
 

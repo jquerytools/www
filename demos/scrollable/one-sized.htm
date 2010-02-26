@@ -47,7 +47,7 @@ ${css}
 
 <c:set var="html">
 <!-- tabs work as navigator for scrollable -->
-<ul id="flowtabs">
+<ul id="flowtabs" class="navi">
 	<li><a id="t1" href="#story">The Story</a></li>
 	<li><a id="t2" href="#features">Features</a></li>
 	<li><a id="t3" href="#plugins">Plugins</a></li>
@@ -166,10 +166,10 @@ ${html}
 <script>
 <c:set var="js">
 // wait until document is fully scriptable
-$(document).ready(function() {
+$(function() {
 
 	// select #flowplanes and make it scrollable. use circular and navigator plugins
-	$("#flowpanes").scrollable({size: 1}).circular().mousewheel(400).navigator({
+	$("#flowpanes").scrollable({ circular: true, mousewheel: true }).navigator({
 
 		// select #flowtabs to be used as navigator
 		navi: "#flowtabs",
@@ -178,7 +178,10 @@ $(document).ready(function() {
 		naviItem: 'a',
 
 		// assign "current" class name for the active A tag inside navigator
-		activeClass: 'current'
+		activeClass: 'current',
+		
+		// make browser's back button work
+		history: true
 
 	});
 });

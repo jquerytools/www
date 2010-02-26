@@ -54,7 +54,7 @@ div.demowrap {
 $("JQUERY SELECTOR").scrollable({
 
 	// one configuration property
-	size: 5,
+	circular: true,
 
 	// ... the rest of the configuration properties
 });
@@ -79,13 +79,6 @@ $("JQUERY SELECTOR").scrollable({
 		<td><code>"active"</code></td>
 		<td>
 			The CSS class name for a clicked scrollable item. Only valid if you have enabled the <samp>clickable</samp> property.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">api</td>
-		<td><code>false</code></td>
-		<td>
-			When this tool is initialized (constructed), the return value is a jQuery object associated with the selector. By setting this property to <samp>true</samp>, the return value is this tool's <a href="#api">JavaScript API</a> instead. If the selector returns multiple elements, the API of the <em>last</em> element will be returned. Read more about <a href="${jqt}/documentation/index.html#api">accessing the tool API</a> for more information.
 		</td>
 	</tr>
 	<tr>
@@ -114,13 +107,6 @@ $("JQUERY SELECTOR").scrollable({
 		<td><code>false</code></td>
 		<td>
 			 By default the navigational elements needs to have a <a href="#multiple">mutual wrapper element</a> with the scrollable itself. Enable this variable if your navigational elements are not placed under the same parent element than the scrollable so that they can be found.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">hoverClass</td>
-		<td><code></code></td>
-		<td>
-			The CSS class name for the scrollable item which has a mouse pointer over it.
 		</td>
 	</tr>
 	<tr>
@@ -173,13 +159,6 @@ instance.reload();
 		</td>
 	</tr>
 	<tr>
-		<td class="code">keyboardSteps</td>
-		<td><code></code></td>
-		<td>
-			Defines how many items one keypress advances forward or backward. By default this is the same as the value of the <samp>size</samp> property.
-		</td>
-	</tr>
-	<tr>
 		<td class="code">lazyload</td>
 		<td><code>false</code></td>
 		<td>
@@ -195,10 +174,10 @@ instance.reload();
 		</td>
 	</tr>	    	
 	<tr>
-		<td class="code">loop</td>
+		<td class="code">circular</td>
 		<td><code>false</code></td>
 		<td>
-			A property indicating whether scrolling starts from the beginning when the last item is exceeded
+			A property indicating whether scrolling starts from the beginning when the last item is exceeded making an "infinite loop".
 		</td>
 	</tr>
 	<tr>
@@ -209,31 +188,10 @@ instance.reload();
 		</td>
 	</tr>
 	<tr>
-		<td class="code">nextPage</td>
-		<td><code>".nextPage"</code></td>
-		<td>
-			Selector for the elements to which a "next page" action should be bound. These elements should have a <a href="#multiple">mutual wrapper element</a> together with the scrollable itself.
-		</td>
-	</tr>
-	<tr>
 		<td class="code">prev</td>
 		<td><code>".prev"</code></td>
 		<td>
 			Selector for the elements to which a "scroll backwards" action should be bound. These elements should have a <a href="#multiple">mutual wrapper element</a> together with the scrollable itself.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">prevPage</td>
-		<td><code>".prevPage"</code></td>
-		<td>
-			Selector for the elements to which a "previous page" action should be bound. These elements should have a <a href="#multiple">mutual wrapper element</a> together with the scrollable itself.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">size</td>
-		<td><code>5</code></td>
-		<td>
-			The number of visible items within the scrollable-enabled HTML element. This property can also be referred to as the "page size", since it defines how many items are moved in a particular direction when either the <samp>nextPage</samp> or <samp>prevPage</samp> actions are executed.
 		</td>
 	</tr>
 	<tr>
@@ -324,9 +282,9 @@ $(".vertical").scrollable();
 		</td>
 	</tr>	
 	<tr>
-		<td class="code">onReload</td>
+		<td class="code">onAddItem</td>
 		<td>
-			When a <samp>reload()</samp> call is made. This call is typically called when new items are added under the <samp>items</samp> element. This call is made <em>once</em> when scrollable is initialized.
+			When an item was added to the scrollable via <samp>addItem</samp> method.
 		</td>
 	</tr>	
 </table>
@@ -344,7 +302,7 @@ $(".vertical").scrollable();
 
 <pii:code>
 // get handle to the API upon initialization
-var api = $("div.scrollable").scrollable({api: true});
+var api = $("div.scrollable").scrollable().data("scrollable");
 
 // perform a simple API call
 api.next();
@@ -392,17 +350,10 @@ api.next(function() {
 		</td>
 	</tr>
 	<tr>
-		<td class="code">getClickIndex()</td>
-		<td><code>number</code></td>
-		<td>
-			<strong>Since 1.1.1.</strong> Returns the index number of the item that was clicked the last time. This is only available when the <samp>clickable</samp> configuration property is set to <samp>true</samp>.
-		</td>
-	</tr>
-	<tr>
 		<td class="code">getIndex()</td>
 		<td><code>number</code></td>
 		<td>
-			Returns the current position within the scrollable element. This is the index number of the <samp>first visible item</samp> of the scrollable. Indexing starts from zero.
+			Returns the current scroll position. This is the index number of the <samp>first visible item</samp> of the scrollable. Indexing starts from zero.
 		</td>
 	</tr>
 	<tr>
@@ -427,21 +378,6 @@ api.next(function() {
 		</td>
 	</tr>
 	<tr>
-		<td class="code">getPageAmount()</td>
-		<td><code>number</code></td>
-		<td>
-			Returns the number of pages which could depend upon the <samp>size</samp> (as specified in the configuration).
-		</td>
-	</tr>
-
-	<tr>
-		<td class="code">getPageIndex()</td>
-		<td><code>number</code></td>
-		<td>
-			Returns the current page index. As an example, if the page size is 5 and the current position (the index) is 7, then the value returned will be 1 (the second page).
-		</td>
-	</tr>
-	<tr>
 		<td class="code">getRoot()</td>
 		<td><code>jQuery</code></td>
 		<td>
@@ -456,124 +392,63 @@ api.next(function() {
 		</td>
 	</tr>
 	<tr>
-		<td class="code">getVisibleItems()</td>
-		<td><code>jQuery</code></td>
+		<td class="code">addItem()</td>
+		<td><code>API</code></td>
 		<td>
-			Returns a list of items that are currently being viewed. Return value is a jQuery object which has as many elements as defined in the <samp>size</samp> configuration variable.
+			scrollable supports the dynamic addition and removal of scrollable elements and all core functionalities such as circular looping, navigator resizing, browser back button (via toolbox.history) will work as expected. Take a look at this <a href="${jqt}/demos/scrollable/edit.html">demo</a> for more details. 
 		</td>
 	</tr>
+	
 	<tr><td colspan="3" style="background-color:#efefef"></td></tr>
-
-
+	
 	<tr>
-		<td class="code">reload()</td>
-		<td><code>API</code></td>
-		<td>
-		scrollable supports the dynamic addition and removal of scrollable elements. Take a look at this <a href="${jqt}/demos/scrollable/edit.html">demo</a> for more details. After adding or removing items, calling this method ensures that the navigator has the correct number of elements, <samp>prev</samp>/<samp>next</samp> buttons function correctly, and click handlers are added for new items.
-		</td>
-	</tr>
-
-	<tr>
-		<td class="code">prev()</td>
-		<td><code>API</code></td>
-		<td>
-			Scrolls one item backward.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">next()</td>
-		<td><code>API</code></td>
-		<td>
-			Scrolls one item forward.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">seekTo(index)</td>
-		<td><code>API</code></td>
-		<td>
-			Seeks to the specified index.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">move(offset)</td>
-		<td><code>API</code></td>
-		<td>
-			Moves a certain number of items from the current position. For example, <samp>move(2)</samp> moves two items forward. Negative numbers move backwards.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">prevPage()</td>
-		<td><code>API</code></td>
-		<td>
-			Scrolls one page backward.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">nextPage()</td>
-		<td><code>API</code></td>
-		<td>
-			Scrolls one page forward.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">setPage(index)</td>
-		<td><code>API</code></td>
-		<td>
-			Seeks to the specific page.
-		</td>
-	</tr>
-
-	<tr>
-		<td class="code">movePage(offset)</td>
-		<td><code>API</code></td>
-		<td>
-			Moves a certain number of pages from the current position. For example, <samp>move(2)</samp> moves two pages forward. Negative numbers move backwards.
-		</td>
-	</tr>
-
-	<tr>
-		<td class="code">begin()</td>
+		<td class="code">begin(speed)</td>
 		<td><code>API</code></td>
 		<td>
 			Moves to the beginning. Identical to <samp>seekTo(0)</samp>.
 		</td>
 	</tr>
 	<tr>
-		<td class="code">end()</td>
+		<td class="code">end(speed)</td>
 		<td><code>API</code></td>
 		<td>
 			Moves to the end.
 		</td>
 	</tr>
 	<tr>
-		<td class="code">click(index)</td>
+		<td class="code">move(offset, speed)</td>
 		<td><code>API</code></td>
 		<td>
-			Programmatically "clicks" the item at the specified index. Scrolling takes place, the item is made active, and any event handlers are triggered.
+			Moves a certain number of items from the current position. For example, <samp>move(2)</samp> moves two items forward. Negative numbers move backwards.
+		</td>
+	</tr>	
+	<tr>
+		<td class="code">next(speed)</td>
+		<td><code>API</code></td>
+		<td>
+			Scrolls one item forward.
+		</td>
+	</tr>	
+	<tr>
+		<td class="code">prev(speed)</td>
+		<td><code>API</code></td>
+		<td>
+			Scrolls one item backward.
 		</td>
 	</tr>
-
+	<tr>
+		<td class="code">seekTo(index, speed)</td>
+		<td><code>API</code></td>
+		<td>
+			Seeks to the specified index.
+		</td>
+	</tr>
 </table>
 
 <%--}}}--%>
 
-<h3 style="margin-top:15px">Arguments and return value</h3>
-
 <p>
-	All seeking methods (the methods from <samp>prev</samp> onwards in the above list) accept two additional, optional arguments:
-</p>
-
-<ol>
-	<li>
-		<samp>speed</samp> this argument is used to specify how long (in milliseconds) the scrolling animation lasts. This overrides the <samp>speed</samp> property specified in the configuration.
-	</li>
-	<li>
-		<samp>callback</samp> this argument is used to specify a function to be called when the scrolling animation finishes. This function is called <em>before</em> the <samp>onSeek</samp> function and it runs only once (as opposed to <samp>onBeforeSeek</samp> and <samp>onSeek</samp>, which are called every time a scrolling animation takes place).
-	</li>
-</ol>
-
-<p>
-	Seeking methods always return the current scrollable instance, so you can chain method calls as follows:
+	All seeking methods (the methods from <samp>begin</samp> onwards in the above list) accept a <samp>speed</samp> argument which is used to specify how long (in milliseconds) the scrolling animation lasts. This overrides the <samp>speed</samp> property specified in the configuration. All seeking methods always return the current scrollable instance, so you can chain method calls as follows:
 </p>
 
 <pii:code>

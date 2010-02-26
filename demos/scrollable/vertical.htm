@@ -6,13 +6,13 @@
 <c:set var="images" value="3650/3323058611_d35c894fab, 3635/3323893254_3183671257, 3624/3323893148_8318838fbd, 28/66523124_b468cf4978, 164/399223606_b875ddf797, 163/399223609_db47d35b7c, 135/321464104_c010dbf34c, 40/117346184_9760f3aabc, 153/399232237_6928a527c1, 50/117346182_1fded507fa, 3629/3323896446_3b87a8bf75, 3023/3323897466_e61624f6de" />
 
 <!-- styling -->
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-vertical.css?v=0" />
+<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-vertical.css?v=1" />
 
 
 <!-- HTML structures -->
 <div id="actions">
-	<a class="prevPage">&laquo; Back</a>
-	<a class="nextPage">More pictures &raquo;</a>
+	<a class="prev">&laquo; Back</a>
+	<a class="next">More pictures &raquo;</a>
 </div>
 
 <!-- root element for scrollable -->
@@ -21,8 +21,14 @@
 	<!-- root element for the items -->
 	<div class="items">
 	
+		<div>
 		<c:forTokens items="${images}" delims=", " var="img" varStatus="i">
-			<div>
+		<c:if test="${i.index > 0 && i.index % 3 == 0}">
+		</div>
+		
+		<!-- next page -->
+		<div></c:if>
+			<div class="item">
 				<img src="http://farm1.static.flickr.com/${img}_m.jpg" />
 				
 				<h3>${i.index + 1}. Barcelona Pavilion</h3>
@@ -44,7 +50,7 @@
 				
 			</div>
 		</c:forTokens>
- 
+ 		</div>
 	</div>
 	
 </div>
@@ -56,13 +62,8 @@
 // execute your scripts when DOM is ready. this is a good habit
 $(function() {		
 		
-	// initialize scrollable 
-	$("div.scrollable").scrollable({
-		vertical:true, 
-		size: 3
-		
-	// use mousewheel plugin
-	}).mousewheel();	
+	// initialize scrollable with mousewheel plugin
+	$("div.scrollable").scrollable({ vertical:true }).mousewheel();	
 	
 });
 </script>

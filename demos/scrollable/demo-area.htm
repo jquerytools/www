@@ -235,16 +235,14 @@
 // initialize scrollable and return the programming API
 var api = $("#scroll").scrollable({
 	items: '#tools',
-	size: 1,
-	clickable: false,
-	lazyload: true
+	clickable: false
 
 // use the navigator plugin
-}).navigator({api: true});
+}).navigator().data("scrollable");
 
 
 // this callback does the special handling of our "intro page"
-api.onStart(function(e, i) {
+api.onBeforeSeek(function(e, i) {
 
 	// when on the first item: hide the intro
 	if (i) {
