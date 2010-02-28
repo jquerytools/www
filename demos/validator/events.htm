@@ -1,10 +1,101 @@
 
-onBeforeValidate,onBeforeFail,onFail,onSuccess
+just a table showing what happens
 
-oninvalid="myfunc()"
+<%-- :mode=jsp: --%>
+<script src="/home/tipiirai/git/jquerytools/test/js/jquery-1.4.2.js"></script>
+<script src="/home/tipiirai/git/jquerytools/src/validator/validator.js"></script>
 
-$("[name=password]").oninvalid(function() {
-	var api = $(this).data("validator");
-	console.info(".--", arguments, api);
+<style>
+label {
+	display:block;
+	font-size:11px;
+}
+
+.error {
+	width:220px;
+	background-color:rgba(255, 245, 1, 0.5);
+	font-size:11px;
+	border:1px solid #E1E16D;
+	padding:4px 55px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+}
+
+#info {
+	position:fixed;
+	top: 30px;
+	left:400px;
+	background-color:#333;
+	color:#fff;
+	width:400px;
+	padding:20px;
+	display:none;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;			
+}
+</style>
+
+<div id="info"></div>
+
+<form id="myform">
+
+	<p>
+		<label>email *</label>
+		<input type="email" name="email" required="required" class="invalid" />
+	</p>
+	<p>
+		<label>website *</label>
+		<input type="url" name="url" required="required" />
+	</p>
+	<p>
+		<label>name *</label>
+		<input type="text" name="name" required="required" />
+	</p>
+	<p>
+		<label>age</label>
+		<input type="number" name="age" size="4" oninvalid="showEvent('oninvalid', this)" />
+	</p>
+	
+	<button type="submit">Submit form</button>
+
+</form>
+  
+<script>
+$(function() {
+		
+	var info = $("#info");
+	
+	window.showEvent = function(eventName, input) {
+		var inputName = input.jquery ? input.attr("name") : input; 
+		info.append("<p><strong>" + eventName + "</strong>: " + inputName  + "</p>").fadeIn();
+	};
+	
+	$("#myform").validator({	
+		onBeforeValidate: function(e, els)  {
+			info.empty();
+			showEvent("onBeforeValidate", els);	
+		}
+		
+	}).bind("onBeforeFail", function(e, els)  {
+		showEvent("onBeforeFail", els);
+			
+	}).bind("onFail", function(e, els)  {
+		showEvent("onFail", els); 
+	});
+	
+	
+	$("#myform").data("validator").onSuccess(function(e, els) {
+		showEvent("onSuccess", els);
+		return false;		
+	});
+	
+	$(":email").oninvalid(function(e, message) {
+		showEvent("oninvalid", $(this));
+	});
 });
+
+
+</script>
+
+
 

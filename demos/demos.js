@@ -68,11 +68,7 @@
 				path: 'tabs/slideshow.html',
 				title: 'Slideshow plugin for the Tabs',
 				keywords: 'jquery slideshow, javascript slideshow, javascript crossfade, slideshow plugin'
-			}, 			
-			{		
-				path: 'tabs/growing-slideshow.html',
-				title: 'Lazyloading slideshow'
-			}				
+			} 			
 		] 
 	},
 //}}}
@@ -353,47 +349,9 @@
 //{{{ TOOLBOX
 
 
-//{{{ Lazyload
-
-	'1. Lazyload': {
-	
-		description: 'Your pages can be (even) faster',
-		keywords: 'jquery lazyload, jquery ajax, jquery image preload, jquery onload, javascript lazyload',
-		
-		demos: [	
-			{		
-				path: 'toolbox/lazyload/scrollable.html',
-				title: 'Lazyloaded scrollable'
-			},	
-			{		
-				path: 'toolbox/lazyload/overlay.html',
-				title: 'Lazyloaded overlay'
-			},				
-			{		
-				path: 'toolbox/lazyload/index.html',
-				title: 'Minimal setup for Lazyload'
-			},	
-			{		
-				path: 'toolbox/lazyload/loaders.html',
-				title: 'Lazyloading different kinds of elements'
-			},	
-			{		
-				path: 'toolbox/lazyload/customize.html',
-				title: 'Customising the Lazyload'
-			},	
-			{		
-				path: 'toolbox/lazyload/grow.html',
-				title: 'The grow effect in Lazyload'
-			}
-		]
-	},
-	
-//}}}
-
-
 //{{{ Mask
 
-	'2. Mask': {
+	'1. Mask': {
 	
 		description: 'Make your HTML elements stand out',
 		keywords: 'mask html,mask html jquery,javascript mask,stand out html javascript,javascript mask plugin',

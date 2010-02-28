@@ -448,6 +448,23 @@ $.tools.validator.localize("fi", {
 $("#myForm").validator({lang: 'fi'});
 </pii:code>
 
+<h3>Localizing single validator</h3>
+
+<p>
+	Sometimes you just need to localize a single validator function. In that case you can use <samp>$.tools.validator.localizeFn</samp> function. For example:
+</p>
+
+<pii:code>
+$.tools.validator.localizeFn("[type=time]", {
+	en: 'Please supply a valid time',
+	fi: 'Virheellinen aika'		
+});
+</pii:code>
+
+<p>
+	This will modify existing languages and/or add new ones for this single validator only. Note that on both localization functions you can generate the messages dynamically with JavaScript if you need to. Localization objects are plain old and dynamic JavaScript objects after all.
+</p>
+
 
 <a name="input_message"></a>
 <h3>Input specific error message</h3>
@@ -710,6 +727,9 @@ $.tools.validator.fn(myMatcher, "Please fix this value", function(el, v) {
 	First make sure you have read about <a href="${jqt}/documentation/scripting.html#events">Events in jQuery Tools</a>. All event listeners receive <a href="${jqt}/documentation/scripting.html#event_object">Event Object</a> as the first argument. 
 </p>
 
+<p>
+	You can view a demo about <a href="${jqt}/demos/validator/events.html">validator events</a>.
+</p>
 
 <table class="listing">
 	<thead>
@@ -729,19 +749,19 @@ $.tools.validator.fn(myMatcher, "Please fix this value", function(el, v) {
 	<tr>
 		<td class="code">onBeforeValidate</td>
 		<td>
-			before validation routine starts. returning <samp>false</samp> causes the validation to be skipped alltogether
+			before validation routine starts. returning <samp>false</samp> causes the validation to be skipped alltogether. second argument is a jQuery object containing all invalid input fields.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">onFail</td>
 		<td>
-			after all error messages are gathered but before they are displayed to the user. returning <samp>false</samp> causes the underlying display effect to be skipped and error messages are not shown.
+			after all errors are populated but before they are displayed to the user. returning <samp>false</samp> causes the underlying display effect to be skipped and error messages are not shown. Second argument is an array of <samp>Error</samp> objects. Each error object has two properties: <samp>input</samp> which is the erroneous input and <samp>messages</samp> which is an array of error messages.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">onSuccess</td>
 		<td>
-			after the validation if all fields are valid
+			after the validation if all fields are valid. the second argument is a jQuery object containing all fields that passed the validation.
 		</td>
 	</tr>
 	
@@ -845,7 +865,7 @@ $("#myform").validator({ position: 'center right' }).submit(function(e) {
 
 <pii:code>
 // adds an effect called "wall" to the validator
-$.tools.validator.addEffect("wall", function(errors) {
+$.tools.validator.addEffect("wall", function(errors, event) {
 
 	// "show" function
 	$.each(errors, function(index, error) {
@@ -865,10 +885,13 @@ $.tools.validator.addEffect("wall", function(errors) {
 
 
 <p>
-	The show function receives one argument which is an array of <samp>Error</samp> objects. Each error object has two properties: <samp>input</samp> which is the erroneous input and <samp>messages</samp> which is an array of error messages.
+	The show function receives two arguments. First argument is an array of <samp>Error</samp> objects. Each error object has two properties: <samp>input</samp> which is the erroneous input and <samp>messages</samp> which is an array of error messages. The second argument is the event that fired the validation. This can be form submission or a change in an input field. 
 </p>
 
 <p>
 	The hide function receives a jQuery object containg all input fields that are switching to a valid state after being invalid.
 </p>
 
+<p>
+	Take a look at a simple <a href="${jqt}/demos/validator/custom-effect.html">custom validator effect</a> in action.
+</p>
