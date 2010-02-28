@@ -48,17 +48,24 @@ $("#myform").validator();
 	<h3>Web Forms 2.0</h3>
 
 	<p>
-		<a href="http://www.whatwg.org/specs/web-forms/current-work/#form-validation" class="external">Web Forms 2.0</a> is a large and complex standard with many dimensions. This tool is compatible with the standard and uses a sane subset of it for our everyday validation work. You can for example use <samp>form.checkValidity()</samp> method to validate the form and you can define <samp>oninvalid</samp> functinos for your inputs when they fail the validation. 
+		<a href="http://www.whatwg.org/specs/web-forms/current-work/#form-validation" class="external">Web Forms 2.0</a> is a large and complex standard with many dimensions. This tool is compatible with the standard and uses a sane subset of it for our everyday validation work. You can for example use <samp>form.checkValidity()</samp> method to validate the form and you can define <samp>oninvalid</samp> function for your inputs when they fail the validation. 
 	</p>
 
-	<h3>Beyond Web Forms 2.0</h3>
+	<h3>Server side integration</h3>
 	
 	<p>
-		Just like other jQuery Tools you are not left alone with the flexible customization possibilities. You have a bunch of <a href="#events">validation events</a> where you can work with the <a href="#api">validation API</a>. Combined witht with the power of jQuery and the ability to define custom validators, localizations amd input attributes you can start programming your HTML forms like it should have done 20 years ago.   
+		You can use a generic <samp>invalidate</samp> function to display errors that occurred on the server side. The logic is not tied to any particular server side framework and it is easy to integrate to your existing server side code. All you need is an ability to return data in JSON format. 
 	</p>
+	
 </div>
 
 <br clear="all" />
+
+<h3>Beyond Web Forms 2.0</h3>
+
+<p>
+	jQuery Tools Validator is all about flexibility. You have a bunch of <a href="#events">validation events</a> where you can work with the <a href="#api">validation API</a>. Combined witht with the power of jQuery and the ability to define custom validators, localizations and input attributes you can start programming your HTML forms like it should have done 20 years ago.   
+</p>
 
 <%--}}}--%>
 
@@ -656,33 +663,40 @@ $.tools.validator.fn(myMatcher, "Please fix this value", function(el, v) {
 	</thead>
 	
 	<tr>
-		<td class="code">checkValidity</td>
+		<td class="code">checkValidity()</td>
 		<td><code>boolean</code></td>
 		<td>
 			perform the form validation routine
 		</td>
 	</tr>	 
 	<tr>
-		<td class="code">getConf</td>
+		<td class="code">getConf()</td>
 		<td><code>Object</code></td>
 		<td>
 			returns the configuration of the current validator instance
 		</td>
 	</tr>	 
 	<tr>
-		<td class="code">getForm</td>
+		<td class="code">getForm()</td>
 		<td><code>jQuery</code></td>
 		<td>
 			returns the form element associated with the validator. can be null
 		</td>
 	</tr>	 
 	<tr>
-		<td class="code">getInputs</td>
+		<td class="code">getInputs()</td>
 		<td><code>jQuery</code></td>
 		<td>
 			returns all input fields associated with the validator
 		</td>
 	</tr>	 
+	<tr>
+		<td class="code">invalidate(Object)</td>
+		<td><code>API</code></td>
+		<td>
+			invalidates the form with the error messages given on the argument. causes the <samp>onFail</samp> event and input specific <samp>ininvalid</samp> events to be fired. This function is useful in <a href="#server_side">server side integration</a>.
+		</td>
+	</tr>	 	
 </table>
 <%--}}}--%>
 
@@ -763,6 +777,60 @@ $("[name=password]").oninvalid(function(event, errorMessage) {
 
 <%--}}}--%>
 
+
+<%--{{{ Server side --%>
+
+<a name="server_side"></a> 
+<h2>Server side integration</h2>
+
+<p>
+	Here is the logic taken from the <a href="${jqt}/demos/validator/server-side.html">server side validation</a> demo. Please read the comment blocks and see the natural and standards based syntax. 
+</p>
+
+<pii:code>
+// initialize validator and add a custom form submission logic
+$("#myform").validator({ position: 'center right' }).submit(function(e) {
+	
+	var form = $(this);
+	
+	// client side validation passed
+	if (!e.isDefaultPrevented()) { 
+		
+		// submit the data to server with AJAX
+		$.getJSON(form.attr("action") + "?" + form.serialize(), function(json) {
+				
+			// everything is ok. (server returned true)
+			if (json === true)  {
+				form.load("success.php");
+				
+			// server side validation failed. use invalidate() to show errors
+			} else {
+				form.data("validator").invalidate(json); 
+			}
+		});
+		
+		// prevent default form submission logic
+		e.preventDefault();			
+	} 
+});
+</pii:code>
+
+<p>
+	Here we used a simple return value <samp>true</samp> to indicate that the data was valid on the server side. You can do whatever you wish when data was good. Here we replaced form contents with a server side page. If the data was not valid we use the <samp>invalidate</samp> method to display errors for the user. The <samp>invalidate</samp> method accepts an object argument which is a field name to error message mapping such as this: 
+</p>
+
+<pii:code>
+{
+ 	"zip": "You must live in northern Finland in order to proceed",
+	"total": "You gave us too much money! Please check"
+}
+</pii:code>
+
+<p>
+	You can switch the language of the errors on the server. Note that jQuery 1.4+ requres that both labels and values are quoted with double quotes on the returned JSON.
+</p>
+
+<%--}}}--%>
 
 <a name="effects"></a>
 <h2>Making custom effects</h2>

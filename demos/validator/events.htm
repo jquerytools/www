@@ -1,0 +1,10 @@
+
+onBeforeValidate,onBeforeFail,onFail,onSuccess
+
+oninvalid="myfunc()"
+
+$("[name=password]").oninvalid(function() {
+	var api = $(this).data("validator");
+	console.info(".--", arguments, api);
+});
+

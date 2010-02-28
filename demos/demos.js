@@ -288,7 +288,7 @@
 */
 
 
-	'2. Range': {
+	'2. Rangeinput': {
 	
 		description: 'HTML5 range input for humans',
 		keywords: 'HTML5 range input, jquery range, jquery rangeinput, javascript range input, skinnable rangeinput',

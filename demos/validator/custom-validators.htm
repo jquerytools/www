@@ -1,8 +1,13 @@
 
-<script src="/home/tipiirai/git/jquerytools/lib/jquery-1.4.js"></script>
+<script src="/home/tipiirai/git/jquerytools/test/js/jquery-1.4.2.js"></script>
 <script src="/home/tipiirai/git/jquerytools/src/validator/validator.js"></script>
 
 <style>
+body {
+	padding:50px 100px;
+	font-family:sans-serif;
+}
+
 label {
 	font-size:11px;		
 }
@@ -23,12 +28,12 @@ label input {
 
 <form id="myform">
 
-	<label> email * <input type="email" required="required" class="invalid" /> </label> 
+	<label> email * <input type="email" required="required" /> </label> 
 	<label> username * <input type="text" name="username" required="required" /> </label> 
 	<label> website * <input type="url" required="required" /> </label> 
 	<label> name * <input type="text" name="name" required="required" /> </label>  
 	<label> age <input type="number" name="age" size="4" /> </label>
-	<label> Password <input type="password" name="password" oninvalid="myfunc()"/> </label> 
+	<label> Password <input type="password" name="password" /> </label> 
 	<label> Password check <input type="password" name="password" equals="password" /> </label>
 
 	<p>
@@ -38,15 +43,17 @@ label input {
 </form>
 		
 <script> 
-// generic equals function
+// generic equals function (backreferences, this)
 $.tools.validator.fn("[data-equals]", "Value not equal with the $1 field", function(el) {
 	var name = el.attr("data-equals"),
 		 field = this.getInputs().filter("[name=" + name + "]"); 
 	return el.val() == field.val() ? true : [name]; 
 });
 
+// IMAGE
 
-// minlength
+
+// minlength (messages are rerurned directly)
 $.tools.validator.fn("[minlength]", function(el, value) {
 	return value.length <= el.attr("minlength") ? true : {     
 		en: "Password not strong enough",
@@ -54,23 +61,6 @@ $.tools.validator.fn("[minlength]", function(el, value) {
 	};
 });
 
-$.tools.validator.fn("[number]", function() {
-			
-});
-	
-// define new attribute and a proper error message for invalid value
-$.tools.validator.fn("[unique]", "Username is already taken", function(el, value) {
-	$.getJSON("unique.jsp", {name: el.attr("name"), value: value}, function(json) {
-				
-	});
-});
-
-var validator= $("#custom input").validator().data("validator");
-
-$("[name=password]").oninvalid(function() {
-	var api = $(this).data("validator");
-	console.info(".--", arguments, api);
-});
 
 
 // define function matcher
@@ -88,4 +78,6 @@ $.tools.validator.fn(myMatcher, "Please fix this value", function(el, v) {
 	return true;
 });
 
+
+$("#myform").validator();
 </script>

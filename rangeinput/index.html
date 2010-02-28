@@ -115,17 +115,10 @@ css: {
 		</td> 
 	</tr>
 	<tr>
-		<td class="code">hideInput</td>
-		<td>false</td>
-		<td>
-			Whether the input is hidden and only the range is visible.
-		</td> 
-	</tr>
-	<tr>
 		<td class="code">keyboard</td>
 		<td>true</td>
 		<td>
-			Whether keyboard shortcuts are enabled. Both arrow keys and VIM shortcuts are supported. The page-up and page-down keys move the range by 10 steps.
+			Whether keyboard shortcuts are enabled when the focus is on the input field. Both arrow keys and VIM shortcuts are supported. The page-up and page-down keys move the range by 10 steps.
 		</td> 
 	</tr>
 	<tr>
@@ -438,7 +431,7 @@ $(":range").change(function(event, value) {
 	<tr>
 		<td class="code">change</td>
 		<td>
-			When the range value is changed. Note that the name is the same as the jQuery's <samp>change</samp> method and you can bind the event directly with that function. For other events you must use the <samp>bind</samp> method. This leads to more fluent syntax as shown in the example above.
+			After the range value is changed. If you slide the range by clicking on the underlying slider this is the only event that is being triggered. Note that the name is the same as the jQuery's <samp>change</samp> method and you can bind the event directly with that function. For other events you must use the <samp>bind</samp> method. This leads to more fluent syntax as shown in the example above.
 		</td>
 	</tr>
 
