@@ -1,0 +1,111 @@
+#calroot {
+	width:198px;
+	padding:2px;
+	background-color:#fff;
+	font-size:11px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-box-shadow: 0 0 20px #000;
+	-webkit-box-shadow: 0 0 20px #000;		
+}
+
+#calhead {	
+	padding:2px 0;
+	height:22px;
+}
+
+#caltitle {
+	font-size:14px;
+	color:#0150D1;	
+	float:left;
+	text-align:center;
+	width:150px;
+	line-height:20px;
+	text-shadow:0 1px 0 #ddd;
+}
+
+
+
+#calnext, #calprev {
+	display:block;
+	width:20px;
+	height:20px;
+	background:transparent url(prev.gif) no-repeat scroll center center;
+	float:left;
+	cursor:pointer;
+}
+
+#calnext {
+	background-image:url(next.gif);
+	float:right;
+}
+
+#caldays {
+	height:14px;
+	border-bottom:1px solid #ddd;
+}
+
+#caldays span {
+	display:block;
+	float:left;
+	width:28px;
+	text-align:center;
+}
+
+#calweeks {
+	background-color:#fff;
+	margin-top:4px;
+}
+
+.calweek {
+	clear:left;
+	height:22px;
+}
+
+
+.calweek a {
+	display:block;
+	float:left;
+	width:27px;
+	height:20px;
+	text-decoration:none;
+	font-size:11px;
+	margin-left:1px;
+	text-align:center;
+	line-height:20px;
+	color:#666;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px; 		
+} 
+
+.calweek a:hover, .calfocus {
+	background-color:#eee;
+}
+
+.calsun {
+	color:red;		
+}
+
+.caloff {
+	color:#ccc;		
+}
+
+.caldisabled {
+	background-color:#efefef !important;
+	color:#ccc	!important;
+	cursor:default;
+}
+
+.caloff:hover {
+	background-color:rgb(245, 245, 250);		
+}
+
+
+#caltitle select {
+	font-size:10px;	
+}
+
+#caltoday {
+	background-color:#498CE2;
+	color:#fff;
+}

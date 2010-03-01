@@ -1,0 +1,20 @@
+
+<%-- :mode=jsp: --%>
+<%@ include file="../standalone.jsf" %>
+
+<link rel="stylesheet" type="text/css" href="css/skin1.css"/>
+
+<input type="date" name="test" />
+
+<script>
+// example French localization
+$.tools.dateinput.localize("fr",  {
+	months: 			'janvier,f&eacute;vrier,mars,avril,mai,juin,juillet,ao&ucirc;t,' +
+							'septembre,octobre,novembre,d&eacute;cembre',
+	shortMonths: 		'jan,f&eacute;v,mar,avr,mai,jun,jul,ao&ucirc;,sep,oct,nov,d&eacute;c',
+	days: 			'dimanche,lundi,mardi,mercredi,jeudi,vendredi,samedi',
+	shortDays: 		'dim,lun,mar,mer,jeu,ven,sam'
+});
+
+$(":date").dateinput({ lang: 'fr', format: 'dddd dd, mmmm yyyy' });
+</script>

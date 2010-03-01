@@ -1,0 +1,23 @@
+
+
+<%-- :mode=jsp: --%>
+<%@ include file="../standalone.jsf" %>
+
+<link rel="stylesheet" type="text/css" href="css/skin1.css"/>
+
+<input type="date" name="test" />
+<input type="date" name="test" min="2010-03-01" max="2011-01-01" />
+<input type="date" name="test" min="25" max="25" />
+
+
+<script>
+$(":date").dateinput({
+	format: 'dddd dd, mmmm yyyy',
+	selectors: true,
+	min: 100,
+	max: 100,
+	offset: [10, -5],
+	speed: 'fast',
+	firstDay: 1
+});
+</script>

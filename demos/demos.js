@@ -296,11 +296,11 @@
 			},
 			{		
 				path: 'rangeinput/vertical.html',
-				title: 'Minimal setup for vertical range'
+				title: 'Couple of vertical ranges'
 			},
 			{		
-				path: 'rangeinput/customize.html',
-				title: 'Customizing range features'
+				path: 'rangeinput/multiple.html',
+				title: 'Many, many small ranges'
 			},
 			{		
 				path: 'rangeinput/skin.html',
@@ -324,12 +324,12 @@
 				title: 'Minimal setup for Dateinput'
 			},
 			{		
-				path: 'dateinput/customize.html',
-				title: 'Customizing Dateinput behaviour'
-			},
-			{		
 				path: 'dateinput/skins.html',
 				title: 'Alternate skins for Dateinput'
+			},			
+			{		
+				path: 'dateinput/customize.html',
+				title: 'Customizing Dateinput behaviour'
 			},
 			{		
 				path: 'dateinput/localize.html',
