@@ -2,106 +2,109 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="../standalone.jsf" %>
 
-<style>
-/* navigation */
-#nav {
-	background:#ddd url(${cdn}/img/global/gradient/h300_reverse.png);
-	border-bottom:1px solid #CCCCCC;
-	height:156px;	
-	width:745px;
-}
-
-#nav ul {	
-	width:600px;
-	margin:0 auto;	
-}
-
-#nav li {	
-	border-right:1px solid #ddd;
-	float:left;
-	padding-left:1px;
-	width:175px;
-	list-style-type:none;
-	text-align:center;
-}
-
-#nav a {
-	color:#333333;
-	display:block;
-	padding:17px;
-	position:relative;
-	word-spacing:-2px;
-	font-size:11px;		
-	height:122px;
-	text-decoration:none;
-}	
-
-#nav a.current {
-	background:url(${cdn}${jqt}/img/tabs/down_large.jpg);	
-}
-
-#nav img {
-	background-color:#fff;
-	border:1px solid #ccc;
-	margin:3px 0 5px 27px;
-	padding:4px;		
-	display:block;
-}
-
-#nav strong {
-	display:block;		
-	font-size:13px;
-}
-
-/* panes */
-#panes {
-	background:#fff url(${cdn}/img/global/gradient/h300_reverse.png) repeat scroll 0 0;
-	border-color:#ccc;
-	border-style:solid;
-	border-width:1px 1px 0;
-	width:743px;	
-	height:255px;
-	margin-bottom:-20px;
-	padding-bottom:20px;
+	<style>
+	/* navigation */
+	#nav {
+		background:#ddd url(${cdn}/img/global/gradient/h300_reverse.png);
+		border-bottom:1px solid #CCCCCC;
+		height:156px;	
+		width:745px;
+	}
 	
-	/* must be relative so the individual panes can be absolutely positioned */
-	position:relative;
-}
+	#nav ul {	
+		width:600px;
+		margin:0 auto;	
+	}
+	
+	#nav li {	
+		border-right:1px solid #ddd;
+		float:left;
+		padding-left:1px;
+		width:175px;
+		list-style-type:none;
+		text-align:center;
+	}
+	
+	#nav a {
+		color:#333333;
+		display:block;
+		padding:17px;
+		position:relative;
+		word-spacing:-2px;
+		font-size:11px;		
+		height:122px;
+		text-decoration:none;
+	}	
+	
+	#nav a.current {
+		background:url(${cdn}${jqt}/img/tabs/down_large.jpg);	
+	}
+	
+	#nav img {
+		background-color:#fff;
+		border:1px solid #ccc;
+		margin:3px 0 5px 27px;
+		padding:4px;		
+		display:block;
+	}
+	
+	#nav strong {
+		display:block;		
+		font-size:13px;
+	}
+	
+	/* panes */
+	#panes {
+		background:#fff url(${cdn}/img/global/gradient/h300_reverse.png) repeat scroll 0 0;
+		border-color:#ccc;
+		border-style:solid;
+		border-width:1px 1px 0;
+		width:743px;	
+		height:255px;
+		margin-bottom:-20px;
+		padding-bottom:20px;
+		
+		/* must be relative so the individual panes can be absolutely positioned */
+		position:relative;
+	}
+	
+	/* crossfading effect needs absolute positioning from the elements */
+	#panes div {
+		display:none;		
+		position:absolute;
+		top:20px;
+		left:20px;
+		font-size:14px;
+		color:#444;	
+		width:650px; 
+	}
+	
+	#panes img {
+		float:left;
+		margin-right:20px;		
+	}
+	
+	#panes p.more {
+		color:#000;
+		font-weight:bold;
+	}
+	
+	#panes h3 {
+		margin:0 0 -5px 0;
+		font-size:22px;
+		font-weight:normal;
+	}
+	
+	.overlay {
+		display:none;
+		width:500px;
+		padding:20px;
+		background-color:#ddd;
+	}
+	</style>
+</head>
 
-/* crossfading effect needs absolute positioning from the elements */
-#panes div {
-	display:none;		
-	position:absolute;
-	top:20px;
-	left:20px;
-	font-size:14px;
-	color:#444;	
-	width:650px; 
-}
-
-#panes img {
-	float:left;
-	margin-right:20px;		
-}
-
-#panes p.more {
-	color:#000;
-	font-weight:bold;
-}
-
-#panes h3 {
-	margin:0 0 -5px 0;
-	font-size:22px;
-	font-weight:normal;
-}
-
-.overlay {
-	display:none;
-	width:500px;
-	padding:20px;
-	background-color:#ddd;
-}
-</style>
+<body>
 
 <!-- tab panes -->
 <div id="panes">

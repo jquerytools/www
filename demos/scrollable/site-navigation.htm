@@ -1,98 +1,100 @@
 <%-- :mode=jsp: --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:set var="tools" value="all" />
 <%@ include file="../standalone.jsf" %>
+	
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-navig.css" />
+	
+	<style>
+	/* main vertical scroll */
+	#main {
+		position:relative;
+		overflow:hidden;
+		height: 450px;
+	}
+	
+	/* root element for pages */
+	#pages {
+		position:absolute;
+		height:20000em;
+	}
+	
+	/* single page */
+	.page {
+		padding:10px;
+		height: 450px;
+		background:#222 url(${cdn}/img/global/gradient/h600.png) 0 0 repeat-x;
+		width:520px;
+	}
+	
+	/* root element for horizontal scrollables */
+	.scrollable {
+		position:relative;
+		overflow:hidden;
+		width: 510px;
+		height: 450px;
+	}
+	
+	/* root element for scrollable items */
+	.scrollable .items {
+		width:20000em;
+		position:absolute;
+		clear:both;
+	}
+	
+	/* single scrollable item */
+	.item {
+		float:left;
+		cursor:pointer;
+		width:500px;
+		height:450px;
+		padding:10px;
+	}
+	
+	/* main navigator */
+	#main_navi {
+		float:left;
+		padding:0px !important;
+		margin:0px !important;
+	}
+	
+	#main_navi li {
+		background-color:#333;
+		border-top:1px solid #666;
+		clear:both;
+		color:#FFFFFF;
+		font-size:12px;
+		height:75px;
+		list-style-type:none;
+		padding:10px;
+		width:190px;
+		cursor:pointer;
+	}
+	
+	#main_navi li:hover {
+		background-color:#444;
+	}
+	
+	#main_navi li.active {
+		background-color:#555;
+	}
+	
+	#main_navi img {
+		float:left;
+		margin-right:10px;
+	}
+	
+	#main_navi strong {
+		display:block;
+	}
+	
+	#main div.navi {
+		margin-left:250px;
+		cursor:pointer;
+	}
+	</style>
+</head>
 
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-navig.css" />
-
-<style>
-/* main vertical scroll */
-#main {
-	position:relative;
-	overflow:hidden;
-	height: 450px;
-}
-
-/* root element for pages */
-#pages {
-	position:absolute;
-	height:20000em;
-}
-
-/* single page */
-.page {
-	padding:10px;
-	height: 450px;
-	background:#222 url(${cdn}/img/global/gradient/h600.png) 0 0 repeat-x;
-	width:520px;
-}
-
-/* root element for horizontal scrollables */
-.scrollable {
-	position:relative;
-	overflow:hidden;
-	width: 510px;
-	height: 450px;
-}
-
-/* root element for scrollable items */
-.scrollable .items {
-	width:20000em;
-	position:absolute;
-	clear:both;
-}
-
-/* single scrollable item */
-.item {
-	float:left;
-	cursor:pointer;
-	width:500px;
-	height:450px;
-	padding:10px;
-}
-
-/* main navigator */
-#main_navi {
-	float:left;
-	padding:0px !important;
-	margin:0px !important;
-}
-
-#main_navi li {
-	background-color:#333;
-	border-top:1px solid #666;
-	clear:both;
-	color:#FFFFFF;
-	font-size:12px;
-	height:75px;
-	list-style-type:none;
-	padding:10px;
-	width:190px;
-	cursor:pointer;
-}
-
-#main_navi li:hover {
-	background-color:#444;
-}
-
-#main_navi li.active {
-	background-color:#555;
-}
-
-#main_navi img {
-	float:left;
-	margin-right:10px;
-}
-
-#main_navi strong {
-	display:block;
-}
-
-#main div.navi {
-	margin-left:250px;
-	cursor:pointer;
-}
-</style>
+<body>
 
 <!-- main navigator -->
 <ul id="main_navi">
@@ -210,7 +212,7 @@
 </div>
 
 <script>
-// What is $(document).ready ? See: http://flowplayer.org${jqt}/documentation/index.html#document_ready
+// What is $(document).ready ? See: http://flowplayer.org${jqt}/documentation/basics.html#document_ready
 $(document).ready(function() {
 
 <c:set var="js">

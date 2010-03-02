@@ -2,32 +2,35 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="../standalone.jsf" %>
 
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-horizontal.css" />
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-buttons.css" />
 
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-horizontal.css" />
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-buttons.css" />
+	<style>
+	<c:set var="css">
+	/* styling for the image wrapper  */
+	#image_wrap {
+		/* dimensions */
+		width:677px;
+		margin:15px 0 15px 40px;
+		padding:15px 0;
+	
+		/* centered */
+		text-align:center;
+	
+		/* some "skinning" */
+		background-color:#efefef;
+		border:2px solid #fff;
+		outline:1px solid #ddd;
+		-moz-ouline-radius:4px;
+	}
+	</c:set>
+	
+	${css}
+	</style>
+</head>
 
-<style>
-<c:set var="css">
-/* styling for the image wrapper  */
-#image_wrap {
-	/* dimensions */
-	width:677px;
-	margin:15px 0 15px 40px;
-	padding:15px 0;
+<body>
 
-	/* centered */
-	text-align:center;
-
-	/* some "skinning" */
-	background-color:#efefef;
-	border:2px solid #fff;
-	outline:1px solid #ddd;
-	-moz-ouline-radius:4px;
-}
-</c:set>
-
-${css}
-</style>
 
 <c:set var="html2">
 <!-- wrapper element for the large image -->

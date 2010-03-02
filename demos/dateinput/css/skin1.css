@@ -3,28 +3,28 @@
 	padding:2px;
 	background-color:#fff;
 	font-size:11px;
+	border:1px solid #ccc;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
-	-moz-box-shadow: 0 0 20px #000;
-	-webkit-box-shadow: 0 0 20px #000;		
+	-moz-box-shadow: 0 0 20px #666;
+	-webkit-box-shadow: 0 0 20px #666;		
+	box-shadow: 0 0 20px #666;		
 }
 
 #calhead {	
 	padding:2px 0;
 	height:22px;
-}
+} 
 
 #caltitle {
 	font-size:14px;
 	color:#0150D1;	
 	float:left;
 	text-align:center;
-	width:150px;
+	width:190px;
 	line-height:20px;
 	text-shadow:0 1px 0 #ddd;
 }
-
-
 
 #calnext, #calprev {
 	display:block;
@@ -82,21 +82,21 @@
 	background-color:#eee;
 }
 
-.calsun {
+a.calsun {
 	color:red;		
 }
 
-.caloff {
+a.caloff {
 	color:#ccc;		
 }
 
-.caldisabled {
+a.caldisabled {
 	background-color:#efefef !important;
 	color:#ccc	!important;
 	cursor:default;
 }
 
-.caloff:hover {
+a.caloff:hover {
 	background-color:rgb(245, 245, 250);		
 }
 

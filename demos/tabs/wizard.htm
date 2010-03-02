@@ -1,32 +1,32 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
 
-<c:if test="${empty plain}">
-<!-- tab styling -->
-<link rel="stylesheet" type="text/css" href="${cdn}/css/tabs.css"/>
-</c:if>
+	<c:if test="${empty plain}">
+	<!-- tab styling -->
+	<link rel="stylesheet" type="text/css" href="${cdn}/css/tabs.css"/>
+	</c:if>
+	
+	<style>
+	<%@ include file="${jqt}/css/tabs-panes.css" %>
+	
+	div.panes div {
+		background:#fff url(${cdn}/img/global/gradient/h300.png) repeat-x 0 5px;
+		-background:#fff;
+		height:172px;
+	}
+	
+	div.panes label {
+		margin-bottom:15px;
+		display:block;
+	}
+	
+	label.error {
+		color:red;
+	}
+	</style>
+</head>
 
-<style>
-<%@ include file="${jqt}/css/tabs-panes.css" %>
-
-div.panes div {
-	background:#fff url(${cdn}/img/global/gradient/h300.png) repeat-x 0 5px;
-	-background:#fff;
-	height:172px;
-}
-</style>
-
-
-<style>
-div.panes label {
-	margin-bottom:15px;
-	display:block;
-}
-
-label.error {
-	color:red;
-}
-</style>
+<body>
 
 <div id="wizard">
 

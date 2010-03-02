@@ -1,24 +1,27 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
 
-<c:if test="${!empty plain}">
-<style>
-#flowtabs li {
-	list-style-image:none !important;
-	list-style-type:none !important;
-	margin:0 !important;
-}
+	<!-- tab styling -->
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/tabs-flowplayer-v2.css"/>
+	
+	<c:if test="${!empty plain}">
+	<style>
+	#flowtabs li {
+		list-style-image:none !important;
+		list-style-type:none !important;
+		margin:0 !important;
+	}
+	
+	#content div.skin2 div h2 {
+		margin-top:0px;
+		color:#ddd;
+	}
+	</style>
+	</c:if>
 
-#content div.skin2 div h2 {
-	margin-top:0px;
-	color:#ddd;
-}
-</style>
-</c:if>
+</head>
 
-
-<!-- tab styling -->
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/tabs-flowplayer-v2.css"/>
+<body>
 
 <!-- tabs -->
 <c:set var="html">

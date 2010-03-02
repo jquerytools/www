@@ -1,45 +1,47 @@
-
-
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
 
-<link rel="stylesheet" type="text/css" href="css/skin1.css"/>
+	<link rel="stylesheet" type="text/css" href="css/skin1.css"/>
+	
+	<style>
+	.calwrap {
+		background-color:#666666;
+		float:left;
+		height:28px;
+		margin-right:15px;
+		padding:4px;
+		-moz-border-radius:4px;
+		-webkit-border-radius:4px;
+	}
+	
+	.calwrap.active {
+		background-color:navy; 
+	}
+	
+	.date {
+		float:left;
+		margin-right:4px;	
+		border:1px inset #ccc;
+		padding:4px;
+		-moz-border-radius:4px;
+		-webkit-border-radius:4px;	
+	}
+	
+	.caltrigger {
+		background-color:#333;
+		width:28px;
+		height:28px;
+		display:block;
+		float:right;
+		-moz-border-radius:4px;
+		-webkit-border-radius:4px;	
+	}
+	
+	</style>
+</head>
 
-<style>
-.calwrap {
-	background-color:#666666;
-	float:left;
-	height:28px;
-	margin-right:15px;
-	padding:4px;
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;
-}
+<body>
 
-.calwrap.active {
-	background-color:navy; 
-}
-
-.date {
-	float:left;
-	margin-right:4px;	
-	border:1px inset #ccc;
-	padding:4px;
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;	
-}
-
-.caltrigger {
-	background-color:#333;
-	width:28px;
-	height:28px;
-	display:block;
-	float:right;
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;	
-}
-
-</style>
 
 <div class="calwrap"><input type="date" name="test" /></div>
 <div class="calwrap"><input type="date" name="test" min="2010-03-01" max="2011-01-01" /></div>

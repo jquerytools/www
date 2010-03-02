@@ -1,37 +1,39 @@
 <%-- :mode=jsp: --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:set var="tools" value="all"/>
 <%@ include file="../standalone.jsf" %>
 
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/overlay-minimal.css"/>
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/overlay-minimal.css"/>
+	
+	<!-- override styles for some of the overlays -->
+	<style>
+	<c:set var="css">
+	#custom {
+		background-image:url(${cdn}/img/commerce/box-512.png);
+		width:512px;
+		height:531px;
+		padding:0px;
+	}
+	
+	#custom div.close {
+		right:-15px;
+		top:-10px;
+	}
+	
+	#petrol {
+		background-image:url(${cdn}/img/overlay/petrol.png);
+		color:#fff;
+	}
+	
+	#apple {
+		background-image:url(${cdn}/img/overlay/apple.png);
+		color:#fff;
+	}
+	</c:set>
+	${css}
+	</style>
+</head>
 
-<!-- override styles for some of the overlays -->
-<style>
-<c:set var="css">
-#custom {
-	background-image:url(${cdn}/img/commerce/box-512.png);
-	width:512px;
-	height:531px;
-	padding:0px;
-}
-
-#custom div.close {
-	right:-15px;
-	top:-10px;
-}
-
-#petrol {
-	background-image:url(${cdn}/img/overlay/petrol.png);
-	color:#fff;
-}
-
-#apple {
-	background-image:url(${cdn}/img/overlay/apple.png);
-	color:#fff;
-}
-</c:set>
-${css}
-</style>
+<body>
 
 <c:set var="install">
 <!-- overlay triggers. overlay is referenced in the 'rel' attribute -->

@@ -1,10 +1,30 @@
 <%-- :mode=jsp: --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:set var="tools" value="all"/>
 <%@ include file="../standalone.jsf" %>
 
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/overlay-minimal.css"/>
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/overlay-minimal.css"/>
+	
+	<style>
+	<c:set var="css">
+	/* use a semi-transparent image for the overlay */
+	#overlay {
+		background-image:url(${cdn}/img/overlay/transparent.png);
+		color:#efefef;
+		height:450px;
+	}
+	
+	/* container for external content. uses vertical scrollbar, if needed */
+	div.contentWrap {
+		height:441px;
+		overflow-y:auto;
+	}
+	</c:set>
+	${css}
+	</style>
+	
+</head>
 
+<body>
 
 <c:set var="html">
 <!-- external page is given in the href attribute (as it should be) -->
@@ -17,23 +37,7 @@
 <!-- another link. uses the same overlay -->
 <a href="external-content2.htm" rel="#overlay">
 	<button type="button">Show another page</button>
-</a><style>
-<c:set var="css">
-/* use a semi-transparent image for the overlay */
-#overlay {
-	background-image:url(${cdn}/img/overlay/transparent.png);
-	color:#efefef;
-	height:450px;
-}
-
-/* container for external content. uses vertical scrollbar, if needed */
-div.contentWrap {
-	height:441px;
-	overflow-y:auto;
-}
-</c:set>
-${css}
-</style>
+</a>
 
 
 <!-- overlayed element -->

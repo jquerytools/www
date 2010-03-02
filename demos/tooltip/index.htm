@@ -1,29 +1,33 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
-<c:set var="wrapId" value="${empty wrapId ? 'demo' : wrapId}"/>
 
-<!-- tooltip styling -->
-<style>
-<c:set var="css">
-#${wrapId}tip {
-	display:none;
-	background:transparent url(${cnd}${jqt}/img/tooltip/black_arrow.png);
-	font-size:12px;
-	height:70px;
-	width:160px;
-	padding:25px;
-	color:#fff;	
-}
-</c:set>
-${css}
+	<c:set var="wrapId" value="${empty wrapId ? 'demo' : wrapId}"/>
+	
+	<!-- tooltip styling -->
+	<style>
+	<c:set var="css">
+	#${wrapId}tip {
+		display:none;
+		background:transparent url(${cnd}${jqt}/img/tooltip/black_arrow.png);
+		font-size:12px;
+		height:70px;
+		width:160px;
+		padding:25px;
+		color:#fff;	
+	}
+	</c:set>
+	${css}
+	
+	/* style the trigger elements */
+	#${wrapId} img {
+		border:0;
+		cursor:pointer;
+		margin:0 8px;
+	}
+	</style>
+</head>
 
-/* style the trigger elements */
-#${wrapId} img {
-	border:0;
-	cursor:pointer;
-	margin:0 8px;
-}
-</style>
+<body>
 
 <c:set var="ie6">
 <!-- use gif image for IE -->
@@ -59,7 +63,7 @@ ${ie6}
 
 
 <script>
-// What is $(document).ready ? See: http://flowplayer.org${jqt}/documentation/index.html#document_ready
+// What is $(document).ready ? See: http://flowplayer.org${jqt}/documentation/basics.html#document_ready
 <c:if test="${empty js}">
 <c:set var="js">
 $(document).ready(function() {

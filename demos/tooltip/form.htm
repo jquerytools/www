@@ -2,43 +2,47 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
 
-<!-- tooltip styling -->
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/tooltip-generic.css"/>
+	<!-- tooltip styling -->
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/tooltip-generic.css"/> 
 
+	<style>
+	#myform {
+		border:1px outset #ccc;
+		background:#fff url(${cdn}/img/global/gradient/h600.png) repeat-x;
+		padding:20px;
+		margin:20px 0;
+		width:350px;
+		-moz-border-radius:4px;
+	}
+	
+	#myform h3 {
+		text-align:center;
+		margin:0 0 10px 0;
+	}
+	
+	/* http://www.quirksmode.org/css/forms.html */
+	#inputs label, #inputs input, #inputs textarea, #inputs select {
+		display: block;
+		width: 150px;
+		float: left;
+		margin-bottom: 20px;
+	}
+	
+	#inputs label {
+		text-align: right;
+		width: 75px;
+		padding-right: 20px;
+	}
+	
+	#inputs br {
+		clear: left;
+	}
+	</style>
+	
+</head>
 
-<style>
-#myform {
-	border:1px outset #ccc;
-	background:#fff url(${cdn}/img/global/gradient/h600.png) repeat-x;
-	padding:20px;
-	margin:20px 0;
-	width:350px;
-	-moz-border-radius:4px;
-}
-
-#myform h3 {
-	text-align:center;
-	margin:0 0 10px 0;
-}
-
-/* http://www.quirksmode.org/css/forms.html */
-#inputs label, #inputs input, #inputs textarea, #inputs select {
-	display: block;
-	width: 150px;
-	float: left;
-	margin-bottom: 20px;
-}
-
-#inputs label {
-	text-align: right;
-	width: 75px;
-	padding-right: 20px;
-}
-
-#inputs br {
-	clear: left;
-}
-</style>
+<body>
+	
 
 <c:set var="html">
 <div class="tooltip"></div>

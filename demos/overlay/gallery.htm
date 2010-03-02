@@ -1,45 +1,47 @@
 <%-- :mode=jsp: --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:set var="tools" value="all"/>
 <c:set var="wrapId" value="${empty wrapId ? 'triggers' : wrapId}"/>
 <%@ include file="../standalone.jsf" %>
 
-<style>
-<c:if test="${empty plain}">
-body {padding-top: 10px}
-</c:if>
+	<style>
+	<c:if test="${empty plain}">
+	body {padding-top: 10px}
+	</c:if>
+	
+	<c:if test="${!empty plain}">
+	#gallery .info {
+		color:#fff !important;
+		font-size:12px !important;
+		padding:10px 15px !important;
+	}
+	</c:if>
+	
+	/* the thumbnails */
+	#${wrapId} {
+		text-align:center;
+	}
+	
+	#${wrapId} img {
+		background-color:#fff;
+		padding:2px;
+		border:1px solid #ccc;
+		margin:15px 2px;
+		-moz-border-radius:4px;
+		-webkit-border-radius:4px;
+	}
+	
+	/* the active thumbnail */
+	#${wrapId} a.active img {
+		outline:1px solid #000;
+	
+		/* show on top of the expose mask */
+		z-index:9999;
+		position:relative;
+	}
+	</style>
+</head>
 
-<c:if test="${!empty plain}">
-#gallery .info {
-	color:#fff !important;
-	font-size:12px !important;
-	padding:10px 15px !important;
-}
-</c:if>
-
-/* the thumbnails */
-#${wrapId} {
-	text-align:center;
-}
-
-#${wrapId} img {
-	background-color:#fff;
-	padding:2px;
-	border:1px solid #ccc;
-	margin:15px 2px;
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;
-}
-
-/* the active thumbnail */
-#${wrapId} a.active img {
-	outline:1px solid #000;
-
-	/* show on top of the expose mask */
-	z-index:9999;
-	position:relative;
-}
-</style>
+<body>
 
 <!-- trigger elements -->
 <div id="${wrapId}">

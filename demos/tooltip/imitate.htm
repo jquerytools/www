@@ -1,28 +1,31 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
 
-<!-- tooltip styling -->
-<style>
-<c:set var="css">
-.tooltip {
-	display:none;
-	background-color:#ffa;
-	border:1px solid #cc9;
-	padding:3px;
-	font-size:13px;
-	-moz-box-shadow: 2px 2px 11px #666;
-	-webkit-box-shadow: 2px 2px 11px #666;
-} 
-</c:set>
-${css}
+	<!-- tooltip styling -->
+	<style>
+	<c:set var="css">
+	.tooltip {
+		display:none;
+		background-color:#ffa;
+		border:1px solid #cc9;
+		padding:3px;
+		font-size:13px;
+		-moz-box-shadow: 2px 2px 11px #666;
+		-webkit-box-shadow: 2px 2px 11px #666;
+	} 
+	</c:set>
+	${css}
+	
+	/* style the trigger elements */
+	#triggers img {
+		border:0;
+		cursor:pointer;
+		margin-left:11px;
+	}
+	</style>
+</head>
 
-/* style the trigger elements */
-#triggers img {
-	border:0;
-	cursor:pointer;
-	margin-left:11px;
-}
-</style>
+<body>
 
 <!-- the tooltip -->
 <span class="tooltip">&nbsp;</span>
@@ -44,7 +47,7 @@ ${css}
 
 
 <script>
-// What is $(document).ready ? See: http://flowplayer.org${jqt}/documentation/index.html#document_ready
+// What is $(document).ready ? See: http://flowplayer.org${jqt}/documentation/basics.html#document_ready
 $(document).ready(function() {
 	<c:set var="js">
 	$("img[title]:gt(1)").tooltip({

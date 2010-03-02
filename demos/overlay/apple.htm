@@ -1,66 +1,68 @@
 <%-- :mode=jsp: --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <c:set var="wrapId" value="${empty wrapId ? 'triggers' : wrapId}"/>
-<c:set var="tools" value="all"/>
 <%@ include file="../standalone.jsf" %>
 
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/overlay-apple.css"/>
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/overlay-apple.css"/>
+	
+	<style>
+	<c:set var="css">
+	/* black version of the overlay. simply uses a different background image */
+	div.apple_overlay.black {
+		background-image:url(${cdn}${jqt}/img/overlay/transparent.png);		
+		color:#fff;
+	}
+	</c:set>
+	${css}
+	
+	div.apple_overlay h2 {
+		margin:10px 0 -9px 0;
+		font-weight:bold;
+		font-size:14px;
+	}
+	
+	div.black h2 {
+		color:#fff;
+	}
+	
+	#${wrapId} {
+		margin-top:10px;
+		text-align:center;
+	}
+	
+	#${wrapId} img {
+		background-color:#fff;
+		padding:2px;
+		border:1px solid #ccc;
+		margin:2px 5px;
+		cursor:pointer;
+		-moz-border-radius:4px;
+		-webkit-border-radius:4px;
+	}
+	</style>
 
-<style>
-<c:set var="css">
-/* black version of the overlay. simply uses a different background image */
-div.apple_overlay.black {
-	background-image:url(${cdn}${jqt}/img/overlay/transparent.png);		
-	color:#fff;
-}
-</c:set>
-${css}
+	<c:set var="ie6">
+	<!--[if lt IE 7]>
+	<style> 
+	div.apple_overlay {
+		background-image:url(${cdn}${jqt}/img/overlay/overlay_IE6.gif);
+		color:#fff;
+	}
+	
+	/* default close button positioned on upper right corner */
+	div.apple_overlay div.close {
+		background-image:url(${cdn}${jqt}/img/overlay/overlay_close_IE6.gif);
+	
+	}	
+	</style>
+	<![endif]-->
+	</c:set>
+	
+	${ie6}
+</head>
 
-div.apple_overlay h2 {
-	margin:10px 0 -9px 0;
-	font-weight:bold;
-	font-size:14px;
-}
+<body>
 
-div.black h2 {
-	color:#fff;
-}
-
-#${wrapId} {
-	margin-top:10px;
-	text-align:center;
-}
-
-#${wrapId} img {
-	background-color:#fff;
-	padding:2px;
-	border:1px solid #ccc;
-	margin:2px 5px;
-	cursor:pointer;
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;
-}
-</style>
-
-<c:set var="ie6">
-<!--[if lt IE 7]>
-<style> 
-div.apple_overlay {
-	background-image:url(${cdn}${jqt}/img/overlay/overlay_IE6.gif);
-	color:#fff;
-}
-
-/* default close button positioned on upper right corner */
-div.apple_overlay div.close {
-	background-image:url(${cdn}${jqt}/img/overlay/overlay_close_IE6.gif);
-
-}	
-</style>
-<![endif]-->
-</c:set>
-
-${ie6}
 
 <!-- trigger elements -->
 <div id="${wrapId}">

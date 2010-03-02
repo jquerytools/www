@@ -1,24 +1,21 @@
-
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
 
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-wizard.css"/>
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-wizard.css"/>
 
-<%--
-	TODO:
-		- select box validator
---%>
+	<c:if test="${empty plain}">
+	<!-- a little more standalone page styling -->
+	<style>
+	body {
+		background-color:#234;
+		padding-top:5%;
+	}
+	</style>
+	</c:if>
+</head>
 
-<c:if test="${empty plain}">
-<!-- a little more standalone page styling -->
-<style>
-body {
-	background-color:#234;
-	padding-top:5%;
-}
-</style>
-</c:if>
-
+<body>
+ 
 <!-- twitter style notification bar for validation errors -->
 <div id="drawer">Please fill in the empty fields marked with a <samp style="color:red">red</samp> border.</div>
 

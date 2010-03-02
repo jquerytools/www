@@ -1,11 +1,17 @@
-
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
 
-<link rel="stylesheet" type="text/css" href="css/skin1.css"/>
+	<!-- dateinput styling -->
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/demos/dateinput/css/skin1.css"/>
+</head>
 
-<input type="date" name="test" />
+<body>
 
-<script>
-$(":date").dateinput();
-</script>
+	<!-- HTML5 date input -->
+	<input type="date" name="mydate" />
+	
+	<!-- make it happen -->
+	<script>
+	$(":date").dateinput();
+	</script>
+	

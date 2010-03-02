@@ -1,17 +1,20 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
 
-<!-- tab styling -->	
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/tabs-mouseover.css"/>
+	<!-- tab styling -->	
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/tabs-mouseover.css"/>
+	
+	<c:set var="html">
+	<!-- tabs -->
+	<div id="products">
+		<img src="${cdn}/img/commerce/free.png" alt="Free version" />
+		<img src="${cdn}/img/commerce/commercial.png" alt="Commercial version" />
+		<img src="${cdn}/img/commerce/multidomain.png" alt="Multidomain version" />
+	</div>
+	</c:set>
+</head>
 
-<c:set var="html">
-<!-- tabs -->
-<div id="products">
-	<img src="${cdn}/img/commerce/free.png" alt="Free version" />
-	<img src="${cdn}/img/commerce/commercial.png" alt="Commercial version" />
-	<img src="${cdn}/img/commerce/multidomain.png" alt="Multidomain version" />
-</div>
-</c:set>
+<body>
 
 ${html}
 

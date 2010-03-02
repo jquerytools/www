@@ -1,44 +1,47 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
 
-<c:if test="${empty plain}">
-<!-- tab styling -->	
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/tabs-no-images.css"/>
-</c:if> 
-
-<!-- skin 2 -->
-<style>
-<c:set var="css">
-/* alternate colors: skin2 */
-ul.skin2 a {
-	background-color:#89a;		
-	color:#fff !important;
-}
-
-/* mouseover state */
-ul.skin2 a:hover {
-	background-color:#678;
-}
-
-/* active tab */
-ul.skin2 a.current {
-	background-color:#4F5C6A;
-	border-bottom:2px solid #4F5C6A;	
-}
-
-/* tab pane with background gradient */
-div.skin2 div {
-	min-height:200px;
-	color:#fff;	
-	background:#234 url(${cdn}/img/global/gradient/h300.png) repeat-x scroll 0 -50px;
+	<c:if test="${empty plain}">
+	<!-- tab styling -->	
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/tabs-no-images.css"/>
+	</c:if> 
 	
-	/* IE6 does not support PNG24 images natively */
-	_background:#4F5C6A;
-}
-</c:set>
+	<!-- skin 2 -->
+	<style>
+	<c:set var="css">
+	/* alternate colors: skin2 */
+	ul.skin2 a {
+		background-color:#89a;		
+		color:#fff !important;
+	}
+	
+	/* mouseover state */
+	ul.skin2 a:hover {
+		background-color:#678;
+	}
+	
+	/* active tab */
+	ul.skin2 a.current {
+		background-color:#4F5C6A;
+		border-bottom:2px solid #4F5C6A;	
+	}
+	
+	/* tab pane with background gradient */
+	div.skin2 div {
+		min-height:200px;
+		color:#fff;	
+		background:#234 url(${cdn}/img/global/gradient/h300.png) repeat-x scroll 0 -50px;
+		
+		/* IE6 does not support PNG24 images natively */
+		_background:#4F5C6A;
+	}
+	</c:set>
+	
+	${css}
+	</style>
+</head>
 
-${css}
-</style>
+<body>
 
 
 <!-- tabs -->

@@ -1,45 +1,48 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
 
-<style>
-<c:set var="css">
-#facebox {
+	<style>
+	<c:set var="css">
+	#facebox {
+	
+		/* overlay is hidden before loading */
+		display:none;
+	
+		/* standard decorations */
+		width:400px;	
+		border:10px solid #666;
+	
+		/* for modern browsers use semi-transparent color on the border. nice! */
+		border:10px solid rgba(82, 82, 82, 0.698);
+	
+		/* hot CSS3 features for mozilla and webkit-based browsers (rounded borders) */
+		-moz-border-radius:8px;
+		-webkit-border-radius:8px;
+	}
+	
+	#facebox div {
+		padding:10px;
+		border:1px solid #3B5998;
+		background-color:#fff;
+		font-family:"lucida grande",tahoma,verdana,arial,sans-serif
+	}
+	
+	#facebox h2 {
+		margin:-11px;
+		margin-bottom:0px;
+		color:#fff;
+		background-color:#6D84B4;
+		padding:5px 10px;
+		border:1px solid #3B5998;
+		font-size:20px;
+	}
+	</c:set>
+	
+	${css}
+	</style>
+</head>
 
-	/* overlay is hidden before loading */
-	display:none;
-
-	/* standard decorations */
-	width:400px;	
-	border:10px solid #666;
-
-	/* for modern browsers use semi-transparent color on the border. nice! */
-	border:10px solid rgba(82, 82, 82, 0.698);
-
-	/* hot CSS3 features for mozilla and webkit-based browsers (rounded borders) */
-	-moz-border-radius:8px;
-	-webkit-border-radius:8px;
-}
-
-#facebox div {
-	padding:10px;
-	border:1px solid #3B5998;
-	background-color:#fff;
-	font-family:"lucida grande",tahoma,verdana,arial,sans-serif
-}
-
-#facebox h2 {
-	margin:-11px;
-	margin-bottom:0px;
-	color:#fff;
-	background-color:#6D84B4;
-	padding:5px 10px;
-	border:1px solid #3B5998;
-	font-size:20px;
-}
-</c:set>
-
-${css}
-</style>
+<body>
 
 <c:set var="ie">
 <!--[if IE]>
@@ -89,7 +92,7 @@ ${html}
 
 
 <script>
-// What is $(document).ready ? See: http://flowplayer.org${jqt}/documentation/index.html#document_ready
+// What is $(document).ready ? See: http://flowplayer.org${jqt}/documentation/basics.html#document_ready
 $(document).ready(function() {
 <c:set var="js">
 // select the overlay element - and "make it an overlay"

@@ -1,21 +1,24 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
 
-<!-- tooltip styling -->
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/tooltip-generic.css"/>
+	<!-- tooltip styling -->
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/tooltip-generic.css"/>
+	
+	<!-- table styling -->
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/demos/tooltip/table/style.css"/>
+	
+	<!-- override the generic tooltip style -->
+	<style>
+	#tooltip {
+		width:100px;
+		background-color:#3d7483;
+		padding:5px;
+		font-size:11px;
+	}
+	</style>
+</head>
 
-<!-- table styling -->
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/demos/tooltip/table/style.css"/>
-
-<!-- override the generic tooltip style -->
-<style>
-#tooltip {
-	width:100px;
-	background-color:#3d7483;
-	padding:5px;
-	font-size:11px;
-}
-</style>
+<body>
 
 
 <!-- use the same tooltip for each entry. Also the content. -->

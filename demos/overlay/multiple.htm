@@ -1,20 +1,23 @@
 <%-- :mode=jsp: --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:set var="tools" value="all"/>
 <%@ include file="../standalone.jsf" %>
 
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/overlay-minimal.css"/>
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/overlay-minimal.css"/>
+	
+	<style>
+	<c:set var="css">
+	/* override default settings */
+	div.overlay {
+		width:400px;		
+		height:250px;
+	}
+	</c:set>
+	${css}
+	</style>
+</head>
 
-<style>
-<c:set var="css">
-/* override default settings */
-div.overlay {
-	width:400px;		
-	height:250px;
-}
-</c:set>
-${css}
-</style>
+<body>
+
 
 <script>
 <c:set var="js">

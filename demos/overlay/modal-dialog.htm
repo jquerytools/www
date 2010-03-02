@@ -1,34 +1,38 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
 
-<style>
-<c:set var="css">
-.modal {
-	background-color:#fff;
-	display:none;
-	width:350px;
-	padding:15px;
-	text-align:left;
-	border:2px solid #333;
+	<style>
+	<c:set var="css">
+	.modal {
+		background-color:#fff;
+		display:none;
+		width:350px;
+		padding:15px;
+		text-align:left;
+		border:2px solid #333;
+	
+		opacity:0.8;
+		-moz-border-radius:6px;
+		-webkit-border-radius:6px;
+		-moz-box-shadow: 0 0 50px #ccc;
+		-webkit-box-shadow: 0 0 50px #ccc;
+	}
+	
+	.modal h2 {
+		background:url(/img/global/info.png) 0 50% no-repeat;
+		margin:0px;
+		padding:10px 0 10px 45px;
+		border-bottom:1px solid #333;
+		font-size:20px;
+	}
+	</c:set>
+	
+	${css}
+	</style>
+</head>
 
-	opacity:0.8;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	-moz-box-shadow: 0 0 50px #ccc;
-	-webkit-box-shadow: 0 0 50px #ccc;
-}
+<body>
 
-.modal h2 {
-	background:url(/img/global/info.png) 0 50% no-repeat;
-	margin:0px;
-	padding:10px 0 10px 45px;
-	border-bottom:1px solid #333;
-	font-size:20px;
-}
-</c:set>
-
-${css}
-</style>
 
 <c:set var="html">
 
@@ -78,7 +82,7 @@ ${html}
 
 
 <script>
-// What is $(document).ready ? See: http://flowplayer.org${jqt}/documentation/index.html#document_ready
+// What is $(document).ready ? See: http://flowplayer.org${jqt}/documentation/basics.html#document_ready
 $(document).ready(function() {
 <c:set var="js">
 var triggers = $("button.modalInput").overlay({

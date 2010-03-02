@@ -3,68 +3,71 @@
 <c:set var="tools" value="all" />
 <%@ include file="../standalone.jsf" %>
 
-<!-- here we use separate stylesheets. you should definitely combine yours into a single file! -->
+	<!-- here we use separate stylesheets. you should definitely combine yours into a single file! -->
+	
+	<!-- scrollable styling -->
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-horizontal.css" />
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-buttons.css" />
+	
+	<!-- overlay styling -->
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/overlay-basic.css"/>
+	
+	<!-- gallery styling -->
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/overlay-gallery.css"/>
+	
+	<!-- tooltip styling -->
+	
+	
+	<style>
+	
+	
+	/*** override styling in external stylesheets ***/
+	
+	<c:set var="css">
+	/* remove margins from the image */
+	.items img {
+		margin:0;
+	}
+	
+	/* make A tags our floating scrollable items */
+	.items a {
+		display:block;
+		float:left;
+		margin:20px 15px;
+	} 
+	
+	
+	/* tooltip styling */
+	#tooltip {
+		display:none;
+		background:url(${cnd}${jqt}/img/tooltip/black_arrow.png);
+		font-size:12px;
+		height:70px;
+		width:160px;
+		padding:25px;
+		color:#fff;
+	}
+	
+	</c:set>
+	
+	${css}
+	
+	<c:set var="css2">
+	/* scrollable should not disable gallery navigation */
+	#gallery .disabled {
+		visibility:visible !important;
+	}
+	
+	#gallery .inactive {
+		visibility:hidden !important;
+	}
+	</c:set>
+	
+	${css2}
+	</style>
+</head>
 
-<!-- scrollable styling -->
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-horizontal.css" />
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-buttons.css" />
-
-<!-- overlay styling -->
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/overlay-basic.css"/>
-
-<!-- gallery styling -->
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/overlay-gallery.css"/>
-
-<!-- tooltip styling -->
-
-
-<style>
-
-
-/*** override styling in external stylesheets ***/
-
-<c:set var="css">
-/* remove margins from the image */
-.items img {
-	margin:0;
-}
-
-/* make A tags our floating scrollable items */
-.items a {
-	display:block;
-	float:left;
-	margin:20px 15px;
-} 
-
-
-/* tooltip styling */
-#tooltip {
-	display:none;
-	background:url(${cnd}${jqt}/img/tooltip/black_arrow.png);
-	font-size:12px;
-	height:70px;
-	width:160px;
-	padding:25px;
-	color:#fff;
-}
-
-</c:set>
-
-${css}
-
-<c:set var="css2">
-/* scrollable should not disable gallery navigation */
-#gallery .disabled {
-	visibility:visible !important;
-}
-
-#gallery .inactive {
-	visibility:hidden !important;
-}
-</c:set>
-
-${css2}
-</style>
+<body>
 
 <!-- "previous page" action -->
 <a class="prevPage browse left"></a>

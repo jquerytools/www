@@ -1,26 +1,30 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
 
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/overlay-red.css"/>
-
-<!-- make all links with the 'rel' attribute open overlays -->
-<script>
-<c:set var="js">
-$(function() {
-	$("button.overlaybutton").overlay({
-
-		// custom expose settings
-		expose: {
-			color: '#BAD0DB',
-			opacity: 0.7,
-			closeSpeed: 1000
-		}
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/overlay-red.css"/>
+	
+	<!-- make all links with the 'rel' attribute open overlays -->
+	<script>
+	<c:set var="js">
+	$(function() {
+		$("button.overlaybutton").overlay({
+	
+			// custom expose settings
+			expose: {
+				color: '#BAD0DB',
+				opacity: 0.7,
+				closeSpeed: 1000
+			}
+		});
 	});
-});
-</c:set>
+	</c:set>
+	
+	${js}
+	</script>
+</head>
 
-${js}
-</script>
+<body>
+
 
 <c:set var="html">
 <!-- a button that triggers the overlay. the 'rel' attribute is a jQuery selector to the overlay -->

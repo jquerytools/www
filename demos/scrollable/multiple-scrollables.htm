@@ -1,39 +1,43 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
 
-<style>
-<c:set var="css">
-/* root element for single scroll */
-.scroll {
-	position:relative;
-	overflow:hidden;
-	width: 394px;
-	height: 266px;
-	float:left;
-}
+	<style>
+	<c:set var="css">
+	/* root element for single scroll */
+	.scroll {
+		position:relative;
+		overflow:hidden;
+		width: 394px;
+		height: 266px;
+		float:left;
+	}
+	
+	/* root element for the scroll pics */
+	.scroll .pics {
+		width:20000em;
+		position:absolute;
+		clear:both;
+	}
+	
+	/* single scroll item */
+	.pics img {
+		float:left;
+		cursor:pointer;
+		width:400px;
+		margin:0px;
+	}
+	
+	/* possible settings for the active scroll */
+	.scroll.active {
+	
+	}
+	</c:set>
+	${css}
+	</style>
 
-/* root element for the scroll pics */
-.scroll .pics {
-	width:20000em;
-	position:absolute;
-	clear:both;
-}
+</head>
 
-/* single scroll item */
-.pics img {
-	float:left;
-	cursor:pointer;
-	width:400px;
-	margin:0px;
-}
-
-/* possible settings for the active scroll */
-.scroll.active {
-
-}
-</c:set>
-${css}
-</style>
+<body>
 
 <c:set var="html">
 <!-- scroll #1 -->

@@ -1,15 +1,18 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
 
-<c:if test="${empty plain}">
-<!-- tab styling -->
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/tabs.css" />
-</c:if>
+	<c:if test="${empty plain}">
+	<!-- tab styling -->
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/tabs.css" />
+	</c:if>
+	
+	<!-- tab pane styling -->
+	<style>
+	<%@ include file="${jqt}/css/tabs-panes.css" %>
+	</style>
+</head>
 
-<!-- tab pane styling -->
-<style>
-<%@ include file="${jqt}/css/tabs-panes.css" %>
-</style>
+<body>
 
 <c:set var="html">
 <!-- the tabs -->

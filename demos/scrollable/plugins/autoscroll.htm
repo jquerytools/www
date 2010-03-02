@@ -2,7 +2,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="tools" value="all" />
 <c:set var="rootId" value="scroller"/>
-<%@ include file="../../standalone.jsf" %>
+<%@ include file="../../demos/standalone.jsf" %>
+</head>
+
+<body>
 
 <style>
 #actionButtons {
@@ -35,7 +38,7 @@ ${html}
 
 <!-- javascript coding -->
 <script>
-// What is $(document).ready ? See: http://flowplayer.org${jqt}/documentation/index.html#document_ready
+// What is $(document).ready ? See: http://flowplayer.org${jqt}/documentation/basics.html#document_ready
 $(document).ready(function() {
 <c:set var="js">		
 // initialize scrollable together with the autoscroll plugin

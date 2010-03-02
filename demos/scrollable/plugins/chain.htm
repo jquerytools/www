@@ -2,7 +2,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="tools" value="all" />
 <c:set var="rootId" value="chained"/>
-<%@ include file="../../standalone.jsf" %>
+<%@ include file="../../demos/standalone.jsf" %>
+</head>
+
+<body>
 
 <!-- required CSS files -->
 <c:if test="${empty plain}">
@@ -34,7 +37,7 @@ ${html}
 
 <!-- javascript coding -->
 <script>
-// What is $(document).ready ? See: http://flowplayer.org${jqt}/documentation/index.html#document_ready
+// What is $(document).ready ? See: http://flowplayer.org${jqt}/documentation/basics.html#document_ready
 $(document).ready(function() {
 <c:set var="js">		
 // heeeeeeeeeeere we go.

@@ -5,7 +5,7 @@
 
 </p>
 
-<%@ include file="" %>
+<%@ include file="index.htm" %>
 
 <h3>HTML coding</h3>
 
@@ -14,17 +14,20 @@
 </p>
 
 <pii:code lang="html">
-${html}
+<script src="http://cdn.jquerytools.org/${v.jqt}/form/jquery.tools.min.js"></script>
+
+<input type="date" name="test" />
 </pii:code>
 
 <h3>CSS coding</h3>
 
 <p>
-
+	#calroot #calhead #caltitle
+	<a href="css/skin1.css">
 </p>
 
 <pii:code lang="css">
-${css}
+
 </pii:code>
 
 <h3>JavaScript coding</h3>
@@ -34,7 +37,7 @@ ${css}
 </p>
 
 <pii:code>
-${js}
+$(":date").dateinput();
 </pii:code>
 
 <p>

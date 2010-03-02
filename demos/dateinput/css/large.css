@@ -1,0 +1,106 @@
+
+#calroot {
+	margin-top:-10px;		
+}
+
+#calbody {
+	font-family:sans-serif;		
+	width:364px;
+	background:#F5F9FF url(../../rangeinput/img/h300.png) repeat-x;
+	font-size:13px;
+	border:1px solid #BDC8D2;
+	border-width:1px 1px 0;
+	-moz-box-shadow:0 0 10px 0px #ccc;
+}
+
+#caltitle {
+	font-family:sans-serif;		
+	text-align:right;
+	font-size:18px;
+	padding-bottom:5px;
+}
+
+
+#caldays span {
+	display:block;
+	float:left;
+	width:52px;
+	text-align:center;
+	font-weight:bold;
+	padding:4px 0;
+	font-size:11px;
+	color:#7e7e7e;
+	line-height:18px;
+	background:#fff url(../../rangeinput/img/h80.png) repeat-x;
+}
+
+#calweeks {
+	
+}
+
+.calweek {
+	clear:left;
+	height:50px;
+	border-bottom:1px solid #BDC8D2;
+	border-top:1px solid #fff;
+}
+
+
+.calweek a {
+	display:block;
+	float:left;
+	width:50px;
+	height:50px;
+	text-decoration:none;
+	font-size:15px;
+	text-align:center;
+	line-height:50px;
+	color:#000;
+	border-right:1px solid #fff;
+	border-left:1px solid #BDC8D2;
+	text-shadow:1px 1px 1px #fff;
+} 
+
+a.calsunday {
+	border-left:1px solid transparent;		
+	color:#900;
+	background-color:#f2f2f2;
+}
+
+.calweek a:hover, .calfocus {
+	background:#fff url(../../rangeinput/img/h80.png) repeat-x;
+}
+
+.calsun {
+	color:red;		
+}
+
+a.caloff {
+	color:#999;	
+	background:#eee url(../../rangeinput/img/h80.png) repeat-x;
+}
+
+.caldisabled {
+	background-color:#efefef !important;
+	color:#ccc	!important;
+	cursor:default;
+}
+
+.caloff:hover {
+	background-color:rgb(245, 245, 250);		
+}
+
+
+#caltitle select {
+	font-size:10px;	
+}
+
+#caltoday {
+	background-color:#498CE2;
+	color:#fff;
+	text-shadow:0 1px 0 #000;
+	border:0;
+	width:52px;
+	background-image:none;
+	-moz-box-shadow:inset 0 0 10px 0px #000;
+}

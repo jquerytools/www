@@ -2,48 +2,49 @@
 <%-- :mode=jsp: --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://flowplayer.org" prefix="f" %>
-
-<c:set var="tools" value="all" />
 <%@ include file="../standalone.jsf" %>
 
-<!-- tab styling -->
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/tabs-flowplayer-v2.css"/>
+	<!-- tab styling -->
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/tabs-flowplayer-v2.css"/>
+	
+	<style>
+	<c:set var="css">
+	/* override the root element to enable scrolling */
+	#flowpanes {
+		position:relative;
+		overflow:hidden;
+		clear:both;
+	}
+	
+	/* override single pane */
+	#flowpanes div {
+		float:left;
+		display:block;
+		width:670px;
+		cursor:pointer;
+		font-size:14px;
+	}
+	
+	/* our additional wrapper element for the items */
+	#flowpanes .items {
+		width:20000em;
+		position:absolute;
+		clear:both;
+		margin:0;
+		padding:0;
+	}
+	
+	#flowpanes .less, #flowpanes .less a {
+		color:#999 !important;
+		font-size:11px;
+	}
+	</c:set>
+	
+	${css}
+	</style>
+</head>
 
-<style>
-<c:set var="css">
-/* override the root element to enable scrolling */
-#flowpanes {
-	position:relative;
-	overflow:hidden;
-	clear:both;
-}
-
-/* override single pane */
-#flowpanes div {
-	float:left;
-	display:block;
-	width:670px;
-	cursor:pointer;
-	font-size:14px;
-}
-
-/* our additional wrapper element for the items */
-#flowpanes .items {
-	width:20000em;
-	position:absolute;
-	clear:both;
-	margin:0;
-	padding:0;
-}
-
-#flowpanes .less, #flowpanes .less a {
-	color:#999 !important;
-	font-size:11px;
-}
-</c:set>
-
-${css}
-</style>
+<body>
 
 <c:set var="html">
 <!-- tabs work as navigator for scrollable -->

@@ -1,21 +1,24 @@
 <%-- :mode=jsp: --%>
-<%@ include file="../standalone.jsf" %> 	
+<%@ include file="../standalone.jsf" %>
 
-<c:if test="${empty plain}">
-<!-- tab styling -->	
-<link rel="stylesheet" type="text/css" href="${cdn}/css/tabs.css"/>	
-</c:if>
+	<c:if test="${empty plain}">
+	<!-- tab styling -->	
+	<link rel="stylesheet" type="text/css" href="${cdn}/css/tabs.css"/>	
+	</c:if>
+	
+	<!-- all panes are initially hidden -->
+	<style>
+	div.panes div {
+		display:none;		
+		padding:20px;
+		border:1px solid #666;
+		border-width:0 1px 1px 1px;
+		font-size:16px;
+	}
+	</style>
+</head>
 
-<!-- all panes are initially hidden -->
-<style>
-div.panes div {
-	display:none;		
-	padding:20px;
-	border:1px solid #666;
-	border-width:0 1px 1px 1px;
-	font-size:16px;
-}
-</style>
+<body> 	
 
 <c:set var="html">
 <!-- the tabs -->
