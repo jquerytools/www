@@ -6,11 +6,12 @@
 #calbody {
 	font-family:sans-serif;		
 	width:364px;
-	background:#F5F9FF url(../../rangeinput/img/h300.png) repeat-x;
 	font-size:13px;
 	border:1px solid #BDC8D2;
 	border-width:1px 1px 0;
+	background:#F5F9FF url(../../rangeinput/img/h300.png) repeat-x;
 	-moz-box-shadow:0 0 10px 0px #ccc;
+	-webkit-box-shadow:0 0 10px 0px #ccc;
 }
 
 #caltitle {

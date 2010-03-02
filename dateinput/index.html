@@ -307,7 +307,7 @@ $(".date").dateinput({
 	css: {
 		prefix: null,
 		root: 'dateinput',
-		head: 'pickhead',
+		head: 'datehead'
 	}
 });
 </pii:code>
@@ -315,7 +315,7 @@ $(".date").dateinput({
 <h3>Prefix</h3>
 
 <p>
-	All <samp>id</samp>s and class names are prefixed by the value specified in the <samp>prefix</samp> property, allowing you to have them one common "namespace". This avoids potential clashes with other CSS names in your web application. By setting this value to <samp>null</samp> the prefix is not used, allowing you to use shorter names. The following table lists all properties supported by the <samp>css</samp> configuration option. By default the tool uses a prefix "pick" which is colored blue in the default value column.
+	All <samp>id</samp>s and class names are prefixed by the value specified in the <samp>prefix</samp> property, allowing you to have them one common "namespace". This avoids potential clashes with other CSS names in your web application. By setting this value to <samp>null</samp> the prefix is not used, allowing you to use shorter names. The following table lists all properties supported by the <samp>css</samp> configuration option. By default the tool uses a prefix "cal" which is colored blue in the default value column.
 </p> 	
 
 <h3>CSS names</h3>
@@ -335,112 +335,119 @@ $(".date").dateinput({
 		<td class="code">root</td>
 		<td>id</td>
 		<td><samp>div</samp></td>
-		<td><samp>pick</samp>root</td>
+		<td><samp>cal</samp>root</td>
 		<td>The root element for the dateinput.</td>
 	</tr>
 	<tr>
 		<td class="code">head</td>
 		<td>id</td>
 		<td><samp>div</samp></td>
-		<td><samp>pick</samp>head</td>
+		<td><samp>cal</samp>head</td>
 		<td>Dateinput header that contains next/prev month buttons and dropdown menus.</td>
 	</tr>
 	<tr>
 		<td class="code">title</td>
 		<td>id</td>
 		<td><samp>div</samp></td>
-		<td><samp>pick</samp>title</td>
+		<td><samp>cal</samp>title</td>
 		<td>Title of the dateinput.</td>
 	</tr>
 	<tr>
 		<td class="code">prev</td>
 		<td>id</td>
 		<td><samp>a</samp></td>
-		<td><samp>pick</samp>prev</td>
+		<td><samp>cal</samp>prev</td>
 		<td>Previous month link.</td>
 	</tr>
 	<tr>
 		<td class="code">next</td>
 		<td>id</td>
 		<td><samp>a</samp></td>
-		<td><samp>pick</samp>next</td>
+		<td><samp>cal</samp>next</td>
 		<td>Next month link.</td>
 	</tr>
 	<tr>
 		<td class="code">disabled</td>
 		<td>class</td>
 		<td><samp>a</samp></td>
-		<td><samp>pick</samp>disabled</td>
+		<td><samp>cal</samp>disabled</td>
 		<td>Class name for a prev/next month navigation button which cannot be pressed.</td>
 	</tr>
 	<tr>
 		<td class="code">month</td>
 		<td>id</td>
 		<td><samp>select</samp></td>
-		<td><samp>pick</samp>month</td>
+		<td><samp>cal</samp>month</td>
 		<td>Month selector.</td>
 	</tr>
 	<tr>
 		<td class="code">year</td>
 		<td>id</td>
 		<td><samp>select</samp></td>
-		<td><samp>pick</samp>year</td>
+		<td><samp>cal</samp>year</td>
 		<td>Year selector.</td>
 	</tr>
+	<tr>
+		<td class="code">body</td>
+		<td>id</td>
+		<td><samp>div</samp></td>
+		<td><samp>cal</samp>body</td>
+		<td>Dateinput body that contains the day names and the weeks</td>
+	</tr>	
 	<tr>
 		<td class="code">days</td>
 		<td>id</td>
 		<td><samp>div</samp></td>
-		<td><samp>pick</samp>days</td>
+		<td><samp>cal</samp>days</td>
 		<td>Container for day names. Individual days are <samp>span</samp> elements.</td>
 	</tr>
 	<tr>
 		<td class="code">weeks</td>
 		<td>id</td>
 		<td><samp>div</samp></td>
-		<td><samp>pick</samp>weeks</td>
+		<td><samp>cal</samp>weeks</td>
 		<td>Container for weeks.</td>
 	</tr>
 	<tr>
 		<td class="code">week</td>
 		<td>class</td>
 		<td><samp>div</samp></td>
-		<td><samp>pick</samp>week</td>
+		<td><samp>cal</samp>week</td>
 		<td>Container for days. Individual days are <samp>a</samp> elements.</td>
 	</tr>
 	<tr>
 		<td class="code">off</td>
 		<td>class</td>
 		<td><samp>a</samp></td>
-		<td><samp>pick</samp>off</td>
+		<td><samp>cal</samp>off</td>
 		<td>Class name for a day that is not within range (older or newer than max/min days).</td>
 	</tr>
 	<tr>
 		<td class="code">sunday</td>
 		<td>class</td>
 		<td><samp>a</samp></td>
-		<td><samp>pick</samp>sunday</td>
+		<td><samp>cal</samp>sunday</td>
 		<td>Class name for Sundays.</td>
 	</tr>
 	<tr>
 		<td class="code">today</td>
 		<td>id</td>
 		<td><samp>a</samp></td>
-		<td><samp>pick</samp>today</td>
+		<td><samp>cal</samp>today</td>
 		<td><samp>id</samp> for the current day.</td>
 	</tr>
 	<tr>
 		<td class="code">focus</td>
 		<td>class</td>
 		<td><samp>a</samp></td>
-		<td><samp>pick</samp>focus</td>
+		<td><samp>cal</samp>focus</td>
 		<td>Class name for a day that has been focused via keyboard navigation.</td>
 	</tr>
 	<tr>
 		<td class="code">trigger</td>
 		<td>class</td>
 		<td><samp>[any]</samp></td>
-		<td><samp>pick</samp>trigger</td>
+		<td><samp>cal</samp>trigger</td>
 		<td>Selector for a user specified trigger element after the input field.</td>
 	</tr>
 </table>

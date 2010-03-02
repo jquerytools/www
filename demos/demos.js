@@ -324,8 +324,8 @@
 				title: 'Minimal setup for Dateinput'
 			},
 			{		
-				path: 'dateinput/skins.html',
-				title: 'Alternate skins for Dateinput'
+				path: 'dateinput/large-skin.html',
+				title: 'A large skin for Dateinput'
 			},			
 			{		
 				path: 'dateinput/customize.html',

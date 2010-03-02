@@ -6,19 +6,24 @@
 
 <body>
 
-<input type="date" name="test" />
-<input type="date" name="test" min="2010-03-01" max="2011-01-01" />
-<input type="date" name="test" min="25" max="25" />
-
+<c:set var="html">
+<input type="date" name="date1" />
+<input type="date" name="date2" min="2010-03-01" max="2011-01-01" />
+<input type="date" name="date3" min="25" max="25" data-value="2010-01-04"/>
+</c:set>
+${html}
 
 <script>
+<c:set var="js">
 $(":date").dateinput({
-	format: 'dddd dd, mmmm yyyy',
-	selectors: true,
-	min: 100,
-	max: 100,
-	offset: [10, -5],
-	speed: 'fast',
-	firstDay: 1
+	format: 'dddd dd, mmmm yyyy',	// the format displayed for the user
+	selectors: true,             	// whether month/year dropdowns are shown
+	min: 100,                    	// min selectable day (100 days backwards)
+	max: 100,                    	// max selectable day (100 days onwards)
+	offset: [10, -5],            	// tweak the position of the calendar
+	speed: 'fast',               	// calendar reveal speed
+	firstDay: 1                  	// which day starts a week. 0 = sunday, 1 = monday etc..
 });
+</c:set>
+${js}
 </script>

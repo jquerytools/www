@@ -45,7 +45,7 @@ $(function() {
 		<div style="width:220px;float:left">
 			[ 
 				<a href="${jqt}/demos/index.html">demo index</a>
-				<c:if test="${tool != 'combine'}">| <a href="${jqt}/${tool}.html">${tool} home</a></c:if>
+				<c:if test="${tool != 'combine'}">| <a href="${jqt}/${tool}/index.html">${tool} docs</a></c:if>
 			]
 		</div>	
 	

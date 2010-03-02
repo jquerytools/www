@@ -1,0 +1,44 @@
+<%-- :mode=jsp: --%>
+<%@ include file="../header.jsf" %>
+
+<p>
+	Here you can see a radically different dateinput. A large one. Because the calendar is an overlayed element it is possible to use large layout and the user experience won't suffer - on the contrary. 
+</p>
+
+<%@ include file="large-skin.htm" %>
+
+<h3>CSS coding</h3>
+
+<p>
+	The initialization of the dateinput is identical to the <a href="index.html">minimal setup</a>, only a different <a href="css/large.css">CSS file</a> has been used for the look and feel of the calendar control. It uses only two <a href="${jqt}/img/gradient/h30.png">very (0.28 kb)</a> <a href="${jqt}/img/gradient/h300.png">small (1.30 kb)</a> background gradient images and some of the latest CSS techniques. For example:
+</p>
+
+<pii:code lang="css">
+#calbody {
+	/* background gradient with image. background color can be changed */
+	background:#F5F9FF url(gradient/h300.png) repeat-x;
+	
+	/* CSS shadow for the calendar body */
+	-moz-box-shadow:0 0 10px 0px #ccc;
+	-webkit-box-shadow:0 0 10px 0px #ccc;
+}
+
+/* styling of the current date */
+#caltoday {
+	/* some shadow for the text */
+	text-shadow:0 1px 0 #000;
+	
+	/* inner shadow */
+	-moz-box-shadow:inset 0 0 10px 0px #000;
+}
+</pii:code>
+
+<p>
+	Obviously all these nice CSS tricks won't work on all browsers. It is up to you and your boss what kind of compromises you make. Take a look at the <a href="${jqt}/dateinput/index.html#skinning">skinning documentation</a> for the details of CSS id and class names.
+</p>
+
+<br />
+<div class="box petrol">
+	Here is the <a href="large-skin.htm">standalone version</a> of this demo. You can freely study and copy its source code.
+</div>
+

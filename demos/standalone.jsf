@@ -1,17 +1,14 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %><c:if test="${empty plain}"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %><c:if test="${empty plain}"><!-- JQT speaks HTML5 -->
+<!DOCTYPE html>
 
-<!-- DOCTYPE is always recommended. See: http://www.quirksmode.org/css/quirksmode.html -->
+<html lang="en">
 
 <!--
-	This is a jQuery Tools standalone demo, the fastest way to get started.
-	All demos can be found here:
-
-	http://flowplayer.org/demos/
-
-	You are welcome to copy them to your site.
-
+	This is a jQuery Tools standalone demo. Feel free to copy/paste.
+	
 	CSS files should not be referenced from flowplayer.org when in production.
+	
+	Full list of demos: http://flowplayer.org/tools/demos/
 
 	Enjoy!
 -->
