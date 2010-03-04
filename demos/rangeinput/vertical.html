@@ -2,7 +2,7 @@
 <%@ include file="../header.jsf" %>
 
 <p>
-	Here is four rangeinputs initialized with single <samp>$(":range").rangeinput()</samp> call with a shared configuration. Additionally each input overrides the shared configuration with HTML5 attributes. Try arrow keys or VIM keyboard shortcuts while having a focus on the input field.
+	Here are four rangeinputs initialized with a single <samp>$(":range").rangeinput()</samp> call and thus sharing a common configuration. Additionally each input overrides the shared configuration with HTML5 attributes. Select an input field, and then try the effect of the arrow keys or the h, j, k, l VIM keyboard shortcuts.
 </p>
 
 <br />
@@ -13,7 +13,7 @@
 <h3>Initialization</h3>
 
 <p>
-	<samp>vertical</samp> option makes ranges behave vertically and <samp>progress</samp> option enables the yellow progressbar which is styled with CSS. These configuration options are shared by all rangeinputs.
+	The <samp>vertical</samp> option specifies a vertical layout of the range, and the <samp>progress</samp> option enables the yellow progressbar which is styled with CSS. These configuration options are shared by all rangeinputs.
 </p>
 
 <pii:code>
@@ -27,7 +27,7 @@ ${js}
 <h3>HTML coding</h3>
 
 <p>                                               
-	Here are the rangeinput elements. The shared configuration options are overridden with HTML5 <samp>min, max, step</samp> and <samp>value</samp> attributes. Look for <a href="${jqt}/rangeinput/#configuration">rangeinput configuration</a> for the descriptions and default values for these options. 
+	Here are the rangeinput elements. The shared configuration options are overridden with the HTML5 <samp>min</samp>, <samp>max</samp>, <samp>step</samp> and <samp>value</samp> attributes. See the <a href="${jqt}/rangeinput/#configuration">rangeinput configuration</a> for the descriptions and default values of these options.
 </p>
 
 <pii:code lang="html">
@@ -37,7 +37,7 @@ ${html}
 <h3>CSS coding</h3>
 
 <p>
-	We have used the <a href="css/skin1.css">same CSS file</a> as in our previous horizontal range but overridden it with following settings.
+	We use the <a href="css/skin1.css">same CSS file</a> as in our previous horizontal range, we just override some of its directives:
 </p>
 
 <pii:code lang="css">
