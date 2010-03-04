@@ -1,51 +1,57 @@
 
 /* slider root element */
 .slider { 
-	background:#333 url(../../img/gradient/h30.png) repeat-x 0 0; 
-	height:30px; 
+	background:#3C72E6 url(../../../img/gradient/h30.png) repeat-x 0 0; 
+	height:9px; 
 	position:relative; 
 	cursor:pointer;
-	border:1px inset #333;
-	width:400px;
+	border:1px solid #333;
+	width:675px;
 	float:left; 
 	clear:right;
+	margin-top:10px;
 	-moz-border-radius:5px; 
 	-webkit-border-radius:5px; 
+	-moz-box-shadow:inset 0 0 8px #000;
 }
 
-/* progress bar */
+/* progress bar (enabled with progress: true) */
 .progress {
-	height:30px; 
-	background-color:#074EFF; 
+	height:9px; 
+	background-color:#C5FF00; 
 	display:none;
-	opacity:0.5;
+	opacity:0.6;
 }
 
 /* drag handle */
 .handle { 
-	background:#3CB2FB url(../../img/gradient/h30.png) repeat-x 0 0; 
+	background:#fff url(../../../img/gradient/h30.png) repeat-x 0 0; 
 	height:28px;
 	width:28px;
-	top:0;
+	top:-12px;
 	position:absolute; 
 	display:block; 
 	margin-top:1px;
+	border:1px solid #000;
+	cursor:move;
+	-moz-box-shadow:0 0 6px #000;
+	-webkit-box-shadow:0 0 6px #000;
 	-moz-border-radius:14px;
 	-webkit-border-radius:14px; 
-}
 
-.handle:hover {
-	background-color:#72B0D6;		
 }
 
 /* the input field */
 .range {
+	border:1px inset #ddd;
 	float:left;
-	margin:-2px 0 0 15px;
-	border:0;
-	background:transparent;
-	font-size:30px;
-	width:75px;
+	font-size:20px;
+	margin:0 0 0 15px;
+	padding:3px 0;
+	text-align:center;
+	width:50px;
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 		
 }
 
 

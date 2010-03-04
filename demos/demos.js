@@ -292,7 +292,7 @@
 		demos: [
 			{		
 				path: 'rangeinput/index.html',
-				title: 'Minimal setup for horizontal range'
+				title: 'Minimal setup for rangeinput'
 			},
 			{		
 				path: 'rangeinput/vertical.html',

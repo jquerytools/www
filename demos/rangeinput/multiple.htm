@@ -12,39 +12,46 @@
 
 <div id="controls">
 
-	<div class="column">
-		<input type="range" />
-		<input type="range" />
-		<input type="range" />
-		<input type="range" />
-	</div>
+	<fieldset readonly>
+		<input type="range"  />
+		<input type="range"  />
+		<input type="range"  />
+		<input type="range"  />
+		<input type="range"  />
+	</fieldset>
 
-	<div class="column">
-		<input type="range" />
-		<input type="range" />
-		<input type="range" />
-		<input type="range" />
-	</div>
+	<fieldset disabled>
+		<input type="range" readonly />
+		<input type="range" readonly />
+		<input type="range" readonly />
+		<input type="range" readonly />
+		<input type="range" readonly />
+	</fieldset>
 
-	<div class="column vertical">
+	<fieldset class="vertical">
+		<input type="range" disabled />
+		<input type="range" disabled />
+		<input type="range" disabled />
+		<input type="range" disabled />
+		<input type="range" disabled />
+	</fieldset>
+
+	<fieldset class="vertical">
 		<input type="range" />
 		<input type="range" />
 		<input type="range" />
 		<input type="range" />
-	</div>
-	
-	<div class="column vertical">
 		<input type="range" />
-		<input type="range" />
-		<input type="range" />
-		<input type="range" />
-	</div>
+	</fieldset>
 	
 </div>
 
-<script>		
-$(".column:lt(2) :range").rangeinput({ precision: 1, value: 30.5 });
+<p class="clear:both;height:10px"></p>
 
-$(".vertical :range").rangeinput({ precision: 1, vertical: true, value: 50.5 });
+<script>		
+<c:set var="js">
+$(":range").rangeinput({ precision: 1, value: 50.5 });
+</c:set>
+${js}
 </script>
 

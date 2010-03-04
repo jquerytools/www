@@ -25,12 +25,18 @@
 	margin:-5px 0 10px 0; 
 	float:left;
 	color:#fff;
+	text-align:center;
 	-moz-border-radius:2px; 
 	-webkit-border-radius:2px; 	
 }
 
 .range:focus { 
-	background-color:#fff; 
+	background-color:#000; 
+}
+
+/* cute little CSS3 selector */
+.range[readonly]:focus {
+	background-color:transparent;		
 }
 
 
@@ -44,8 +50,8 @@
 
 .vertical .handle { 
 	background:transparent url(../img/small-vertical.png) no-repeat scroll -1px -2px; 	
-	left:-3px;
-	margin-bottom:5px;
+	top:0;
+	margin-left:-2px;
 }
 
 .vertical .range {

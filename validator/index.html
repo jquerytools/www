@@ -226,7 +226,7 @@ inputs.data("validator").checkValidity();
 	<tr>
 		<td class="code">disabled</td>
 		<td><code></code></td>
-		<td>Makes the field non-editable. The field cannot receive focus and is excluded from validation. The field appears "greyed out" in the browser. If you want to disable/enable a set of inputs, a good way is to enclose your inputs inside a <samp>fieldset</samp> element and toggle the <samp>disabled</samp> attribute of the <samp>fieldset</samp> element.</td>
+		<td>Makes the field non-editable. The field cannot receive focus and is excluded from validation. The field appears "greyed out" in the browser. In HTML5 you should be able to disable/enable a set of inputs by enclosing inputs inside a <samp>fieldset</samp> element and toggle the <samp>disabled</samp> attribute of the <samp>fieldset</samp> element. However this didn't work on Firefox 3.5 by the time of writing this.</td>
 	</tr>
 	<tr>
 		<td class="code">maxlength</td>

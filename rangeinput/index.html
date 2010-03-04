@@ -16,7 +16,7 @@
 	<h3>HTML5 range input</h3>
 	
 	<p>
-		HTML5 range input <samp>&lt;input type="range" /&gt;</samp> is currently supported by Opera and Safari, and being a standard it will be implemented in the other browsers as well. This tool brings HTML5 range input to all browsers in a consistent and standardized manner <em>now.</em> The range field is just like any other <samp>form</samp> field which can be submitted.
+		This tool brings HTML5 <samp>&lt;input type="range" /&gt;</samp> support for all browsers in a consistent and standardized manner <em>today.</em> The range field is just like any other <samp>form</samp> field which can be scripted and submitted. Opera and Safari will render range input even if JavaScript is disabled.
 	</p> 
 	 
 	
@@ -107,7 +107,7 @@ $(":range").range();
 <pii:code lang="css">
 css: { 
 	input:  'range', 			/* class name for the generated text input field */
-	rangeinput: 'rangeinput', 		/* class name for rangeinput */
+	rangeinput: 'slider', 	/* class name for rangeinput */
 	progress: 'progress', 	/* class name for progress bar  */
 	handle: 'handle'			/* class name for drag handle */
 }
@@ -178,7 +178,7 @@ css: {
 		<td class="code">vertical</td>
 		<td>false</td>
 		<td>
-			Enabling this makes the range vertical.
+			If the slider element's height is larger than the width then the tool assumes that the range is vertical. You can override this assumption with this configuration variable. 
 		</td> 
 	</tr>
 	

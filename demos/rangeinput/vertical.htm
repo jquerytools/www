@@ -5,35 +5,46 @@
 	<link rel="stylesheet" type="text/css" href="css/skin1.css"/>
 	
 	<style>
-	/* override skin to make it vertical */
+	<c:set var="css">
+	/* Override skin1.css to make it vertical */
+	
+	/* height is now larger than width  */
 	.slider {
-		height:400px;
-		width:30px;
+		height:300px;
+		width:9px;
+		margin:0 0 0 60px;
 	}
 	
+	/* tweak drag handle position */
+	.handle {
+		top:0;
+		left:-10px;		
+	}
+	
+	/* position progressbar on the bottom edge */
 	.progress {
-		width:30px; 
+		width:9px; 
 		position:absolute;
 		bottom:0;	
 	}
-	
-	.range {
-		color:#000;		
-	}
+	</c:set>
+	${css}
 	</style>
 </head>
 
 <body>
 
-<input class="range" type="range" min="0" max="10" 	 step="1" value="5" />
-<input class="range" type="range" min="0" max="1" 	 step="0.1" value="0.2" />
-<input class="range" type="range" max="100" step="1" />
-<input class="range" type="range" min="400" max="1000" step="100" value="500" />
-
+<c:set var="html">
+<input type="range" max="10"  value="5" />
+<input type="range" max="1"   step="0.1" value="0.2" />
+<input type="range" max="100" step="5" />
+<input type="range" min="400" max="1000" step="1" value="500" />
+</c:set>
+${html}
 
 <script>		
-$(".range").rangeinput({ 
-	vertical: true,
-	progress: true
-});
+<c:set var="js">
+$(":range").rangeinput({ vertical: true, progress: true });
+</c:set>
+${js}
 </script>
