@@ -1,0 +1,62 @@
+/* outermost element for the scroller (stays still) */
+#scrollwrap {
+	position:relative;
+	overflow:hidden;
+	width: 750px;	
+	height:150px;
+	border:1px solid #000;
+	margin-bottom:15px;
+	-moz-box-shadow:0 0 20px #666;
+	-webkit-box-shadow:0 0 20px #666;
+}
+
+/* the element that moves forward/backward */
+#scroll { 	
+	position:relative;
+	width:20000em;	
+	padding:20px 100px;
+	font:bold 90px  sans-serif;
+	height:150px;
+	background:url(../img/pattern.png);
+	color:#fff;
+	text-shadow:5px 1px 1px #000; 
+	left:-100px;
+} 
+
+.slider { 
+	position:relative; 
+	cursor:pointer;
+	height:1px;
+	border:2px solid #00118E;	
+	width:748px;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+}
+
+.progress {
+	background-color:#00118E;
+	height:3px;
+	position:absolute;
+	width:0;
+}
+
+.handle { 
+	border:1px solid #cfcfcf;
+	background-color:#fff;
+	height:20px;
+	width:80px;
+	position:absolute; 
+	top:-12px;
+	display:block;
+	cursor:move;
+	-moz-border-radius:14px;
+	-webkit-border-radius:14px;
+}
+
+.handle:active {
+	background:blue;		
+}
+
+.range {
+	display:none;
+}

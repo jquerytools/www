@@ -1,4 +1,5 @@
 
+/* slider root */
 .slider { 
 	background:url(../img/small-horizontal.png) no-repeat  0 -5px; 
 	width:94px; 
@@ -8,6 +9,7 @@
 	float:left;
 }
 
+/* drag handle */
 .handle { 
 	background:transparent url(../img/small-horizontal.png) no-repeat scroll -97px 0; 
 	height:13px; 
@@ -17,6 +19,7 @@
 	cursor:move; 
 }
 
+/* input field */
 .range { 
 	font-size:10px; 
 	border:0; 
@@ -30,6 +33,7 @@
 	-webkit-border-radius:2px; 	
 }
 
+/* input field while focused */
 .range:focus { 
 	background-color:#000; 
 }
@@ -40,7 +44,7 @@
 }
 
 
-/* vertical ranges */
+/* vertical version */
 .vertical .slider {
 	background:url(../img/small-vertical.png) no-repeat  -4px -17px; 
 	height:94px;

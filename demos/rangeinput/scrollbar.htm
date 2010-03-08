@@ -1,88 +1,55 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
 
-	<style>
-	#scrollwrap {
-		position:relative;
-		overflow:hidden;
-		width: 660px;	
-		height:150px;
-		border:1px solid #000;
-		margin-bottom:15px;
-		-moz-box-shadow:0 0 20px #666;
-		-webkit-box-shadow:0 0 20px #666;
-	}
+	<link rel="stylesheet" type="text/css" href="css/scrollbar.css"/>
 	
-	#scroll { 	
-		position:relative;
-		width:20000em;	
-		padding:20px 100px;
-		font:bold 90px  sans-serif;
-		height:150px;
-		background:url(img/pattern.png);
-		color:#fff;
-		text-shadow:5px 1px 1px #000; 
-		left:-100px;
-	}
-	
-	.slider { 
-		position:relative; 
-		cursor:pointer;
-		height:1px;
-		border:2px solid #00118E;	
-		width:658px;
-		-moz-border-radius:2px;
-	}
-	
-	.handle { 
-		border:1px solid #cfcfcf;
-		background-color:#fff;
-		height:20px;
-		width:80px;
-		position:absolute; 
-		top:-12px;
-		display:block;
-		cursor:move;
-		-moz-border-radius:14px;
-		-webkit-border-radius:14px;
-	}
-	
-	.handle:active {
-		background:blue;		
-	}
-	
-	.range {
-		display:none;
-	}
-	</style>
 </head>
 
 <body>
 
+<c:set var="html">
+<!-- our scrollable element -->
 <div id="scrollwrap">
 	<div id="scroll">
 		jQuery TOOLS ${v.jqt} Rangeinput. HTML5 ranges for humans. 
 	</div>
 </div>
 
-<input class="range" type="range" max="2750" step="10" />
+<!-- rangeinput that controls the scroll -->
+<input type="range" max="2600" step="10" />
+</c:set>
+
+${html}
 
 
 <script>		
+<c:set var="js">
+// get handle to the scrollable DIV
 var scroll = $("#scroll");
 
-$(".range").rangeinput({ 
-	onSlide: function(ev, i)  {  
-		scroll.css({left: -i});
+// initialize rangeinput
+$(":range").rangeinput({
+		
+	// slide the DIV along with the range using jQuery's css() method
+	onSlide: function(ev, step)  {  
+		scroll.css({left: -step});
 	},
 	
-	speed: 0,
+	// display progressbar
+	progress: true,
 	
+	// initial value. also sets the DIV's initial scroll position
 	value: 100,
 	
+	// this is called when slider is clicked. we animate the DIV
 	change: function(e, i) {
 		scroll.animate({left: -i}, "fast");	
-	}
+	},
+	
+	// disable drag handle animation when when slider is clicked
+	speed: 0 
 	
 });
+</c:set>
+${js}
 </script>

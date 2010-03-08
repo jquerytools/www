@@ -1,10 +1,14 @@
-
+.error {
+	height:15px;
+	background-color:rgba(255, 245, 1, 0.7);
+	font-size:11px;
+	border:1px solid #E1E16D;
+	padding:4px 55px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+}
 
 label {
 	display:block;
-	margin:10px 0;	
-}	
-
-label input {
-	display:block;		
+	font-size:11px;
 }

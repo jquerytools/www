@@ -1,0 +1,110 @@
+<%-- :mode=jsp: --%>
+<%@ include file="../header.jsf" %>
+
+<p>
+	Following form has a new <samp>time</samp> input type and some custom input attributes such as <samp>minlength</samp> and <samp>data-equals</samp>. Click on the submit button to see them in action.
+</p>
+
+<div style="width:500px;margin:5px auto">
+	<%@ include file="custom-validators.htm" %>
+</div>
+
+<h3>HTML coding</h3>
+
+<p>
+	Here it is. A HTML5 form together with our new attributes. 
+</p>
+
+<pii:code lang="html">
+${html}
+</pii:code>
+
+<h2>Custom validators</h2>
+
+<p>
+	Implementing new attributes and input type is very easy with this tool. So easy that you'll end up developing new ones regularly. Each new attribute and input type requires a new custom validator function. They are added to the Validator too with <samp>$.tools.validator.fn</samp> method. 
+</p>
+
+<h3><samp>time</samp> input type</h3>
+
+<p>
+	Time input belongs to HTML5 standard. Here we implement it. A valid input has two numbers followed by ":" followed by two numbers. For example: 12:44. 
+</p>
+
+<pii:code>
+${v1}
+</pii:code>
+
+<p>
+	This is the most common way of defining a custom validator. The first argument matches all inputs you want to validate. Here we select input fields whose <samp>type</samp> attribute equals to "time". Second argument is the error message that is shown when validation fails. Third argument is the actual validator function. It must return <samp>true</samp> if the value is valid. The value is supplied as the second argument to the validator function. 
+</p>
+
+<h3><samp>data-equals</samp> attribute</h3>
+
+<p>
+	Our next validator ensures that a value equals to another field's value. For example <samp>data-equals="password"</samp> means that the value must equal to a field named "password". The <samp>data-</samp> prefix makes it valid HTML5. 
+</p>
+
+<pii:code>
+${v2}
+</pii:code>
+
+<p>
+	Here you can see a backreference <samp>$1</samp> on the error message. It is being replaced by the return value of the validator function when a validation fails. You can have zero or more backreferences and they must be contained in an Array. Also note that inside the validator <samp>this</samp> is a reference to the <a href="${jqt}/validator/#api">validator API</a>.
+</p>
+
+<h3><samp>minlength</samp> attribute</h3>
+
+<p>
+	Here we make a non-standard <samp>minlength</samp> attribute. When making custom attributes you can use any attribute name you like and things will work. The downside is that custom names don't pass HTML validation but in <a href="http://www.crockford.com/html/" class="external">ideal world</a> this shouldn't be the case.
+</p>
+
+<pii:code>
+${v3}
+</pii:code>
+
+<p>
+	This time we return the error message and don't provide it as the second argument. This gives you the possibility to dynamically construct the message. You can return a simple string in which case it is assumed to be in inglish or you can return an object just we do here. 
+</p>
+
+<h3>Localization</h3>
+
+<p>
+	Here we localize our time input with <samp>$.tools.validator.localizeFn</samp> call.
+</p>
+
+<pii:code>
+${v4}
+</pii:code>
+
+<p>
+	And here are all the messages contained inside the validator as seen from Firebug console.
+</p>
+
+<p>
+	<img src="${jqt}/validator/img/messages-custom2.gif" alt="" />	
+</p>
+
+<p>
+	You can read more about custom validators and localization from the <a href="${jqt}/validator/">validator documentation</a>.
+</p>
+
+<h3>Validator initialization</h3>
+
+<p>
+	Once the custom validators have been defined we initialize validation for our form. We tweak the position of the error message with <samp>offset</samp> configuration variable. 
+</p>
+
+<pii:code>
+${js}
+</pii:code>
+
+<p>
+	You need to place the <samp>script</samp> block <em>after</em> the HTML code or you can alternatively use jQuery's <samp>$(document).ready</samp> to execute the script as soon as the webpage's Document Object Model (DOM) has been loaded. Read more about that from the <a href="${jqt}/documentation/basics.html#document_ready">User's Manual</a>.
+</p>
+
+<br />
+<div class="box petrol">
+	Here is the <a href="custom-validators.htm">standalone version</a> of this demo. You can freely study and copy its source code.
+</div>
+

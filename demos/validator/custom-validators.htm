@@ -1,42 +1,49 @@
+<%-- :mode=jsp: --%>
+<%@ include file="../standalone.jsf" %>
 
-<script src="/home/tipiirai/git/jquerytools/test/js/jquery-1.4.2.js"></script>
-<script src="/home/tipiirai/git/jquerytools/src/validator/validator.js"></script>
+	<style>
+	label {
+		font-size:11px;		
+	}
+	
+	label input {
+		display:block;	
+		margin-bottom:25px;		
+	}
+	
+	.error {
+		width:220px;
+		height:15px;
+		background-color:#fff500;
+		font-size:11px;
+		padding:4px;
+		border:1px solid #ddd;
+	}
+	
+	fieldset {
+		padding:10px 10px 0 10px;
+		float:left;
+		width:200px;
+		margin-right:20px;
+		border:1px solid #ccc;
+		background:#fff url(${ctx}/img/global/gradient/h500.png) repeat-x 0 0;
+		-moz-box-shadow:0 0 6px #ccc;
+		-webkit-box-shadow:0 0 6px #ccc;
+		-moz-border-radius:10px;
+		-webkit-border-radius:10px;
+	}
+	
+	.clear {
+		clear:both;
+		height:1px;
+	}
+	</style>
+	
+</head>
 
-<style>
-body {
-	padding:50px 100px;
-	font-family:sans-serif;
-}
+<body>
 
-label {
-	font-size:11px;		
-}
-
-label input {
-	display:block;	
-	margin-bottom:25px;		
-}
-
-.error {
-	width:220px;
-	background-color:#fff500;
-	font-size:11px;
-	padding:4px;
-	border:1px solid #ddd;
-}
-
-fieldset {
-	float:left;
-	width:200px;
-	margin-right:15px;
-}
-
-.clear {
-	clear:both;
-	height:1px;
-}
-</style>
-
+<c:set var="html">
 <form id="myform">
 
 	<fieldset>
@@ -60,43 +67,47 @@ fieldset {
 	</p>
 	
 </form>
-		
+</c:set>
+
+${html}
+
 <script> 
-// define new HTML5 type (note this selector is not working natively on jQuery)
-$.tools.validator.fn("[type=time]", "Please supply a valid time", function(el, v) { 
-	return /^\d\d:\d\d:\d\d$/.test(v);
+<c:set var="v1">
+// Regular Expression to test whether the value is valid
+$.tools.validator.fn("[type=time]", "Please supply a valid time", function(input, value) { 
+	return /^\d\d:\d\d$/.test(value);
 });
-
-
-// generic equals function (backreferences, this)
-$.tools.validator.fn("[data-equals]", "Value not equal with the $1 field", function(el) {
-	var name = el.attr("data-equals"),
+</c:set>
+${v1}
+<c:set var="v2">
+$.tools.validator.fn("[data-equals]", "Value not equal with the $1 field", function(input) {
+	var name = input.attr("data-equals"),
 		 field = this.getInputs().filter("[name=" + name + "]"); 
-	return el.val() == field.val() ? true : [name]; 
+	return input.val() == field.val() ? true : [name]; 
 });
-
-
-// non-standard minlength attribute (messages are given directly for greater control)
-$.tools.validator.fn("[minlength]", function(el, value) {
-	var min = el.attr("minlength");
+</c:set>
+${v2}
+<c:set var="v3">
+$.tools.validator.fn("[minlength]", function(input, value) {
+	var min = input.attr("minlength");
 	
 	return value.length >= min ? true : {     
 		en: "Please provide at least " +min+ " character" + (min > 1 ? "s" : ""),
 		fi: "Kentän minimipituus on " +min+ " merkkiä" 
 	};
 });
-
- 
-// do some localization
+</c:set>
+${v3}
+<c:set var="v4">
 $.tools.validator.localizeFn("[type=time]", {
 	en: 'Please supply a valid time',
 	fi: 'Virheellinen aika'		
 });
+</c:set>
+${v4}
 
-
-// message object again IMAGE
-
-$("#myform").validator( {
-	offset: [-12, 0]
-});
+<c:set var="js">
+$("#myform").validator({ offset: [-12, 0] });
+</c:set>
+${js}
 </script>

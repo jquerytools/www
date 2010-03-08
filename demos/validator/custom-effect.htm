@@ -1,74 +1,69 @@
 
-<script src="/home/tipiirai/git/jquerytools/test/js/jquery-1.4.2.js"></script>
-<script src="/home/tipiirai/git/jquerytools/src/validator/validator.js"></script>
+<%-- :mode=jsp: --%>
+<%@ include file="../standalone.jsf" %>
 
-<style>
-label {
-	display:block;
-	font-size:11px;
-}
+<link rel="stylesheet" type="text/css" href="css/form.css"/>
 
-.error {
-	width:220px;
-	background-color:rgba(255, 245, 1, 0.5);
-	font-size:11px;
-	border:1px solid #E1E16D;
-	padding:4px 55px;
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;
-}
-
+<style>	
+<c:set var="css">
+/* error container */
 #errors {
 	position:fixed;
-	top: 30px;
+	top: 130px;
 	left:400px;
-	background-color:#333;
+	background-color:rgba(0, 0, 0, 0.7);
 	color:#fff;
 	width:400px;
 	padding:20px;
 	display:none;
+	z-index:2;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 }
+
+/* title */
+#errors h2 {
+	margin:-5px 0;
+	color:yellow;
+}
+
+/* "press esc to close" */
+#errors small {
+	float:right;
+	margin-top:-25px;	
+}
+</c:set>
+${css}
 </style>
 
-<div id="errors"></div>
+</head>
 
-<form id="myform">
+<body>
 
-	<p>
-		<label>email *</label>
-		<input type="email" name="email" required="required" class="invalid" />
-	</p>
-	<p>
-		<label>website *</label>
-		<input type="url" name="url" required="required" />
-	</p>
-	<p>
-		<label>name *</label>
-		<input type="text" name="name" required="required" />
-	</p>
-	<p>
-		<label>age</label>
-		<input type="number" name="age" size="4" />
-	</p>
-	
-	<button type="submit">Submit form</button>
+<%@ include file="myform.jsf" %>
 
-</form>
-
-
-
-
+<c:set var="html">
+<div id="errors">
+	<h2>Please fix these first</h2>
+	<small>press <strong>esc</strong> to close</small> 
+</div>
+</c:set>
+${html}
 <script>
+<c:set var="js">
 // adds an effect called "wall" to the validator
 $.tools.validator.addEffect("wall", function(errors, event) {
 
-	// "show" function	
+	// "show" function. only do stuff when form is submitted
 	if (event.originalEvent.type == 'submit') {
 	
-		var wall = $(this.getConf().container).empty().fadeIn();
+		// get the message wall
+		var wall = $(this.getConf().container).fadeIn();
 		
+		// remove all existing messages
+		wall.find("p").remove();
+		
+		// add new ones
 		$.each(errors, function(index, error) {
 			wall.append(
 				"<p><strong>" +error.input.attr("name")+ "</strong> " +error.messages[0]+ "</p>"
@@ -79,7 +74,21 @@ $.tools.validator.addEffect("wall", function(errors, event) {
 }, function(inputs)  {
 
 });
+</c:set>
+${js}
 
+<c:set var="init">
 // initialize validator with the new effect
 $("#myform").validator({effect: 'wall', container: '#errors'});
+</c:set>
+${init}
+
+<c:set var="esc">
+$(document).keydown(function(e)  {
+	if (e.keyCode == 27)  {
+		$("#errors").fadeOut();
+	}		
+});
+</c:set>
+${esc}
 </script>

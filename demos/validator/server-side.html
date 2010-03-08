@@ -1,0 +1,37 @@
+<%-- :mode=jsp: --%>
+<%@ include file="../header.jsf" %>
+
+<p>
+	Here we spice our <a href="index.html">minimal setup</a> with some server side validation. On the server we have defined that name and age fields are never valid. 
+</p>
+
+<%@ include file="server-side.htm" %>
+
+<h3>JavaScript coding</h3>
+
+<p>
+	Here is how we do it. We first initialize client side validation with the <samp>validator()</samp> call and ad a custom form submission logic after that. You can use <samp>isDefaultPrevented()</samp> method on the jQuery Event object to test whether client side validation is passed.
+</p>
+
+<pii:code>
+${js}
+</pii:code>
+
+
+<p>
+	Here we used a simple return value <samp>true</samp> to indicate that the data was valid on the server side. You can do whatever you wish when data was good. Here we replaced form contents with a server side page. If the data was not valid we use the <samp>invalidate</samp> method to display errors for the user. The <samp>invalidate</samp> method accepts an object argument which is a field name to error. The <samp>server-fail.js</samp> is our server side "logic" and it always returns following:
+</p>
+
+<p>
+	<img src="${jqt}/validator/img/server-side.gif" alt="Server side return value" />
+</p>
+
+<p>
+	You need to place the <samp>script</samp> block <em>after</em> the HTML code or you can alternatively use jQuery's <samp>$(document).ready</samp> to execute the script as soon as the webpage's Document Object Model (DOM) has been loaded. Read more about that from the <a href="${jqt}/documentation/basics.html#document_ready">User's Manual</a>.
+</p>
+
+<br />
+<div class="box petrol">
+	Here is the <a href="server-side.htm">standalone version</a> of this demo. You can freely study and copy its source code.
+</div>
+

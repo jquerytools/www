@@ -246,17 +246,25 @@
 				title: 'Minimal setup for Validator'
 			},
 			{		
-				path: 'validator/localize.html',
-				title: 'Localizing the Validator (french)'
-			},
-			{		
 				path: 'validator/custom-validators.html',
-				title: 'Using custom validators'
+				title: 'Custom input types and attributes'
 			},
 			{		
-				path: 'validator/error-container.html',
+				path: 'validator/server-side.html',
+				title: 'Combined server- and client side validation'
+			},			
+			{		
+				path: 'validator/custom-effect.html',
 				title: 'Displaying all errors inside single DIV'
-			}
+			},
+			{		
+				path: 'validator/events.html',
+				title: 'Validator events in action'
+			},			
+			{		
+				path: 'validator/localize.html',
+				title: 'Localizing the Validator (finnish)'
+			}			
 		]
 	},
 	
@@ -333,7 +341,7 @@
 			},
 			{		
 				path: 'dateinput/localize.html',
-				title: 'Localizing the Dateinput (french)'
+				title: 'Localizing the Dateinput (finnish)'
 			}			
 		]
 	},	 
