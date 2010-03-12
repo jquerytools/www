@@ -172,7 +172,7 @@ css: {
 		<td class="code">step</td>
 		<td>'any'</td>
 		<td>
-			A number that defines the size of a single step (the granularity of the value) limiting the amount of allowed values. zero value or a string "any" disables stepping. The following range control only accepts values in the range from 0 to 1 and allows 100 steps in that range:
+			A number that defines the size of a single step (the granularity of the value) limiting the amount of allowed values. A zero value or the string "any" disables stepping. The following range control only accepts values in the range from 0 to 1 and allows 100 steps within that range:
 
 			<p>
 				<samp>&lt;input name=opacity type=range min=0 max=1 step="0.01"&gt;</samp>
@@ -190,7 +190,7 @@ css: {
 		<td class="code">vertical</td>
 		<td>false</td>
 		<td>
-			If the slider element's height is larger than the width then the tool assumes that the range is vertical. You can override this assumption with this configuration variable. 
+			If the slider element's height is larger than its width, the tool assumes that the range is vertical. You can override the assumption with this configuration variable.
 		</td> 
 	</tr>
 	
