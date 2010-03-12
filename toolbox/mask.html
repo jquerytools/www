@@ -1,100 +1,94 @@
 
 <%-- :mode=jsp: --%>
-<c:set var="tool" value="expose"/>
+<c:set var="tool" value="mask"/>
 
 <style>
-/* tweak expose on this page */
-#exposeMask {
+/* tweak mask on this page */
+#maskMask {
 	background:url(/img/global/gradient_black.png) repeat-x scroll 0 -300px
 }
 </style>
 
-<h1 style="background:url(img/hero/expose.jpg) no-repeat -2px 21px">
-	jQuery Tools / Expose - Make your HTML elements stand out
+<h1 style="background:url(img/hero/mask.jpg) no-repeat -2px 21px">
+	jQuery Tools / Mask - Make your HTML elements stand out
 </h1>
 
 
 <h2 class="first">Demo</h2>
 
 <p>
-	Start entering text on the fields below and you'll see the exposing effect:
+	Start entering text on the input fields below and you'll see the masking effect:
 </p>
 
-<%@ include file="../demos/expose/form.htm" %>
+<%@ include file="../demos/toolbox/mask/form.htm" %>
 
 
-
+<a name="story"></a>
 <h2>The story</h2>
 
 <p>
-	Expose is a JavaScript tool that exposes selected HTML elements on the page so that the surrounding elements will gradually fade out. The exposing effect was first introduced in the <a href="overlay.html">overlay</a> tool. Usually the effect is an integral part of the program and cannot be used separately. This tool takes the idea of exposing a little further. It is a separate tool that can be used as a general purpose expose utility. You can use it for overlays, forms, images, videos or Flash objects.
+	Mask is a JavaScript tool that exposes selected HTML elements on the page so that the surrounding elements will gradually fade out. The mask effect was first introduced in the <a href="overlay/index.html">overlay</a> tool. Usually the effect is an integral part of the program and cannot be used separately. This tool takes the idea of masking a little further. It is a separate tool that can be used as a general purpose mask utility. You can use it for overlays, forms, images, videos or Flash objects. You can use CSS to tweak the look of the mask.
 </p>
 
-<p>
-	You can use CSS to tweak the look of the semi-transparent surrounding layer which we refer to as the "mask".
-</p>
-
-<%@ include file="../common-features.jsf" %>
 
 <a name="usage"></a>
-<h2>Usage</h2>
+<h3>Usage</h3>
 
 <p>
-	We believe that the best way to learn is through demos. The following demos are fully documented and a standalone page is provided to get expose working on your site. It's really important to <strong>study the first demo</strong> "Minimal setup for expose" because it teaches you the basics of using the library.
+	Here are some most common ways of using the mask
+</p>
+
+<pii:code>
+// place a white mask over the page
+$(document).mask();
+
+// place a custom colored mask over the page
+$(document).mask("#789");
+
+// place a non-closable mask
+$(document).mask{ closeOnEsc: false, closeOnClick: false });
+
+// place a mask but let selected elements show trough (expose)
+$("div.to_be_exposed").expose();
+
+// close the mask
+$.mask.close();
+</pii:code>
+
+<p>
+	So there are actually two different jQuery plugins: <samp>mask</samp> and <samp>expose</samp>. <samp>$(document).mask()</samp> method is only available for the document object and you cannot make any other selector. The <samp>expose()</samp> method can take any jQuery selector and all elements returned by the selector are placed on top of the mask. 
+</p>
+
+<a name="demos"></a>
+<h2>Demos</h2>
+
+<p>
+	We believe that the best way to learn is through demos. The following demos are fully documented and a standalone page is provided to get mask working on your site. It's really important to <strong>study the first demo</strong> "Minimal setup for mask" because it teaches you the basics of using the library.
 </p>
 
 <ul>
-	<c:forEach items="${f:getDemo(context.toolDemos, 'expose/index.html').category.demos}" var="demo">
-		<li> <a href="demos/${demo.path}">${demo.title}</a> </li>
+	<c:forEach items="${f:getDemo(context.toolDemos2, 'toolbox/mask/index.html').category.demos}" var="demo">
+		<li> <a href="../demos/${demo.path}">${demo.title}</a> </li>
 	</c:forEach>
 </ul>
 
-<h3>Expose and Flowplayer demos</h3>
+<h3>Mask and Flowplayer demos</h3>
 
 <p>
-	These demos show how to use a video player together with the expose tool:
+	These demos show how to use a video player together with the mask tool:
 </p>
 
 <ul>
-	<li> <a href="/demos/events/mouseover.html">Exposing video upon mouseover</a></li>
-	<li><a href="/demos${jqt}/overlay2.htm">Exposing videos</a></li>
-	<li><a href="/demos${jqt}/fake-fullscreen.html">Custom fullscreen action with overlay and expose</a></li>
-	<li><a href="/demos${jqt}/sharing-overlay.html">Email and embed features with overlay and expose</a></li>
+	<li><a href="/demos/events/mouseover.html">Exposing video upon mouseover</a></li>
+	<li><a href="/demos/tools/overlay2.htm">Exposing videos</a></li>
+	<li><a href="/demos/tools/fake-fullscreen.html">Custom fullscreen action with overlay and mask</a></li>
+	<li><a href="/demos/tools/sharing-overlay/index.html">Email and embed features with overlay and mask</a></li>
 </ul>
 
-<a name="initialization"></a>
-<h3>Initialization</h3>
-
-<p>
-	There are many other ways of using this tool than the demos provided here. It is important to realize that you can have many exposing instances on the page simultaneously and each of them can have different configurations. You can initialize the exposing effect without any configuration variables like this:
-</p>
-
-<pii:code>
-// initialize exposing for selected elements
-var elements = $("div.to_be_exposed").expose();
-</pii:code>
-
-<p>
-	With this JavaScript one-liner you have silently configured the exposing tool with the default dark blue background color <samp>#456</samp> and now you need to call the <samp>load</samp> API method for the exposing to take effect. Here is how it happens:
-</p>
-
-<pii:code>
-// grab the exposing API (with another expose() call) and call load method
-elements.expose().load();
-</pii:code>
-
-<p>
-	Of course, you can do this with one single call like this:
-</p>
-
-<pii:code>
-// return api upon initialization and call load immediately. api is returned
-var api = $("div.to_be_exposed").expose({api: true}).load();
-</pii:code>
-
+<a name="graphics"></a>
 <c:set var="description">
 	<p>
-		These graphics are being used as the mask's background image. JPG versions are smaller, but they have a fixed background color. PNG images are larger, but you can use any background color in them. Here is a <a href="demos/expose/styling.html">cool example</a> where the mask's background image has been changed.
+		These graphics are being used as the mask's background image. JPG versions are smaller, but they have a fixed background color. PNG images are larger, but you can use any background color in them. Here is a <a href="demos/mask/styling.html">cool example</a> where the mask's background image has been changed.
 	</p>
 </c:set>
 
@@ -109,10 +103,9 @@ var api = $("div.to_be_exposed").expose({api: true}).load();
 </style>
 
 <div id="masks">
-	<img src="img/expose/thumb/mask_gradient.jpg" />
-
-	<img src="img/expose/thumb/mask_star.jpg"  />
-	<img src="img/expose/thumb/mask_star.png" />
+	<img src="../img/mask/thumb/mask_gradient.jpg" />
+	<img src="../img/mask/thumb/mask_star.jpg"  />
+	<img src="../img/mask/thumb/mask_star.png" />
 </div>
 
 
@@ -120,36 +113,7 @@ var api = $("div.to_be_exposed").expose({api: true}).load();
 <h2>Configuration</h2>
 
 <p>
-	The simplest form of configuration is to simply supply the background color as a string:
-</p>
-
-<pii:code>
-// a custom background color.
-$("div.to_be_exposed").expose("#987ccc");
-</pii:code>
-
-<p>
-	You can also supply the configuration as an object with many configuration variables. Here is the generic method of using expose:
-</p>
-
-<pii:code>
-// selects one or more elements to be exposed
-$("JQUERY SELECTOR").expose({
-	/* expose configuration goes here */
-
-	// one configuration property
-	color: '#ccc',
-
-	// another property
-	opacity: 0.7,
-
-	// ... the rest of the configuration properties
-});
-</pii:code>
-
-
-<p>
-	You select one or more elements to be exposed with the <a href="http://docs.jquery.com/Selectors" class="external">jQuery selector</a>. By default, the return value is a jQuery object associated with the selection. Here is a full list of available configuration options:
+	Here is a full list of available configuration options:
 </p>
 
 <table class="listing">
@@ -163,7 +127,7 @@ $("JQUERY SELECTOR").expose({
 
 	<tr>
 		<td class="code">color</td>
-		<td><code>'#456'</code></td>
+		<td><code>'#fff'</code></td>
 		<td>
 			The background color of the mask. This will dramatically affect how it appears. If you supply a value of <samp>null</samp> here, you can control the background color with CSS. See the <samp>maskId</samp> property below for more information.
 		</td>
@@ -195,23 +159,23 @@ $("JQUERY SELECTOR").expose({
 
 	<tr>
 		<td class="code">maskId</td>
-		<td><code>'exposeMask'</code></td>
+		<td><code>'mask'</code></td>
 		<td>
-			The mask is a normal <samp>div</samp> element placed at the bottom of your page whose size is automatically adjusted to cover the user's screen completely. You can style it normally with CSS just like any other element on the page. By default, the mask's <samp>id</samp> is set to <samp>exposeMask</samp>, but you can change this with the configuration option.
+			The mask is a normal <samp>div</samp> element placed on top of your page and whose size is automatically adjusted to cover the user's screen completely. You can style it normally with CSS just like any other element on the page. By default, the mask's <samp>id</samp> is set to <samp>mask</samp>, but you can change this with the configuration option.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">closeOnClick</td>
 		<td><code>true</code></td>
 		<td>
-			Specifies whether the exposing disappears when the mask is clicked. By default, this is set to <samp>true</samp>.
+			Specifies whether the masking disappears when the mask is clicked. By default, this is set to <samp>true</samp>.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">closeOnEsc</td>
 		<td><code>true</code></td>
 		<td>
-			Specifies whether exposing disappears when the <samp>ESC</samp> key is pressed from the keyboard. By default, this is set to <samp>true</samp>.
+			Specifies whether masking disappears when the <samp>ESC</samp> key is pressed from the keyboard. By default, this is set to <samp>true</samp>.
 		</td>
 	</tr>
 	<tr>
@@ -221,13 +185,6 @@ $("JQUERY SELECTOR").expose({
 			This is the z-index CSS property for the mask. The <samp>zIndex</samp> specifies the placement of the element along the z-axis of the document. The default <samp>zIndex</samp> value is very high, so it is unlikely that you will need to alter it; however, this value must be greater than the z-index of any other element on the page so that the overlay will always be visible when called.
 		</td>
 	</tr>
-	<tr>
-		<td class="code">api</td>
-		<td><code>false</code></td>
-		<td>
-			When this tool is initialized (constructed), the return value is a jQuery object associated with the selector. By setting this property to <samp>true</samp>, the return value is the <a href="#api">JavaScript API</a> instead. If the selector returns multiple elements, the API of the <em>last</em> element will be returned. Read more about <a href="${jqt}/documentation/index.html#api">accessing the tool API</a> for more information.
-		</td>
-	</tr>
 
 	<tr><td colspan="3" style="background-color:#efefef"><a name="callbacks"></a></td></tr>
 
@@ -235,7 +192,7 @@ $("JQUERY SELECTOR").expose({
 		<td class="code">onBeforeLoad</td>
 		<td><code></code></td>
 		<td>
-			This callback function is triggered before the masking effect. Returning <samp>false</samp> or calling <samp>event.preventDefault</samp> in the callback prevents exposing from occurring.
+			This callback function is triggered before the masking effect. Returning <samp>false</samp> or calling <samp>event.preventDefault</samp> in the callback prevents masking from occurring.
 		</td>
 	</tr>
 	<tr>
@@ -262,13 +219,13 @@ $("JQUERY SELECTOR").expose({
 </table>
 
 <p>
-	Here is an example of an <samp>onBeforeLoad</samp> callback function given in configuration. Inside any callback function the <samp>this</samp> variable is a pointer to the <a href="#api">expose scripting API</a>.
+	Here is an example of an <samp>onBeforeLoad</samp> callback function given in configuration. Inside any callback function the <samp>this</samp> variable is a pointer to the <a href="#api">mask scripting API</a>.
 </p>
 
 <pii:code>
-$("#myDiv").expose({
+$("#mydiv").expose({
 
-	// before exposing begins ...
+	// before masking begins ...
 	onBeforeLoad: function(event) {
 
 		// grow the exposed elements smoothly by 100 pixels
@@ -282,26 +239,8 @@ $("#myDiv").expose({
 <h2>Scripting <em>API</em></h2>
 
 <p>
-	This tool has a useful API for scripters. A lot of effort has been put into it and you can enrich the exposing experience with it. You can get a handle to the API in numerous ways as described in the <a href="documentation/index.html#api">Users Manual</a>. Here is an example of how to access the API:
+	Unlike other tools in this library the mask is a <em>singleton</em>. Only one mask instance can exist simultaneously. This singleton can be accessed directly with <samp>$.mask</samp> or via <samp>this</samp>- variable inside callback functions.
 </p>
-
-<pii:code>
-// initialize expose and return the API
-var api = $("#myDiv").expose({api: true});
-
-// expose programmatically with this call
-api.load()
-
-// close the expose
-api.close();
-
-// register a callback function
-api.onLoad(function() {
-	// alter exposed elements upon loading
-	this.getExposed().css({backgroundColor: 'black'});
-});
-</pii:code>
-
 
 <h3>Method listing</h3>
 
@@ -315,24 +254,17 @@ api.onLoad(function() {
 	</thead>
 
 	<tr>
-		<td class="code">load(event)</td>
+		<td class="code">close()</td>
 		<td><code>API</code></td>
 		<td>
-			Performs exposing. Only available if expose has been initialized. An optional event object can be supplied as the argument and it will be handed to the callback functions. A convenient way to pass data to the callbacks.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">close(event)</td>
-		<td><code>API</code></td>
-		<td>
-			Closes exposing. An optional event object can be supplied as the argument and it will be handed to the callback functions. A convenient way to pass data to the callbacks.
+			Closes the mask. 
 		</td>
 	</tr>
 	<tr>
 		<td class="code">isLoaded()</td>
 		<td><code>boolean</code></td>
 		<td>
-			Returns <samp>true</samp> if exposing is active.
+			Returns <samp>true</samp> if mask is active.
 		</td>
 	</tr>
 	<tr>
@@ -346,14 +278,14 @@ api.onLoad(function() {
 		<td class="code">getExposed()</td>
 		<td><code>jQuery</code></td>
 		<td>
-			Returns exposed elements as a jQuery object.
+			Returns exposed elements (if any) as a jQuery object.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">getConf()</td>
 		<td><code>Object</code></td>
 		<td>
-			Returns the exposing configuration.
+			Returns the masking configuration.
 		</td>
 	</tr>
 

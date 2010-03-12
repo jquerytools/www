@@ -10,7 +10,7 @@
 
 <script>
 $(function() {
-	$("ul.tabs").tabs("div.panes > div");
+	$(".tabs").tabs(".panes > div");
 });
 </script>
 
@@ -58,53 +58,46 @@ div.panes img {
 
 <!--}}}-->
 
-<h2>Motivation</h2>
 
-<div class="box petrol">
-	Tabs are the <em>most important UI widget on the web</em> and this tool is the best implementation you can find.
-</div>
+<%--{{{ intro --%>
 
-<p>
-	Here are the highlights:
-</p>
+<div class="feat">
+	
+	<h3 class="first">Simple</h3>
+	
+	<p>
+		Above tabs are initialized with this JavaScript one-liner <samp>$(".tabs").tabs(".panes > div");</samp>. The rest is CSS coding. The core of the tabs is plain and simple. There are no redundant features.</li>
+	</p>
+	
+	<h3>Fading, sliding, ajaxed, horizontal ...</h3>
+	
+	<p>
+		The logic in tabs is simple. You click on something and it does something elsewhere. This tool has an <a href="#effects">effect framework</a> that generalizes this logic making it possible to do wildly different things such as accordions or crossfading tabs.
+	</p> 
+	
+</div>	 
+ 
+<div class="feat last">
 
-<ul>
-	<li>
-		<strong>Simple to use.</strong> You need a single line of JavaScript to get started. There are no redundant features.</li>
-	<li>
-		<strong>An effect framework</strong> which can be used to implement <a href="${jqt}/demos/tabs/accordion.html">vertical accordions</a>, <a href="${jqt}/demos/tabs/accordion-horizontal.html">horizontal accordions</a> and more.
-	</li>
-	<li>
-		<strong>Built-in effects</strong> which include: <samp>default</samp>, <samp>fade</samp>, <samp>slide</samp>, <samp>ajax</samp> and <samp>horizontal</samp> and you can easily <a href="#effects">make your own effects</a> or modify the existing default effects.
-	</li>
-	<li>
-		<strong>Plugin framework.</strong> Built-in plugins include: <a href="#slideshow">slideshow</a> and <a href="#history">history</a> and you can easily <a href="${jqt}/documentation/index.html#plugins">make your own plugins</a>.
-	</li>
-	<li>
-		<strong>Cross linking.</strong> If the tab content areas contain any anchor links to other tab's content areas, the correct tab is automatically opened when those links are clicked.
-	</li>
-	<li>
-		<strong>Lightweight.</strong> The JavaScript file is only 2.9 Kb when minified. Compare this to the jQuery UI library where you'll have to have 130 Kb of minified code to get tabs and accordions working.
-	</li>
-</ul>
+	<h3 class="first">Respects browser's back button</h3>
+	
+	<p>
+		You can enable <samp>history</samp> support for tabs so that end users an navigate between tabs using browser's back and forward buttons. Just like everything else this works in all browsers.
+	</p>
+	
+	<h3>File size: 0.9 Kb</h3>
+		
+	<p>
+		And you'll have all the features and configuration options you'll possibly need, such as effect- and plugin framework, <a href="#api">scripting API</a> and an <a href="#events">event model</a>. A smaller codebase is easier to control and results in snappier behaviour. Without gzipping the size is 2.9 Kb.
+	</p>
+	
+</div>	 
+ 
+<br clear="all" />
 
-<%@ include file="../common-features.jsf" %>
+<%--}}}--%>
 
-
-<a name="usage"></a>
-<h2>Usage</h2>
-
-<p>
-	We believe that the best way to learn is through demos. The following demos are fully documented and a standalone page is provided to get tabs working on your site. It's really important to <strong>study the first demo</strong>, "Minimal setup for tabs", because it teaches you the basics of using the library.
-</p>
-
-<ul>
-	<c:forEach items="${f:getDemo(context.toolDemos, 'tabs/index.html').category.demos}" var="demo">
-		<li> <a href="demos/${demo.path}">${demo.title}</a> </li>
-	</c:forEach>
-</ul>
-
-<h3>For the impatient</h2>
+<h3>Quick Start</h2>
 
 <p>
 	Here is the minimal HTML code to get tabs working:
@@ -141,6 +134,21 @@ $("ul.tabs").tabs("div.panes > div");
 	The rest is <a href="${jqt}/css/tabs-no-images.css">CSS coding</a>. Look at the <a href="${jqt}/demos/tabs/index.htm">standalone version</a> and its source code to get things working on your site.
 </p>
 
+
+<a name="demos"></a>
+<h2>demos</h2>
+
+<p>
+	It's important to <strong>study the first demo</strong>, "Minimal setup for tabs", because it teaches you the basics of using the library.
+</p>
+
+<ul>
+	<c:forEach items="${f:getDemo(context.toolDemos, 'tabs/index.html').category.demos}" var="demo">
+		<li> <a href="demos/${demo.path}">${demo.title}</a> </li>
+	</c:forEach>
+</ul>
+
+
 <c:set var="description">
 	<p>
 		These graphics are being used in the following CSS files: <a href="css/tabs.css">default tabs</a> and <a href="css/tabs-flowplayer.css">tabs with panes</a> and they are using a technique called <a href="http://www.alistapart.com/articles/sprites/" class="external">CSS sprites</a> which is a very important technology in tab design.
@@ -151,19 +159,19 @@ $("ul.tabs").tabs("div.panes > div");
 
 
 <p>
-	<img src="img/tabs/blue.png" alt="Blue tab skin" />
+	<img src="../img/tabs/blue.png" alt="Blue tab skin" />
 </p>
 
 <br />
 
 <p>
-	<img src="img/tabs/green.png" alt="Green tab skin" />
+	<img src="../img/tabs/green.png" alt="Green tab skin" />
 </p>
 
 <br />
 
 <p>
-	<img src="img/tabs/thumb/blue_panes.jpg" />
+	<img src="../img/tabs/thumb/blue_panes.jpg" />
 </p>
 
 
@@ -192,7 +200,7 @@ $("<tabs_selector>").tabs("<pane_selector>", {
 <h4>tabs_selector</h4>
 
 <p>
-	You select one or more root elements for the tabs with the <samp>tabs_selector</samp> which is a <a href="http://docs.jquery.com/Selectors" class="external">jQuery selector</a>. The root element is a <em>container</em> for individual tabs. By default, the tool searches for <samp>a</samp> tags inside the root element that will work as individual tabs. This can be changed with the <samp>tabs</samp> configuration option. The root element can be any HTML element such as <samp>div</samp>, <samp>ul</samp>, <samp>dl</samp> or <samp>table</samp>.
+	You select one or more root elements for the tabs with the <samp>tabs_selector</samp> which is a <a href="http://api.jquery.com/category/selectors/" class="external">jQuery selector</a>. The root element is a <em>container</em> for individual tabs. By default, the tool searches for <samp>a</samp> tags inside the root element that will work as individual tabs. This can be changed with the <samp>tabs</samp> configuration option. The root element can be any HTML element such as <samp>div</samp>, <samp>ul</samp>, <samp>dl</samp> or <samp>table</samp>.
 </p>
 
 <h4><em>1<sup>st</sup> argument:</em> pane_selector</h4>
@@ -223,14 +231,6 @@ $("<tabs_selector>").tabs("<pane_selector>", {
 			<th>description</th>
 		</tr>
 	</thead>
-
-	<tr>
-		<td class="code">api</td>
-		<td><code>false</code></td>
-		<td>
-			When this tool is initialized (constructed), the return value is a jQuery object associated with the selector. By setting this property to <samp>true</samp>, the return value is this tool's <a href="#api">JavaScript API</a> instead. If the selector returns multiple elements, the API of the <em>last</em> element will be returned. Read more about <a href="${jqt}/documentation/index.html#api">accessing the tool API</a>.
-		</td>
-	</tr>
 	<tr>
 		<td class="code">current</td>
 		<td><code>'current'</code></td>
@@ -287,21 +287,7 @@ $("<tabs_selector>").tabs("<pane_selector>", {
 			Specifies the tab that is initially opened when the page loads. This automatically triggers a <samp>click</samp> event for the tab specified in this property. Specifying <samp>null</samp> or a negative number here will not trigger the <samp>click</samp> event upon page load causing all tabs to be initially closed.
 		</td>
 	</tr>
-	<tr>
-		<td class="code">lazyload</td>
-		<td><code>false</code></td>
-		<td>
-			<strong>Since 1.2.0.</strong> Enables lazyloading for the Tabs. If you have large images or background images on the panes enabling this property will make your page load faster. Those heavy files will not be loaded from the server before they are actually displayed for the user. Make sure that the lazyload tool is included on your page.
-			
-			<p>
-				You can have one or more lazyloaded elements on a pane or the tab pane itself can have a background image. You can also lazyload complete HTML pages. 
-			</p>
-			
-			<p>
-				Take a look at lazyload <a href="${jqt}/toolbox/lazyload.html#tools">configuration possibilities</a> and a demo about <a href="${jqt}/demos/toolbox/lazyload/tabs.html">lazyloaded tabs</a>.
-			</p>
-		</td>
-	</tr>	    
+ 
 	<tr>
 		<td class="code">rotate</td>
 		<td><code>false</code></td>

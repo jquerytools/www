@@ -1,34 +1,17 @@
 <%-- :mode=jsp: --%>
 
-<a name="history"></a>
-<h2 class="plugin">tabs.<em>history</em></h2>
+<h1 style="background-image:url(../img/hero/toolbox/flashembed.jpg)">
+	jQuery History @ jQuery TOOLS - Back button for AJAX apps
+</h1>
 
 <p>
-	The History plugin enables history support for the tabs. This means that when the user clicks on the browser's back and forward buttons, the tool will navigate between the tabs and will not jump to another page. Use the following tabs together with back/forward buttons to see it in action:
+	The History tool allows you to take control of the browser's back button. This means that when the user clicks on the browser's back or forward buttons you'll get notified.
 </p>
 
-<%@ include file="..//demos/tabs/history.htm" %>
-
-<a name="history_usage"></a>
-<h3>Usage</h3>
-
-<p>
-	The best way to learn is to study the <a href="${jqt}/demos/tabs/history.html">full documentation</a> for the example above.
-	For the impatient here is the JavaScript setup:
-</p>
+<h2>Usage</h2>
 
 <pii:code>
-${js}
-</pii:code>
-
-<h3><em>onHash</em> utility plugin</h3>
-
-<p>
-	This plugin comes coupled with a general purpose jQuery plugin called <samp>onHash</samp> that you can use to get a handle to the browser's back button in a cross-browser manner. Here is how you can use it:
-</p>
-
-<pii:code>
-$("a.history").onHash(function(event, hash) {
+$("a.links_with_history").history(function(event, hash) {
 
 });
 </pii:code>
@@ -39,4 +22,23 @@ $("a.history").onHash(function(event, hash) {
 
 <p>
  	The callback is fed with two arguments. The first one is the jQuery <a href="http://docs.jquery.com/Event" class="external">event object</a> and the second one is the anchor link (also called a hash) where the browser is navigating to.
+</p>
+
+<h2><em>Example</em> Tabs with history</h2>
+
+<p>
+	Use the following tabs together with back/forward buttons to see it in action:
+</p>
+
+<%@ include file="../demos/tabs/history.htm" %>
+
+<a name="history_usage"></a>
+<h3>Tabs initialization</h3>
+
+<pii:code>
+${js}
+</pii:code>
+
+<p>
+	The history feature of the tabs uses this tool to enable the "back button". The feature is enabled by setting the <samp>history</samp> configuration variable to <samp>true</samp>. You can find above demo <a href="${jqt}/demos/tabs/history.html">here</a>. Here is another demo about <a href="${jqt}/demos/scrollable/one-sized.html">history feature in scrollable</a>. 
 </p>

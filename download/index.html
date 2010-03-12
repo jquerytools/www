@@ -8,6 +8,9 @@
 <script>
 $(function() {
 
+	// global navi
+	$("#jqt2").addClass("active");
+		
 	var els = $(".listing :checkbox").attr("checked", false);
 
 	// tooltips
@@ -16,7 +19,8 @@ $(function() {
 		effect: 'toggle',
 		offset: [60, 10],
 		opacity: 0.9,
-		delay: 50
+		delay: 50,
+		tip: '.tooltip'
 	});
 
 
@@ -195,37 +199,33 @@ $(function() {
 </h3>
 
 
-<a name="full"></a>
-<h3><strong>FULL</strong> jQuery Tools from CDN</h3>
+<a name="cdn"></a>
+<h3>jQuery Tools combinations from the <em>free CDN</em></h3>
 
 <p>
-	Insert the following line on your HTML page if you want to use the full library from the content delivery network. 
+	Here is a list of all available jQuery Tools combinations from the free Content Delivery Network. 
 </p>
 
 <pii:code lang="html">
+<!-- jQuery Library + UI Tools (Tabs, Tooltip, Scrollable and Overlay) -->
 <script src="${cdnt}/${v.jqt}/full/jquery.tools.min.js"></script>
+
+<!-- UI Tools without jQuery Library -->
+<script src="${cdnt}/${v.jqt}/tiny/jquery.tools.min.js"></script>
+
+<!-- jQuery Library + ALL jQuery Tools -->
+<script src="${cdnt}/${v.jqt}/full/jquery.tools.min.js"></script>
+
+<!-- Form tools: Dateinput, Rangeinput and Validator. No jQuery. -->
+<script src="${cdnt}/${v.jqt}/form/jquery.tools.min.js"></script>
 </pii:code>
 
 <p>
-	This includes all the Tools, plugins and effects but <em>not</em> the Flowplayer files. 
-</p>
-
-<a name="tiny"></a>
-<h3>jQuery Tools <em>without jQuery</em></h3>
-
-<p>
-	If you prefer to load jQuery separately we have a <em>minimal</em> jQuery Tools file as follows:
+	If you prefer to load the jQuery library separately the recommended practice is to load jQuery from Google's CDN service. Make sure the jQuery library is always loaded <em>before</em> the jQuery Tools library.
 </p>
 
 <pii:code lang="html">
-<!-- The recommended practice is to load jQuery from Google's CDN service.  -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/${v.jquery}/jquery.min.js"></script>
-
-<!-- Tabs, Tooltip, Scrollable, Overlay, Expose. No jQuery. -->
-<script src="${cdnt}/${v.jqt}/tiny/jquery.tools.min.js"></script>
 </pii:code>
 
-<p>
-	Make sure the jQuery library is always loaded <em>before</em> the jQuery Tools library.
-</p>
 

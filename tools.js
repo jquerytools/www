@@ -6,9 +6,9 @@
 */
 {
 	key: 'jquery',
-	title: 'jQuery 1.4.1.',
+	title: 'jQuery 1.4.2',
 	description: 'All tools depend on this library (except flashembed). Can alternatively be included from googleapis (see below)',
-	file: 'jquery-1.4.1',
+	file: 'jquery-1.4.2',
 	www: 'http://jquery.com'
 },
 
@@ -41,7 +41,7 @@
 {
 	key: 'tooltip',
 	title: 'Tooltip',
-	description: 'The second most important UI widget on the web.',
+	description: 'The second most important UI widget on the Web.',
 	file: 'tooltip/tooltip',
 	www: 'tooltip/index.html'
 },
@@ -73,15 +73,6 @@
 	www: 'scrollable/index.html'
 },
 
-
-	{
-		key: 'scrollable.circular',
-		title: 'Circular plugin (beta)',
-		plugin: true,
-		description: 'Makes an infinite loop from the scrollable items so that there is no beginning or end',
-		file: 'scrollable/scrollable.circular',
-		www: 'scrollable/circular.html'
-	},
 
 	{
 		key: 'scrollable.autoscroll',
@@ -132,37 +123,27 @@
 },
 
 
-/*
 {
-	key: 'form.styleable',
-	title: 'Styleable',
-	description: 'Style your form widgets with CSS.',
-	file: 'form.styleable',
-	www: 'styleable/index.html'
-},
-*/
-
-{
-	key: 'form.dateinput',
+	key: 'dateinput',
 	title: 'Dateinput',
 	description: 'HTML5 date input for humans',
-	file: 'form.dateinput',
+	file: 'dateinput/dateinput',
 	www: 'dateinput/index.html'
 },
 
 {
-	key: 'form.range',
-	title: 'Range',
+	key: 'rangeinput',
+	title: 'Rangeinput',
 	description: 'HTML5 range input for humans',
-	file: 'form.range',
+	file: 'rangeinput/rangeinput',
 	www: 'rangeinput/index.html'
 },
 
 {
-	key: 'form.validator',
+	key: 'validator',
 	title: 'Validator',
 	description: 'HTML5 input validation for humans',
-	file: 'form.validator',
+	file: 'validator/validator',
 	www: 'validator/index.html'
 },
 
@@ -190,14 +171,6 @@
 	description: 'Back button for AJAX apps',
 	file: 'toolbox/toolbox.history',
 	www: 'toolbox/history.html'
-},
-
-{
-	key: 'toolbox.lazyload',
-	title: 'Lazyload',
-	description: 'Load things only when needed.',
-	file: 'toolbox/toolbox.lazyload',
-	www: 'toolbox/lazyload.html'
 },
 
 {

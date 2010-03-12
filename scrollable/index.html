@@ -82,6 +82,13 @@ $("JQUERY SELECTOR").scrollable({
 		</td>
 	</tr>
 	<tr>
+		<td class="code">clonedClass</td>
+		<td><code>'cloned'</code></td>
+		<td>
+			The plugin behaves so that the first and last items are <em>cloned</em> at both ends. These cloned items are assigned the CSS class name given in this configuration variable. 
+		</td>
+	</tr>		
+	<tr>
 		<td class="code">clickable</td>
 		<td><code>true</code></td>
 		<td>
@@ -157,22 +164,7 @@ instance.reload();
 </pii:code>
 
 		</td>
-	</tr>
-	<tr>
-		<td class="code">lazyload</td>
-		<td><code>false</code></td>
-		<td>
-			<strong>Since 1.2.0.</strong> If you have large images or background images inside the scrollable enabling this property will make your page load faster. Those heavy files will not be loaded from the server before they are actually displayed for the user. Make sure that the lazyload tool is included on your page.
-			
-			<p>
-				You can have one or more lazyloaded elements inside single scrollable item. You can also lazyload complete HTML pages. 
-			</p>
-			
-			<p>
-				Take a look at lazyload <a href="${jqt}/toolbox/lazyload.html#tools">configuration possibilities</a> and a demo about <a href="${jqt}/demos/toolbox/lazyload/scrollable.html">lazyloaded scrollable</a>.
-			</p>
-		</td>
-	</tr>	    	
+	</tr>   	
 	<tr>
 		<td class="code">circular</td>
 		<td><code>false</code></td>

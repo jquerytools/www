@@ -1,7 +1,7 @@
 <%-- :mode=jsp: --%>
 <c:set var="tool" value="flashembed"/>
 
-<h1 style="background-image:url(img/hero/flashembed.jpg)">
+<h1 style="background-image:url(../img/hero/toolbox/flashembed.jpg)">
 	jQuery TOOLS / flashembed - Adobe Flash embedding.
 	Your future tool to place Flash objects on your pages
 </h1>
@@ -11,7 +11,7 @@
 	margin-left:-20px;
 }
 </style>
-<%@ include file="demos/flashembed/onclick2.htm" %>
+<%@ include file="../demos/flashembed/onclick2.htm" %>
 
 <h2>Motivation</h2>
 
@@ -39,12 +39,12 @@
 		<strong>Size</strong>. Although rich in features, this plugin weighs around <strong>5 kb</strong> when minified. This is almost half the size of our competitors.
 	</li>
 	<li>
-		<strong>Demos</strong>. We have a lot of <a href="demos/flashembed">demos</a> and each demo is documented and has a <em>standalone version</em> where everything redundant has been stripped off. There you can see how things can be placed on your site. Copying-and-pasting is encouraged.
+		<strong>Demos</strong>. We have a lot of <a href="../demos/flashembed">demos</a> and each demo is documented and has a <em>standalone version</em> where everything redundant has been stripped off. There you can see how things can be placed on your site. Copying-and-pasting is encouraged.
 	</li>
 </ul>
 
 <p style="color:#555">
-	This tool is a mature project and is actively maintained. <a href="/js${jqt}${jqt}.${tool}-${v[tool]}.js">Source code</a> is clean, professional and easy to follow. It passes Douglas Crockford's <a href="www.jslint.com" class="external">JavaScript Verifier</a> and it assigns only one global variable: <samp>flashembed</samp>. Active forums keeps this tool alive and you can expect to see new releases coming out in the future.
+	This tool is a mature project and is actively maintained. Source code is clean, professional and easy to follow. It passes Douglas Crockford's <a href="www.jslint.com" class="external">JavaScript Verifier</a> and it assigns only one global variable: <samp>flashembed</samp>. Active forums keeps this tool alive and you can expect to see new releases coming out in the future.
 </p>
 
 <h3>Flashembed and jQuery Tools</h3>
@@ -65,8 +65,8 @@
 </p>
 
 <ul>
-	<c:forEach items="${f:getDemo(context.toolDemos, 'flashembed/index.html').category.demos}" var="demo">
-		<li> <a href="demos/${demo.path}">${demo.title}</a> </li>
+	<c:forEach items="${f:getDemo(context.toolDemos2, 'toolbox/flashembed/index.html').category.demos}" var="demo">
+		<li> <a href="${jqt}/demos/${demo.path}">${demo.title}</a> </li>
 	</c:forEach>
 </ul>
 
@@ -297,7 +297,7 @@ $("jquery_selector").flashembed(configuration, flashvars);
 </pii:code>
 
 <p>
-	As you can see, there are a maximum of 2 arguments here and <samp>flashvars</samp> is optional as before. You can find information about jQuery selectors <a href="http://docs.jquery.com/Selectors">here</a>. Here is an example that will search all <samp>div</samp> elements with the class name "flash" and place a Flash object inside them:
+	As you can see, there are a maximum of 2 arguments here and <samp>flashvars</samp> is optional as before. You can find information about jQuery selectors <a href="http://api.jquery.com/category/selectors/">here</a>. Here is an example that will search all <samp>div</samp> elements with the class name "flash" and place a Flash object inside them:
 </p>
 
 <pii:code>

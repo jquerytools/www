@@ -6,43 +6,113 @@
 	jQuery Tools / Tooltip - Tooltips done right
 </h1>
 
-<div style="margin:0px -5px">
+<div style="margin:0 -5px 20px -5px">
 	<%@ include file="../demos/tooltip/dynamic.htm" %>
 </div>
 
-<h2>The Story</h2>
+<%--{{{  intro --%>
 
-<p>
-	Tooltips are one of the most important JavaScript widgets on the web. Although important, they also happen to be a very badly misunderstood and poorly implemented component. This tool corrects the situation. You'll get a professional piece of software that is easy to understand and use. Here are the highlights of this tool:
-</p>
+<div class="feat">
+	
+	<h3 class="first">Simple or Rich</h3>
+	
+	<p>
+		A simple call such as <samp>$("img[title]").tooltip();</samp> will enable tooltips by taking advantage of the element's <samp>title</samp> attribute. 
+	</p>
+	
+	<p>
+		If you want complex tips with images, tables, forms and links that's possible by placing the tooltip element manually next to the trigger element. 
+	</p>
+	
+</div>
+	
+<div class="feat last">
 
-<ul>
-	<li>Typically, you will need a single JavaScript one-liner to get started.</li>
-	<li>Appearance and dimensions can be tweaked with CSS.</li>
-	<li>
-		The tooltip can <a href="demos/tooltip/any-html.html">contain any HTML</a> such as images, tables and forms or it will generate tooltips from each element's <samp>title</samp> attribute as in the demo above.
-	</li>
-	<li>You have full control over the <a href="#positioning">positioning</a>.</li>
-	<li>There is an improved <a href="#events">event management</a> system for controlling <em>when</em> the tooltip will be shown or hidden.</li>
-	<li>You can move the cursor on top of the tooltip so you can use links or form inside it</li>
-	<li>You can control the tooltip timings before and after your mouse moves over the trigger element.</li>
-	<li>
-		<a href="#effects">Pluggable effects</a>. Tooltip comes with two built-in effects: <samp>toggle</samp>, and <samp>fade</samp> and one separate effect: <a href="#slide">slide</samp> and you can easily <a href="#effects">build your own effects</a>.
-	</li>
-	<li>
+	<h3 class="first">Configure looks, timings and positioning</h3>
+		
+	<p>
+		Use CSS to create rounded borders, arrows, gradients or shadows. Big or small, high or low. 
+	</p>
+	
+		Use the configuration to tweak pre- and after delays and positioning to your personal needs.
+	</p>
+	
+</div>
+
+<div class="feat">
+	<h3>Fading, sliding, dynamic</h3>
+	
+	<p>
+		Tooltip comes with two built-in effects: <samp>toggle</samp>, and <samp>fade</samp> and one separate effect: <a href="#slide">slide</a> and you can easily <a href="#effects">build your own effects</a>.
+	</p>
+	
+	<p>
 		A <a href="#dynamic">dynamic plugin</a> will dynamically change the tooltip's position so that it always stays in the viewport.
-	</li>
-</ul>
+	</p>
+	
+</div>
 
-<%@ include file="../common-features.jsf" %>
+<div class="feat last">
+	<h3>File size: 1.10 kb</h3>
+	
+	<p>
+		And you'll have all the features and configuration options you'll possibly need, such as effect- and plugin framework, <a href="#api">scripting API</a> and an <a href="#events">event model</a>. A smaller codebase is easier to control and results in snappier behaviour. Without gzipping the size is 3.5 Kb.
+	</p>
+
+</div>
+
+<br clear="all" />
+
+<%--}}}--%>
 
 
-<p style="color:#322">
-	The available tooltip functionality and configuration variables are minimal because tooltip functionality is inherently simple. If you want to do complex things, you can do them with "normal" jQuery programming. You often see bloated tooltip solutions because they contain functionality that should not be there. For example, if for some weird reason you want to use AJAX requests with tooltips, you <em>can</em> do them with jQuery. AJAX functionality should not be mixed in with the tooltip code.
-</p>
+<%--{{{  usage--%>
 
 <a name="usage"></a>
 <h2>Usage</h2>
+
+<p>
+	Here is the simplest possible Tooltip initialization:
+</p>
+
+<pii:code>
+$("[title]").tooltip();
+</pii:code>
+
+
+<p>
+	You select one or more elements with a <a href="http://api.jquery.com/category/selectors/" class="external">jQuery selector</a> that will trigger the tooltip(s). Trigger's <samp>title</samp> attribute will be used as the tooltip. The actual tooltip element is auto-generated when it is being shown for the first time.
+</p>
+
+<h3>Manual tooltips</h3>
+
+<p>
+	Manual tooltips are HTML elements (typically DIV:s) that are placed next to the trigger element and they can contain any HTML such as images, links and tables. The initialization is identical but now we assume that the trigger element does not have a <samp>title</samp> attribute.
+</p>
+
+<pii:code>
+$(".trigger").tooltip();
+</pii:code>
+
+<p>
+	After this the element next to the trigger is being used as the tooltip.
+</p>
+
+<h3>Tooltip configuration</h3>
+
+<p>
+	Tooltip has many <a href="#configuration">configuration options</a> to tweak the behaviour. Here is an example configuration with two options:
+</p>
+<pii:code>
+$(".trigger").tooltip({ position: "bottom left", opacity: 0.7});
+</pii:code>
+
+
+<%--}}}--%>
+
+
+<a name="demos"></a>
+<h2>Demos</h2>
 
 <p>
 	We believe that the best way to learn is through demos. The following demos are fully documented and a standalone page is provided to get tooltip working on your site. It's really important to <strong>study the first demo</strong> "Basics of using the tooltip", because it teaches you the basics of using the library.
@@ -50,48 +120,23 @@
 
 <ul>
 	<c:forEach items="${f:getDemo(context.toolDemos, 'tooltip/index.html').category.demos}" var="demo">
-		<li> <a href="demos/${demo.path}">${demo.title}</a> </li>
+		<p> <a href="${jqt}/demos/${demo.path}">${demo.title}</a> </p>
 	</c:forEach>
 </ul>
 
+
 <%@ include file="../graphics.jsf" %>
 
-
-<img src="img/tooltip/black_arrow.png" alt="" />
-<img src="img/tooltip/black_arrow_big.png" alt="" />
-
-
-<img src="img/tooltip/white.png" alt="" />
-<img src="img/tooltip/white_big.png" alt="" />
+<img src="../img/tooltip/black_arrow.png" alt="" />
+<img src="../img/tooltip/black_arrow_big.png" alt="" />
+<img src="../img/tooltip/white.png" alt="" />
+<img src="../img/tooltip/white_big.png" alt="" />
 
 
+<%--{{{ configuration --%>
 
 <a name="configuration"></a>
 <h2>Configuration</h2>
-
-<p>
-	There are many other ways of using this tool than the demos provided above. The generic form of initializing tooltips is the following:
-</p>
-
-<pii:code>
-// selectors
-$("<trigger_selector>").tooltip({
-	/* tooltip configuration goes here */
-
-	// one configuration property
-	position: "bottom left",
-
-	// another property
-	opacity: 0.7,
-
-	// ... the rest of the configuration properties
-});
-</pii:code>
-
-
-<p>
-	You select one or more elements with a <a href="http://docs.jquery.com/Selectors" class="external">jQuery selector</a> that will trigger the tooltip(s). The tool looks for the element that is placed next to the tooltip to be the tooltip. The return value is a jQuery object associated with the selection. Here is a full list of available configuration options:
-</p>
 
 <table class="listing">
 	<thead>
@@ -101,13 +146,6 @@ $("<trigger_selector>").tooltip({
 			<th>description</th>
 		</tr>
 	</thead>
-	<tr>
-		<td class="code">api</td>
-		<td><code>false</code></td>
-		<td>
-			When this tool is initialized (constructed), the return value is a jQuery object associated with the selector. By setting this property to <samp>true</samp>, the return value is this tool's <a href="#api">JavaScript API</a> instead. If the selector returns multiple elements, the API of the <em>last</em> element will be returned. Read more about <a href="${jqt}/documentation/index.html#api">accessing the tool API</a> for more information.
-		</td>
-	</tr>
 	<tr>
 		<td class="code">cancelDefault</td>
 		<td><code>true</code></td>
@@ -126,8 +164,8 @@ $("<trigger_selector>").tooltip({
 			Specifies how the tooltip is shown and hidden. There are two built-in effects that can be used as values:
 
 			<ul>
-				<li><strong>toggle</strong>. A simple show/hide effect. This is the default</li>
-				<li><a href="#fade">fade</a>. A simple fade in/fade out effect</li>
+				<p><strong>toggle</strong>. A simple show/hide effect. This is the default</p>
+				<p><a href="#fade">fade</a>. A simple fade in/fade out effect</p>
 			</ul>
 
 			<p>
@@ -171,21 +209,6 @@ events: {
 		</td>
 	</tr>
 	<tr>
-		<td class="code">lazyload</td>
-		<td><code>false</code></td>
-		<td>
-			<strong>Since 1.2.0.</strong> If you have large images or background images inside tooltips enabling this property will make your page load faster. Those heavy files will not be loaded from the server before they are actually displayed for the user. Make sure that the lazyload tool is included on your page.
-			
-			<p>
-				You can have one or more lazyloaded elements inside a tooltip. You can also load complete HTML pages inside the tooltip.  
-			</p>
-			
-			<p>
-				Take a look at lazyload <a href="${jqt}/toolbox/lazyload.html#tools">configuration possibilities</a> and a demo about <a href="${jqt}/demos/toolbox/lazyload/tooltip.html">lazyloaded tooltip</a>.
-			</p>
-		</td>
-	</tr>	 	
-	<tr>
 		<td class="code">offset</td>
 		<td><code>[0, 0]</code></td>
 		<td>
@@ -224,22 +247,12 @@ events: {
 		<td class="code">tip</td>
 		<td><code></code></td>
 		<td>
-			<p>
-				This jQuery selector selects the tooltip element being used.  When tooltip content is fetched from the <samp>title</samp> attribute of the trigger then this property is <strong>required</strong>. If this selector returns a single tooltip element then this <em>same</em> tooltip is used for each trigger.
-			</p>
-
-			<p>
-				If this property is not given <em>or</em> this selector returns multiple elements, it is assumed that the element that is placed next to the trigger will function as the tooltip. In this case this value is used as a filter for jQuery's <a href="http://docs.jquery.com/Traversing/nextAll#expr" class="external">nextAll method</a> which will scan for a tip element after the <em>trigger element</em> and return the first one found. If the scan fails to return any element then an additional scan is made starting from the trigger's <em>parent element</em>.
-			</p>
-
-			<p>
-				 Note that if this is the only configuration variable you are using, then you can give the whole configuration as a string which is the selector for the tip element.
-			</p>
-
+			A jQuery selector for a single tooltip element. For example <samp>#mytip</samp>. This option is only valid if you want to define single tooltip for many triggers manually. 
 		</td>
 	</tr>
 
 </table>
+<%--}}}--%>
 
 
 <a name="positioning"></a>
@@ -249,7 +262,7 @@ events: {
 	The tooltip position is specified with two different configuration properties: <samp>position</samp> and <samp>offset</samp>. Both are JavaScript arrays with two values. The <samp>position</samp> property specifies the position in relation to the trigger element. For example, a value of <samp>'bottom center'</samp> will place the tooltip on the bottom edge of the trigger, centered horizontally. The following image illustrates the "slots" that you can use:
 </p>
 
-<div style="background:url(img/tooltip/positions.png) no-repeat -20px 0;height:340px"></div>
+<div style="background:url(../img/tooltip/positions.png) no-repeat -20px 0;height:340px"></div>
 
 <p>
 	The <samp>offset</samp> property fine tunes the tooltip position specified with the <samp>position</samp> property. For example, the value <samp>[10, -20]</samp> moves the tooltip position 10px downwards and 20px to the left. The first value modifies the vertical positioning from the top edge of the tooltip and the second value modifies the horizontal positioning from the left edge of the tooltip. Positive values move the tooltip downward and to the right, while negative values move the tooltip upward and to the left.
@@ -374,6 +387,8 @@ $("label").tooltip({
 	Here is a <a href="demos/tooltip/form.html">demo</a> that shows you the various event types in action.
 </p>
 
+<%--{{{ api --%>
+
 <a name="api"></a>
 <h2>Scripting <em>API</em></h2>
 
@@ -386,7 +401,7 @@ $("label").tooltip({
 	get handle to the third tooltip on the page
 	(must have been constructed before the call)
 */
-var api = $("a.withTooltip").tooltip(2)
+var api = $("a.with_tooltip").eq(1).data("tooltip");
 
 // show the tooltip
 api.show();
@@ -449,6 +464,8 @@ api.show();
 		</td>
 	</tr>
 </table>
+<%--}}}--%>
+
 
 <a name="fade"></a>
 <h2>Built-in effect: <em>fade</em></h2>

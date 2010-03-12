@@ -222,7 +222,7 @@ $(function() {
 		<li>possibility to scroll with one sized scrollable by clicking. the direction changes whe beginning or end is reached or navigational buttons are used in which case the scrolling goes to the same direction as the latest seek. </li>
 		<li>new method <samp>getNaviButtons</samp>	</li>
 		<li>new event: <samp>onReload</samp>  </li>
-		<li>navigational elements can be placed anywhere on the page. If you have multiple scrollables on your page you should read about <a href="${jqt}/scrollable.html#multiple">multiple scrollables with navigational element</a>
+		<li>navigational elements can be placed anywhere on the page. If you have multiple scrollables on your page you should read about <a href="${jqt}/scrollable/index.html#multiple">multiple scrollables with navigational element</a>
 		</li>
 		<li>keyboard arrow keys now advance the same amount as the page size. can be changed with a new configuration option: <samp>keyboardSteps</samp> </li>
 		<li>keyboard functionality can now be dynamically disabled/enabled by setting <samp>getConf().keyboard</samp> flag and calling <samp>reload()</samp> after that. See this <a href="http://flowplayer.org/forum/3/23142#post-23163">forum thread</a> for details.</li>
@@ -243,10 +243,10 @@ $(function() {
 	<h4>New plugins for Scrollable</h4>
 
 	<ul>
-		<li><a href="http://flowplayer.org${jqt}/scrollable.html#circular">circular 1.0.0</a> </li>
-		<li><a href="http://flowplayer.org${jqt}/scrollable.html#autoscroll">autoscroll 1.0.0</a></li>
-		<li><a href="http://flowplayer.org${jqt}/scrollable.html#navigator">navigator 1.0.0</a>		</li>
-		<li><a href="http://flowplayer.org${jqt}/scrollable.html#mousewheel">mousewheel 1.0.0</a></li>
+		<li><a href="http://flowplayer.org${jqt}/scrollable/index.html#circular">circular 1.0.0</a> </li>
+		<li><a href="http://flowplayer.org${jqt}/scrollable/index.html#autoscroll">autoscroll 1.0.0</a></li>
+		<li><a href="http://flowplayer.org${jqt}/scrollable/index.html#navigator">navigator 1.0.0</a>		</li>
+		<li><a href="http://flowplayer.org${jqt}/scrollable/index.html#mousewheel">mousewheel 1.0.0</a></li>
 	</ul>
 
 	<p>
@@ -317,7 +317,7 @@ $(function() {
 		<li>next/prev links can now be hidden (or styled) when they are not active using <samp>disabledClass</samp> configuration option </li>
 		<li><samp>hoverClass</samp> for styling elements upon mouseover event</li>
 		<li>new event handler <samp>onBeforeSeek</samp> which is triggered before seeking occurs. returning false here cancels seeking</li>
-		<li>a whole new <a href="${jqt}/scrollable.html#api">API</a> for interacting with scrollable. </li>
+		<li>a whole new <a href="${jqt}/scrollable/index.html#api">API</a> for interacting with scrollable. </li>
 		<li><samp>getConf()</samp> method that you can read <em>and modify</em> for making the tool behave differently at runtime</li>
 		<li><samp>easing</samp> configuration option for changing how scrolling animation behaves. two options "swing" and "linear"	</li>
 		<li>all seeking funktions in an api accept optional callback function that is triggered when seeking finished. this happens after <samp>onBeforeSeek</samp> and before <samp>onSeek</samp> events.</li>
@@ -389,7 +389,7 @@ $(function() {
 	<h3>1.1.0. <em> September 11 / 2009</em></h3>
 
 	<ul>
-		<li>A whole new <a href="http://flowplayer.org${jqt}/overlay.html#effects">effect framework</a> with two effects "default" and "apple"</li>
+		<li>A whole new <a href="http://flowplayer.org${jqt}/overlay/index.html#effects">effect framework</a> with two effects "default" and "apple"</li>
     <li>the Apple effect has to be included separately before it can be used.</li>
 		<li>New effects can be added with <samp>$.tools.overlay.addEffect</samp> method.</li>
 		<li>ability to assign overlay function for elements that are added on the page dynamically.</li>
@@ -455,7 +455,7 @@ $(function() {
 
 	<ul>
 		<li>ability to place <a href="${jqt}/demos/overlay/multiple.html">multiple simultaneous overlays</a> on the same page</li>
-		<li>toally new <a href="${jqt}/overlay.html#api">JavaScript API</a></li>
+		<li>toally new <a href="${jqt}/overlay/index.html#api">JavaScript API</a></li>
 		<li>ability to trigger overlay programmatically</li>
 		<li>ability to define where growing animation starts and/or ends</li>
 		<li>exeptions are caught on user defined callback functions</li>
@@ -572,7 +572,7 @@ $(function() {
 	</pii:code>
 
 	<p>
-		This is because now there can be multiple exposes on the page simultaneously and the behaviour is on the line with other tools. If you are exposing overlays you can now use the <samp>expose</samp> <a href="overlay.html#configuration">configuration variable</a> which will make your life much easier.
+		This is because now there can be multiple exposes on the page simultaneously and the behaviour is on the line with other tools. If you are exposing overlays you can now use the <samp>expose</samp> <a href="overlay/index.html#configuration">configuration variable</a> which will make your life much easier.
 	</p>
 
 
@@ -585,7 +585,7 @@ $(function() {
 	<h3>1.0.0 <em>Feb 16 2009</em></h3>
 
 	<ul>
-		<li>totally rewritten source code and a new <a href="${jqt}/expose.html#api">JavaScript API</a></li>
+		<li>totally rewritten source code and a new <a href="${jqt}/toolbox/mask.html#api">JavaScript API</a></li>
 		<li>ability to trigger expose programmatically</li>
 		<li>new callback functions: <samp>onBeforeLoad</samp>, <samp>onLoad</samp> abd <samp>onBeforeClose</samp></li>
 		<li>inside every callback function <samp>this</samp>- varialbe is a pointer to the API</li>
@@ -657,7 +657,7 @@ $(function() {
 		<li><samp>$.tools.addTabEffect()</samp> is no longer used for adding new custom effects. Use <samp>$.tools.tabs.addEffect()</samp> instead</li>
 		<li>fixed a bug where the last tab was opened if there was an unidentified hash value on the URL</li>
 		<li>
-			<samp>onClick</samp> event is called after the effect has *really* finished its job. If the effect has animations the event is called <em>after</em> the animation has been finished. If you have made your own effects for tabs the implementation has <a href="tabs.html#effects">changed a bit</a>. Look for the <samp>done</samp> argument.
+			<samp>onClick</samp> event is called after the effect has *really* finished its job. If the effect has animations the event is called <em>after</em> the animation has been finished. If you have made your own effects for tabs the implementation has <a href="tabs/index.html#effects">changed a bit</a>. Look for the <samp>done</samp> argument.
 		</li>
 		<li>
 			The ability to instantiate multiple tabs or accordions <a href="${jqt}/demos/tabs/multiple.html">with a single call</a>
@@ -668,10 +668,10 @@ $(function() {
 
 	<ul>
 		<li>
-			<a href="http://flowplayer.org${jqt}/tabs.html#history">history 1.0.0</a>. A much more stable implementation than the previous <samp>history</samp> flag. Works better with IE.
+			<a href="http://flowplayer.org${jqt}/tabs/index.html#history">history 1.0.0</a>. A much more stable implementation than the previous <samp>history</samp> flag. Works better with IE.
 		</li>
 
-		<li><a href="http://flowplayer.org${jqt}/tabs.html#slideshow">slideshow 1.0.0</a></li>
+		<li><a href="http://flowplayer.org${jqt}/tabs/index.html#slideshow">slideshow 1.0.0</a></li>
 	</ul>
 
 	<h3>1.0.1 <em> June 12 / 2009</em></h3>
@@ -685,7 +685,7 @@ $(function() {
 	<h3>1.0.0 <em> June 03 / 2009</em></h3>
 
 	<p>
-		Initial release. This tool is now part of the <strong>jQuery Tools</strong> UI library. Published to jQuery plugins repository. Look for the <a href="${jqt}/tabs.html">tabs documentation</a> for the features.
+		Initial release. This tool is now part of the <strong>jQuery Tools</strong> UI library. Published to jQuery plugins repository. Look for the <a href="${jqt}/tabs/index.html">tabs documentation</a> for the features.
 	</p>
 
 </div>
@@ -752,14 +752,14 @@ $(function() {
 		<li>new <samp>cancelDefault</samp> configuration property for removing the browser's default tooltip. The original <samp>title</samp> attribute can still be retrieved with <samp>trigger.data("title")</samp></li>
 		<li>when tooltip is used together with form fields the tooltip will not be hidden when mouse leaves it</li>
 		<li>
-			A completely new <a href="${jqt}/tooltip.html#events">event management system</a> where you can fully control <em>when</em> the tooltip will be shown or hidden. Thanks to forum posts: <a href="http://flowplayer.org/forum/20/24023">this</a> and <a href="http://flowplayer.org/forum/20/23020">this</a> for the idea.
+			A completely new <a href="${jqt}/tooltip/index.html#events">event management system</a> where you can fully control <em>when</em> the tooltip will be shown or hidden. Thanks to forum posts: <a href="http://flowplayer.org/forum/20/24023">this</a> and <a href="http://flowplayer.org/forum/20/23020">this</a> for the idea.
 		</li>
 	</ul>
 
 	<h4>Dynamic plugin 1.0.0</h4>
 
 	<p>
-		A new Tooltip plugin for automatically repositioing the tooltip based on the document's scrolling position. The tooltip will always stay visible. See the details of <a href="http://flowplayer.org${jqt}/tooltip.html#dynamic">here</a>.
+		A new Tooltip plugin for automatically repositioing the tooltip based on the document's scrolling position. The tooltip will always stay visible. See the details of <a href="http://flowplayer.org${jqt}/tooltip/index.html#dynamic">here</a>.
 	</p>
 
 	<h3>1.0.2 <em> June 12 / 2009</em></h3>
@@ -794,7 +794,7 @@ $(function() {
 	<h3>1.0.0 <em> June 03 / 2009</em></h3>
 
 	<p>
-		Initial release. This tool is now part of the <strong>jQuery Tools</strong> UI library. Published to jQuery plugins repository. Look for the <a href="tooltip.html">tooltip documentation</a> for the features.
+		Initial release. This tool is now part of the <strong>jQuery Tools</strong> UI library. Published to jQuery plugins repository. Look for the <a href="tooltip/index.html">tooltip documentation</a> for the features.
 	</p>
 
 </div>

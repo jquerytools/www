@@ -8,9 +8,6 @@ $(document).ready(function() {
 
 	// initialize tooltip
 	$("#${wrapId} img[title]").tooltip({
-	
-		// use single tooltip element for all tips
-		tip: '#${wrapId}tip', 
 		
 		// tweak the position
 		offset: [10, 2],
@@ -40,13 +37,13 @@ $(document).ready(function() {
 <style>
 <c:set var="css">
 /* override the arrow image of the tooltip */
-#${wrapId}tip.bottom {
+.tooltip.bottom {
 	background:url(${cnd}${jqt}/img/tooltip/black_arrow_bottom.png);	
 	padding-top:40px;
 	height:55px;
 }
 
-#${wrapId}tip.bottom {
+.tooltip.bottom {
 	background:url(${cnd}${jqt}/img/tooltip/black_arrow_bottom.png);
 }
 </c:set>
@@ -57,11 +54,11 @@ ${css}
 <!-- use gif image for IE -->
 <!--[if lt IE 7]>
 <style>
-#${wrapId}tip {
+.tooltip {
 	background-image:url(${cnd}${jqt}/img/tooltip/black_arrow.gif);
 }
 
-#${wrapId}tip.bottom {
+.tooltip.bottom {
 	background:url(${cnd}${jqt}/img/tooltip/black_arrow_bottom.gif);
 }
 </style>

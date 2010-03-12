@@ -67,26 +67,26 @@ ${html}
 
 		<div>
 
-			<h2>Forget about scrollbars</h2>
+			<h2>Add custom scrolls to your site</h2>
 
 			<img src="${cdn}/img/title/eye192.png" alt="Flying screens" style="float:right;margin:0 0 20px 20px" />
 
 			<p>
-				The purpose of this library is to make it extremely easy to add scrolling functionality to a website. Whenever you wish to scroll HTML elements in a visually-appealing manner, this is the only library you need. The main design goals of this library are to provide <em>visual customization</em> functionality and <em>programmability</em>. Here are some example scenarios where you would benefit from using the library:
+				You can use this tool on
 			</p>
 
 			<ul>
-				<li>Home pages, like this one right here</li>
-				<li>Product catalogues</li>
-				<li>News tickers</li>
-				<li>Custom select boxes in forms</li>
-				<li>Image galleries</li>
-				<li>Video playlists</li>
-				<li>All kinds of navigational systems</li>
+				<li>home pages, like this one right here</li>
+				<li>product catalogues</li>
+				<li>news tickers</li>
+				<li>custom select boxes in forms</li>
+				<li>image galleries</li>
+				<li>video playlists</li>
+				<li>all kinds of navigational systems</li>
 			</ul>
 
 			<p>
-				The first version of the library was released on January 3, 2008. Since then, this tool has come a long way and it is now a stable and mature product.
+				The main design goals of this tool are to provide <em>visual customization</em>, <em>ease of use</em> and <em>programmability</em>. The first version of the library was released on January 3, 2008. Since then, this tool has come a long way and it is now a stable and mature product.
 			</p>
 
 			<br clear="all" />
@@ -95,19 +95,23 @@ ${html}
 
 		<div>
 
-
 			<h2>Rich yet simple</h2>
 
-			<ul style="font-size:12px">
+			<ul>
 				<li>Horizontal and vertical scrolling.</li>
 				<li>Scrolling using navigational buttons, API calls, keyboard arrow keys, and the mouse scroll wheel.</li>
-				<li>The number of items scrolled at once is customizable.</li>
+				<li>Any amount of items on one "page". Pages can have variable width</li>
 				<li>The navigational buttons are setup without a single line of JavaScript.</li>
 				<li>Tabbed navigation like this one can be setup without any programming.</li>
-				<li>Programmatic actions are available, such as: <samp>next</samp>, <samp>prev</samp>, <samp>nextPage</samp>, <samp>prevPage</samp>, <samp>seekTo</samp>, <samp>begin</samp>, and <samp>end</samp>.</li>
+				<li>Programmatic actions are available, such as: <samp>next</samp>, <samp>prev</samp>, <samp>seekTo</samp>, <samp>begin</samp>, and <samp>end</samp>.</li>
 				<li>Dynamic addition and removal of Scrollable items.</li>
 				<li>The ability to customize the scrolling experience with <samp>onBeforeSeek</samp> and <samp>onSeek</samp> listeners.</li>
+				<li>Ability to setup infinite loops without beginning or end</li>
 			</ul>
+			
+			<p>
+				<strong>All this with 1.02 kb file!</strong> Unmatched. Uncomparable.
+			</p>
 
 		</div>
 
@@ -121,10 +125,13 @@ ${html}
 				</p>
 
 				<ul>
-					<li><a href="${jqt}/scrollable.html#circular">circular</a> &nbsp; makes an infinite loop from the Scrollable items so they continue cycling back to the beginning once the last item is reached.</li>
-					<li><a href="${jqt}/scrollable.html#autoscroll">autoscroll</a> &nbsp; makes the scrolling behaviour automatic and is highly configurable.</li>
-					<li><a href="${jqt}/scrollable.html#navigator">navigator</a> &nbsp; provides navigation buttons for switching between pages in Scrollable.</li>
-					<li><a href="${jqt}/scrollable.html#mousewheel">mousewheel</a> &nbsp; enables mousewheel support for Scrollable.</li>
+					<li>
+						<a href="${jqt}/scrollable/index.html#autoscroll">autoscroll</a> &nbsp; makes the scrolling behaviour automatic and is highly configurable.
+					</li>
+					
+					<li style="margin-top:15px">
+						<a href="${jqt}/scrollable/index.html#navigator">navigator</a> &nbsp; provides navigation buttons for switching between pages in Scrollable. can be enabled with history feature so that you can scroll with browsers back (and forward) button.
+					</li>
 				</ul>
 
 
@@ -139,11 +146,7 @@ ${html}
 		<div class="narrow">
 
 			<div style="margin:0 0 0 50px; width: 500px;">
-				<h2>Look at the first demo to get started</h2>
-
-				<p>
-					You can study the workings of Scrollable in the following examples. They contain documented source code, along with a standalone page to allow you to easily transfer the examples to your own site. The most important example is the first one, "Minimal setup for Scrollable" because it teaches you the basics of using the library.
-				</p>
+				<h2>Study the first demo to get a quick start</h2>
 
 				<ul>
 					<c:forEach items="${f:getDemo(context.toolDemos, 'scrollable/index.html').category.demos}" var="demo">
@@ -170,7 +173,7 @@ ${html}
 $(function() {
 
 	// select #flowplanes and make it scrollable. use circular and navigator plugins
-	$("#flowpanes").scrollable({ circular: true, mousewheel: true }).navigator({
+	$("#flowpanes").scrollable({ circular: true, mousewheel: true, clickable: false }).navigator({
 
 		// select #flowtabs to be used as navigator
 		navi: "#flowtabs",

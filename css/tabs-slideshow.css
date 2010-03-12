@@ -2,7 +2,7 @@
 /* container for slides */
 .images {
 	background:#fff url(/img/global/gradient/h300.png) repeat-x;
-	border:1px solid #666;
+	border:1px solid #ccc;
 	position:relative;	
 	height:300px;
 	
@@ -39,13 +39,13 @@
 }
 
 /* tabs (those little circles below slides) */
-.tabs {
+.slidetabs {
 	clear:both;
 	margin-left:330px;
 }
 
 /* single tab */
-.tabs a {
+.slidetabs a {
 	width:8px;
 	height:8px;
 	float:left;
@@ -56,12 +56,12 @@
 }
 
 /* mouseover state */
-.tabs a:hover {
+.slidetabs a:hover {
 	background-position:0 -8px;      
 }
 
 /* active state (current page state) */
-.tabs a.current {
+.slidetabs a.current {
 	background-position:0 -16px;     
 } 	
 

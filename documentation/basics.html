@@ -48,7 +48,7 @@
 </p>
 
 <p>
-	If you want to enhance your jQuery and JavaScript skills, the best things to learn when using these tools are definitely <a href="http://docs.jquery.com/Selectors" class="external">jQuery selectors</a> and <a href="http://www.dyn-web.com/tutorials/obj_lit.php" class="external">object literals</a>. The first skill is used to select elements from the page to be enhanced with the tools and latter is used for configuring the tools. Here is an example that introduces you both of these skills:
+	If you want to enhance your jQuery and JavaScript skills, the best things to learn when using these tools are definitely <a href="http://api.jquery.com/category/selectors/" class="external">jQuery selectors</a> and <a href="http://www.dyn-web.com/tutorials/obj_lit.php" class="external">object literals</a>. The first skill is used to select elements from the page to be enhanced with the tools and latter is used for configuring the tools. Here is an example that introduces you both of these skills:
 </p>
 
 <pii:code>
@@ -311,7 +311,7 @@ body, p {
 </p>
 
 <p>
-	This bug makes it impossible to make fading animations with PNG images in Internet Explorer. For this reason the Tooltip "slide" effect uses opacity fading in every browser other than in IE. This is the default behaviour but you can of course change this if your tooltip is not decorated with PNG graphics. Take a look at the <a href="tooltip.html">Tooltip front page</a> and look at the first demo in Firefox and in IE. The tooltip fades in/out in Firefox but uses the sliding effect without opacity changes in IE.
+	This bug makes it impossible to make fading animations with PNG images in Internet Explorer. For this reason the Tooltip "slide" effect uses opacity fading in every browser other than in IE. This is the default behaviour but you can of course change this if your tooltip is not decorated with PNG graphics. Take a look at the <a href="tooltip/index.html">Tooltip front page</a> and look at the first demo in Firefox and in IE. The tooltip fades in/out in Firefox but uses the sliding effect without opacity changes in IE.
 </p>
 
 <p>
@@ -480,11 +480,11 @@ console.dir($.tools.overlay.conf);
 
 <pii:code>
 // initialize few scrollables and add more features to them
-$("div.scroller").scrollable({size: 4}).infinite().autoscroll({interval: 4000});
+$("div.scroller").scrollable({circular: true}).navigator("#myNavi").autoscroll({interval: 4000});
 </pii:code>
 
 <p>
-	You take a one or more <samp>div.scroller</samp> elements from a page and make them scrollable. The scrollable tool has only the absolute necessary features to make things scroll. If you want to have more features you can use plugins. In this example we used <samp>infinite</samp> plugin to make an infinite loop for the scrollable items so that there is no end or beginning for the scrollable items - you can scroll back and forward infinitely. The <samp>autoscroll</samp> plugin makes the items scroll automatically without any user interaction.
+	You take a one or more <samp>div.scroller</samp> elements from a page and make them scrollable. The scrollable tool has only the absolute necessary features to make things scroll. If you want to have more features you can use plugins. In this example we used <samp>navigator</samp> plugin to setup a navigator beside the scrollable. The <samp>autoscroll</samp> plugin makes the items scroll automatically without any user interaction.
 </p>
 
 <p>
@@ -513,7 +513,7 @@ $("a[rel]").overlay({effect: 'apple'});
 
 
 <p>
-	This configuration makes the overlay use an effect called "apple" which makes the overlay work as you may have seen on Apple's website. The purpose of the effects is to <em>change</em> the default behaviour whereas plugins will <em>enriching</em> or adding new features. In case of the overlay the actual tool provides the basic functionality of overlaying such as initialization, keyboard and mouse interaction and document masking (with expose effect) while effects duty is to only perform the opening and closing actions of the tool. This makes it fairly easy to implement different kind of effects. This design pattern makes the code more organized and makes the overall file size smaller just like plugins do.
+	This configuration makes the overlay use an effect called "apple" which makes the overlay work as you may have seen on Apple's website. The purpose of the effects is to <em>change</em> the default behaviour whereas plugins <em>enrich</em> or add new features. In case of the overlay the actual tool provides the basic functionality of overlaying such as initialization, keyboard and mouse interaction and document masking (with the mask tool) while effects duty is to only perform the opening and closing actions of the tool. This makes it fairly easy to implement different kind of effects. This design pattern makes the code more organized and makes the overall file size smaller just like plugins do.
 <p>
 
 <p>
@@ -527,9 +527,10 @@ $("a[rel]").overlay({effect: 'apple'});
 </p>
 
 <ul>
-	<li><a href="tabs.html#effects">Writing effects for Tabs</a></li>
-	<li><a href="tooltip.html#effects">Writing effects for Tooltip</a></li>
-	<li><a href="overlay.html#effects">Writing effects for Overlay</a></li>
+	<li><a href="${jqt}/tabs/index.html#effects">Writing effects for Tabs</a></li>
+	<li><a href="${jqt}/tooltip/index.html#effects">Writing effects for Tooltip</a></li>
+	<li><a href="${jqt}/overlay/index.html#effects">Writing effects for Overlay</a></li>
+	<li><a href="${jqt}/validator/index.html#effects">Writing effects for Validator</a></li>
 </ul>
 
 <p>

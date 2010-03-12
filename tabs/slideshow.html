@@ -8,10 +8,10 @@
 	The slideshow plugin provides an automatic switching between tabs. It advances to the next tab in pre-configured intervals. Here is a slideshow plugin in action:
 </p>
 
-<%@ include file="..//demos/tabs/slideshow.htm" %>
+<%@ include file="../demos/tabs/slideshow.htm" %>
 
 <a name="slideshow_features"></a>
-<h3>Highlights</h3>
+<h2>Highlights</h2>
 
 <ul>
 	<li>
@@ -26,7 +26,7 @@
 </ul>
 
 <a name="slideshow_usage"></a>
-<h3>Usage</h3>
+<h2>Usage</h2>
 
 <p>
 	The best way to learn is to study the <a href="${jqt}/demos/tabs/slideshow.html">full documentation</a> for the example above.
@@ -38,7 +38,7 @@ ${js}
 </pii:code>
 
 <a name="slideshow_configuration"></a>
-<h3>Configuration</h3>
+<h2>Configuration</h2>
 
 <p>
 	Here is a full list of available configuration options:
@@ -102,39 +102,11 @@ ${js}
 			When set to <samp>true</samp> then the tabs will automatically advance to the next tab by clicking on the visible pane.
 		</td>
 	</tr>
-	<tr>
-		<td class="code">onBeforePlay</td>
-		<td></td>
-		<td>
-			This callback function is triggered before the playback starts. Returning <samp>false</samp> in the callback prevents the playback from starting.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onPlay</td>
-		<td></td>
-		<td>
-			This callback function is triggered when the playback starts.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onBeforePause</td>
-		<td></td>
-		<td>
-			This callback function is triggered before the playback pauses. Returning <samp>false</samp> in the callback prevents the playback from starting.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onPause</td>
-		<td></td>
-		<td>
-			This callback function is triggered when the playback pauses.
-		</td>
-	</tr>
 
 </table>
 
 <a name="slideshow_api"></a>
-<h3>JavaScript API</h3>
+<h2>JavaScript API</h2>
 
 <p>
 	The following methods are <strong>added</strong> to the main <a href="#api">JavaScript API</a> of the tabs and they are ready to be used after the plugin has been installed.
@@ -170,34 +142,49 @@ ${js}
 			Stops the slideshow. This can only be resumed by calling the <samp>play()</samp> method.
 		</td>
 	</tr>
-	<tr>
-		<td class="code">onBeforePlay(fn)</td>
-		<td>API</td>
-		<td>
-			This callback function is triggered before the playback starts. Returning <samp>false</samp> in the callback prevents the playback from starting.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onPlay(fn)</td>
-		<td>API</td>
-		<td>
-			This callback function is triggered when the playback starts.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onBeforePause(fn)</td>
-		<td>API</td>
-		<td>
-			This callback function is triggered before the playback pauses. Returning <samp>false</samp> in the callback prevents the playback from starting.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">onPause(fn)</td>
-		<td>API</td>
-		<td>
-			This callback function is triggered when the playback pauses.
-		</td>
-	</tr>
 </table>
 
+
+<a name="events"></a>
+<h2>Events</h2>
+
+<p>
+	Make sure you have read about <a href="${jqt}/documentation/scripting.html#events">Events in jQuery Tools</a>. All event listeners receives <a href="${jqt}/documentation/scripting.html#event_object">Event Object</a> as the first argument.
+</p>
+
+<table class="listing">
+	<thead>
+		<tr>
+			<th>event</th>
+			<th nowrap>When does it occur?</th>
+		</tr>
+	</thead>
+
+	
+	<tr>
+		<td class="code">onBeforePlay</td>
+		<td>
+			before the playback starts. Returning <samp>false</samp> in the callback prevents the playback from starting.
+		</td>
+	</tr>
+	<tr>
+		<td class="code">onPlay</td>
+		<td>
+			when the playback starts.
+		</td>
+	</tr>
+	<tr>
+		<td class="code">onBeforePause</td>
+		<td>
+			before the playback pauses. Returning <samp>false</samp> in the callback prevents the playback from starting.
+		</td>
+	</tr>
+	<tr>
+		<td class="code">onPause</td>
+		<td>
+			when the playback pauses.
+		</td>
+	</tr>
+	
+</table>
 

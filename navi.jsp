@@ -22,7 +22,7 @@
 <%
 	String path = request.getServletPath().split("/")[2].replace(".html", "");
 	pageContext.setAttribute("isDoc",
-		"documentation,search,tabs,tooltip,scrollable,overlay,toolbox,form,".indexOf(path +",") != -1
+		"documentation,search,tabs,tooltip,scrollable,overlay,toolbox,dateinput,rangeinput,validator,".indexOf(path +",") != -1
 	);		
 %>
 
@@ -48,7 +48,7 @@
 					<li> <a href="${jqt}/demos/${demo.path}">${demo.title}</a> </li>
 				</c:forEach>
 			</ul>
-
+navi.jsp
 			<div class="clear"></div>
 			 
 		</div>	
@@ -172,6 +172,25 @@
 	
 </c:if>
 
+
+<c:if test="${fn:contains(req.path, '/download')}">
+	<img src="${jqt}/img/github-logo.png" alt="" />
+	<img src="${jqt}/img/github.png" alt="" />
+
+	<p>
+		There are two jQuery Tools repositories on Github:
+	</p>
+	
+	<p>
+		<a href="http://github.com/jquerytools/jquerytools" class="external">jQuery Tools library</a>
+		<a href="http://github.com/jquerytools/jquerytools" class="external">jQuery Tools website</a>
+	</p>
+	
+	<p>
+		If you want to contribute please email your thougths from Github and send the contributions trough <a href="http://github.com/jquerytools/jquerytools/forkqueue" class="external">fork queue</a>.
+	</p>
+	
+</c:if>
 
 <script>
 $("#right a[href=${req.path}]").addClass("active"); 

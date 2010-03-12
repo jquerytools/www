@@ -77,7 +77,7 @@
 <a class="forward">next</a><p>
 
 <!-- the tabs -->
-<div class="tabs">
+<div class="slidetabs">
 	<a href="#"></a>
 	<a href="#"></a>
 	<a href="#"></a>
@@ -88,8 +88,8 @@ ${html}
 
 <div style="clear:both;margin:30px 0;text-align:center;padding-right:40px">
 <c:set var="buttons">
-<button onClick='$("div.tabs").tabs().play();'>Play</button>
-<button onClick='$("div.tabs").tabs().stop();'>Stop</button>
+<button onClick='$(".slidetabs").data("slideshow").play();'>Play</button>
+<button onClick='$(".slidetabs").data("slideshow").stop();'>Stop</button>
 </c:set>
 ${buttons}
 </div>
@@ -100,7 +100,7 @@ ${buttons}
 $(function() {
 	<c:set var="js">
 
-	$("div.tabs").tabs(".images > div", {
+	$(".slidetabs").tabs(".images > div", {
 
 		// enable "cross-fading" effect
 		effect: 'fade',

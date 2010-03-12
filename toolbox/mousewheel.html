@@ -1,0 +1,30 @@
+<%-- :mode=jsp: --%>
+
+
+<h1 style="background:url(img/hero/mask.jpg) no-repeat -2px 21px">
+	jQuery Tools / Mousewheel - Take control of your mousewheel
+</h1>
+
+<h2>Usage</h2>
+
+<p>
+	Mousewheel plugin allows you to take control of the mousewheel. For example
+</p>
+
+<pii:code>
+// make #myelement listen to mousewheel events
+$("#myelement").mousewheel(function(event, delta) {
+
+});
+</pii:code>
+
+<p>
+	Whenever the mousewheel is used on top of the elements specified by the jQuery selector, the supplied callback function is called. It is fed with two arguments. The first one is the jQuery <a href="http://docs.jquery.com/Event" class="external">event object</a> and the second one specifies how much the wheel was rotated. A positive value for <samp>delta</samp> means movement downwards and a negative value means movement upwards.
+</p>
+
+
+<p style="color:#666">
+	This plugin is based on Three Dub Media's <a href="http://plugins.jquery.com/project/wheel">wheel plugin</a> which is a smaller, simplified interpretation of the Brandon Aaron's well-known special event, "Mouse Wheel Extension". Thanks.
+</p>
+
+

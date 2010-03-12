@@ -15,55 +15,104 @@
 
 <div id="promo">
 
-	<h4>For promotional purposes</h4>
+	<h4>For eye candy</h4>
 	<c:set var="wrapId" value="apple_promo"/>
-	<%@ include file="..//demos/overlay/apple.htm" %>
+	<%@ include file="../demos/overlay/apple.htm" %>
 
-	<h4>For image galleries</h4>
+	<h4>For presentations and galleries</h4>
 
 	<c:set var="wrapId" value="gallery_promo"/>
-	<%@ include file="..//demos/overlay/gallery.htm" %>
+	<%@ include file="../demos/overlay/gallery.htm" %>
 
 	<h4>For user interactions</h4>
-	<%@ include file="..//demos/overlay/modal-dialog.htm" %>
+	<%@ include file="../demos/overlay/modal-dialog.htm" %>
 </div>
 
-<h2>For every overlaying need</h2>
+<br clear="all" />
 
-<p>
-	Overlaying HTML on top of the main document is one of the most common features in today's websites. You need different kinds of overlays for different situations such as:
-</p>
+<div class="feat">
 
-<ol>
-	<li>Great looking overlays for displaying your products.</li>
-	<li>Simple and snappy overlays for showing info or warning boxes.</li>
-	<li>Modal dialogs for prompting and alerting users.</li>
-	<li>"lightbox" style image galleries.</li>
-</ol>
+	<h3 class="first">For every overlaying need</h3>
+	
+	<p>
+		You'll need different kinds of overlays for different situations such as eye candy for displaying your products,  snappy overlays for info or warning boxes, modal dialogs for prompting and alerting users or tabbed overlays for displaying complex data.
+	</p>
+	
+	<p>
+		All these are possible with an Overlay <a href="#effects">effect framework</a>.
+	</p>
+	
+</div>
 
-<p>
-	This tool handles all these different situations by offering a flexible <a href="#effects">effect framework</a>. You can use the effect that is most suitable for the situation at hand.
-</p>
+<div class="feat last">
+
+	<h3 class="first">Configure the looks and behaviour</h3>
+
+	<p>
+		The overlay can contain any HTML such as images, links, forms and tables and whole thing can be styled with CSS. Be it rounded borders, shadows or gradients.  
+	</p>
+	
+	<p>
+		Core behaviours are configurable such as positioning, animation durations and the ways of closing the overlay.
+	</p>
+</div>
 
 
-<p>
-	The overlay can contain any HTML and the whole thing can be styled with CSS. There is no clutter and there are no surprises. This overlay tool is now a significant part of the JavaScript/Web 2.0 landscape. Don't rely on other, half-baked solutions.
-</p>
+<div class="feat">
 
-<%@ include file="../common-features.jsf" %>
+	<h3>Good playground for other Tools</h3>
+	
+	<p>
+		Overlay offers a good container for other tools. Think of scrollables, tabs or accordions inside the Overlay. There are many fancy user interfaces to be explored. 
+	</p>
+	
+</div>
+
+<div class="feat last">
+
+	<h3>File size: 0.93 Kb</h3>
+
+	<p>
+		And you'll have all the features and configuration options you'll possibly need, such as effect- and plugin framework, <a href="#api">scripting API</a> and an <a href="#events">event model</a>. A smaller codebase is easier to control and results in snappier behaviour. Without gzipping the size is 2.87 Kb.
+	</p>
+	
+</div>
 
 
+<br clear="all" />
 
 <a name="usage"></a>
 <h2>Usage</h2>
 
 <p>
-	You can study the workings of overlay in the following examples. Each contains documented source code, along with a standalone page to allow you to easily transfer the examples to your own site. The most important example is the first one, "Minimal setup for overlay". It teaches you the basics of using the library.
+	The general way to setup overlay is as follows:
+</p>
+
+<pii:code>
+// select one or more elements to be overlay triggers
+$(".my_overlay_trigger").overlay({
+
+	// one configuration property
+	color: '#ccc',
+
+	// another property
+	top: 50
+
+	// ... the rest of the configuration properties
+});
+</pii:code>
+
+
+<a name="../demos"></a>
+<h2>Demos</h2>
+
+<p>
+	You can study the workings of overlay in the following examples. Each contains documented source code, along with a standalone page to allow you to easily transfer the examples to your own site. The most important example is the first one, "Minimal setup for overlay". 
 </p>
 
 <ul>
 	<c:forEach items="${f:getDemo(context.toolDemos, 'overlay/index.html').category.demos}" var="demo">
-		<li> <a href="demos/${demo.path}">${demo.title}</a> </li>
+		<li> <a href="../demos/${demo.path}">${demo.title}</a> </li>
 	</c:forEach>
 </ul>
 
@@ -77,38 +126,19 @@
 	<li>
 		The <a href="/index.html">Flowplayer home page</a>. <small>Open the scripting tab and press "Show me"</small>
 	</li>
-	<li>The basics of <a href="/demos${jqt}/overlay.html">overlaying videos</a></li>
+	<li>The basics of <a href="/demos${jqt}/overlay/index.html">overlaying videos</a></li>
 	<li><a href="/demos${jqt}/fake-fullscreen.html">Custom fullscreen action in overlays</a></li>
-	<li><a href="/demos${jqt}/sharing-overlay.html">E-mail and embed features in overlays</a></li>
+	<li><a href="/demos${jqt}/sharing-overlay/index.html">E-mail and embed features in overlays</a></li>
 </ul>
 
 <%@ include file="../graphics.jsf" %>
 
-<img src="img/overlay/thumb/white.png" alt="White overlay" />
-<img src="img/overlay/thumb/black.png" alt="White overlay" />
-<img src="img/overlay/thumb/red.png" alt="White overlay" />
+<img src="../img/overlay/thumb/white.png" alt="White overlay" />
+<img src="../img/overlay/thumb/black.png" alt="White overlay" />
+<img src="../img/overlay/thumb/red.png" alt="White overlay" />
 
 <a name="configuration"></a>
 <h2>Configuration</h2>
-
-<p>
-	The general way to setup overlay is as follows:
-</p>
-
-<pii:code>
-// select one or more elements to be overlay triggers
-$("JQUERY SELECTOR").overlay({
-
-	// one configuration property
-	color: '#ccc',
-
-	// another property
-	top: 50
-
-	// ... the rest of the configuration properties
-});
-</pii:code>
-
 
 <p>
 	Here is a list of all available configuration options.
@@ -128,14 +158,7 @@ $("JQUERY SELECTOR").overlay({
 		<td>
 			If set to <samp>true</samp>, the overlay position is measured from the top-left corner of the browser window and the scrolling position has no impact. By default, the scrolling position is added.
 		</td>
-	</tr>
-	<tr>
-		<td class="code">api</td>
-		<td><code>false</code></td>
-		<td>
-			When this tool is initialized (constructed), the return value is a jQuery object associated with the selector. By setting this property to <samp>true</samp> the return value is this tool's <a href="#api">JavaScript API</a> instead. If the selector returns multiple elements, the API of the <em>last</em> element will be returned. Read more about <a href="${jqt}/documentation/index.html#api">accessing the tool API</a>.
-		</td>
-	</tr>
+	</tr
 	<tr>
 		<td class="code">close</td>
 		<td><code></code></td>
@@ -147,7 +170,7 @@ $("JQUERY SELECTOR").overlay({
 		<td class="code">closeOnClick</td>
 		<td><code>true</code></td>
 		<td>
-			By default, overlays are closed when the mouse is clicked <em>outside</em> the overlay area. Setting this property to <samp>false</samp> suppresses this behaviour which is suitable for <a href="demos/overlay/modal-dialog.html">modal dialogs</a>.
+			By default, overlays are closed when the mouse is clicked <em>outside</em> the overlay area. Setting this property to <samp>false</samp> suppresses this behaviour which is suitable for <a href="../demos/overlay/modal-dialog.html">modal dialogs</a>.
 		</td>
 	</tr>
 	<tr>
@@ -171,33 +194,24 @@ $("JQUERY SELECTOR").overlay({
 			</p>
 		</td>
 	</tr>
-
 	<tr>
-		<td class="code">expose</td>
-		<td><code></code></td>
+		<td class="code">fixed</td>
+		<td><code>true</code></td>
 		<td>
-			Overlay is very often used together with the <a href="expose.html">expose tool</a>. Because of this, the support for this feature has been built inside the tool. This configuration accepts the <a href="expose.html#configuration">expose tool's configuration</a>. This is either a simple string specifying the background color of the mask or a more complex object literal specifying more configuration variables.
-
-			<p>
-				See an example of an <a href="demos/overlay/modal-dialog.html">overlay together with expose</a>. By default the expose feature is disabled.
-			</p>
+			<strong>since 1.2.0</strong>. whether overlay stays still while the screen is scrolled. this is the default behaviour. if this property is set to <samp>false</samp> then the overlay is position in relation to the document so that when screen is scrolled then the overlay moves along with the document.
 		</td>
 	</tr>
 	<tr>
-		<td class="code">lazyload</td>
-		<td><code>false</code></td>
+		<td class="code">mask</td>
+		<td><code></code></td>
 		<td>
-			<strong>Since 1.2.0.</strong> Enables lazyloading for the Overlay. If you have large images or background images on the overlay enabling this property will make your page load faster. Those heavy files will not be loaded from the server before they are actually displayed for the user. Make sure that the lazyload tool is included on your page.
-			
+			Overlay is very often used together with the <a href="${jqt}/toolbox/mask.html">Mask Tool</a>. Because of this, the support for this feature has been built inside the tool. This option accepts the <a href="${jqt}/toolbox/mask.html#configuration">mask configuration</a>. This is either a simple string specifying the background color of the mask or a more complex object literal specifying more configuration variables.
+
 			<p>
-				You can have one or more lazyloaded elements on the overlay pane. You can also lazyload complete HTML pages. 
-			</p>
-			
-			<p>
-				Take a look at lazyload <a href="${jqt}/toolbox/lazyload.html#tools">configuration possibilities</a> and a demo about <a href="${jqt}/demos/toolbox/lazyload/overlay.html">lazyloaded overlay</a>.
+				See an example of an <a href="../demos/overlay/modal-dialog.html">overlay together with mask</a>. By default masking is disabled.
 			</p>
 		</td>
-	</tr>	    
+	</tr>  
 	<tr>
 		<td class="code">left</td>
 		<td class="code">"center"</td>
@@ -209,7 +223,7 @@ $("JQUERY SELECTOR").overlay({
 		<td class="code">oneInstance</td>
 		<td><code>true</code></td>
 		<td>
-			By default, there can be only one overlay on the page at once. Setting this property to <samp>false</samp> allows you to have <a href="demos/overlay/multiple.html">multiple overlay instances</a>.
+			By default, there can be only one overlay on the page at once. Setting this property to <samp>false</samp> allows you to have <a href="../demos/overlay/multiple.html">multiple overlay instances</a>.
 		</td>
 	</tr>
 	<tr>
@@ -283,51 +297,12 @@ $("JQUERY SELECTOR").overlay({
 <%--}}}--%>
 
 
-<p>
-	See the <a href="documentation/index.html#callbacks">Using Callback Functions</a> section in the User's Guide for more detailed description about this important topic.
-</p>
-
-<a name="close"></a>
-<h3>Defining custom close elements</h3>
-
-<p>
-	By default, a close button is auto-generated as the first element inside the container. Here is the generated HTML:
-</p>
-
-<pii:code lang="html">
-<!-- auto- generated close button -->
-<div class="close"></div>
-</pii:code>
-
-<p>
-	You can easily add more closing elements inside the overlay simply by assigning the CSS class name "close" to them. These elements can be styled and positioned any way you like inside the overlay.
-</p>
-
-</p>
-	If you supply a value for the <samp>close</samp> configuration variable, the close element is not auto-generated and you need to define the closing element(s) yourself.
-</p>
->>>>>>> 317c8dc1e5dadfbeb32675b1240b6f2eaa0e2b79:overlay/index.html
 
 <a name="api"></a>
 <h2>Scripting <em>API</em></h2>
 
 <p>
-	Overlay has a clean and well-designed API for scripters, with which it is possible to enrich the overlay user experience. You can get a handle to the API in numerous ways as described in the <a href="documentation/index.html#api">Users Manual</a>. Here is an example of how to access the API:
-</p>
-
-<pii:code>
-// get handle to the API upon initialization by enabling the "api" variable
-var api = $("div.overlay").overlay({oneInstance: false, api: true});
-
-// open the overlay programmatically with this API call
-api.load();
-
-// retrieve an existing api
-api = $("div.overlay").overlay();
-</pii:code>
-
-<p>
-	Here is a list of all available API methods:
+	First make sure you have familiarized yourself with <a href="${jqt}/documentation/scripting.html">jQuery Tools scripting</a>. Here is a list of all available API methods:
 </p>
 
 <table class="listing">
@@ -461,7 +436,7 @@ $.tools.overlay.addEffect("myEffect",
 </p>
 
 <p>
-	Here is one <a href="demos/overlay/custom-effect.html">custom overlay effect</a> demo.
+	Here is one <a href="../demos/overlay/custom-effect.html">custom overlay effect</a> demo.
 </p>
 
 
