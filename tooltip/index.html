@@ -202,13 +202,6 @@ events: {
 		</td>
 	</tr>
 	<tr>
-		<td class="code">lazy</td>
-		<td><code>undefined</code></td>
-		<td>
-			<strong>Since 1.1.0.</strong> Waits to perform the tooltip initialization until the tooltip is first being used. If you have many tooltip elements on the page, this will make your page load faster. By default this is enabled if you have more than 20 tooltips on the page. You can explicitly enable or disable this feature by setting this to <samp>true</samp> or <samp>false</samp> respectively. Note: Currently this feature must be disabled when using it together with the <a href="#dynamic">dynamic</a> plugin.
-		</td>
-	</tr>
-	<tr>
 		<td class="code">offset</td>
 		<td><code>[0, 0]</code></td>
 		<td>
@@ -247,7 +240,7 @@ events: {
 		<td class="code">tip</td>
 		<td><code></code></td>
 		<td>
-			A jQuery selector for a single tooltip element. For example <samp>#mytip</samp>. This option is only valid if you want to define single tooltip for many triggers manually. 
+			A jQuery selector for a single tooltip element. For example <samp>#mytip</samp>. This option is only valid if you want to define manually a single tooltip for multiple trigger elements. 
 		</td>
 	</tr>
 
@@ -259,7 +252,7 @@ events: {
 <h3>Tooltip positioning</h3>
 
 <p>
-	The tooltip position is specified with two different configuration properties: <samp>position</samp> and <samp>offset</samp>. Both are JavaScript arrays with two values. The <samp>position</samp> property specifies the position in relation to the trigger element. For example, a value of <samp>'bottom center'</samp> will place the tooltip on the bottom edge of the trigger, centered horizontally. The following image illustrates the "slots" that you can use:
+	The tooltip position is specified with two different configuration properties: <samp>position</samp> and <samp>offset</samp>. The <samp>position</samp> property specifies the position in relation to the trigger element. For example, a value of <samp>'bottom center'</samp> will place the tooltip on the bottom edge of the trigger, centered horizontally. The following image illustrates the "slots" that you can use:
 </p>
 
 <div style="background:url(../img/tooltip/positions.png) no-repeat -20px 0;height:340px"></div>
@@ -334,10 +327,10 @@ $("label").tooltip({
 
 <pii:code>
 events: {
-	def: 	 "mouseover,mouseout",				// default show/hide events for an element
+	def: 	 "mouseenter,mouseleave",				// default show/hide events for an element
 	input: 	"focus,blur",						// for all input elements
-	widget:	"focus mouseover,blur mouseout",	// select, checkbox, radio, button
-	tooltip:		"mouseover,mouseout"			// the tooltip element
+	widget:	"focus mouseenter,blur mouseleave",	// select, checkbox, radio, button
+	tooltip:		"mouseenter,mouseleave"			// the tooltip element
 }
 </pii:code>
 
@@ -350,7 +343,7 @@ events: {
 </p>
 
 <p>
-	<strong>Since 1.1.2.</strong> you can also customize the events for the tooltip element. By default the tooltip stays visible when the mouse is moved over it and it is hidden upon <samp>mouseout</samp>. If you don't want to close the tooltip upon <samp>mouseout</samp>, you can simply specify: <samp>tooltip: "mouseover"</samp>. This gives you the possibility of closing the tooltip programmatically. This has been done on the login/signup boxes on the main navigation bar of this website.
+	You can also customize the events for the tooltip element. By default the tooltip stays visible when the mouse is moved over it and it is hidden upon <samp>mouseleave</samp>. If you don't want to close the tooltip upon <samp>mouseleave</samp>, you can simply specify: <samp>tooltip: "mouseenter"</samp>. This gives you the possibility of closing the tooltip programmatically. This has been done on the login/signup boxes on the main navigation bar of this website.
 </p>
 
 <p>
@@ -393,19 +386,8 @@ $("label").tooltip({
 <h2>Scripting <em>API</em></h2>
 
 <p>
-	This tool has a useful API for scripters. A lot of effort has been put into it so that you can enrich the tooltip experience. You can get a handle to the API in numerous ways as described in the <a href="documentation/index.html#api">User's Manual</a>. Here is an example of how to access the API:
+	First make sure you have familiarized yourself with <a href="${jqt}/documentation/scripting.html">jQuery Tools scripting</a>.
 </p>
-
-<pii:code>
-/*
-	get handle to the third tooltip on the page
-	(must have been constructed before the call)
-*/
-var api = $("a.with_tooltip").eq(1).data("tooltip");
-
-// show the tooltip
-api.show();
-</pii:code>
 
 <p>
 	Here is a list of all API methods:
@@ -436,10 +418,10 @@ api.show();
 		</td>
 	</tr>
 	<tr>
-		<td class="code">isShown()</td>
+		<td class="code">isShown(fully)</td>
 		<td><code>boolean</code></td>
 		<td>
-			Returns <samp>true</samp> if the tooltip is visible.
+			Returns <samp>true</samp> if the tooltip is visible. A boolean argument makes sure that the function returns <samp>true</samp> only if the tooltip is in it's final position and opacity (fully visible) and not in a fading or sliding state.
 		</td>
 	</tr>
 	<tr>
@@ -563,7 +545,7 @@ function(done) {
 </pii:code>
 
 <p>
-	Look at tooltip's <a href="/js${jqt}${jqt}.${tool}-${v[tool]}.js?download=true">source code</a> for more examples of the effects. The basic idea is to use your jQuery skills together with the API methods. Here you can see a demo about the <a href="${jqt}/demos/tooltip/custom-effect.html">custom sliding effect</a>.
+	Look at tooltip's source code for more examples of the effects. The basic idea is to use your jQuery skills together with the API methods. Here you can see a demo about the <a href="${jqt}/demos/tooltip/custom-effect.html">custom sliding effect</a>.
 </p>
 
 

@@ -19,7 +19,7 @@ div.demowrap {
 </style>
 
 <h1 style="background-image:url(../img/hero/scrollable.jpg)">
-	jQuery Tools / Scrollable - Scroll your HTML with eye candy
+	jQuery Tools / Scrollable - New Wave UI design
 </h1>
 
 
@@ -28,38 +28,18 @@ div.demowrap {
 </div>
 
 <p>
-	Besides clicking on the tabs you can also scroll through the elements:
+	Besides clicking on the tabs you can also scroll through the elements
 </p>
 
 <ol>
-	<li>Clicking on the content area</li>
-	<li>Clicking on the action buttons below the scrollable</li>
-	<li>Using the left and right arrow keys on your keyboard</li>
+	<li>By using the left and right arrow keys on your keyboard</li>
 	<li>With your mouse scroll wheel</li>
+	<li>By clicking on the action buttons below the scrollable</li>	
 </ol>
 
 
 <a name="configuration"></a>
 <h2>Configuration</h2>
-
-<p>
-	There are many other ways of using this tool than can be illustrated in the demos provided here. It is important to realize that elements being setup for scrolling can contain <strong>any</strong> HTML: text, images, forms, Flash objects, or any combination of the above.
-</p>
-<p>
-	The tool is always initialized by means of a JavaScript call similar to the following:
-</p>
-
-<pii:code>
-// select one or more elements to be scrollable-enabled
-$("JQUERY SELECTOR").scrollable({
-
-	// one configuration property
-	circular: true,
-
-	// ... the rest of the configuration properties
-});
-</pii:code>
-
 
 <p>
 	Here is a list of all available configuration options:
@@ -75,13 +55,6 @@ $("JQUERY SELECTOR").scrollable({
 	</thead>
 
 	<tr>
-		<td class="code">activeClass</td>
-		<td><code>"active"</code></td>
-		<td>
-			The CSS class name for a clicked scrollable item. Only valid if you have enabled the <samp>clickable</samp> property.
-		</td>
-	</tr>
-	<tr>
 		<td class="code">clonedClass</td>
 		<td><code>'cloned'</code></td>
 		<td>
@@ -89,31 +62,17 @@ $("JQUERY SELECTOR").scrollable({
 		</td>
 	</tr>		
 	<tr>
-		<td class="code">clickable</td>
-		<td><code>true</code></td>
-		<td>
-			Whether scrolling occurs when an item is clicked inside the scrollable-enabled element. The clicked element is positioned In the center of the scrollable and it is assigned a CSS class name specified in the <samp>activeClass</samp> configuration property. You can get the index number of the clicked item with the <samp>getClickIndex()</samp> API call. Note that the <samp>getIndex</samp> method will <em>not</em> return the index number of the clicked element. It can differ from the seek position.
-		</td>
-	</tr>
-	<tr>
 		<td class="code">disabledClass</td>
 		<td><code>"disabled"</code></td>
 		<td>
-			The CSS class name for disabled <samp>next</samp>/<samp>nextPage</samp> and <samp>prev</samp>/<samp>prevPage</samp> elements. For example, the <samp>prev</samp> element is disabled when there are no previous items to scroll to. Typically you assign <samp>visibility: 'hidden'</samp> CSS definition for disabled elements.
+			The CSS class name for disabled <samp>next</samp> and <samp>prev</samp> elements. For example, the <samp>prev</samp> element is disabled when there are no previous items to scroll to. Typically you assign <samp>visibility: 'hidden'</samp> CSS definition for disabled elements.
 		</td>
 	</tr>
 	<tr>
-		<td class="codefile:///usr/share/ubuntu-artwork/home/locales/index-en_GB.html">easing</td>
+		<td class="code">easing</td>
 		<td><code>"swing"</code></td>
 		<td>
 			The type of "easing" applied to the scrolling animation. 'swing' means that there is an acceleration, followed by a constant speed, followed by a deceleration. 'linear' means that the whole animation happens at a constant speed. You can also make your <a href="demos/scrollable/easing.html">own easing effects</a>.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">globalNav</td>
-		<td><code>false</code></td>
-		<td>
-			 By default the navigational elements needs to have a <a href="#multiple">mutual wrapper element</a> with the scrollable itself. Enable this variable if your navigational elements are not placed under the same parent element than the scrollable so that they can be found.
 		</td>
 	</tr>
 	<tr>
@@ -132,13 +91,6 @@ $("JQUERY SELECTOR").scrollable({
 		</td>
 	</tr>
 	<tr>
-		<td class="code">item</td>
-		<td><code></code></td>
-		<td>
-			If you have different kinds of items under the <samp>items</samp> element and you only want some of them to work as scrollable items then you can use this parameter to select only those specific items. This is a jQuery selector and typically a tag name such as "div" is enough to select the correct items.
-		</td>
-	</tr>
-	<tr>
 		<td class="code">keyboard</td>
 		<td><code>true</code></td>
 		<td>
@@ -154,13 +106,10 @@ $("JQUERY SELECTOR").scrollable({
 
 <pii:code>
 // grab second scrollabe and its API
-var instance = $(".horizontal").eq(1).scrollable();
+var instance = $(".horizontal").eq(1).data("scrollable");
 
 // disable keyboard
 instance.getConf().keyboard = false;
-
-// reload is required
-instance.reload();
 </pii:code>
 
 		</td>
@@ -204,14 +153,10 @@ instance.reload();
 </table>
 
 <a name="multiple"></a>
-<h3>Multiple scrollables and <em>next/prev/nextPage/prevPage</em> actions</h3>
+<h3>Multiple scrollables with <em>next</em> and <samp>prev</samp> links</h3>
 
 <p>
 	If you have multiple scrollables on your page we need to make sure that each navigational element is controlling the right scrollable instance. Let's say we have following call to instantiate multiple scrollables with their own "next" and "prev" elements.
-</p>
-
-<p>
-	It is possible to instantiate multiple scrollables with the same call. For example, if you have multiple scrollable root elements with the CSS class name "vertical" they can all be instantiated with this:
 </p>
 
 <pii:code>
@@ -219,7 +164,7 @@ $(".vertical").scrollable();
 </pii:code>
 
 <p>
-	Now each of the scrollable uses the default selectors <samp>.next</samp> and <samp>.next</samp> to look for the navigational elements causing multiple elements to be returned. How do we know which navigational element controls which scrollable? The problem can be solved by enclosing each scrollable <em>and</em> its navigational actions inside a mutual wrapper element. For example:
+	Now each of the scrollable uses the default selectors <samp>.next</samp> and <samp>.prev</samp> to look for the navigational elements causing multiple elements to be returned. How do we know which navigational element controls which scrollable? The problem can be solved by enclosing each scrollable <em>and</em> its navigational actions inside a mutual wrapper element. For example:
 </p>
 
 <pii:code lang="html">
@@ -229,7 +174,7 @@ $(".vertical").scrollable();
 	<div class="scrollable">
 		...
 	</div>
-	<a class="next"/>
+	<a class="prev"/>
 </div>
 
 <!-- 2nd instance -->
@@ -238,7 +183,7 @@ $(".vertical").scrollable();
 	<div class="scrollable">
 		...
 	</div>
-	<a class="next"/>
+	<a class="prev"/>
 </div>
 </pii:code>
 
@@ -288,36 +233,11 @@ $(".vertical").scrollable();
 <%--{{{  API--%>
 
 <a name="api"></a>
-<h2>Scripting <em>API</em></h2>
+<h2>JavaScript API</h2>
 
 <p>
-	scrollable has a clean and well-designed API for scripters, with which it is possible to enrich the scrolling user experience. You can get a handle to the API in numerous ways as described in the <a href="documentation/index.html#api">User's Manual</a>. Here is an example of how to access the API:
+	First make sure you have familiarized yourself with <a href="${jqt}/documentation/scripting.html">jQuery Tools scripting</a>.
 </p>
-
-<pii:code>
-// get handle to the API upon initialization
-var api = $("div.scrollable").scrollable().data("scrollable");
-
-// perform a simple API call
-api.next();
-
-// register a callback function
-api.onSeek(function() {
-
-	// here, the 'this' variable points to the API
-	this.getPageIndex();
-
-});
-
-// supply a callback function to a regular API call
-api.next(function() {
-
-	// again the 'this' variable points to the API
-	this.prev();
-
-});
-</pii:code>
-
 
 <h3>Method index</h3>
 
@@ -442,32 +362,20 @@ api.next(function() {
 <%--}}}--%>
 
 <p>
-	All seeking methods (the methods from <samp>begin</samp> onwards in the above list) accept a <samp>speed</samp> argument which is used to specify how long (in milliseconds) the scrolling animation lasts. This overrides the <samp>speed</samp> property specified in the configuration. All seeking methods always return the current scrollable instance, so you can chain method calls as follows:
-</p>
-
-<pii:code>
-// a method chaining example
-$("div.scrollable").scrollable().click(0).seekTo(2, 3000, function() {
-	this.getConf().easing = 'linear';
-	this.end();
-});
-</pii:code>
-
-<p>
-	Although this example probably doesn't represent a real world scenario, it is a good demonstration, and it will work if you try executing it in the Firebug console on the example on this page.
+	All seeking methods (the methods from <samp>begin</samp> onwards in the above list) accept a <samp>speed</samp> argument which is used to specify how long (in milliseconds) the scrolling animation lasts. This overrides the <samp>speed</samp> property specified in the configuration. All seeking methods always return the current scrollable instance.
 </p>
 
 <%@ include file="../graphics.jsf" %>
 
 <p>
-	<img src="img/scrollable/thumb/black.jpg" style="margin-right:20px"/>
-	<img src="img/scrollable/thumb/white.jpg" style="margin-right:50px" />
-
-	<img src="img/scrollable/arrow/left.png" style="margin-right:20px" />
-	<img src="img/scrollable/arrow/right.png" style="margin-right:50px" />
-
-	<img src="img/scrollable/arrow/left_dark.png" style="margin-right:20px" />
-	<img src="img/scrollable/arrow/right_dark.png" style="margin-right:20px" />
+	<img src="../img/scrollable/thumb/black.jpg" style="margin-right:20px"/>
+	<img src="../img/scrollable/thumb/white.jpg" style="margin-right:50px" />
+             
+	<img src="../img/scrollable/arrow/left.png" style="margin-right:20px" />
+	<img src="../img/scrollable/arrow/right.png" style="margin-right:50px" />
+             
+	<img src="../img/scrollable/arrow/left_dark.png" style="margin-right:20px" />
+	<img src="../img/scrollable/arrow/right_dark.png" style="margin-right:20px" />
 </p>
 
 
