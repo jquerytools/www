@@ -1,6 +1,6 @@
 
 /* the overlayed element */
-div.overlayRed {
+.overlayRed {
 	
 	/* growing background image */
 	background-image:url(../img/overlay/red.png);
@@ -17,7 +17,7 @@ div.overlayRed {
 	color:#fff;	
 }
 
-div.overlayRed p {
+.overlayRed p {
 	font-size:16px;	
 }
 
@@ -25,7 +25,7 @@ div.overlayRed p {
 	image is contained on the overlay background image. 
 	the closing button is thus just a transparent container. 
 */
-div.overlayRed div.close {
+.overlayRed .close {
 	background:none;
 	position:absolute;
 	left:8px;

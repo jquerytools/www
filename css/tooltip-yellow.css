@@ -1,6 +1,6 @@
 
 /* tooltip styling. uses a background image (the yellow arrow) */
-div.tooltip {
+.tooltip {
 	background:transparent url(../img/tooltip/yellow-full.png) repeat scroll 0;
 	display:none;
 	height:107px;
@@ -10,7 +10,7 @@ div.tooltip {
 }
 
 /* tooltip title element (h3) */
-div.tooltip h3 {
+.tooltip h3 {
 	margin:0 0 -10px 0;
 	font-size:16px;
 }

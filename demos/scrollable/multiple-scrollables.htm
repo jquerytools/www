@@ -82,8 +82,10 @@ ${html}
 
 <script>
 <c:set var="js">
-// enable scrolls. a simple magical one liner
-$(".scroll").scrollable({ circular: true });
+// enable circular scrollables with a click handler
+$(".scroll").scrollable({ circular: true }).click(function() {
+	$(this).data("scrollable").next();		
+});
 </c:set>
 
 ${js}

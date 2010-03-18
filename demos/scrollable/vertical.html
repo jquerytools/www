@@ -3,14 +3,13 @@
 <%@ include file="../header.jsf" %>
 
 <p>
-	Here we show you a vertical setup for a scrollable. There is a minor change compared to the <a href="index.html">minimal setup</a> and it's recommended that you study that first before continuing. This scrollable has 12 elements in total and 3 elements are shown at a time. You can scroll these items by:
+	Here we show you a vertical setup for a scrollable. There is a minor change compared to the <a href="index.html">minimal setup</a> and it's recommended that you study that first before continuing. This scrollable has 4 elements in total and each element has 3 rows that are shown at a time. You can scroll these elements by:
 </p>
 
 <ol>
 	<li>Clicking on the "more pictures" link.</li>
 	<li>Using the up and down arrow keys.</li>
 	<li>Using your mousewheel.</li>
-	<li>Clicking on the last or the first item in the list.</li>
 </ol>
 
 <%@ include file="vertical.htm" %>
@@ -30,26 +29,35 @@
 <!-- root element for scrollable -->
 <div class="scrollable vertical">
 
-	<!-- root element for the items -->
+	<!-- root element for the scrollable elements -->
 	<div class="items">
 
-		<!-- first item. can contain anything -->
+		<!-- first element. contains three rows -->
 		<div>
 
-			<!-- image -->
-			<img src="http://farm1.static.flickr.com/${img}_m.jpg" />
+			<!-- first row -->
+			<div class="item">
+			
+				<!-- image -->
+				<img src="http://farm1.static.flickr.com/${img}_m.jpg" />
+	
+				<!-- title -->
+				<h3>1. Barcelona Pavilion</h3>
+	
+				<!-- content -->
+				<p>
+					The Pavilion was not only a pioneer ...
+				</p>
+				
+			</div>
 
-			<!-- title -->
-			<h3>1. Barcelona Pavilion</h3>
-
-			<!-- content -->
-			<p>
-				The Pavilion was not only a pioneer ...
-			</p>
-
+			<!-- 2:nd and 3:rd rows -->
+			<div class="item"> ... </div>
+			<div class="item"> ... </div>
+			
 		</div>
 
-		<!-- second item (and so on) -->
+		<!-- second element with another three rows (and so on) -->
 		<div>
 			...
 		</div>
@@ -67,19 +75,19 @@
 
 <pii:code lang="css">
 /* root element for scrollable */
-div.scrollable {
+.scrollable {
 
 	/* required settings */
 	position:relative;
 	overflow:hidden;
 
-	/* vertical scrollables have typically larger height than width */
+	/* vertical scrollables have typically larger height than width but not now */
 	height: 665px;
 	width: 700px;
 }
 
 /* root element for scrollable items */
-div.scrollable div.items {
+.scrollable .items {
 	position:absolute;
 
 	/* this time we have very large space for the height */
@@ -94,18 +102,15 @@ div.scrollable div.items {
 <h3>JavaScript code</h3>
 
 <p>
-	We set the <samp>vertical</samp> property to <samp>true</samp> to achieve vertical scrolling. The <samp>size</samp> property defines how many items are visible at once. We don't want the items to be scrolled when clicked. This can be achieved by disabling the <samp>clickable</samp> configuration property.
+	The scrollable is good at guessing whether it's vertical or horizontal by investigating it's widht and height. If height is larger than width then the scrollable is vertical. This can also be manually configured with the <samp>vertical</samp> property which overrides the automatic determination. 
 </p>
 
 <p>
-	We use the <a href="${jqt}/scrollable/index.html#mousewheel">mousewheel plugin</a> to enable scrolling with the mousewheel.
+	We use the <samp>mousewheel</samp> configuration to enable scrolling with the mousewheel. You need to make sure that <a href="${jqt}/toolbox/mousewheel.html">mousewheel tool</a> is included on your page.
 </p>
 
 <pii:code>${js}</pii:code>
 
-<p>
-	You might want to disable the <samp>clickable</samp> property if you don't want the items to be scrolled by clicking on them.
-</p>
 
 <div class="box petrol">
 	Here is the <a href="vertical.htm">standalone version</a> of this demo. You can freely study and copy its source code.

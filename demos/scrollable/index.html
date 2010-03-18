@@ -3,7 +3,7 @@
 <%@ include file="../header.jsf" %>
 
 <p>
-	Here is a scrollable with 15 elements in total and 5 elements are shown at a time:
+	Here is a scrollable with 3 items in total and each of those items contains 5 images:
 </p>
 
 <div style="margin:20px -15px">
@@ -12,13 +12,7 @@
 
 
 <p>
-	You can scroll through these elements by:
-</p>
-
-<ol>
-	<li>Clicking on the elements.</li>
-	<li>Clicking on the arrow buttons.</li>
-	<li>Using the left and right arrow keys from your keyboard.</li>
+	You can scroll through these elements by clicking on the arrow buttons or using the left and right arrow keys from your keyboard. The items can contain
 </ol>
 
 <p>
@@ -28,7 +22,7 @@
 <h3>HTML code</h3>
 
 <p>
-	This is how you lay out your scrollables. You must have a root element for the scrollable and inside that another wrapper element for the items. The items can contain anything you want including images, Flash, HTML text and forms. Here we have just simple thumbnail images from flickr.com:
+	This is how you lay out your scrollables. You must have a root element for the scrollable and inside that another wrapper element for the items. The items can contain anything you want including images, Flash, HTML text and forms. Items can have any amount of child elements and they can be any sized. Here we have just simple thumbnail images from flickr.com:
 </p>
 
 <pii:code lang="html">${html}</pii:code>
@@ -36,7 +30,7 @@
 <h4>Next/prev buttons</h4>
 
 <p>
-	The scrollable tool looks for elements whose CSS class name is <samp>prevPage</samp> and <samp>nextPage</samp> and automatically binds the seeking action to them. You can also assign the <samp>next</samp> and <samp>prev</samp> CSS class names that will bind an action to scroll one <em>item</em> forward (or backward), instead of a whole page. By default the page size is 5 elements but you can change that in the <a href="${jqt}/scrollable/index.html#configuration">configuration</a>. You can also specify the names of the CSS class names to avoid any clashes with your existing CSS.
+	The scrollable tool looks for elements whose CSS class name is <samp>prev</samp> and <samp>next</samp> and automatically binds the seeking action to them. You can specify other names for the CSS class names to avoid any clashes with your existing CSS.
 </p>
 
 
@@ -47,7 +41,7 @@
 </p>
 
 <p>
-	Here are the minimal CSS settings for enabling a horizontal scrollable. Except for the <samp>width</samp> property these settings don't have any impact on the appearance. You will have probably have to tweak your <samp>width</samp> property yourself to have as many items visible at once as you want. The number of visible elements must be given to scrollable in the configuration with the <samp>size</samp> property. The default setting for <samp>size</samp> is 5 so in this example we don't have to change that property.
+	Here are the minimal CSS settings for enabling a horizontal scrollable. Except for the <samp>width</samp> property these settings don't have any impact on the appearance. You will have probably have to tweak your <samp>width</samp> property yourself to have as many items visible at once as you want. 
 </p>
 
 <pii:code lang="css">
@@ -55,7 +49,7 @@
 	root element for the scrollable.
 	when scrolling occurs this element stays still.
 */
-div.scrollable {
+.scrollable {
 
 	/* required settings */
 	position:relative;
@@ -70,7 +64,7 @@ div.scrollable {
 	it's enough that you set width and height for the root element and
 	not for this element.
 */
-div.scrollable div.items {
+.scrollable .items {
 	/* this cannot be too large */
 	width:20000em;
 	position:absolute;
@@ -81,18 +75,12 @@ div.scrollable div.items {
 	typically, this element is the one that *you* will style
 	the most.
 */
-div.scrollable div.items div {
+.items div {
 	float:left;
-}
-
-/* you may want to setup some decorations to active the item */
-div.items div.active {
-	border:1px inset #ccc;
-	background-color:#fff;
 }
 </pii:code>
 
-<p>
+<p>clickable
 	CSS coding is actually the hardest part of making scrollables and it's recommended that you have more than just a basic understanding of it.
 </p>
 
@@ -103,7 +91,6 @@ div.items div.active {
 </p>
 
 <pii:code>${js}</pii:code>
-
 
 <div class="box petrol">
 	Show this demo as a <a href="index.htm">standalone page</a>

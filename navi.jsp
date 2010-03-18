@@ -48,7 +48,7 @@
 					<li> <a href="${jqt}/demos/${demo.path}">${demo.title}</a> </li>
 				</c:forEach>
 			</ul>
-navi.jsp
+
 			<div class="clear"></div>
 			 
 		</div>	
@@ -183,7 +183,7 @@ navi.jsp
 	
 	<p>
 		<a href="http://github.com/jquerytools/jquerytools" class="external">jQuery Tools library</a>
-		<a href="http://github.com/jquerytools/jquerytools" class="external">jQuery Tools website</a>
+		<a href="http://github.com/jquerytools/www" class="external">jQuery Tools website</a>
 	</p>
 	
 	<p>

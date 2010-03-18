@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-navigator.css" />
 
 <p>
-	This demo shows you how to add and remove scrollable items. Notice how the scrollable navigator grows and the next/prev buttons behave correctly. Also note that you can also click on the new items.
+	This demo shows you how to add and remove scrollable items. Notice how the scrollable navigator grows and the next/prev buttons behave correctly. 
 </p>
 
 <div style="margin:20px -15px;">
@@ -17,13 +17,23 @@
 <br />
 
 <p>
-	This pages source code is identical to <a href="index.html">minimal setup</a> except that those add and remove buttons were added.
+	You can add items to a circulal scrollable as well. This pages source code is identical to <a href="index.html">minimal setup</a> except that those add and remove buttons were added.
 </p>
 
-<h3>Add and remove functions</h3>
+<h3>A new item</h3>
 
 <p>
-	You add and remove items using the "standard" jQuery methods <samp>append</samp> and <samp>remove</samp>. After being added you must call Scrollables' API method <samp>reload</samp> which will take care of updating the navigational buttons and click handlers of the scrollable items.
+	The item we are adding is the child element of <samp>DIV#newItem</samp>:	
+</p>
+
+<pii:code lang="html">
+${html}
+</pii:code>
+
+<h3>addItem function</h3>
+
+<p>
+	Every added item is a <samp>clone</samp> of a single DIV. We use <samp>addItem</samp> method from the <a href="${jqt}/scrollable/index.html#api">Scrollable API</a> to add new items. It takes one argument which is the new item. 
 </p>
 
 <pii:code>${actions}</pii:code>

@@ -221,7 +221,6 @@ $("#main").scrollable({
 
 	// basic settings
 	vertical: true,
-	clickable: false,
 
 	// up/down keys will always control this scrollable
 	keyboard: 'static',
@@ -235,7 +234,7 @@ $("#main").scrollable({
 }).navigator("#main_navi");
 
 // horizontal scrollables. each one is circular and has its own navigator instance
-var horizontal = $(".scrollable").scrollable({size: 1, circular: true}).navigator(".navi");
+var horizontal = $(".scrollable").scrollable({ circular: true }).navigator(".navi");
 
 
 // when page loads setup keyboard focus on the first horzontal scrollable

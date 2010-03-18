@@ -204,8 +204,8 @@
 				title: 'Large one sized Scrollable'
 			},
 			{		
-				path: 'scrollable/demo-area.html',
-				title: 'jQuery Tools demo area setup'				
+				path: 'scrollable/home.html',
+				title: 'jQuery Tools home page setup'				
 			},
 			{		
 				path: 'scrollable/site-navigation.html',

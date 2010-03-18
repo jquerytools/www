@@ -9,7 +9,7 @@
 </style>
 
 <p>
-	This demo continues from this <a href="${jqt}/demos/tabs/skins.html">tabs demo</a> and makes it scrollable. Try clicking on the tabs, content area and the action buttons below the scrollable. This scrollable uses the <samp>navigator</samp> and <samp>circular</samp> plugins.
+	This demo continues from this <a href="${jqt}/demos/tabs/skins.html">tabs demo</a> and makes it scrollable. Try clicking on the tabs, content area and the action buttons below the scrollable. This scrollable uses the <samp>navigator</samp> plugin and it is configured to be <samp>circular</samp> (no beginning or end).
 </p>
 
 <div style="margin-left:-5px">
@@ -77,7 +77,7 @@ ${css}
 <h3>JavaScript coding</h3>
 
 <p>
-	Here is the commented JavaScript setup. The circular plugin must be defined <em>before</em> the navigator plugin.
+	Here is the commented JavaScript setup. 
 </p>
 
 <pii:code>
@@ -86,10 +86,6 @@ ${js}
 
 <p>
 	Enclosing your call inside <samp>$(document).ready</samp> executes the script right after the document is scriptable. Read more about that from <a href="${jqt}/documentation/basics.html#document_ready">User's Manual</a>.
-</p>
-
-<p>
-	You may also want to try this demo <em>without</em> the circular plugin. You'll notice that by clicking on the content area it will change direction when it reaches the last item. You may also want to disable the clicking feature altogether by setting the <samp>disabled</samp> configuration property to <samp>false</samp>.
 </p>
 
 <br />

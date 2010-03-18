@@ -72,7 +72,7 @@ ul.tabs a.xl.current { background-position: 0 -62px; }
 
 
 /* initially all panes are hidden */ 
-div.panes div.pane {
+.panes .pane {
 	display:none;		
 }
 

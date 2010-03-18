@@ -196,7 +196,9 @@ instance.reload();
 	<tr>
 		<td class="code">vertical</td>
 		<td><code>false</code></td>
-		<td>Whether items will be scrolled vertically. If set to <samp>false</samp>, items will be scrolled horizontally.</td>
+		<td>
+			The scrollable is good at guessing whether it's vertical or horizontal by investigating it's dimensions. If height is larger than width then the scrollable is vertical. This can also be manually configured with the this configuration option which overrides the automatic determination. 
+		</td>
 	</tr>
 
 </table>

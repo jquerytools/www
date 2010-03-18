@@ -1,5 +1,5 @@
 <%-- :mode=jsp: --%>
-<%@ include file="../../demos/header.jsf" %>
+<%@ include file="../../../demos/header.jsf" %>
 
 <link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-horizontal.css" />
 <link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-buttons.css" />
@@ -68,7 +68,7 @@ ${html}
 </p>
 
 <pii:code lang="css">
-<%@ include file="../../css/scrollable-navigator.css" %>
+<%@ include file="../../../css/scrollable-navigator.css" %>
 </pii:code>
 
 <p>
@@ -126,33 +126,11 @@ ${html}
 </p>
 
 
-<a name="mousewheel"></a>
-<h2>Mousewheel plugin</h2>
-
-<p>
-	 This plugin enables scrolling with your mousewheel.
-</p>
-
-<div class="demowrap">
-	<%@ include file="mousewheel.htm" %>
-</div>
-
-<h4>JavaScript setup</h4>
-
-<pii:code>
-${js}
-</pii:code>
-
-<p>
-	View the <a class="standalone" href="mousewheel.htm">standalone demo</a> and the  <a href="${jqt}/scrollable/index.html#mousewheel">documentation</a> of the mousewheel plugin.
-</p>
-
-
 <a name="chain"></a>
 <h2>Chaining plugins</h2>
 
 <p>
-	Here we use all the plugins together:
+	Here we use all the plugins together. We have also enabled <samp>mousewheel</samp> and <samp>circular</samp> options.
 </p>
 
 <div class="demowrap">

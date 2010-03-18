@@ -26,7 +26,7 @@
 }
 
 /* accordion pane */
-#accordion div.pane {
+#accordion .pane {
 	border:1px solid #fff;
 	border-width:0 2px;
 	display:none;
@@ -37,7 +37,7 @@
 }
 
 /* a title inside pane */
-#accordion div.pane h3 {
+#accordion .pane h3 {
 	font-weight:normal;
 	margin:0 0 -5px 0;
 	font-size:16px;

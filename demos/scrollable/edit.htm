@@ -2,14 +2,28 @@
 <%-- :mode=jsp: --%>
 <%@ include file="plugins/navigator.htm" %>
 
+<c:set var="html">
+<div id="newItem" style="display:none">
+	<div class="added">
+		<!-- scrollable items can have anything and any amount -->
+		<img src="http://farm1.static.flickr.com/153/399232237_6928a527c1_t.jpg" />
+		<img src="http://farm4.static.flickr.com/3089/2796719087_c3ee89a730_t.jpg" />
+		<h3>New Item</h3>
+	</div>
+</div>
+</c:set>
+${html}
+
 <script>
 <c:set var="actions">
 
 function addItem() {
 
 	// get handle to scrollable API
-	$(".scrollable").data("scrollable").addItem(
-		'<div><img src="http://farm1.static.flickr.com/153/399232237_6928a527c1_t.jpg"/></div>').end();
+	var api = $(".scrollable").data("scrollable");
+	
+	// use API to add our new item. after the item is being added seek to the end
+	api.addItem($("#newItem div").clone()).end();
 }
 </c:set>
 

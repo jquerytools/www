@@ -1,6 +1,6 @@
 
 /* simple css-based tooltip */
-div.tooltip {
+.tooltip {
 	background-color:#000;
 	border:1px solid #fff;
 	padding:10px 15px;

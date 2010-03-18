@@ -15,14 +15,14 @@
 }
 
 /* container for the scrollable items */
-div.items {
+.items {
 	height:66px;	
 	margin-left:8px;
 	float:left;
 }
 
 /* single item */
-div.items a {
+.items a {
 	display:block;
 	float:left;
 	margin-right:8px;
@@ -37,11 +37,11 @@ div.items a {
 	cursor:pointer;
 }
 
-div.items a:hover {
+.items a:hover {
 	color:#999;	
 }
 
-div.items a.active {
+.items a.active {
 	background-position:-174px 0;		
 	color:#555;
 	cursor:default;
@@ -76,7 +76,7 @@ a.next:hover {
 
 
 /* navigator */
-div.navi {
+.navi {
 	position:relative;
 	top:-30px;
 	left:310px;
@@ -87,7 +87,7 @@ div.navi {
 
 
 /* items inside navigator */
-div.navi span {
+.navi span {
 	width:8px;
 	height:8px;
 	float:left;
@@ -96,10 +96,10 @@ div.navi span {
 	cursor:pointer;
 }
 
-div.navi span:hover {
+.navi span:hover {
 	background-position:0 -8px;      
 }
 
-div.navi span.active {
+.navi span.active {
 	background-position:0 -16px;     
 } 	
