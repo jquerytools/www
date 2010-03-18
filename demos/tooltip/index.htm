@@ -1,31 +1,31 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
 
-	<c:set var="wrapId" value="${empty wrapId ? 'demo' : wrapId}"/>
-	
-	<!-- tooltip styling -->
-	<style>
-	<c:set var="css">
-		/* tooltip styling */
-		.tooltip {
-			display:none;
-			background:transparent url(${cnd}${jqt}/img/tooltip/black_arrow.png);
-			font-size:12px;
-			height:70px;
-			width:160px;
-			padding:25px;
-			color:#fff;	
-		}
-		</c:set>
-		${css}
-		
-		/* style the trigger elements */
-		#${wrapId} img {
-			border:0;
-			cursor:pointer;
-			margin:0 8px;
-		}
-	</style>
+<c:set var="wrapId" value="${empty wrapId ? 'demo' : wrapId}"/>
+
+<!-- tooltip styling -->
+<style>
+<c:set var="css">
+/* tooltip styling. by default the element to be styled is .tooltip  */
+.tooltip {
+	display:none;
+	background:transparent url(${jqt}/img/tooltip/black_arrow.png);
+	font-size:12px;
+	height:70px;
+	width:160px;
+	padding:25px;
+	color:#fff;	
+}
+</c:set>
+${css}
+
+/* style the trigger elements */
+#${wrapId} img {
+	border:0;
+	cursor:pointer;
+	margin:0 8px;
+}
+</style>
 </head>
 
 <body>
@@ -35,7 +35,7 @@
 <!--[if lt IE 7]>
 <style>
 .tooltip {
-	background-image:url(${cnd}${jqt}/img/tooltip/black_arrow.gif);
+	background-image:url(${jqt}/img/tooltip/black_arrow.gif);
 }
 </style>
 <![endif]-->

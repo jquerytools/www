@@ -160,9 +160,6 @@ $(function() {
 		// move tooltip a little bit to the right
 		offset: [0, 15],
 
-		// do not initialize tooltips until they are used
-		lazy: true,
-
 		// there is no delay when the mouse is moved away from the trigger
 		delay: 0
 	});
@@ -180,7 +177,7 @@ $(function() {
 		img.parents("tr").fadeOut(function()  {
 
 			// after the row is deleted, hide our tooltip using the tooltip API
-			img.tooltip().hide();
+			img.data("tooltip").hide();
 
 		});
 

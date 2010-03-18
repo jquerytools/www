@@ -17,10 +17,7 @@
 </p>
 
 <pii:code lang="html">
-<!-- the tooltip -->
-<div id="demotip">&nbsp;</div>
-
-<!-- and the triggers -->
+<!-- elements with tooltips -->
 <div id="demo">
 	<img src="image1.jpg" title="The tooltip text #1"/>
 	<img src="image2.jpg" title="The tooltip text #2"/>
@@ -36,7 +33,7 @@
 <h3>CSS coding</h3>
 
 <p>
- 	The tooltip should be initially hidden by the CSS by setting <samp>display: none</samp>. We have no specific styling for the trigger elements.
+	By default the Tooltip generates the tooltip element automatically and assigns a CSS class name <samp>tooltip</samp> to it. It should be initially hidden by the CSS by setting <samp>display: none</samp>. We have no specific styling for the trigger elements.
 </p>
 
 <pii:code lang="css">
@@ -47,7 +44,7 @@ ${css}
 <h3>JavaScript coding</h3>
 
 <p>
-	Tooltip activation starts by selecting the trigger elements with jQuery. Here we select all <samp>img</samp> tags that have a <samp>title</samp> attribute. We supply one argument for the tooltip initialization call which is a jQuery selector to the tooltip element.
+	Tooltip activation starts by selecting the trigger elements with jQuery. Here we select all <samp>img</samp> tags that have a <samp>title</samp> attribute and are nested inside an element with id <samp>demo</samp>. We supply one argument for the tooltip initialization call which is a jQuery selector to the tooltip element.
 </p>
 
 <pii:code>
