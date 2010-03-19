@@ -1,57 +1,22 @@
+<%-- :mode=jsp: --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ include file="../../standalone.jsf" %>
 
-<!-- 
-	todo
-	- ranges
-	- validation error
-	- overlay & mask	
--->
-<style>
-body {
-	padding:50px;
-	background-color:#ddd;		
-	font-family:"sans serif";
-	font-size:11px;
-}
-</style>
-
-<link rel="stylesheet" type="text/css" href="style.css"/>
-<link rel="stylesheet" type="text/css" href="/home/tipiirai/git/www/css/dateinput/skin1.css"/>
-<link rel="stylesheet" type="text/css" href="/home/tipiirai/git/www/css/rangeinput/skin2.css"/>
-
-<!--[if IE]>
-<style>
-.sheet { border: 1px solid; border-color: #e5e5e5 #dbdbdb #d2d2d2; }
-</style> 
-<![endif]-->
-
-
-<script src="/home/tipiirai/git/jquerytools/lib/jquery-1.4.js"></script>
-<script src="/home/tipiirai/git/jquerytools/src/tabs/tabs.js"></script>
-<script src="/home/tipiirai/git/jquerytools/src/validator/validator.js"></script>
-<script src="/home/tipiirai/git/jquerytools/src/dateinput/dateinput.js"></script>
-<script src="/home/tipiirai/git/jquerytools/src/rangeinput/rangeinput.js"></script>
-
-<script>
-$(function() {
-	// tabs
-	$("#navi").tabs(".pane");		
+	<link rel="stylesheet" type="text/css" href="${jqt}/demos/combine/html5-form/style.css"/>
+	<link rel="stylesheet" type="text/css" href="${jqt}/demos/dateinput/css/skin1.css"/>
+	<link rel="stylesheet" type="text/css" href="${jqt}/demos/rangeinput/css/skin1.css"/>
 	
-	// validator
-	$("#myform").validator({ 
-		message: '<div><em/></div>',
-		position: 'top left', 
-		offset: [0, 40] 
-	});
+	<!--[if IE]>
+	<style>
+	.sheet { border: 1px solid; border-color: #e5e5e5 #dbdbdb #d2d2d2; }
+	</style> 
+	<![endif]-->
 	
-	// dateinput
-	$(":date").dateinput({ trigger: true, format: 'dddd mmm yyyy', offset: [2, 0] });
-	
-	// rangeinputs
-	$(":range").rangeinput();
-	
-});
-</script>
+</head>
 
+<body>
+
+<a id="formDemo" rel="#sheet">Open jQuery Tools Amazeness!</a>
 
 <div id="sheet" class="rounded">
 
@@ -70,7 +35,7 @@ $(function() {
 				<p>
 					<label>website</label>
 					<input type="url" required="required" />
-				</p>
+				</p>  
 				<p>
 					<label>name</label>
 					<input type="text" required="required" />
@@ -81,8 +46,8 @@ $(function() {
 				<legend>server information</legend>
 				
 				<p>
-					<label>number of processors</label>
-					<input type="range" class="range" min="2" max="20" step="9" value="4"/>
+					<label>number of processors</label> 
+					<input type="range" class="range" min="2" max="20" value="4"/>
 				</p>
 				
 				<p>
@@ -179,8 +144,7 @@ $(function() {
 
 </div>
 
-<noscript>
-Source 
+<%--
 	<!-- 
 		new HTML5 input types (email, url, range, date)
 		new standard attributes (points to required & pattern)
@@ -202,6 +166,39 @@ Source
 		$(":date").dateinput();
 		$(":range").range();
 	</script>
-</noscript>
+--%>
+
+
+<script>
+<c:set var="js">
+// validator. we use custom message layout with a CSS arrow
+$("#myform").validator({ 
+	message: '<div><em/></div>',
+	position: 'top left', 
+	offset: [0, 40]
+});
+
+// dateinput and it's configuration
+$(":date").dateinput({ trigger: true, format: 'dddd mmm yyyy', offset: [2, 0] });
+
+// rangeinput with default configuration
+$(":range").rangeinput();
+
+// overlay with masking. when overlay is loaded or closed we hide error messages if needed
+$("#formDemo").overlay({mask: '#5575ff', fixed: false}).bind("onLoad onBeforeClose", function(e)  {
+	$(".error").toggle(e.type == 'onLoad')		
+});
+	
+// tabs. possible error messages are visible only on the first tab pane
+$("#navi").tabs(".pane").bind("onClick", function(e, index) {
+	$(".error").toggle(!index);				
+});
+
+
+</c:set>
+${js}
+</script>
+
+
 
 	

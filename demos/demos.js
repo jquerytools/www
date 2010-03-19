@@ -436,8 +436,8 @@
 		
 		demos: [			
 			{		
-				path: 'combine/scrollable-gallery-with-tooltips.html',
-				title: 'A scrollable gallery with tooltips'				
+				path: 'combine/html5-form/index.html',
+				title: 'HTML5 form inside an overlay'				
 			},		
 			
 			{		
