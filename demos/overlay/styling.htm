@@ -27,6 +27,7 @@
 	#apple {
 		background-image:url(${cdn}/img/overlay/apple.png);
 		color:#fff;
+		padding:50px 70px;
 	}
 	</c:set>
 	${css}
@@ -48,7 +49,7 @@
 <!-- each overlay is initialized with this single JavaScript call -->
 <script>
 $(function() {
-		$("button[rel]").overlay({expose: '#000', effect: 'apple'});
+		$("button[rel]").overlay({mask: '#000', effect: 'apple'});
 });
 </script>
 </c:set>

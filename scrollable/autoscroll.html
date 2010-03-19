@@ -1,17 +1,21 @@
 <%-- :mode=jsp: --%>
+<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-horizontal.css" />
+<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-buttons.css" />	
 
-<a name="autoscroll"></a>
-<h2 class="plugin">Autoscroll plugin</h2>
+<h1 style="background-image:url(../img/hero/scrollable.jpg)">
+	jQuery Tools / Scrollable - New Wave UI design
+</h1>
+
+<h2 class="first">Autoscroll plugin</h2>
 
 <p>
 	The Autoscroll plugin provides an automatic scrolling capability. It advances to the next items in pre-configured intervals. Here is the autoscroll plugin in action:
 </p>
 
-<div class="demowrap">
+<div style="margin:20px -15px">
 <%@ include file="../demos/scrollable/plugins/autoscroll.htm" %>
 </div>
 
-<a name="autoscroll_features"></a>
 
 <p>
 	You can configure the number of items being scrolled and the interval of the scrolls. When navigational elements are mouseovered the automatic scrolling is paused.
@@ -25,7 +29,7 @@
 </p>
 
 <pii:code>
-$("#scroller").scrollable().autoscroll({autoplay: false});
+$("#scroller").scrollable({circular: true}).autoscroll({ autoplay: false });
 </pii:code>
 
 <a name="autoscroll_configuration"></a>

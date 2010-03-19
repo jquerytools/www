@@ -85,11 +85,11 @@ ${html}
 // What is $(document).ready ? See: http://flowplayer.org${jqt}/documentation/basics.html#document_ready
 $(document).ready(function() {
 <c:set var="js">
-var triggers = $("button.modalInput").overlay({
+var triggers = $(".modalInput").overlay({
 
-	// some expose tweaks suitable for modal dialogs
-	expose: {
-		color: '#333',
+	// some mask tweaks suitable for modal dialogs
+	mask: {
+		color: '#ebecff',
 		loadSpeed: 200,
 		opacity: 0.9
 	},

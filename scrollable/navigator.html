@@ -1,12 +1,19 @@
 <%-- :mode=jsp: --%>
-<a name="navigator"></a>
-<h2 class="plugin">Navigator plugin</h2>
+<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-horizontal.css" />
+<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-buttons.css" />	
+<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-navigator.css" />	
+
+<h1 style="background-image:url(../img/hero/scrollable.jpg)">
+	jQuery Tools / Scrollable - New Wave UI design
+</h1>
+
+<h2 class="first">Navigator plugin</h2>
 
 <p>
 	The Navigator plugin will allow your users to more easily navigate between different pages in the scrollable. This plugin is convenient if you have lots of items in a scrollable list. Here is the navigator plugin in action:
 </p>
 
-<div class="demowrap">
+<div style="margin:20px -15px">
 <%@ include file="../demos/scrollable/plugins/navigator.htm" %>
 </div>
 
@@ -113,6 +120,13 @@ $("jquery selector").scrollable().navigator({
 		<td><code>"active"</code></td>
 		<td>
 			The CSS class name for the navigator item which corresponds to the current page.
+		</td>
+	</tr>
+	<tr>
+		<td class="code">history</td>
+		<td><code>false</code></td>
+		<td>
+			<strong>Since 1.2.0</strong>. Enables support for browser's "back button" so that when user clicks on the back or forward buttons the scrollable seeks back and forward accordingly. Requires that the <a href="${jqt}/toolbox/history.html">History tool</a> is included on your page.
 		</td>
 	</tr>
 	<tr>

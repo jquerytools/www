@@ -405,7 +405,7 @@ $(function() {
 		</li>
 		<li><samp>finish</samp> configuration object has now been moved to configuration's root level. this may break old installations.</li>
 		<li><samp>getOverlay()</samp> method. The previous <samp>getContent()</samp> method is now deprecated and will be removed in Tools 1.2.0.</li>
-		<li>when <samp>closeOnClick</samp> and <samp>closeOnEsc</samp> properties are used together with the <samp>expose</samp> effect then those properties are populated to the expose tool as well</li>
+		<li>when <samp>closeOnClick</samp> and <samp>closeOnEsc</samp> properties are used together with the <samp>mask</samp> effect then those properties are populated to the Mask tool as well</li>
 		<li>If you supply a value to the <samp>close</samp> property, the overlay does not auto-generate a close button</li>
 		<li>
 			<samp>top</samp> configuration variable now accepts percentage values so that it works better in different kind of screen resolitions. By default this is 10%
@@ -432,7 +432,7 @@ $(function() {
 		<li>This tool is now part of the <strong>jQuery Tools</strong> UI library and prefix was changed from <samp>jquery.overlay</samp> to <samp>tools.overlay</samp></li>
 		<li>All changes that are <a href="#tools">common to each tool</a></li>
 		<li>When overlay is closed the animation shrinks visually towards the trigger element</li>
-		<li><samp>expose</samp> configuration variable for easy configuration of the exposing effect</li>
+		<li><samp>mask</samp> configuration variable for easy configuration of the exposing effect</li>
 		<li>Fixed a bug where in some versions of Opera overlay was positioned out of the screen</li>
 		<li>The <samp>expose()</samp> method has been removed; it was previously deprecated</li>
 		<li>There is now a <samp>closeSpeed</samp> flag that you can use to tweak the closing animation time</li>
@@ -480,7 +480,7 @@ $(function() {
 			changed existing callback names to something more descriptive: now they are <samp>onLoad</samp> and <samp>onClose</samp>
 		</li>
 		<li>
-			made overlay work so that it can work in co-operation with <samp>expose</samp> tool. example of such co-operation can be found <a href="/demos/overlay.htm">here</a>.
+			made overlay work so that it can work in co-operation with <samp>mask</samp> tool. example of such co-operation can be found <a href="/demos/overlay.htm">here</a>.
 		</li>
 	</ul>
 
@@ -572,7 +572,7 @@ $(function() {
 	</pii:code>
 
 	<p>
-		This is because now there can be multiple exposes on the page simultaneously and the behaviour is on the line with other tools. If you are exposing overlays you can now use the <samp>expose</samp> <a href="overlay/index.html#configuration">configuration variable</a> which will make your life much easier.
+		This is because now there can be multiple exposes on the page simultaneously and the behaviour is on the line with other tools. If you are exposing overlays you can now use the <samp>mask</samp> <a href="overlay/index.html#configuration">configuration variable</a> which will make your life much easier.
 	</p>
 
 

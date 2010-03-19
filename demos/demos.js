@@ -154,12 +154,7 @@
 			{		
 				path: 'overlay/custom-effect.html',
 				title: 'Creating a customized Overlay effect'
-			},					
-			{		
-				path: 'overlay/gallery.html',
-				title: 'Using the gallery plugin',
-				keywords: 'image gallery, image gallery overlay, slideshow, lighbox, lightbox gallery'
-			}			
+			}		
 		] 
 	},
 	

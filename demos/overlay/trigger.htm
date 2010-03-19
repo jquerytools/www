@@ -99,10 +99,10 @@ $(document).ready(function() {
 $("#facebox").overlay({
 
 	// custom top position
-	top: 272,
+	top: 260,
 
-	// some expose tweaks suitable for facebox-looking dialogs
-	expose: {
+	// some mask tweaks suitable for facebox-looking dialogs
+	mask: {
 
 		// you might also consider a "transparent" color for the mask
 		color: '#fff',
@@ -116,12 +116,11 @@ $("#facebox").overlay({
 
 	// disable this for modal dialog-type of overlays
 	closeOnClick: false,
+	
+	// load it immediately after the construction
+	load: true
 
-	// we want to use the programming API
-	api: true
-
-// load it immediately after the construction
-}).load();
+});
 </c:set>
 ${js}
 });

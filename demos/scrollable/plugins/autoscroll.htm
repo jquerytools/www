@@ -42,10 +42,10 @@ ${html}
 $(document).ready(function() {
 <c:set var="js">		
 // initialize scrollable together with the autoscroll plugin
-window.api = $("#${rootId}").scrollable().autoscroll({
-	autoplay: false,
-	api: true
-});
+var root = $("#${rootId}").scrollable({circular: true}).autoscroll({ autoplay: false });
+
+// provide scrollable API for the action buttons
+window.api = root.data("scrollable");
 </c:set>
 ${js}
 
