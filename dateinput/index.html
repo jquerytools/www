@@ -2,13 +2,13 @@
 
 <%--{{{ Intro --%>
 
-<h1 style="background:url(${jqt}/img/hero/dateinput.jpg) no-repeat -14px 34px">
+<h1 style="background:url(${cdn}${jqt}/img/hero/dateinput.jpg) no-repeat -14px 34px">
 	jQuery Dateinput @ jQuery Tools 
 	<em>HTML5 date input for humans</em>
 </h1>
 
 <p>
-	Focus on the following input element either by mouse or with keyboard's tab key and you'll see a calendar control. You can navigate between days with your arrow keys or with <strong>VIM</strong> keyboard shortcuts. Page UP/DOWN navigates between months and Enter selects the day. The Home key will navigate to the current day. 
+	Focus on the following input element either by mouse or with keyboard's tab key and you'll see a calendar control. You can navigate between days with your arrow keys or with <strong>VIM</strong> keyboard shortcuts (<strong>HJKL</strong>). Page UP/DOWN navigates between months and Enter selects the day. The Home key will navigate to the current day. 
 </p>
 
 <div style="margin:20px 0">
@@ -30,7 +30,7 @@
 	<h3 class="first">For nerds and humans</h3>
 	
 	<p>
-		Call <samp>$(":date").dateinput();</samp> and all your HTML5 date inputs are working. End users can pick dates with the mouse or with the keyboard arrow keys. Hackers can use <strong>VIM</strong> keyboard shortcuts to navigate between dates and months.
+		Call <samp>$(":date").dateinput();</samp> and all your HTML5 date inputs are working. End users can pick dates with the mouse or with the keyboard arrow keys. Hackers can use <strong>VIM</strong> keyboard shortcuts (<strong>HJKL</strong>) to navigate between dates and months.
 	</p>
 
 	
@@ -341,7 +341,13 @@ $(".date").dateinput({
 			<th>Description</th>
 		</tr>		
 	</thead>  
-
+	<tr>
+		<td class="code">input</td>
+		<td>class</td>
+		<td><samp>input</samp></td>
+		<td>date</td>
+		<td>The date input field</td>
+	</tr>
 	<tr>
 		<td class="code">root</td>
 		<td>id</td>

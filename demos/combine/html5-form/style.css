@@ -1,15 +1,24 @@
 
 /* overlay trigger */
-#formDemo {
-	cursor:pointer;
+#see {
+	background:transparent url(../../../img/seeitinaction.png) no-repeat scroll 0 0;
 	display:block;
-	padding:15px 50px;
-	border:1px solid #ddd;
-	background:#123;
-	text-align:center;
-	font-size:20px;
-	color:#fff;
+	height:44px;
+	overflow:hidden;
+	text-indent:-999em;
+	width:159px;
+	margin:30px 0 0 0;
+	cursor:pointer;
 }
+
+#see:hover {
+	background-position:0 -44px ;
+}
+
+#see:focus {
+	background-position:0 -88px ;
+}
+
 
 /* overlay root element */
 #sheet { 

@@ -10,7 +10,7 @@
 
 <%@ include file="../demos/tabs/slideshow.htm" %>
 
-<a name="slideshow_features"></a>
+<a name="features"></a>
 <h2>Highlights</h2>
 
 <ul>
@@ -25,19 +25,18 @@
 	</li>
 </ul>
 
-<a name="slideshow_usage"></a>
+<a name="usage"></a>
 <h2>Usage</h2>
 
 <p>
-	The best way to learn is to study the <a href="${jqt}/demos/tabs/slideshow.html">full documentation</a> for the example above.
-	For the impatient here is the JavaScript setup:
+	The best way to learn is to study the <a href="${jqt}/demos/tabs/slideshow.html">full documentation</a> for the example above. For the impatient here is the JavaScript setup:
 </p>
 
 <pii:code>
 ${js}
 </pii:code>
 
-<a name="slideshow_configuration"></a>
+<a name="configuration"></a>
 <h2>Configuration</h2>
 
 <p>
@@ -105,12 +104,8 @@ ${js}
 
 </table>
 
-<a name="slideshow_api"></a>
+<a name="api"></a>
 <h2>JavaScript API</h2>
-
-<p>
-	The following methods are <strong>added</strong> to the main <a href="#api">JavaScript API</a> of the tabs and they are ready to be used after the plugin has been installed.
-</p>
 
 <table class="listing">
 	<thead>
@@ -121,6 +116,14 @@ ${js}
 		</tr>
 	</thead>
 
+	
+	<tr>
+		<td class="code">getTabs</td>
+		<td><code><a href="index.html#api">Tabs</a></code></td>
+		<td>
+			<strong>since 1.2.0</strong>. returns a reference to the <a href="index.html#api">Tabs API</a>.
+		</td>
+	</tr>	
 	<tr>
 		<td class="code">play</td>
 		<td><code>API</code></td>

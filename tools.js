@@ -22,7 +22,7 @@
 {
 	key: 'tabs',
 	title: 'Tabs',
-	description: 'The most important UI element for the Web',
+	description: 'The most important UI tool',
 	file: 'tabs/tabs',
 	www: 'tabs/index.html'
 },
@@ -41,7 +41,7 @@
 {
 	key: 'tooltip',
 	title: 'Tooltip',
-	description: 'The second most important UI widget on the Web.',
+	description: 'The basics of UI design',
 	file: 'tooltip/tooltip',
 	www: 'tooltip/index.html'
 },

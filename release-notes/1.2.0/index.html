@@ -1,0 +1,299 @@
+<%-- :mode=jsp: --%>
+<h1 id="hero">
+	<span></span>
+	Version <i>1.2.0.</i>
+	<em>September 03, 2009 <strong>A huge upgrade + the FORM tools</strong></em>
+</h1>
+
+<script>
+$(function() {
+	$("#right a:first").addClass("selected")		      
+});
+</script>
+
+<div id="breadcrumb">
+	<a href="../index.html">Introduction to 1.2.0 &raquo;</a> Detailed list of changes
+</div>
+
+<p class="more first">
+	This library is constantly shaping. New tools are introduced and old tools are rewritten or even dropped. New configuration variables are introduced and old ones are be removed. Radical changes keeps this library cutting edge. The downside is that when you do the upgrade things may not work as expected. It happens in this version and it will happen in future versions too. 
+</p>
+	
+	
+<a name="scrollable"></a>
+<h2>Brand new Scrollable</h2>
+	
+<p>
+	Scrollable has undergone a largest change of all tools. The new scrollable is more than 50% smaller than the previous version! This was possible by changing the whole logic of the tool. The new logic is simple. Every time you want to scroll you are advancing one step. There are no pages at all. If you want pages you need to design them with HTML. Here is an example layout for scrollable that has three pages and each page has four items:
+</p>
+
+<pii:code>
+<!-- root element -->
+<div class="scrollable">
+
+	<!-- root element for scrollable items -->
+	<div class="items">
+	
+		<!-- page #1 -->
+		<div class="page">
+			<div></div> <div></div> <div></div> <div></div>
+		</div>
+		
+		<!-- page #2 -->
+		<div class="page">
+			<div></div> <div></div> <div></div> <div></div>
+		</div>
+		
+		<!-- page #3 -->
+		<div class="page">
+			<div></div> <div></div> <div></div> <div></div>
+		</div>
+	</div>
+</div>
+</pii:code>
+
+<p>
+	And the scrollable is initalized with this call:
+</p>
+
+<pii:code>
+$(".scrollable").scrollable();
+</pii:code>
+
+<p>
+	<samp>size</samp> configuration variable is no longer needed. Now you are free to design your pages and each page can have any amount of items or any HTML. 
+</p>
+
+<p>
+	Due to the lack of pages following configuration variables were removed: <samp>size, keyboardSteps, nextPage</samp> and <samp>prevPage</samp> and following methods were removed: <samp>getPageAmount, getPageIndex, movePage, nextPage, prevPage</samp> and <samp>setPage</samp>
+</p>
+
+<h3>Circular plugin</h3>
+
+<p>
+	In new scrollable inifinite looping is build inside the tool and you enable it with <samp>circular</samp> configuration property as follows: 
+</p>
+
+<pii:code>
+// 1.2. circular feature is build inside the tool
+$(".scrollable").scrollable({ circular: true });
+
+// old version. separate circular plugin
+$(".scrollable").scrollable().circular();
+</pii:code>
+
+<p>
+	The new circular feature is more solid and no longer concidered as beta. 
+</p> 
+
+<h3>Clickable</h3>
+
+<p>
+	New scrollable does not support advance forward or backward if you click on the items. If you want to implement clicking you need to do it yourself. For example:
+</p>
+
+<pii:code>
+// initialize circular scrollable
+$(".scrollable").scrollable({ circular: true }).click(function() {
+
+	// every time it is clicked it advances one step forward
+	$(this).data("scrollable").next();	
+});
+</pii:code>
+
+<p>
+	Because this feature was removed following configuration variables no longer exist: <samp>clickable</samp> and <samp>activeClass</samp>. Also <samp>click</samp> method was removed from the JavaScript API.
+</p>
+
+
+<h3>Adding new items</h3>
+
+<p>
+	Previously you added items directly with jQuery's <samp>append</samp> method and called scrollable's <samp>reload</samp>. Now there is a new <samp>addItem</samp> method that you use to add items to the scrollable. It can now be used even with circular scrollables. Examples: 
+</p>
+
+<pii:code>
+// get scrollable API
+var api = $("#myscroll").data("scrollable");
+
+// supply item as string
+api.addItem("<div>My new item</div>");
+
+// query item on the page and add it to the scrollable
+api.addItem($("#existing_item"));
+
+// create an item and add it to the scrollable
+var item = $("<div/>", { class: 'item' });
+api.addItem(item);
+</pii:code>
+
+<h3>Miscalleneous changes</h3> 
+
+<p>
+	<samp>item</samp> and <samp>globalNav</samp> configuration variables and <samp>onStart</samp> event were removed  because they were so rarely used and too complex to explain. Such features should not even exist.
+</p>
+
+<p>
+	<samp>hoverClass</samp> option was removed because this feature can easily be added with external scripting as follows:
+</p>
+
+<pii:code>
+$(".item").hover(function() {
+	$(this).toggleClass("active");
+});
+</pii:code>
+	
+<a name="tooltip"></a>
+<h2>Tooltip</h2>
+
+<p>
+	New Tooltip does not require you to create the tooltip element manually. You can simply supply the tooltip in  <samp>title</samp> attribute and call <samp>$(".tooltip_triggers").tooltip();</samp>. The tooltips are automatically generated and by default they are assigned a CSS class name <samp>tooltip</samp>. You can change the default class name with a new configuration option <samp>tipClass</samp>.
+</p>
+
+<p>
+	<samp>tip</samp> configuration option is only used when you want to use a <em>single</em> tooltip element for multiple triggers. 
+</p>
+
+<p>
+	On previous version you were able to supply <samp>tip</samp> and <samp>onBeforeShow</samp> configuration options as the only argument for the tooltip. This is no longer supported for the sake of simplicity.
+</p>
+
+<p>
+	<samp>oneInstance</samp> and <samp>lazy</samp> configuration options were removed to make the source code cleaner.
+</p>	
+	
+<a name="overlay"></a>
+<h2>Overlay</h2>
+	
+<p>
+	Following changes were made
+</p>
+
+<ul>
+	<li>removed deprecated <samp>getContent</samp> method. use <samp>getOverlay</samp> instead</li>
+	<li>removed <samp>onStart</samp> event. use <samp>onBeforeLoad</samp> instead</li>
+	<li>removed <samp>absolute</samp> configuration option. it was rarely needed</li>
+	<li><samp>expose</samp> configuration option is now deprecated in favor to <samp>mask</samp> option</li>
+</ul>
+
+<p>
+	Custom effects load method receives receives position as the first argument. For example
+</p>
+
+<pii:code>
+// load function receives two arguments instead on one. 
+$.tools.tooltip.addEffect("my-effect", function(position, done) {
+
+	// position has two properties: top and left
+	var top = position.top,
+		 left = position.left;
+
+}, function(done) {
+	
+});
+</pii:code>
+
+<a name="gallery"></a>
+<h3>No more Overlay Gallery plugin</h3>
+
+<p>
+	Previous jQuery Tools version had an Overlay Gallery plugin for making "lightbox" type of slideshow. It didn't fit to the library well mainly because of it's hard coded logic. So it was dropped! Something similar can be achieved with the the Slideshow plugin and placing it on Overlay.  
+</p>
+	
+<a name="tabs"></a>
+<h2>Tabs</h2>
+
+<p>
+	The history feature is now enabled with a <samp>history</samp> configuration option instead with a plugin.
+</p>
+
+<pii:code>
+// old version: history tabs
+$(".tabs").tabs(".panes > div").history();
+	
+// version 1.2: history option
+$(".tabs").tabs(".panes > div", { history: true });
+</pii:code>
+
+<p>
+	This requires that the <a href="${jqt}/toolbox/history.html">history tool</a> is included on the page. The new History tool can be utilized by other tools aswell. Now the new scrollable also can take advantage of the browser's back button.
+</p>	
+	
+<a name="slideshow"></a>
+<h3>Slideshow plugin for Tabs</h3>
+
+<p>
+	In previous version slideshow methods such as <samp>play, pause</samp> and <samp>stop</samp> were <em>added</em> to the JavaScript API of the Tabs. Now they are methods of the slideshow plugin itself. For example
+</p>
+
+<pii:code>
+// initialize tabs and the slideshow plugin
+$(".tabs").tabs(".panes > DIV").slideshow({ autoplay: true});
+
+// get access to slideshow API
+var api = $(".tabs").data("slideshow");
+
+// do something with the API
+api.onPause(function()  {
+	
+	// this- variable refers to the slideshow API
+	var conf = this.getConf();
+});
+</pii:code>
+
+
+
+<a name="expose"></a>
+<h2>Expose</h2>
+
+<p>
+	In new expose there is no ability to have multiple exposing masks simultaneously making the logic much more simpler and smaller. There are two terms being used: <strong>mask</strong> is a large element that is being placed on top of the document. In the new version this mask is a <em>singleton</em> that you can access with a static variable <samp>$.mask</samp>. <strong>expose</strong> is a verb that means placing selected elements on top of the mask. Here is how you work with the new Expose tool.
+</p>
+
+<pii:code>
+// place a white mask over the page
+$(document).mask();
+
+// place a mask but let selected elements show trough (expose)
+$("div.to_be_exposed").expose();
+
+// close the mask
+$.mask.close();
+</pii:code>
+
+	
+<a name="jquery"></a>
+<h2>Respecting jQuery community</h2>
+
+<p>
+	Previous version had a handy configuratino variable <samp>api</samp> for accessing Tools programming API. Many people liked it but not all. After serious thinking I decided to drop it and go with the jQuery "community". Now you'll access the api with jQuery's <samp>data</samp> method. For example
+</p>
+
+<pii:code>
+// get handle to scrollable's API
+var api = $(".scrollable").data("scrollable");
+</pii:code>
+
+The <samp>api</samp> configuration variable is still working but is now deprecated. Another common practice for jQuery users is to use <samp>bind</samp> method to assign callback methods. For example
+
+<pii:code>
+$(".scrollable").bind("seekTo", function() {
+	// Here this- variable references the DOM object
+});
+</pii:code>	
+
+<p>
+	This is now supported. You can also assign callback methods from the programming API just like before. For example 
+</p>
+
+<pii:code>
+var api = $(".scrollable").data("scrollable");
+
+api.seekTo(function() {
+	// Here this- variable references the scrollable API	
+});
+</pii:code>
+
+<p>
+	Read about <a href="${jqt}/documentation/scripting.html">events in jQuery Tools</a> to know the details.
+</p>	

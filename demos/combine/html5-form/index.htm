@@ -16,7 +16,7 @@
 
 <body>
 
-<a id="formDemo" rel="#sheet">Open jQuery Tools Amazeness!</a>
+<a href="#" rel="#sheet" id="see"></a>
 
 <div id="sheet" class="rounded">
 
@@ -185,7 +185,7 @@ $(":date").dateinput({ trigger: true, format: 'dddd mmm yyyy', offset: [2, 0] })
 $(":range").rangeinput();
 
 // overlay with masking. when overlay is loaded or closed we hide error messages if needed
-$("#formDemo").overlay({mask: '#5575ff', fixed: false}).bind("onLoad onBeforeClose", function(e)  {
+$("#see").overlay({mask: '#5575ff', fixed: false}).bind("onLoad onBeforeClose", function(e)  {
 	$(".error").toggle(e.type == 'onLoad')		
 });
 	

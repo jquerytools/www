@@ -1,16 +1,5 @@
-
 <%-- :mode=jsp: --%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-<c:if test="${empty plain}">
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/${v.jquery}/jquery.min.js"></script>
-
-<!-- include flashembed. this file is not included in the "official" jQuery tools package -->
-<script type="text/javascript" src="${cdn}/js${jqt}${jqt}.flashembed-${v.flashembed}.min.js"></script>
-</c:if>
+<%@ include file="../../standalone.jsf" %>
 
 <style>
 #flash2 {
@@ -25,7 +14,10 @@
 	margin-top:110px;
 }
 </style>
- 
+</head>
+
+<body>
+
 <script>
 <c:set var="js">
 // use the jQuery alternative for flashembed.domReady

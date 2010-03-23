@@ -2,30 +2,63 @@
 <%-- :mode=jsp: --%>
 <c:set var="tool" value="overlay"/>
 
+<%--{{{  intro--%>
+
 <style>
 #promo {
 	text-align:center;
-	margin-top:-20px;
+	margin:0 -15px 15px -5px;
+	height:200px;
+}
+
+.trigger {
+	background:url(img/eye-candy.png);
+	width:240px;
+	height:150px;
+	margin:15px 0;
+}
+
+#presentations {
+	background:url(img/presentations.png);	
+}
+
+#interactions {
+	background:url(img/interactions.png);	
+}
+
+#promo .col {
+	width:240px;
+}
+
+#promo h3 {
+	margin-top:5px;		
 }
 </style>
 
-<h1 style="background-image:url(img/hero/overlay.jpg)">
-	jQuery Tools / Overlay - A generic tool for overlaying needs
+<h1 style="background-image:url(${cdn}${jqt}/img/hero/overlay.jpg)">
+	jQuery Overlay @ jQuery Tools A generic tool for overlaying needs
 </h1>
 
 <div id="promo">
 
-	<h4>For eye candy</h4>
-	<c:set var="wrapId" value="apple_promo"/>
-	<%@ include file="../demos/overlay/apple.htm" %>
+	<div class="col">
+		<h3>For eye candy</h3>
+		
+		<div class="trigger" id="eyecandy"></div>
+	</div>
+	
+	<div class="col">
+		<h3>For presentations</h3>
+		
+		<div class="trigger" id="presentations"></div>
+	</div>
 
-	<h4>For presentations and galleries</h4>
-
-	<c:set var="wrapId" value="gallery_promo"/>
-	<%@ include file="../demos/overlay/gallery.htm" %>
-
-	<h4>For user interactions</h4>
-	<%@ include file="../demos/overlay/modal-dialog.htm" %>
+	<div class="col last">
+		<h3>For interactions</h3>
+		
+		<div class="trigger" id="interactions"></div>
+	</div>	 
+	
 </div>
 
 <br clear="all" />
@@ -77,7 +110,10 @@
 	</p>
 	
 </div>
+<%--}}}--%>
 
+
+<%--{{{  misc --%>
 
 <br clear="all" />
 
@@ -136,6 +172,10 @@ $(".my_overlay_trigger").overlay({
 <img src="../img/overlay/thumb/white.png" alt="White overlay" />
 <img src="../img/overlay/thumb/black.png" alt="White overlay" />
 <img src="../img/overlay/thumb/red.png" alt="White overlay" />
+<%--}}}--%>
+
+
+<%--{{{  configuration --%>
 
 <a name="configuration"></a>
 <h2>Configuration</h2>
@@ -152,13 +192,6 @@ $(".my_overlay_trigger").overlay({
 			<th>Description</th>
 		</tr>
 	</thead>
-	<tr>
-		<td class="code">absolute</td>
-		<td class="code">false</td>
-		<td>
-			If set to <samp>true</samp>, the overlay position is measured from the top-left corner of the browser window and the scrolling position has no impact. By default, the scrolling position is added.
-		</td>
-	</tr
 	<tr>
 		<td class="code">close</td>
 		<td><code></code></td>
@@ -205,7 +238,7 @@ $(".my_overlay_trigger").overlay({
 		<td class="code">mask</td>
 		<td><code></code></td>
 		<td>
-			Overlay is very often used together with the <a href="${jqt}/toolbox/mask.html">Mask Tool</a>. Because of this, the support for this feature has been built inside the tool. This option accepts the <a href="${jqt}/toolbox/mask.html#configuration">mask configuration</a>. This is either a simple string specifying the background color of the mask or a more complex object literal specifying more configuration variables.
+			previously known as <strong>expose</strong>. Overlay is very often used together with the <a href="${jqt}/toolbox/mask.html">Mask Tool</a>. Because of this, the support for this feature has been built inside the tool. This option accepts the <a href="${jqt}/toolbox/mask.html#configuration">mask configuration</a>. This is either a simple string specifying the background color of the mask or a more complex object literal specifying more configuration variables.
 
 			<p>
 				See an example of an <a href="../demos/overlay/modal-dialog.html">overlay together with mask</a>. By default masking is disabled.
@@ -219,6 +252,13 @@ $(".my_overlay_trigger").overlay({
 			Specifies how far from the left-hand edge of the screen the overlay should be placed. By default the overlay is horizontally centered with the value "center" but you can also supply a numerical value specifying a distance in pixels.
 		</td>
 	</tr>
+	<tr>
+		<td class="code">load</td>
+		<td class="code">false</td>
+		<td>
+			<strong>since 1.2.0</strong>. If enabled then the overlay loads immediately after it has been initialized.
+		</td>
+	</tr>	
 	<tr>
 		<td class="code">oneInstance</td>
 		<td><code>true</code></td>
@@ -250,6 +290,7 @@ $(".my_overlay_trigger").overlay({
 	</tr>
 
 </table>
+<%--}}}--%>
 
 
 <%--{{{ events --%>
@@ -297,7 +338,7 @@ $(".my_overlay_trigger").overlay({
 <%--}}}--%>
 
 
-
+<%--{{{ API --%>
 <a name="api"></a>
 <h2>Scripting <em>API</em></h2>
 
@@ -369,7 +410,6 @@ $(".my_overlay_trigger").overlay({
 <%--}}}--%>
 
 
-
 <a name="close"></a>
 <h3>Defining custom close elements</h3>
 
@@ -400,21 +440,18 @@ $(".my_overlay_trigger").overlay({
 </p>
 
 <p>
-	This method accepts three arguments. The first argument is the effect name, the second argument is the function that performs the required functionality for loading the overlay and the third argument is a function that closes the overlay. You can use this method to modify existing effects or add new ones. Here is the official default effect taken directly from the <a href="/js${jqt}${jqt}.${tool}-${v[tool]}.js?download=true">source code</a> of the overlay tool:
+	This method accepts three arguments. The first argument is the effect name, the second argument is the function that performs the required functionality for loading the overlay and the third argument is a function that closes the overlay. You can use this method to modify existing effects or add new ones. Here is the official default effect taken directly from the source code of the overlay tool:
 </p>
 
 <pii:code>
 // adds an effect called "myEffect" to the overlay
-$.tools.overlay.addEffect("myEffect",
-
-	// load function
-	function(done) {
+$.tools.overlay.addEffect("myEffect", function(position, done) {
 
 		/*
 			- the 'this' variable is a reference to the overlay API
 			- here we use jQuery's fadeIn() method to perform the effect
 		*/
-		this.getOverlay().fadeIn(this.getConf().speed, done);
+		this.getOverlay().css(position).fadeIn(this.getConf().speed, done);
 	},
 
 	// close function
@@ -428,7 +465,15 @@ $.tools.overlay.addEffect("myEffect",
 
 
 <p>
-	As you can see it is fairly easy to implement effects. Inside the functions the <samp>this</samp> variable is a pointer to the <a href="api">scripting API</a>. This gives you access to various parts of the overlay elements. The functions are fed with one argument which is a reference to a function that <strong>must</strong> be called after you have performed you effect. The reason for this is that many times those effects perform animations that have a certain duration. We must know when these animations are finished so that the <samp>onLoad</samp> and <samp>onHide</samp> events are really called <strong>after</strong> the overlay is completely shown or hidden.
+	As you can see it is fairly easy to implement effects. Inside the functions the <samp>this</samp> variable is a pointer to the <a href="api">scripting API</a>. This gives you access to various parts of the overlay elements.
+</p>
+
+<p>
+	Loading function receives two arguments. The first argument <samp>position</samp> defines the <samp>top</samp> and <samp>left</samp> properties given in the configuration. The second argument is a callback function that must be called after you have performed your loading effect.
+</p>
+
+<p>
+	The <samp>done</samp> callback received as an argument <strong>must</strong> be called after you have performed you effect. The reason for this is that many times those effects perform animations that have a certain duration. We must know when these animations are finished so that the <samp>onLoad</samp> and <samp>onHide</samp> events are really called <strong>after</strong> the overlay is completely shown or hidden.
 </p>
 
 <p>
