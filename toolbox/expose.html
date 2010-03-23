@@ -1,16 +1,13 @@
-
 <%-- :mode=jsp: --%>
-<c:set var="tool" value="mask"/>
-
 <style>
 /* tweak mask on this page */
-#maskMask {
-	background:url(/img/global/gradient_black.png) repeat-x scroll 0 -300px
+#mask {
+	background:url(${cdn}/img/global/gradient_black.png) repeat-x scroll 0 -300px
 }
 </style>
 
-<h1 style="background:url(img/hero/mask.jpg) no-repeat -2px 21px">
-	jQuery Tools / Mask - Make your HTML elements stand out
+<h1 style="background:url(${cdn}${jqt}/img/hero/expose.jpg) no-repeat -2px 21px">
+	jQuery Tools / Expose - Make your HTML elements stand out
 </h1>
 
 
@@ -20,19 +17,19 @@
 	Start entering text on the input fields below and you'll see the masking effect:
 </p>
 
-<%@ include file="../demos/toolbox/mask/form.htm" %>
+<%@ include file="../demos/toolbox/expose/form.htm" %>
 
 
 <a name="story"></a>
 <h2>The story</h2>
 
 <p>
-	Mask is a JavaScript tool that exposes selected HTML elements on the page so that the surrounding elements will gradually fade out. The mask effect was first introduced in the <a href="overlay/index.html">overlay</a> tool. Usually the effect is an integral part of the program and cannot be used separately. This tool takes the idea of masking a little further. It is a separate tool that can be used as a general purpose mask utility. You can use it for overlays, forms, images, videos or Flash objects. You can use CSS to tweak the look of the mask.
+	Mask is a JavaScript tool that exposes selected HTML elements on the page so that the surrounding elements will gradually fade out. The exposing effect was first introduced in the <a href="overlay/index.html">overlay</a> tool. Usually the effect is an integral part of the program and cannot be used separately. This tool takes the idea of masking a little further. It is a separate tool that can be used as a general purpose mask utility. You can use it for overlays, forms, images, videos or Flash objects. You can use CSS to tweak the look of the mask.
 </p>
 
 
 <a name="usage"></a>
-<h3>Usage</h3>
+<h2>Usage</h2>
 
 <p>
 	Here are some most common ways of using the mask
@@ -67,7 +64,7 @@ $.mask.close();
 </p>
 
 <ul>
-	<c:forEach items="${f:getDemo(context.toolDemos2, 'toolbox/mask/index.html').category.demos}" var="demo">
+	<c:forEach items="${f:getDemo(context.toolDemos2, 'toolbox/expose/index.html').category.demos}" var="demo">
 		<li> <a href="../demos/${demo.path}">${demo.title}</a> </li>
 	</c:forEach>
 </ul>
@@ -88,7 +85,7 @@ $.mask.close();
 <a name="graphics"></a>
 <c:set var="description">
 	<p>
-		These graphics are being used as the mask's background image. JPG versions are smaller, but they have a fixed background color. PNG images are larger, but you can use any background color in them. Here is a <a href="demos/mask/styling.html">cool example</a> where the mask's background image has been changed.
+		These graphics are being used as the mask's background image. JPG versions are smaller, but they have a fixed background color. PNG images are larger, but you can use any background color in them. Here is a <a href="demos/expose/styling.html">cool example</a> where the mask's background image has been changed.
 	</p>
 </c:set>
 
@@ -103,9 +100,9 @@ $.mask.close();
 </style>
 
 <div id="masks">
-	<img src="../img/mask/thumb/mask_gradient.jpg" />
-	<img src="../img/mask/thumb/mask_star.jpg"  />
-	<img src="../img/mask/thumb/mask_star.png" />
+	<img src="../img/expose/thumb/mask_gradient.jpg" />
+	<img src="../img/expose/thumb/mask_star.jpg"  />
+	<img src="../img/expose/thumb/mask_star.png" />
 </div>
 
 

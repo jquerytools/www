@@ -174,11 +174,11 @@
 },
 
 {
-	key: 'toolbox.mask',
-	title: 'Mask',
+	key: 'toolbox.expose',
+	title: 'Expose',
 	description: 'Makes your HTML stand out from its surroundings',
-	file: 'toolbox/toolbox.mask',
-	www: 'toolbox/mask.html'
+	file: 'toolbox/toolbox.expose',
+	www: 'toolbox/expose.html'
 },
 
 

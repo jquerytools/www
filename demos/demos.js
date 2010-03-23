@@ -352,28 +352,28 @@
 //{{{ TOOLBOX
 
 
-//{{{ Mask
+//{{{ Expose
 
-	'1. Mask': {
+	'1. Expose': {
 	
 		description: 'Make your HTML elements stand out',
-		keywords: 'mask html,mask html jquery,javascript mask,stand out html javascript,javascript mask plugin',
+		keywords: 'mask html,expose html jquery,javascript mask,stand out html javascript,javascript mask plugin',
 		
 		demos: [	
 			{		
-				path: 'toolbox/mask/index.html',
-				title: 'Minimal setup for mask'
+				path: 'toolbox/expose/index.html',
+				title: 'Minimal setup for expose'
 			},	
 			{		
-				path: 'toolbox/mask/styling.html',
+				path: 'toolbox/expose/styling.html',
 				title: 'Styling the mask with a background image'
 			},			
 			{		
-				path: 'toolbox/mask/form.html',
+				path: 'toolbox/expose/form.html',
 				title: 'Exposing a form'
 			},			
 			{		
-				path: 'toolbox/mask/video.html',
+				path: 'toolbox/expose/video.html',
 				title: 'Exposing videos with a custom mask'
 			}
 		] 
