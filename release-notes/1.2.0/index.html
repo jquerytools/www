@@ -19,7 +19,48 @@ $(function() {
 	This library is constantly shaping. New tools are introduced and old tools are rewritten or even dropped. New configuration variables are introduced and old ones are be removed. Radical changes keeps this library cutting edge. The downside is that when you do the upgrade things may not work as expected. It happens in this version and it will happen in future versions too. 
 </p>
 	
-	
+<%--{{{  all --%>
+
+<a name="all"></a>
+<h2>All Tools</h2>
+
+<p>
+	Previous version had a handy configuratino variable <samp>api</samp> for accessing Tools programming API. Many people liked it but not all. After serious thinking I decided to drop it and go with the jQuery "community". Now you'll access the api with jQuery's <samp>data</samp> method. For example
+</p>
+
+<pii:code>
+// get handle to scrollable's API
+var api = $(".scrollable").data("scrollable");
+</pii:code>
+
+The <samp>api</samp> configuration variable is still working but is now deprecated. Another common practice for jQuery users is to use <samp>bind</samp> method to assign callback methods. For example
+
+<pii:code>
+$(".scrollable").bind("seekTo", function() {
+	// Here this- variable references the DOM object
+});
+</pii:code>	
+
+<p>
+	This is now supported. You can also assign callback methods from the programming API just like before. For example 
+</p>
+
+<pii:code>
+var api = $(".scrollable").data("scrollable");
+
+api.seekTo(function() {
+	// Here this- variable references the scrollable API	
+});
+</pii:code>
+
+<p>
+	Read about <a href="${jqt}/documentation/scripting.html">events in jQuery Tools</a> to know the details.
+</p>	
+<%--}}}--%>
+
+
+<%--{{{  scrollable --%>
+
 <a name="scrollable"></a>
 <h2>Brand new Scrollable</h2>
 	
@@ -27,6 +68,7 @@ $(function() {
 	Scrollable has undergone a largest change of all tools. The new scrollable is more than 50% smaller than the previous version! This was possible by changing the whole logic of the tool. The new logic is simple. Every time you want to scroll you are advancing one step. There are no pages at all. If you want pages you need to design them with HTML. Here is an example layout for scrollable that has three pages and each page has four items:
 </p>
 
+		
 <pii:code>
 <!-- root element -->
 <div class="scrollable">
@@ -127,7 +169,29 @@ var item = $("<div/>", { class: 'item' });
 api.addItem(item);
 </pii:code>
 
+<p>
+	When an item was added a new <samp>onAddItem</samp> event is fired. 
+</p>
+
+<h3>Support for back button</h3>
+
+<p>
+	If you use the <a href="${jqt}/scrollable/navigator.html">navigator plugin</a> you have the ability to browse trough scrollable items with browser's back (and forward) buttons. For example:
+</p>
+
+<pii:code>
+$(".scrollable").scrollable().navigator({history: true});
+</pii:code>
+
+<p>
+	This feature is added with the <samp>history</samp> configuration option. It works even for dynamically added items.
+</p>
+
 <h3>Miscalleneous changes</h3> 
+
+<p>
+	New scrollable is good at guessing whether it's vertical or horizontal by investigating it's dimensions. If height is larger than width then the scrollable is vertical. You can override this automatic determination with the <samp>vertical</samp> configuration option.
+</p>
 
 <p>
 	<samp>item</samp> and <samp>globalNav</samp> configuration variables and <samp>onStart</samp> event were removed  because they were so rarely used and too complex to explain. Such features should not even exist.
@@ -142,12 +206,25 @@ $(".item").hover(function() {
 	$(this).toggleClass("active");
 });
 </pii:code>
+
+<p>
+	<samp>reload</samp> method was removed. There is no need to reload again. The tool looks for the configuration changes by itself.  
+</p>
+
+<div class="box petrol">
+	The new scrollable is so different that the <a href="${jqt}/scrollable/">documentation</a> does not say whether a feature is added or removed in this release. The documentation simply descirbes the latest version.
+</div>
+
+<%--}}}--%>
+
+	
+<%--{{{  tooltip --%>
 	
 <a name="tooltip"></a>
 <h2>Tooltip</h2>
 
 <p>
-	New Tooltip does not require you to create the tooltip element manually. You can simply supply the tooltip in  <samp>title</samp> attribute and call <samp>$(".tooltip_triggers").tooltip();</samp>. The tooltips are automatically generated and by default they are assigned a CSS class name <samp>tooltip</samp>. You can change the default class name with a new configuration option <samp>tipClass</samp>.
+	New Tooltip does not require you to create the tooltip element manually. You can simply supply the tooltip in  <samp>title</samp> attribute and call <samp>$(".tooltip_triggers").tooltip();</samp>. The tooltips are automatically generated and by default they are assigned a CSS class name <samp>tooltip</samp>. You can change the default class name with a new configuration option <samp>tipClass</samp>. You can also supply the whole HTML layout for the generated tooltips by using the new <samp>layout</samp> configuration option.
 </p>
 
 <p>
@@ -161,15 +238,26 @@ $(".item").hover(function() {
 <p>
 	<samp>oneInstance</samp> and <samp>lazy</samp> configuration options were removed to make the source code cleaner.
 </p>	
+
+
+<%--}}}--%>
+
 	
+<%--{{{  overlay --%>
+		
 <a name="overlay"></a>
 <h2>Overlay</h2>
-	
+
 <p>
-	Following changes were made
+	The biggest change on the new overlay is that the overlay positioning is fixed by default. This means that overlay stays still while the screen is scrolled. You can disable this by setting the <samp>fixed</samp> configuration property to <samp>false</samp> then the overlay is position in relation to the document so that when screen is scrolled then the overlay moves along with the document.
+</p>
+ 
+<p>
+	Here is a list of small changes for overlay in 1.2.0
 </p>
 
 <ul>
+	<li>new <samp>load</samp> option. If it is enabled then the overlay loads immediately after it has been initialized.
 	<li>removed deprecated <samp>getContent</samp> method. use <samp>getOverlay</samp> instead</li>
 	<li>removed <samp>onStart</samp> event. use <samp>onBeforeLoad</samp> instead</li>
 	<li>removed <samp>absolute</samp> configuration option. it was rarely needed</li>
@@ -199,7 +287,11 @@ $.tools.tooltip.addEffect("my-effect", function(position, done) {
 <p>
 	Previous jQuery Tools version had an Overlay Gallery plugin for making "lightbox" type of slideshow. It didn't fit to the library well mainly because of it's hard coded logic. So it was dropped! Something similar can be achieved with the the Slideshow plugin and placing it on Overlay.  
 </p>
-	
+<%--}}}--%>
+
+
+<%--{{{  tabs --%>
+
 <a name="tabs"></a>
 <h2>Tabs</h2>
 
@@ -241,14 +333,18 @@ api.onPause(function()  {
 });
 </pii:code>
 
+<%--}}}--%>
 
+
+<%--{{{  expose --%>
 
 <a name="expose"></a>
 <h2>Expose</h2>
 
 <p>
-	In new expose there is no ability to have multiple exposing masks simultaneously making the logic much more simpler and smaller. There are two terms being used: <strong>mask</strong> is a large element that is being placed on top of the document. In the new version this mask is a <em>singleton</em> that you can access with a static variable <samp>$.mask</samp>. <strong>expose</strong> is a verb that means placing selected elements on top of the mask. Here is how you work with the new Expose tool.
+	The new expose is more straightforward. There is no ability to have multiple masks simultaneously making the logic much more simpler and smaller. There are two terms being used: <strong>mask</strong> is a large element that is being placed on top of the document. In the new version this mask is a <em>singleton</em> that you can access with a static variable <samp>$.mask</samp>. <strong>expose</strong> is a verb that means placing selected elements on top of the mask. Here is how you work with the new Expose tool.
 </p>
+
 
 <pii:code>
 // place a white mask over the page
@@ -261,39 +357,27 @@ $("div.to_be_exposed").expose();
 $.mask.close();
 </pii:code>
 
-	
-<a name="jquery"></a>
-<h2>Respecting jQuery community</h2>
-
 <p>
-	Previous version had a handy configuratino variable <samp>api</samp> for accessing Tools programming API. Many people liked it but not all. After serious thinking I decided to drop it and go with the jQuery "community". Now you'll access the api with jQuery's <samp>data</samp> method. For example
+	There are two different calls: <samp>mask</samp> and <samp>expose</samp>. <samp>mask</samp> method is only available for the document object and you cannot make any other selector. The <samp>expose()</samp> method can take any jQuery selector and all elements returned by the selector are placed on top of the mask. 
 </p>
 
-<pii:code>
-// get handle to scrollable's API
-var api = $(".scrollable").data("scrollable");
-</pii:code>
-
-The <samp>api</samp> configuration variable is still working but is now deprecated. Another common practice for jQuery users is to use <samp>bind</samp> method to assign callback methods. For example
-
-<pii:code>
-$(".scrollable").bind("seekTo", function() {
-	// Here this- variable references the DOM object
-});
-</pii:code>	
-
 <p>
-	This is now supported. You can also assign callback methods from the programming API just like before. For example 
+	The mask is loaded <strong>immediately</strong> after the <samp>expose</samp> or <samp>mask</samp> call. You can supply different configuration on each call and the latest call is remembered. A subsequent <samp>expose</samp> call for example will use the previously used configuration if no arguments are given.
 </p>
 
-<pii:code>
-var api = $(".scrollable").data("scrollable");
-
-api.seekTo(function() {
-	// Here this- variable references the scrollable API	
-});
-</pii:code>
+<p>
+	You can also use existing element as a mask. By default the tool uses an element whose id is <samp>exposeMask</samp> if it does not exist it is created.
+</p>
 
 <p>
-	Read about <a href="${jqt}/documentation/scripting.html">events in jQuery Tools</a> to know the details.
-</p>	
+	New configuration variable <samp>startOpacity</samp> is initial transparency level of the mask before it starts fading in to the desired opacity as specified by the <samp>opacity</samp> option. You can for example start with full opacity and gradually fade to a semi-transparent mask.
+</p>
+
+<p>
+	On some occasions the mask did not fill the whole space on the document. Now these rare occasions have been spotted. When the mask closes all document listeners are removed making the page one thousand millisecond more responsive.
+</p>
+
+
+
+<%--}}}--%>
+

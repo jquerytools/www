@@ -202,6 +202,14 @@ events: {
 		</td>
 	</tr>
 	<tr>
+		<td class="code">layout</td>
+		<td><code>'&lt;div/&gt;'</code></td>
+		<td>
+			<strong>Since 1.2.0</strong> the HTML layout for the generated tooltip. The HTML can be as complex a layout as you wish. You can for example add a nested <samp>span</samp> element as a placeholder for an arrow.
+			
+		</td>
+	</tr>	
+	<tr>
 		<td class="code">offset</td>
 		<td><code>[0, 0]</code></td>
 		<td>
@@ -243,7 +251,13 @@ events: {
 			A jQuery selector for a single tooltip element. For example <samp>#mytip</samp>. This option is only valid if you want to define manually a single tooltip for multiple trigger elements. 
 		</td>
 	</tr>
-
+	<tr>
+		<td class="code">tipClass</td>
+		<td><code>'tooltip'</code></td>
+		<td>
+			<strong>Since 1.2.0.</strong> CSS class name for the generated tooltip element.
+		</td>
+	</tr>
 </table>
 <%--}}}--%>
 
@@ -421,7 +435,7 @@ $("label").tooltip({
 		<td class="code">isShown(fully)</td>
 		<td><code>boolean</code></td>
 		<td>
-			Returns <samp>true</samp> if the tooltip is visible. A boolean argument makes sure that the function returns <samp>true</samp> only if the tooltip is in it's final position and opacity (fully visible) and not in a fading or sliding state.
+			Returns <samp>true</samp> if the tooltip is visible. Since 1.2.0 you can supply a boolean argument that makes sure that the function returns <samp>true</samp> only if the tooltip is fully visible (in it's final position and opacity).
 		</td>
 	</tr>
 	<tr>

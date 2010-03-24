@@ -53,7 +53,15 @@ $.mask.close();
 </pii:code>
 
 <p>
-	So there are actually two different jQuery plugins: <samp>mask</samp> and <samp>mask</samp>. <samp>$(document).mask()</samp> method is only available for the document object and you cannot make any other selector. The <samp>expose()</samp> method can take any jQuery selector and all elements returned by the selector are placed on top of the mask. 
+	There are two different calls: <samp>mask</samp> and <samp>expose</samp>. <samp>mask</samp> method is only available for the document object and you cannot make any other selector. The <samp>expose()</samp> method can take any jQuery selector and all elements returned by the selector are placed on top of the mask. 
+</p>
+
+<p>
+	The mask is loaded <strong>immediately</strong> after the <samp>expose</samp> or <samp>mask</samp> call. You can supply different configuration on each call and the latest call is remembered. A subsequent <samp>expose</samp> call for example will use the previously used configuration if no arguments are given.
+</p>
+
+<p>
+	You can also use existing element as a mask. By default the tool uses an element whose id is <samp>exposeMask</samp> if it does not exist it is created.
 </p>
 
 <a name="demos"></a>
@@ -121,46 +129,6 @@ $.mask.close();
 			<th>description</th>
 		</tr>
 	</thead>
-
-	<tr>
-		<td class="code">color</td>
-		<td><code>'#fff'</code></td>
-		<td>
-			The background color of the mask. This will dramatically affect how it appears. If you supply a value of <samp>null</samp> here, you can control the background color with CSS. See the <samp>maskId</samp> property below for more information.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">opacity</td>
-		<td><code>0.8</code></td>
-		<td>
-			The transparency setting of the mask. A decimal value from 0 to 1. A bigger value means less transparency while a value of 0 is fully transparent (invisible).
-		</td>
-	</tr>
-	<tr>
-		<td class="code">loadSpeed</td>
-		<td><code>'slow'</code></td>
-		<td>
-			How fast the mask will appear. Possible values are 'slow', 'normal' and 'fast or you can supply this in milliseconds. For example, a value of 2000 will cause the mask to appear in 2 seconds. By setting this to zero there is no animation and the mask appears immediately.
-		</td>
-	</tr>
-
-	<tr>
-		<td class="code">closeSpeed</td>
-		<td><code>'fast'</code></td>
-		<td>
-			How fast the mask disappears. Possible values are 'slow', 'normal' and 'fast or you can supply this in milliseconds. For example, a value of 2000 will cause the mask to disappear in 2 seconds. By setting this to zero there is no animation and the mask disappears immediately.
-		</td>
-	</tr>
-
-	<tr><td colspan="3" style="background-color:#efefef"></td></tr>
-
-	<tr>
-		<td class="code">maskId</td>
-		<td><code>'mask'</code></td>
-		<td>
-			The mask is a normal <samp>div</samp> element placed on top of your page and whose size is automatically adjusted to cover the user's screen completely. You can style it normally with CSS just like any other element on the page. By default, the mask's <samp>id</samp> is set to <samp>mask</samp>, but you can change this with the configuration option.
-		</td>
-	</tr>
 	<tr>
 		<td class="code">closeOnClick</td>
 		<td><code>true</code></td>
@@ -174,7 +142,50 @@ $.mask.close();
 		<td>
 			Specifies whether masking disappears when the <samp>ESC</samp> key is pressed from the keyboard. By default, this is set to <samp>true</samp>.
 		</td>
+	</tr>	
+	<tr>
+		<td class="code">closeSpeed</td>
+		<td><code>'fast'</code></td>
+		<td>
+			How fast the mask disappears. Possible values are 'slow', 'normal' and 'fast or you can supply this in milliseconds. For example, a value of 2000 will cause the mask to disappear in 2 seconds. By setting this to zero there is no animation and the mask disappears immediately.
+		</td>
 	</tr>
+	
+	<tr>
+		<td class="code">color</td>
+		<td><code>'#fff'</code></td>
+		<td>
+			The background color of the mask. This will dramatically affect how it appears. If you supply a value of <samp>null</samp> here, you can control the background color with CSS. See the <samp>maskId</samp> property below for more information.
+		</td>
+	</tr>
+	<tr>
+		<td class="code">loadSpeed</td>
+		<td><code>'slow'</code></td>
+		<td>
+			How fast the mask will appear. Possible values are 'slow', 'normal' and 'fast or you can supply this in milliseconds. For example, a value of 2000 will cause the mask to appear in 2 seconds. By setting this to zero there is no animation and the mask appears immediately.
+		</td>
+	</tr>	
+	<tr>
+		<td class="code">maskId</td>
+		<td><code>'exposeMask'</code></td>
+		<td>
+			The mask is a normal <samp>div</samp> element placed on top of your page and whose size is automatically adjusted to cover the user's screen completely. You can style it normally with CSS just like any other element on the page. By default, the mask's <samp>id</samp> is set to <samp>mask</samp>, but you can change this with the configuration option. Since version 1.2.0 you can use an existing element as the mask if it's id matches the one given in this configuration option.
+		</td>
+	</tr>	
+	<tr>
+		<td class="code">opacity</td>
+		<td><code>0.8</code></td>
+		<td>
+			The transparency setting of the mask. A decimal value from 0 to 1. A bigger value means less transparency while a value of 0 is fully transparent (invisible).
+		</td>
+	</tr>
+	<tr>
+		<td class="code">startOpacity</td>
+		<td><code>0</code></td>
+		<td>
+			<strong>since 1.2.0</strong>. The initial transparency level of the mask before it starts fading in to the desired opacity as specified by the <samp>opacity</samp> option. A decimal value from 0 to 1. A bigger value means less transparency while a value of 0 is fully transparent (invisible). You can for example start with full opacity and gradually fade to a semi-transparent mask.
+		</td>
+	</tr>	
 	<tr>
 		<td class="code">zIndex</td>
 		<td><code>9998</code></td>
@@ -231,6 +242,9 @@ $("#mydiv").expose({
 });
 </pii:code>
 
+<p>
+	Note that unlike other tools you can supply callbacks only from the configuration and you can assign only one callback for the same event. 
+</p>
 
 <a name="api"></a>
 <h2>Scripting <em>API</em></h2>
