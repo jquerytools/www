@@ -1,9 +1,19 @@
 
 /* For the details, see: http://flowplayer.org/tools/dateinput/index.html#skinning */
 
+/* the input field */
+.date {
+	border:1px solid #ccc;
+	font-size:15px;
+	padding:4px;
+	text-align:center;
+	width:194px;		
+	-moz-box-shadow:0 0 10px #eee inset;
+}
 
 /* calendar root element */
 #calroot {
+	margin-top:-1px;
 	width:198px;
 	padding:2px;
 	background-color:#fff;
@@ -11,9 +21,9 @@
 	border:1px solid #ccc;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
-	-moz-box-shadow: 0 0 20px #666;
-	-webkit-box-shadow: 0 0 20px #666;		
-	box-shadow: 0 0 20px #666;		
+	-moz-box-shadow: 0 0 15px #666;
+	-webkit-box-shadow: 0 0 15px #666;		
+	box-shadow: 0 0 15px #666;		
 }
 
 /* head. contains title, prev/next month controls and possible month/year selectors */
@@ -27,7 +37,7 @@
 	color:#0150D1;	
 	float:left;
 	text-align:center;
-	width:190px;
+	width:155px;
 	line-height:20px;
 	text-shadow:0 1px 0 #ddd;
 }

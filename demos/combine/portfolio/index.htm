@@ -1,22 +1,20 @@
 <%-- :mode=jsp: --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ include file="${jqt}/demos/standalone.jsf" %>
+<%@ include file="../../../demos/standalone.jsf" %>
+<c:set var="preload" value="${empty param.preload ? preload : param.preload}"/>
+<c:set var="images" value="02, 03, 04, 06, 07, 09, 11, 12, 15, 16, 17, 19, 20, 22, 23, 59"/>
 
 	<!-- include reflection plugin -->
 	<script src="reflection.min.js"></script>
 	
 	<!-- styling -->
-	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/demos/combine/portfolio/${skin}-01.css"/>
+	<link rel="stylesheet" type="text/css" href="boxed-02.css"/>
 </head>
 
 <body>
-<%-- programming variables --%>
-<c:set var="skin" value="${empty param.skin ? 'boxed' : param.skin}"/>
-<c:set var="preload" value="${empty param.preload ? preload : param.preload}"/>
-<c:set var="images" value="02, 03, 04, 06, 07, 09, 11, 12, 15, 16, 17, 19, 20, 22, 23, 59"/>
 
 <!-- thumbnail scrollable -->
-<div class="navi prevPage"></div>
+<div class="navi prev"></div>
 
 <div id="thumbnails">
 
@@ -28,7 +26,7 @@
 
 </div>
 
-<div class="navi nextPage"></div>
+<div class="navi next"></div>
 
 <br clear="all" />
 
@@ -61,8 +59,8 @@
 	</div>
 
 	<!-- prev/next buttons -->
-	<div class="navi prevPage"></div>
-	<div class="navi nextPage"></div>
+	<div class="navi prev"></div>
+	<div class="navi next"></div>
 	<a class="close" href="#"> &nbsp; &nbsp; &nbsp; </a>
 </div>
 
@@ -80,14 +78,11 @@ $(function() {
 
 			effect: 'apple',
 			target: '#box',
-			mask: {maskId: 'mask'},
+			mask: { maskId: 'mask' },
 
-			/*
-				when box is opened, scroll to correct position (in 0 seconds)
-				the "images" variable is defined below
-			*/
+			// when box is opened, scroll to correct position (in 0 seconds)
 			onLoad: function() {
-				images.seekTo(index, 0);
+				$("#images").data("scrollable").seekTo(index, 0);
 			}
 		});
 	});
@@ -96,8 +91,8 @@ $(function() {
 	${js1}
 
 	<c:set var="js2">
-	// scrollable inside the box. Its API is assigned to the "images" variable
-	var images = $("#images").scrollable({size: 1, api:true});
+	// scrollable inside the box.
+	$("#images").scrollable();
 
 	<c:if test="${!preload}">
 	// enable tooltips for the images
@@ -125,7 +120,7 @@ $(function() {
 	<c:if test="${preload}">
 	<c:set var="js4">
 	// when scrollable moves ...
-	images.onSeek(function() {
+	$("#images").data("scrollable").onBeforeSeek(function() {
 
 		var i = this.getIndex();
 

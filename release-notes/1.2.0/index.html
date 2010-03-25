@@ -311,6 +311,10 @@ $(".tabs").tabs(".panes > div", { history: true });
 	This requires that the <a href="${jqt}/toolbox/history.html">history tool</a> is included on the page. The new History tool can be utilized by other tools aswell. Now the new scrollable also can take advantage of the browser's back button.
 </p>	
 	
+<p>
+	In this version there is no need to initially set a pane visible with CSS using <samp>display: block</samp>. The tabs automatically clicks on the first pane if all panes are hidden. In "fade" effect if a pane is already visible it is not "clicked" in vain.
+</p>
+
 <a name="slideshow"></a>
 <h3>Slideshow plugin for Tabs</h3>
 

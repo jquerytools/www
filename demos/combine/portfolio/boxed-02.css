@@ -6,14 +6,14 @@
 }
 
 /* general settings for both scrollables */
-div.items {	
+.items {	
 	width:20000em;	
 	position:absolute;
 	clear:both;
 }
 
 /* next/prev buttons */
-div.navi {
+.navi {
 	background-image:url(/tools/img/scrollable/arrow/hori_large.png);
 	width:30px;
 	height:30px;
@@ -21,14 +21,14 @@ div.navi {
 	margin-top:55px;
 }
 
-div.navi:hover  		{ background-position:-30px 0; }
-div.navi:active  		{ background-position:-60px 0; }
-div.nextPage 			{ background-position: 0 -30px; clear:right; }
-div.nextPage:hover 	{ background-position:-30px -30px; }
-div.nextPage:active 	{ background-position:-60px -30px; } 
+.navi:hover  		{ background-position:-30px 0; }
+.navi:active  		{ background-position:-60px 0; }
+.next 				{ background-position: 0 -30px; clear:right; }
+.next:hover 		{ background-position:-30px -30px; }
+.next:active 		{ background-position:-60px -30px; } 
 
 
-div.navi.disabled {
+.navi.disabled {
 	visibility:hidden;		
 }
 
@@ -39,21 +39,20 @@ div.navi.disabled {
 	overflow:hidden;	 	
 	float:left;	
 	width: 602px;	
-	height:140px;
-	background:#222 url(/img/global/gradient/h150.png) repeat-x;
+	height:130px;
+	background:#666 url(/img/global/gradient/h150.png) repeat-x;
 	margin:15px;
-	border:2px solid #fff;
-	outline:1px solid #333;
-	-moz-outline-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
 }
 
-#thumbnails div.items div {
+#thumbnails .items div {
 	padding:5px;
 	float:left;		
 }
 
 
-/* box styling */
+/* overlay styling */
 #box {
 	background-image:url(/tools/img/overlay/black.png);
 	width:656px;
@@ -86,7 +85,7 @@ div.navi.disabled {
 }
 
 /* single image */
-#images div.items div {
+#images .items div {
 	float:left;
 	width:557px;
 	height:400px;
@@ -94,7 +93,7 @@ div.navi.disabled {
 }
 
 /* the tooltip */
-#images div.items div.info {
+#images .items .info {
 	float:none;
 	background:#333;
 	color:#fff;
@@ -106,19 +105,19 @@ div.navi.disabled {
 	width:490px;
 }
 
-#images div.items div.info h3 {
+#images .items .info h3 {
 	color:#cde;
 	margin-top:10px;
 }
 	
 
 /* override button style on the overlay */
-#box div.navi {
+#box .navi {
 	position:absolute;
 	bottom:33px;
 	left:50px;
 }
 
-#box div.nextPage {
+#box .next {
 	left:580px;
 }

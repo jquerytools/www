@@ -28,7 +28,7 @@ ${html}
 <script>
 $(function() {
 <c:set var="js">
-$("ul.css-tabs").tabs("div.css-panes > div", {effect: 'ajax'}).history();
+$("ul.css-tabs").tabs("div.css-panes > div", {effect: 'ajax', history: true});
 </c:set>
 ${js}
 });

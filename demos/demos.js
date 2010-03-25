@@ -336,7 +336,7 @@
 			},
 			{		
 				path: 'dateinput/localize.html',
-				title: 'Localizing the Dateinput (finnish)'
+				title: 'Localizing the Dateinput (french)'
 			}			
 		]
 	},	 

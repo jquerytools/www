@@ -2,6 +2,11 @@
 <%@ include file="../standalone.jsf" %>
 
 	<link rel="stylesheet" type="text/css" href="css/skin1.css"/>
+	
+	<style>
+	/* a little more width for input fields */
+	.date { width:230px;	}
+	</style>
 </head>
 
 <body>
@@ -20,7 +25,7 @@ $(":date").dateinput({
 	selectors: true,             	// whether month/year dropdowns are shown
 	min: 100,                    	// min selectable day (100 days backwards)
 	max: 100,                    	// max selectable day (100 days onwards)
-	offset: [10, -5],            	// tweak the position of the calendar
+	offset: [10, 20],            	// tweak the position of the calendar
 	speed: 'fast',               	// calendar reveal speed
 	firstDay: 1                  	// which day starts a week. 0 = sunday, 1 = monday etc..
 });

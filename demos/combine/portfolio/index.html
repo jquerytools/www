@@ -1,15 +1,15 @@
 
 <%-- :mode=jsp: --%>
-<%@ include file="../../demos/header.jsf" %>
+<%@ include file="../../../demos/header.jsf" %>
 
 <p>
-	This demo shows you some of the possibilities you have when you start combining the jQuery Tools. This demo uses the scrollable, overlay, tooltip and Mask tools together. Click on the thumbnails to see larger versions of the flower images.
+	This demo shows you some of the possibilities you have when you start combining the jQuery Tools. This demo uses the scrollable, overlay, tooltip and expose tools together. Click on the thumbnails to see larger versions of the flower images.
 </p>
 
 <%@ include file="index.htm" %>
 
 <p>
-	All tools are "skin free" and they only provide the necessary functionality. For that reason you have full control over their appearance. You'll also be surprised how little JavaScript coding this setup requires. <strong>The possibilities are endless</strong>. Get creative!
+	All tools are "skin free" and they only provide the necessary functionality. For that reason you have full control over their appearance. You'll also be surprised how little JavaScript coding this setup requires. The possibilities are endless.
 </p>
 
 <h3>HTML for the thumbnail scrollable</h3>
@@ -20,7 +20,7 @@
 
 <pii:code lang="html">
 <!-- "prev page" button -->
-<div class="navi prevPage"></div>
+<div class="navi prev"></div>
 
 <!-- root element for scrollable -->
 <div id="thumbnails">
@@ -36,7 +36,7 @@
 </div>
 
 <!-- "next page" button -->
-<div class="navi nextPage"></div>
+<div class="navi next"></div>
 
 <br clear="all" />
 </pii:code>
@@ -82,8 +82,8 @@
 	</div>
 
 	<!-- prev/next buttons -->
-	<div class="navi prevPage"></div>
-	<div class="navi nextPage"></div>
+	<div class="navi prev"></div>
+	<div class="navi next"></div>
 
 </div>
 </pii:code>
@@ -91,14 +91,14 @@
 <h3>CSS coding</h3>
 
 <p>
-	As always, the CSS coding may be the hardest part of the job. We are using an external CSS file called <a href="boxed.css">boxed.css</a>.
+	As always, the CSS coding may be the hardest part of the job. We are using an external CSS file called <a href="boxed-02.css">boxed.css</a>.
 </p>
 
 
 <h3>Setting up the thumbnail <em>scrollable</em></h3>
 
 <p>
-	Here is the JavaScript configuration for the thumbnail scrollable. When the scrollable is initialized, a jQuery object is returned. We continue using that and find the actual images inside the scrollable. For those images we assign a <samp>click</samp> event which launches the overlay. The overlay constructor uses our "box" HTML element as the actual overlay. We enable the exposing effect and use a custom mask <samp>ID</samp> "mask" so that we can tweak the look of the mask with our <a href="boxed.css">CSS file</a>.
+	Here is the JavaScript configuration for the thumbnail scrollable. When the scrollable is initialized, a jQuery object is returned. We continue using that and find the actual images inside the scrollable. For those images we assign a <samp>click</samp> event which launches the overlay. The overlay constructor uses our "box" HTML element as the actual overlay. We enable the exposing effect and use a custom mask <samp>ID</samp> "mask" so that we can tweak the look of the mask with our <a href="boxed-02.css">CSS file</a>.
 </p>
 
 <p>

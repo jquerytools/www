@@ -1,9 +1,10 @@
 
 #calroot {
-	margin-top:-10px;		
+	margin-top:-22px;		
 }
 
 #calbody {
+	clear:both;
 	font-family:sans-serif;		
 	width:364px;
 	font-size:13px;
@@ -14,13 +15,31 @@
 	-webkit-box-shadow:0 0 10px 0px #ccc;
 }
 
-#caltitle {
-	font-family:sans-serif;		
-	text-align:right;
-	font-size:18px;
-	padding-bottom:5px;
+#calhead {
+	padding-left:200px;		
 }
 
+#caltitle {
+	font-family:sans-serif;		
+	text-align:center;
+	font-size:14px;
+	float:left;
+	width:130px;
+}
+
+#calnext, #calprev {
+	display:block;
+	width:20px;
+	height:20px;
+	background:transparent url(prev.gif) no-repeat scroll center center;
+	float:left;
+	cursor:pointer;
+}
+
+#calnext {
+	background-image:url(next.gif);
+	float:right;
+}
 
 #caldays span {
 	display:block;
@@ -79,6 +98,10 @@ a.calsunday {
 a.caloff {
 	color:#999;	
 	background:#eee url(../../rangeinput/img/h80.png) repeat-x;
+}
+
+a.caloff.calfocus {
+	background-color:#ddd;		
 }
 
 .caldisabled {
