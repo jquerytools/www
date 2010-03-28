@@ -4,21 +4,23 @@
 	jQuery Slideshow Plugin
 </h1>
 
-<p>
-	The slideshow plugin provides an automatic switching between tabs. It advances to the next tab in pre-configured intervals. Here is a slideshow plugin in action:
+<h2 class="first" style="text-align:center"><strong>Slideshow</strong> plugin for Tabs</h2>
+
+<p class="more" style="text-align:center">
+	Automatic switching between tabs in pre-configured intervals. 
 </p>
 
 <%@ include file="../demos/tabs/slideshow.htm" %>
 
 <a name="features"></a>
-<h2>Highlights</h2>
+<h2>Features</h2>
 
 <ul>
 	<li>
-		Easy configuration of the "previous tab" and "next tab" actions without any JavaScript. These buttons can easily be hidden when there is no next or previous tab available.
+		"Next slide" and "Previsous slide" action buttons without any JavaScript. Buttons can easily be hidden when there is no next or previous tab available.
 	</li>
 	<li>
-		When you mouseover the tab elements, the automatic switching is paused.
+		Slideshow is automatically paused when you move your mouse over any of the slideshow elements.
 	</li>
 	<li>
 		By default the next slide is shown when the active pane is clicked; however, this can be changed in the configuration.
@@ -40,7 +42,7 @@ ${js}
 <h2>Configuration</h2>
 
 <p>
-	Here is a full list of available configuration options:
+	Full list of configuration options for the Slideshow plugin.
 </p>
 
 <table class="listing">
@@ -116,7 +118,13 @@ ${js}
 		</tr>
 	</thead>
 
-	
+	<tr>
+		<td class="code">getConf</td>
+		<td><code>Object</code></td>
+		<td>
+			<strong>since 1.2.0</strong>. returns the configuration object for this plugin
+		</td>
+	</tr>		
 	<tr>
 		<td class="code">getTabs</td>
 		<td><code><a href="index.html#api">Tabs</a></code></td>

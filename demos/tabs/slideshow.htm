@@ -98,22 +98,22 @@ ${buttons}
 <script language="JavaScript">
 // What is $(document).ready ? See: http://flowplayer.org${jqt}/documentation/basics.html#document_ready
 $(function() {
-	<c:set var="js">
+<c:set var="js">
 
-	$(".slidetabs").tabs(".images > div", {
+$(".slidetabs").tabs(".images > div", {
 
-		// enable "cross-fading" effect
-		effect: 'fade',
-		fadeOutSpeed: "slow",
+	// enable "cross-fading" effect
+	effect: 'fade',
+	fadeOutSpeed: "slow",
 
-		// start from the beginning after the last tab
-		rotate: true
+	// start from the beginning after the last tab
+	rotate: true
 
-	// use the slideshow plugin. It accepts its own configuration
-	}).slideshow();
+// use the slideshow plugin. It accepts its own configuration
+}).slideshow();
 
-	</c:set>
-	${js}
+</c:set>
+${js}
 });
 </script>
 

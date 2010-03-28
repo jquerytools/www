@@ -8,29 +8,20 @@
 <c:set var="css">
 /* error container */
 #errors {
-	position:fixed;
-	top: 130px;
-	left:400px;
-	background-color:rgba(0, 0, 0, 0.7);
+	background-color:#163356;
 	color:#fff;
 	width:400px;
 	padding:20px;
+	margin:5px auto;
 	display:none;
-	z-index:2;
 	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
+	-webkit-border-radius:5px;			
 }
 
 /* title */
 #errors h2 {
 	margin:-5px 0;
 	color:yellow;
-}
-
-/* "press esc to close" */
-#errors small {
-	float:right;
-	margin-top:-25px;	
 }
 </c:set>
 ${css}
@@ -40,55 +31,63 @@ ${css}
 
 <body>
 
-<%@ include file="myform.jsf" %>
-
 <c:set var="html">
 <div id="errors">
 	<h2>Please fix these first</h2>
-	<small>press <strong>esc</strong> to close</small> 
 </div>
 </c:set>
 ${html}
+
+<%@ include file="myform.jsf" %>
+
 <script>
 <c:set var="js">
 // adds an effect called "wall" to the validator
 $.tools.validator.addEffect("wall", function(errors, event) {
 
-	// "show" function. only do stuff when form is submitted
-	if (event.originalEvent.type == 'submit') {
+	// get the message wall
+	var wall = $(this.getConf().container).fadeIn();
 	
-		// get the message wall
-		var wall = $(this.getConf().container).fadeIn();
-		
-		// remove all existing messages
-		wall.find("p").remove();
-		
-		// add new ones
-		$.each(errors, function(index, error) {
-			wall.append(
-				"<p><strong>" +error.input.attr("name")+ "</strong> " +error.messages[0]+ "</p>"
-			);		
-		});
-	}
+	// remove all existing messages
+	wall.find("p").remove();
 	
+	// add new ones
+	$.each(errors, function(index, error) {
+		wall.append(
+			"<p><strong>" +error.input.attr("name")+ "</strong> " +error.messages[0]+ "</p>"
+		);		
+	});
+	
+// the effect does nothing when all inputs are valid	
 }, function(inputs)  {
-
+	
 });
 </c:set>
 ${js}
 
 <c:set var="init">
 // initialize validator with the new effect
-$("#myform").validator({effect: 'wall', container: '#errors'});
-</c:set>
-${init}
-
-<c:set var="esc">
-$(document).keydown(function(e)  {
-	if (e.keyCode == 27)  {
-		$("#errors").fadeOut();
-	}		
+$("#myform").validator({
+   effect: 'wall', 
+   container: '#errors',
+   
+   // do not validate inputs when they are edited
+   errorInputEvent: null
+   
+// custom form submission logic  
+}).submit(function(e)  { 
+   
+   // when data is valid 
+   if (!e.isDefaultPrevented()) {
+      
+      // tell user that everything is OK
+      $("#errors").html("<h2>All good</h2>");
+      
+      // prevent the form data being submitted to the server
+      e.preventDefault();
+   } 
+   
 });
 </c:set>
-${esc}
+${init}
 </script>

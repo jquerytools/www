@@ -167,8 +167,8 @@ $(".my_overlay_trigger").overlay({
 		The <a href="/index.html">Flowplayer home page</a>. <small>Open the scripting tab and press "Show me"</small>
 	</li>
 	<li>The basics of <a href="/demos${jqt}/overlay/index.html">overlaying videos</a></li>
-	<li><a href="/demos${jqt}/fake-fullscreen.html">Custom fullscreen action in overlays</a></li>
-	<li><a href="/demos${jqt}/sharing-overlay/index.html">E-mail and embed features in overlays</a></li>
+	<li><a href="/demos/tools/fake-fullscreen.html">Custom fullscreen action in overlays</a></li>
+	<li><a href="/demos/tools/sharing-overlay/index.html">E-mail and embed features in overlays</a></li>
 </ul>
 
 <%@ include file="../graphics.jsf" %>
@@ -235,14 +235,14 @@ $(".my_overlay_trigger").overlay({
 		<td class="code">fixed</td>
 		<td><code>true</code></td>
 		<td>
-			<strong>since 1.2.0</strong>. whether overlay stays still while the screen is scrolled. this is the default behaviour. if this property is set to <samp>false</samp> then the overlay is position in relation to the document so that when screen is scrolled then the overlay moves along with the document.
+			<strong>since 1.2.0</strong>. whether overlay stays still while the screen is scrolled. this is the default behaviour for all browsers except IE6 and below. IE6 does not support fixed positioning. If this property is set to <samp>false</samp> then the overlay is position in relation to the document so that when screen is scrolled then the overlay moves along with the document.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">mask</td>
 		<td><code></code></td>
 		<td>
-			previously known as <strong>expose</strong>. Overlay is very often used together with the <a href="${jqt}/toolbox/mask.html">Mask Tool</a>. Because of this, the support for this feature has been built inside the tool. This option accepts the <a href="${jqt}/toolbox/mask.html#configuration">mask configuration</a>. This is either a simple string specifying the background color of the mask or a more complex object literal specifying more configuration variables.
+			previously known as <strong>expose</strong>. Overlay is very often used together with the <a href="${jqt}/toolbox/expose.html">Mask Tool</a>. Because of this, the support for this feature has been built inside the tool. This option accepts the <a href="${jqt}/toolbox/expose.html#configuration">mask configuration</a>. This is either a simple string specifying the background color of the mask or a more complex object literal specifying more configuration variables.
 
 			<p>
 				See an example of an <a href="../demos/overlay/modal-dialog.html">overlay together with mask</a>. By default masking is disabled.
@@ -450,26 +450,26 @@ $(".my_overlay_trigger").overlay({
 <pii:code>
 // adds an effect called "myEffect" to the overlay
 $.tools.overlay.addEffect("myEffect", function(position, done) {
-
-		/*
-			- the 'this' variable is a reference to the overlay API
-			- here we use jQuery's fadeIn() method to perform the effect
-		*/
-		this.getOverlay().css(position).fadeIn(this.getConf().speed, done);
-	},
-
-	// close function
-	function(done) {
-
-		// fade out the overlay
-		this.getOverlay().fadeOut(this.getConf().closeSpeed, done);
-	}
+      
+      /*
+        - 'this' variable is a reference to the overlay API
+        - here we use jQuery's fadeIn() method to perform the effect
+      */
+      this.getOverlay().css(position).fadeIn(this.getConf().speed, done);
+   },
+   
+   // close function
+   function(done) {
+      
+      // fade out the overlay
+      this.getOverlay().fadeOut(this.getConf().closeSpeed, done);
+   }
 );
 </pii:code>
 
 
 <p>
-	As you can see it is fairly easy to implement effects. Inside the functions the <samp>this</samp> variable is a pointer to the <a href="api">scripting API</a>. This gives you access to various parts of the overlay elements.
+	As you can see it is fairly easy to implement effects. Inside the functions the <samp>this</samp> variable is a pointer to the <a href="#api">scripting API</a>. This gives you access to various parts of the overlay elements.
 </p>
 
 <p>

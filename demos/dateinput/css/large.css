@@ -1,6 +1,17 @@
 
+/* the input field */
+.date {
+	border:1px solid #ccc;
+	font-size:18px;
+	padding:4px;
+	text-align:center;
+	width:180px;		
+	-moz-box-shadow:0 0 10px #eee inset;
+}
+
 #calroot {
-	margin-top:-22px;		
+	margin-top:-22px;	
+	width:370px;	
 }
 
 #calbody {
@@ -16,7 +27,7 @@
 }
 
 #calhead {
-	padding-left:200px;		
+	padding-left:195px;		
 }
 
 #caltitle {
@@ -119,7 +130,8 @@ a.caloff.calfocus {
 	font-size:10px;	
 }
 
-#caltoday {
+/* current day */
+#calcurrent {
 	background-color:#498CE2;
 	color:#fff;
 	text-shadow:0 1px 0 #000;
@@ -127,4 +139,10 @@ a.caloff.calfocus {
 	width:52px;
 	background-image:none;
 	-moz-box-shadow:inset 0 0 10px 0px #000;
+}
+
+/* today */
+#calcurrent {
+	background-color:#999;
+	color:#fff;
 }

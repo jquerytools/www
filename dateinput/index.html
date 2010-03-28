@@ -7,13 +7,20 @@
 	<em>HTML5 date input for humans</em>
 </h1>
 
-<p>
-	Focus on the following input element either by mouse or with keyboard's tab key and you'll see a calendar control. You can navigate between days with your arrow keys or with <strong>VIM</strong> keyboard shortcuts (<strong>HJKL</strong>). Page UP/DOWN navigates between months and Enter selects the day. The Home key will navigate to the current day. 
+<p class="more" style="margin-top:0">
+	This tool brings <strong>HTML5</strong> date input for all browsers in a way that you can make it look and behave like you want. This small candy weights only <strong>2.0 kb</strong>.
 </p>
 
 <div style="margin:20px 0">
-	<%@ include file="../demos/dateinput/large-skin.htm" %>
+	<%@ include file="../demos/dateinput/flight.htm" %>
 </div>
+
+
+<p class="less" style="margin-bottom:30px">
+	<small>
+		When the calendar is visible you can navigate between days with your <samp>Arrow Keys</samp> or with <strong>VIM</strong> keyboard shortcuts <samp>HJKL</samp>. <samp>PageUp</samp> and <samp>PageDown</samp> navigates between months and <samp>Enter</samp> selects the day. The <samp>Home</samp> key will navigate to the present day. 
+	</small>
+</p>
 
 <div class="feat">
 
@@ -30,7 +37,7 @@
 	<h3 class="first">For nerds and humans</h3>
 	
 	<p>
-		Call <samp>$(":date").dateinput();</samp> and all your HTML5 date inputs are working. End users can pick dates with the mouse or with the keyboard arrow keys. Hackers can use <strong>VIM</strong> keyboard shortcuts (<strong>HJKL</strong>) to navigate between dates and months.
+		Call <samp>$(":date").dateinput();</samp> and all your HTML5 date inputs are working. End users can select dates with the mouse or with the keyboard arrow keys. Hackers can use <strong>VIM</strong> keyboard shortcuts (<strong>HJKL</strong>) to navigate between dates and months.
 	</p>
 
 	
@@ -41,7 +48,7 @@
 	<h3>Styleable</h3>
 	
 	<p>
-		You can design date pickers that fit to the overall feel of your site. You can use images and the latest CSS3 techniques if you like. CSS class names can be changed and <samp>table</samp>s are not used, so you can even design your own layout: be it single row or vertical. Professional example skins are provided, and you can use them for free.
+		You can design calendars that fit to the overall feel of your site. You can use images and the latest CSS3 techniques if you like. CSS class names can be changed and <samp>table</samp>s are not used, so you can even design your own layout: be it single row or vertical. Professional example skins are provided, and you can use them for free.
 	</p>
 	
 </div>
@@ -85,49 +92,49 @@
 	</thead>	
 	<tr>
 		<td class="code">css</td>
-		<td>Object</td>
+		<td><code>Object</code></td>
 		<td>
 			Values for the <samp>id</samp> and <samp>class</samp> attributes of the dateinput. See <a href="#skinning">skinning</a> for the details.
 		</td> 
 	</tr>
 	<tr>
 		<td class="code">firstDay</td>
-		<td>0</td>
+		<td><code>0</code></td>
 		<td>
 			Specifies the first day of the week. Sunday = 0, Monday = 1 and so on &hellip;.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">format</td>
-		<td>'mm/dd/yy'</td>
+		<td><code>'mm/dd/yy'</code></td>
 		<td>
 			Specifies how the date value is formatted in the input field. See <a href="#formatting">formatting</a> for more details.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">lang</td>
-		<td>'en'</td>
+		<td><code>'en'</code></td>
 		<td>
 			Language to be used. Only English is built-in.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">max</td>
-		<td>0</td>
+		<td><code>0</code></td>
 		<td>
-			Latest selectable date. This is either the number of days from today (such as <samp>30</samp>) or the absolute date in rfc3339 format (eg. <samp>2015-11-25</samp>).
+			Latest selectable date. See <a href="#values">supplying date values</a>.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">min</td>
-		<td>0</td>
+		<td><code>0</code></td>
 		<td>
-			Earliest selectable date. This is either the number of days from today (such as <samp>30</samp>) or the absolute date in rfc3339 format (eg. <samp>2005-11-25</samp>).
+			Earliest selectable date. See <a href="#values">supplying date values</a>.
 		</td>
 	</tr> 
 	<tr>
 		<td class="code">offset</td>
-		<td>[0, 0]</td>
+		<td><code>[0, 0]</code></td>
 		<td>
 			The dateinput is positioned right below the input field. You can fine tune the position with this property. For example, the value <samp>[10, -20]</samp> moves the tooltip position 10px downwards and 20px to the left. The first value modifies the vertical positioning from the top edge of the tooltip and the second value modifies the horizontal positioning from the left edge of the tooltip. Positive values move the tooltip downwards (first value) or to the right (second value), while negative values move the tooltip upwards (first value) or to the left (second value).
 		</td>
@@ -135,28 +142,35 @@
 
 	<tr>
 		<td class="code">selectors</td>
-		<td>false</td>
+		<td><code>false</code></td>
 		<td>
 			Whether month and year dropdown menus are displayed.
 		</td>
 	</tr> 
 	<tr>
 		<td class="code">speed</td>
-		<td>100</td>
+		<td><code>100</code></td>
 		<td>
 			The speed (in milliseconds) in which the dateinput reveals itself.
 		</td>
 	</tr>   
 	<tr>
+		<td class="code">trigger</td>
+		<td><code>false</code></td>
+		<td>
+			Whether a trigger element is generated after the input field. This is an <samp>A</samp> tag with a CSS class name <samp>caltrigger</samp> (can be changed) that opens up the calendar when clicked.
+		</td>
+	</tr>   	
+	<tr>
 		<td class="code">value</td>
 		<td></td>
 		<td>
-			Initial value in rfc3339 format. For example: <samp>2004-02-20</samp>.
+			Initial value. See <a href="#values">supplying date values</a>.
 		</td>
 	</tr>	
 	<tr>
 		<td class="code">yearRange</td>
-		<td>[-5, 5]</td>
+		<td><code>[-5, 5]</code></td>
 		<td>
 			Range of years displayed relative to the current year.
 		</td>
@@ -194,13 +208,13 @@
 	<tr>
 		<td class="code">max</td>
 		<td>
-			Latest selectable date. This is either the number of days from today (such as <samp>30</samp>) or the absolute date in rfc3339 format (eg. <samp>2015-11-25</samp>).
+			Latest selectable date. See <a href="#values">supplying date values</a>.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">min</td>
 		<td>
-			Earliest selectable date. This is either number of days from today (such as <samp>30</samp>) or the absolute date in rfc3339 format (eg. <samp>2005-11-25</samp>).
+			Earliest selectable date. See <a href="#values">supplying date values</a>.
 		</td>
 	</tr>
 	<tr>
@@ -209,17 +223,52 @@
 	</tr>
 	<tr>
 		<td class="code">value</td>
-		<td>Initial value for the tool in rfc3339 format.</td>
+		<td>Initial value. See <a href="#values">supplying date values</a>.</td>
 	</tr>
 	<tr>
 		<td class="code">data-value</td>
 		<td>
-			Initial value for the tool in rfc3339 format. This is the primary means of providing the initial value because the <samp>value</samp> attribute is shown to the user and is typically <a href="_formatted">formatted</a>. Again, when the user picks a date, the <samp>value</samp> attribute is changed and it may be remembered by the browser, causing the initial value to differ on different page loads. So either provide the initial value with this attribute or in the configuration. This value takes precedence over the configured one.
+			Initial value. See <a href="#values">supplying date values</a>.
+			
+			<p>
+				This is the primary means of providing the initial value because the <samp>value</samp> attribute is shown to the user and is typically <a href="_formatted">formatted</a>. Again, when the user selects a date, the <samp>value</samp> attribute is changed and it may be remembered by the browser, causing the initial value to differ on different page loads. So either provide the initial value with this attribute or in the configuration. This value takes precedence over the configured one.
+			</p>
 		</td>
 	</tr>
 </table>
 <%--}}}--%>
 
+<a name="values"></a>
+<h3>Supplying date values</h3>
+
+<p>
+	This tool accepts date values from various places: configuration, JavaScript API and from input attributes. 
+</p>
+
+<pii:code>
+// supply date values from configuration 
+$(":date").dateinput({ value: new Date(2010, 3, 3), min: -10, max: 30 });
+
+// supply values from API
+$(":date").data("dateinput").setValue('2012-10-10').setMax(10);
+
+<!-- supply value from input attribute -->
+<input type="date" min="-20" max="2013-03-10" />
+</pii:code>
+	
+<p>
+	You can supply the value in three different ways. 
+</p>
+
+<ol>
+	<li>
+		<strong>rfc3339</strong> formatted string such as <samp>2015-11-25</samp>
+	</li>
+	<li>
+		<strong>number</strong> such as <samp>20</samp>. this is the number of days from the present date. Positive value moves forward (to the future) and negative value goes backward (to the past)
+	</li>
+	<li><strong>JavaScript Date</strong> object</li>  
+</ol>
 
 <%--{{{ Formatting --%>
 						
@@ -234,7 +283,7 @@
 $(".date").dateinput({
 
 	// this is displayed for the user
-	format: 'You picked: dddd / dd.mm.yyyy',
+	format: 'You selected: dddd / dd.mm.yyyy',
 	
 	// another format is send to the server
 	change: function() {
@@ -447,11 +496,18 @@ $(".date").dateinput({
 		<td>Class name for Sundays.</td>
 	</tr>
 	<tr>
+		<td class="code">current</td>
+		<td>id</td>
+		<td><samp>a</samp></td>
+		<td><samp>cal</samp>current</td>
+		<td><samp>id</samp> for the currently selected day.</td>
+	</tr>	
+	<tr>
 		<td class="code">today</td>
 		<td>id</td>
 		<td><samp>a</samp></td>
 		<td><samp>cal</samp>today</td>
-		<td><samp>id</samp> for the current day.</td>
+		<td><samp>id</samp> for the present day.</td>
 	</tr>
 	<tr>
 		<td class="code">focus</td>
@@ -463,9 +519,11 @@ $(".date").dateinput({
 	<tr>
 		<td class="code">trigger</td>
 		<td>class</td>
-		<td><samp>[any]</samp></td>
+		<td><samp>a</samp></td>
 		<td><samp>cal</samp>trigger</td>
-		<td>Selector for a user specified trigger element after the input field.</td>
+		<td>
+			Class name for the trigger element after the input field if <samp>trigger</samp> configuration variable is enabled
+		</td>
 	</tr>
 </table>
 <%--}}}--%>
@@ -483,105 +541,118 @@ $(".date").dateinput({
 <table class="listing">
 	<thead>
 		<tr>
-			<th>Method</th>
+			<th style="width:150px">Method</th>
 			<th nowrap>Return value</th>
 			<th>Description</th>
 		</tr>
 	</thead>
-
 	<tr>
-		<td class="code">getConf</td>
+		<td class="code">addDay(amount)</td>
+		<td><code>API</code></td>
+		<td>
+			Adds days to the currently selected date. The amount of days is specified in the argument. Without an argument one day is added and negative argument moves backwards. Does not have any effect when the calendar is opened.
+		</td>
+	</tr>	 
+	<tr>
+		<td class="code">addMonth(amount)</td>
+		<td><code>API</code></td>
+		<td>
+			Adds months to the currently selected date. The amount of months is specified in the argument. Without an argument one month is added and negative argument moves backwards. If you call this method while the calendar is opened then the calendar seeks forward and backward and value is not changed.
+		</td>
+	</tr>	 
+	<tr>
+		<td class="code">addYear(amount)</td>
+		<td><code>API</code></td>
+		<td>
+			Adds years to the currently selected date. The amount of years is specified in the argument. Without an argument one year is added and negative argument moves backwards. If you call this method while the calendar is opened then the calendar seeks forward and backward and value is not changed.
+		</td>
+	</tr>	
+	<tr>
+		<td class="code">getConf()</td>
 		<td><code>Object</code></td>
 		<td>
 			Returns the configuration of the current instance.
 		</td>
 	</tr>	 
 	<tr>
-		<td class="code">getDate</td>
-		<td><code>Date</code></td>
+		<td class="code">getCalendar()</td>
+		<td><code>jQuery</code></td>
 		<td>
-			Returns the current date.
+			Returns the rool element for the calendar.
 		</td>
-	</tr>	 
+	</tr>	 	
 	<tr>
-		<td class="code">getDate(format)</td>
-		<td><code>String</code></td>
-		<td>
-			Returns the current date, formatted with the pattern given as argument.
-		</td>
-	</tr>	 
-	<tr>
-		<td class="code">getInput</td>
+		<td class="code">getInput()</td>
 		<td><code>jQuery</code></td>
 		<td>
 			Returns the input field associated with the dateinput.
 		</td>
 	</tr>	 
 	<tr>
-		<td class="code">getPicker</td>
-		<td><code>jQuery</code></td>
+		<td class="code">getValue()</td>
+		<td><code>Date</code></td>
 		<td>
-			Returns the dateinput element.
+			Returns the currently selected date.
 		</td>
 	</tr>	 
 	<tr>
-		<td class="code">hide</td>
+		<td class="code">getValue(format)</td>
+		<td><code>String</code></td>
+		<td>
+			Returns the current date, <a href="#formatting">formatted</a> with the pattern given as argument.
+		</td>
+	</tr>	 	
+	<tr>
+		<td class="code">hide()</td>
 		<td><code>API</code></td>
 		<td>
-			Hides the dateinput.
+			Hides the calendar.
 		</td>
-	</tr>	 
+	</tr>
 	<tr>
-		<td class="code">next</td>
+		<td class="code">isOpen()</td>
+		<td><code>boolean</code></td>
+		<td>
+			Whether calendar is opened (<samp>true</samp>) or closed (<samp>false</samp>).
+		</td>
+	</tr>
+	<tr>
+		<td class="code">setMax(value, [fit])</td>
 		<td><code>API</code></td>
 		<td>
-			Goes one month forward.
+			Sets the latest selectable date. See <a href="#values">supplying date values</a>. If the <samp>fit</samp> argument is <samp>true</samp> and the current value is later than the maximum value then the current value is changed to the maximum value. By default <samp>fit</samp> is <samp>false</samp>. 
 		</td>
-	</tr>	 
+	</tr>	
 	<tr>
-		<td class="code">nextYear</td>
+		<td class="code">setMin(value, [fit])</td>
 		<td><code>API</code></td>
 		<td>
-			Goes one year forward.
+			Earliest selectable date. See <a href="#values">supplying date values</a>. If the <samp>fit</samp> argument is <samp>true</samp> and the current value is earlier than the minimum value then the current value is changed to the minimum value. By default <samp>fit</samp> is <samp>false</samp>.
 		</td>
-	</tr>	 
+	</tr>		
 	<tr>
-		<td class="code">prev</td>
+		<td class="code">setValue(date)</td>
 		<td><code>API</code></td>
 		<td>
-			Goes one month backward.
+			Sets the current date to the one given in the argument. Must be a JavaScript <samp>Date</samp> object. If the argument is empty and the calendar is opened then the calendar is moved to the month where the currently selected date is.
 		</td>
-	</tr>	 
+	</tr>		
 	<tr>
-		<td class="code">prevYear</td>
+		<td class="code">setValue(year, month, day)</td>
 		<td><code>API</code></td>
 		<td>
-			Goes one year backward.
+			Sets the current date. 
 		</td>
 	</tr>	 
 	<tr>
-		<td class="code">setDate(date)</td>
+		<td class="code">show()</td>
 		<td><code>API</code></td>
 		<td>
-			Sets the date to the one given in the argument. Must be a JavaScript date object.
+			Shows the calendar.
 		</td>
 	</tr>	 
 	<tr>
-		<td class="code">setDate(year, month, day)</td>
-		<td><code>API</code></td>
-		<td>
-			Sets the date.
-		</td>
-	</tr>	 
-	<tr>
-		<td class="code">show</td>
-		<td><code>API</code></td>
-		<td>
-			Shows the dateinput.
-		</td>
-	</tr>	 
-	<tr>
-		<td class="code">today</td>
+		<td class="code">today()</td>
 		<td><code>API</code></td>
 		<td>
 			Goes to today.
@@ -589,6 +660,16 @@ $(".date").dateinput({
 	</tr>	 
 
 </table>
+
+<h3>DOM <samp>valueAsDate</samp> property</h3>
+
+<p>	
+	The official HTML5 date input defines a <samp>valueAsDate</samp> property for accessing the currently selected Date. Normal <samp>value</samp> property always returns the fields value as String. For example
+</p>
+
+<pii:code>
+document.getElementsByTagName("input")[0].valueAsDate
+</pii:code>
 
 <%--}}}--%>
 
@@ -605,7 +686,7 @@ $(".date").dateinput({
 <pii:code>
 // select an input field and assign an event listener to it. 
 $(":input.date").change(function(event, date) {
-	console.info("a date was picked", date);
+	console.info("a date was selected", date);
 });
 </pii:code>
 
@@ -632,7 +713,7 @@ $(":input.date").change(function(event, date) {
 	<tr>
 		<td class="code">change</td>
 		<td>
-			When a date was picked and the field value has been changed. Note that the name is the same as the jQuery's <samp>change</samp> method and that you can bind the event directly with this function. For other events you must use the <samp>bind</samp> method. This leads to more fluent syntax as demonstrated in the example above.
+			When a date was selected and the field value has been changed. Note that the name is the same as the jQuery's <samp>change</samp> method and that you can bind the event directly with this function. For other events you must use the <samp>bind</samp> method. This leads to more fluent syntax as demonstrated in the example above.
 		</td>
 	</tr>
 	<tr>
@@ -657,10 +738,10 @@ $(":input.date").change(function(event, date) {
 <pii:code>
 // built-in localization
 $.tools.dateinput.localize("en", {
-	months: 'January,February,March,April,May,June,July,August,September,October,November,December', 
-	shortMonths: 	'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec',  
-	days: 			'Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday', 
-	shortDays: 		'Sun,Mon,Tue,Wed,Thu,Fri,Sat'	  
+   months: 'January,February,March,April,May,June,July,August,September,October,November,December', 
+   shortMonths:  'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec',  
+   days:         'Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday', 
+   shortDays:    'Sun,Mon,Tue,Wed,Thu,Fri,Sat'	  
 });
 </pii:code>
 
@@ -671,11 +752,11 @@ $.tools.dateinput.localize("en", {
 <pii:code>
 // example French localization
 $.tools.dateinput.localize("fr",  {
-	months: 			'janvier,f&eacute;vrier,mars,avril,mai,juin,juillet,ao&ucirc;t,' +
-							'septembre,octobre,novembre,d&eacute;cembre',
-	shortMonths: 		'jan,f&eacute;v,mar,avr,mai,jun,jul,ao&ucirc;,sep,oct,nov,d&eacute;c',
-	days: 			'dimanche,lundi,mardi,mercredi,jeudi,vendredi,samedi',
-	shortDays: 		'dim,lun,mar,mer,jeu,ven,sam'
+   months:      'janvier,f&eacute;vrier,mars,avril,mai,juin,juillet,ao&ucirc;t,' +
+                'septembre,octobre,novembre,d&eacute;cembre',
+   shortMonths: 'jan,f&eacute;v,mar,avr,mai,jun,jul,ao&ucirc;,sep,oct,nov,d&eacute;c',
+   days:        'dimanche,lundi,mardi,mercredi,jeudi,vendredi,samedi',
+   shortDays:   'dim,lun,mar,mer,jeu,ven,sam'
 });
 </pii:code>
 

@@ -94,12 +94,10 @@ ${html}
 
 <script>
 // What is $(document).ready ? See: http://flowplayer.org${jqt}/documentation/basics.html#document_ready
-<c:set var="js">
 $(document).ready(function() {
-		
-	// enable tooltip for "download" element. use the "slide" effect
-	$("#download_now").tooltip({ effect: 'slide'}); 
-});
+<c:set var="js">
+$("#download_now").tooltip({ effect: 'slide'}); 
 </c:set>
 ${js}
+});
 </script>

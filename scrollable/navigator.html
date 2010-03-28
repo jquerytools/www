@@ -34,10 +34,9 @@ ${html}
 
 <pii:code lang="html">
 <div class="navi">
-	<a href="0" class="active"></a>
-	<a href="1" ></a>
-	<a href="2" ></a>
-	<a href="3" ></a>
+	<a href="#0" class="active"></a>
+	<a href="#1" ></a>
+	<a href="#2" ></a>
 </div>
 </pii:code>
 
@@ -89,7 +88,7 @@ $("jquery selector").scrollable().navigator({
 </p>
 
 <p>
-	If you are using <samp>a</samp> tags inside the wrap and you supply <samp>href</samp> attributes for them you have the added benefit of automatically the seeking to the correct item when you enter the page with a matching "hash" on the URL. For example if you go to an URL <samp>mypage.html#second</samp> for the above setup the scrollable will automatically seek to the Second item. You can see an example of this <a href="demos/scrollable/one-sized.html#plugins">here</a>. Note that the third tab is automatically opened.
+	If you are using <samp>a</samp> tags inside the wrap and you supply <samp>href</samp> attributes for them you have the added benefit of automatically the seeking to the correct item when you enter the page with a matching "hash" on the URL. For example if you go to an URL <samp>mypage.html#second</samp> for the above setup the scrollable will automatically seek to the Second item. You can see an example of this <a href="../demos/scrollable/one-sized.html#plugins">here</a>. Note that the third tab is automatically opened.
 </p>
 
 <a name="navigator_configuration"></a>
@@ -108,38 +107,12 @@ $("jquery selector").scrollable().navigator({
 			<th>description</th>
 		</tr>
 	</thead>
-	<tr>
-		<td class="code">navi</td>
-		<td><code>".navi"</code></td>
-		<td>
-			Selector for the element that contains a navigator for switching between pages. You can have any amount of navigator elements on your page and they will all do the same thing. If you want to instantiate multiple scrollables with a navigator instance then you should <a href="#multiple">read this</a>.
-		</td>
-	</tr>
+
 	<tr>
 		<td class="code">activeClass</td>
 		<td><code>"active"</code></td>
 		<td>
 			The CSS class name for the navigator item which corresponds to the current page.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">history</td>
-		<td><code>false</code></td>
-		<td>
-			<strong>Since 1.2.0</strong>. Enables support for browser's "back button" so that when user clicks on the back or forward buttons the scrollable seeks back and forward accordingly. Requires that the <a href="${jqt}/toolbox/history.html">History tool</a> is included on your page.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">naviItem</td>
-		<td><code></code></td>
-		<td>
-			<p>
-				The HTML element name for navigational items which are auto-populated inside the navigator. If none is supplied the <samp>a</samp> tag will be used.
-			</p>
-
-			<p>
-				In manual setup this property is used to select the elements inside the root element that will be used as navigator items. The <samp>activeClass</samp> CSS class name is assigned for these items. If this property is not supplied the direct children for the root element are used as navigator items.
-			</p>
 		</td>
 	</tr>
 	<tr>
@@ -155,6 +128,33 @@ $("jquery selector").scrollable().navigator({
 		<td>
 			If this is enabled then the auto-populated navigator elements will have an index number.
 		</td>
+	</tr>	
+	<tr>
+		<td class="code">history</td>
+		<td><code>false</code></td>
+		<td>
+			<strong>Since 1.2.0</strong>. Enables support for browser's "back button" so that when user clicks on the back or forward buttons the scrollable seeks back and forward accordingly. Requires that the <a href="${jqt}/toolbox/history.html">History tool</a> is included on your page.
+		</td>
+	</tr>
+	<tr>
+		<td class="code">navi</td>
+		<td><code>".navi"</code></td>
+		<td>
+			Selector for the element that contains a navigator for switching between pages. You can have any amount of navigator elements on your page and they will all do the same thing. If you want to instantiate multiple scrollables with a navigator instance then you should <a href="index.html#multiple">read this</a>.
+		</td>
+	</tr>	
+	<tr>
+		<td class="code">naviItem</td>
+		<td><code></code></td>
+		<td>
+			<p>
+				The HTML element name for navigational items which are auto-populated inside the navigator. If none is supplied the <samp>a</samp> tag will be used.
+			</p>
+
+			<p>
+				In manual setup this property is used to select the elements inside the root element that will be used as navigator items. The <samp>activeClass</samp> CSS class name is assigned for these items. If this property is not supplied the direct children for the root element are used as navigator items.
+			</p>
+		</td>
 	</tr>
 
 </table>
@@ -163,6 +163,6 @@ $("jquery selector").scrollable().navigator({
 <h3>JavaScript API</h3>
 
 <p>
-	The navigator plugin <em>overrides</em> the <samp>getNaviButtons</samp> methods of the <a href="#api">scrollable API</a> so that it will also contain the navigator element.
+	The navigator plugin <em>overrides</em> the <samp>getNaviButtons</samp> methods of the <a href="index.html#api">scrollable API</a> so that it will also contain the navigator element.
 </p>
 

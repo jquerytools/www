@@ -1,53 +1,25 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
 
-	<style>
-	label {
-		font-size:11px;		
-	}
-	
-	label input {
-		display:block;	
-		margin-bottom:25px;		
-	}
-	
-	.error {
-		width:220px;
-		height:15px;
-		background-color:#fff500;
-		font-size:11px;
-		padding:4px;
-		border:1px solid #ddd;
-	}
-	
-	fieldset {
-		padding:10px 10px 0 10px;
-		float:left;
-		width:200px;
-		margin-right:20px;
-		border:1px solid #ccc;
-		background:#fff url(${ctx}/img/global/gradient/h500.png) repeat-x 0 0;
-		-moz-box-shadow:0 0 6px #ccc;
-		-webkit-box-shadow:0 0 6px #ccc;
-		-moz-border-radius:10px;
-		-webkit-border-radius:10px;
-	}
-	
-	.clear {
-		clear:both;
-		height:1px;
-	}
-	</style>
-	
+<c:set var="css">
+<!-- same styling as in minimal setup --> 
+<link rel="stylesheet" type="text/css" href="css/form.css"/>
+
+<!-- override it to have a columned layout -->
+<link rel="stylesheet" type="text/css" href="css/columns.css"/>
+</c:set> 
+${css}
 </head>
 
 <body>
 
 <c:set var="html">
-<form id="myform">
+<form id="myform" class="cols">
+	
+	<h3>HTML5 form with custom inputs</h3>
 
 	<fieldset>
-		<label> email * <input type="email" required="required" minlength="20" /> </label> 
+		<label> email * <input type="email" required="required" minlength="9" /> </label> 
 		<label> username * <input type="text" name="username" minlength="5" /> </label> 
 		<label> Password <input type="password" name="password" minlength="4" /> </label> 
 		<label> Password check <input type="password" name="check" data-equals="password" /> </label>
@@ -62,9 +34,7 @@
 
 	<div class="clear"></div>
 	
-	<p>
-		<button type="submit">Submit form</button>
-	</p>
+	<button type="submit">Submit form</button>
 	
 </form>
 </c:set>
@@ -107,7 +77,11 @@ $.tools.validator.localizeFn("[type=time]", {
 ${v4}
 
 <c:set var="js">
-$("#myform").validator({ offset: [-12, 0] });
+$("#myform").validator({ 
+	position: 'top left', 
+	offset: [-12, 0],
+	message: '<div><em/></div>' // em element is the arrow
+});
 </c:set>
 ${js}
 </script>

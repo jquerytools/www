@@ -306,10 +306,6 @@
 				title: 'Many, many small ranges'
 			},
 			{		
-				path: 'rangeinput/skin.html',
-				title: 'Alternate range skin'
-			},
-			{		
 				path: 'rangeinput/scrollbar.html',
 				title: 'A custom scrollbar for a DIV'
 			}
@@ -334,6 +330,10 @@
 				path: 'dateinput/customize.html',
 				title: 'Customizing Dateinput behaviour'
 			},
+			{		
+				path: 'dateinput/flight.html',
+				title: 'Prompting for start and end dates'
+			},				
 			{		
 				path: 'dateinput/localize.html',
 				title: 'Localizing the Dateinput (french)'
@@ -383,7 +383,7 @@
 
 //{{{ Flashembed
 
-	'3. Flashembed': {
+	'2. Flashembed': {
 	
 		description: 'The Future of Flash embedding',
 		keywords: 'javascript tabs, jquery tabs, javascript tabbed navigation, ajax tabs, tab history',

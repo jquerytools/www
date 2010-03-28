@@ -12,29 +12,22 @@
 
 <%--{{{  intro --%>
 
-<div class="feat">
+<div class="feat" style="min-height:100px">
 	
 	<h3 class="first">Simple or Rich</h3>
 	
 	<p>
-		A simple call such as <samp>$("img[title]").tooltip();</samp> will enable tooltips by taking advantage of the element's <samp>title</samp> attribute. 
-	</p>
-	
-	<p>
-		If you want complex tips with images, tables, forms and links that's possible by placing the tooltip element manually next to the trigger element. 
+		A simple call such as <samp>$("img[title]").tooltip();</samp> will enable tooltips by taking advantage of the element's <samp>title</samp> attribute. If you want complex tips with images, tables, forms and links that's possible by placing the tooltip element manually next to the trigger element. 
 	</p>
 	
 </div>
 	
-<div class="feat last">
+<div class="feat last" style="min-height:100px">
 
 	<h3 class="first">Configure looks, timings and positioning</h3>
 		
 	<p>
-		Use CSS to create rounded borders, arrows, gradients or shadows. Big or small, high or low. 
-	</p>
-	
-		Use the configuration to tweak pre- and after delays and positioning to your personal needs.
+		Use CSS to create rounded borders, arrows, gradients or shadows. Big or small, high or low. Use the configuration to tweak pre- and after delays and positioning to your personal needs.
 	</p>
 	
 </div>
@@ -43,11 +36,7 @@
 	<h3>Fading, sliding, dynamic</h3>
 	
 	<p>
-		Tooltip comes with two built-in effects: <samp>toggle</samp>, and <samp>fade</samp> and one separate effect: <a href="#slide">slide</a> and you can easily <a href="#effects">build your own effects</a>.
-	</p>
-	
-	<p>
-		A <a href="#dynamic">dynamic plugin</a> will dynamically change the tooltip's position so that it always stays in the viewport.
+		Tooltip comes with two built-in effects: <samp>toggle</samp>, and <samp>fade</samp> and one separate effect: <a href="slide.html">slide</a> and you can easily <a href="#effects">build your own effects</a>. A <a href="dynamic.html">dynamic plugin</a> will dynamically change the tooltip's position so that it always stays in the viewport.
 	</p>
 	
 </div>
@@ -81,7 +70,7 @@ $("[title]").tooltip();
 
 
 <p>
-	You select one or more elements with a <a href="http://api.jquery.com/category/selectors/" class="external">jQuery selector</a> that will trigger the tooltip(s). Trigger's <samp>title</samp> attribute will be used as the tooltip. The actual tooltip element is auto-generated when it is being shown for the first time.
+	You select one or more elements with a jQuery selector that will trigger the tooltip(s). Trigger's <samp>title</samp> attribute will be used as the tooltip. The actual tooltip element is auto-generated when it is being shown for the first time. Look for the <a href="../demos/tooltip/index.html">minimal setup</a> to understand the basics.
 </p>
 
 <h3>Manual tooltips</h3>
@@ -188,10 +177,10 @@ $(".trigger").tooltip({ position: "bottom left", opacity: 0.7});
 
 <pii:code>
 events: {
-	def: 	 "mouseover,mouseout",
-	input: 	"focus,blur",
-	widget:	"focus mouseover,blur mouseout",
-	tooltip:		"mouseover,mouseout"
+  def:     "mouseover,mouseout",
+  input:   "focus,blur",
+  widget:  "focus mouseover,blur mouseout",
+  tooltip: "mouseover,mouseout"
 }
 </pii:code>
 
@@ -341,10 +330,10 @@ $("label").tooltip({
 
 <pii:code>
 events: {
-	def: 	 "mouseenter,mouseleave",				// default show/hide events for an element
-	input: 	"focus,blur",						// for all input elements
-	widget:	"focus mouseenter,blur mouseleave",	// select, checkbox, radio, button
-	tooltip:		"mouseenter,mouseleave"			// the tooltip element
+  def:     "mouseenter,mouseleave",    // default show/hide events for an element
+  input:   "focus,blur",               // for all input elements
+  widget:  "focus mouseenter,blur mouseleave",  // select, checkbox, radio, button
+  tooltip: "mouseenter,mouseleave"     // the tooltip element
 }
 </pii:code>
 

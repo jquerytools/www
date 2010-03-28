@@ -2,9 +2,9 @@
 <%-- :mode=jsp: --%>
 <c:set var="tool" value="scrollable"/>
 
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-horizontal.css?v=0" />
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-buttons.css?v=0" />
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-navigator.css?v=0" />
+<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-horizontal.css?v=1" />
+<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-buttons.css?v=1" />
+<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-navigator.css?v=1" />
 
 <style>
 #flowtabs li {
@@ -72,7 +72,7 @@ div.demowrap {
 		<td class="code">easing</td>
 		<td><code>"swing"</code></td>
 		<td>
-			The type of "easing" applied to the scrolling animation. 'swing' means that there is an acceleration, followed by a constant speed, followed by a deceleration. 'linear' means that the whole animation happens at a constant speed. You can also make your <a href="demos/scrollable/easing.html">own easing effects</a>.
+			The type of "easing" applied to the scrolling animation. 'swing' means that there is an acceleration, followed by a constant speed, followed by a deceleration. 'linear' means that the whole animation happens at a constant speed. You can also make your <a href="../demos/scrollable/easing.html">own easing effects</a>.
 		</td>
 	</tr>
 	<tr>
@@ -86,7 +86,7 @@ div.demowrap {
 			</p>
 
 			<p>
-				See <a href="demos/scrollable/">minimal setup</a> for an understanding of the HTML setup for scrollable.
+				See <a href="../demos/scrollable/">minimal setup</a> for an understanding of the HTML setup for scrollable.
 			</p>
 		</td>
 	</tr>
@@ -97,7 +97,7 @@ div.demowrap {
 			Whether or not keyboard arrow key navigation is enabled. The horizontal scroller moves backwards/forwards with the left/right arrow keys; the vertical scroller moves with the up/down keys. The arrow keys are valid for the scrollable that was used most recently. Since version 1.1.0 you can also supply the value <samp>'static'</samp> here which means that the scrollable is always controlled with the arrow keys and it does not have to be active.
 
 			<p>
-				You can also use the <samp>focus()</samp> method to specify the focus to a certain scrollable on the page. You can take a look at the <a href="demos/scrollable/site-navigation.html">A complete scrollable navigational system</a> demo which takes advantage of the "static" value and the <samp>focus()</samp> method.
+				You can also use the <samp>focus()</samp> method to specify the focus to a certain scrollable on the page. You can take a look at the <a href="../demos/scrollable/site-navigation.html">A complete scrollable navigational system</a> demo which takes advantage of the "static" value and the <samp>focus()</samp> method.
 			</p>
 
 			<p>
@@ -244,14 +244,35 @@ $(".vertical").scrollable();
 <table class="listing">
 	<thead>
 		<tr>
-			<th>Method</th>
+			<th style="width:150px">Method</th>
 			<th nowrap>Return value</th>
 			<th>Description</th>
 		</tr>
 	</thead>
 	<tr>
+		<td class="code">addItem()</td>
+		<td><code><a href="#api">API</a></code></td>
+		<td>
+			scrollable supports the dynamic addition and removal of scrollable elements and all core functionalities such as circular looping, navigator resizing, browser back button (via toolbox.history) will work as expected. Take a look at this <a href="${jqt}/demos/scrollable/edit.html">demo</a> for more details. 
+		</td>
+	</tr> 	
+	<tr>
+		<td class="code">begin(speed)</td>
+		<td><code><a href="#api">API</a></code></td>
+		<td>
+			Moves to the beginning. Identical to <samp>seekTo(0)</samp>.
+		</td>
+	</tr>
+	<tr>
+		<td class="code">end(speed)</td>
+		<td><code><a href="#api">API</a></code></td>
+		<td>
+			Moves to the end.
+		</td>
+	</tr>	
+	<tr>
 		<td class="code">focus()</td>
-		<td><code>API</code></td>
+		<td><code><a href="#api">API</a></code></td>
 		<td>
 			After this call the keyboard arrow keys will control this particular scrollable instance.
 		</td>
@@ -306,53 +327,29 @@ $(".vertical").scrollable();
 		</td>
 	</tr>
 	<tr>
-		<td class="code">addItem()</td>
-		<td><code>API</code></td>
-		<td>
-			scrollable supports the dynamic addition and removal of scrollable elements and all core functionalities such as circular looping, navigator resizing, browser back button (via toolbox.history) will work as expected. Take a look at this <a href="${jqt}/demos/scrollable/edit.html">demo</a> for more details. 
-		</td>
-	</tr>
-	
-	<tr><td colspan="3" style="background-color:#efefef"></td></tr>
-	
-	<tr>
-		<td class="code">begin(speed)</td>
-		<td><code>API</code></td>
-		<td>
-			Moves to the beginning. Identical to <samp>seekTo(0)</samp>.
-		</td>
-	</tr>
-	<tr>
-		<td class="code">end(speed)</td>
-		<td><code>API</code></td>
-		<td>
-			Moves to the end.
-		</td>
-	</tr>
-	<tr>
 		<td class="code">move(offset, speed)</td>
-		<td><code>API</code></td>
+		<td><code><a href="#api">API</a></code></td>
 		<td>
 			Moves a certain number of items from the current position. For example, <samp>move(2)</samp> moves two items forward. Negative numbers move backwards.
 		</td>
 	</tr>	
 	<tr>
 		<td class="code">next(speed)</td>
-		<td><code>API</code></td>
+		<td><code><a href="#api">API</a></code></td>
 		<td>
 			Scrolls one item forward.
 		</td>
 	</tr>	
 	<tr>
 		<td class="code">prev(speed)</td>
-		<td><code>API</code></td>
+		<td><code><a href="#api">API</a></code></td>
 		<td>
 			Scrolls one item backward.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">seekTo(index, speed)</td>
-		<td><code>API</code></td>
+		<td><code><a href="#api">API</a></code></td>
 		<td>
 			Seeks to the specified index.
 		</td>
@@ -362,7 +359,7 @@ $(".vertical").scrollable();
 <%--}}}--%>
 
 <p>
-	All seeking methods (the methods from <samp>begin</samp> onwards in the above list) accept a <samp>speed</samp> argument which is used to specify how long (in milliseconds) the scrolling animation lasts. This overrides the <samp>speed</samp> property specified in the configuration. All seeking methods always return the current scrollable instance.
+	The <samp>speed</samp> argument is used to specify how long (in milliseconds) the scrolling animation lasts. This overrides the <samp>speed</samp> property specified in the configuration. 
 </p>
 
 <%@ include file="../graphics.jsf" %>

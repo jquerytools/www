@@ -1,0 +1,42 @@
+#myform {
+	width:500px;		
+}
+
+#myform fieldset {
+	background-image:none;
+	float:left;
+	width:250px;
+} 
+
+#myform label {
+	font-size:11px;		
+	margin-top:20px;
+	display:block;
+}
+
+#myform label input {
+	display:block;	
+}
+
+.clear {
+	clear:both;
+	height:15px;		
+}
+
+.error {
+	margin:0 0 2px;
+	padding:2px 6px;	
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px; 		
+}
+
+.error em {
+	border:10px solid;
+	border-color:#FFFE36 transparent transparent;
+	bottom:-17px;
+	display:block;
+	height:0;
+	left:60px;
+	position:absolute;
+	width:0;			
+}

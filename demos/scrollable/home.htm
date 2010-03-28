@@ -248,6 +248,11 @@ api.onBeforeSeek(function(e, i) {
 	// when on the first item: hide the intro
 	if (i) {
 		$("#intro").fadeOut("slow");
+		
+		// dirty hack for IE7-. cannot explain
+		if ($.browser.msie && $.browser.version < 8) {
+			$("#intro").hide();	
+		}					
 
 	// otherwise show the intro
 	} else {

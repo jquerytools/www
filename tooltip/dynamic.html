@@ -3,11 +3,10 @@
 	jQuery Tooltip dynamic positioning
 </h1>
 
-<h2 class="effect first">Tooltip / <em>dynamic plugin</em></h2>
-
+<h2 class="first"><strong>Dynamic plugin</strong> for Tooltip</h2>
 
 <p>
-	Below you can see triggers whose tooltip is centered on the top edge of the trigger. <a href="#lower">Click here</a> to scroll a little lower and see how the tooltips behave now. We are using the <a href="${jqt}/tooltip/index.html#dynamic">dynamic plugin</a> which repositions our tooltips so that they are always visible in the viewport.
+	<a href="#lower">Click here</a> to scroll a little lower and see how the tooltips behave. We are using dynamic plugin to reposition our tooltips so that they are always visible in the viewport.
 </p>
 
 <a name="lower"></a>
@@ -18,8 +17,8 @@
 </p>
 
 
-<a name="dynamic_features"></a>
-<h3>Highlights</h3>
+<a name="features"></a>
+<h2>Features</h2>
 
 <ul>
 	<li>Can be used with any effect</li>
@@ -35,20 +34,24 @@
 	<li>Small file size: only about 2kb of minified code. Uncomparable.</li>
 </ul>
 
-<a name="dynamic_usage"></a>
-<h3>Usage</h3>
+<a name="usage"></a>
+<h2>Usage</h2>
 
 <p>
-	The best way to learn is to study the <a href="${jqt}/demos/tooltip/dynamic.html">full documentation</a> for the example above. For the impatient here is the JavaScript setup:
+	Here is the JavaScript setup for the example above.
 </p>
 
 <pii:code>
 ${js}
 </pii:code>
 
+<p>
+	Read the <a href="${jqt}/demos/tooltip/dynamic.html">full documentation</a> for this example.
+</p>
 
-<a name="dynamic_configuration"></a>
-<h3>Configuration</h3>
+
+<a name="dynamic"></a>
+<h2>Configuration</h2>
 
 <p>
 	Here is a full list of available configuration options for this plugin.
@@ -71,39 +74,32 @@ ${js}
 	</tr>
 	<tr>
 		<td class="code">top</td>
-		<td><code>undefined</code></td>
+		<td><code></code></td>
 		<td>
 			An object with alternate configuration options that will override the default settings when the tooltip is repositioned on the top edge. For example: <samp>{offset: [40, -30], effect: 'toggle', opacity: 0.9}</samp>.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">right</td>
-		<td><code>undefined</code></td>
+		<td><code></code></td>
 		<td>
 			Alternate configuration options for the right edge.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">bottom</td>
-		<td><code>undefined</code></td>
+		<td><code></code></td>
 		<td>
 			Alternate configuration options for the bottom edge.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">left</td>
-		<td><code>undefined</code></td>
+		<td><code></code></td>
 		<td>
 			Alternate configuration options for the left edge.
 		</td>
 	</tr>
 
-
 </table>
 
-
-
-
-<p>
-	<strong>Note</strong>: Currently this plugin cannot be used when the <samp>lazy</samp> configuration variable is enabled for the tooltip.
-</p>

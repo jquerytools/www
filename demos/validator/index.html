@@ -1,10 +1,6 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../header.jsf" %>
 
-<p>
-	Submit the form below with invalid data or without anyt input and you'll see the validator in action.
-</p>
-
 <%@ include file="index.htm" %>
 
 <h3>HTML coding</h3>
@@ -35,11 +31,33 @@ $("#myform").validator();
 <h3>CSS coding</h3>
 
 <p>
-	We have given some spice for the error message. Note that <samp>height</samp> property should be give for the error message to ensure consistent positioning for every browser. We have defined <samp>label</samp> element as a block level element so that it appears on it's own "line".
+	We have used one <a href="css/form.css">external stylesheet</a> for the looks. It has styling for the whole form. Here we focus on the validation and the error message. 
 </p>
 
 <pii:code lang="css">
-<%@ include file="css/form.css" %>
+/* error message */
+.error {
+	/* supply height to ensure consistent positioning for every browser */
+	height:15px;
+	background-color:#FFFE36;
+	border:1px solid #E1E16D;
+	font-size:11px; 
+	color:#000;
+	padding:3px 10px;
+	margin-left:-2px;
+	
+	
+	/* CSS3 spicing for mozilla and webkit */ 
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px; 
+	-moz-border-radius-bottomleft:0;
+	-moz-border-radius-topleft:0;	
+	-webkit-border-bottom-left-radius:0; 
+	-webkit-border-top-left-radius:0;
+	
+	-moz-box-shadow:0 0 6px #ddd;
+	-webkit-box-shadow:0 0 6px #ddd;	
+}
 </pii:code>
 
 

@@ -3,9 +3,12 @@
 
 	<!-- dateinput styling -->
 	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/demos/dateinput/css/skin1.css"/>
+
+<c:if test="${empty plain}">
 </head>
 
-<body>
+<body>	
+</c:if>
 
 	<!-- HTML5 date input -->
 	<input type="date" name="mydate" />

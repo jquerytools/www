@@ -1,28 +1,22 @@
 
 /* For the details, see: http://flowplayer.org/tools/dateinput/index.html#skinning */
 
-/* the input field */
-.date {
-	border:1px solid #ccc;
-	font-size:18px;
-	padding:4px;
-	text-align:center;
-	width:194px;		
-	-moz-box-shadow:0 0 10px #eee inset;
-}
-
 /* calendar root element */
 #calroot {
-	margin-top:-1px;
-	width:198px;
-	padding:2px;
+	font-family:sans-serif;
 	background-color:#fff;
-	font-size:11px;
 	border:1px solid #ccc;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	-moz-box-shadow: 0 0 15px #666;
-	-webkit-box-shadow: 0 0 15px #666;	
+	border-width:0 1px 1px;
+	padding-top:10px;
+	height:160px;
+	width:227px;	
+	display:none;
+	margin:5px 0 0 -7px;
+	
+	-moz-border-radius-topleft:0;
+	-moz-border-radius-topright:0;	
+	-webkit-border-top-left-radius:0;
+	-webkit-border-top-right-radius:0;		
 }
 
 /* head. contains title, prev/next month controls and possible month/year selectors */
@@ -36,7 +30,7 @@
 	color:#0150D1;	
 	float:left;
 	text-align:center;
-	width:155px;
+	width:160px;
 	line-height:20px;
 	text-shadow:0 1px 0 #ddd;
 }
@@ -48,11 +42,13 @@
 	background:transparent url(prev.gif) no-repeat scroll center center;
 	float:left;
 	cursor:pointer;
+	margin-left:9px;
 }
 
 #calnext {
 	background-image:url(next.gif);
 	float:right;
+	margin-right:9px;
 }
 
 /* year/month selector */
@@ -69,8 +65,9 @@
 #caldays span {
 	display:block;
 	float:left;
-	width:28px;
+	width:32px;
 	text-align:center;
+	font-size:11px;
 }
 
 /* container for weeks */
@@ -89,7 +86,7 @@
 .calweek a {
 	display:block;
 	float:left;
-	width:27px;
+	width:31px;
 	height:20px;
 	text-decoration:none;
 	font-size:11px;
@@ -128,7 +125,8 @@ a.caldisabled {
 	cursor:default;
 }
 
-/* current day */
+
+/* current date */
 #calcurrent {
 	background-color:#498CE2;
 	color:#fff;
@@ -136,6 +134,7 @@ a.caldisabled {
 
 /* today */
 #caltoday {
-	background-color:#333;
+	background-color:#999;
 	color:#fff;
 }
+

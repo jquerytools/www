@@ -1,0 +1,80 @@
+<%-- :mode=jsp: --%>
+<%@ include file="../header.jsf" %>
+
+<p>
+
+</p>
+
+<%@ include file="flight.htm" %>
+
+<h3>HTML coding</h3>
+
+<p>
+	The HTML layout is simple. Two date inputs inside a form.
+</p>
+
+<pii:code lang="html">
+${html}
+</pii:code>
+
+<h3>CSS coding</h3>
+
+<p>
+	We use <a href="css/flight.css">two</a> <a href="css/flight-calendar.css">stylesheets</a> for the job as follows.
+</p>
+
+<pii:code lang="html">
+<!-- wrapper, inputs and labels  -->
+<link rel="stylesheet" type="text/css" href="css/flight.css"/>
+
+<!-- calendar styling -->
+<link rel="stylesheet" type="text/css" href="css/flight-calendar.css"/>
+</pii:code>
+
+<p>
+	Stydy their semi-commented source code for the details.
+</p>
+
+<h2>JavaScript coding</h2>
+
+<p>
+	We use this one-liner to initialize both date inputs. Since these are imaginary flight dates we need to disable selecting dates from the past. This is achieved with the <samp>min</samp> attribute. Enabling <samp>trigger</samp> attribute will auto-generate a <samp>a</samp> tag that opens up the calendar when clicked. The calendar icon look is obviously made with CSS. 
+</p>
+
+<pii:code>
+${js}
+</pii:code>
+
+<h3>The active state</h3>
+
+<p>
+	The date inputs are contained inside a <samp>label</samp> element. Once the calendar is opened we assign a CSS class name "active" for the label element and remove the class name when the calendar closes. This is how we do it. 
+</p>
+
+<pii:code>
+${js2}
+</pii:code>
+
+<p>
+	The active state styling can be found from the <a href="form/flight.css">flight.css</a>
+</p>
+
+<h3>Changing the minimum value for departure date</h3>
+
+<p>
+	When arrival date is selected we must make sure that user cannot select a departure date that is before the arrival date. This is achieved by using <samp>setMin</samp> method for the departure date as follows:
+</p>
+
+<pii:code>
+${js3}
+</pii:code>
+
+<p>
+	You need to place the <samp>script</samp> block <em>after</em> the HTML code or you can alternatively use jQuery's <samp>$(document).ready</samp> to execute the script as soon as the webpage's Document Object Model (DOM) has been loaded. Read more about that from the <a href="${jqt}/documentation/basics.html#document_ready">User's Manual</a>.
+</p>
+
+<br />
+<div class="box petrol">
+	Here is the <a href="flight.htm">standalone version</a> of this demo. You can freely study and copy its source code.
+</div>
+

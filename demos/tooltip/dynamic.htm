@@ -2,35 +2,22 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:set var="wrapId" value="dyna"/>
-
+$(function() {
 <c:set var="js">
-$(document).ready(function() {
-
-	// initialize tooltip
-	$("#${wrapId} img[title]").tooltip({
-		
-		// tweak the position
-		offset: [10, 2],
-		
-		// use "slide" effect
-		effect: 'slide'
-		
-	// add dynamic plugin 
-	}).dynamic( {
+// initialize tooltip
+$("#${wrapId} img[title]").tooltip({
+  
+   // tweak the position
+   offset: [10, 2],
+   
+   // use "slide" effect
+   effect: 'slide'
 	
-		// customized configuration on bottom edge
-		bottom: {
-		
-			// slide downwards
-			direction: 'down',
-			
-			// bounce back when closed
-			bounce: true
-		}
-	});
-	
+// add dynamic plugin with optional configuration for bottom edge 
+}).dynamic({ bottom: { direction: 'down', bounce: true } });
+</c:set>	
 });
-</c:set>
+
 
 <%@ include file="index.htm" %> 
 

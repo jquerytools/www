@@ -1,22 +1,29 @@
+
 <form id="myform">
 
-	<p>
-		<label>email *</label>
-		<input type="email" name="email" required="required" />
-	</p>
-	<p>
-		<label>website *</label>
-		<input type="url" name="url" required="required" />
-	</p>
-	<p>
-		<label>name *</label>
-		<input type="text" name="name" pattern="[a-zA-Z ]{5,}" maxlength="30" />
-	</p>
-	<p>
-		<label>age</label>
-		<input type="number" name="age" size="4" min="5" max="50" />
-	</p>
-	
-	<button type="submit">Submit form</button>
+   <fieldset>
+      <h3>Sample registration form</h3>
+      
+      <p> Enter bad values and then press the submit button. </p>
+      
+      <p>
+         <label>email *</label>
+         <input type="email" name="email" required="required" />
+      </p>
+      <p>
+         <label>website *</label>
+         <input type="url" name="url" required="required" />
+      </p>
+      <p>
+         <label>name *</label>
+         <input type="text" name="name" pattern="[a-zA-Z ]{5,}" maxlength="30" />
+      </p>
+      <p>
+         <label>age</label>
+         <input type="number" name="age" size="4" min="5" max="50" />
+      </p>
+      
+      <button type="submit">Submit form</button>
+   </fieldset>
 
 </form>

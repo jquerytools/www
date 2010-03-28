@@ -1,0 +1,62 @@
+
+#flight, .active, #calroot {
+	-moz-border-radius:4px;		
+}
+
+#flight {
+	font-family:sans-serif;	
+	background:#333 url(../../../img/gradient/h80.png);
+	height:56px;
+	padding:12px 0 12px 30px;
+	color:#ddd;
+	font-size:11px;
+	width:520px;
+	margin:0 auto;
+	-moz-box-shadow:0 0 10px #666;
+	-webkit-box-shadow:0 0 10px #666;
+}
+
+#flight label {
+	float:left;
+	width:215px;
+	display:block;
+	padding:6px;
+	border:1px solid transparent;
+	margin-right:30px;			
+}
+
+#flight .active {
+	background-color:#fff;
+	color:#333;
+	border:1px solid #ccc;
+	border-bottom:0;
+}
+
+.active input {
+	color:#333;
+	text-shadow:none;
+}
+
+/* date input */
+.date {		
+	float:left;
+	display:block;
+	border:0;
+	background-color:transparent;
+	font-size:18px;
+	color:#fff;
+	text-shadow:0 0 1px #000;
+	width:185px;
+	cursor:pointer;
+}
+
+/* date input trigger element */
+.caltrigger {
+	display:block;
+	width:30px;
+	height:30px;
+	float:left;
+	background-color:#ddd;
+	margin-top:-3px;
+}
+

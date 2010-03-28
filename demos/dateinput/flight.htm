@@ -1,0 +1,50 @@
+<%-- :mode=jsp: --%>
+<%@ include file="../standalone.jsf" %>
+
+<c:set var="css">
+<!-- wrapper, inputs and labels  -->
+<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/demos/dateinput/css/flight.css"/>
+
+<!-- calendar styling -->
+<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/demos/dateinput/css/flight-calendar.css"/>
+</c:set>
+${css}
+
+</head>
+
+<body>	
+
+<c:set var="html">
+<form id="flight">
+
+   <label> Arrival   <input type="date" name="arrival" /> </label>
+   <label> Departure <input type="date" name="departure" data-value="7" /> </label>
+	
+</form>
+</c:set>
+${html}
+
+<script>
+<c:set var="js">
+$(":date").dateinput({ trigger: true, format: 'dd mmmm yyyy', min: -1 })
+</c:set>
+${js}
+
+<c:set var="js2">
+// use the same callback for two different events. possible with bind
+$(":date").bind("onShow onHide", function()  {
+	$(this).parent().toggleClass("active"); 
+});
+</c:set>
+${js2}
+
+<c:set var="js3">
+// when first date input is changed
+$(":date:first").data("dateinput").change(function() {
+		
+	// we use it's value for the seconds input min option
+	$(":date:last").data("dateinput").setMin(this.getValue(), true);
+});
+</c:set>
+${js3}
+</script>
