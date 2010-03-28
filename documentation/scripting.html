@@ -354,7 +354,7 @@ $.fn.analytics = function(tracker) {
 		var api = $(this).data("tabs");
 
 		// setup onClick listener for tabs
-		api.onClick(function(index)  {
+		api.onClick(function(event, index)  {
 			tracker.trackEvent("tabs", "foo", index);
 		});
 

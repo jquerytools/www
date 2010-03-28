@@ -351,11 +351,11 @@ console.dir($.tools);
 </p>
 
 <p style="margin:20px 0">
-	<img src="../img/global-config.gif" alt="Global Configuration" />
+	<img src="${cdn}${jqt}/img/global-conf.gif" alt="Global Configuration" />
 </p>
 
 <p>
-	You can see each tool you have included and their versions. You can also see plugins and effects and their versions if you have included any from the <a href="/download/index.html#combine">download page</a>. If you inspect a little more about these global settings you will see each tool's default configuration values which are discussed more on the important <a href="#global_configuration">global configuration</a> section.
+	You can see each tool you have included and the version number.  If you inspect a little more about these global settings you will see each tool's default configuration values (good source of "documentation"!) which are discussed more on the important <a href="#global_configuration">global configuration</a> section.
 </p>
 <!--}}}-->
 
@@ -371,9 +371,8 @@ console.dir($.tools);
 <pii:code>
 // initialize tools.scrollable with configuration variables
 $("#wrap").scrollable({
-	size: 1,
-	clickable: false,
-	loop: true
+	keyboard: false,
+	circular: true
 });
 </pii:code>
 
@@ -389,7 +388,7 @@ $("#wrap").scrollable({
 
 <pii:code>
 // return elements specified in the selector as a jQuery object
-var elements = $("div.scrollable").scrollable({size: 3});
+var elements = $("div.scrollable").scrollable();
 
 /*
   now you can continue working with the jQuery object. you can,
@@ -480,11 +479,11 @@ console.dir($.tools.overlay.conf);
 
 <pii:code>
 // initialize few scrollables and add more features to them
-$("div.scroller").scrollable({circular: true}).navigator("#myNavi").autoscroll({interval: 4000});
+$(".scroller").scrollable({circular: true}).navigator("#myNavi").autoscroll({interval: 4000});
 </pii:code>
 
 <p>
-	You take a one or more <samp>div.scroller</samp> elements from a page and make them scrollable. The scrollable tool has only the absolute necessary features to make things scroll. If you want to have more features you can use plugins. In this example we used <samp>navigator</samp> plugin to setup a navigator beside the scrollable. The <samp>autoscroll</samp> plugin makes the items scroll automatically without any user interaction.
+	You take a one or more <samp>.scroller</samp> elements from a page and make them scrollable. The scrollable tool has only the absolute necessary features to make things scroll. If you want to have more features you can use plugins. In this example we used <samp>navigator</samp> plugin to setup a navigator beside the scrollable. The <samp>autoscroll</samp> plugin makes the items scroll automatically without any user interaction.
 </p>
 
 <p>

@@ -54,6 +54,10 @@
 		</div>	
 	</c:forEach>	
 	
+	<a id="biglink" href="${jqt}/demos/index.html">
+		&laquo; Demo Index
+	</a>
+	
 	<!-- accordion setup -->
 	<script>
 		$("#right").tabs("#right ul", {tabs: 'h2', initialIndex: ${req.demo.category.index}});

@@ -14,14 +14,7 @@ $(function() {
 	var els = $(".listing :checkbox").attr("checked", false);
 
 	// tooltips
-	$(".listing img").tooltip({
-		position: ['right', 'top'],
-		effect: 'toggle',
-		offset: [60, 10],
-		opacity: 0.9,
-		delay: 50,
-		tip: '.tooltip'
-	});
+	$(".listing img").tooltip({ position: 'right top', offset: [60, 10], delay: 50 });
 
 
 	// checkbox change
@@ -117,19 +110,19 @@ $(function() {
 </ol>
 
 <p>
-	The tools will be loaded with <a href="performance.html">maximum performance</a> no matter where your client is located on the globe. Without the jQuery library, the file size is roughly <strong>${v.jqtSize}Kb</strong> when gzipping is enabled on the server side. If you already have jQuery included on your page, you can simply remove it and use only this one <samp>script src</samp> statement.
+	The tools will be loaded with <a href="../documentation/performance.html">maximum performance</a> no matter where your user is located on the globe. Without the jQuery library, the file size is only <strong>${v.jqtSize} kb</strong> when gzipping is enabled on the server side. If you already have jQuery included on your page, you can simply remove it and use only this one <samp>script src</samp> statement.
 </p>
 
 <p>
-	Please note that this global content delivery network is <strong>completely free</strong>. You can use it freely in any website including production environments. This network has been kindly offered for all jQuery Tools users by <a href="http://www.netdna.com/" class="external">Net DNA</a>. Respect to them!
+	Please note that this global content delivery network is <strong>completely free</strong>. You can use it freely in any website including production environments. This network has been kindly offered for all jQuery Tools users by <a href="http://www.maxcdn.com/" class="external">Max CDN</a>. Respect to them!
 </p>
 
 <%--}}}--%>
 
 
 <a name="combine"></a>
-<h2>Grab your own set of jQuery Tools: <em id="selected"></em></h2>
-<h3 style="color:#7788FF;margin:5px 0 15px 0;">Or download the MIT/GPL Source Code</h3>
+<h2>Build a custom set of Tools. <em id="selected"></em></h2>
+<h3 style="color:#7788FF;margin:5px 0 15px 0;">Or download the source code</h3>
 
 <p>
 	Here you can download individual tools or create a custom combination of tools by selecting only those you want. Both the <strong>source code</strong> and the <strong>minified versions</strong> are available. 
@@ -210,13 +203,13 @@ $(function() {
 <!-- jQuery Library + UI Tools (Tabs, Tooltip, Scrollable and Overlay) -->
 <script src="${cdnt}/${v.jqt}/full/jquery.tools.min.js"></script>
 
-<!-- UI Tools without jQuery Library -->
+<!-- UI Tools without jQuery Library (${v.jqtSize} kb) -->
 <script src="${cdnt}/${v.jqt}/tiny/jquery.tools.min.js"></script>
 
 <!-- jQuery Library + ALL jQuery Tools -->
 <script src="${cdnt}/${v.jqt}/full/jquery.tools.min.js"></script>
 
-<!-- Form tools: Dateinput, Rangeinput and Validator. No jQuery. -->
+<!-- Form tools: Dateinput, Rangeinput and Validator. No jQuery. (${v.jqtFormSize} kb) -->
 <script src="${cdnt}/${v.jqt}/form/jquery.tools.min.js"></script>
 </pii:code>
 

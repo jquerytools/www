@@ -3,6 +3,7 @@
 <script>
 $(function() {	
 	$("#jqt3").addClass("active");
+	$("<div/>", { id: 'footercrumb' }).appendTo($("#content")).html($("#breadcrumb").html());
 });
 </script>
 

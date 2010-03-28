@@ -1,6 +1,8 @@
 .tooltip {
-	background:#234 url(/img/global/gradient/h300.png) repeat-x;
+	background:#05345B url(/img/global/gradient/h300.png) repeat-x;
 	width:200px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
 }
 
 .tooltip h3 {
@@ -10,6 +12,12 @@
 
 .tooltip a {
 	color:yellow;
+	text-decoration:none;
+}                 
+
+.tooltip a:hover {
+	color:yellow !important;
+	text-decoration:underline;
 }
 
 label {
