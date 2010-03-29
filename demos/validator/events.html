@@ -1,20 +1,31 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../header.jsf" %>
 
-<p>
-	Please submit this form and you'll see the validator events on the info box below the form. After the submission start fixing the errors and you'll see more events firing.
+<p class="more">
+	In addition to the effect framework you can extend the validator with your own functions that are called when validation related events occur. 
 </p>
 
 <%@ include file="events.htm" %>
 
-<h3>JavaScript coding</h3>
+
+<h3>The red border effect</h3>
 
 <p>
-	Here we have used various ways to assign events for the tool. 
+	Here is an example callback function that does the red border effect. 
 </p>
 
 <pii:code>
 ${js}
+</pii:code>
+
+<h3>Displaying errors on the "wall"</h3>
+
+<p>
+	Here we show the various ways to assignin callback functions for validator. It is not meant to be simple. It's meant to show you the different possibilities. All these callback functions print messages to a DIV with id "info". 
+</p>
+
+<pii:code>
+${js2}
 </pii:code>
 
 

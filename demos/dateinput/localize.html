@@ -1,13 +1,15 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../header.jsf" %>
 
-<p>
-	Here is a dateinput with french localization.
+<p class="more">
+	Une vente solidaire est organisée pour leur venir en aide. A random copy paste from web. Anyway here is the mandatory French localization.
 </p>
 
-<%@ include file="localize.htm" %>
+<div style="width:360px;margin:0 auto">
+	<%@ include file="localize.htm" %>
+</div>
 
-<h3>JavaScript coding</h3>
+<h3>$.tools.dateinput.localize</h3>
 
 <p>
 	The localization is done with <samp>$.tools.dateinput.localize</samp> <em>before</em> the dateinput initialization as follows:
@@ -21,9 +23,15 @@ ${js}
 	For maximum safety we suggest that you encode special characters with the corresponding HTML entities. There are many lists on the web. I used <a href="http://www.pemberley.com/janeinfo/latin1.html" class="external">this one</a>.
 </p>
 
+<h3>Using the new language</h3>
+
 <p>
-	You need to place the <samp>script</samp> block <em>after</em> the HTML code or you can alternatively use jQuery's <samp>$(document).ready</samp> to execute the script as soon as the webpage's Document Object Model (DOM) has been loaded. Read more about that from the <a href="${jqt}/documentation/basics.html#document_ready">User's Manual</a>.
+	You'll use the <samp>lang</samp> option for dateinput to enable the new language. Note that this value can be dynamically set depending on the user's location on the globe.
 </p>
+
+<pii:code>
+${js2}
+</pii:code>
 
 <br />
 <div class="box petrol">

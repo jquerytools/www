@@ -27,6 +27,24 @@
 
 <script>
 <c:set var="js">
+$("#myform").bind("onFail", function(e, errors)  {
+		
+	// we are only doing stuff when form is submitted	
+	if (e.originalEvent.type == 'submit') {
+		
+		// loop trough Error objects and do the coloring thing
+		$.each(errors, function()  {
+			var input = this.input;
+			input.css({borderColor: 'red'}).focus(function()  {
+				input.css({borderColor: '#444'});		
+			});
+		});
+	} 
+});
+</c:set>
+${js}
+
+<c:set var="js2">
 // get handle to the info box
 var info = $("#info");
 
@@ -68,7 +86,7 @@ window.showEvent = function(eventName, input) {
 	info.append("<p><strong>" + eventName + "</strong>: " + inputName  + "</p>").fadeIn();
 }; 
 </c:set>
-${js}
+${js2}
 </script>
 
 

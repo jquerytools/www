@@ -1,11 +1,18 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../header.jsf" %>
 
-<p>
-	Focus on the following input element either by mouse or with keyboard's tab key and you'll see a calendar control. You can navigate between days with your arrow keys or with <strong>VIM</strong> keyboard shortcuts. <samp>Page UP/DOWN</samp> navigates between months and <samp>Enter</samp> selects the day. The <samp>Home</samp> key will navigate to the current day.
+<p class="more">
+	Call <samp>$(":date").dateinput()</samp> and your <samp>&lt;input type="date" /&gt;</samp>'s will work. Here's one. 
 </p>
 
 <%@ include file="index.htm" %>
+
+
+<p class="less" style="width:400px">
+	<small>
+		You can navigate between days with your <samp>Arrow Keys</samp> or with <strong>VIM</strong> keyboard shortcuts <samp>HJKL</samp>. <samp>Page UP/DOWN</samp> navigates between months and <samp>Enter</samp> selects the day. The <samp>Home</samp> key will navigate to the current day.
+	</small>
+</p>
 
 <h3>The code</h3>
 
@@ -21,7 +28,7 @@
 <link rel="stylesheet" type="text/css" href="dateinput.css"/>
 
 <!-- HTML5 date input -->
-<input type="date" name="mydate" />
+<input type="date" />
 
 <!-- make it happen -->
 <script>

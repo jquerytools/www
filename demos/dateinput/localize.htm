@@ -2,7 +2,14 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../standalone.jsf" %>
 
-	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/demos/dateinput/css/skin1.css"/>
+	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/demos/dateinput/css/large.css"/>
+	
+	<!-- some overrides -->
+	<style>
+	.date { width: 357px; }
+	#calhead { padding-left: 95px; }
+	#calnext { float:left; }
+	</style>
 </head>
 
 <body>
@@ -13,15 +20,22 @@
 <c:set var="js">
 // the french localization
 $.tools.dateinput.localize("fr",  {
-	months: 			'janvier,f&eacute;vrier,mars,avril,mai,juin,juillet,ao&ucirc;t,' +
-							'septembre,octobre,novembre,d&eacute;cembre',
-	shortMonths: 		'jan,f&eacute;v,mar,avr,mai,jun,jul,ao&ucirc;,sep,oct,nov,d&eacute;c',
-	days: 			'dimanche,lundi,mardi,mercredi,jeudi,vendredi,samedi',
-	shortDays: 		'dim,lun,mar,mer,jeu,ven,sam'
+   months:        'janvier,f&eacute;vrier,mars,avril,mai,juin,juillet,ao&ucirc;t,' +
+                   	'septembre,octobre,novembre,d&eacute;cembre',
+   shortMonths:   'jan,f&eacute;v,mar,avr,mai,jun,jul,ao&ucirc;,sep,oct,nov,d&eacute;c',
+   days:          'dimanche,lundi,mardi,mercredi,jeudi,vendredi,samedi',
+   shortDays:     'dim,lun,mar,mer,jeu,ven,sam'
 });
-
-// dateinput initialization. the language is specified with lang- option
-$(":date").dateinput({ lang: 'fr', format: 'dddd dd, mmmm yyyy' });
 </c:set>
 ${js}
+
+<c:set var="js2">
+// dateinput initialization. the language is specified with lang- option
+$(":date").dateinput({ 
+	lang: 'fr', 
+	format: 'dddd dd, mmmm yyyy',
+	offset: [30, 0]
+});
+</c:set>
+${js2}
 </script>

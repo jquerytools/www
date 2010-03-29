@@ -52,6 +52,10 @@
 	float:right;
 }
 
+#calprev.caldisabled, #calnext.caldisabled {
+	visibility:hidden;	
+}
+
 #caldays span {
 	display:block;
 	float:left;
@@ -142,7 +146,8 @@ a.caloff.calfocus {
 }
 
 /* today */
-#calcurrent {
-	background-color:#999;
+#caltoday {
+	background-color:#666;
 	color:#fff;
+	text-shadow:0 1px 0 #000;
 }

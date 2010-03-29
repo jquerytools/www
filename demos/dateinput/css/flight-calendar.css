@@ -51,6 +51,10 @@
 	margin-right:9px;
 }
 
+#calprev.caldisabled, #calnext.caldisabled {
+	visibility:hidden;	
+}
+
 /* year/month selector */
 #caltitle select {
 	font-size:10px;	

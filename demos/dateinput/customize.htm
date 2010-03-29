@@ -13,8 +13,8 @@
 
 <c:set var="html">
 <input type="date" name="date1" />
-<input type="date" name="date2" min="2010-03-01" max="2011-01-01" />
-<input type="date" name="date3" min="25" max="25" data-value="2010-01-04"/>
+<input type="date" name="date2" min="2010-03-01" max="2012-01-01" />
+<input type="date" name="date3" min="-25" max="25" data-value="15"/>
 </c:set>
 ${html}
 
@@ -23,7 +23,7 @@ ${html}
 $(":date").dateinput({
 	format: 'dddd dd, mmmm yyyy',	// the format displayed for the user
 	selectors: true,             	// whether month/year dropdowns are shown
-	min: 100,                    	// min selectable day (100 days backwards)
+	min: -100,                    // min selectable day (100 days backwards)
 	max: 100,                    	// max selectable day (100 days onwards)
 	offset: [10, 20],            	// tweak the position of the calendar
 	speed: 'fast',               	// calendar reveal speed

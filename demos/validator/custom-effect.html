@@ -1,16 +1,17 @@
 <%-- :mode=jsp: --%>
 <%@ include file="../header.jsf" %>
 
-<p>
-	Click on the submit button to see a custom validator effect. It shows the error messages inside a single container element instead of showing the errors on top of each field which is the default behaviour.
+<p class="more">
+	If you want alternate ways of displaying errors you can write a reusable effect for that.
 </p>
+
 
 <%@ include file="custom-effect.htm" %>
 
 <h3>HTML coding</h3>
 
 <p>
-	Here is our error container. The errors are appended inside the root element.
+	This effect contains a single error container for all validation errors. Here it is
 </p>
 
 <pii:code lang="html">
