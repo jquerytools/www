@@ -16,7 +16,7 @@
 	<title>jQuery Tools standalone demo</title>
 
 	<!-- include the Tools -->
-	<script src="/tools/download/combine/1.2.0/jquery.tools.min.js?select=full&debug=true"></script>
+	<script src="/tools/download/combine/${v.jqt}/jquery.tools.min.js?select=full&debug=true"></script>
 
 	<!-- standalone page styling (can be removed) -->
 	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/standalone.css"/></c:if>	

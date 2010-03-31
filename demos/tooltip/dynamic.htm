@@ -2,7 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:set var="wrapId" value="dyna"/>
-$(function() {
 <c:set var="js">
 // initialize tooltip
 $("#${wrapId} img[title]").tooltip({
@@ -16,8 +15,6 @@ $("#${wrapId} img[title]").tooltip({
 // add dynamic plugin with optional configuration for bottom edge 
 }).dynamic({ bottom: { direction: 'down', bounce: true } });
 </c:set>	
-});
-
 
 <%@ include file="index.htm" %> 
 
