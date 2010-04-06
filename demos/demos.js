@@ -196,7 +196,8 @@
 			},			
 			{		
 				path: 'scrollable/one-sized.html',
-				title: 'Large one sized Scrollable'
+				title: 'Navigation with browser\'s back button',
+				keywords: 'scrollable history, scrollable back button, scroll back button'
 			},
 			{		
 				path: 'scrollable/home.html',
