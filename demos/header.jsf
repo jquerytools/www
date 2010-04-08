@@ -9,6 +9,8 @@ $(function() {
 
 <c:if test="${!empty req.demo}">
 
+	<c:set var="tool" value="${fn:substringBefore(req.demo.path, '/')}"/>
+	
 	<style>	
 	ul.css-tabs li {
 		list-style-image:none !important;
@@ -25,9 +27,14 @@ $(function() {
 		font-size:11px;
 		text-decoration:none;
 	}
+	
+	<c:if test="${tool == 'validator' || tool == 'dateinput'}">
+		h1 {
+			background-position:0 35px;		
+		}
+	</c:if>
 	</style>
 	
-	<c:set var="tool" value="${fn:substringBefore(req.demo.path, '/')}"/>
 	
 	<h1 style="background-image:url(${jqt}/img/hero/${tool == 'combine' ? 'index' : tool}.jpg)">
 		${req.demo.title}
