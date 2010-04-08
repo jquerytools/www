@@ -12,11 +12,33 @@
 #right {
 	display:none;		
 }
+
+#tease {
+	background-image:url(${cdn}${jqt}/img/banner12.jpg);		
+	margin-top:30px;
+}
 </style>
 
 <script>$("#jqt1").addClass("active");</script>
 
 <%@ include file="demos/scrollable/home.htm" %>
+
+<a id="tease" href="release-notes/"></a>
+
+<script>
+$(window).load(function() {
+		
+	// preload setup assets
+	setTimeout(function() {
+		new Image().src = "${cdn}/setup/img/wizard.jpg";
+		new Image().src = "${cdn}/setup/img/widgets.png";
+		new Image().src = "${cdn}/setup/img/colorpicker.png";
+		$.get("${cdn}/setup/js/setup-${v.setup_js}.js");
+	}, 2000);
+	
+	
+});
+</script>
 
 <br clear="all" />
 

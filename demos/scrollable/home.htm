@@ -8,20 +8,20 @@
 <c:if test="${empty plain}">body {padding:0;}</c:if>
 #scroll {
 	position:relative;
-	height: wider;
+	height:;
 	overflow:hidden;
 	border:1px solid #ddd;
 	width:948px;
 	padding:15px;
-	height:348px;
-	-moz-border-radius:5px;
+	height:473px;
+	-moz-border-radius:5px;     
 	-webkit-border-radius:5px;
 }
 
 #tools {
 	width:9999em;
 	position:absolute;
-	height:340px;
+	height:400px;
 }
 
 .tool {
@@ -29,28 +29,23 @@
 	width:1000px;
 	height:340px;
 	background-repeat:no-repeat;
-	background-position:0 -40px;
+	background-position:center -20px;
 }
 
 .details {
+	font-size:18px;
+	color:#555;
+	margin-top:306px;
 	background-color:#fff;
-	float:right;
-	font-size:16px;
-	margin:40px;
-	padding:10px;
-	width:285px;
+	padding:5px 148px;
 }
 
-.wider {
-	margin-top:5px;
-	width:430px;
-}
 
 #thumbs {
 	background:url(${cdn}${jqt}/img/demo-navi.jpg) no-repeat;
 	height:90px;
 	position:absolute;
-	top:300px;
+	top:425px;
 	width:990px;
 	left:-8px;
 }
@@ -117,9 +112,11 @@
 </style>
 <%--}}}--%>
 
+<c:if test="${empty plain}">
 </head>
 
-<body>
+<body>	
+</c:if>
 
 <!-- root element for everything -->
 <div id="scroll">
@@ -144,7 +141,7 @@
 		<!-- tooltip -->
 		<div class="tool" style="background-image:url(${cdn}${jqt}/img/hero/tooltip.jpg)">
 
-			<div class="details wider">
+			<div class="details">
 				<strong>Tooltip</strong> helps you to build easier user interfaces. Big or small. Pluggable effects. Yet another crucial tool. 
 			</div>
 
@@ -153,8 +150,8 @@
 		<!-- overlay -->
 		<div class="tool" style="background-image:url(${cdn}${jqt}/img/hero/overlay.jpg)">
 
-			<div class="details wider">
-				<strong>Overlay</strong> is a significant part of the JavaScript/Web 2.0 landscape. This tool handles them all: commercial overlays, image galleries and modal dialogs.
+			<div class="details">
+				<strong>Overlay</strong> is a significant part of the JavaScript/Web 2.0 landscape. This tool handles them all: commercial overlays, modal dialogs and slideshows.
 			</div>
 
 		</div>
@@ -169,10 +166,10 @@
 		</div>
 
 		<!-- scrollable -->
-		<div class="tool" style="background:url(${cdn}${jqt}/img/hero/scrollable.jpg) 10px -40px no-repeat">
+		<div class="tool" style="background-image:url(${cdn}${jqt}/img/hero/scrollable.jpg)">
 
-			<div class="details wider">
-				<strong>Scrollable</strong> is the most successful tool in this library. In fact this page is powered with Scrollable.
+			<div class="details">
+				<strong>Scrollable</strong> is the most successful tool in this library. Any size and shape. Infinite loops and more.
 			</div>
 
 		</div>
@@ -180,7 +177,7 @@
 		<!-- flashembed -->
 		<div class="tool" style="background-image:url(${cdn}${jqt}/img/hero/flashembed.jpg)">
 
-			<div class="details wider">
+			<div class="details">
 				The role of JavaScript is rising with tremendous speed. However, Flash still has its place and you need a proper tool for embedding.
 			</div>
 
@@ -191,20 +188,10 @@
 	</div>
 
 	<!-- intro "page" -->
-	<div id="intro" class="tool" style="background:url(${cdn}${jqt}/img/hero/index.jpg) -50px -40px no-repeat">
+	<div id="intro" class="tool" style="background-image:url(${cdn}${jqt}/img/hero/jquerytools.jpg)">
 
-		<div class="details" style="position:relative;z-index:1">
-
-			<strong>jQuery Tools</strong> is a collection of the most important user-interface components for today's websites. This single JavaScript file weighs only <span style="color:#000">${v.jqtSize}Kb</span> 
-			
-			<p>
-				<a href="download/index.html" id="download">Download jQuery Tools</a>
-			</p>
-			
-			<p>
-				Version: <strong>${v.jqt}.</strong> <a href="${jqt}/release-notes/index.html">What's new?</a>
-			</p>
-								
+		<div class="details">
+			<strong>jQuery Tools</strong> is a collection of the most important user-interface components for modern websites. Used by large sites all over the world. 
 		</div>
 
 	</div>

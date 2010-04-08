@@ -10,6 +10,12 @@ $(function() {
 <c:if test="${!empty req.demo}">
 
 	<c:set var="tool" value="${fn:substringBefore(req.demo.path, '/')}"/>
+	<c:if test="${fn:contains(req.demo.path, '/expose/')}">
+		<c:set var="tool" value="toolbox/expose"/>
+	</c:if>
+	<c:if test="${fn:contains(req.demo.path, '/flashembed/')}">
+		<c:set var="tool" value="toolbox/flashembed"/>
+	</c:if>
 	
 	<style>	
 	ul.css-tabs li {
@@ -28,15 +34,13 @@ $(function() {
 		text-decoration:none;
 	}
 	
-	<c:if test="${tool == 'validator' || tool == 'dateinput'}">
-		h1 {
-			background-position:0 35px;		
-		}
-	</c:if>
+	h1 {
+		background-position:0 ${tool=='overlay' || tool=='scrollable' ? 15 : tool=='rangeinput'||tool=='combine' ? 5 : 25}px;		
+	} 
 	</style>
 	
 	
-	<h1 style="background-image:url(${jqt}/img/hero/${tool == 'combine' ? 'index' : tool}.jpg)">
+	<h1 style="background-image:url(${jqt}/img/hero/${tool == 'combine' ? 'jquerytools' : tool}.jpg)">
 		${req.demo.title}
 	</h1>	
 	
@@ -53,7 +57,14 @@ $(function() {
 		<div style="width:220px;float:left">
 			[ 
 				<a href="${jqt}/demos/index.html">demo index</a>
-				<c:if test="${tool != 'combine'}">| <a href="${jqt}/${tool}/index.html">${tool} docs</a></c:if>
+				<c:if test="${tool != 'combine'}"> |
+					<c:if test="${!fn:contains(tool, 'toolbox/')}">
+						<a href="${jqt}/${tool}/index.html">${tool} docs</a>
+					</c:if>
+					<c:if test="${fn:contains(tool, 'toolbox/')}">
+						<a href="${jqt}/${tool}.html">${fn:replace(tool, 'toolbox/', '')} docs</a>
+					</c:if>
+				</c:if>
 			]
 		</div>	
 	

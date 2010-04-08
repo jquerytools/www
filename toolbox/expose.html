@@ -1,4 +1,6 @@
 <%-- :mode=jsp: --%>
+<c:set var="tool" value="mask"/>
+
 <style>
 /* tweak mask on this page */
 #mask {
@@ -6,7 +8,7 @@
 }
 </style>
 
-<h1 style="background:url(${cdn}${jqt}/img/hero/expose.jpg) no-repeat -2px 21px">
+<h1 style="background:url(${cdn}${jqt}/img/hero/toolbox/expose.jpg) 0 30px no-repeat">
 	jQuery Tools / Expose - Make your HTML elements stand out
 </h1>
 
@@ -24,7 +26,7 @@
 <h2>The story</h2>
 
 <p>
-	Mask is a JavaScript tool that exposes selected HTML elements on the page so that the surrounding elements will gradually fade out. The exposing effect was first introduced in the <a href="overlay/index.html">overlay</a> tool. Usually the effect is an integral part of the program and cannot be used separately. This tool takes the idea of masking a little further. It is a separate tool that can be used as a general purpose mask utility. You can use it for overlays, forms, images, videos or Flash objects. You can use CSS to tweak the look of the mask.
+	Expose is a JavaScript tool that exposes selected HTML elements on the page so that the surrounding elements will gradually fade out. The exposing effect was first introduced in the <a href="overlay/index.html">overlay</a> tool. Usually the effect is an integral part of the program and cannot be used separately. This tool takes the idea of exposing a little further. It is a separate tool that can be used as a general purpose mask utility. You can use it for overlays, forms, images, videos or Flash objects. You can use CSS to tweak the look of the mask.
 </p>
 
 
@@ -77,7 +79,7 @@ $.mask.close();
 	</c:forEach>
 </ul>
 
-<h3>Mask and Flowplayer demos</h3>
+<h3>Expose and Flowplayer demos</h3>
 
 <p>
 	These demos show how to use a video player together with the mask tool:
@@ -108,9 +110,9 @@ $.mask.close();
 </style>
 
 <div id="masks">
-	<img src="../img/expose/thumb/mask_gradient.jpg" />
-	<img src="../img/expose/thumb/mask_star.jpg"  />
-	<img src="../img/expose/thumb/mask_star.png" />
+	<img src="../img/mask/thumb/mask_gradient.jpg" />
+	<img src="../img/mask/thumb/mask_star.jpg"  />
+	<img src="../img/mask/thumb/mask_star.png" />
 </div>
 
 
