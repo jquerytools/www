@@ -83,10 +83,8 @@
 	
 	<div class="pane" id="pane3">
 		
-		<div class="description">
-			<strong>input[required] { border: 1px solid #333; }</strong>
-			
-			The form uses some of the features in CSS3 such as attribute selectors (above), rounded borders, RGBA coloring and box shadows. These make web developers' life much, much easier. Together with jQuery Tools and HTML5 standard we can finally make well behaving and good looking forms with ease. 20 year wait is over.  
+		<div class="description">			
+			This form uses CSS3 features such as attribute selectors, rounded borders, RGBA coloring and box shadows. These make web developers' life much, much easier. Together with FORM Tools and HTML5 we can finally make well behaving and good looking forms with ease. 20 year wait is over.  
 		</div>
 	</div>
 	
@@ -112,7 +110,7 @@
 			</ol>
 			
 			<p>
-				Let me put this another way. There is absolutely no good reason to develop identical look for IE6. Period. Respect the standards and let unstandard browsers do what they can. Luckily you don't have to compromise (a lot) with the functionalities. It's the looks that IE doesn't care about.
+				Let me put this another way. There is absolutely no good reason to develop identical look for IE6. Period. Respect the standards and let unstandard browsers do what they can. Luckily you don't have to compromise with the funtionality. It's the looks that IE doesn't care about. I hope IE9 is better.
 			</p>
 		</div>
 	</div>
@@ -144,38 +142,13 @@
 
 </div>
 
-<%--
-	<!-- 
-		new HTML5 input types (email, url, range, date)
-		new standard attributes (points to required & pattern)
-	-->
-	<form>
-		<input type="email" required="true" />
-		<input type="url" required="true" />
-		<input type="text" required="true" pattern="[\w\s]+"/>
-		<input type="range" />
-		<input type="date" />
-	</form>	
-	
-	<!--
-		setup HTML5 validation. done. (validator)
-		some jQuery Tools + HTML5 music (dateinput, range)
-	-->
-	<script>
-		$("form").validator();
-		$(":date").dateinput();
-		$(":range").range();
-	</script>
---%>
-
-
 <script>
 <c:set var="js">
 // validator. we use custom message layout with a CSS arrow
 $("#myform").validator({ 
 	message: '<div><em/></div>',
 	position: 'top left', 
-	offset: [0, 40]
+	offset: [3, 40]
 });
 
 // dateinput and it's configuration
@@ -185,8 +158,8 @@ $(":date").dateinput({ trigger: true, format: 'dddd mmm yyyy', offset: [2, 0] })
 $(":range").rangeinput();
 
 // overlay with masking. when overlay is loaded or closed we hide error messages if needed
-$("#see").overlay({mask: '#5575ff', fixed: false}).bind("onLoad onBeforeClose", function(e)  {
-	$(".error").toggle(e.type == 'onLoad')		
+$("#see").overlay({mask: '#999', fixed: false}).bind("onBeforeClose", function(e) {
+	$(".error").hide();
 });
 	
 // tabs. possible error messages are visible only on the first tab pane

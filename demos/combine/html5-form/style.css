@@ -22,7 +22,7 @@
 
 /* overlay root element */
 #sheet { 
-	background:#fff url(../../../img/hero/dateinput.jpg) no-repeat 0 -52px; 
+	background:#fff url(../../../img/hero/form.jpg) no-repeat 0 0; 
 	width:800px;
 	height:550px;
 	position:absolute;
@@ -64,8 +64,10 @@
 
 /* the form */
 #myform {
-	background:rgba(0, 0, 20, 0.7);	
-	padding:15px; 
+	background-color:rgba(0, 0, 0, 0.55);	
+	padding:15px;
+	padding-bottom:10px;
+	margin-bottom:7px;
 }
 
 #myform p {
@@ -125,6 +127,7 @@ input[required] {
 .error {
 	background-color:#E8FF6D;
 	padding:4px;	
+	color:#000;
 	-webkit-box-shadow: #000 0 0 12px; 
 	-moz-box-shadow: #000 0 0 12px; 		
 }
