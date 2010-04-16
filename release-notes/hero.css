@@ -44,10 +44,22 @@
 	padding:30px 40px 20px 40px;
 	background-color:#00465E;
 	color:#fff;
-	text-shadow:0 0 1px #000;
 	border:1px solid #000;
 	-moz-box-shadow:inset 0 0 16px #000;
 	-webkit-box-shadow:inset 0 0 16px #000;
+}
+
+#hero .col, #hero .punch {
+	text-shadow:0 0 1px #000;		
+}
+
+#sheet .description, #navi a {
+	text-shadow:none;
+	font-size:11px !important;
+}
+
+#sheet p {
+	font-size:11px !important;		
 }
 
 #form h3 { 

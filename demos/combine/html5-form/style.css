@@ -71,10 +71,10 @@ input[type=date] {
 
 /* individual panes */
 #pane1 { padding-top:50px; display:block; background:#fff url(img/form.jpg) no-repeat -20px 15px; }
-#pane2 { background:#fff url(img/code.png) no-repeat 40px 40px;}
-#pane3 { background:#fff url(img/firefox.png) no-repeat -69px -59px; }
-#pane4 { background:#fff url(img/opera.png) no-repeat -4px -47px; }
-#pane5 { background:#fff url(img/ie.png) no-repeat -71px -90px;  padding-top:255px; }
+#pane2 { background:#fff url(img/code.jpg) no-repeat 100px 0; padding-top:375px; }
+#pane3 { background:#fff url(img/firefox.gif) no-repeat -69px -59px; }
+#pane4 { background:#fff url(img/opera.gif) no-repeat -4px -47px; }
+#pane5 { background:#fff url(img/ie.gif) no-repeat -71px -90px;  padding-top:255px; }
 
 #pane5 .description {
 	background-color:#fff;
