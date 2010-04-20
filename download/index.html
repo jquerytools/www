@@ -10,7 +10,7 @@ $(function() {
 
 	// global navi
 	$("#jqt2").addClass("active");
-		
+
 	var els = $(".listing :checkbox").attr("checked", false);
 
 	// tooltips
@@ -21,10 +21,10 @@ $(function() {
 	els.change(function() {
 
 		// count size
-		var size = 0, 
+		var size = 0,
 			 count = 0,
 			 tools = "";
-			 
+
 		els.filter(":checked").each(function() {
 
 			// 170 bytes for stripping down comment size
@@ -38,7 +38,7 @@ $(function() {
 		$("#minified").html(Math.round(size / 10) / 100 + ' kb');
 		$("#gzipped") .html(Math.round(size * 0.0322) / 100 + ' kb <em>gzipped</em>');
 
-		
+
 		// download link
 		$("#downloadLink").attr("href", "/tools/download/combine/${v.jqt}/jquery.tools.min.js?download=true" + tools);
 		$("#tokens").html(tools);
@@ -110,7 +110,7 @@ $(function() {
 </ol>
 
 <p>
-	The tools will be loaded with <a href="../documentation/performance.html">maximum performance</a> no matter where your user is located on the globe. Without the jQuery library, the file size is only <strong>${v.jqtSize} kb</strong> when gzipping is enabled on the server side. If you already have jQuery included on your page, you can simply remove it and use only this one <samp>script src</samp> statement.
+	The tools will be loaded with <a href="../documentation/performance.html">maximum performance</a> no matter where your user is located on the globe. Without the jQuery library, the file size is only <strong>${v.jqtSize} kb</strong> when gzipping is enabled on the server side. If you already have jQuery included on your page, you can simply remove it and use only the above <samp>script src</samp> statement.
 </p>
 
 <p>
@@ -125,7 +125,7 @@ $(function() {
 <h3 style="color:#7788FF;margin:5px 0 15px 0;">Or download the source code</h3>
 
 <p>
-	Here you can download individual tools or create a custom combination of tools by selecting only those you want. Both the <strong>source code</strong> and the <strong>minified versions</strong> are available. 
+	Here you can download individual tools or create a custom combination of tools by selecting only those you want. Both the <strong>source code</strong> and the <strong>minified versions</strong> are available.
 </p>
 
 
@@ -136,35 +136,35 @@ $(function() {
 	<c:if test="${!empty tool.cat}">
 		</table>
 		<h3>${tool.cat}</h3>
-		<table class="listing">	
+		<table class="listing">
 	</c:if>
 
 	<c:if test="${empty tool.cat}">
-	
+
 		<c:set var="base" value="${jqt}/download/${v.jqt}/${tool.file}"/>
 		<c:set var="source" value="${base}.js"/>
 		<c:set var="min" value="${base}.min.js"/>
-	
+
 		<tr id="t_${tool.key}" ${!empty tool.plugin ? 'class="plugin"' : ''}>
 			<td>
 				<c:if test="${!empty tool.file}">
-					<label>      
+					<label>
 						<input type="checkbox" name="${tool.key}" value="${f:fileLength(min)}" /> ${tool.title}
-					</label>					 
+					</label>
 				</c:if>
-				
+
 				<c:if test="${empty tool.file}">
 					<strong>${tool.title}</strong>
 				</c:if>
-			</td> 
+			</td>
 			<td><small>${tool.requires}</small></td>
-	
+
 			<%-- download links --%>
 			<c:if test="${!empty tool.file}">
 				<td><a href="${source}?download=true">${f:fileSize(source)}</a></td>
 				<td><a href="${min}?download=true">${f:fileSize(min)}</a></td>
 			</c:if>
-	
+
 			<td style="text-align:right;padding-right:5px">
 				<img src="/img/global/info_small.png" />
 				<div class="tooltip">
@@ -172,13 +172,13 @@ $(function() {
 					<p>${tool.description}</p>
 					<c:if test="${i.index > 0}">
 						<p> <a href="${jqt}/${tool.www}">documentation</a> </p>
-					</c:if> 
+					</c:if>
 				</div>
-			</td>			
+			</td>
 		</tr>
-		
+
 	</c:if>
-	
+
 </c:forEach>
 
 </table>
@@ -196,7 +196,7 @@ $(function() {
 <h3>jQuery Tools combinations from the <em>free CDN</em></h3>
 
 <p>
-	Here is a list of all available jQuery Tools combinations from the free Content Delivery Network. 
+	Here is a list of all available jQuery Tools combinations from the free Content Delivery Network.
 </p>
 
 <pii:code lang="html">
