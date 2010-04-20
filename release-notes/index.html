@@ -11,12 +11,6 @@ body.tools #content {
 #right  {
    display:none;     
 }
-
-.image {
-   background:url(${cdn}/3.2/img/sprite.jpg) no-repeat 0 0;
-   width:150px;
-   height:150px;
-}
 </style>
 
 <link rel="stylesheet" type="text/css" href="hero.css"/>
@@ -26,15 +20,14 @@ body.tools #content {
 </div>
 
 <p>
-   <img src="/3.2/img/hero.jpg" alt="jQuery Tools 1.2.0 Release Notes" />
+   <img src="${cdn}${jqt}/release-notes/1.2.0/hero.jpg" alt="jQuery Tools 1.2.0 Release Notes" />
 </p>
 
 <!--{{{ FORM  -->
 
 <div id="form" class="area">
 
-	<div class="image" title="Flowplayer Setup"
-		style="float:left;background-position:-56px -7px; width:213px; height:250px"></div>
+	<div id="formlogo"></div>
 	
 	<div class="herotitle">
 		<h3>introducing</h3>
@@ -87,8 +80,7 @@ body.tools #content {
 
 <div class="area" id="release">
 
-	<img src="${cdn}/img/title/release_300.png" alt="jQuery Tools 1.2.0. New Features"
-		style="float:left;margin:-70px 40px 10px -40px" />
+	<div id="jqtlogo"></div>
 	
 	<div class="herotitle">
 		<h3>introducing</h3>
@@ -102,27 +94,34 @@ body.tools #content {
 	<div class="clear"></div>
 
 	<div class="col">
+	
+		<div class="image"
+			style="background-position:2px -637px;"></div>	
+			
+		<h3>Smaller and smaller</h3>
+
+		<p>
+			In JavaScript file size is a very important quality measure. Web is all about speed. The combined size of Tabs, Tooltips, Overlay and Scrollable is now <strong>${v.jqtSize} kb</strong> when minified and gzipped. New tools are 20% smaller making it faster and easier to understand. The file size can be reduced by writing good code but also by using a proper JavaScript minifier. By the time of writing Googles Closure Compiler generates smallest files which is being used for jQuery Tools 1.2.0.
+		</p>
+	
+	</div>
+	
+	<div class="col last">
 		
-		<div class="image" title="Fine grained transparency"
-			style="background-position:-340px -680px; height:170px; width:255px;"></div>
+		<div class="image" style="margin-left:20px"></div>
 			
 		<h3>Completely new Scrollable</h3>  
 		
 		<p>
-			The new Scrollable gives you a complete freedom to "page" desing. You can have variable amount of items on a single page and the items can have variable width. The circular feature is now a core feature of the tool and it is no longer in beta. Infinite loops are now rock solid and you can even add new items in a circular scrollable without breaking it. The new navigator plugin allows you to browse between pages with browser back and forward buttons and the browser history also works for dynamically added items.
+			The new Scrollable gives you a complete freedom to "page" desing. Variable amount of items on a single page with variable width. The circular feature is now a core feature and it is no longer in beta. Infinite loops are now rock solid and you can even add new items in a circular scrollable without breaking it. You can navigate between pages with the browser's back button and the browser history also works for dynamically added items. All this with a rediculous <strong>0.98 kb</strong> file size. The smallest scrollable on the web is now 50% smaller!
 		</p>
 		
-		<p>
-			You'll get all this with a rediculous 3.3 kb file size. The smallest scrollable on the web is now 50% smaller!
-		</p>
-		
-	</div>
+	</div>	
 
 	
-	<div class="col last"> 
+	<div class="col"> 
 	
-		<div class="image" title="Fine grained transparency"
-			style="background-position:-340px -680px; height:170px; width:255px;"></div>
+		<div class="image" style="background-position:-550px -335px;"></div>
 			
 		<h3>Toolbox. A set of small essentials.</h3>
 
@@ -137,10 +136,10 @@ body.tools #content {
 	</div>
 
 	
-	<div class="col"> 
+	<div class="col last"> 
 	
-		<div class="image" title="Fine grained transparency"
-			style="background-position:-340px -680px; height:170px; width:255px;"></div>
+		<div class="image"
+			style="background-position:-594px -638px;margin-left:20px"></div>
 			
 		<h3>Smoother Tooltips</h3>
 
@@ -150,10 +149,9 @@ body.tools #content {
 		
 	</div>
 	
-	<div class="col last">  
+	<div class="col">  
 	
-		<div class="image" title="Fine grained transparency"
-			style="background-position:-340px -680px; height:170px; width:255px;"></div>
+		<div class="image" style="background-position:-300px -950px;"></div>
 			
 		<h3>jQuery best practices</h3>
 
@@ -164,10 +162,9 @@ body.tools #content {
 	</div>
 	
 	
-	<div class="col"> 
+	<div class="col last"> 
 	
-		<img src="http://antonlindstrom.com/public/graphic/octocat_stroked.png" 
-			width="400" />
+		<div class="image" style="background-position:-300px -329px;"></div>
 		
 		<h3>Github</h3>
 
@@ -181,33 +178,26 @@ body.tools #content {
 		
 	</div>	
 	
-	<div class="col last">  
+	<div class="col">  
 
-		<div class="image" title="Fine grained transparency"
-			style="background-position:-340px -680px; height:170px; width:255px;"></div>	
-			
-		<h3>Smaller and smaller</h3>
+		<div class="image"
+			style="background-position:27px -910px;"></div>                         
 
+		<p id="banksy">Thanks <a href="http://www.flickr.com/photos/917press/2583620793/">Banksy</a></p>
+		
+		<h3 style="font-size:13px">NO COPYRIGHTS OR LICENSES. DO WHAT YOU WANT.</h3>
+		
 		<p>
-			In JavaScript file size is a very important quality measure. Web is all about speed. The combined size of Tabs, Tooltips, Overlay and Scrollable is now <strong>${v.jqtSize} kb</strong> when minified and gzipped. New tools are 20% smaller making it faster and easier to understand. The file size can be reduced by writing good code but also by using a proper JavaScript minifier. By the time of writing Googles Closure Compiler generates smallest files which is being used for jQuery Tools 1.2.0.
-		</p>
-
-		<div class="image" title="Fine grained transparency"
-			style="background-position:-340px -680px; height:170px; width:255px;"></div>                         
-			
-		<h3>New copyleft policy</h3>
-
-		<p>
-			I generally don't like graffiti but a artist called Bansky <a href="http://www.flickr.com/photos/917press/2583620793/" class="external">makes a difference</a>. jQuery Tools takes a similar approach and now the license says:
+			This is the new jQuery Tools license. 
 		</p>
 		
 		<p>
-			<strong>NO COPYRIGHTS OR LICENSES. DO WHAT YOU WANT.</strong>
-		</p>
-		
-		<p> 
 			Copyrights and patenst are evil. They block the natural progress. We all know it: if people start sharing instead of owning the world would be a better place. Today money is the king. This results closed systems and poor quality (SAP, IBM, Microsoft) and people are seriously exploited (Nike, Nestle, Nokia). For businessmen nothing is enough. 
 		</p>
+		
+	</div>
+	
+	<div class="col last" style="padding-top:222px">
 		
 		<h3>New versioning policy</h3>
 		

@@ -17,7 +17,7 @@
 
 .area {
 	padding:30px 50px 20px 50px;
-	background-color:#f7f7f7;
+	background-color:#fff;
 	color:#000;
 	-moz-border-radius:15px;
 	-webkit-border-radius:15px;
@@ -42,11 +42,19 @@
 
 #form {
 	padding:30px 40px 20px 40px;
-	background-color:#00465E;
+	background-color:#01286B;
 	color:#fff;
 	border:1px solid #000;
 	-moz-box-shadow:inset 0 0 16px #000;
 	-webkit-box-shadow:inset 0 0 16px #000;
+}
+
+
+#formlogo {
+	background:url(1.2.0/sprite.jpg) no-repeat -56px -7px;
+	width:213px; 
+	height:250px;
+	float:left;	
 }
 
 #hero .col, #hero .punch {
@@ -104,14 +112,24 @@
 
 
 #release {
-	background:#f7f7f7 url(../img/global/gradient/h500_reverse.png) repeat-x 0 -180px;
+	background:#fff url(../img/global/gradient/h500_reverse.png) repeat-x 0 -180px;
 	border:1px solid #ccc;
 	margin-top:100px;		
 	font-size:13px;
 }
 
+#jqtlogo {
+	background:url(1.2.0/sprite.jpg) no-repeat -35px -335px;
+	width:270px;
+	height:270px;
+	float:left;	
+}
+
 #release .image {
-	margin-bottom:-20px;
+	background:url(1.2.0/sprite.jpg) no-repeat -300px -639px;
+	margin-bottom:-30px;
+	height:240px;
+	width:320px;
 }
 
 #release .col {
@@ -141,4 +159,14 @@
 
 #releasefooter a:hover {
 	text-decoration:underline;
+}
+
+#content #banksy, #banksy a {
+	text-align:right;
+	margin:-70px 0 50px;
+}
+
+#content #banksy, #banksy a  {
+	font-size:10px;
+	color:#b1b1b1;		
 }
