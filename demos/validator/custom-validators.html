@@ -2,7 +2,7 @@
 <%@ include file="../header.jsf" %>
 
 <p class="more">
-	Here we make a custom <samp>time</samp> input and <samp>minlength</samp> and <samp>data-equals</samp> custom attributes. New weve form development. jQuery Tools Validator makes it easy.
+	Here we make a custom <samp>time</samp> input with custom <samp>minlength</samp> and <samp>data-equals</samp> attributes. New wave form development. jQuery Tools Validator makes it easy.
 </p>
 
 <div style="width:500px;margin:25px auto">
@@ -12,7 +12,7 @@
 <h3>HTML coding</h3>
 
 <p>
-	Here it is. A HTML5 form together with our new attributes. 
+	Here it is. A HTML5 form together with our new attributes:
 </p>
 
 <pii:code lang="html">
@@ -22,13 +22,13 @@ ${html}
 <h2>Custom validators</h2>
 
 <p>
-	Implementing new attributes and input type is very easy with this tool. So easy that you'll end up developing new ones regularly. Each new attribute and input type requires a new custom validator function. They are added to the Validator too with <samp>$.tools.validator.fn</samp> method. 
+	Implementing new attributes and input type is very easy with this tool. So easy that you'll end up developing new ones regularly. Each new attribute and input type requires a new custom validator function. They are added to the Validator tool with the <samp>$.tools.validator.fn</samp> method.
 </p>
 
 <h3><samp>time</samp> input type</h3>
 
 <p>
-	Time input belongs to HTML5 standard. Here we implement it. A valid input has two numbers followed by ":" followed by two numbers. For example: 12:44. 
+	Time input belongs to the HTML5 standard. Here we implement it. A valid input has two numbers followed by ":" followed by two numbers. For example: 12:44.
 </p>
 
 <pii:code>
@@ -36,13 +36,13 @@ ${v1}
 </pii:code>
 
 <p>
-	This is the most common way of defining a custom validator. The first argument matches all inputs you want to validate. Here we select input fields whose <samp>type</samp> attribute equals to "time". Second argument is the error message that is shown when validation fails. Third argument is the actual validator function. It must return <samp>true</samp> if the value is valid. The value is supplied as the second argument to the validator function. 
+	This is the most common way of defining a custom validator. The first argument matches all inputs you want to validate. Here we select input fields whose <samp>type</samp> attribute is equal to "time". The second argument is the error message that is shown when validation fails. The third argument is the actual validator function; it must return <samp>true</samp> if the value is valid. The value is supplied as the second argument to the validator function.
 </p>
 
 <h3><samp>data-equals</samp> attribute</h3>
 
 <p>
-	Our next validator ensures that a value equals to another field's value. For example <samp>data-equals="password"</samp> means that the value must equal to a field named "password". The <samp>data-</samp> prefix makes it valid HTML5. 
+	Our next validator ensures that one field's value is equal to another field's value. For example <samp>data-equals="password"</samp> means that the value must equal to a field named "password". The <samp>data-</samp> prefix makes it valid HTML5.
 </p>
 
 <pii:code>
@@ -50,13 +50,13 @@ ${v2}
 </pii:code>
 
 <p>
-	Here you can see a backreference <samp>$1</samp> on the error message. It is being replaced by the return value of the validator function when a validation fails. You can have zero or more backreferences and they must be contained in an Array. Also note that inside the validator <samp>this</samp> is a reference to the <a href="${jqt}/validator/#api">validator API</a>.
+	Here you can see the backreference <samp>$1</samp> in the error message. It is being replaced by the return value of the validator function when a validation fails. You can have zero or more backreferences and they must be contained in an Array. Also note that inside the validator <samp>this</samp> is a reference to the <a href="${jqt}/validator/#api">validator API</a>.
 </p>
 
 <h3><samp>minlength</samp> attribute</h3>
 
 <p>
-	Here we make a non-standard <samp>minlength</samp> attribute. When making custom attributes you can use any attribute name you like and things will work. The downside is that custom names don't pass HTML validation but in <a href="http://www.crockford.com/html/" class="external">ideal world</a> this shouldn't be the case.
+	Here we make use of the non-standard <samp>minlength</samp> attribute. When making custom attributes you can use any attribute name you like and things will work. The downside is that custom names don't pass HTML validation but in an <a href="http://www.crockford.com/html/" class="external">ideal world</a> this shouldn't be the case.
 </p>
 
 <pii:code>
@@ -64,13 +64,13 @@ ${v3}
 </pii:code>
 
 <p>
-	This time we return the error message and don't provide it as the second argument. This gives you the possibility to dynamically construct the message. You can return a simple string in which case it is assumed to be in inglish or you can return an object just we do here. 
+	This time we return the error message and don't provide it as the second argument. This gives you the possibility to dynamically construct the message. You can return a simple string in which case it is assumed to be in English or you can return an object just as we do here.
 </p>
 
 <h3>Localization</h3>
 
 <p>
-	Here we localize our time input with <samp>$.tools.validator.localizeFn</samp> call.
+	Here we localize our time input with the <samp>$.tools.validator.localizeFn</samp> call.
 </p>
 
 <pii:code>
@@ -78,11 +78,11 @@ ${v4}
 </pii:code>
 
 <p>
-	And here are all the messages contained inside the validator as seen from Firebug console.
+	And here are all the messages contained inside the validator as seen from the <a href="http://getfirebug.com/" class="external">Firebug</a> console.
 </p>
 
 <p>
-	<img src="${jqt}/validator/img/messages-custom2.gif" alt="" />	
+	<img src="${jqt}/validator/img/messages-custom2.gif" alt="" />
 </p>
 
 <p>
@@ -92,7 +92,7 @@ ${v4}
 <h3>Validator initialization</h3>
 
 <p>
-	Once the custom validators have been defined we initialize validation for our form. We tweak the position of the error message with <samp>offset</samp> configuration variable. 
+	Once the custom validators have been defined we initialize validation for our form. We tweak the position of the error message with the <samp>offset</samp> configuration variable:
 </p>
 
 <pii:code>
@@ -106,7 +106,7 @@ ${js}
 <h2>CSS coding</h2>
 
 <p>
-	We use <a href="css/form.css">two</a> <a href="css/columns.css">stylesheets</a> for the job. 
+	We use <a href="css/form.css">two</a> <a href="css/columns.css">stylesheets</a> for the job:
 </p>
 
 <pii:code lang="html">
@@ -116,7 +116,7 @@ ${css}
 <h3>Pure CSS arrow</h3>
 
 <p>
-	One interesting feature in <samp>columns.css</samp> is the arrow that is done with CSS only. No images. Here is the trick.
+	One interesting feature in <samp>columns.css</samp> is the arrow that is done with CSS only. No images. Here is the trick:
 </p>
 
 <pii:code lang="css">
@@ -124,14 +124,14 @@ ${css}
 .error em {
 	display:block;
 	width:0;
-	height:0;	
+	height:0;
 	border:10px solid;
 	border-color:#FFFE36 transparent transparent;
-	
+
 	/* positioning */
 	position:absolute;
-	bottom:-17px;  
-	left:60px;  
+	bottom:-17px;
+	left:60px;
 }
 </pii:code>
 

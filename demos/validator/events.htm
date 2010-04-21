@@ -12,7 +12,7 @@
 		padding:20px;
 		margin:5px auto;
 		-moz-border-radius:5px;
-		-webkit-border-radius:5px;			
+		-webkit-border-radius:5px;
 	}
 	</style>
 </head>
@@ -28,18 +28,18 @@
 <script>
 <c:set var="js">
 $("#myform").bind("onFail", function(e, errors)  {
-		
-	// we are only doing stuff when form is submitted	
+
+	// we are only doing stuff when the form is submitted
 	if (e.originalEvent.type == 'submit') {
-		
-		// loop trough Error objects and do the coloring thing
+
+		// loop through Error objects and add the border color
 		$.each(errors, function()  {
 			var input = this.input;
 			input.css({borderColor: 'red'}).focus(function()  {
-				input.css({borderColor: '#444'});		
+				input.css({borderColor: '#444'});
 			});
 		});
-	} 
+	}
 });
 </c:set>
 ${js}
@@ -48,20 +48,20 @@ ${js}
 // get handle to the info box
 var info = $("#info");
 
-// initialize validator and supply onBeforeValidate event in configuration
-$("#myform").validator({	
+// initialize validator and supply the onBeforeValidate event in configuration
+$("#myform").validator({
 	onBeforeValidate: function(e, els)  {
 		info.empty();
-		showEvent("onBeforeValidate", els);	
+		showEvent("onBeforeValidate", els);
 	}
-	
+
 // use jQuery's bind method
 }).bind("onBeforeFail", function(e, els)  {
 	showEvent("onBeforeFail", els);
-		
+
 // another listener with bind
 }).bind("onFail", function(e, els)  {
-	showEvent("onFail", els.length + " inputs"); 
+	showEvent("onFail", els.length + " inputs");
 });
 
 // get handle to the Validator API
@@ -70,9 +70,9 @@ var api = $("#myform").data("validator");
 // use API to assign an event listener
 api.onSuccess(function(e, els) {
 	showEvent("onSuccess", els);
-	
+
 	// we don't want to submit the form. just show events.
-	return false;		
+	return false;
 });
 
 // event handler just for a single field
@@ -82,9 +82,9 @@ $(":email").oninvalid(function(e, message) {
 
 // this function is used to show error on the info box
 window.showEvent = function(eventName, input) {
-	var inputName = input.jquery ? input.attr("name") : input; 
+	var inputName = input.jquery ? input.attr("name") : input;
 	info.append("<p><strong>" + eventName + "</strong>: " + inputName  + "</p>").fadeIn();
-}; 
+};
 </c:set>
 ${js2}
 </script>

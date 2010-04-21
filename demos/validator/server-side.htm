@@ -14,28 +14,28 @@
 <c:set var="js">
 // initialize validator and add a custom form submission logic
 $("#myform").validator().submit(function(e) {
-	
+
 	var form = $(this);
-	
+
 	// client side validation OK.
-	if (!e.isDefaultPrevented()) { 
-		
+	if (!e.isDefaultPrevented()) {
+
 		// submit with AJAX
 		$.getJSON("server-fail.js?" + form.serialize(), function(json) {
-				
+
 			// everything is ok. (server returned true)
 			if (json === true)  {
 				form.load("success.php");
-				
-			// server side validation failed. use invalidate() to show errors
+
+			// server-side validation failed. use invalidate() to show errors
 			} else {
-				form.data("validator").invalidate(json); 
+				form.data("validator").invalidate(json);
 			}
 		});
-		
+
 		// prevent default form submission logic
-		e.preventDefault();			
-	} 
+		e.preventDefault();
+	}
 });
 </c:set>
 ${js}
