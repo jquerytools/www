@@ -5,7 +5,7 @@
 <body>
 
 <p>
-	Here we have four <samp>img</samp> tags and their <samp>title</samp> attribute work as the tooltip. This kind of simple syntax will also show the browser's standard tooltips even though JavaScript is not enabled. This whole setup can be enabled with one JavaScript one-liner.
+	Here we have four <samp>img</samp> tags and their <samp>title</samp> attribute working as the tooltip. This kind of simple syntax will also show the browser's standard tooltips even though JavaScript is not enabled. This whole setup can be enabled with one JavaScript one-liner.
 </p>
 
 <%@ include file="index.htm" %>
@@ -13,7 +13,7 @@
 <h3>HTML coding</h3>
 
 <p>
-	You need two things: the elements that show the tooltips when the cursor is placed on top of them, these elements are called <strong>triggers</strong>. Then you need one or more tooltip elements. In this setup we have single tooltip element that works for all of the triggers:
+	You need two things: the elements that show the tooltips when the cursor is placed on top of them, these elements are called <strong>triggers</strong>. You also need one or more tooltip elements. In this setup we have a single tooltip element that works for all of the triggers:
 </p>
 
 <pii:code lang="html">
@@ -33,7 +33,7 @@
 <h3>CSS coding</h3>
 
 <p>
-	By default the Tooltip generates the tooltip element automatically and assigns a CSS class name <samp>tooltip</samp> to it. It should be initially hidden by the CSS by setting <samp>display: none</samp>. We have no specific styling for the trigger elements.
+	By default the Tooltip generates the tooltip element automatically and assigns the CSS class name <samp>tooltip</samp> to it. It should be initially hidden by the CSS by setting <samp>display: none</samp>. We have no specific styling for the trigger elements.
 </p>
 
 <pii:code lang="css">
@@ -52,11 +52,11 @@ ${js}
 </pii:code>
 
 <p>
-	The default behaviour is that the tooltip is positioned on the top/center of the trigger and it slides upwards. Of course, the positioning and the sliding effect can be altered in the configuration as seen in the upcoming demos.
+	The default behaviour is that the tooltip is positioned on the top/center of the trigger and it slides upwards. Of course, the positioning and the sliding effect can be altered in the configuration as will be seen in the upcoming demos.
 </p>
 
 <p>
-	Enclosing your call inside <samp>$(document).ready</samp> performs the script right after the document is scriptable. Read more about that in the <a href="${jqt}/documentation/basics.html#document_ready">User's Manual</a>.
+	Enclosing your call inside <samp>$(document).ready</samp> executes the script right after the document is scriptable. Read more about that in the <a href="${jqt}/documentation/basics.html#document_ready">User's Manual</a>.
 </p>
 
 <br />
