@@ -4,12 +4,12 @@
 <%--{{{ Intro --%>
 
 <h1 style="background:url(${cdn}${jqt}/img/hero/validator.jpg) no-repeat 0 45px">
-	jQuery Validator @ jQuery Tools 
+	jQuery Validator @ jQuery Tools
 	<em>HTML5 input validation for humans</em>
 </h1>
-	
-<p class="more" style="margin-top:5px"> 
-	20 year wait is over. Enter the missing form validation tool. It takes the best parts of <strong>HTML 5</strong> and <strong>Web Forms 2.0</strong> standards and turns them into pure amazing. All with <strong>1.75 kb</strong> of code. 
+
+<p class="more" style="margin-top:5px">
+	20 year wait is over. Enter the missing form validation tool. It takes the best parts of <strong>HTML 5</strong> and <strong>Web Forms 2.0</strong> standards and turns them into pure amazing. All with <strong>1.75 kb</strong> of code.
 </p>
 
 <%@ include file="../demos/validator/index.htm" %>
@@ -19,30 +19,30 @@
 <div class="feat">
 
 	<h3 class="first">Use HTML5 input types today</h3>
-	
+
 	<p>
 		HTML5 provides new input types such as <samp>number</samp>, <samp>email</samp> or <samp>url</samp>, and attributes such as <samp>max</samp>, <samp>min</samp>, <samp>required</samp> or <samp>pattern</samp>. These work out of the box and will add a new dimension to your everyday forms. If that's not enough it's easy to create own custom inputs.
 	</p>
-	
+
 </div>
 
 <div class="feat last">
 
 	<h3 class="first">Take control of your error messages</h3>
-	
+
 	<p>
 		You can fully control when, where and how the error messages are shown. Below, above or beside the field. All at once or one at the time. Big or small. Different language for different location. When an invalid field is edited the error message will dynamically change or disappear depending on the input.
 	</p>
-	
+
 </div>
 
 
 <div class="feat">
 
-	<h3>Server side integration</h3>
-	
+	<h3>Server-side integration</h3>
+
 	<p>
-		You can use a generic <samp>invalidate</samp> function to display errors that occurred on the server side. The logic is not tied to any particular server side framework and it is easy to integrate into your existing server side code. The only server requirement is the capability to return data in JSON format.
+		You can use a generic <samp>invalidate</samp> function to display errors that occurred on the server-side. The logic is not tied to any particular server-side framework and it is easy to integrate into your existing server-side code. The only server requirement is the capability to return data in JSON format.
 	</p>
 
 </div>
@@ -54,7 +54,7 @@
 	<p>
 		<a href="http://www.whatwg.org/specs/web-forms/current-work/#form-validation" class="external">Web Forms 2.0</a> is a large and complex standard. This tool follows the standard and uses a sane subset of it. For example you can use the <samp>form.checkValidity()</samp> method or you can define a <samp>oninvalid</samp> callback functions for your inputs.
 	</p>
-	
+
 </div>
 
 <br clear="all" />
@@ -123,7 +123,7 @@ inputs.data("validator").checkValidity();
 <h2>Supported HTML5 features</h2>
 
 <p>
-	jQuery Tools Validator adds new input types and attributes to your form construction arsenal.  
+	jQuery Tools Validator adds new input types and attributes to your form construction arsenal.
 </p>
 
 <h3>HTML5 input types</h3>
@@ -139,7 +139,7 @@ inputs.data("validator").checkValidity();
 			<th>Description</th>
 		</tr>
 	</thead>
-	
+
 	<tr>
 		<td class="code">email</td>
 		<td>Accepts a valid email address only. For example <samp>&lt;input type="email" name="email" /&gt;</samp>.</td>
@@ -190,7 +190,7 @@ inputs.data("validator").checkValidity();
 		<td><code>Function</code></td>
 		<td>
 			This function is called when the validation of the submitted field value failed.
-			
+
 			<p>
 				<small>This feature uses jQuery's <samp>globalEval()</samp> instead of the "evil" <samp>eval()</samp> function in JavaScript.</small>
 			</p>
@@ -223,7 +223,7 @@ inputs.data("validator").checkValidity();
 		</tr>
 	</thead>
 
-	
+
 	<tr>
 		<td class="code">disabled</td>
 		<td><code></code></td>
@@ -244,7 +244,7 @@ inputs.data("validator").checkValidity();
 		<td><code>string</code></td>
 		<td>Provides advisory information about the element. You can often see this attribute being used for the wrong purpose. Some frameworks use it for validation error messages. This is wrong. Only use it to describe what kind of input the field accepts.</td>
 	</tr>
-	
+
 </table>
 
 <p>
@@ -256,7 +256,7 @@ $("fieldset:eq(1)").attr("disabled", true);
 </pii:code>
 
 <p>
-	In addition to the above HTML attributes jQuery Tools allows you to implement your own <a href="#custom">custom attributes</a> for validation. 
+	In addition to the above HTML attributes jQuery Tools allows you to implement your own <a href="#custom">custom attributes</a> for validation.
 </p>
 
 <%--}}}--%>
@@ -274,111 +274,111 @@ $("fieldset:eq(1)").attr("disabled", true);
 			<th>Default</th>
 			<th>Description</th>
 		</tr>
-	</thead> 
+	</thead>
 	<tr>
 		<td class="code">effect</td>
 		<td><code>'default'</code></td>
 		<td>
 			By default error messages are shown beside the input field. You can override this default behaviour altogether and make the error messages appear in any way you like. You can for example show all error messages inside one big container. Only one effect "default" is built in. Look for the details of <a href="#effects">developing custom effects</a>.
-		</td> 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">errorClass</td>
 		<td><code>'invalid'</code></td>
 		<td>
 			A CSS class name that is assigned to the input field when a validation error occurs.
-		</td> 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">errorInputEvent</td>
 		<td><code>'keyup'</code></td>
 		<td>
 			The event that triggers the input validity check. By default this occurs on every keystroke by the user. Other valid events include <samp>change</samp>, <samp>blur</samp> or <samp>null</samp>, the latter disabling input validation for a single field.
-		</td> 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">formEvent</td>
 		<td><code>'submit'</code></td>
 		<td>
 			The event when form validation is performed. By default this happens when the form is submitted. Setting this to <samp>null</samp> prevents this behaviour. You can experiment with other events such as <samp>click</samp> and <samp>mouseover</samp> but it might not be worth the effort.
-		</td> 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">grouped</td>
 		<td><code>false</code></td>
 		<td>
 			When there are multiple rules specified for a field such as <samp>type="email"</samp> and <samp>required</samp> enabling this makes all error messages show up together instead of one at a time.
-		</td> 
-	</tr>	
+		</td>
+	</tr>
 	<tr>
 		<td class="code">inputEvent</td>
 		<td><code>null</code></td>
 		<td>
 			You can validate an input field even though it's already valid. Setting <samp>keyup</samp> here validates the field every time a character is entered. By default the input is only validated when it has an invalid value as specified in the <samp>errorInputEvent</samp> configuration variable. Valid events for this property are <samp>keyup</samp>, <samp>change</samp>, <samp>blur</samp> or <samp>null</samp>.
-		</td> 
+		</td>
 	</tr>
 	<tr>
 		<td class="code"><a name="configuration/lang"></a>lang</td>
 		<td><code>'en'</code></td>
 		<td>
 			The language used in the error messages. See <a href="#localization">localization</a> for details.
-		</td> 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">message</td>
 		<td nowrap><code>'&lt;div/&gt;</td>
 		<td>
 			HTML layout for the error message. The actual errors are <samp>span</samp> elements that are <em>appended</em> to the message element. This configuration option allows you to specify as complex a layout as you wish. You can for example add a nested <samp>div</samp> element as a placeholder for an arrow.
-		</td> 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">messageAttr</td>
 		<td><code>'data-invalid'</code></td>
 		<td>
 			Name of the attribute that contains an error message to be shown when a validation error occurs for this field. This value overrides all validator specific error messages and does not care about (client side) localization. Read more about <a href="#input_message">input specific error message</a>.
-		</td> 
-	</tr>	
+		</td>
+	</tr>
 	<tr>
 		<td class="code">messageClass</td>
 		<td><code>'error'</code></td>
 		<td>
 			CSS class name defined for the error message element.
-		</td> 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">offset</td>
 		<td><code>[0, 0]</code></td>
 		<td>
 			Fine tunes the tooltip position specified with the <samp>position</samp> property. See the <a href="#positioning">positioning details</a> for more information.
-		</td> 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">position</td>
 		<td><code>'center right'</code></td>
 		<td>
 			Specifies the position of the error message. See the <a href="#positioning">positioning details</a> for more information
-		</td> 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">relative</td>
 		<td><code>false</code></td>
 		<td>
 			Error messages are positioned relative to the document (by using the <samp>offset()</samp> method of jQuery) like in a <samp>position: absolute</samp> CSS directive. By enabling this property the tooltip position is determined relative to the parent element. This should be enabled if you have input fields inside a scrollable for example.
-		</td> 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">singleError</td>
 		<td><code>false</code></td>
 		<td>
 			Enabling this shows only one validation error at a time.
-		</td> 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">speed</td>
 		<td><code>'normal</code></td>
 		<td>
 			Error message's fade-in speed.
-		</td> 
+		</td>
 	</tr>
 </table>
 
@@ -438,7 +438,7 @@ $.tools.validator.localize("fi", {
 </p>
 
 <p>
-The <samp>:email</samp> and <samp>:number</samp> localizations are opened. <strong style="color:#444;font-size:11px">more&hellip;</strong> indicates objects that can be opened to inspect localized messages. As you can see, this is not the case for <samp>*</samp> and <samp>:url</samp> which were not localized. The <samp>$1</samp> tokens in <samp>[max]</samp> and <samp>[min]</samp> are replaced with proper values once the message is shown to the user. You can take advantage of this <a href="#substitution">variable substitution</a> feature in your own custom validators. 
+The <samp>:email</samp> and <samp>:number</samp> localizations are opened. <strong style="color:#444;font-size:11px">more&hellip;</strong> indicates objects that can be opened to inspect localized messages. As you can see, this is not the case for <samp>*</samp> and <samp>:url</samp> which were not localized. The <samp>$1</samp> tokens in <samp>[max]</samp> and <samp>[min]</samp> are replaced with proper values once the message is shown to the user. You can take advantage of this <a href="#substitution">variable substitution</a> feature in your own custom validators.
 </p>
 
 <p>
@@ -458,7 +458,7 @@ $("#myForm").validator({lang: 'fi'});
 <pii:code>
 $.tools.validator.localizeFn("[type=time]", {
 	en: 'Please supply a valid time',
-	fi: 'Virheellinen aika'		
+	fi: 'Virheellinen aika'
 });
 </pii:code>
 
@@ -479,7 +479,7 @@ $.tools.validator.localizeFn("[type=time]", {
 </pii:code>
 
 <p>
-	This will override any other error messages that are defined for the validation error. The drawback here is that you can only supply a single error message although there may be many different validation errors and that this error message cannot be localized. Of course you can supply a different value for this attribute on the server side.
+	This will override any other error messages that are defined for the validation error. The drawback here is that you can only supply a single error message although there may be many different validation errors and that this error message cannot be localized. Of course you can supply a different value for this attribute on the server-side.
 </p>
 
 <p>
@@ -535,8 +535,8 @@ $.tools.validator.fn(matcher, [errorMessages], validator)
 			<th>Type</th>
 			<th>Description</th>
 		</tr>
-	</thead> 
-	
+	</thead>
+
 	<tr>
 		<td class="code">matcher</td>
 		<td><code>string or function</code></td>
@@ -556,16 +556,16 @@ $.tools.validator.fn(matcher, [errorMessages], validator)
 		<td><code>function</code></td>
 		<td>
 			This is the actual validator function that does the job. Inside the function the <samp>this</samp>-variable references the validator <a href="#api">API</a>. The function accepts two arguments: The first argument provides a jQuery object representing the element to be validated, and the second argument provides the invalid value. Four types of return values are supported
-			
+
 			<ol>
 				<li>returning <samp>true</samp> from your validator means that the value passes your validation logic</li>
 				<li>an <samp>Array</samp> represents values for <a href="#substitution">variable substitution</a></li>
 				<li>a <samp>string</samp> return value represents an error message in a specific language</li>
-				<li>an <samp>object</samp> represents a localized error message</li> 
+				<li>an <samp>object</samp> represents a localized error message</li>
 			</ol>
 		</td>
 	</tr>
-	
+
 </table>
 
 
@@ -587,17 +587,17 @@ $.tools.validator.fn(matcher, [errorMessages], validator)
 
 <pii:code>
 $.tools.validator.fn("[type=range]", "Value must be between $1 and $2", function(el, v) {
-	
+
 	// get min and max for this field from the (HTML5) attributes
 	var min = el.attr("min"), max = el.attr("max"), value = parseFloat(v);
-		 
+
 	// if the value is inside range return true otherwise return values for replacement
 	return  value >= min && value <= max ? true : [min, max];
 });
 </pii:code>
 
 <p>
-	The error message given in the second argument contains two <em>replacement tokens</em>, <samp>$1</samp> and <samp>$2</samp>, which will be expanded to the respective values of the two members in the Array returned by the validator function: <samp>[value1, value2]</samp>. 
+	The error message given in the second argument contains two <em>replacement tokens</em>, <samp>$1</samp> and <samp>$2</samp>, which will be expanded to the respective values of the two members in the Array returned by the validator function: <samp>[value1, value2]</samp>.
 </p>
 
 <a name="function_matcher"></a>
@@ -607,7 +607,7 @@ $.tools.validator.fn("[type=range]", "Value must be between $1 and $2", function
 	Instead of a jQuery selector you can use a function to determine which fields are to be validated by your custom validator. For example:
 </p>
 
-<pii:code>		
+<pii:code>
 // 1st argument provides the function matcher
 $.tools.validator.fn(function()  {
 
@@ -616,7 +616,7 @@ $.tools.validator.fn(function()  {
 
 // 2nd argument provides the actual validator function
 }, function(el, v) {
-	
+
 	// do your validation. return true if the value is valid
 	return true;
 
@@ -624,7 +624,7 @@ $.tools.validator.fn(function()  {
 </pii:code>
 
 <p>
-	Our matcher only selects inputs that are within a <samp>form</samp> with class name "register". This is probably not a real world situation, but it will show you how it works. You have complete control over the selection. 
+	Our matcher only selects inputs that are within a <samp>form</samp> with class name "register". This is probably not a real world situation, but it will show you how it works. You have complete control over the selection.
 </p>
 
 <h4>Localization &amp; function matchers</h4>
@@ -644,7 +644,7 @@ myMatcher.key = "register-input";
 
 // use the "localized" matcher on our validator
 $.tools.validator.fn(myMatcher, "Please fix this value", function(el, v) {
-   
+
    // do your validation. return true if the value is valid
    return true;
 });
@@ -663,11 +663,11 @@ $.tools.validator.fn(myMatcher, "Please fix this value", function(el, v) {
 
 <%--{{{ API --%>
 
-<a name="api"></a> 
+<a name="api"></a>
 <h2>Scripting API</h2>
- 
+
 <p>
-	First make sure you have familiarized yourself with <a href="${jqt}/documentation/scripting.html">jQuery Tools scripting</a>. 
+	First make sure you have familiarized yourself with <a href="${jqt}/documentation/scripting.html">jQuery Tools scripting</a>.
 </p>
 
 <table class="listing">
@@ -678,53 +678,53 @@ $.tools.validator.fn(myMatcher, "Please fix this value", function(el, v) {
 			<th>Description</th>
 		</tr>
 	</thead>
-	
+
 	<tr>
 		<td class="code">checkValidity()</td>
 		<td><code>boolean</code></td>
 		<td>
 			Performs the form validation routine.
 		</td>
-	</tr>	 
+	</tr>
 	<tr>
 		<td class="code">getConf()</td>
 		<td><code>Object</code></td>
 		<td>
 			Returns the configuration of the current validator instance.
 		</td>
-	</tr>	 
+	</tr>
 	<tr>
 		<td class="code">getForm()</td>
 		<td><code>jQuery</code></td>
 		<td>
 			Returns the form element associated with the validator. May be <samp>null</samp>.
 		</td>
-	</tr>	 
+	</tr>
 	<tr>
 		<td class="code">getInputs()</td>
 		<td><code>jQuery</code></td>
 		<td>
 			Returns all input fields associated with the validator.
 		</td>
-	</tr>	 
+	</tr>
 	<tr>
 		<td class="code">invalidate(Object)</td>
 		<td><code>API</code></td>
 		<td>
-			Invalidates the form with the error messages given in the argument. Causes the <samp>onFail</samp> event and input specific <samp>ininvalid</samp> events to be fired. This function is useful for <a href="#server_side">server side integration</a>.
+			Invalidates the form with the error messages given in the argument. Causes the <samp>onFail</samp> event and input specific <samp>ininvalid</samp> events to be fired. This function is useful for <a href="#server_side">server-side integration</a>.
 		</td>
-	</tr>	 	
+	</tr>
 </table>
 <%--}}}--%>
 
 
 <%--{{{ Events--%>
 
-<a name="events"></a> 
+<a name="events"></a>
 <h2>Events</h2>
 
 <p>
-	First make sure you have read about <a href="${jqt}/documentation/scripting.html#events">Events in jQuery Tools</a>. All event listeners receive an <a href="${jqt}/documentation/scripting.html#event_object">Event Object</a> as first argument. 
+	First make sure you have read about <a href="${jqt}/documentation/scripting.html#events">Events in jQuery Tools</a>. All event listeners receive an <a href="${jqt}/documentation/scripting.html#event_object">Event Object</a> as first argument.
 </p>
 
 <p>
@@ -739,7 +739,7 @@ $.tools.validator.fn(myMatcher, "Please fix this value", function(el, v) {
 		</tr>
 	</thead>
 
-	
+
 	<tr>
 		<td class="code">onBeforeFail</td>
 		<td>
@@ -764,7 +764,7 @@ $.tools.validator.fn(myMatcher, "Please fix this value", function(el, v) {
 			After the validation, if all fields are valid. The second argument is a jQuery object containing all fields that passed the validation.
 		</td>
 	</tr>
-	
+
 </table>
 
 <h3>Field specific events</h3>
@@ -798,45 +798,45 @@ $("[name=password]").oninvalid(function(event, errorMessage) {
 <%--}}}--%>
 
 
-<%--{{{ Server side --%>
+<%--{{{ Server-side --%>
 
-<a name="server_side"></a> 
-<h2>Server side integration</h2>
+<a name="server_side"></a>
+<h2>Server-side integration</h2>
 
 <p>
-	Here is the logic taken from the <a href="${jqt}/demos/validator/server-side.html">server side validation</a> demo. Please read the comment blocks and see the natural and standards based syntax. 
+	Here is the logic taken from the <a href="${jqt}/demos/validator/server-side.html">server-side validation</a> demo. Please read the comment blocks and see the natural and standards based syntax.
 </p>
 
 <pii:code>
 // initialize validator and add a custom form submission logic
 $("#myform").validator({ position: 'center right' }).submit(function(e) {
-	
+
 	var form = $(this);
-	
+
 	// client side validation passed
-	if (!e.isDefaultPrevented()) { 
-		
+	if (!e.isDefaultPrevented()) {
+
 		// submit the data to server with AJAX
 		$.getJSON(form.attr("action") + "?" + form.serialize(), function(json) {
-				
+
 			// everything is ok. (server returned true)
 			if (json === true)  {
 				form.load("success.php");
-				
-			// server side validation failed. use invalidate() to show errors
+
+			// server-side validation failed. use invalidate() to show errors
 			} else {
-				form.data("validator").invalidate(json); 
+				form.data("validator").invalidate(json);
 			}
 		});
-		
+
 		// prevent default form submission logic
-		e.preventDefault();			
-	} 
+		e.preventDefault();
+	}
 });
 </pii:code>
 
 <p>
-	Here we used a simple return value <samp>true</samp> to indicate that the data was valid on the server side. You can do whatever you wish when data was good. Here we replaced form contents with a server side page. If the data was not valid we use the <samp>invalidate</samp> method to display errors for the user. The <samp>invalidate</samp> method accepts an object argument which is a field name to error message mapping such as this:
+	Here we used a simple return value <samp>true</samp> to indicate that the data was valid on the server-side. You can do whatever you wish when data was good. Here we replaced form contents with a server-side page. If the data was not valid we use the <samp>invalidate</samp> method to display errors for the user. The <samp>invalidate</samp> method accepts an object argument which is a field name to error message mapping such as this:
 </p>
 
 <pii:code>
@@ -872,11 +872,11 @@ $.tools.validator.addEffect("wall", function(errors, event) {
 
 		// erroneous input
 		var input = error.input;
-		
+
 		// error messages for the input (Array)
 		var errors = error.messages;
 	});
-	
+
 }, function(inputs)  {
 	// "hide" function
 
