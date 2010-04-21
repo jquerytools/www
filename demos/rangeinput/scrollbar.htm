@@ -2,7 +2,7 @@
 <%@ include file="../standalone.jsf" %>
 
 	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/demos/rangeinput/css/scrollbar.css"/>
-	
+
 </head>
 
 <body>
@@ -11,7 +11,7 @@
 <!-- our scrollable element -->
 <div id="scrollwrap">
 	<div id="scroll">
-		jQuery TOOLS ${v.jqt} Rangeinput. HTML5 ranges for humans. 
+		jQuery TOOLS ${v.jqt} Rangeinput. HTML5 ranges for humans.
 	</div>
 </div>
 
@@ -22,33 +22,33 @@
 ${html}
 
 
-<script>		
+<script>
 <c:set var="js">
 // get handle to the scrollable DIV
 var scroll = $("#scroll");
 
 // initialize rangeinput
 $(":range").rangeinput({
-		
+
 	// slide the DIV along with the range using jQuery's css() method
-	onSlide: function(ev, step)  {  
+	onSlide: function(ev, step)  {
 		scroll.css({left: -step});
 	},
-	
+
 	// display progressbar
 	progress: true,
-	
+
 	// initial value. also sets the DIV's initial scroll position
 	value: 100,
-	
-	// this is called when slider is clicked. we animate the DIV
+
+	// this is called when the slider is clicked. we animate the DIV
 	change: function(e, i) {
-		scroll.animate({left: -i}, "fast");	
+		scroll.animate({left: -i}, "fast");
 	},
-	
+
 	// disable drag handle animation when when slider is clicked
-	speed: 0 
-	
+	speed: 0
+
 });
 </c:set>
 ${js}

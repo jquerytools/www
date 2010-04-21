@@ -2,7 +2,7 @@
 <%@ include file="../header.jsf" %>
 
 <p class="more">
-	These ranges are initialized with a single <samp>$(":range").rangeinput()</samp> call. Ranges on the second column are <strong>readonly</strong> and ranges on the third column are <strong>disabled</strong>. 
+	These ranges are initialized with a single <samp>$(":range").rangeinput()</samp> call. Ranges on the second column are <strong>readonly</strong> and ranges on the third column are <strong>disabled</strong>.
 </p>
 
 <%@ include file="multiple.htm" %>
@@ -14,7 +14,7 @@
 <h3>Rangeinput initialization</h3>
 
 <p>
-	A single call is enough to initialize all rangeinputs. The tool is wise enough to determine whether the slider is vertical or horizontal. 
+	A single call is enough to initialize all rangeinputs. The tool is smart enough to determine whether the slider is vertical or horizontal.
 </p>
 
 <pii:code>
@@ -25,7 +25,7 @@ ${js}
 <h3>HTML coding</h3>
 
 <p>
-	We have grouped the inputs inside fieldset elements. Inputs on the second column are <samp>readonly</samp> meaning that you can change the value from the slider but not from the input field. <samp>disabled</samp> slider cannot be changed in any ways. You can toggle <samp>readonly</samp> and <samp>disabled</samp> attributes by scripting using jQuery's <samp>attr</samp> method.
+	We have grouped the inputs inside fieldset elements. Inputs on the second column are <samp>readonly</samp>, meaning that you can change the value from the slider but not from the input field. The <samp>disabled</samp> slider cannot be changed at all. You can toggle <samp>readonly</samp> and <samp>disabled</samp> attributes with scripting using jQuery's <samp>attr</samp> method.
 </p>
 
 <pii:code lang="html">
@@ -49,28 +49,28 @@ ${js}
 <h3>CSS coding</h3>
 
 <p>
-	This skin is image based. Both the slider and the drag handle has a background image. Here are the most crucial parts of the <a href="css/small.css">CSS file</a>.
+	This skin is image based. Both the slider and the drag handle have a background image. Here are the most crucial parts of the <a href="css/small.css">CSS file</a>:
 </p>
 
 <pii:code lang="css">
 /* slider root */
-.slider { 
-	background:url(rangeinput.png) no-repeat  0 -5px; 
-	width:94px; 
-	height:5px; 
-	cursor:pointer; 
-	position: relative; 
+.slider {
+	background:url(rangeinput.png) no-repeat  0 -5px;
+	width:94px;
+	height:5px;
+	cursor:pointer;
+	position: relative;
 	float:left;
 }
 
 /* drag handle */
-.handle { 
-	background:transparent url(rangeinput.png) no-repeat scroll -97px 0; 
-	height:13px; 
-	position:absolute; 
-	top:-5px; 
-	width:12px; 
-	cursor:move; 
+.handle {
+	background:transparent url(rangeinput.png) no-repeat scroll -97px 0;
+	height:13px;
+	position:absolute;
+	top:-5px;
+	width:12px;
+	cursor:move;
 }
 </pii:code>
 
