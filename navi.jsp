@@ -172,8 +172,8 @@
 	<script>
 		$("#jqt5").addClass("active");
 		$("#forumLink${param.forumId}").addClass("selected");
-	</script>	 
-	
+	</script>	   
+
 </c:if>
 
 
@@ -200,4 +200,9 @@
 $("#right a[href=${req.path}]").addClass("active"); 
 </script>
 
+	
+<p style="text-align:center;margin-top:30px">
+	<a style="font-size:10px;color:#666" 
+		href="https://github.com/jquerytools/jquerytools/issues">report a bug &raquo;</a>
+</p>
 

@@ -1,6 +1,10 @@
 
 
 /* a little wider title icon for these */
+#see {
+	margin:0 0 15px 353px !important;	
+}
+
 .col {
 	float:left; 			 
 	margin-right:40px;
@@ -42,7 +46,7 @@
 
 #form {
 	padding:30px 40px 20px 40px;
-	background-color:#01286B;
+	background-color:#132d69;
 	color:#fff;
 	border:1px solid #000;
 	-moz-box-shadow:inset 0 0 16px #000;
@@ -53,8 +57,13 @@
 #formlogo {
 	background:url(1.2.0/sprite.jpg) no-repeat -56px -7px;
 	width:213px; 
-	height:250px;
+	height:293px;
 	float:left;	
+	margin-bottom:-90px;
+}
+
+#form .punch {
+	text-shadow:0 0 1px #000;	
 }
 
 #hero .col, #hero .punch {
@@ -92,6 +101,7 @@
 	color:#406871;
 	font-size:55px;
 	margin:0 0 -10px 0;
+	letter-spacing:-2px;
 }
 
 .herotitle span {
@@ -103,7 +113,7 @@
 }
 
 #form .herotitle h2 {
-	color:#A8D1F7;	
+	color:#47B3FF;	
 }
 
 #form .herotitle span {
@@ -123,6 +133,13 @@
 	width:270px;
 	height:270px;
 	float:left;	
+}
+
+.formpic {
+	background:url(1.2.0/sprite.jpg) no-repeat -265px 0;
+	margin-bottom:-30px;
+	height:160px;
+	width:200px;		
 }
 
 #release .image {

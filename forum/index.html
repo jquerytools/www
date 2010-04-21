@@ -19,9 +19,10 @@
 		30 = Tooltip
 		35 = Scrollable
 		40 = Overlay
-		45 = Expose
-		50 = Flashembed
-		55 = Bug reports
+		45 = Toolbox
+		60 = Validator
+		65 = Rangeinput
+		70 = Dateinput
 	</pii:map>
 
 	<pii:map var="forumDescriptions2" scope="application">
@@ -30,9 +31,10 @@
 		30 = + dynamic plugin
 		35 = + navigator, circular, mousewheel and autoscroll plugins
 		40 = + gallery plugin and the Apple effect
-		45 =
-		50 =
-		55 = Only post here if you are 90% certain that it is not <i>your</i> bug
+		45 = Flashembed, Expose, History and Mousewheel
+		60 = 
+		65 = 
+		70 = 
 	</pii:map>
 
 </c:if>
@@ -44,10 +46,6 @@
 </h1>
 
 <h2 class="first">Forum List</h2>
-
-<%-- <div class="box petrol">
-	This forum is currently being categorized. The posts from "All Tools" are being moved to a more suitable forum.
-</div> --%>
 
 <table class="listing">
 
@@ -99,7 +97,6 @@
 	</c:forEach>
 
 </table>
-
 
 <%-- reset to start from page 0 --%>
 <c:set var="page" scope="session" value="${0}"/>
