@@ -4,7 +4,7 @@
 
 
 <p>
-	Styling your overlays is easy. Everything can be done with CSS. The thing that affects the look and feel most is the <samp>backgroundImage</samp> property which defines the growing image. Click on these buttons to open different kind overlays:
+	Styling your overlays is easy. Everything can be done with CSS. The thing that affects the look and feel most is the <samp>backgroundImage</samp> property which defines the growing image. Click on these buttons to open different kinds of overlays:
 </p>
 
 <%@ include file="styling.htm" %>
@@ -23,7 +23,7 @@ ${install}
 <h3>Overlays</h3>
 
 <p>
-	Each of our overlays has a class <samp>overlay</samp> which defines a common style for each overlay. This common style is taken from this <a href="${jqt}/css/overlay-minimal.css">stylesheet</a>. Each overlay has a unique <samp>id</samp> attribute which is used to customize each overlay separately.
+	Each of our overlays has a class <samp>overlay</samp> which defines a common style for each overlay. This common style is taken from this <a href="${jqt}/css/overlay-minimal.css">stylesheet</a>. Each overlay has a unique <samp>id</samp> attribute which allows them to be customized separately.
 </p>
 
 <pii:code lang="html">
@@ -48,7 +48,7 @@ ${install}
 <h3>CSS coding</h3>
 
 <p>
-	CSS coding consists of overriding the settings of the default style. This includes customizing the background image and dimensions. Of course, you can use any CSS setting you wish to. CSS is a powerful language.
+	CSS coding consists of overriding the settings of the default style. This includes customizing the background image and dimensions. Of course, you can use any CSS setting you wish. CSS is a powerful language.
 </p>
 
 <pii:code lang="css">
@@ -56,7 +56,7 @@ ${css}
 </pii:code>
 
 <p>
-	Note that this tool takes care that the background images are automatically loaded into the browser's cache so that user will see a smooth behaviour although the background image is very big. You can disable this preloading effect from the <a href="${jqt}/overlay/index.html#configuration">configuration</a>.
+	<strong>Note:</strong> this tool takes care that the background images are automatically loaded into the browser's cache so that user will see a smooth behaviour although the background image is very big. You can disable this preloading effect from the <a href="${jqt}/overlay/index.html#configuration">configuration</a>.
 </p>
 
 <div class="box petrol">
