@@ -48,25 +48,25 @@ $f("player", "/swf/flowplayer-${v.core}.swf", {
 
 	// when playback starts, perform exposing
 	onStart: function() {
-		
+
 		$("#player").expose({
-		
-			// mask shows 20% of the content through
+
+			// mask lets 20% of the content show through
 			opacity: 0.8,
-		
+
 			// close expose slowly
 			closeSpeed: 'slow',
-		
+
 			// we only want to close exposing when playback is finished
 			// (or the ESC button is pressed)
 			closeOnClick: false,
-		
+
 			// when the mask closes, alter its background color
 			onBeforeClose: function() {
 				$f().pause();
-				this.getMask().css({backgroundColor: '#b8128f'}); 
+				this.getMask().css({backgroundColor: '#b8128f'});
 			},
-		
+
 			// when the mask loads again, use the original background color
 			onBeforeLoad: function() {
 				this.getMask().css({backgroundColor: null});
