@@ -1,15 +1,19 @@
 .tooltip {
 	background:#05345B url(/img/global/gradient/h300.png) repeat-x;
-	width:200px;
+	width:170px;
 	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
+	-webkit-border-radius:5px; 
+}
+
+#content .tooltip p {
+	font-size:11px;	
 }
 
 .tooltip h3 {
 	margin-top:0px;
 	color:#ffc;
 }
-
+ 
 .tooltip a {
 	color:yellow;
 	text-decoration:none;
