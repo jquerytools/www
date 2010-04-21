@@ -10,7 +10,7 @@
 <h3>HTML coding</h3>
 
 <p>
-	The HTML layout is simple. Two date inputs inside a form.
+	The HTML layout is simple. Two date inputs inside a form:
 </p>
 
 <pii:code lang="html">
@@ -20,7 +20,7 @@ ${html}
 <h3>CSS coding</h3>
 
 <p>
-	We use <a href="css/flight.css">two</a> <a href="css/flight-calendar.css">stylesheets</a> for the job as follows.
+	We use <a href="css/flight.css">two</a> <a href="css/flight-calendar.css">stylesheets</a> for the job as follows:
 </p>
 
 <pii:code lang="html">
@@ -32,13 +32,13 @@ ${html}
 </pii:code>
 
 <p>
-	Stydy their semi-commented source code for the details.
+	Study the semi-commented source code for the details.
 </p>
 
 <h2>JavaScript coding</h2>
 
 <p>
-	We use this one-liner to initialize both date inputs. Since these are imaginary flight dates we need to disable selecting dates from the past. This is achieved with the <samp>min</samp> attribute. Enabling <samp>trigger</samp> attribute will auto-generate a <samp>a</samp> tag that opens up the calendar when clicked. The calendar icon look is obviously made with CSS. 
+	We use this one-liner to initialize both date inputs. Since these are imaginary flight dates we need to disable selecting dates from the past. This is achieved with the <samp>min</samp> attribute. Enabling the <samp>trigger</samp> attribute will auto-generate a <samp>a</samp> tag that opens up the calendar when clicked. The calendar icon look is obviously made with CSS.
 </p>
 
 <pii:code>
@@ -48,7 +48,7 @@ ${js}
 <h3>The active state</h3>
 
 <p>
-	The date inputs are contained inside a <samp>label</samp> element. Once the calendar is opened we assign a CSS class name "active" for the label element and remove the class name when the calendar closes. This is how we do it. 
+	The date inputs are contained inside a <samp>label</samp> element. Once the calendar is opened we assign the CSS class name "active" to the label element and remove the class name when the calendar closes. This is how we do it:
 </p>
 
 <pii:code>
@@ -56,13 +56,13 @@ ${js2}
 </pii:code>
 
 <p>
-	The active state styling can be found from the <a href="form/flight.css">flight.css</a>
+	The active state styling can be found in the <a href="form/flight.css">flight.css</a> file.
 </p>
 
-<h3>Changing the minimum value for departure date</h3>
+<h3>Changing the minimum value for the departure date</h3>
 
 <p>
-	When arrival date is selected we must make sure that user cannot select a departure date that is before the arrival date. This is achieved by using <samp>setMin</samp> method for the departure date as follows:
+	When the arrival date is selected we must make sure that user cannot select a departure date that comes before the arrival date. This is achieved by using the <samp>setMin</samp> method for the departure date as follows:
 </p>
 
 <pii:code>
