@@ -13,10 +13,10 @@
 		width:677px;
 		margin:15px 0 15px 40px;
 		padding:15px 0;
-	
+
 		/* centered */
 		text-align:center;
-	
+
 		/* some "skinning" */
 		background-color:#efefef;
 		border:2px solid #fff;
@@ -24,7 +24,7 @@
 		-moz-ouline-radius:4px;
 	}
 	</c:set>
-	
+
 	${css}
 	</style>
 </head>
@@ -46,7 +46,7 @@ ${html2}
 
 
 <!-- HTML structures -->
-<c:set var="html">  
+<c:set var="html">
 	<%@ include file="scrollable.jsf" %>
 </c:set>
 
@@ -62,17 +62,17 @@ $(".items img").click(function() {
 
 	// see if same thumb is being clicked
 	if ($(this).hasClass("active")) { return; }
-	
+
 	// calclulate large image's URL based on the thumbnail URL (flickr specific)
 	var url = $(this).attr("src").replace("_t", "");
-		
-	// get handle to element that wraps the image and make it semitransparent
+
+	// get handle to element that wraps the image and make it semi-transparent
 	var wrap = $("#image_wrap").fadeTo("medium", 0.5);
-	
-	// the large image from flickr
+
+	// the large image from www.flickr.com
 	var img = new Image();
 
-	
+
 	// call this function after it's loaded
 	img.onload = function() {
 
@@ -84,9 +84,9 @@ $(".items img").click(function() {
 
 	};
 
-	// begin loading the image from flickr
+	// begin loading the image from www.flickr.com
 	img.src = url;
-	
+
 	// activate item
 	$(".items img").removeClass("active");
 	$(this).addClass("active");
