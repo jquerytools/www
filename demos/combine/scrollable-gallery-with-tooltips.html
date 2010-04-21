@@ -16,7 +16,7 @@
 <h2>Scrollable with tooltips</h2>
 
 <p>
-	First we describe how you can add tooltips for scrollable items. Scrollable's HTML structure is the same as in the <a href="${jqt}/demos/scrollable/index.html">minimal setup</a> except that the scrollable images are now wrapped inside an <samp>a</samp> tag so that we can take advantage of their <samp>title</samp> and <samp>href</samp> attributes. The <samp>title</samp> attribute is used for tooltips and the <samp>href</samp> attribute contains the link to the larger version of the image to be overlayed.
+	First we describe how you can add tooltips to scrollable items. Scrollable's HTML structure is the same as in the <a href="${jqt}/demos/scrollable/index.html">minimal setup</a> except that the scrollable images are now wrapped inside an <samp>a</samp> tag so that we can take advantage of their <samp>title</samp> and <samp>href</samp> attributes. The <samp>title</samp> attribute is used for tooltips and the <samp>href</samp> attribute contains the link to the larger version of the image to be overlayed.
 </p>
 
 <h3>HTML Setup</h3>
@@ -51,7 +51,7 @@
 <h3>CSS coding</h3>
 
 <p>
-	Scrollable is styled with <a href="${jqt}/css/scrollable-horizontal.css">scrollable-horizontal.css</a> which depends on the fact that scrollable items are images. Since those images are now wrapped by an A element we have to override some of the settings in this external stylesheet.
+	Scrollable is styled with <a href="${jqt}/css/scrollable-horizontal.css">scrollable-horizontal.css</a> which depends on the fact that scrollable items are images. Since those images are now wrapped by an A element we have to override some of the settings in this external stylesheet:
 </p>
 
 <pii:code lang="css">
@@ -69,11 +69,11 @@ ${gallery}
 </pii:code>
 
 <p>
-	As you may have noticed the scrollable is moving at the same time while you are browsing the gallery. This is actually automatic! The scrollable looks for elements whose CSS class names are <samp>prev</samp> and <samp>next</samp> and they are exactly the same names that the gallery plugin depends upon. So now our gallery browsing buttons control both the gallery and the scrollable without any JavaScript setup. If you want to alter this behaviour then you need to change the CSS class names for the scrollable or gallery plugin's configuration.
+	As you may have noticed the scrollable is moving at the same time while you are browsing the gallery. This is actually automatic! The scrollable looks for elements whose CSS class names are <samp>prev</samp> and <samp>next</samp> and they are exactly the same names that the gallery plugin depends upon. So now our gallery browsing buttons control both the gallery and the scrollable without any JavaScript setup. If you want to alter this behaviour then you need to change the CSS class names for the scrollable or gallery plugin configuration.
 </p>
 
 <p>
-	There is also a little confusion in this browsing behaviour. Both tools depend on the class name <samp>disabled</samp> which will make the gallery browsing button invisible. Scrollable makes the next button disabled earlier than the gallery. This is why we are using a different class name "inactive" in the gallery configuration for the disabled state. We have to override this in the CSS as follows:
+	There is also a little confusion in this browsing behaviour. Both tools depend on the class name <samp>disabled</samp> which will make the gallery browsing button invisible. Scrollable disables the <samp>next</samp> button earlier than the gallery. This is why we are using a different class name "inactive" in the gallery configuration for the disabled state. We have to override this in the CSS as follows:
 </p>
 
 <pii:code lang="css">

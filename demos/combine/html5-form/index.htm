@@ -5,13 +5,13 @@
 	<link rel="stylesheet" type="text/css" href="${jqt}/demos/combine/html5-form/style.css"/>
 	<link rel="stylesheet" type="text/css" href="${jqt}/demos/dateinput/css/skin1.css"/>
 	<link rel="stylesheet" type="text/css" href="${jqt}/demos/rangeinput/css/skin1.css"/>
-	
+
 	<!--[if IE]>
 	<style>
 	.sheet { border: 1px solid; border-color: #e5e5e5 #dbdbdb #d2d2d2; }
-	</style> 
+	</style>
 	<![endif]-->
-	
+
 </head>
 
 <body>
@@ -21,11 +21,11 @@
 <div id="sheet" class="rounded">
 
 <!--{{{ pane1 -->
-	
+
 	<div class="pane" id="pane1">
-		
+
 		<form class="rounded" id="myform">
-			
+
 			<fieldset>
 				<legend>contact information</legend>
 				<p>
@@ -35,21 +35,21 @@
 				<p>
 					<label>website</label>
 					<input type="url" required="required" />
-				</p>  
+				</p>
 				<p>
 					<label>name</label>
 					<input type="text" required="required" />
 				</p>
 			</fieldset>
-			
+
 			<fieldset class="last">
 				<legend>server information</legend>
-				
+
 				<p>
-					<label>number of processors</label> 
+					<label>number of processors</label>
 					<input type="range" class="range" min="2" max="20" value="4"/>
 				</p>
-				
+
 				<p>
 					<label>disk size (GB)</label>
 					<input type="range" class="range" min="30" max="800" step="30" value="100"  />
@@ -59,67 +59,67 @@
 					<input type="date" value="Today" />
 				</p>
 			</fieldset>
-			
+
 			<p class="high">
 				<button class="rounded" type="submit">Order Now</button>
 			</p>
-		
+
 		</form>
-		
+
 		<div class="description">
-			This imaginary form is constructed with 100% HTML5 standard. No hacks or tweaks. The form works on all major browsers even in IE6. What's really amazing is that the form can have dateinputs and ranges even when JavaScript is disabled! All this with ${v.jqtFormSize} kB! 
+			This imaginary form is constructed with 100% HTML5 standard. No hacks or tweaks. The form works on all major browsers even in IE6. What's really amazing is that the form can have dateinputs and ranges even when JavaScript is disabled! All this with ${v.jqtFormSize} kB!
 		</div>
-	
-	</div> 
+
+	</div>
 <!--}}}-->
 
-	
+
 	<div class="pane" id="pane2">
-		
+
 		<div class="description">
-			Here are all the input fields and scripting for the demo. You have a sane subset of the HTML5 and Web Forms 2.0 standards available. Now these complex but useful standards can be used by humans. 
+			Here are all the input fields and scripting for the demo. You have a sane subset of the HTML5 and Web Forms 2.0 standards available. Now these complex but useful standards can be used by humans.
 		</div>
 	</div>
-	
+
 	<div class="pane" id="pane3">
-		
-		<div class="description">			
-			This form uses CSS3 features such as attribute selectors, rounded borders, RGBA coloring and box shadows. These make web developers' life much, much easier. Together with FORM Tools and HTML5 we can finally make well behaving and good looking forms with ease. 20 year wait is over.  
+
+		<div class="description">
+			This form uses CSS3 features such as attribute selectors, rounded borders, RGBA coloring and box shadows. These make web developers' life much, much easier. Together with FORM Tools and HTML5 we can finally make well behaving and good looking forms with ease. 20 year wait is over.
 		</div>
 	</div>
-	
+
 	<div class="pane" id="pane4">
-		
-		<div class="description"> 	
+
+		<div class="description">
 			By the time of writing Opera has the best native support for HTML5. Here is Opera with JavaScript disabled! The browser displays it's native date and range input controls. Browsers that does not natively support these special inputs will show show a normal text field so that the form is editable in all situations.
 		</div>
-	
+
 	</div>
-	
+
 	<div class="pane" id="pane5">
-		
+
 		<div class="description">
-			<strong>Now listen</strong>. Internet Explorer has fairly good JavaScript support so it's possible to make cross browser libraries like jQuery Tools. However IE has many issues with CSS and HTML. If you want somewhat similar look for IE
-			
+			<strong>Now listen</strong>. Internet Explorer has fairly good JavaScript support so it's possible to make cross-browser libraries like jQuery Tools. However IE has many issues with CSS and HTML. If you want somewhat similar look for IE
+
 			<ol>
 				<li>you need quite precisely 300% more development time and money for dirty hacks and redundant images</li>
 				<li>your application becomes harder to maintain so you also need 300% more time and money in the future</li>
 				<li>all this 300% for what? your site will feel like IE6 on all browsers!</li>
 			</ol>
-			
+
 			<p>
 				Let me put this another way. There is absolutely no good reason to develop identical look for IE6. Period. Respect the standards and let unstandard browsers do what they can. Luckily you don't have to compromise with the funtionality. It's the looks that IE doesn't care about. I hope IE9 is better.
 			</p>
 		</div>
 	</div>
-	
-	
+
+
 	<div id="navi">
 		<a class="current" id="nav1"> <span></span> The Form </a>
 		<a id="nav2"> <span></span> The Code </a>
 		<a id="nav3"> <span></span> User Experience </a>
 		<a id="nav4"> <span></span> No JavaScript  </a>
-		<a id="nav5"> <span></span> Unstandard clients </a> 
+		<a id="nav5"> <span></span> Unstandard clients </a>
 	</div>
 
 </div>
@@ -127,9 +127,9 @@
 <script>
 <c:set var="js">
 // validator. we use custom message layout with a CSS arrow
-$("#myform").validator({ 
+$("#myform").validator({
 	message: '<div><em/></div>',
-	position: 'top left', 
+	position: 'top left',
 	offset: [3, 40]
 });
 
@@ -143,10 +143,10 @@ $(":range").rangeinput();
 $("#see").overlay({mask: '#999', fixed: false}).bind("onBeforeClose", function(e) {
 	$(".error").hide();
 });
-	
+
 // tabs. possible error messages are visible only on the first tab pane
 $("#navi").tabs(".pane").bind("onClick", function(e, index) {
-	$(".error").toggle(!index);				
+	$(".error").toggle(!index);
 });
 
 
@@ -156,4 +156,4 @@ ${js}
 
 
 
-	
+

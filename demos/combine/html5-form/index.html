@@ -10,7 +10,7 @@
 <h3>HTML coding</h3>
 
 <p>
-	Here is the HTML layout. An overlay trigger element opens the overlay which contains tabs. On the first tab we have a form which is powered with jQuery Tools Validator, Rangeinput and Dateinput. Open the actual overlay to see more details.
+	Here is the HTML layout. An overlay trigger element opens the overlay which contains tabs. On the first tab we have a form which is powered with the jQuery Tools Validator, Rangeinput and Dateinput. Open the actual overlay to see more details.
 </p>
 
 <pii:code lang="html">
@@ -19,18 +19,18 @@
 
 <!-- the overlay -->
 <div id="sheet" class="rounded">
-	
+
 	<!-- the form is on the first tab pane -->
 	<div class="pane" id="pane1">
-		
+
 		<form class="rounded" id="myform">
-		
+
 		</form>
 	</div>
-	
+
 	<!-- second tab pane -->
 	<div class="pane" id="pane2"> ...  </div>
-	
+
 	<!-- other tab panes ... -->
 	<div class="pane" id="pane3"> ...  </div>
 	<div class="pane" id="pane4"> ...  </div>
@@ -42,25 +42,25 @@
 <h3>CSS coding</h3>
 
 <p>
-	Here are some of the "highlights" that are contained on our <a href="style.css">stylesheet</a>.
+	Here are some of the "highlights" that are contained on our <a href="style.css">stylesheet</a>:
 </p>
 
 <pii:code lang="css">
 /* CSS3 border radius for various elements. yea - CSS isn't perfect */
-.rounded, #sheet input, .error { 
-	border-radius: 5px; 
-	-webkit-border-radius: 5px; 
-	-moz-border-radius: 5px; 
-	-o-border-radius: 5px; 
-	-khtml-border-radius: 5px; 
+.rounded, #sheet input, .error {
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	-khtml-border-radius: 5px;
 }
 
 /* validation error message */
 .error {
 	background-color:#E8FF6D;
-	padding:4px;	
-	-webkit-box-shadow: #000 0 0 12px; 
-	-moz-box-shadow: #000 0 0 12px; 		
+	padding:4px;
+	-webkit-box-shadow: #000 0 0 12px;
+	-moz-box-shadow: #000 0 0 12px;
 }
 
 /* nested arrow inside error message. It's 100% CSS. No images. */
@@ -72,7 +72,7 @@
 	height:0;
 	left:10px;
 	position:absolute;
-	width:0;		
+	width:0;
 }
 
 /* input field that caused validation error */
@@ -84,7 +84,7 @@
 <h3>JavaScript coding</h3>
 
 <p>
-	Here we initialize all tools that are being used: overlay, tabs, validator, rangeinput and dateinput. There are some custom event listeners for overlay and tabs that hide validation error messages if needed. 
+	Here we initialize all tools that are being used: overlay, tabs, validator, rangeinput and dateinput. There are some custom event listeners for overlay and tabs that hide validation error messages if needed.
 </p>
 
 <pii:code>
