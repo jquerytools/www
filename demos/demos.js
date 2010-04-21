@@ -300,11 +300,11 @@
 			},
 			{
 				path: 'rangeinput/vertical.html',
-				title: 'Couple of vertical ranges'
+				title: 'A couple of vertical ranges'
 			},
 			{
 				path: 'rangeinput/multiple.html',
-				title: 'Many, many small ranges'
+				title: 'Multiple small ranges'
 			},
 			{
 				path: 'rangeinput/scrollbar.html',
