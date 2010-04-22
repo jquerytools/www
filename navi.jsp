@@ -71,6 +71,22 @@
 <%-- documentation --%>
 <c:if test="${isDoc}">
 
+	<style>
+			
+		h3.cat {
+			background:url(${cdn}${jqt}/img/jqt_sprite_small.jpg) no-repeat 0 0;
+			padding:4px 0 5px 30px;
+		}
+		
+		#cat-Form {
+			background-position:0 -25px;	
+		}
+		
+		#cat-Toolbox {
+			background-position:0 -50px;		
+		}
+	</style>
+
 	<c:if test="${!fn:contains(req.path, '/search.html')}">
 		<script>$("#jqt4").addClass("active");</script>
 	</c:if>	
@@ -84,7 +100,7 @@
 		<c:forEach items="${metadata.tools}" var="tool" varStatus="i" begin="1">
 		
 			<c:if test="${!empty tool.cat}">
-				<h3>${tool.cat}</h3>
+				<h3 class="cat" id="cat-${fn:replace(tool.cat, ' tools', '')}">${tool.cat}</h3>
 			</c:if>
 	
 			<c:if test="${empty tool.cat}">

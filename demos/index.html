@@ -6,11 +6,11 @@
 
 <style>
 .col {
-	padding:30px 0 0 24px;	
+	padding:15px 0 0 24px;	
 	margin-right:0;	
 	width:300px;
 	border-right:2px dotted #ccc;
-	height:900px;
+	height:1050px;
 	background: url(/img/global/gradient/h150_reverse.png) repeat-x scroll 0 -95px;
 	border-top:1px solid #ccc;       
 	border-bottom:1px solid #eee;
@@ -41,13 +41,38 @@
 	color:#333;
 }
 
-.cat h2 {
+.cat h3 {
 	font-size:14px;
 	margin-bottom:2px;
 }
 
-.combinations h2 {
+.combinations h3 {
 	font-weight:bold;
+}
+
+.col h2 {
+	font-size:20px;
+	text-shadow:0 0 3px #fff;
+	text-transform:uppercase;
+	font-weight:bold;
+}
+
+.col h2 strong {
+	color:#5A57AB;
+}
+
+.pic {
+	background:url(${cdn}${jqt}/img/jqt_sprite_medium.png) no-repeat 0 10px;
+	height:200px;
+	margin:-10px 0 -50px;	
+}
+
+#pic-form {
+	background-position:0 -200px;		
+}
+
+#pic-toolbox {
+	background-position:0 -400px;
 }
 </style>
 
@@ -60,12 +85,14 @@ $("#jqt3").addClass("active");
 		
 	<div class="col" id="col${j.index}">
 	
-		<h2>${main}</h2>
+		<h2>${main} ${j.index < 2 ? '<strong>TOOLS</strong>' : ''}</h2>
+		
+		<div class="pic" id="pic-${main}"></div>
 		
 		<c:forEach items='<%= area.getCategories((String)pageContext.getAttribute("main")) %>' var="cat" varStatus="i">
 		
 			<div class="cat ${cat.title == 'Combinations' ? 'combinations' : ''}">
-				<h2 title="${cat.description}">${cat.title}</h2>
+				<h3 title="${cat.description}">${cat.title}</h3>
 		
 				<c:forEach items="${cat.demos}" var="demo">
 					<a href="${demo.path}">${demo.title}</a>
