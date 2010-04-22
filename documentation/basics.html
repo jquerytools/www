@@ -15,17 +15,17 @@
 	<li><a href="#graphics">Graphic design and Presentation</a></li>
 	<li><a href="#include">Including the Tools</a></li>
 	<li><a href="#initialize">Initializing the Tools</a></li>
-	<li><a href="#global_configuration">Making global configurations</a></li>
+	<li><a href="#global_configuration">Using global configurations</a></li>
 	<li><a href="#extending">Using jQuery Tools plugins and effects</a></li>
 </ul>
-	
+
 
 <!--{{{ HTML -->
 <a name="html"></a>
 <h2>The role of <em>HTML</em></h2>
 
 <p>
-	jQuery Tools is primarily developed for "normal" HTML developers. You either have an existing website or start with a new one and these tools are used to enhance it. The goal here is to use "progressive enhancement" so that browsers that do not support JavaScript at all can still visualize your content.
+	jQuery Tools was primarily developed for "normal" HTML developers. You either have an existing website or are starting with a new one and these tools are used to enhance it. The goal here is to use "progressive enhancement" so that browsers that do not support JavaScript at all can still visualize your content.
 </p>
 
 <p>
@@ -33,7 +33,7 @@
 </p>
 
 <p>
-	All tools deal with a <em>root element</em> which is typically a <samp>div</samp> element, but it does not have to be. For example, a root element for an overlay is the one that contains all overlayed data. In every tool you can have <em>any</em> combination of HTML inside the root element such as images, forms, Flash objects and tables.
+	All of the tools deal with a <em>root element</em> which is typically a <samp>div</samp> element, but it does not have to be. For example, a root element for an overlay is the one that contains all overlayed data. In every tool you can have <em>any</em> combination of HTML inside the root element such as images, forms, Flash objects and tables.
 </p>
 
 <!--}}}-->
@@ -44,11 +44,11 @@
 <h2>The role of <em>JavaScript</em> and <em>jQuery</em></h2>
 
 <p>
-	<a href="http://www.jquery.com" class="external">jQuery</a> is a fast and concise JavaScript library that simplifies the development of cross-browser applications. All <samp>tools</samp> except <a href="flashembed.html">flashembed</a> are dependent of this library. jQuery skills are <strong>not required</strong> when using these tools. People have been using these tools without any prior knowledge about jQuery and even JavaScript itself. Of course, those skills would be a great help, but they are not required.
+	<a href="http://www.jquery.com" class="external">jQuery</a> is a fast and concise JavaScript library that simplifies the development of cross-browser applications. All <samp>tools</samp> except <a href="flashembed.html">flashembed</a> are dependent on this library. jQuery skills are <strong>not required</strong> when using these tools. People have been using these tools without any prior knowledge about jQuery and even JavaScript itself. Of course, those skills would be a great help, but they are not required.
 </p>
 
 <p>
-	If you want to enhance your jQuery and JavaScript skills, the best things to learn when using these tools are definitely <a href="http://api.jquery.com/category/selectors/" class="external">jQuery selectors</a> and <a href="http://www.dyn-web.com/tutorials/obj_lit.php" class="external">object literals</a>. The first skill is used to select elements from the page to be enhanced with the tools and latter is used for configuring the tools. Here is an example that introduces you both of these skills:
+	If you want to enhance your jQuery and JavaScript skills, the best things to learn about when using these tools would definitely be <a href="http://api.jquery.com/category/selectors/" class="external">jQuery selectors</a> and <a href="http://www.dyn-web.com/tutorials/obj_lit.php" class="external">object literals</a>. The first skill is used to select elements from the page to be enhanced with the tools and the latter is used for configuring the tools. Here is an example that introduces you to both of these skills:
 </p>
 
 <pii:code>
@@ -71,7 +71,7 @@ $("#content ul.tabs").tabs("div.panes > div", {
 </p>
 
 <a name="document_ready"></a>
-<h3>Execute your scripts when document is ready</h3>
+<h3>Execute your scripts when the document is ready</h3>
 
 <p>
 	It is important that you execute all your scripts only after the document is ready and scriptable. This can be done by enclosing your JavaScript calls inside a <samp>$(document).ready()</samp> block as follows:
@@ -86,7 +86,7 @@ $(document).ready(function() {
 </pii:code>
 
 <p>
-	This might be the most important thing in jQuery. Everything inside it will load as soon as the document is scriptable but <em>before</em> the whole page contents such as images and Flash are loaded. Everything that you stick inside its brackets is ready to go at the earliest possible moment. And as opposed to the traditional old-school "onload" attribute in the <samp>body</samp> tag you can have multiple <samp>document.ready</samp> blocks on your page.
+	This might be the most important thing in jQuery. Everything inside the block will load as soon as the document is scriptable but <em>before</em> the whole page contents such as images and Flash are loaded. Everything that you stick inside the braces is ready to go at the earliest possible moment. And as opposed to the traditional old-school "onload" attribute in the <samp>body</samp> tag you can have multiple <samp>$(document).ready()</samp> blocks on your page.
 </p>
 
 <p>
@@ -121,7 +121,7 @@ $(function() {
 </p>
 
 <p>
-	A proper tool should only rely on CSS <em>class names</em> - because they offer a much more flexible styling environment. Let's take <samp>tabs</samp> tool as an example. It offers a configuration variable called <samp>current</samp> representing a class name that is set to the currently active tab. Lets say you have set the value "active" as follows:
+	A proper tool should only rely on CSS <em>class names</em> - because they offer a much more flexible styling environment. Let's take the <samp>tabs</samp> tool as an example. It offers a configuration variable called <samp>current</samp> representing a class name that is set to the currently active tab. Lets say you have set the value "active" as follows:
 </p>
 
 <pii:code>
@@ -208,7 +208,7 @@ body, p {
 </ul>
 
 <p>
-	There are lots of new features in the latest CSS version such as rounded borders, gradient borders, shadows and opacity, but these are not yet supported by every major browser. Some of the demos on this site uses these CSS3 features. If you are using Firefox&nbsp;3.5, Safari&nbsp;4.0 or other CSS3 compatible browser please take a look at the <a href="demos/combine/scrollable-gallery-with-tooltips.html">scrollable gallery with tooltips</a> demo and click on the thumbnails. You'll see nice looking drop shadows on the overlay. As you can see you can create stunning looks by only using CSS and the design will also behave well on older browsers.
+	There are lots of new features in the latest CSS version such as rounded borders, gradient borders, shadows and opacity, but these are not yet supported by every major browser. Some of the demos on this site uses these CSS3 features. If you are using Firefox&nbsp;3.5, Safari&nbsp;4.0 or other CSS3 compatible browser please take a look at the <a href="demos/combine/scrollable-gallery-with-tooltips.html">scrollable gallery with tooltips</a> demo and click on the thumbnails. You'll see nice looking drop shadows on the overlay. As you can see you can create stunning looks by only using CSS and the design will also be well-behaved in older browsers.
 </p>
 
 
@@ -297,13 +297,13 @@ body, p {
 </pii:code>
 
 <p>
-	The initial underscore is a hack that causes the CSS setting to be applied only to versions of IE older than 7. You may have the patience to do this. I haven't.
+	The initial underscore is a hack that causes the CSS setting to be applied only to versions of IE older than 7. You may have the patience to do this, but I don't.
 </p>
 
 <h4>PNG24 and opacity in all versions of IE</h4>
 
 <p>
-	If you programmatically change the opacity of a PNG image in all versions of Internet Explorer it will cause ugly black borders around the image as seen on this screenshot:
+	If you programmatically change the opacity of a PNG image in all versions of Internet Explorer it will cause ugly black borders around the image as seen in this screenshot:
 </p>
 
 <p>
@@ -311,7 +311,7 @@ body, p {
 </p>
 
 <p>
-	This bug makes it impossible to make fading animations with PNG images in Internet Explorer. For this reason the Tooltip "slide" effect uses opacity fading in every browser other than in IE. This is the default behaviour but you can of course change this if your tooltip is not decorated with PNG graphics. Take a look at the <a href="tooltip/index.html">Tooltip front page</a> and look at the first demo in Firefox and in IE. The tooltip fades in/out in Firefox but uses the sliding effect without opacity changes in IE.
+	This bug makes it impossible to make fading animations with PNG images in Internet Explorer. For this reason the Tooltip "slide" effect uses opacity fading in every browser other than in IE. This is the default behaviour but you can of course change this if your tooltip is not decorated with PNG graphics. Take a look at the <a href="tooltip/index.html">Tooltip front page</a> and look at the first demo in Firefox and then in IE. The tooltip fades in/out in Firefox but uses the sliding effect without opacity changes in IE.
 </p>
 
 <p>
@@ -331,7 +331,7 @@ body, p {
 </p>
 
 <pii:code lang="html">
-${cdnt}/${v.jqt}/jquery.tools.min.js
+${cdn}/${v.jqt}/jquery.tools.min.js
 </pii:code>
 
 <p>
@@ -355,7 +355,7 @@ console.dir($.tools);
 </p>
 
 <p>
-	You can see each tool you have included and the version number.  If you inspect a little more about these global settings you will see each tool's default configuration values (good source of "documentation"!) which are discussed more on the important <a href="#global_configuration">global configuration</a> section.
+	You can see each tool you have included and the version number.  If you drill down a little deeper into these global settings you will see each tool's default configuration values (a good source of "documentation"!) which are discussed more extensively in the important <a href="#global_configuration">global configuration</a> section.
 </p>
 <!--}}}-->
 
@@ -377,13 +377,13 @@ $("#wrap").scrollable({
 </pii:code>
 
 <p>
-	This will make all elements scroll that are contained within an element whose <samp>id</samp> is "wrap". Next, comes a tool constructor named <samp>scrollable</samp> which takes a configuration object as an <em>argument</em>. This object defines the settings for how we want our elements to be scrolled. This example above is mainly the way you initialize tools.
+	This will make all elements scroll that are contained within an element whose <samp>id</samp> is "wrap". Next, comes a tool constructor named <samp>scrollable</samp> which takes a configuration object as an <em>argument</em>. This object defines the settings for how we want our elements to be scrolled. This example above illustrates the general way you will initialize all jQuery Tools.
 </p>
 
 <h3>Return value</h3>
 
 <p>
-	The constructor will always return the jQuery object that is a collection of the elements that are selected by the selector. This is how all proper jQuery plugins are recommended to behave. Again we use the scrollable tool as our example:
+	The constructor will always return the jQuery object that is a collection of the elements that are selected by the selector. This is how all proper jQuery plugins are recommended to behave. Again we use the <samp>scrollable</samp> tool as our example:
 </p>
 
 <pii:code>
@@ -405,10 +405,10 @@ elements.someOtherPlugin().onClick(function() {
 <!--{{{ Global Configuration -->
 
 <a name="global_configuration"></a>
-<h2>Making global configurations</h2>
+<h2>Using global configurations</h2>
 
 <p>
-	Although you can change the default settings of the tools by supplying configuration on the initialization phase you may be using the same configuration settings over and over again. In this case you may want to change the default configuration variables for the tools so that you don't need to specify same setting every time. Here is an example of a global configuration setting:
+	Although you can change the default settings of the tools by supplying a configuration in the initialization phase you may be using the same configuration settings over and over again. In this case you may want to change the default configuration variables for the tools so that you don't need to specify the same setting every time. Here is an example of a global configuration setting:
 </p>
 
 <pii:code>
@@ -417,7 +417,7 @@ $.tools.overlay.conf.effect = "apple";
 </pii:code>
 
 <p>
-	After this you can simply do this
+	Afterwards you can simply do this:
 </p>
 
 <pii:code>
@@ -446,7 +446,7 @@ $.extend($.tools.overlay.conf, {
 </pii:code>
 
 <p>
-	The list of various configuration settings can be found on individual tool's documentation page. One important thing about the global configuration is that it provides you a good source of "documentation". Try hitting following command into your Firebug console:
+	The list of various configuration settings can be found on each individual tool's documentation page. One important thing about the global configuration is that it provides you a good source of "documentation". Try typing the following command into your Firebug console:
 </p>
 
 <pii:code>
@@ -454,7 +454,7 @@ console.dir($.tools.overlay.conf);
 </pii:code>
 
 <p>
-	And you can see following information appearing:
+	And you should see the following information appear:
 </p>
 
 <p>
@@ -474,16 +474,16 @@ console.dir($.tools.overlay.conf);
 <h2>Using jQuery Tools <em>plugins and effects</em></h2>
 
 <p>
-	jQuery Tools is the first framework to take full advantage of the jQuery's powerful chaining technology. Here is an example of a chaining pattern
+	jQuery Tools is the first framework to take full advantage of jQuery's powerful chaining technology. Here is an example of a chaining pattern:
 </p>
 
 <pii:code>
-// initialize few scrollables and add more features to them
+// initialize a few scrollables and add more features to them
 $(".scroller").scrollable({circular: true}).navigator("#myNavi").autoscroll({interval: 4000});
 </pii:code>
 
 <p>
-	You take a one or more <samp>.scroller</samp> elements from a page and make them scrollable. The scrollable tool has only the absolute necessary features to make things scroll. If you want to have more features you can use plugins. In this example we used <samp>navigator</samp> plugin to setup a navigator beside the scrollable. The <samp>autoscroll</samp> plugin makes the items scroll automatically without any user interaction.
+	You take one or more <samp>.scroller</samp> elements from a page and make them scrollable. The scrollable tool has only the absolute necessary features to make things scroll. If you want to have more features you can use <a href="#plugin">plugins</a>. In this example we used the <samp>navigator</samp> plugin to setup a navigator beside the scrollable. The <samp>autoscroll</samp> plugin makes the items scroll automatically without any user interaction.
 </p>
 
 <p>
@@ -491,7 +491,7 @@ $(".scroller").scrollable({circular: true}).navigator("#myNavi").autoscroll({int
 </p>
 
 <p>
-	Almost every tool has a few plugins that can be downloaded from the <a href="/download/index.html">download page</a>. This kind of design pattern makes the overall file size dramatically smaller because you can only use the things you need. It also makes the code more organized and easier to understand. In programming world this pattern is called a <a href="http://en.wikipedia.org/wiki/Decorator_pattern" class="external">decorator pattern</a> which is at the heart of jQuery: "take a bunch of elements from a page and do stuff with them". jQuery Tools takes this seriously and step further than other libraries.
+	Almost every tool has a few plugins that can be downloaded from the <a href="/download/index.html">download page</a>. This kind of design pattern makes the overall file size dramatically smaller because you can only use the things you need. It also makes the code more organized and easier to understand. In the programming world this pattern is called a <a href="http://en.wikipedia.org/wiki/Decorator_pattern" class="external">decorator pattern</a> which is at the heart of jQuery: "take a bunch of elements from a page and do stuff with them". jQuery Tools takes this seriously and goes a step further than other libraries.
 </p>
 
 <p>
@@ -502,27 +502,27 @@ $(".scroller").scrollable({circular: true}).navigator("#myNavi").autoscroll({int
 <h3>Effects</h3>
 
 <p>
-	Tabs, tooltip and overlay has an unique "effect framework" which enables you to change the default behaviour of the tool. Here is an example
+	Tabs, tooltip and overlay have a unique "effect framework" which enables you to change the default behaviour of each tool. Here is an example:
 </p>
 
 <pii:code>
-// use "apple" effect for the overlays
+// use the "apple" effect for the overlays
 $("a[rel]").overlay({effect: 'apple'});
 </pii:code>
 
 
 <p>
-	This configuration makes the overlay use an effect called "apple" which makes the overlay work as you may have seen on Apple's website. The purpose of the effects is to <em>change</em> the default behaviour whereas plugins <em>enrich</em> or add new features. In case of the overlay the actual tool provides the basic functionality of overlaying such as initialization, keyboard and mouse interaction and document masking (with the mask tool) while effects duty is to only perform the opening and closing actions of the tool. This makes it fairly easy to implement different kind of effects. This design pattern makes the code more organized and makes the overall file size smaller just like plugins do.
+	This configuration makes the overlay use an effect called "apple" which makes the overlay work as you may have seen on Apple's website. The purpose of the effects is to <em>change</em> the default behaviour whereas plugins <em>enrich</em> or add new features. In the case of the overlay the actual tool provides the basic functionality of overlaying such as initialization, keyboard and mouse interaction and document masking (with the mask tool) while the only job of the effect is to perform the opening and closing actions of the tool. This makes it fairly easy to implement different kind of effects. This design pattern makes the code more organized and makes the overall file size smaller just like the plugins.
 <p>
 
 <p>
 	Some tools have many built-in effects and some have only one. You can also get more effects from the <a href="/download/index.html">download page</a>. You can set the default effect in the <a href="#global_configuration">global configuration</a> so that you don't have to explicitly supply it to every initial configuration.
 </p>
 
-<h4>Writing own effects</h4>
+<h4>Writing your own effects</h4>
 
 <p>
-	 Look for each individual tool's documentation for more information:
+	 Look at each individual tool's documentation for more information:
 </p>
 
 <ul>
@@ -544,4 +544,4 @@ $.tools.overlay.conf.explosionSpeed = 500;
 	After that the users can either use the default value or override it from the overlay configuration.
 </p>
 <!--}}}-->
-	
+
