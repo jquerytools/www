@@ -5,24 +5,24 @@
 <c:set var="js">
 // initialize tooltip
 $("#${wrapId} img[title]").tooltip({
-  
+
    // tweak the position
    offset: [10, 2],
-   
-   // use "slide" effect
-   effect: 'slide'
-	
-// add dynamic plugin with optional configuration for bottom edge 
-}).dynamic({ bottom: { direction: 'down', bounce: true } });
-</c:set>	
 
-<%@ include file="index.htm" %> 
+   // use the "slide" effect
+   effect: 'slide'
+
+// add dynamic plugin with optional configuration for bottom edge
+}).dynamic({ bottom: { direction: 'down', bounce: true } });
+</c:set>
+
+<%@ include file="index.htm" %>
 
 <style>
 <c:set var="css">
 /* override the arrow image of the tooltip */
 .tooltip.bottom {
-	background:url(${cnd}${jqt}/img/tooltip/black_arrow_bottom.png);	
+	background:url(${cnd}${jqt}/img/tooltip/black_arrow_bottom.png);
 	padding-top:40px;
 	height:55px;
 }

@@ -34,7 +34,7 @@ div.demowrap {
 <ol>
 	<li>By using the left and right arrow keys on your keyboard</li>
 	<li>With your mouse scroll wheel</li>
-	<li>By clicking on the action buttons below the scrollable</li>	
+	<li>By clicking on the action buttons below the scrollable</li>
 </ol>
 
 
@@ -58,14 +58,14 @@ div.demowrap {
 		<td class="code">clonedClass</td>
 		<td><code>'cloned'</code></td>
 		<td>
-			The plugin behaves so that the first and last items are <em>cloned</em> at both ends. These cloned items are assigned the CSS class name given in this configuration variable. 
+			The plugin behaves so that the first and last items are <em>cloned</em> at both ends. These cloned items are assigned the CSS class name given in this configuration variable.
 		</td>
-	</tr>		
+	</tr>
 	<tr>
 		<td class="code">disabledClass</td>
 		<td><code>"disabled"</code></td>
 		<td>
-			The CSS class name for disabled <samp>next</samp> and <samp>prev</samp> elements. For example, the <samp>prev</samp> element is disabled when there are no previous items to scroll to. Typically you assign <samp>visibility: 'hidden'</samp> CSS definition for disabled elements.
+			The CSS class name for disabled <samp>next</samp> and <samp>prev</samp> elements. For example, the <samp>prev</samp> element is disabled when there are no previous items to scroll to. Typically you assign the <samp>visibility: 'hidden'</samp> CSS definition to disabled elements.
 		</td>
 	</tr>
 	<tr>
@@ -79,14 +79,14 @@ div.demowrap {
 		<td class="code">items</td>
 		<td><code>".items"</code></td>
 		<td>
-			The scrollable root element is not directly used as a parent for the scrollable items. The root must have one nested element that contains the actual items. By default scrollable uses the <em>first and only element</em> inside the root to be used as a wrapper for the items. It does not have to have any particular CSS class name. A simple <samp>div</samp> is fine.
+			The scrollable root element is not directly used as a parent for the scrollable items. The root must have one nested element that contains the actual items. By default scrollable uses the <em>first and only element</em> inside the root as a wrapper for the items. It does not have to have any particular CSS class name. A simple <samp>div</samp> is fine.
 
 			<p>
-				If you for some reason have multiple elements inside the root element, then scrollable looks for the element specified by this property. By default an element with the class name "items" is used, but you can use any jQuery selector you like in this property.
+				If for some reason you have multiple elements inside the root element, then scrollable looks for the element specified by this property. By default an element with the class name "items" is used, but you can use any jQuery selector you like for this property.
 			</p>
 
 			<p>
-				See <a href="../demos/scrollable/">minimal setup</a> for an understanding of the HTML setup for scrollable.
+				See the <a href="../demos/scrollable/">minimal setup</a> for an understanding of the HTML setup for scrollable.
 			</p>
 		</td>
 	</tr>
@@ -97,23 +97,23 @@ div.demowrap {
 			Whether or not keyboard arrow key navigation is enabled. The horizontal scroller moves backwards/forwards with the left/right arrow keys; the vertical scroller moves with the up/down keys. The arrow keys are valid for the scrollable that was used most recently. Since version 1.1.0 you can also supply the value <samp>'static'</samp> here which means that the scrollable is always controlled with the arrow keys and it does not have to be active.
 
 			<p>
-				You can also use the <samp>focus()</samp> method to specify the focus to a certain scrollable on the page. You can take a look at the <a href="../demos/scrollable/site-navigation.html">A complete scrollable navigational system</a> demo which takes advantage of the "static" value and the <samp>focus()</samp> method.
+				You can also use the <samp>focus()</samp> method to force the focus to a certain scrollable on the page. You can take a look at the <a href="../demos/scrollable/site-navigation.html">A complete scrollable navigational system</a> demo which takes advantage of the "static" value and the <samp>focus()</samp> method.
 			</p>
 
 			<p>
-				If you want to disable the keyboard for a particular scrollable, you can call for example:
+				If you want to disable the keyboard for a particular scrollable, you can do the following:
 			</p>
 
 <pii:code>
 // grab second scrollabe and its API
 var instance = $(".horizontal").eq(1).data("scrollable");
 
-// disable keyboard
+// disable keyboard navigation
 instance.getConf().keyboard = false;
 </pii:code>
 
 		</td>
-	</tr>   	
+	</tr>
 	<tr>
 		<td class="code">circular</td>
 		<td><code>false</code></td>
@@ -146,17 +146,17 @@ instance.getConf().keyboard = false;
 		<td class="code">vertical</td>
 		<td><code>false</code></td>
 		<td>
-			The scrollable is good at guessing whether it's vertical or horizontal by investigating it's dimensions. If height is larger than width then the scrollable is vertical. This can also be manually configured with the this configuration option which overrides the automatic determination. 
+			The scrollable is good at guessing whether it's vertical or horizontal by investigating it's dimensions. If the height is larger than the width then the scrollable is vertical. This can also be manually configured with this configuration option which overrides the automatic determination.
 		</td>
 	</tr>
 
 </table>
 
 <a name="multiple"></a>
-<h3>Multiple scrollables with <em>next</em> and <samp>prev</samp> links</h3>
+<h3>Multiple scrollables with <em>next</em> and <em>prev</em> links</h3>
 
 <p>
-	If you have multiple scrollables on your page we need to make sure that each navigational element is controlling the right scrollable instance. Let's say we have following call to instantiate multiple scrollables with their own "next" and "prev" elements.
+	If you have multiple scrollables on your page you need to make sure that each navigational element is controlling the right scrollable instance. Let's say we have the following call to instantiate multiple scrollables with their own "next" and "prev" elements:
 </p>
 
 <pii:code>
@@ -194,7 +194,7 @@ $(".vertical").scrollable();
 <h3>Events</h3>
 
 <p>
-	Make sure you have read about <a href="${jqt}/documentation/scripting.html#events">Events in jQuery Tools</a>. All event listeners receives <a href="${jqt}/documentation/scripting.html#event_object">Event Object</a> as the first argument and the second argument is the index number of the scrollable being sought to.
+	Make sure you have read about <a href="${jqt}/documentation/scripting.html#events">Events in jQuery Tools</a>. All event listeners receive the <a href="${jqt}/documentation/scripting.html#event_object">Event Object</a> as the first argument and the second argument is the index number of the scrollable being scrolled to.
 </p>
 
 <table class="listing">
@@ -219,17 +219,17 @@ $(".vertical").scrollable();
 		<td>
 			After items have been scrolled.
 		</td>
-	</tr>	
+	</tr>
 	<tr>
 		<td class="code">onAddItem</td>
 		<td>
-			When an item was added to the scrollable via <samp>addItem</samp> method.
+			When an item was added to the scrollable via the <samp>addItem</samp> method.
 		</td>
-	</tr>	
+	</tr>
 </table>
 <%--}}}--%>
 
-	
+
 <%--{{{  API--%>
 
 <a name="api"></a>
@@ -253,9 +253,9 @@ $(".vertical").scrollable();
 		<td class="code">addItem()</td>
 		<td><code><a href="#api">API</a></code></td>
 		<td>
-			scrollable supports the dynamic addition and removal of scrollable elements and all core functionalities such as circular looping, navigator resizing, browser back button (via toolbox.history) will work as expected. Take a look at this <a href="${jqt}/demos/scrollable/edit.html">demo</a> for more details. 
+			scrollable supports the dynamic addition and removal of scrollable elements and all core functionalities such as circular looping, navigator resizing, browser back button navigation (via toolbox.history) which will work as expected. Take a look at this <a href="${jqt}/demos/scrollable/edit.html">demo</a> for more details.
 		</td>
-	</tr> 	
+	</tr>
 	<tr>
 		<td class="code">begin(speed)</td>
 		<td><code><a href="#api">API</a></code></td>
@@ -269,7 +269,7 @@ $(".vertical").scrollable();
 		<td>
 			Moves to the end.
 		</td>
-	</tr>	
+	</tr>
 	<tr>
 		<td class="code">focus()</td>
 		<td><code><a href="#api">API</a></code></td>
@@ -332,14 +332,14 @@ $(".vertical").scrollable();
 		<td>
 			Moves a certain number of items from the current position. For example, <samp>move(2)</samp> moves two items forward. Negative numbers move backwards.
 		</td>
-	</tr>	
+	</tr>
 	<tr>
 		<td class="code">next(speed)</td>
 		<td><code><a href="#api">API</a></code></td>
 		<td>
 			Scrolls one item forward.
 		</td>
-	</tr>	
+	</tr>
 	<tr>
 		<td class="code">prev(speed)</td>
 		<td><code><a href="#api">API</a></code></td>
@@ -359,7 +359,7 @@ $(".vertical").scrollable();
 <%--}}}--%>
 
 <p>
-	The <samp>speed</samp> argument is used to specify how long (in milliseconds) the scrolling animation lasts. This overrides the <samp>speed</samp> property specified in the configuration. 
+	The <samp>speed</samp> argument is used to specify how long (in milliseconds) the scrolling animation lasts. This overrides the <samp>speed</samp> property specified in the configuration.
 </p>
 
 <%@ include file="../graphics.jsf" %>
@@ -367,10 +367,10 @@ $(".vertical").scrollable();
 <p>
 	<img src="../img/scrollable/thumb/black.jpg" style="margin-right:20px"/>
 	<img src="../img/scrollable/thumb/white.jpg" style="margin-right:50px" />
-             
+
 	<img src="../img/scrollable/arrow/left.png" style="margin-right:20px" />
 	<img src="../img/scrollable/arrow/right.png" style="margin-right:50px" />
-             
+
 	<img src="../img/scrollable/arrow/left_dark.png" style="margin-right:20px" />
 	<img src="../img/scrollable/arrow/right_dark.png" style="margin-right:20px" />
 </p>

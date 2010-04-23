@@ -7,7 +7,7 @@
 <h2 class="first" style="text-align:center"><strong>Slideshow</strong> plugin for Tabs</h2>
 
 <p class="more" style="text-align:center">
-	Automatic switching between tabs in pre-configured intervals. 
+	Automatic switching between tabs ar pre-configured intervals.
 </p>
 
 <%@ include file="../demos/tabs/slideshow.htm" %>
@@ -17,10 +17,10 @@
 
 <ul>
 	<li>
-		"Next slide" and "Previsous slide" action buttons without any JavaScript. Buttons can easily be hidden when there is no next or previous tab available.
+		The "Next slide" and "Previous slide" action buttons work without any JavaScript. Buttons can easily be hidden when there is no next or previous tab available.
 	</li>
 	<li>
-		Slideshow is automatically paused when you move your mouse over any of the slideshow elements.
+		The slideshow is automatically paused when you move your mouse over any of the slideshow elements.
 	</li>
 	<li>
 		By default the next slide is shown when the active pane is clicked; however, this can be changed in the configuration.
@@ -72,7 +72,7 @@ ${js}
 		<td class="code">disabledClass</td>
 		<td><code>'disabled'</code></td>
 		<td>
-			The CSS class name for disabled <samp>next</samp> and <samp>prev</samp> elements. For example, the <samp>prev</samp> element is disabled when there are no previous items to scroll to.
+			The CSS class name for disabled <samp>prev</samp> and <samp>next</samp> elements. For example, the <samp>prev</samp> element is disabled when there are no previous items to scroll to.
 		</td>
 	</tr>
 	<tr>
@@ -124,14 +124,14 @@ ${js}
 		<td>
 			<strong>since 1.2.0</strong>. returns the configuration object for this plugin
 		</td>
-	</tr>		
+	</tr>
 	<tr>
 		<td class="code">getTabs</td>
 		<td><code><a href="index.html#api">Tabs</a></code></td>
 		<td>
 			<strong>since 1.2.0</strong>. returns a reference to the <a href="index.html#api">Tabs API</a>.
 		</td>
-	</tr>	
+	</tr>
 	<tr>
 		<td class="code">play</td>
 		<td><code>API</code></td>
@@ -160,7 +160,7 @@ ${js}
 <h2>Events</h2>
 
 <p>
-	Make sure you have read about <a href="${jqt}/documentation/scripting.html#events">Events in jQuery Tools</a>. All event listeners receives <a href="${jqt}/documentation/scripting.html#event_object">Event Object</a> as the first argument.
+	Make sure you have read about <a href="${jqt}/documentation/scripting.html#events">Events in jQuery Tools</a>. All event listeners receive the <a href="${jqt}/documentation/scripting.html#event_object">Event Object</a> as the first argument.
 </p>
 
 <table class="listing">
@@ -171,7 +171,7 @@ ${js}
 		</tr>
 	</thead>
 
-	
+
 	<tr>
 		<td class="code">onBeforePlay</td>
 		<td>
@@ -196,6 +196,6 @@ ${js}
 			when the playback pauses.
 		</td>
 	</tr>
-	
+
 </table>
 

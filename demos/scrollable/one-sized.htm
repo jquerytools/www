@@ -6,7 +6,7 @@
 
 	<!-- tab styling -->
 	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/tabs-flowplayer-v2.css"/>
-	
+
 	<style>
 	<c:set var="css">
 	/* override the root element to enable scrolling */
@@ -15,7 +15,7 @@
 		overflow:hidden;
 		clear:both;
 	}
-	
+
 	/* override single pane */
 	#flowpanes div {
 		float:left;
@@ -23,7 +23,7 @@
 		width:670px;
 		font-size:14px;
 	}
-	
+
 	/* our additional wrapper element for the items */
 	#flowpanes .items {
 		width:20000em;
@@ -32,13 +32,13 @@
 		margin:0;
 		padding:0;
 	}
-	
+
 	#flowpanes .less, #flowpanes .less a {
 		color:#999 !important;
 		font-size:11px;
 	}
 	</c:set>
-	
+
 	${css}
 	</style>
 </head>
@@ -99,17 +99,17 @@ ${html}
 			<ul>
 				<li>Horizontal and vertical scrolling.</li>
 				<li>Scrolling using navigational buttons, API calls, keyboard arrow keys, and the mouse scroll wheel.</li>
-				<li>Any amount of items on one "page". Pages can have variable width</li>
+				<li>Any amount of items on one "page". Pages can have variable width.</li>
 				<li>The navigational buttons are setup without a single line of JavaScript.</li>
-				<li>Tabbed navigation like this one can be setup without any programming.</li>
+				<li>Tabbed navigation like this example can be setup without any programming.</li>
 				<li>Programmatic actions are available, such as: <samp>next</samp>, <samp>prev</samp>, <samp>seekTo</samp>, <samp>begin</samp>, and <samp>end</samp>.</li>
 				<li>Dynamic addition and removal of Scrollable items.</li>
 				<li>The ability to customize the scrolling experience with <samp>onBeforeSeek</samp> and <samp>onSeek</samp> listeners.</li>
 				<li>Ability to setup infinite loops without beginning or end</li>
 			</ul>
-			
+
 			<p>
-				<strong>All this with 1.02 kb file!</strong> Unmatched. Uncomparable.
+				<strong>All of this in just a 1.02 Kb file!</strong> Unmatched. Uncomparable.
 			</p>
 
 		</div>
@@ -127,9 +127,9 @@ ${html}
 					<li>
 						<a href="${jqt}/scrollable/index.html#autoscroll">autoscroll</a> &nbsp; makes the scrolling behaviour automatic and is highly configurable.
 					</li>
-					
+
 					<li style="margin-top:15px">
-						<a href="${jqt}/scrollable/index.html#navigator">navigator</a> &nbsp; provides navigation buttons for switching between pages in Scrollable. can be enabled with history feature so that you can scroll with browsers back (and forward) button.
+						<a href="${jqt}/scrollable/index.html#navigator">navigator</a> &nbsp; provides navigation buttons for switching between pages in Scrollable. Can be enabled with a history feature so that you can scroll with your browser's back (and forward) button.
 					</li>
 				</ul>
 
@@ -182,7 +182,7 @@ $(function() {
 
 		// assign "current" class name for the active A tag inside navigator
 		activeClass: 'current',
-		
+
 		// make browser's back button work
 		history: true
 

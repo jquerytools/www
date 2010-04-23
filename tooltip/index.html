@@ -13,39 +13,39 @@
 <%--{{{  intro --%>
 
 <div class="feat" style="min-height:100px">
-	
+
 	<h3 class="first">Simple or Rich</h3>
-	
+
 	<p>
-		A simple call such as <samp>$("img[title]").tooltip();</samp> will enable tooltips by taking advantage of the element's <samp>title</samp> attribute. If you want complex tips with images, tables, forms and links that's possible by placing the tooltip element manually next to the trigger element. 
+		A simple call such as <samp>$("img[title]").tooltip();</samp> will enable tooltips by taking advantage of the element's <samp>title</samp> attribute. If you want complex tooltips with images, tables, forms and links that's possible by placing the tooltip element manually next to the trigger element.
 	</p>
-	
+
 </div>
-	
+
 <div class="feat last" style="min-height:100px">
 
-	<h3 class="first">Configure looks, timings and positioning</h3>
-		
+	<h3 class="first">Configure design, timing and positioning</h3>
+
 	<p>
-		Use CSS to create rounded borders, arrows, gradients or shadows. Big or small, high or low. Use the configuration to tweak pre- and after delays and positioning to your personal needs.
+		Use CSS to create rounded borders, arrows, gradients or shadows. Big or small, high or low. Use the configuration to tweak pre and post-delays and positioning to your personal needs.
 	</p>
-	
+
 </div>
 
 <div class="feat">
 	<h3>Fading, sliding, dynamic</h3>
-	
+
 	<p>
-		Tooltip comes with two built-in effects: <samp>toggle</samp>, and <samp>fade</samp> and one separate effect: <a href="slide.html">slide</a> and you can easily <a href="#effects">build your own effects</a>. A <a href="dynamic.html">dynamic plugin</a> will dynamically change the tooltip's position so that it always stays in the viewport.
+		Tooltip comes with two built-in effects: <samp>toggle</samp>, and <samp>fade</samp> and one separate effect, <a href="slide.html">slide</a>, and you can easily <a href="#effects">build your own effects</a>. The <a href="dynamic.html">dynamic plugin</a> will dynamically change the tooltip's position so that it always stays in the viewport.
 	</p>
-	
+
 </div>
 
 <div class="feat last">
-	<h3>File size: 1.10 kb</h3>
-	
+	<h3>File size: 1.10 Kb</h3>
+
 	<p>
-		And you'll have all the features and configuration options you'll possibly need, such as effect- and plugin framework, <a href="#api">scripting API</a> and an <a href="#events">event model</a>. A smaller codebase is easier to control and results in snappier behaviour. Without gzipping the size is 3.5 Kb.
+		This tool has all the features and configuration options you'll possibly need, such as effect and a plugin framework, <a href="#api">scripting API</a> and an <a href="#events">event model</a>. A smaller codebase is easier to control and results in snappier behaviour. Without gzipping the size is 3.5 Kb.
 	</p>
 
 </div>
@@ -70,13 +70,13 @@ $("[title]").tooltip();
 
 
 <p>
-	You select one or more elements with a jQuery selector that will trigger the tooltip(s). Trigger's <samp>title</samp> attribute will be used as the tooltip. The actual tooltip element is auto-generated when it is being shown for the first time. Look for the <a href="../demos/tooltip/index.html">minimal setup</a> to understand the basics.
+	You select one or more elements with a jQuery selector that will trigger the tooltip(s). The trigger's <samp>title</samp> attribute will be used as the tooltip content. The actual tooltip element is auto-generated when it is being shown for the first time. Look at the <a href="../demos/tooltip/index.html">minimal setup</a> to understand the basics.
 </p>
 
 <h3>Manual tooltips</h3>
 
 <p>
-	Manual tooltips are HTML elements (typically DIV:s) that are placed next to the trigger element and they can contain any HTML such as images, links and tables. The initialization is identical but now we assume that the trigger element does not have a <samp>title</samp> attribute.
+	Manual tooltips are HTML elements (typically DIVs) that are placed next to the trigger element and they can contain any HTML such as images, links and tables. The initialization is identical but now we assume that the trigger element does not have a <samp>title</samp> attribute.
 </p>
 
 <pii:code>
@@ -194,10 +194,10 @@ events: {
 		<td class="code">layout</td>
 		<td><code>'&lt;div/&gt;'</code></td>
 		<td>
-			<strong>Since 1.2.0</strong> the HTML layout for the generated tooltip. The HTML can be as complex a layout as you wish. You can for example add a nested <samp>span</samp> element as a placeholder for an arrow.
-			
+			<strong>Since 1.2.0</strong> the HTML layout for the generated tooltip. The HTML can be as complex a layout as you wish. You can, for example, add a nested <samp>span</samp> element as a placeholder for an arrow.
+
 		</td>
-	</tr>	
+	</tr>
 	<tr>
 		<td class="code">offset</td>
 		<td><code>[0, 0]</code></td>
@@ -237,7 +237,7 @@ events: {
 		<td class="code">tip</td>
 		<td><code></code></td>
 		<td>
-			A jQuery selector for a single tooltip element. For example <samp>#mytip</samp>. This option is only valid if you want to define manually a single tooltip for multiple trigger elements. 
+			A jQuery selector for a single tooltip element. For example <samp>#mytip</samp>. This option is only valid if you want to manually define a single tooltip for multiple trigger elements.
 		</td>
 	</tr>
 	<tr>
@@ -268,7 +268,7 @@ events: {
 <h2>Events</h2>
 
 <p>
-	Make sure you have read about <a href="${jqt}/documentation/scripting.html#events">Events in jQuery Tools</a>. All event listeners receives <a href="${jqt}/documentation/scripting.html#event_object">Event Object</a> as the first argument.
+	Make sure you have read about <a href="${jqt}/documentation/scripting.html#events">Events in jQuery Tools</a>. All event listeners receive the <a href="${jqt}/documentation/scripting.html#event_object">Event Object</a> as the first argument.
 </p>
 
 <table class="listing">
@@ -278,7 +278,7 @@ events: {
 			<th nowrap>When it occurs?</th>
 		</tr>
 	</thead>
-	
+
 	<tr>
 		<td class="code">onBeforeShow</td>
 		<td>
@@ -303,8 +303,8 @@ events: {
 			when the tooltip is hidden.
 		</td>
 	</tr>
-</table>	
-	
+</table>
+
 <p>
 	Here is an example of an <samp>onShow</samp> callback function that fades out the trigger element when the tooltip is shown:
 </p>
@@ -325,7 +325,7 @@ $("label").tooltip({
 <h3>Event management</h3>
 
 <p>
-	jQuery Tooltip allows you to fully control <em>when</em> the tooltip will be shown or hidden. You can specify different events for different types of elements. You can control this behaviour with the <samp>events</samp> configuration variable which has following values by default.
+	jQuery Tooltip allows you to fully control <em>when</em> the tooltip will be shown or hidden. You can specify different events for different types of elements. You can control this behaviour with the <samp>events</samp> configuration variable which has following values by default:
 </p>
 
 <pii:code>
@@ -338,11 +338,11 @@ events: {
 </pii:code>
 
 <p>
-	This specifies opening and closing events for various types of trigger elements. <samp>def</samp> accepts a value <samp>mouseover,mouseout</samp> which means that by default the tooltip is shown when the mouse moves over the trigger and hides when the mouse moves away from the trigger. For <samp>input</samp> elements (text, textarea, password) the tooltip shows when the input is focused and hides when focus moves out of the field.
+	This specifies opening and closing events for various types of trigger elements. <samp>def</samp> accepts a value <samp>mouseover,mouseout</samp> which means that by default the tooltip is shown when the mouse moves over the trigger and hides when the mouse moves away from the trigger. For <samp>input</samp> elements (text, textarea, password) the tooltip appears when the input is focused and hides when focus moves out of the field.
 </p>
 
 <p>
-	<samp>widget</samp> is a convenience type which means <samp>select, checkbox, radio</samp> and <samp>button</samp> elements. For them the tooltip is shown on both <samp>focus</samp> and <samp>mouseover</samp> events and hidden on both <samp>blur</samp> and <samp>mouseout</samp> events. This is just a convenience because these elements usually need same kind of tooltip behaviour.
+	<samp>widget</samp> is a catchall type which means <samp>select</samp>, <samp>checkbox</samp>, <samp>radio</samp> and <samp>button</samp> elements. For them the tooltip is shown on both <samp>focus</samp> and <samp>mouseover</samp> events and hidden on both <samp>blur</samp> and <samp>mouseout</samp> events. This is just a convenience because these elements usually need some kind of tooltip behaviour.
 </p>
 
 <p>
@@ -364,11 +364,11 @@ $("label").tooltip({
 </pii:code>
 
 <p>
-	This will override the events for every <samp>input</samp> element. We have also defined customized events for <samp>checkbox</samp> field. The tool checks for the trigger element's <samp>type</samp> attribute to lookup appropriate events from the configuration.
+	This will override the events for every <samp>input</samp> element. We have also defined customized events for the <samp>checkbox</samp> field. The tool checks for the trigger element's <samp>type</samp> attribute to lookup the appropriate events from the configuration.
 </p>
 
 <p>
-	The format of the value is: <samp>showEvent11 showEvent2 ... showEventN,closeEvent1 closeEvent2 ... closeEventN</samp>. You first supply all showing events separated with spaces followed by a comma (,) followed by all close events separated with spaces. A list of available events can be found <a href="http://docs.jquery.com/Events" class="external">here</a>. Look for the "Event Helpers" section.
+	The format of the value is: <samp>showEvent11 showEvent2 ... showEventN, closeEvent1 closeEvent2 ... closeEventN</samp>. You first supply all showing events separated with spaces followed by a comma (,) followed by all close events separated with spaces. A list of available events can be found <a href="http://docs.jquery.com/Events" class="external">here</a>. Look at the "Event Helpers" section for more information.
 </p>
 
 <p>
@@ -494,7 +494,7 @@ $("label").tooltip({
 </p>
 
 <pii:code>
-// adds an effect called "myEffect" to tooltip
+// adds an effect called "myEffect" to the tooltip
 $.tools.tooltip.addEffect("myEffect",
 
 	// show function
@@ -524,7 +524,7 @@ $.tools.tooltip.addEffect("myEffect",
 </p>
 
 <p>
-	Note that if you are using jQuery's <samp>animate</samp> method the "done" function can simply be given to this method as the last argument. jQuery will take care of it after the animation finishes.
+	<strong>Note:</strong> if you are using jQuery's <samp>animate</samp> method the "done" function can simply be given to this method as the last argument. jQuery will take care of it after the animation finishes.
 </p>
 
 <h3>The default effect</h3>

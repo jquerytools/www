@@ -1,7 +1,7 @@
 <%-- :mode=jsp: --%>
 <link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-horizontal.css" />
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-buttons.css" />	
-<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-navigator.css" />	
+<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-buttons.css" />
+<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/scrollable-navigator.css" />
 
 <h1 style="background-image:url(../img/hero/scrollable.jpg)">
 	jQuery Tools / Scrollable - New Wave UI design
@@ -21,7 +21,7 @@
 <h3>HTML setup</h3>
 
 <p>
-	Here is the HTML setup for the example above.
+	Here is the HTML setup for the example above:
 </p>
 
 <pii:code lang="html">
@@ -84,11 +84,11 @@ $("jquery selector").scrollable().navigator({
 </pii:code>
 
 <p>
-	The items inside navigator can be anything such as <samp>li</samp>, <samp>a</samp>, <samp>span</samp> or <samp>p</samp> elements. By default the plugin uses the direct children as navigator items but you can supply <samp>naviItem</samp> configuration that will select the specified child elements to be used as navigator items.
+	The items inside navigator can be anything such as <samp>li</samp>, <samp>a</samp>, <samp>span</samp> or <samp>p</samp> elements. By default the plugin uses the direct children as navigator items but you can supply the <samp>naviItem</samp> configuration that will select the specified child elements to be used as navigator items.
 </p>
 
 <p>
-	If you are using <samp>a</samp> tags inside the wrap and you supply <samp>href</samp> attributes for them you have the added benefit of automatically the seeking to the correct item when you enter the page with a matching "hash" on the URL. For example if you go to an URL <samp>mypage.html#second</samp> for the above setup the scrollable will automatically seek to the Second item. You can see an example of this <a href="../demos/scrollable/one-sized.html#plugins">here</a>. Note that the third tab is automatically opened.
+	If you are using <samp>a</samp> tags inside the wrapper and you supply <samp>href</samp> attributes for them you have the added benefit of automatically seeking to the correct item when you enter the page with a matching "hash" of the URL. For example if you go to the URL <samp>mypage.html#second</samp> for the above setup, the scrollable will automatically seek to the <em>second</em> item. You can see an example of this <a href="../demos/scrollable/one-sized.html#plugins">here</a>. Note that the third tab is automatically opened.
 </p>
 
 <a name="navigator_configuration"></a>
@@ -128,21 +128,21 @@ $("jquery selector").scrollable().navigator({
 		<td>
 			If this is enabled then the auto-populated navigator elements will have an index number.
 		</td>
-	</tr>	
+	</tr>
 	<tr>
 		<td class="code">history</td>
 		<td><code>false</code></td>
 		<td>
-			<strong>Since 1.2.0</strong>. Enables support for browser's "back button" so that when user clicks on the back or forward buttons the scrollable seeks back and forward accordingly. Requires that the <a href="${jqt}/toolbox/history.html">History tool</a> is included on your page.
+			<strong>Since 1.2.0</strong>. Enables support for the browser's "back button" so that when the user clicks on the back or forward buttons the scrollable seeks backwards and forward accordingly. Requires that the <a href="${jqt}/toolbox/history.html">History tool</a> is included on your page.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">navi</td>
 		<td><code>".navi"</code></td>
 		<td>
-			Selector for the element that contains a navigator for switching between pages. You can have any amount of navigator elements on your page and they will all do the same thing. If you want to instantiate multiple scrollables with a navigator instance then you should <a href="index.html#multiple">read this</a>.
+			Selector for the element that contains a navigator for switching between pages. You can have any number of navigator elements on your page and they will all do the same thing. If you want to instantiate multiple scrollables with a navigator instance then you should <a href="index.html#multiple">read this</a>.
 		</td>
-	</tr>	
+	</tr>
 	<tr>
 		<td class="code">naviItem</td>
 		<td><code></code></td>
@@ -152,7 +152,7 @@ $("jquery selector").scrollable().navigator({
 			</p>
 
 			<p>
-				In manual setup this property is used to select the elements inside the root element that will be used as navigator items. The <samp>activeClass</samp> CSS class name is assigned for these items. If this property is not supplied the direct children for the root element are used as navigator items.
+				In manual setup this property is used to select the elements inside the root element that will be used as navigator items. The <samp>activeClass</samp> CSS class name is assigned to these items. If this property is not supplied the direct children of the root element are used as navigator items.
 			</p>
 		</td>
 	</tr>

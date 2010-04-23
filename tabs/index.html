@@ -62,37 +62,37 @@ div.panes img {
 <%--{{{ intro --%>
 
 <div class="feat">
-	
+
 	<h3 class="first">Simple</h3>
-	
+
 	<p>
-		Above tabs are initialized with this JavaScript one-liner <samp>$(".tabs").tabs(".panes > div");</samp>. The rest is CSS coding. The core of the tabs is plain and simple. There are no redundant features.</li>
+		The above tabs are initialized with this JavaScript one-liner <samp>$(".tabs").tabs(".panes > div");</samp>. The rest is CSS coding. The core of the tabs is plain and simple. There are no redundant features.</li>
 	</p>
-	
+
 	<h3>Fading, sliding, ajaxed, horizontal ...</h3>
-	
+
 	<p>
 		The logic in tabs is simple. You click on something and it does something elsewhere. This tool has an <a href="#effects">effect framework</a> that generalizes this logic making it possible to do wildly different things such as accordions or crossfading tabs.
-	</p> 
-	
-</div>	 
- 
+	</p>
+
+</div>
+
 <div class="feat last">
 
-	<h3 class="first">Respects browser's back button</h3>
-	
+	<h3 class="first">Respects browsers' back button</h3>
+
 	<p>
-		You can enable <samp>history</samp> support for tabs so that end users an navigate between tabs using browser's back and forward buttons. Just like everything else this works in all browsers.
+		You can enable <samp>history</samp> support for tabs so that end users can navigate between tabs using their browser's back and forward buttons. Just like everything else this works in all browsers.
 	</p>
-	
+
 	<h3>File size: 0.9 Kb</h3>
-		
+
 	<p>
-		And you'll have all the features and configuration options you'll possibly need, such as effect- and plugin framework, <a href="#api">scripting API</a> and an <a href="#events">event model</a>. A smaller codebase is easier to control and results in snappier behaviour. Without gzipping the size is 2.9 Kb.
+		And you'll have all the features and configuration options you'll possibly need, such as effects and a plugin framework, <a href="#api">scripting API</a> and an <a href="#events">event model</a>. A smaller codebase is easier to control and results in snappier behaviour. Without gzipping the size is 2.9 Kb.
 	</p>
-	
-</div>	 
- 
+
+</div>
+
 <br clear="all" />
 
 <%--}}}--%>
@@ -206,7 +206,7 @@ $("<tabs_selector>").tabs("<pane_selector>", {
 <h4><em>1<sup>st</sup> argument:</em> pane_selector</h4>
 
 <p>
-	In Tabs terminology, the content areas for tabs are called "panes". The <samp>pane_selector</samp> selects the content areas that correspond to the individual tabs. For example, a selector: <samp>div.panes > div</samp> selects all <samp>div</samp> elements that are direct children of the <samp>div.panes</samp> element. The first pane is assigned to the first tab and second to the second tab and so on. This selector does not select any root element and it should return as many elements as you have tabs.
+	In Tabs terminology, the content areas for tabs are called "panes". The <samp>pane_selector</samp> selects the content areas that correspond to the individual tabs. For example, the selector: <samp>div.panes > div</samp> selects all <samp>div</samp> elements that are direct children of the <samp>div.panes</samp> element. The first pane is assigned to the first tab and second to the second tab and so on. This selector does not select any root element and it should return as many elements as you have tabs.
 </p>
 
 <p>
@@ -216,7 +216,7 @@ $("<tabs_selector>").tabs("<pane_selector>", {
 <h4><em>2<sup>nd</sup> argument:</em> configuration</h4>
 
 <p>
-	The second argument for the initialization call is the configuration object. It can be either a <samp>function</samp> in which case it will correspond to an <samp>onBeforeClick</samp> event listener or it can be a complex object with many different configuration options. Here is a full list of available options:
+	The second argument for the initialization call is the configuration object. It can be either a <samp>function</samp> in which case it will correspond to an <samp>onBeforeClick</samp> event listener or it can be a complex object with many different configuration options. Here is the full list of available options:
 </p>
 
 <p>
@@ -243,7 +243,7 @@ $("<tabs_selector>").tabs("<pane_selector>", {
 		<td><code>'default'</code></td>
 		<td>
 			<p>
-				The effect to be used when a tab is clicked. This can dramatically change the behaviour of the tabs. Here are available built-in effects:
+				The effect to be used when a tab is clicked. This can dramatically change the behaviour of the tabs. Here are the available built-in effects:
 			</p>
 
 			<ul>
@@ -284,9 +284,9 @@ $("<tabs_selector>").tabs("<pane_selector>", {
 		<td class="code">history</td>
 		<td><code>false</code></td>
 		<td>
-			<strong>Since 1.2.0</strong>. Enables support for browser's "back button" so that when user clicks on the back or forward buttons the tabs are opened accordingly. Requires that the <a href="${jqt}/toolbox/history.html">History tool</a> is included on your page.
+			<strong>Since 1.2.0</strong>. Enables support for browser's "back button" so that when a user clicks on the back or forward buttons the tabs are opened accordingly. Requires that the <a href="${jqt}/toolbox/history.html">History tool</a> is included on your page.
 		</td>
-	</tr>	
+	</tr>
 	<tr>
 		<td class="code">initialIndex</td>
 		<td><code>0</code></td>
@@ -294,7 +294,7 @@ $("<tabs_selector>").tabs("<pane_selector>", {
 			Specifies the tab that is initially opened when the page loads. This automatically triggers a <samp>click</samp> event for the tab specified in this property. Specifying <samp>null</samp> or a negative number here will not trigger the <samp>click</samp> event upon page load causing all tabs to be initially closed.
 		</td>
 	</tr>
- 
+
 	<tr>
 		<td class="code">rotate</td>
 		<td><code>false</code></td>
@@ -364,7 +364,7 @@ $("#tabs2").tabs("#panes2 > div");
 </pii:code>
 
 <p>
-	On accordion setups you typically have a common root element for both the tabs and the panes so there is no need for a separate wrapper element. You should take a look at the demo about <a href="demos/tabs/multiple.html">Multiple Tabs and Accordion instances</a>.
+	With accordion setups you typically have a common root element for both the tabs and the panes so there is no need for a separate wrapper element. You should take a look at the demo about <a href="demos/tabs/multiple.html">Multiple Tabs and Accordion instances</a>.
 </p>
 
 
@@ -373,7 +373,7 @@ $("#tabs2").tabs("#panes2 > div");
 <h2>Events</h2>
 
 <p>
-	Make sure you have read about <a href="${jqt}/documentation/scripting.html#events">Events in jQuery Tools</a>. All event listeners receives <a href="${jqt}/documentation/scripting.html#event_object">Event Object</a> as the first argument.
+	Make sure you have read about <a href="${jqt}/documentation/scripting.html#events">Events in jQuery Tools</a>. All event listeners receive the <a href="${jqt}/documentation/scripting.html#event_object">Event Object</a> as the first argument.
 </p>
 
 <table class="listing">
@@ -383,7 +383,7 @@ $("#tabs2").tabs("#panes2 > div");
 			<th nowrap>When does it occur?</th>
 		</tr>
 	</thead>
-	
+
 	<tr>
 		<td class="code">onBeforeClick</td>
 		<td>
