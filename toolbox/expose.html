@@ -2,7 +2,7 @@
 <c:set var="tool" value="mask"/>
 
 <style>
-/* tweak mask on this page */
+/* tweak the mask on this page */
 #mask {
 	background:url(${cdn}/img/global/gradient_black.png) repeat-x scroll 0 -300px
 }
@@ -26,7 +26,7 @@
 <h2>The story</h2>
 
 <p>
-	Expose is a JavaScript tool that exposes selected HTML elements on the page so that the surrounding elements will gradually fade out. The exposing effect was first introduced in the <a href="overlay/index.html">overlay</a> tool. Usually the effect is an integral part of the program and cannot be used separately. This tool takes the idea of exposing a little further. It is a separate tool that can be used as a general purpose mask utility. You can use it for overlays, forms, images, videos or Flash objects. You can use CSS to tweak the look of the mask.
+	Expose is a JavaScript tool that exposes selected HTML elements on the page so that the surrounding elements will gradually fade out. The exposing effect was first introduced in the <a href="overlay/index.html">overlay</a> tool. Usually the effect is an integral part of the program and cannot be used separately. This tool takes the idea of exposing a little further. It is a separate tool that can be used as a general purpose masking utility. You can use it for overlays, forms, images, videos or Flash objects. You can use CSS to tweak the look of the mask.
 </p>
 
 
@@ -34,7 +34,7 @@
 <h2>Usage</h2>
 
 <p>
-	Here are some most common ways of using the mask
+	Here are some most common ways of using the mask:
 </p>
 
 <pii:code>
@@ -47,7 +47,7 @@ $(document).mask("#789");
 // place a non-closable mask
 $(document).mask{ closeOnEsc: false, closeOnClick: false });
 
-// place a mask but let selected elements show trough (expose)
+// place a mask but let selected elements show through (expose)
 $("div.to_be_exposed").expose();
 
 // close the mask
@@ -55,15 +55,15 @@ $.mask.close();
 </pii:code>
 
 <p>
-	There are two different calls: <samp>mask</samp> and <samp>expose</samp>. <samp>mask</samp> method is only available for the document object and you cannot make any other selector. The <samp>expose()</samp> method can take any jQuery selector and all elements returned by the selector are placed on top of the mask. 
+	There are two different calls: <samp>mask</samp> and <samp>expose</samp>. The <samp>mask</samp> method is only available for the document object and you cannot use any other selector. The <samp>expose()</samp> method can take any jQuery selector and all elements returned by the selector are placed on top of the mask.
 </p>
 
 <p>
-	The mask is loaded <strong>immediately</strong> after the <samp>expose</samp> or <samp>mask</samp> call. You can supply different configuration on each call and the latest call is remembered. A subsequent <samp>expose</samp> call for example will use the previously used configuration if no arguments are given.
+	The mask is loaded <strong>immediately</strong> after the <samp>expose</samp> or <samp>mask</samp> call. You can supply a different configuration on each call and the latest call is remembered. A subsequent <samp>expose</samp> call for example will use the previously used configuration if no arguments are given.
 </p>
 
 <p>
-	You can also use existing element as a mask. By default the tool uses an element whose id is <samp>exposeMask</samp> if it does not exist it is created.
+	You can also use an existing element as a mask. By default the tool uses an element whose id is <samp>exposeMask</samp> and if it does not exist already exist then it will be created automatically.
 </p>
 
 <a name="demos"></a>
@@ -144,15 +144,15 @@ $.mask.close();
 		<td>
 			Specifies whether masking disappears when the <samp>ESC</samp> key is pressed from the keyboard. By default, this is set to <samp>true</samp>.
 		</td>
-	</tr>	
+	</tr>
 	<tr>
 		<td class="code">closeSpeed</td>
 		<td><code>'fast'</code></td>
 		<td>
-			How fast the mask disappears. Possible values are 'slow', 'normal' and 'fast or you can supply this in milliseconds. For example, a value of 2000 will cause the mask to disappear in 2 seconds. By setting this to zero there is no animation and the mask disappears immediately.
+			How quickly the mask disappears. Possible values are 'slow', 'normal' and 'fast or you can supply the number of milliseconds. For example, a value of 2000 will cause the mask to disappear in 2 seconds. By setting this to zero there is no animation and the mask disappears immediately.
 		</td>
 	</tr>
-	
+
 	<tr>
 		<td class="code">color</td>
 		<td><code>'#fff'</code></td>
@@ -164,16 +164,16 @@ $.mask.close();
 		<td class="code">loadSpeed</td>
 		<td><code>'slow'</code></td>
 		<td>
-			How fast the mask will appear. Possible values are 'slow', 'normal' and 'fast or you can supply this in milliseconds. For example, a value of 2000 will cause the mask to appear in 2 seconds. By setting this to zero there is no animation and the mask appears immediately.
+			How quickly the mask will appear. Possible values are 'slow', 'normal' and 'fast or you can supply the number of milliseconds. For example, a value of 2000 will cause the mask to appear in 2 seconds. By setting this to zero there is no animation and the mask appears immediately.
 		</td>
-	</tr>	
+	</tr>
 	<tr>
 		<td class="code">maskId</td>
 		<td><code>'exposeMask'</code></td>
 		<td>
-			The mask is a normal <samp>div</samp> element placed on top of your page and whose size is automatically adjusted to cover the user's screen completely. You can style it normally with CSS just like any other element on the page. By default, the mask's <samp>id</samp> is set to <samp>mask</samp>, but you can change this with the configuration option. Since version 1.2.0 you can use an existing element as the mask if it's id matches the one given in this configuration option.
+			The mask is a normal <samp>div</samp> element placed on top of your page and whose size is automatically adjusted to cover the user's screen completely. You can style it normally with CSS just like any other element on the page. By default, the mask's <samp>id</samp> is set to <samp>mask</samp>, but you can change that with tis configuration option. Since version 1.2.0 you can use an existing element as the mask if it's id matches the one given in this configuration option.
 		</td>
-	</tr>	
+	</tr>
 	<tr>
 		<td class="code">opacity</td>
 		<td><code>0.8</code></td>
@@ -185,9 +185,9 @@ $.mask.close();
 		<td class="code">startOpacity</td>
 		<td><code>0</code></td>
 		<td>
-			<strong>since 1.2.0</strong>. The initial transparency level of the mask before it starts fading in to the desired opacity as specified by the <samp>opacity</samp> option. A decimal value from 0 to 1. A bigger value means less transparency while a value of 0 is fully transparent (invisible). You can for example start with full opacity and gradually fade to a semi-transparent mask.
+			<strong>since 1.2.0</strong>. The initial transparency level of the mask before it starts fading in to the desired opacity as specified by the <samp>opacity</samp> option. A decimal value from 0 to 1. A bigger value means less transparency while a value of 0 is fully transparent (invisible). For example, you can start with full opacity and gradually fade to a semi-transparent mask.
 		</td>
-	</tr>	
+	</tr>
 	<tr>
 		<td class="code">zIndex</td>
 		<td><code>9998</code></td>
@@ -202,7 +202,7 @@ $.mask.close();
 		<td class="code">onBeforeLoad</td>
 		<td><code></code></td>
 		<td>
-			This callback function is triggered before the masking effect. Returning <samp>false</samp> or calling <samp>event.preventDefault</samp> in the callback prevents masking from occurring.
+			This callback function is triggered before the masking effect. Returning <samp>false</samp> or calling <samp>event.preventDefault()</samp> in the callback prevents masking from occurring.
 		</td>
 	</tr>
 	<tr>
@@ -216,7 +216,7 @@ $.mask.close();
 		<td class="code">onBeforeClose</td>
 		<td><code></code></td>
 		<td>
-			This callback function is triggered before mask is closed. Returning <samp>false</samp> or calling <samp>event.preventDefault</samp> in the callback prevents it from closing.
+			This callback function is triggered before mask is closed. Returning <samp>false</samp> or calling <samp>event.preventDefault()</samp> in the callback prevents it from closing.
 		</td>
 	</tr>
 	<tr>
@@ -245,14 +245,14 @@ $("#mydiv").expose({
 </pii:code>
 
 <p>
-	Note that unlike other tools you can supply callbacks only from the configuration and you can assign only one callback for the same event. 
+	<strong>Note:</strong> unlike other jQuery Tools you can supply callbacks only from the configuration and you can assign only one callback for the same event.
 </p>
 
 <a name="api"></a>
 <h2>Scripting <em>API</em></h2>
 
 <p>
-	Unlike other tools in this library the mask is a <em>singleton</em>. Only one mask instance can exist simultaneously. This singleton can be accessed directly with <samp>$.mask</samp> or via <samp>this</samp>- variable inside callback functions.
+	Unlike other jQuery Tools in this library the mask is a <em>singleton</em>. Only one mask instance can exist at any given time. This singleton can be accessed directly with <samp>$.mask</samp> or via the <samp>this</samp> variable inside callback functions.
 </p>
 
 <h3>Method listing</h3>
@@ -270,16 +270,9 @@ $("#mydiv").expose({
 		<td class="code">close()</td>
 		<td><code>API</code></td>
 		<td>
-			Closes the mask. 
+			Closes the mask.
 		</td>
 	</tr>
-	<tr>
-		<td class="code">fit()</td>
-		<td><code>API</code></td>
-		<td>
-			Forces the mask to fill the whole document. This is usually not needed since the tool itself does this. You'll need this in occasions when the mask is loaded and your document is grown in the meantime.
-		</td>
-	</tr>	
 	<tr>
 		<td class="code">isLoaded()</td>
 		<td><code>boolean</code></td>

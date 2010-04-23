@@ -16,7 +16,7 @@
 <h2>Motivation</h2>
 
 <p>
-	Today the role of JavaScript is rising on a tremendous speed. All major browser vendors are competing with each other to make the best JavaScript engine in the world. We can expect to see more and more JavaScript widgets and goodies to appear on the market. Not just these tools. Having said that Flash technology still has an important role on the Internet. Especially when you want to play videos there is virtually no competition.
+	Today the role of JavaScript is increasing at a tremendous pace. All major browser vendors are competing with each other to make the best JavaScript engine in the world. We can expect to see more and more JavaScript widgets and goodies appear on the market and not just those tools. Having said that, Flash technology still has an important role to play on the Internet; especially when you want to play videos, there is virtually no competition.
 </p>
 
 <p>
@@ -27,13 +27,13 @@
 	<li>
 		<strong>Simplicity</strong>. The above example was performed with this JavaScript call: <br />
 		<samp>flashembed(this, "flash_promo.swf");</samp>  <br />
-		If you don't need anything special you don't have to study much.
+		If you don't need anything special, it's easy to get Flash up and running on your site.
 	</li>
 	<li>
-		<strong>JSON configuration</strong>. When supplying configuration for Flash objects, the values can be complex JavaScript objects with arrays, strings, functions and other objects. As opposed to the traditional XML-based configuration, this is simpler and much more flexible. In fact this was the main reason for developing this tool.
+		<strong>JSON configuration</strong>. When supplying the configuration for Flash objects, the values can be complex JavaScript objects with arrays, strings, functions and other objects. As opposed to the traditional XML-based configuration, this is simpler and much more flexible. In fact this was the main reason for developing this tool.
 	</li>
 	<li>
-		<strong>jQuery support</strong>. flashembed is designed with scripters in mind. A polished programming API together with support for jQuery selectors has been built-in.
+		<strong>jQuery support</strong>. flashembed is designed with scripters in mind. A polished <a href="#api">programming API</a> together with support for <a href="http://api.jquery.com/category/selectors/" class="external">jQuery selectors</a> has been built-in.
 	</li>
 	<li>
 		<strong>Size</strong>. Although rich in features, this plugin weighs around <strong>5 kb</strong> when minified. This is almost half the size of our competitors.
@@ -50,7 +50,7 @@
 <h3>Flashembed and jQuery Tools</h3>
 
 <p>
-	Apart from <a href="index.html">other tools</a> this tool does <strong>not</strong> depend on jQuery. You can use it as a standalone tool for embedding Flash. The jQuery syntax is <em>supported</em> but not required. For this reason, this tool lacks some of the features available in other tools such as callback functions and the ability to write plugins.
+	Distinct from our <a href="index.html">other tools</a>, this tool does <strong>not</strong> depend on jQuery. You can use it as a standalone tool for embedding Flash. The jQuery syntax is <em>supported</em> but not required. For this reason, this tool lacks some of the features available in other tools such as callback functions and the ability to write plugins.
 </p>
 
 <p>
@@ -74,7 +74,7 @@
 <h2>Usage</h2>
 
 <p>
-	flashembed is a function and it accepts following arguments:
+	<samp>flashembed</samp> is a function and it accepts the following arguments:
 </p>
 
 <pii:code>
@@ -96,7 +96,7 @@ flashembed(container, configuration, flashvars);
 <h3><span class="blue">1st argument: </span> container</h3>
 
 <p>
-	This is either a DOM element or a string representing some element's <samp>id</samp> attribute. The Flash object is placed <em>inside</em> this container. It's important to note that you don't have to care where you place your container on the page and where you place your flashembed call. This tool takes care of finding your container you specify.
+	This is either a DOM element or a string representing some element's <samp>id</samp> attribute. The Flash object is placed <em>inside</em> this container. It's important to note that you don't have to worry about where you place your container on the page or where you place your flashembed call. This tool takes care of finding the container you specify.
 </p>
 
 <h3><span class="blue">2nd argument: </span> configuration</h3>
@@ -106,7 +106,7 @@ flashembed(container, configuration, flashvars);
 </p>
 
 <p>
-	In case you give the second argument as an object, you can find a list of available options here. The options <em>before</em> the grey line are specific to flashembed and below that you can see the most popular <a class="external" href="http://kb.adobe.com/selfservice/viewContent.do?externalId=tn_12701">Flash parameters</a> that are understood by the Flash technology itself.
+	In case you specify the second argument as an object, you can find a list of available options below. The options <em>before</em> the grey line are specific to flashembed and below that you can see the most popular <a class="external" href="http://kb.adobe.com/selfservice/viewContent.do?externalId=tn_12701">Flash parameters</a> that are understood by the Flash technology itself.
 </p>
 
 <table class="listing">
@@ -147,7 +147,7 @@ flashembed(container, configuration, flashvars);
 			</p>
 
 			<p>
-				If this is specified and the user's Flash version is greater than <samp>[6, 65]</samp>, then this plugin attempts to install Flash on-the-fly. You can learn more about this from <a href="demos/flashembed/fail.html">this demo</a>.
+				If this is specified and the user's Flash version is greater than <samp>[6, 65]</samp>, then this plugin attempts to install Flash on-the-fly. You can learn more with <a href="demos/flashembed/fail.html">this demo</a>.
 			</p>
 		</td>
 	</tr>
@@ -155,14 +155,14 @@ flashembed(container, configuration, flashvars);
 		<td class="code">onFail</td>
 		<td></td>
 		<td>
-			A JavaScript function that is evaluated when the Flash plugin is missing or its version is too old. You can learn more about this from <a href="demos/flashembed/fail.html">this demo</a>. This function is called in every possible scenario when and old version is detected. Inside the function the <samp>this</samp> variable is a pointer to the <a href="#api">flashembed API</a>.
+			A JavaScript function that is evaluated when the Flash plugin is missing or its version is too old. You can learn more from <a href="demos/flashembed/fail.html">this demo</a>. This function is called in every possible scenario when and old version is detected. Inside the function the <samp>this</samp> variable is a pointer to the <a href="#api">flashembed API</a>.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">w3c</td>
 		<td class="code">false</td>
 		<td>
-			if set to <samp>true</samp>, the tool switches to standards-based <samp>object</samp> syntax when generating HTML. You can find more information about this technical subject <a href="#html">here</a>.
+			If set to <samp>true</samp>, the tool switches to standards-based <samp>object</samp> syntax when generating HTML. You can find more information about this technical subject <a href="#html">here</a>.
 		</td>
 	</tr>
 	<tr>
@@ -227,7 +227,7 @@ flashembed(container, configuration, flashvars);
 <h3><span class="blue">3rd argument: </span> flashvars</h3>
 
 <p>
-	The third argument configures the Flash object you have defined in the second argument. This is optional because not all Flash objects are not configurable. This is given as a JavaScript object as follows:
+	The third argument configures the Flash object you have defined in the second argument. This is optional because not all Flash objects are configurable. This is specified as a JavaScript object as follows:
 </p>
 
 <pii:code>
@@ -263,21 +263,21 @@ flashembed("flash", "my_object.swf", {
 </pii:code>
 
 <p>
-	If you are developing a Flash object and want to configure it with JSON, you can find JSON parsers for Flash from <a href="http://code.google.com/p/as3corelib/" class="external">as3corelib</a>.
+	If you are developing a Flash object and want to configure it with JSON, you can download JSON parsers for Flash from <a href="http://code.google.com/p/as3corelib/" class="external">as3corelib</a>.
 </p>
 
 
 <h3>A few embedding examples</h3>
 
 <pii:code>
-// install Flash object inside an element whose id is "flash"
+// install the Flash object inside an element whose id is "flash"
 flashembed("flash", "myfolder/my_flash_object.swf");
 
-// install Flash inside a certain DOM element
+// install the Flash inside a certain DOM element
 var domElement = getElementById("flash");
 flashembed(domElement, "my_flash_object.swf");
 
-// tweak embedding options
+// tweak the embedding options
 flashembed("flash", {
 	src: 'my_object.swf',
 	allowfullscreen: false
@@ -297,7 +297,7 @@ $("jquery_selector").flashembed(configuration, flashvars);
 </pii:code>
 
 <p>
-	As you can see, there are a maximum of 2 arguments here and <samp>flashvars</samp> is optional as before. You can find information about jQuery selectors <a href="http://api.jquery.com/category/selectors/">here</a>. Here is an example that will search all <samp>div</samp> elements with the class name "flash" and place a Flash object inside them:
+	As you can see, there are a maximum of 2 arguments here and <samp>flashvars</samp> is optional as before. You can find more information about jQuery selectors <a href="http://api.jquery.com/category/selectors/">here</a>. Here is an example that will search all <samp>div</samp> elements with the class name "flash" and place a Flash object inside them:
 </p>
 
 <pii:code>
@@ -329,7 +329,7 @@ flashembed("container", {src: 'my_object.swf', version: [9, 115], onFail: functi
 </pii:code>
 
 <p>
-	This API has following methods available for your use:
+	This API has thr following methods available for your use:
 </p>
 
 <table class="listing">
@@ -344,15 +344,15 @@ flashembed("container", {src: 'my_object.swf', version: [9, 115], onFail: functi
 	</tr>
 	<tr>
 		<td class="code">getFlashvars()</td>
-		<td>Returns possible Flash object configuration (3rd argument).</td>
+		<td>Returns the possible Flash object configuration (3rd argument).</td>
 	</tr>
 	<tr>
 		<td class="code">getVersion()</td>
-		<td>Returns user's Flash version as an array.</td>
+		<td>Returns the user's Flash version as an array.</td>
 	</tr>
 	<tr>
 		<td class="code">getApi()</td>
-		<td>Some Flash objects have a JavaScript API. This method returns a pointer to this API.</td>
+		<td>Some Flash objects have a JavaScript API. This method returns a pointer to that API.</td>
 	</tr>
 	<tr>
 		<td class="code">getHTML()</td>
@@ -368,7 +368,7 @@ flashembed("container", {src: 'my_object.swf', version: [9, 115], onFail: functi
 </p>
 
 <pii:code>
-// get current flash version. returns an array [major, fix]
+// get the current flash version. returns an array [major, fix]
 flashembed.getVersion();
 
 // check if version [9, 0] is supported
@@ -388,7 +388,7 @@ flashembed.getHTML({src: 'my_object.swf', w3c: true}, {
 </pii:code>
 
 <p>
-	The last method <samp>getHTML</samp> is useful when you want to generate the <samp>object</samp> tag for your Flash objects so that you don't need to use JavaScript on your pages.
+	<strong>Note:</strong> the last method, <samp>getHTML</samp>, is useful when you want to generate the <samp>object</samp> tag for your Flash objects so that you don't need to use JavaScript on your pages.
 </p>
 
 
@@ -396,7 +396,7 @@ flashembed.getHTML({src: 'my_object.swf', w3c: true}, {
 <h2>Generated HTML</h2>
 
 <p>
-	This chapter describes what happens "behind the scenes" and what kind of HTML is generated for the client when the Flash object is embedded. This is quite technical and if you are not interested in W3C standards you can freely skip this section.
+	This section describes what happens "behind the scenes" and what kind of HTML is generated for the client when the Flash object is embedded. This is quite technical and if you are not interested in W3C standards feel free to skip this section.
 </p>
 
 <p>
@@ -428,7 +428,7 @@ flashembed("clock", "/swf/clock.swf");
 </pii:code>
 
 <p>
-	This is a standards-based syntax as specified on this <a href="http://www.w3.org/TR/REC-html40/struct/objects.html" class="external">W3C specification</a>. It's no surprise that Internet Explorer does not support this syntax and this browser is supplied with the following HTML instead.
+	This is the standards-based syntax as specified in this <a href="http://www.w3.org/TR/REC-html40/struct/objects.html" class="external">W3C specification</a>. It's no surprise that Internet Explorer does not support this syntax so this browser is supplied with the following HTML instead.
 </p>
 
 <pii:code lang="html">
@@ -470,7 +470,7 @@ flashembed("clock", {src: "/swf/clock.swf", w3c: true});
 </pii:code>
 
 <p>
-	This would appear to be a perfect solution, but there is one drawback. While every other browser is getting it right, IE/Windows is not streaming - it waits for the entire movie to download before playing it. This is fine for small movies, but for anything serious, the lack of streaming is unacceptable. This is why this flag is only suitable for standard freaks that are using small SWF files. The A List Apart document describes a workaround for this called "Flash satay" and you can read about it in the document.
+	This would appear to be a perfect solution, but there is one drawback. While every other browser is getting it right, IE/Windows is not streaming - it waits for the entire movie to download before playing it. This is fine for small movies, but for anything serious the lack of streaming is unacceptable. This is why this flag is only suitable for standards fanatics that are using small SWF files. The A List Apart document describes a workaround for this called "Flash satay" and you can read about it in the document.
 </p>
 
 

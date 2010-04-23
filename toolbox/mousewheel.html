@@ -6,18 +6,18 @@
 <h2 class="first">Usage</h2>
 
 <p>
-	Mousewheel plugin allows you to take control of the mousewheel. For example
+	The Mousewheel plugin allows you to take control of the mousewheel. For example:
 </p>
 
 <pii:code>
-// make #myelement listen to mousewheel events
+// make #myelement listen for mousewheel events
 $("#myelement").mousewheel(function(event, delta) {
 
 });
 </pii:code>
 
 <p>
-	Whenever the mousewheel is used on top of the elements specified by the jQuery selector, the supplied callback function is called. It is fed with two arguments. The first one is the jQuery <a href="http://docs.jquery.com/Event" class="external">event object</a> and the second one specifies how much the wheel was rotated. A positive value for <samp>delta</samp> means movement downwards and a negative value means movement upwards.
+	Whenever the mousewheel is used while the mouse point is over the elements specified by the jQuery selector, the supplied callback function is called. It takes two arguments. The first one is the jQuery <a href="http://docs.jquery.com/Event" class="external">event object</a> and the second argument specifies how much the wheel was rotated. A positive value for <samp>delta</samp> means movement downwards and a negative value means movement upwards.
 </p>
 
 

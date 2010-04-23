@@ -5,7 +5,7 @@
 </h1>
 
 <p>
-	The History tool allows you to take control of the browser's back button. This means that when the user clicks on the browser's back or forward buttons you'll get notified.
+	The History tool allows you to take control of the browser's back button. This means that when the user clicks on the browser's back or forward buttons your JavaScript functions will notified.
 </p>
 
 <h2>Usage</h2>
@@ -17,11 +17,11 @@ $("a.links_with_history").history(function(event, hash) {
 </pii:code>
 
 <p>
-	You select a bunch of anchor links (<samp>A</samp> tags) from your page and supply a callback function that is called whenever the browser's back (or forward) button is pressed. The callback is called when the link is clicked <strong>and</strong> when the browser navigates to any of the locations that are specified in the links' <samp>href</samp> attribute. 
+	You select a one or more anchor links (<samp>A</samp> tags) from your page and supply a callback function that is called whenever the browser's back (or forward) button is pressed. The callback is called when the link is clicked <strong>and</strong> when the browser navigates to any of the locations that are specified in the links' <samp>href</samp> attribute.
 </p>
 
 <p>
- 	The callback is fed with two arguments. The first one is the jQuery <a href="http://docs.jquery.com/Event" class="external">event object</a> and the second one is the anchor link (also called a hash) where the browser is navigating to.
+ 	The callback takes two arguments. The first one is the jQuery <a href="http://docs.jquery.com/Event" class="external">event object</a> and the second one is the anchor link (also called a hash) where the browser is navigating to.
 </p>
 
 <h2><em>Example</em> Tabs with history</h2>
@@ -40,5 +40,5 @@ ${js}
 </pii:code>
 
 <p>
-	The history feature of the tabs uses this tool to enable the "back button". The feature is enabled by setting the <samp>history</samp> configuration variable to <samp>true</samp>. You can find above demo <a href="${jqt}/demos/tabs/history.html">here</a>. Here is another demo about <a href="${jqt}/demos/scrollable/one-sized.html">history feature in scrollable</a>. 
+	The history feature of the tabs uses this tool to enable the "back button". The feature is enabled by setting the <samp>history</samp> configuration variable to <samp>true</samp>. You can find the above demo <a href="${jqt}/demos/tabs/history.html">here</a>. Here is another demo demonstrating the <a href="${jqt}/demos/scrollable/one-sized.html">history feature in scrollable</a>.
 </p>
