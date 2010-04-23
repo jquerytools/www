@@ -3,12 +3,12 @@
 <%--{{{ Intro --%>
 
 <h1 style="background:url(${cdn}${jqt}/img/hero/rangeinput.jpg) no-repeat -14px 5px">
-	jQuery Rangeinput @ jQuery Tools 
+	jQuery Rangeinput @ jQuery Tools
 	<em>HTML5 range input for humans</em>
 </h1>
 
 <p class="more" style="margin-top:0">
-	This tool brings <strong>HTML5</strong> range input for all browsers in a way that you can make it look and behave like you want. This small candy weights only <strong>2.2 kb</strong>.
+	This tool brings <strong>HTML5</strong> range input to all browsers in such a way that you can make it look and behave like you want. This small candy weights only <strong>2.2 Kb</strong>.
 </p>
 
 <div style="margin:20px 0">
@@ -18,50 +18,50 @@
 
 <p class="less" style="margin-bottom:30px">
 	<small>
-		Change value of the above range either by dragging the handle, clicking on the slider or changing the value of the input field. When you have the focus on the input you can change the value with your <samp>Arrow Keys</samp> or with <strong>VIM</strong> keyboard shortcuts <samp>HJKL</samp>. <samp>PageUp</samp> and <samp>PageDown</samp> goes 10 steps forward and backward.
+		Change the value of the above range either by dragging the handle, clicking on the slider or changing the value of the input field. When you have the focus on the input field you can change the value with your <samp>Arrow Keys</samp> or with <strong>VIM</strong> keyboard shortcuts <samp>HJKL</samp>. <samp>PageUp</samp> and <samp>PageDown</samp> go 10 steps forward and backward.
 	</small>
 </p>
 
 <div class="feat">
 
 	<h3 class="first">HTML5 range input</h3>
-	
+
 	<p>
 		This tool brings HTML5 <samp>&lt;input type="range" /&gt;</samp> support for all browsers in a consistent and standardized manner <em>today.</em> The range field is just like any other <samp>form</samp> field which can be scripted and submitted. Opera and Safari will render range input even if JavaScript is disabled.
-	</p> 
-	 
+	</p>
+
 </div>
 
 <div class="feat last">
 
 	<h3 class="first">For nerds and humans</h3>
-	
+
 	<p>
-		Call <samp>$(":range").range();</samp> and all your HTML5 range inputs are working. End users can pick values by dragging a range or using the keyboard arrow keys. Hackers can use <strong>VIM</strong> keyboard shortcuts to move the range back and forth.
+		Call <samp>$(":range").range();</samp> and all your HTML5 range inputs are working. End users can pick values by dragging a slider or using the keyboard arrow keys. Hackers can use <strong>VIM</strong> keyboard shortcuts to move the range back and forth.
 	</p>
-	
-</div>	 
- 
+
+</div>
+
 <div class="feat">
 
 	<h3>Styleable</h3>
-	
+
 	<p>
 		You can design ranges to fit the overall feel of your site. Use images and even the latest CSS3 techniques if you like. Every bit of the range is skinnable. The default CSS class names can be changed and you can design both horizontal and vertical ranges. Professional example skins are provided and you may use them for free.
 	</p>
-	
+
 </div>
 
 <div class="feat last">
 
 	<h3>File size: <strong>2.20 kb!</strong></h3>
-	
+
 	<p>
-		It contains everything you need: configurability, skinning, orientation, standards based behaviour, <a href="#api">scripting API</a> and an <a href="#events">event model</a>. And as a bonus you'll get a generic drag utility! Last, but not least: A smaller codebase is easier to control and results in snappier behaviour.
-	</p>	 
-	
-</div>	 
- 
+		It contains everything you need: configurability, skinning, orientation, standards based behaviour, <a href="#api">scripting API</a> and an <a href="#events">event model</a>. And as a bonus you'll get a generic drag utility! Last, but not least: a smaller codebase is easier to control and results in snappier behaviour.
+	</p>
+
+</div>
+
 <br clear="all" />
 <%--}}}--%>
 
@@ -77,7 +77,7 @@
 <!-- styling for the range -->
 <link rel="stylesheet" type="text/css" href="range.css"/>
 
-<!-- couple of HTML5 range inputs with standard attributes -->
+<!-- a couple of HTML5 range inputs with standard attributes -->
 <input type="range" name="range1" min="50" max="500" step="20" value="100" />
 <input type="range" name="range2" min="0" max="1500" step="50" value="450" />
 
@@ -88,7 +88,7 @@ $(":range").range();
 </pii:code>
 
 <p>
-	Hereafter you have cross-browser range inputs available. The browser's built-in range input is replaced by a normal text input to keep it from messing things up. Essentially the original range inputs are replaced by new input fields  where the type attribute has been changed to "text". For further details take a look at the demo: <a href="${jqt}/demos/rangeinput/index.html">minimal setup for range input</a>.
+	Now your cross-browser range inputs are available. The browser's built-in range input is replaced by a normal text input to keep it from messing things up. Essentially the original range inputs are replaced by new input fields  where the type attribute has been changed to "text". For further details take a look at the demo: <a href="${jqt}/demos/rangeinput/index.html">minimal setup for range input</a>.
 </p>
 
 <a name="demos"></a>
@@ -99,12 +99,12 @@ $(":range").range();
 		<li> <a href="${jqt}/demos/${demo.path}">${demo.title}</a> </li>
 	</c:forEach>
 </ul>
- 
+
 <%--{{{ Configuration --%>
 
 <a name="configuration"></a>
-<h2>Configuration</h2>	
- 
+<h2>Configuration</h2>
+
 <table class="listing">
 
 	<thead>
@@ -113,7 +113,7 @@ $(":range").range();
 			<th>Default</th>
 			<th>Description</th>
 		</tr>
-	</thead>	
+	</thead>
 
 	<tr>
 		<td class="code">css</td>
@@ -121,56 +121,56 @@ $(":range").range();
 		<td>
 			CSS class names used by the generated range. Here are the default values that you can change:
 <pii:code lang="css">
-css: { 
+css: {
    input:  'range',        /* class name for the generated text input field */
    rangeinput: 'slider',   /* class name for rangeinput */
    progress: 'progress',   /* class name for progress bar  */
    handle: 'handle'        /* class name for drag handle */
 }
 </pii:code>
-		</td> 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">keyboard</td>
 		<td>true</td>
 		<td>
 			Whether keyboard shortcuts are enabled when the focus is on the input field. Both arrow keys and VIM shortcuts are supported. The page-up and page-down keys move the range by 10 steps.
-		</td> 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">max</td>
 		<td>100</td>
 		<td>
 			Maximum value.
-		</td> 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">min</td>
 		<td>0</td>
 		<td>
 			Minimum value.
-		</td> 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">precision</td>
 		<td>0</td>
 		<td>
 			By default the value's precision (the amount of decimal places) is determined by the value of the <samp>step</samp> configuration option. For example a value <samp>0.01</samp> results in a precision value 2 (two decimal places). You can override the automatic precision calculation with this configuration option.
-		</td> 
-	</tr>	
+		</td>
+	</tr>
 	<tr>
 		<td class="code">progress</td>
 		<td>false</td>
 		<td>
 			Whether the progress bar is shown and its width is adjusted accordingly.
-		</td> 
-	</tr>	
+		</td>
+	</tr>
 	<tr>
 		<td class="code">speed</td>
 		<td>200</td>
 		<td>
 			Animation speed for the drag handle when the range is clicked.
-		</td> 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">step</td>
@@ -181,27 +181,27 @@ css: {
 			<p>
 				<samp>&lt;input name=opacity type=range min=0 max=1 step="0.01"&gt;</samp>
 			</p>
-		</td> 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">value</td>
 		<td>0</td>
 		<td>
 			Initial value.
-		</td> 
+		</td>
 	</tr>
 	<tr>
 		<td class="code">vertical</td>
 		<td>false</td>
 		<td>
 			If the slider element's height is larger than its width, the tool assumes that the range is vertical. You can override the assumption with this configuration variable.
-		</td> 
+		</td>
 	</tr>
-	
+
 </table>
 
 <a name="attributes"></a>
-<h3>Input attributes</h3> 
+<h3>Input attributes</h3>
 
 <p>
 	You can also configure the range by supplying valid HTML5 attributes for the range input field. For example:
@@ -218,9 +218,9 @@ css: {
 		<tr>
 			<th>Attribute</th>
 			<th>Description</th>
-		</tr> 
+		</tr>
 	</thead>
-	
+
 	<tr>
 		<td class="code">disabled</td>
 		<td>Whether the range is completely disabled. Both the slider and the input field are disabled. The <samp>disabled</samp> attribute can be toggled dynamically by scripting.</td>
@@ -245,7 +245,7 @@ css: {
 		<td class="code">step</td>
 		<td>The amount of steps the range takes between <samp>min</samp> and <samp>max</samp>.</td>
 	</tr>
-	
+
 	<tr>
 		<td class="code">value</td>
 		<td>Initial value.</td>
@@ -279,10 +279,10 @@ css: {
 
 
 <%--{{{ API  --%>
-  
-<a name="api"></a> 
+
+<a name="api"></a>
 <h2>Scripting API</h2>
- 
+
 <p>
 	First make sure you have familiarized yourself with <a href="${jqt}/documentation/scripting.html">jQuery Tools scripting</a>.
 </p>
@@ -301,82 +301,82 @@ css: {
 		<td>
 			Returns the configuration of the current instance.
 		</td>
-	</tr>	 
+	</tr>
 	<tr>
 		<td class="code">getHandle</td>
 		<td><code>jQuery</code></td>
 		<td>
 			Returns the drag handle element.
 		</td>
-	</tr>	 
+	</tr>
 	<tr>
 		<td class="code">getInput</td>
 		<td><code>jQuery</code></td>
 		<td>
 			Returns the input element.
 		</td>
-	</tr>	 
+	</tr>
 	<tr>
 		<td class="code">getProgress</td>
 		<td><code>jQuery</code></td>
 		<td>
 			Returns the progress element. The one that "follows" the handle.
 		</td>
-	</tr>	 
+	</tr>
 	<tr>
 		<td class="code">getValue</td>
 		<td><code>Number</code></td>
 		<td>
 			Returns the current value of the range.
 		</td>
-	</tr>	 
+	</tr>
 	<tr>
 		<td class="code">next</td>
 		<td><code>API</code></td>
 		<td>
 			Advance to the next step (value).
 		</td>
-	</tr>	 
+	</tr>
 	<tr>
 		<td class="code">prev</td>
 		<td><code>API</code></td>
 		<td>
-			Back to previous step (value).
+			Return to the previous step (value).
 		</td>
-	</tr>	 
+	</tr>
 	<tr>
 		<td class="code">setValue(value)</td>
 		<td><code>API</code></td>
 		<td>
 			Sets the range value to the one specified in the argument.
 		</td>
-	</tr>	 
+	</tr>
 	<tr>
 		<td class="code">step(amount)</td>
 		<td><code>API</code></td>
 		<td>
 			Changes the range value by the value given in the <samp>step</samp> configuration option multiplied by <samp>amount</samp>. The default amount is 1. A negative value decreases the value and a positive value increases it.
 		</td>
-	</tr>	 
+	</tr>
 	<tr>
 		<td class="code">stepDown(amount)</td>
 		<td><code>API</code></td>
 		<td>
-			decreases the value with the amount of steps given in the argument. identical to <samp>step(-amount)</samp>. 
+			Decreases the value with the amount of steps given in the argument. identical to <samp>step(-amount)</samp>.
 		</td>
-	</tr>		
+	</tr>
 	<tr>
 		<td class="code">stepUp(amount)</td>
 		<td><code>API</code></td>
 		<td>
-			increases the value with the amount of steps given in the argument. identical to <samp>step(amount)</samp>. 
+			Increases the value with the amount of steps given in the argument. identical to <samp>step(amount)</samp>.
 		</td>
-	</tr>		
+	</tr>
 </table>
 
 <h3>DOM API</h3>
 
-<p>	
+<p>
 	The official HTML5 range input defines a couple of <a href="http://dev.w3.org/html5/spec-author-view/common-input-element-attributes.html#common-input-element-apis" class="external">DOM methods and attributes</a> which are being enabled by this tool.
 </p>
 
@@ -392,23 +392,23 @@ css: {
 		<td class="code">stepDown(amount)</td>
 		<td><code></code></td>
 		<td>
-			decreases the value with the amount of steps given in the argument. identical to <samp>step(-amount)</samp> in the <a href="#api">api</a> 
+			Decreases the value with the amount of steps given in the argument. identical to <samp>step(-amount)</samp> in the <a href="#api">API</a>.
 		</td>
-	</tr>		
+	</tr>
 	<tr>
 		<td class="code">stepUp(amount)</td>
 		<td><code></code></td>
 		<td>
-			increases the value with the amount of steps given in the argument. identical to <samp>step(amount)</samp> in the <a href="#api">api</a> 
+			Increases the value with the amount of steps given in the argument. identical to <samp>step(amount)</samp> in the <a href="#api">API</a>.
 		</td>
-	</tr>		
+	</tr>
 	<tr>
 		<td class="code">valueAsNumber</td>
 		<td><code>number</code></td>
 		<td>
-			normal <samp>value</samp> property on the DOM always returns a string value. this HTML5 compatible <samp>valueAsNumber</samp> property contains the value as a floating point (or integer) number.
+			The normal <samp>value</samp> property in the DOM always returns a string value. This HTML5 compatible <samp>valueAsNumber</samp> property contains the value as a floating point (or integer) number.
 		</td>
-	</tr>		
+	</tr>
 </table>
 
 <%--}}}--%>
@@ -416,7 +416,7 @@ css: {
 
 <%--{{{ Events--%>
 
-<a name="events"></a> 
+<a name="events"></a>
 <h2>Events</h2>
 
 <p>

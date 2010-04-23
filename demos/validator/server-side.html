@@ -16,7 +16,7 @@
 <h3>JavaScript coding</h3>
 
 <p>
-	Here is how we do it. We first initialize client side validation with the <samp>validator()</samp> call and ad a custom form submission logic after that. You can use <samp>isDefaultPrevented()</samp> method on the jQuery Event object to test whether client side validation is passed.
+	Here is how we do it. We first initialize client-side validation with the <samp>validator()</samp> call and ad a custom form submission logic after that. You can use <samp>isDefaultPrevented()</samp> method on the jQuery Event object to test whether client side validation is passed.
 </p>
 
 <pii:code>
@@ -25,7 +25,7 @@ ${js}
 
 
 <p>
-	Here we used a simple return value <samp>true</samp> to indicate that the data was valid on the server-side. You can do whatever you wish when data was good. Here we replaced form contents with a server-side page. If the data was not valid we use the <samp>invalidate</samp> method to display errors for the user. The <samp>invalidate</samp> method accepts an object argument which is a field name to error. The <samp>server-fail.js</samp> is our server-side "logic" and it always returns following:
+	Here we have used a simple return value <samp>true</samp> to indicate that the data was valid on the server-side. You can do whatever you wish when the data is good. Here we replaced the form contents with a server-side page. If the data was not valid we use the <samp>invalidate</samp> method to display errors to the user. The <samp>invalidate</samp> method accepts an object argument which is a field name to error. The <samp>server-fail.js</samp> is our server-side "logic" and it always returns the following:
 </p>
 
 <p>
