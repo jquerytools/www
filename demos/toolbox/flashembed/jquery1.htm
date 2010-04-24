@@ -1,15 +1,5 @@
-
-<c:if test="${empty plain}">
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<!-- grab jquery from googleapis -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/${v.jquery}/jquery.min.js"></script>
-
-<!-- include flashembed. this file is not included in the "official" jQuery tools package -->
-<script type="text/javascript" src="${cdn}/js${jqt}${jqt}.flashembed-${v.flashembed}.min.js"></script>
-</c:if>
-
+<%-- :mode=jsp: --%>
+<%@ include file="../../standalone.jsf" %>
 <style>
 div.clock {
 	width: 150px;
@@ -18,6 +8,10 @@ div.clock {
 	margin-right:15px;
 }
 </style>
+
+</head>
+
+<body>
 
 <c:set var="js">
 <script>

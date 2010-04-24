@@ -25,18 +25,6 @@
 
 <body>
 
-<script>
-<c:set var="js">
-// script inside the domReady method is executed after page is scriptable
-flashembed.domReady(function() {
-
-	// wmode parameter does the trick
-	flashembed("flash", {src: "/swf/flash10.swf", wmode: 'opaque'});
-});
-</c:set>
-${js}
-</script>
-
 <c:set var="html">
 <!-- overlayed element. must be positioned absolutely -->
 <div id="layer">This layer is on top of the Flash object</div>
@@ -47,4 +35,12 @@ ${js}
 
 ${html}
 
+
+<script>
+<c:set var="js">
+// wmode parameter does the trick
+flashembed("flash", {src: "/swf/flash10.swf", wmode: 'opaque'});
+</c:set>
+${js}
+</script>
 

@@ -1,8 +1,11 @@
+<%-- :mode=jsp: --%>
+<%@ include file="../../standalone.jsf" %>
+</head>
 
-<c:if test="${empty plain}">
-<!-- include flashembed. this file is not included in the "official" jQuery tools package -->
-<script type="text/javascript" src="${cdn}/js${jqt}${jqt}.flashembed-${v.flashembed}.min.js"></script>
-</c:if>
+<body>
+
+
+<div id="player" style="width:500px;height:300px"></div>
 
 <script>
 flashembed("player", "/swf/flowplayer-${v.core}.swf", {
@@ -15,6 +18,3 @@ flashembed("player", "/swf/flowplayer-${v.core}.swf", {
 	}
 });
 </script>
-
-<div id="player" style="width:500px;height:300px"></div>
-

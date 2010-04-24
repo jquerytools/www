@@ -387,6 +387,78 @@ $.mask.close();
 
 <%--}}}--%>
 
+
+<%--{{{  flashembed --%>
+<a name="flashembed"></a>
+<h2>Flashembed</h2>
+
+<p>
+	Flashembed is now part of the Toolbox and no longer one of the main UI tools. The major change in this tool that it no longer contains <samp>flashembed.domReady()</samp> function that can be used to evaluate code right after the DOM is ready. This feature is a core part of the mainstream JavaScript libraries including jQuery and should not be included here. Another change is that the <samp>flashembed()</samp> call must be evaluated <strong>after</strong> the container element. So this won't work
+</p>
+
+<pii:code lang="html">
+<!-- this setup won't work anymore! -->
+
+<script>
+// attempt to install Flash object inside a container that is *below* this call
+flashembed("flashContainer", "my-flash-object.swf");
+</script>
+
+<!-- container for Flash -->
+<div id="flashContainer"></div>
+</pii:code>
+
+<p>
+	In the new version you need to move the script below the container:
+</p>
+
+<pii:code lang="html">
+<!-- container for Flash -->
+<div id="flashContainer"></div>
+
+<!-- this works -->
+<script>
+flashembed("flashContainer", "my-flash-object.swf");
+</script>
+</pii:code>
+
+<p>
+	Upon initialization you can prefix the ID name with #- character. For example <samp>#mydiv</samp> simulating the syntax of jQuery selectors. For example: 
+</p>
+
+<pii:code lang="html">
+<script>
+flashembed("#flashContainer", "my-flash-object.swf");
+</script>
+</pii:code>
+
+<p>
+	The tool no longer checks for Flash versions 6 and below. By the time of writing only 0.08 percent of users on Flowplayer website were using Flash 6 or below. No need to make complex logic for such minority.
+</p>
+
+<h3>Flashembed API changes</h3>
+
+<ul>
+	<li>removed <samp>flashembed.domReady</samp> static function</li>
+	<li>removed <samp>getHTML</samp> API method</li>
+	<li>
+		renamed <samp>getFlashvars</samp> API method to <samp>getConf</samp> so that it follows the naming of other tools
+	</li>
+	<li>
+		renamed <samp>getConf</samp> API method to <samp>getOptions</samp>. This returns the embedding options for the Flash object and is much more descriptive name.
+	</li>
+	<li>
+		renamed <samp>getContainer</samp> API method to <samp>getRoot</samp>
+	</li>	
+</ul> 
+
+<p class="more">
+	In general Flashembed feels much more similar to other tools in the library. In previous versions it has been more of a black sheep.  
+</p>
+
+	
+<%--}}}--%>
+
 <h2>Thanks to</h2>
 
 <ul>

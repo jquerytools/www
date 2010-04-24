@@ -17,11 +17,11 @@
 </p>
 
 <pii:code lang="html">
-<script type="text/javascript" src="${cdn}/js/flashembed-${v.flashembed}.min.js"></script>
+<script type="text/javascript" src="toolbox.flashembed.min.js"></script>
 </pii:code>
 
 <p>
-	It is recommended that you use the minified (.min) version to reduce the download size. You can get the script <a href="${jqt}/flashembed.html#download">here</a>. Second, you have to have a HTML container for the object; we are using a <samp>DIV</samp> element in our example. We use an <samp>id</samp> attribute to reference this container later in the embedding.
+	It is recommended that you use the minified (.min) version to reduce the download size. You can get the script <a href="${jqt}/download/">here</a>. Second, you have to have a HTML container for the object; we are using a <samp>DIV</samp> element in our example. We use an <samp>id</samp> attribute to reference this container later in the embedding.
 </p>
 
 <pii:code lang="html">
@@ -39,7 +39,7 @@ flashembed("clock", "/swf/clock.swf");
 </pii:code>
 
 <p>
-	That is really all you need.
+	The call must be placed <strong>after</strong> the DIV element or you must place it inside <samp>$(document).ready()</samp> block with jQuery. That is really all you need.
 </p>
 
 <h3>CSS code</h3>

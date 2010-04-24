@@ -1,8 +1,10 @@
+<%-- :mode=jsp: --%>
+<%@ include file="../../standalone.jsf" %>
+</head>
 
-<c:if test="${empty plain}">
-<!-- include flashembed. this file is not included in the "official" jQuery tools package -->
-<script type="text/javascript" src="${cdn}/js${jqt}${jqt}.flashembed-${v.flashembed}.min.js"></script>
-</c:if>
+<body>
+
+<div id="info" style="width:300px;height:125px"></div>
 
 <script>
 flashembed("info", "/swf/flashvars.swf", {
@@ -11,7 +13,3 @@ flashembed("info", "/swf/flashvars.swf", {
 	name3: 'Hello World! I am changing'
 });
 </script>
-
-<div id="info" style="width:300px;height:125px"></div>
-
-
