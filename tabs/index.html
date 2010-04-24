@@ -144,7 +144,7 @@ $("ul.tabs").tabs("div.panes > div");
 
 <ul>
 	<c:forEach items="${f:getDemo(context.toolDemos, 'tabs/index.html').category.demos}" var="demo">
-		<li> <a href="demos/${demo.path}">${demo.title}</a> </li>
+		<li> <a href="${jqt}/demos/${demo.path}">${demo.title}</a> </li>
 	</c:forEach>
 </ul>
 
