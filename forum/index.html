@@ -47,6 +47,13 @@
 
 <h2 class="first">Forum List</h2>
 
+<c:if test="${!context.production}">
+<div class="box petrol">
+	This forum is a complete dummy and is not on production. Please supply your bug reports <a href="https://github.com/jquerytools/jquerytools/issues">here</a>.
+</div>	
+</c:if>
+
+
 <table class="listing">
 
 	<thead>
