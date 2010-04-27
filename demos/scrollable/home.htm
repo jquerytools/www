@@ -14,7 +14,7 @@
 	width:948px;
 	padding:15px;
 	height:473px;
-	-moz-border-radius:5px;     
+	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 }
 
@@ -50,7 +50,7 @@
 }
 
 .t {
-	padding:0 !important;		
+	padding:0 !important;
 	border:0 !important;
 }
 
@@ -114,7 +114,7 @@
 <c:if test="${empty plain}">
 </head>
 
-<body>	
+<body>
 </c:if>
 
 <!-- root element for everything -->
@@ -133,7 +133,7 @@
 
 			<a href="tabs/index.html">
 				<img src="${cdn}${jqt}/img/hero/tabs.jpg"/></a>
-				
+
 			<div class="details">
 				<strong>Tabs</strong> is the most popular JavaScript tool on the web. Tabs, horizontal tabs and accordions, finally done the right way.
 			</div>
@@ -145,9 +145,9 @@
 
 			<a href="tooltip/index.html">
 				<img src="${cdn}${jqt}/img/hero/tooltip.jpg"/></a>
-				
+
 			<div class="details">
-				<strong>Tooltip</strong> helps you to build easier user interfaces. Big or small. Pluggable effects. Yet another crucial tool. 
+				<strong>Tooltip</strong> helps you to build easier user interfaces. Big or small. Pluggable effects. Yet another crucial tool.
 			</div>
 
 		</div>
@@ -157,7 +157,7 @@
 
 			<a href="overlay/index.html">
 				<img src="${cdn}${jqt}/img/hero/overlay.jpg"/></a>
-				
+
 			<div class="details">
 				<strong>Overlay</strong> is a significant part of the JavaScript/Web 2.0 landscape. This tool handles them all: commercial overlays, modal dialogs and slideshows.
 			</div>
@@ -169,7 +169,7 @@
 
 			<a href="scrollable/index.html">
 				<img src="${cdn}${jqt}/img/hero/scrollable.jpg"/></a>
-				
+
 			<div class="details">
 				<strong>Scrollable</strong> is the most successful tool in this library. Any size and shape. Infinite loops and more.
 			</div>
@@ -181,7 +181,7 @@
 
 			<a href="release-notes/index.html#form">
 				<img src="${cdn}${jqt}/img/hero/form.jpg"/></a>
-				
+
 			<div class="details">
 				<strong>FORM</strong> is a collection of essential form building tools. Validation, range- and date inputs for humans. New wave form development is here.
 			</div>
@@ -193,13 +193,13 @@
 
 			<a href="toolbox/flashembed.html">
 				<img src="${cdn}${jqt}/img/hero/toolbox/toolbox.jpg"/></a>
-				
+
 			<div class="details">
-				<strong>TOOLBOX</strong> is a set of small niceties. Take control of mousewheel or browser's back button. Embed Flash and place masks over your document. 
+				<strong>TOOLBOX</strong> is a set of small niceties. Take control of the mousewheel and your browser's back button. Embed Flash and place masks over your document.
 			</div>
 
 		</div>
-		
+
 <%--}}}--%>
 	</div>
 
@@ -208,9 +208,9 @@
 
 		<img style="margin:-17px 0 28px 0" width="721" height="346" alt="jQuery Tools. The ultimate UI library for web"
 			src="${cdn}${jqt}/img/hero/jquerytools.jpg" />
-		
+
 		<div class="details">
-			<strong>jQuery Tools</strong> is a collection of the most important user-interface components for modern websites. Used by large sites all over the world. 
+			<strong>jQuery Tools</strong> is a collection of the most important user-interface components for modern websites. Used by large sites all over the world.
 		</div>
 
 	</div>
@@ -254,11 +254,11 @@ api.onBeforeSeek(function(e, i) {
 	// when on the first item: hide the intro
 	if (i) {
 		$("#intro").fadeOut("slow");
-		
+
 		// dirty hack for IE7-. cannot explain
 		if ($.browser.msie && $.browser.version < 8) {
-			$("#intro").hide();	
-		}					
+			$("#intro").hide();
+		}
 
 	// otherwise show the intro
 	} else {
