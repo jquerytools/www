@@ -194,8 +194,8 @@
 
 
 <c:if test="${fn:contains(req.path, '/download')}">
-	<img src="${jqt}/img/github-logo.png" alt="" />
-	<img src="${jqt}/img/github.png" alt="" />
+	<img style="margin-left:16px" src="${jqt}/img/github-logo.png" alt="" />
+	<img style="margin-left:10px" src="${jqt}/img/github.png" alt="" />
 
 	<p>
 		There are two jQuery Tools repositories on Github:
@@ -217,8 +217,13 @@ $("#right a[href=${req.path}]").addClass("active");
 </script>
 
 	
-<p style="text-align:center;margin-top:30px">
+<p style="text-align:center;margin:30px 40px 30px 0">
 	<a style="font-size:10px;color:#666" 
 		href="https://github.com/jquerytools/jquerytools/issues">report a bug &raquo;</a>
 </p>
+
+<a href="${jqt}/release-notes/index.html">
+	<img src="${cdn}${jqt}/img/1.2/banner-small.jpg" 
+		style="margin-left:10px"
+		alt="Introducing jQuery Tools 1.2" /></a>
 
