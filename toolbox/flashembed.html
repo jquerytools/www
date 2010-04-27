@@ -20,19 +20,19 @@
 
 <div class="feat">
 	<h3>Simple</h3>
-	
+
 	<p>
 		The above example was performed with this JavaScript call:
-		<samp>flashembed(this, "flash_promo.swf");</samp> 
+		<samp>flashembed(this, "flash_promo.swf");</samp>
 		If you don't need anything special, it's easy to get Flash up and running on your site.
 	</p>
-	
+
 </div>
 
 <div class="feat last">
 
 	<h3>JSON configuration</h3>
-	
+
 	<p>
 		Flash can be configured with JSON. Compared to XML this is simpler and much more flexible. In fact this was the main reason for developing this tool.
 	</p>
@@ -40,28 +40,28 @@
 
 <div class="feat">
 
-	<h3>jQuery support</h3> 
-	
+	<h3>jQuery support</h3>
+
 	<p>
 		flashembed is designed with scripters in mind. A polished programming API together with support for jQuery selectors has been built-in. As opposed to other jQuery Tools flashembed does not <em>require</em>jQuery.
 	</p>
-	
+
 </div>
 
 <div class="feat last">
 
 	<h3>1.09 kb!</h3>
-	
+
 	<p>
 		This crazy size is one quarter of the competitors. The clean source code passes Douglas Crockford's <a href="www.jslint.com" class="external">JavaScript Verifier</a> and it assigns only one global variable: <samp>flashembed</samp>.
 	</p>
-	
+
 </div>
 
 <div class="clear"></div>
 
 <p class="more">
-	<strong>Note</strong>. Flash is becoming an old school technology. iPad and others are removing the support for Flash. JavaScript will rule. Having said that, Flash technology still has an important role to play on the Internet; especially when you want to play videos.
+	<strong>Note:</strong> Flash is becoming an old school technology. The iPad and other products are removing the support for Flash. JavaScript will rule. Having said that, Flash technology still has an important role to play on the Internet; especially when you want to play videos.
 </p>
 
 
@@ -113,7 +113,7 @@ flashembed(container, embedOptions, flashConfiguration);
 </p>
 
 <p>
-	As of version 1.2 you can prefix the ID name with #- character. For example <samp>#mydiv</samp> simulating the syntax of jQuery selectors. 
+	As of version 1.2 you can prefix the <samp>ID</samp> name with <samp>#</samp> character. For example, <samp>#mydiv</samp> simulating the syntax of jQuery selectors.
 </p>
 
 <h3><span class="blue">2nd argument: </span> configuration</h3>
@@ -186,14 +186,14 @@ flashembed(container, embedOptions, flashConfiguration);
 		<td class="code">cachebusting</td>
 		<td class="code">false</td>
 		<td>
-			By enabling this property flashembed will force the SWF file to be loaded from the server and skip the browser's cache no matter what the expiry headers are. This is achieved by appending a random query string variable on the request URL.
+			By enabling this property flashembed will force the SWF file to be loaded from the server and skip the browser's cache no matter what the expiry headers are. This is achieved by appending a random query string variable to the request URL.
 		</td>
 	</tr>
 	<tr>
 		<td class="code">id</td>
 		<td class="code">random string</td>
 		<td>
-			id attribute for the generated OBJECT tag. If this is not explicitly given then a random string is used because in certain browser/os combinations ID is required for solid functionality.
+			id attribute for the generated OBJECT tag. If this is not explicitly given then a random string is used because in certain browser/os combinations the ID is required for solid functionality.
 		</td>
 	</tr>
 	<tr><td colspan="3" style="background-color:#efefef"></td></tr>
@@ -328,11 +328,11 @@ $("div.flash").flashembed("my_object.swf");
 </pii:code>
 
 <p>
-	Simple and powerful. Once you have installed the Flash objects you can access <a href="#api">flashembed API</a> with jQuery's <samp>data</samp> method as follows:
+	Simple and powerful. Once you have installed the Flash objects you can access the <a href="#api">flashembed API</a> with jQuery's <samp>data</samp> method as follows:
 </p>
 
 <pii:code>
-// get access to flashembed programming API
+// get access to the flashembed programming API
 var api = $("div.flash:eq(0)").data("flashembed");
 </pii:code>
 
@@ -372,18 +372,18 @@ flashembed("container", {src: 'my_object.swf', version: [9, 115], onFail: functi
 		<td class="code">getApi()</td>
 		<td><code>DOM element</code></td>
 		<td>Some Flash objects have a JavaScript API. This method returns a pointer to that API.</td>
-	</tr>	
+	</tr>
 	<tr>
 		<td class="code">getConf()</td>
 		<td><code>Object</code></td>
-		<td>Returns the optional configuration for Flash object (3rd argument).</td>
-	</tr>	
+		<td>Returns the optional configuration for the Flash object (3rd argument).</td>
+	</tr>
 
 	<tr>
 		<td class="code">getOptions()</td>
 		<td><code>Object</code></td>
 		<td>Returns the embedding options for the Flash component (2nd argument).</td>
-	</tr>	
+	</tr>
 	<tr>
 		<td class="code">getRoot()</td>
 		<td><code>DOM element</code></td>
@@ -396,11 +396,11 @@ flashembed("container", {src: 'my_object.swf', version: [9, 115], onFail: functi
 <h2>Static methods</h2>
 
 <p>
-	Flashembed exposes few static methods. Static methods don't need any instances and can be called directly from <samp>flashembed</samp> namespace. For example:
+	Flashembed exposes few static methods. Static methods don't need any instances and can be called directly from the <samp>flashembed</samp> namespace. For example:
 </p>
 
 <pii:code>
-// get an embedding code for the supplied options and configuration
+// get the embedding code for the supplied options and configuration
 flashembed.getHTML({src: 'my_object.swf', w3c: true}, {
 	param1: 'foobar',
 	param2: 'baz'
@@ -414,33 +414,33 @@ flashembed.getHTML({src: 'my_object.swf', w3c: true}, {
 			<th nowrap>return value</th>
 			<th>description/example</th>
 		</tr>
-	</thead> 
-	
+	</thead>
+
 	<tr>
 		<td class="code">asString(Object)</td>
 		<td><code>String</code></td>
-		<td>converts given Object to a JSON encoded string. The object can contain any JavaScript literals such as strings, arrays and other objects on any level. Function properties are converted to a string: <samp>function()</samp>.
+		<td>Converts given Object to a JSON encoded string. The object can contain any JavaScript literals such as strings, arrays and other objects on any level. Function properties are converted to a string: <samp>function()</samp>.
 	</td>
 	</tr>
 	<tr>
 		<td class="code">getHTML(options, config)</td>
 		<td><code>String</code></td>
-		<td>returns the embedding code for a given embedding options and optional Flash configuration. This method is useful if you quickly want to generate the <samp>object</samp> tag for your Flash objects so that you don't need to use JavaScript on your pages.</td>
+		<td>Returns the embedding code for the given embedding options and optional Flash configuration. This method is useful if you want to quickly generate the <samp>object</samp> tag for your Flash objects so that you don't need to use JavaScript on your pages.</td>
 	</tr>
 	<tr>
 		<td class="code">getVersion()</td>
 		<td><code>Array</code></td>
-		<td>returns the Flash version of the user. returns an array [major, fix] such as <samp>[9,45]</samp></td>
-	</tr>	
+		<td>Returns the Flash version of the user. Returns the array [major, fix]. For example: <samp>[9,45]</samp></td>
+	</tr>
 	<tr>
 		<td class="code">isSupported(version)</td>
 		<td><code>boolean</code></td>
-		<td>whether given version is supported. Example <samp>flashembed.isSupported([9, 0]);</samp></td>
+		<td>Whether the given version is supported. Example: <samp>flashembed.isSupported([9, 0]);</samp></td>
 	</tr>
-	
+
 </table>
 
-	
+
 <a name="html"></a>
 <h2>Generated HTML</h2>
 
