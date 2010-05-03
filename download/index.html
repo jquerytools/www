@@ -193,13 +193,18 @@ $(function() {
 
 <a name="cdn"></a>
 <h2>jQuery Tools from CDN</h2>
-
+      
 <c:if test="${!context.production}"> 
-	<div class="box petrol">
-		CDN files are not yet available for jQuery Tools 1.2.0.
-	</div>
+<p>
+	Only one file is being offered from CDN upon development period. This file includes all UI and Form tools. It does not include the jQuery library.
+</p>
+
+<pii:code lang="html">
+http://static.flowplayer.org/js/jquery.tools-1.2.0-dev.min.js
+</pii:code>
 </c:if>
 
+<c:if test="${context.production}"> 
 <p>
 	Here is a list of all available jQuery Tools combinations from a <strong>free</strong> Content Delivery Network.
 </p>
@@ -225,5 +230,5 @@ $(function() {
 <pii:code lang="html">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/${v.jquery}/jquery.min.js"></script>
 </pii:code>
-
+</c:if>
 
