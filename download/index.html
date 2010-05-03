@@ -35,8 +35,8 @@ $(function() {
 
 		// user information
 		$("#selected").html('(' +count+ ' of ' + els.size() + ' selected)');
-		$("#minified").html(Math.round(size / 10) / 100 + ' kb');
-		$("#gzipped") .html(Math.round(size * 0.0322) / 100 + ' kb <em>gzipped</em>');
+		$("#minified").html(Math.round(size / 10) / 100 + ' Kb');
+		$("#gzipped") .html(Math.round(size * 0.0322) / 100 + ' Kb <em>gzipped</em>');
 
 
 		// download link
@@ -88,7 +88,7 @@ $(function() {
 
 <c:if test="${context.production}">
 	<h2 class="first">Quick start</h2>
-	
+
 	<p>
 		 Insert the following line on your HTML page and you are done!
 	</p>
@@ -96,11 +96,11 @@ $(function() {
 <pii:code lang="html">
 <script src="http://cdn.jquerytools.org/${v.jqt}/jquery.tools.min.js"></script>
 </pii:code>
-	
+
 	<p>
 		 This is the official <strong>jQuery Tools UI library</strong> and after the inclusion you will have the following tools available:
 	</p>
-	
+
 	<ol>
 		<c:forEach items="${metadata.tools}" var="tool" end="12" varStatus="i">
 			<c:if test="${empty tool.plugin && empty tool.cat}">
@@ -108,15 +108,15 @@ $(function() {
 			</c:if>
 		</c:forEach>
 	</ol>
-	
+
 	<p>
-		The tools will be loaded with <a href="../documentation/performance.html">maximum performance</a> no matter where your user is located on the globe. Without the jQuery library, the file size is only <strong>${v.jqtSize} kb</strong> when gzipping is enabled on the server-side. If you already have jQuery included on your page, you can simply remove it and use only the above <samp>script src</samp> statement.
+		The tools will be loaded with <a href="../documentation/performance.html">maximum performance</a> no matter where your user is located on the globe. Without the jQuery library, the file size is only <strong>${v.jqtSize} Kb</strong> when gzipping is enabled on the server-side. If you already have jQuery included on your page, you can simply remove it and use only the above <samp>script src</samp> statement.
 	</p>
-	
+
 	<p style="margin-bottom:40px">
 		Please note that this global content delivery network is <strong>completely free</strong>. You can use it freely in any website including production environments. This network has been kindly offered for all jQuery Tools users by <a href="http://www.maxcdn.com/" class="external">Max CDN</a>. Respect to them!
 	</p>
-</c:if>	 
+</c:if>
 
 
 <a name="combine"></a>
@@ -210,7 +210,7 @@ http://static.flowplayer.org/js/jquery.tools-1.2.0-dev.min.js
 </p>
 
 <pii:code lang="html">
-<!-- UI Tools: Tabs, Tooltip, Scrollable and Overlay (${v.jqtSize} kb) -->
+<!-- UI Tools: Tabs, Tooltip, Scrollable and Overlay (${v.jqtSize} Kb) -->
 <script src="http://cdn.jquerytools.org/${v.jqt}/jquery.tools.min.js"></script>
 
 <!-- jQuery Library + UI Tools -->
@@ -219,7 +219,7 @@ http://static.flowplayer.org/js/jquery.tools-1.2.0-dev.min.js
 <!-- jQuery Library + ALL jQuery Tools -->
 <script src="http://cdn.jquerytools.org/${v.jqt}/full/jquery.tools.min.js"></script>
 
-<!-- Form tools: Dateinput, Rangeinput and Validator. No jQuery. (${v.jqtFormSize} kb) -->
+<!-- Form tools: Dateinput, Rangeinput and Validator. No jQuery. (${v.jqtFormSize} Kb) -->
 <script src="http://cdn.jquerytools.org/${v.jqt}/form/jquery.tools.min.js"></script>
 </pii:code>
 
