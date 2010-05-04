@@ -426,6 +426,10 @@ flashembed("flashContainer", "my-flash-object.swf");
 	Upon initialization you can prefix the ID name with #- character. For example <samp>#mydiv</samp> simulating the syntax of jQuery selectors. For example:
 </p>
 
+<p>
+	Generated OBJECT code now contains a <samp>name</samp> attribute along with <samp>id</samp> attribute. This makes it possible to use ExternalInterface on some older browsers.
+</p>
+
 <pii:code lang="html">
 <script>
 flashembed("#flashContainer", "my-flash-object.swf");
