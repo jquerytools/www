@@ -54,9 +54,14 @@
 .caltrigger {
 	display:block;
 	width:30px;
-	height:30px;
+	height:32px;
 	float:left;
-	background-color:#ddd;
-	margin-top:-3px;
+	background:url(icon.jpg) no-repeat 0 0;
+	margin-top:-8px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
 }
 
+.active .caltrigger {
+	background-position: 0 -32px;		
+}
