@@ -1,0 +1,83 @@
+<%-- :mode=jsp: --%>
+<h1 id="hero">
+	<span></span>
+	Version <i>1.2.1.</i>
+	<em>May 15, 2010 <strong>Important bug fix release</strong></em>
+</h1>
+
+<script>
+$(function() {
+	$("#right a:first").addClass("selected")
+});
+</script>
+
+<div id="breadcrumb">
+	<a href="../index.html">Introduction to 1.2.0 &raquo;</a> Bug fixe release: 1.2.1
+</div>
+
+<p class="more first">
+	Below is a detailed list of important fixes mainly for the new FORM tools. An upgrade is highly recommended. 
+</p>
+
+<a name="validator"></a>
+<h2>Validator</h2>
+
+<ol>
+	<li>
+		Addded <samp>required</samp> attribute support for checkbox and select inputs. Thanks <a href="http://flowplayer.org/tools/forum/60/40480">listingwarebob</a> for the bug report.
+	</li>
+	<li>
+		Improved email validation pattern that allows <samp>+</samp> sign to be used in the email. For example: foo+bar@gmail.com. Thanks <a href="http://github.com/jquerytools/jquerytools/issues#issue/22">bhickey</a> for the bug report.
+	</li>
+	<li>
+		Fixed a bug where validator could not be used directly with a group of inputs. Thanks <a href="http://flowplayer.org/tools/forum/60/40618">mjj</a> for the bug report.
+	</li>
+	<li>
+		Removed the support for <samp>oninvalid</samp>- attribute on input fields. This required the use of <samp>eval()</samp> function in JavaScript which is concidered evil. Also modern browsers such as latest <strong>Chrome 5.0 Beta</strong> supports <samp>oninvalid</samp> attribute natively causing unpredictable results.
+	</li>
+</ol>
+
+<a name="dateinput"></a>
+<h2>Dateinput</h2>	
+	
+<ol>
+	<li>
+		Ability to definie the initial value manually with the <samp>value</samp> property. Thanks <a href="http://flowplayer.org/tools/forum/70/40613">listingwarebob</a>.
+	</li>	
+	<li>
+		Removed support for <samp>valueAsDate</samp> DOM property. Latest browsers such as <strong>Chrome 5.0 Beta</strong> supports this attribute natively and does not allow the editing of this property. To make this library work similarly in all browsers this property had to be removed. 
+		
+		<p>
+			In fact the support for this property caused the latest Chrome to fail. Thanks <a href="http://github.com/jquerytools/jquerytools/issues#issue/24">bbangert</a> for the bug report.
+		</p>
+	</li>	
+	<li>
+		Fixed a bug in the month selector. Thanks <a href="http://flowplayer.org/tools/forum/70/40544">mbuckbee</a> for the bug report.
+	</li>
+	<li>
+		Some special dates could not be displayed. Thanks <a href="http://flowplayer.org/tools/forum/70/40551">mcjiffy</a> for the bug report.
+	</li>
+</ol>
+
+<h2>Other Tools</h2>
+
+<ol>
+	<li>
+		<strong>Rangeinput</strong> removed support for <samp>valueAsNumber</samp> DOM attribute due to the same reasons as <samp>valueAsDate</samp> attribute was removed from Dateinput.
+	</li>
+	<li>
+		<strong>Flashembed</strong> If no Flash is installed a version [0, 0] is returned. Previously an error was thrown in browsers without any Flash version. This is a very important fix.	
+	</li>
+	<li>
+		<strong>Slideshow plugin</strong> Fixed a bug where initial tab contents was not displayed on Webkit based browsers with external stylesheets. Thanks <a href="http://github.com/jquerytools/jquerytools/issues#issue/25">ngosteli</a> for the bug report.
+	</li>
+	<li>
+		<strong>All Tools</strong> Switched from jQuery version 1.4.1 to 1.4.2. There was an old version installed on CDN. Thanks to <a href="http://flowplayer.org/tools/forum/20/40767">johndwells</a> for bringing this up.
+
+	</li>
+	<li>
+		<strong>Scrollable</strong> <samp>getIndex()</samp> was returning negative numbers in circular looping. Now this is fixed and correct index number is returned. Thanks <a href="http://flowplayer.org/tools/forum/35/40706">m4olivei</a> for the bug report. 		
+	</li>
+</ol>
+		
+

@@ -21,7 +21,7 @@
 	font-size:13px;
 	border:1px solid #BDC8D2;
 	border-width:1px 1px 0;
-	background:#F5F9FF url(../../../img/gradient/h300.png) repeat-x;
+	background:#F5F9FF url(../../../img/gradient/h300.png) 0 37px repeat-x;
 	-moz-box-shadow:0 0 10px 0px #ccc;
 	-webkit-box-shadow:0 0 10px 0px #ccc;
 }

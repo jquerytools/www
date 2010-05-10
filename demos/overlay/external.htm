@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="../standalone.jsf" %>
 
-	<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/css/overlay-minimal.css"/>
+	<link rel="stylesheet" type="text/css" href="${cdn}/tools/css/overlay-apple.css"/>
 	
 	<style>
 	<c:set var="css">
@@ -28,20 +28,20 @@
 
 <c:set var="html">
 <!-- external page is given in the href attribute (as it should be) -->
-<a href="external-content.htm" rel="#overlay">
+<a href="external-content.htm" rel="#overlay" style="text-decoration:none">
 
 	<!-- remember that you can use any element inside the trigger -->
 	<button type="button">Show external page in overlay</button>	
 </a>
 
 <!-- another link. uses the same overlay -->
-<a href="external-content2.htm" rel="#overlay">
+<a href="external-content2.htm" rel="#overlay" style="text-decoration:none">
 	<button type="button">Show another page</button>
 </a>
 
 
 <!-- overlayed element -->
-<div class="overlay" id="overlay">
+<div class="apple_overlay" id="overlay">
 
 	<!-- the external content is loaded inside this tag -->
 	<div class="contentWrap"></div>

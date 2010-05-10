@@ -119,12 +119,11 @@
 		<h2>Release Notes</h2>
 		
 		<ul>
-			<li><a href="${jqt}/release-notes/index.html">Version 1.2.0</a></li>
+			<li><a href="${jqt}/release-notes/index.html">Version 1.2.x</a></li>
 			<li><a href="${jqt}/release-notes/version-1.1.2.html">Version 1.1.2</a></li>
 			<li><a href="${jqt}/release-notes/version-1.1.1.html">Version 1.1.1</a></li>
 			<li><a href="${jqt}/release-notes/version-1.1.0.html">Version 1.1.0</a></li>
 			<li><a href="${jqt}/release-notes/version-1.0.X.html">Versions 1.0.X</a></li>
-			<li><a href="${jqt}/release-notes/version-history.html">Full version history</a></li>			
 		</ul>		
 	
 		<div class="clear"></div>

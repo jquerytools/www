@@ -23,6 +23,11 @@
          <input type="number" name="age" size="4" min="5" max="50" />
       </p>
       
+      <p id="terms">
+      	<label>I accept the terms</label>
+      	<input type="checkbox" required="required" />   
+		</p>
+      
       <button type="submit">Submit form</button>
    </fieldset>
 

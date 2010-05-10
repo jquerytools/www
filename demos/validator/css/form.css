@@ -75,3 +75,11 @@ label {
 	font-size:11px;
 	color:#ccc;
 }
+
+#terms label {
+	float:left;
+}
+
+#terms input {
+	margin:0 5px;
+}

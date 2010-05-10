@@ -165,7 +165,7 @@
 		<td class="code">value</td>
 		<td></td>
 		<td>
-			Initial value. See <a href="#values">supplying date values</a> for more information.
+			Initial value to be displayed for the user. This can either be a valid <a href="#values">date value</a> or any string such as "Today".
 		</td>
 	</tr>
 	<tr>
@@ -228,11 +228,7 @@
 	<tr>
 		<td class="code">data-value</td>
 		<td>
-			Initial value. See <a href="#values">supplying date values</a> for more information.
-
-			<p>
-				This is the primary means of providing the initial value because the <samp>value</samp> attribute is shown to the user and is typically <a href="_formatted">formatted</a>. Again, when the user selects a date, the <samp>value</samp> attribute is changed and it may be remembered by the browser, causing the initial value to differ on different page loads. So either provide the initial value with this attribute or in the configuration. This value takes precedence over the configured one.
-			</p>
+			Initial <a href="#values">date value</a>. This is the primary means of providing the initial value because the <samp>value</samp> attribute is shown to the user and is typically <a href="_formatted">formatted</a> or it can be any string such as "Today". 
 		</td>
 	</tr>
 </table>
@@ -661,19 +657,7 @@ $(".date").dateinput({
 
 </table>
 
-<h3>DOM <samp>valueAsDate</samp> property</h3>
 
-<p>
-	The official HTML5 date input defines a <samp>valueAsDate</samp> property for accessing the currently selected Date. The normal <samp>value</samp> property always returns the field's value as String. For example
-</p>
-
-<pii:code>
-document.getElementsByTagName("input")[0].valueAsDate
-</pii:code>
-
-<p>
-	The value of this property is a JavaScript Date object.
-</p>
 
 <%--}}}--%>
 

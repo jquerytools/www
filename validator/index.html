@@ -52,7 +52,7 @@
 	<h3>Web Forms 2.0</h3>
 
 	<p>
-		<a href="http://www.whatwg.org/specs/web-forms/current-work/#form-validation" class="external">Web Forms 2.0</a> is a large and complex standard. This tool follows the standard and uses a sane subset of it. For example, you can use the <samp>form.checkValidity()</samp> method or you can define an <samp>oninvalid</samp> callback function for your inputs.
+		<a href="http://www.whatwg.org/specs/web-forms/current-work/#form-validation" class="external">Web Forms 2.0</a> is a large and complex standard. This tool follows the standard and uses a sane subset of it. For example, you can use the <samp>form.checkValidity()</samp> method or you can define an <samp>oninvalid</samp> callback functions for your inputs.
 	</p>
 
 </div>
@@ -184,17 +184,6 @@ inputs.data("validator").checkValidity();
 		<td class="code">min</td>
 		<td><code>Number</code></td>
 		<td>Minimum numeric value for the field. Valid for <samp>number</samp>, <samp>text</samp>, <samp>date</samp> and <samp>range</samp> inputs.</td>
-	</tr>
-	<tr>
-		<td class="code">oninvalid</td>
-		<td><code>Function</code></td>
-		<td>
-			This function is called when the validation of the submitted field value failed.
-
-			<p>
-				<small>This feature uses jQuery's <samp>globalEval()</samp> instead of the "evil" <samp>eval()</samp> function in JavaScript.</small>
-			</p>
-		</td>
 	</tr>
 	<tr>
 		<td class="code">pattern</td>
@@ -780,18 +769,6 @@ $("[name=password]").oninvalid(function(event, errorMessage) {
 	var api = $(this).data("validator");
 });
 </pii:code>
-
-<p>
-	Another way of doing this is to write the handler directly to the standard <samp>oninvalid</samp> attribute. For example
-</p>
-
-<pii:code lang="html">
-<input type="password" name="password" oninvalid="alert('the validation failed')" />
-</pii:code>
-
-<p>
-	This is not the preferred syntax since the less JavaScript you mix with HTML the better. The JavaScript is also executed in the global scope (via jQuery.globalEval) and you don't have the arguments available and the <samp>this</samp>-variable is a boring pointer to the <samp>window</samp> object.
-</p>
 
 
 
