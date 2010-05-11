@@ -45,6 +45,9 @@ $(function() {
 		Ability to definie the initial value manually with the <samp>value</samp> property. Thanks <a href="http://flowplayer.org/tools/forum/70/40613">listingwarebob</a>.
 	</li>	
 	<li>
+		Ability to prevent the calendar for being hidden by returning <samp>false</samp> from <samp>onHide</samp>. This allows you to display Dateinput statically so that it always visible. Here is a demo about <a href="/tools/demos/dateinput/static.html">static dateinput</a>. Thanks <a href="http://flowplayer.org/tools/forum/70/40780#post-40979">enminc</a> for the suggestion. 
+	</li>
+	<li>
 		Removed support for <samp>valueAsDate</samp> DOM property. Latest browsers such as <strong>Chrome 5.0 Beta</strong> supports this attribute natively and does not allow the editing of this property. To make this library work similarly in all browsers this property had to be removed. 
 		
 		<p>
@@ -73,8 +76,9 @@ $(function() {
 	</li>
 	<li>
 		<strong>All Tools</strong> Switched from jQuery version 1.4.1 to 1.4.2. There was an old version installed on CDN. Thanks to <a href="http://flowplayer.org/tools/forum/20/40767">johndwells</a> for bringing this up.
-
 	</li>
+	<li>
+		<strong>Tooltip</strong> Fixed a bug where the configured layout was overridden with a <samp>html()</samp> call. Now <samp>append</samp> is used instead. Thanks <a href="http://flowplayer.org/tools/forum/30/40958">radarseven</a> for the bug report.
 	<li>
 		<strong>Scrollable</strong> <samp>getIndex()</samp> was returning negative numbers in circular looping. Now this is fixed and correct index number is returned. Thanks <a href="http://flowplayer.org/tools/forum/35/40706">m4olivei</a> for the bug report. 		
 	</li>

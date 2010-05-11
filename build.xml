@@ -31,8 +31,9 @@
 			<fileset dir="${build}"/>
 		</copy>
 		
-		<!-- zip -->
+		<!-- zip 
 		<zip destfile="${js}/tools.zip" basedir="${build}" />			
+		-->
 		
 	</target>
 

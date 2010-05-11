@@ -336,6 +336,10 @@
 				title: 'Prompting for start and end dates'
 			},
 			{
+				path: 'dateinput/static.html',
+				title: 'Calendar that is always visible'
+			},			
+			{
 				path: 'dateinput/localize.html',
 				title: 'Localizing the Dateinput (french)'
 			}

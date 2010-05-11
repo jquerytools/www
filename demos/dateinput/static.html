@@ -1,0 +1,45 @@
+<%-- :mode=jsp: --%>
+<%@ include file="../header.jsf" %>
+
+<p class="more">
+	You can configure the dateinput to be always visible. Now you can build applications where the calendar is a core part of the user interface.
+</p>
+
+<%@ include file="static.htm" %>
+
+<h3>Dateinput configuration</h3>
+
+<p>
+	There is no special configuration variables to make this possible. We do some simple scripting instead. The logic is simple: 1. show the dateinput when page loads and 2. disable closing of dateinput. When user clicks on a date we update our large "day display" with a custom formatted date string.
+</p>
+
+<pii:code lang="js">
+${js}
+</pii:code>
+
+<h3>HTML layout</h3>
+
+<p>
+	We make a separate wrapper element for the dateinput and the associative calendar and we adjust it's dimensions with CSS. The day display is a simple DIV that get's filled when a day is selected.
+</p>
+
+<pii:code lang="html">
+${html}
+</pii:code>
+
+<h3>CSS coding</h3>
+
+<p>
+	Here is the styling of the wrapper element and the day display.
+</p>
+
+<pii:code lang="css">
+${css}
+</pii:code>
+
+
+<br />
+<div class="box petrol">
+	Here is the <a href="static.htm">standalone version</a> of this demo. You can freely study and copy its source code.
+</div>
+

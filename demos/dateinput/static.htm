@@ -1,0 +1,79 @@
+<%-- :mode=jsp: --%>
+<%@ include file="../standalone.jsf" %>
+
+<!-- dateinput styling -->
+<link rel="stylesheet" type="text/css" href="${cdn}${jqt}/demos/dateinput/css/large.css"/>
+
+<style>
+<c:set var="css">
+#calendar {
+	height:400px;
+	width:410px;
+	float:left;
+}
+
+#theday {
+	-moz-border-radius:5px;
+	background-color:#36387B;
+	color:#FFFFFF;
+	float:left;
+	font-size:90px;
+	height:80px;
+	line-height:50px;
+	margin-top:30px;
+	padding:60px;
+	text-shadow:0 0 5px #DDDDDD;
+	width:117px;
+}
+
+#theday span {
+	display:block;
+	font-size:16px;
+	text-align:center;		
+}
+</c:set>
+${css}
+</style>
+<c:if test="${empty plain}">
+</head>
+
+<body>	
+</c:if>
+
+<c:set var="html">
+<!-- wrapper element -->
+<div id="calendar">
+	<input type="date" name="mydate" value="0" />
+</div>
+
+<!-- large date display -->
+<div id="theday"></div>
+</c:set>
+
+${html}
+
+<br clear="all"/>
+
+<!-- make it happen -->
+<script>
+$(function() {
+<c:set var="js">
+// initialize dateinput
+$(":date").dateinput( {
+		
+	// closing is not possible
+	onHide: function()  {
+		return false; 
+	},
+	
+	// when date changes update the day display
+	change: function(e, date)  {
+		$("#theday").html(this.getValue("dd<span>mmmm yyyy</span>")); 
+	}
+		
+// show dateinput when page loads	
+}).data("dateinput").show();
+</c:set>
+${js}
+});
+</script> 
