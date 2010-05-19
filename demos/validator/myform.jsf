@@ -29,6 +29,7 @@
 		</p>
       
       <button type="submit">Submit form</button>
+      <button type="reset">Reset</button>
    </fieldset>
 
 </form>

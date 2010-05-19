@@ -119,8 +119,8 @@
 		<h2>Release Notes</h2>
 		
 		<ul>
-			<li><a href="${jqt}/release-notes/version-1.2.1.html">Version 1.2.1</a></li>
-			<li><a href="${jqt}/release-notes/index.html">Version 1.2.0</a></li>
+			<li><a href="${jqt}/release-notes/version-1.2.x.html">Version 1.2.X</a></li>
+			<li><a href="${jqt}/release-notes/index.html">Version 1.2.0</a></li>  
 			<li><a href="${jqt}/release-notes/version-1.1.2.html">Version 1.1.2</a></li>
 			<li><a href="${jqt}/release-notes/version-1.1.1.html">Version 1.1.1</a></li>
 			<li><a href="${jqt}/release-notes/version-1.1.0.html">Version 1.1.0</a></li>
@@ -230,6 +230,6 @@ $("#right a[href=${req.path}]").addClass("active");
  
 <p style="margin:15px 0 0 22px">
 	<a style="font-size:11px;color:#333"
-		href="${jqt}/release-notes/version-1.2.1.html">What's new in v1.2.1 &raquo;</a>
+		href="${jqt}/release-notes/version-1.2.x.html">What's new in v${v.jqt} &raquo;</a>
 </p>
 

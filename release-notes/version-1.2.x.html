@@ -1,26 +1,99 @@
 <%-- :mode=jsp: --%>
 <h1 id="hero">
 	<span></span>
-	Version <i>1.2.1.</i>
-	<em>May 15, 2010 <strong>Important bug fix release</strong></em>
+	Bug Fixes
+	<em>For jQuery Tools <strong>1.2</strong></em>
 </h1>
 
 <script>
-$(function() {
-	$("#right a:first").addClass("selected")
-});
+
 </script>
 
 <div id="breadcrumb">
-	<a href="../index.html">Introduction to 1.2.0 &raquo;</a> Bug fixe release: 1.2.1
+	<a href="../index.html">Introducing v1.2.0 &raquo;</a> Bug fix releases
 </div>
 
-<p class="more first">
-	Below is a detailed list of important fixes mainly for the new FORM tools. An upgrade is highly recommended. 
-</p>
+<a name="1.2.2"></a>
+<h2 class="first">May 21, 2010. Version 1.2.2</h2>
 
-<a name="validator"></a>
-<h2>Validator</h2>
+<h3>Validator</h3>
+
+<ul>
+	<li>
+		a new <samp>reset</samp> function that can be used to make inputs valid again. Thanks <a href="http://flowplayer.org/tools/forum/60/41485">JvdMeulen</a> for the suggestion.
+		</li>
+	<li>
+		if a form as a reset button then the <samp>reset</samp> function is automatically bind to it. Thanks <a href="http://github.com/jquerytools/jquerytools/issues/#issue/43">maksimc</a>
+	</li>
+	<li>
+		a null pointer check for the <samp>localize</samp> function. Thanks <a href="http://github.com/jquerytools/jquerytools/issues/#issue/42">maksimc</a>
+	</li>
+	<li>
+		removed a <samp>relative</samp> configuration variable which was misleading and did not work. Thanks
+		<a href="http://github.com/jquerytools/jquerytools/issues#issue/40">doublex</a>.
+	</li>
+</ul>
+
+<h3>Dateinput</h3>
+
+<ul>
+	<li>
+		Now it's possible to go back to previous year with the month selector buttons. Thanks
+		<a hef="http://github.com/jquerytools/jquerytools/issues/closed#issue/37"> thedotedge </a>, <a href="http://flowplayer.org/tools/forum/70/41114">JvdMeulen</a>.
+	</li>
+	<li>
+		Possible to go back to previous year. Thanks
+		<a href="http://github.com/jquerytools/jquerytools/issues/closed#issue/38">thedotedge</a>
+	</li>
+	<li>
+		Support for <samp>required</samp> attribute. Thanks <a href="http://flowplayer.org/tools/forum/70/41502">JvdMeulen</a>.
+	</li>
+	<li>
+		A possibility to clear the dateinput value with backspace key. Thanks <a href="http://flowplayer.org/tools/forum/70/41293">hapasurfer</a>
+	</li>
+</ul>
+
+<h3>Scrollable</h3>
+
+<ul>
+	<li>
+		Brought back the missing <samp>speed</samp> configuration variable. Thanks <a href="http://github.com/jquerytools/jquerytools/issues/#issue/36">MichaelR</a>.
+	</li>
+	<li>
+		Fixed a bug where a circular scrollable scrolled from the end to the beginning when being clicked rapidly on the edge items. Thanks to me!
+	</li>
+	<li>
+		Not propably the best place to put this but <strong>dustmoo</strong> has written a step by step checklist about <a href="http://flowplayer.org/tools/forum/35/41546">Getting Scrollable 1.2.1 working</a>. Many thanks!
+	</li>	
+</ul>
+
+<h3>Other Tools</h3>
+
+<ol>
+	<li>
+		<strong>Rangeinput</strong> Support for <samp>required</samp> attribute. Thanks <a href="http://flowplayer.org/tools/forum/70/41502">JvdMeulen</a>.
+	</li>
+	<li>
+		<strong>Expose</strong> Ability to use different colors on the mask if a page has many different masks. Previously whichever mask is opened first the others get its color. Thanks <a href="http://flowplayer.org/tools/forum/40/41077">ofirb</a>
+	</li>
+	<li>
+		<strong>Flashembed</strong> Removed extra quotation from the generated object code. Thanks <a href="http://flowplayer.org/forum/8/40703">mfb</a>
+	</li>
+	<li>
+		<strong>Tooltip</strong> Made it work together with the <samp>fade</samp> effect and <samp>opacity</samp> configuration variable. Thanks <a href="http://flowplayer.org/tools/forum/30/40683">attila</a>.
+	</li>
+	
+</ol>
+	
+<%-- 
+	Tooltip
+	on statically positioned element offset() --> offset() (no css()) Scott González!
+--%>
+
+<a name="1.2.1"></a>
+<h2>May 15, 2010. Version 1.2.1</h2>
+
+<h3>Validator</h3>
 
 <ol>
 	<li>
@@ -37,8 +110,7 @@ $(function() {
 	</li>
 </ol>
 
-<a name="dateinput"></a>
-<h2>Dateinput</h2>	
+<h3>Dateinput</h3>	
 	
 <ol>
 	<li>
@@ -62,7 +134,7 @@ $(function() {
 	</li>
 </ol>
 
-<h2>Other Tools</h2>
+<h3>Other Tools</h3>
 
 <ol>
 	<li>

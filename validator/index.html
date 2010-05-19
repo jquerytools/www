@@ -351,13 +351,6 @@ $("fieldset:eq(1)").attr("disabled", true);
 		</td>
 	</tr>
 	<tr>
-		<td class="code">relative</td>
-		<td><code>false</code></td>
-		<td>
-			Error messages are positioned relative to the document (by using the <samp>offset()</samp> method of jQuery) like in a <samp>position: absolute</samp> CSS directive. By enabling this property the tooltip position is determined relative to the parent element. This should be enabled if you have input fields inside a scrollable for example.
-		</td>
-	</tr>
-	<tr>
 		<td class="code">singleError</td>
 		<td><code>false</code></td>
 		<td>
@@ -705,7 +698,15 @@ $.tools.validator.fn(myMatcher, "Please fix this value", function(el, v) {
 			Invalidates the form with the error messages given in the argument. Causes the <samp>onFail</samp> event and input specific <samp>ininvalid</samp> events to be fired. This function is useful for <a href="#server_side">server-side integration</a>.
 		</td>
 	</tr>
+	<tr>
+		<td class="code">reset(jQuery)</td>
+		<td><code>API</code></td>
+		<td>
+			<strong>since 1.2.2</strong> resets the input fields that given in argument. This is opposite to the invalidate method making the fields valid. If no fields are give then all inputs are made valid. If you have a reset button on your form this reset function is automatically bind to it.
+		</td>
+	</tr>	
 </table>
+
 <%--}}}--%>
 
 

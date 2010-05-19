@@ -2,11 +2,10 @@
 <!-- run jquerytools/build.xml first -->
 <project name="jQuery.Tools" default="www">
 
-	<property name="jqt" value="../jquerytools"/>
-	<property file="${jqt}/build.properties" prefix="v"/>
+	<property name="version" value="1.2.2"/>
 	<property name="www" value="/opt/flowplayer/webapp/tools"/>
-	<property name="js" value="${www}/download/${v.tools}"/>
-	<property name="build" value="${jqt}/build/${v.tools}"/>
+	<property name="js" value="${www}/download/${version}"/>
+	<property name="build" value="../jquerytools/build/${version}"/>
 	
 	<!-- copy stuff under web folder -->
 	<target name="www" depends="jqt">
