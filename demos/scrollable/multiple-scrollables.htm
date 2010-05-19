@@ -20,10 +20,11 @@
 	}
 	
 	/* single scroll item */
-	.pics img {
+	.pics div {
 		float:left;
 		cursor:pointer;
-		width:400px;
+		width:400px !important;
+		height:300px;
 		margin:0px;
 	}
 	
@@ -39,55 +40,53 @@
 
 <body>
 
-<c:set var="html">
 <!-- scroll #1 -->
 <div class="scroll">
 	<div class="pics">
-		<img src="http://farm1.static.flickr.com/114/299183878_4feac12b04.jpg" />
-		<img src="http://farm1.static.flickr.com/200/507751258_5f13e3d802.jpg" />
-		<img src="http://farm1.static.flickr.com/30/37446217_14bc95631a.jpg" />
+		<div style="background-image:url(http://farm1.static.flickr.com/114/299183878_4feac12b04.jpg)"></div>
+		<div style="background-image:url(http://farm1.static.flickr.com/200/507751258_5f13e3d802.jpg)"></div>
+		<div style="background-image:url(http://farm1.static.flickr.com/30/37446217_14bc95631a.jpg)"></div>
 	</div>
 </div>
-</c:set>
-${html}
 
 <!-- scroll #4 -->
 <div class="scroll">
 	<div class="pics">
-		<img src="http://farm1.static.flickr.com/143/321464099_a7cfcb95cf.jpg" />
-		<img src="http://farm1.static.flickr.com/164/399223606_b875ddf797.jpg" />
-		<img src="http://farm4.static.flickr.com/3651/3445879840_7ca4b491e9.jpg" />
+		<div style="background-image:url(http://farm1.static.flickr.com/143/321464099_a7cfcb95cf.jpg)"></div>
+		<div style="background-image:url(http://farm1.static.flickr.com/164/399223606_b875ddf797.jpg)"></div>
+		<div style="background-image:url(http://farm4.static.flickr.com/3651/3445879840_7ca4b491e9.jpg)"></div>
 	</div>
 </div>
 
 <!-- scroll #3 -->
 <div class="scroll">
 	<div class="pics">
-		<img src="http://farm4.static.flickr.com/3155/2636513939_cd75b704ec.jpg" />
-		<img src="http://farm1.static.flickr.com/40/122343298_22333fb8e3.jpg" />
-		<img src="http://farm4.static.flickr.com/3105/2618870872_cf22d3cdb1.jpg" />
+		<div style="background-image:url(http://farm4.static.flickr.com/3155/2636513939_cd75b704ec.jpg)"></div>
+		<div style="background-image:url(http://farm1.static.flickr.com/40/122343298_22333fb8e3.jpg)"></div>
+		<div style="background-image:url(http://farm4.static.flickr.com/3105/2618870872_cf22d3cdb1.jpg)"></div>
 	</div>
 </div>
 
 <!-- scroll #4 -->
 <div class="scroll">
 	<div class="pics">
-		<img src="http://farm4.static.flickr.com/153/399232237_6928a527c1.jpg" />
-		<img src="http://farm1.static.flickr.com/50/117346182_1fded507fa.jpg" />
-		<img src="http://farm4.static.flickr.com/3629/3323896446_3b87a8bf75.jpg" />
+		<div style="background-image:url(http://farm4.static.flickr.com/153/399232237_6928a527c1.jpg)"></div>
+		<div style="background-image:url(http://farm1.static.flickr.com/50/117346182_1fded507fa.jpg)"></div>
+		<div style="background-image:url(http://farm4.static.flickr.com/3629/3323896446_3b87a8bf75.jpg)"></div>
 	</div>
 </div>
 
 <br clear="all" />
 
 <script>
+$(function() {
 <c:set var="js">
 // enable circular scrollables with a click handler
 $(".scroll").scrollable({ circular: true }).click(function() {
 	$(this).data("scrollable").next();		
 });
 </c:set>
-
 ${js}
+});
 </script>
 
