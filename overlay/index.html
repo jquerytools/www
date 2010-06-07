@@ -151,8 +151,8 @@ $(".my_overlay_trigger").overlay({
 </p>
 
 <ul>
-	<c:forEach items="${f:getDemo(context.toolDemos, 'overlay/index.html').category.demos}" var="demo">
-		<li> <a href="../demos/${demo.path}">${demo.title}</a> </li>
+	<c:forEach items="${f:getDemo(context.toolDemos2, 'overlay/index.html').category.demos}" var="demo">
+		<li> <a href="${jqt}/demos/${demo.path}">${demo.title}</a> </li>
 	</c:forEach>
 </ul>
 

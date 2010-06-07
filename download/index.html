@@ -101,9 +101,10 @@ $(function() {
 </p>
 
 <ol>
-	<c:forEach items="${metadata.tools}" var="tool" end="12" varStatus="i">
+	<li><a href="http://jquery.com" class="external">jQuery ${v.jquery}</a></li>
+	<c:forEach items="${metadata.tools}" var="tool" begin="1" end="12" varStatus="i">
 		<c:if test="${empty tool.plugin && empty tool.cat}">
-			<li><a href="${jqt}/${tool.www}" ${i.index == 0 ? 'class="external"' : ''}>${tool.title}</a></li>
+			<li><a href="${jqt}/${tool.www}">${tool.title}</a></li>
 		</c:if>
 	</c:forEach>
 </ol>
