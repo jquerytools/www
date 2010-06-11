@@ -134,6 +134,10 @@ $("ul.tabs").tabs("div.panes > div");
 	The rest is <a href="${jqt}/css/tabs-no-images.css">CSS coding</a>. Look at the <a href="${jqt}/demos/tabs/index.htm">standalone version</a> and its source code to get things working on your site.
 </p>
 
+<p>
+	Since v1.2.3 another <samp>$("ul.tabs").tabs()</samp> call would <a href="#">destroy</a> the existing instance and will install a completely new tabs instance. 
+</p>
+
 
 <a name="demos"></a>
 <h2>demos</h2>
@@ -441,6 +445,13 @@ api.onClick(function(index) {
 		</td>
 	</tr>
 	<tr>
+		<td class="code">destroy()</td>
+		<td><code>API</code></td>
+		<td>
+			<strong>Since 1.2.3</strong> completely removes existing tabs instance.
+		</td>
+	</tr>	
+	<tr>
 		<td class="code">getConf()</td>
 		<td><code>Object</code></td>
 		<td>
@@ -495,7 +506,7 @@ api.onClick(function(index) {
 		<td>
 			Advances to the previous tab.
 		</td>
-	</tr>
+	</tr>	
 </table>
 
 <a name="effects"></a>

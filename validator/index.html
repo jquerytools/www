@@ -101,6 +101,13 @@ var inputs = $("#mydiv :input").validator();
 // perform validation programmatically
 inputs.data("validator").checkValidity();
 </pii:code>
+
+
+<p>
+	Since v1.2.3 another <samp>$("...").validator()</samp> call would <a href="#">destroy</a> the existing instance and will install a completely new tabs instance. 
+</p>
+
+
 <%--}}}--%>
 
 
@@ -670,6 +677,13 @@ $.tools.validator.fn(myMatcher, "Please fix this value", function(el, v) {
 			Performs the form validation routine.
 		</td>
 	</tr>
+	<tr>
+		<td class="code">destroy()</td>
+		<td><code>API</code></td>
+		<td>
+			<strong>Since 1.2.3</strong> completely removes existing validator instance.
+		</td>
+	</tr>		
 	<tr>
 		<td class="code">getConf()</td>
 		<td><code>Object</code></td>
