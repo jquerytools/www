@@ -123,7 +123,7 @@ $(function() {
 
 	<c:set var="navi">
 	// get handle to the tabs API
-	var api = $("ul.tabs", wizard).tabs(0);
+	var api = $("ul.tabs", wizard).data("tabs");
 
 	// "next tab" button
 	$("button.next", wizard).click(function() {

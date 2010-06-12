@@ -13,8 +13,61 @@
 	<a href="../index.html">Introducing v1.2.0 &raquo;</a> Bug fix releases
 </div>
 
+	
+<a name="1.2.3"></a>
+<h2 class="first">Jun 12, 2010. Version 1.2.3</h2>
+
+<h3>Dateinput</h3>
+
+<ul>
+	<li>
+		IE date is no longer 1900 years ahead of time! Thanks <a href="http://flowplayer.org/tools/forum/70/41719">headchem</a>.
+	</li>
+	<li>
+		Dateinput CSS configuration was broken. Thanks
+		<a href="http://github.com/jquerytools/jquerytools/issues#issue/73">emilbjorklund</a>.
+	</li>
+	<li>
+		Dateinput <samp>min</samp> attribute always failed validation when being used together with the validator tool. Thanks <a href="http://flowplayer.org/tools/forum/70/41785">blackpond</a>.
+	</li>
+</ul>
+	
+<h3>Other Tools</h3>
+
+<ul>
+	<li>
+		<strong>Validator</strong>. A second <samp>$("...").validator()</samp> call to the same selector will destroy the existing instance and will install a completely new validator instance. This allows you for example to add new input fields inside a form and then re-initialize validator to take these new fields into account. Additionally a new <samp>destroy</samp> API method was added.
+		Thanks <a href="http://flowplayer.org/tools/forum/60/41290">jaxhoo</a>.
+	</li>
+	<li>
+		<strong>Tabs</strong> A second <samp>$("...").tabs()</samp> call to the same selector will destroy the existing instance and will install a completely new tabs instance. This allows you for example to add new tab/pane combinations. Additionally a new <samp>destroy</samp> API method was added.
+		Thanks <a href="http://flowplayer.org/tools/forum/25/41261">myusername</a>.
+	</li>
+	<li>
+		<strong>Tooltip</strong> is now working with <samp>input type="submit"</samp>
+		Thanks <a href="http://github.com/jquerytools/jquerytools/issues#issue/61">cmmfl</a>.
+	</li>
+	<li>
+		<strong>Expose</strong> works better with horizontal scrollbar
+		Thanks <a href="http://github.com/jquerytools/jquerytools/issues#issue/65">flaviobordoni</a>.
+	</li>
+	<li>
+		<strong>Scrollable</strong> next/prev buttons are not disabled if user defined <samp>onBeforeSeek</samp> is returning <samp>false</samp>
+		Thanks <a href="http://github.com/jquerytools/jquerytools/issues#issue/67">maksimc</a>.
+	</li>
+	<li>
+		<strong>Overlay</strong> Auto generated close button is now <samp>A</samp> tag instead of <samp>DIV</samp> tag
+		Thanks <a href="http://github.com/jquerytools/jquerytools/issues#issue/68">maksimc</a>.
+	</li>
+	<li>
+		<strong>Tools 1.1</strong>. Fixed the broken download utility for building customized combinations of the tools.
+		Thanks <a href="http://flowplayer.org/tools/forum/20/42449">outre99</a>.
+	</li> 
+</ul>
+
+	
 <a name="1.2.2"></a>
-<h2 class="first">May 21, 2010. Version 1.2.2</h2>
+<h2>May 21, 2010. Version 1.2.2</h2>
 
 <h3>Validator</h3>
 
