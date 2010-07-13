@@ -283,7 +283,7 @@ $(".date").dateinput({
 
 	// a different format is sent to the server
 	change: function() {
-		var isoDate = this.getDate('yyyy-mm-dd');
+		var isoDate = this.getValue('yyyy-mm-dd');
 
 		$("#backendValue").val(isoDate);
 	}
