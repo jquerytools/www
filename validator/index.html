@@ -331,7 +331,7 @@ $("fieldset:eq(1)").attr("disabled", true);
 	</tr>
 	<tr>
 		<td class="code">messageAttr</td>
-		<td><code>'data-invalid'</code></td>
+		<td><code>'data-message'</code></td>
 		<td>
 			Name of the attribute that contains an error message to be shown when a validation error occurs for this field. This value overrides all validator specific error messages and does not care about (client-side) localization. Read more about <a href="#input_message">input specific error messages</a>.
 		</td>
@@ -462,11 +462,11 @@ $.tools.validator.localizeFn("[type=time]", {
 <h3>Input specific error message</h3>
 
 <p>
-	You can explicitly define the error message for a field that is shown when validation fails. It can be defined with the <samp>data-invalid</samp> attribute. For example:
+	You can explicitly define the error message for a field that is shown when validation fails. It can be defined with the <samp>data-message</samp> attribute. For example:
 </p>
 
 <pii:code>
-<input type="number" min="10" data-invalid="A larger value is needed" />
+<input type="number" min="10" data-message="A larger value is needed" />
 </pii:code>
 
 <p>
@@ -478,7 +478,7 @@ $.tools.validator.localizeFn("[type=time]", {
 </p>
 
 <ol>
-	<li>a value specified in the <samp>data-invalid</samp> attribute</li>
+	<li>a value specified in the <samp>data-message</samp> attribute</li>
 	<li>
 		a validator specific error message that matches the language specified in the <samp>lang</samp> configuration option
 	</li>
@@ -486,7 +486,7 @@ $.tools.validator.localizeFn("[type=time]", {
 </ol>
 
 <p>
-	As you might have noticed, the name of the <samp>data-invalid</samp> attribute features a somewhat cumbersome <samp>data-</samp> prefix. This actually makes the attribute valid HTML5, and your fields will successfully pass a <a href="http://html5.validator.nu/" class="external">HTML5 validator</a>. If you are one of those people who do not care about techy standards and want your forms to be more readable, you can change the name of this attribute from within the configuration using the <samp>messageAttr</samp> configuration variable.
+	As you might have noticed, the name of the <samp>data-message</samp> attribute features a somewhat cumbersome <samp>data-</samp> prefix. This actually makes the attribute valid HTML5, and your fields will successfully pass a <a href="http://html5.validator.nu/" class="external">HTML5 validator</a>. If you are one of those people who do not care about techy standards and want your forms to be more readable, you can change the name of this attribute from within the configuration using the <samp>messageAttr</samp> configuration variable.
 </p>
 
 
