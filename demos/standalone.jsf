@@ -7,7 +7,7 @@
 	                                                         
 	http://flowplayer.org/tools/demos/
 	
-	CSS files should not be referenced from flowplayer.org when in production.  
+	Do *not* reference CSS files and images from flowplayer.org when in production  
 
 	Enjoy!
 -->
