@@ -71,8 +71,8 @@ $(":date").dateinput( {
 		$("#theday").html(this.getValue("dd<span>mmmm yyyy</span>")); 
 	}
 		
-// show dateinput when page loads	
-}).data("dateinput").show();
+// set initial value and show dateinput when page loads	
+}).data("dateinput").setValue(0).show();
 </c:set>
 ${js}
 });
