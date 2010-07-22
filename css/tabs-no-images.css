@@ -28,10 +28,10 @@ ul.css-tabs a {
 	background-color:#efefef;
 	color:#777;
 	margin-right:2px;
-	-moz-border-radius-topleft: 4px;
-	-moz-border-radius-topright:4px;
 	position:relative;
 	top:1px;	
+	outline:0;
+	-moz-border-radius:4px 4px 0 0;	
 }
 
 ul.css-tabs a:hover {
@@ -42,7 +42,7 @@ ul.css-tabs a:hover {
 /* selected tab */
 ul.css-tabs a.current {
 	background-color:#ddd;
-	border-bottom:2px solid #ddd;	
+	border-bottom:1px solid #ddd;	
 	color:#000;	
 	cursor:default;
 }
