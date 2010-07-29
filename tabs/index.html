@@ -412,7 +412,7 @@ $("#tabs2").tabs("#panes2 > div");
 
 <pii:code>
 // get handle to the api (must have been constructed before this call)
-var api = $("ul.tabs").tabs()
+var api = $("ul.tabs").data("tabs");
 
 // advance to the next tab
 api.next();
