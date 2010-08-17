@@ -713,6 +713,13 @@ $.tools.validator.fn(myMatcher, "Please fix this value", function(el, v) {
 		</td>
 	</tr>
 	<tr>
+		<td class="code">reflow()</td>
+		<td><code>API</code></td>
+		<td>
+			<strong>since 1.2.3</strong> repositions error messages correctly. Since messages are positioned absolutely in relative to the document body the messages can be misplaced when the form is moved or it's contents is manipulated. Calling this method fixes the situation. Reflow happens automatically when the window is resized. Repositioning works like a snap and cannot be seen with human eye. 
+		</td>
+	</tr>	
+	<tr>
 		<td class="code">reset(jQuery)</td>
 		<td><code>API</code></td>
 		<td>
