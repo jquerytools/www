@@ -13,51 +13,146 @@
 	<a href="../index.html">Introducing v1.2.0 &raquo;</a> Bug fix releases
 </div>
 
-<%-- http://github.com/jquerytools/jquerytools/issues/closed#issue/[NUM] --%>
 
 <a name="1.2.4"></a>
 <h2 class="first">Aug 17, 2010. Version 1.2.4</h2>
 
-	<li>
-		<a href="http://github.com/jquerytools/jquerytools/issues/closed#issue/$1">Issue $1</a>
-		$2. Thanks <a href="http://github.com/$3">$3</a>.
-	</li>
 	
 <h3>Validator</h3>
-	113#error tooltips position#qcho
-	115#<samp>min</samp> and <samp>max</samp> validators no longer force a field to be required#emadhegab
-	120#radio buttons are not supported#Ciantic
-	129#URL Validation fix for query string#emadhegab
-	96#Documentation refers to a 'data-invalid' tag attribute and code uses a 'data-message'#triveos
-	138#Removed <samp>display:none</samp> requirement from the validator error message elements#slainer68
+
+<ul>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/113">Issue 113</a>
+		Validator tooltips are now repositioned when window is resized. A new API method <samp>reflow()</samp> introduced that can be called manually when error messages are visible an form contents is manipulated. Thanks <a href="http://github.com/qcho">qcho</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/115">Issue 115</a>
+		<samp>min</samp> and <samp>max</samp> validators no longer force a field to be required. Thanks <a href="http://github.com/emadhegab">emadhegab</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/120">Issue 120</a>
+		validation for radio buttons is now supported. You can make a custom validator that forces a radio button group to have a certain value.. Thanks <a href="http://github.com/Ciantic">Ciantic</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/129">Issue 129</a>
+		URL validator now accepts query strings. Thanks <a href="http://github.com/emadhegab">emadhegab</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/96">Issue 96</a>
+		Removed a falsy 'data-invalid' attribute from documentation to correct 'data-message'. Thanks <a href="http://github.com/triveos">triveos</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/138">Issue 138</a>
+		Removed <samp>display:none</samp> requirement from the validator error message elements. Thanks <a href="http://github.com/slainer68">slainer68</a>.
+	</li>
+</ul>
 	
 <h3>Dateinput</h3>
-	136#Alignment of DateInput calendar broken in relative positioned elements#marceldegraaf
-	89#Year Selector should be based on today, not current value of control#rroesler	
-	94#not handling initialization when yearRange[x]#rroesler
-	95#Replacing built in input type=date results in extra field shown on screen#rroesler
-	105#return false on the dateinput onhide function the dateinputs gets in an inconsistent state#revolution42
-	104#previous css class attributes for the input field are overwritten by a class 'date'#playbw
-	99#calroot z-index now 1 so it is placed on top of other elements by default#eme71
+<ul>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/136">Issue 136</a>
+		Fixed calendar positioning when the input is placed inside a relatively positioned element or inside a hidden element. Thanks <a href="http://github.com/marceldegraaf">marceldegraaf</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/89">Issue 89</a>
+		Year selector is now be based on today and not to the current value of dateinput. Thanks <a href="http://github.com/rroesler">rroesler</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/94">Issue 94</a>
+		<samp>min</samp> configuration variable or input attribute now accepts zero (0) value. Thanks <a href="http://github.com/rroesler">rroesler</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/95">Issue 95</a>
+		all input attributes are copied to the cloned field in browsers that support dateinput natively. Thanks <a href="http://github.com/rroesler">rroesler</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/104">Issue 104</a>
+		previous CSS class attributes one the input field are no longer overwritten by a class 'date'. Thanks <a href="http://github.com/playbw">playbw</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/105">Issue 105</a>
+		returning <samp>false</samp> on the onHide event no longer leaves dateinput on inconsistent state. Thanks <a href="http://github.com/revolution42">revolution42</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/99">Issue 99</a>
+		calendar element's z-index now 1 on the CSS file so it is placed on top of other elements by default. Thanks <a href="http://github.com/eme71">eme71</a>.
+	</li>
+</ul>
 	
 	
+<h3>Rangeinput</h3>
+<ul>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/95">Issue 95</a>
+		all input attributes are copied to the cloned field in browsers that support dateinput natively. Thanks <a href="http://github.com/rroesler">rroesler</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/104">Issue 104</a>
+		previous CSS class attributes one the input field are no longer overwritten by a class 'range'. Thanks <a href="http://github.com/playbw">playbw</a>.
+	</li>
+</ul>
+
 <h3>Expose</h3>
-	132#close takes priority over load#jackmcleod
-	90#$.mask.isLoaded() is not accurate on some situation#ddouble
+<ul>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/90">Issue 90</a>
+		<samp>isLoaded()</samp> now supports a boolean argument that makes sure that the function returns <samp>true</samp> only if the mask is fully visible in it's final position and opacity.. Thanks <a href="http://github.com/ddouble">ddouble</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/132">Issue 132</a>
+		mask get's always loaded with rapid opening and closing of overlays. Thanks <a href="http://github.com/jackmcleod">jackmcleod</a>.
+	</li>
+</ul>
 	
 <h3>Scrollable</h3>
-	130#Scrollable triggers onBeforeSeek on init#Brandon0
-	121#The navi can now be supplied as jQuery object#qualle
-	125#ScrollableScrollable index should force Number() type before setting index in seekTo()#shineman
-	
+<ul>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/130">Issue 130</a>
+		scrollable no longer triggers redundant <samp>onBeforeSeek</samp> events upon initialization. Thanks <a href="http://github.com/Brandon0">Brandon0</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/125">Issue 125</a>
+		<samp>seekTo()</samp> method converts the index argument to a number if it's being give as a string. This is usefull when the index is caught from the query string for example. Thanks <a href="http://github.com/shineman">shineman</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/121">Issue 121</a>
+		navigator plugin's <samp>navi</samp> configuration variable can now be supplied as jQuery object. Thanks <a href="http://github.com/qualle">qualle</a>.
+	</li>
+</ul>
 
-<h3>Tabs</h3> 
-	108#Small eyecandy fix for the CSS tabs demo#ghub-me	
-	107#Autoscroll with autoplay: true won't respond to the first api.pause() call#woogiee
+
+
+<h3>Tabs</h3>  
+<ul>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/closed#issue/107">Issue 107</a>
+		slideshow plugin now responds to first <samp>pause()</samp> call when <samp>autoplay</samp> is enabled. Thanks <a href="http://github.com/woogiee">woogiee</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/closed#issue/108">Issue 108</a>
+		Small eyecandy fix for the CSS tabs demo. Thanks <a href="http://github.com/ghub-me">ghub-me</a>.
+	</li>
+	<li>
+		Attempt to fix a 'd is undefined' message in Firebug for tabs. This bug may still haunt some people. I could not reproduce this myself. The bug is discussed on this <a href="http://flowplayer.org/tools/forum/20/41614#post-46772">forum thread</a>.
+	</li>
+</ul>
+
 
 <h3>All tools</h3>
-	broken links from documentation: mkjust, blacktrash, eme71, smabbott
-	101#Standalone demos link to jquery tools from local server to CDN. critical#austegard
+
+<ul>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/closed#issue/101">Issue 101</a>
+		Standalone demos link to jquery tools from local server to CDN. critical. Thanks <a href="http://github.com/austegard">austegard</a>.
+	</li>
+	<li>
+		many link fixes for the documentation. Many thanks to
+		<a href="http://github.com/austegard">mkjust</a>, 
+		<a href="http://github.com/austegard">blacktrash</a> (a special thanks), 
+		<a href="http://github.com/austegard">eme71</a> and
+		<a href="http://github.com/austegard">smabbott</a>
+	</li>
+</ul>
 	
 	
 <a name="1.2.3"></a>
@@ -138,11 +233,11 @@
 <ul>
 	<li>
 		Now it's possible to go back to previous year with the month selector buttons. Thanks
-		<a hef="http://github.com/jquerytools/jquerytools/issues/closed#issue/37"> thedotedge </a>, <a href="http://flowplayer.org/tools/forum/70/41114">JvdMeulen</a>.
+		<a hef="http://github.com/jquerytools/jquerytools/issues/37"> thedotedge </a>, <a href="http://flowplayer.org/tools/forum/70/41114">JvdMeulen</a>.
 	</li>
 	<li>
 		Possible to go back to previous year. Thanks
-		<a href="http://github.com/jquerytools/jquerytools/issues/closed#issue/38">thedotedge</a>
+		<a href="http://github.com/jquerytools/jquerytools/issues/38">thedotedge</a>
 	</li>
 	<li>
 		Support for <samp>required</samp> attribute. Thanks <a href="http://flowplayer.org/tools/forum/70/41502">JvdMeulen</a>.
