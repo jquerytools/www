@@ -2,7 +2,7 @@
 <!-- run jquerytools/build.xml first -->
 <project name="jQuery.Tools" default="www">
 
-	<property name="version" value="1.2.4"/>
+	<property name="version" value="1.2.5"/>
 	<property name="www" value="/opt/flowplayer/webapp/tools"/>
 	<property name="js" value="${www}/download/${version}"/>
 	<property name="build" value="../jquerytools/build/${version}"/>

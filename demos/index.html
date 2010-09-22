@@ -5,24 +5,30 @@
 
 
 <style>
-.col {
-	padding:15px 0 0 24px;	
-	margin-right:0;	
-	width:300px;
-	border-right:2px dotted #ccc;
-	height:1050px;
-	background: url(/img/global/gradient/h150_reverse.png) repeat-x scroll 0 -95px;
-	border-top:1px solid #ccc;       
-	border-bottom:1px solid #eee;
+#demos {
+	background:#fff url(/img/global/gradient/h150_reverse.png) repeat-x scroll 0 -95px;		
+	padding:30px 0 30px 40px;
+	border:1px solid #ddd;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
 }
 
-#col0 {
-	border-left:2px dotted #ccc;	
+.col {
+	margin-right:0;	 
+	width:280px; 
+	border-right:1px dotted #ccc;
+	float:left;
+}
+
+#col1, #col2 {
+	padding-left:30px;		
 }
 
 #col2 {
-	margin-right:0px;		
+	border-right:0px;		
+	width:310px;
 }
+
 
 .cat {
 	width:230px;
@@ -81,28 +87,32 @@
 $("#jqt3").addClass("active");
 </script>
 
-<c:forTokens items="ui,form,toolbox" var="main" delims="," varStatus="j">
-		
-	<div class="col" id="col${j.index}">
-	
-		<h2>${main} ${j.index < 2 ? '<strong>TOOLS</strong>' : ''}</h2>
-		
-		<div class="pic" id="pic-${main}"></div>
-		
-		<c:forEach items='<%= area.getCategories((String)pageContext.getAttribute("main")) %>' var="cat" varStatus="i">
-		
-			<div class="cat ${cat.title == 'Combinations' ? 'combinations' : ''}">
-				<h3 title="${cat.description}">${cat.title}</h3>
-		
-				<c:forEach items="${cat.demos}" var="demo">
-					<a href="${demo.path}">${demo.title}</a>
-				</c:forEach>
-			</div>
-		
-			<c:if test="${i.index == 3}"><br clear="all" /></c:if>
+<div id="demos">
+	<c:forTokens items="ui,form,toolbox" var="main" delims="," varStatus="j">
 			
-		</c:forEach>
+		<div class="col" id="col${j.index}">
 		
-	</div>
-
-</c:forTokens>
+			<h2>${main} ${j.index < 2 ? '<strong>TOOLS</strong>' : ''}</h2>
+			
+			<div class="pic" id="pic-${main}"></div>
+			
+			<c:forEach items='<%= area.getCategories((String)pageContext.getAttribute("main")) %>' var="cat" varStatus="i">
+			
+				<div class="cat ${cat.title == 'Combinations' ? 'combinations' : ''}">
+					<h3 title="${cat.description}">${cat.title}</h3>
+			
+					<c:forEach items="${cat.demos}" var="demo">
+						<a href="${demo.path}">${demo.title}</a>
+					</c:forEach>
+				</div>
+			
+				<c:if test="${i.index == 3}"><br clear="all" /></c:if>
+				
+			</c:forEach>
+			
+		</div> 
+		
+	</c:forTokens>
+	
+	<div class="clear"></div>
+</div>

@@ -57,6 +57,7 @@
 	border:1px solid #E1E16D;
 	padding:4px 10px;
 	color:#000;
+	display:none;	
 	
 	-moz-border-radius:4px;
 	-webkit-border-radius:4px; 
@@ -67,6 +68,10 @@
 	
 	-moz-box-shadow:0 0 6px #ddd;
 	-webkit-box-shadow:0 0 6px #ddd;	
+}
+
+.error p {
+	margin:0;		
 }
 
 /* field label */

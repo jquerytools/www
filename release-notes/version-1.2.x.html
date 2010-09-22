@@ -13,9 +13,129 @@
 	<a href="../index.html">Introducing v1.2.0 &raquo;</a> Bug fix releases
 </div>
 
+<a name="1.2.5"></a>
+<h2 class="first">Sep 22, 2010. Version <em>1.2.5</em></h2>
+
+<h3>Miscalleneous</h3>
+
+<ul>	
+	<li>
+		dateinput, tooltip and validator error messages now position correctly on iPad. native jQuery offset() method returns incorrect value on iPad.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/161">Issue 161</a>
+		overlay apple effect with fixed positioning now stays in viewport while window is scrolled. Thanks <a href="http://github.com/snozwoz">snozwoz</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/153">Issue 153</a>
+		removed redundant line from the history tool. Thanks <a href="http://github.com/maksimc">maksimc</a>.
+	</li>
+	<li>
+		<a href="http://flowplayer.org/tools/forum/20/41614">Forums</a>
+		fixed an annoying <samp>'d is undefined'</samp> error in firebug. <strong>Thanks</strong> to this crazy list of helpers! <samp> lubosdz, jansc, kingjeffrey, kucrut, fizzystutter, wasDag, perugini, Muse, skrile, natoinet, zhaeon, korsakov, pellekrogholt, markstahler, godzone, DiNASTY, daemonk, er777, abstractic, james@planetretail, heikki, mchristie, ennox, ke1g, retoo</samp>
+	</li>	
+	
+</ul> 
+
+<h3>Scrollable</h3>
+
+<ul>	
+	<li>
+		ability to seek backward and forward with iPod/iPhone finger touch
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/172">Issue 172</a>
+		if circular:false the "prev page" action now does have an initial "disabled" CSS class name. Thanks <a href="http://github.com/picasso">picasso</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/10">Issue 10</a>
+		long awaited fix for autoscroll plugin. A solid play/pause behaviour. Thanks <a href="http://github.com/custa1200">custa1200</a>.
+	</li>
+</ul>
+
+<h3>Validator</h3>
+
+<ul>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/153">Issue 153</a>
+		changed the error message element inside the error container from &lt;span/&gt; to &lt;p/&gt;. Thanks <a href="http://github.com/maksimc">maksimc</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/166">Issue 166</a>
+		URL regex in validator now allows "&" and "+" characters in query string. Thanks <a href="http://github.com/selwin">selwin</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/150">Issue 150</a>
+		Calling validator twice no longer disables a dateinput field. Thanks <a href="http://github.com/michaelhancock">michaelhancock</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/149">Issue 149</a>
+		destroy() method no longer fails if formEvent is set to null. Thanks <a href="http://github.com/miwolfram">miwolfram</a>.
+	</li>       
+	<li>
+		the error message no longer blinks while fixing a value on an invalid field
+	</li>
+</ul>
+
+<h3>Dateinput</h3>
+
+<ul>	
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/158">Issue 158</a>
+		the trigger element can no longer open calendar when the input is disabled. Thanks <a href="http://github.com/eugenebolshakov">eugenebolshakov</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/156">Issue 156</a>
+		year selector no longer advances one year when min is on december. Thanks <a href="http://github.com/rumyagent">rumyagent</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/151">Issue 151</a>
+		dateinput now positions itself correctly inside an absolutely/relatively positioned element. Thanks <a href="http://github.com/yunmanger">yunmanger</a>.
+	</li>
+</ul>
+
+<h3>Tooltip</h3>
+
+<ul>	
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/162">Issue 162</a>
+		when using the same tooltip element with the "tip" configuration you can use the title- attribute as the tooltip. Thanks <a href="http://github.com/rleonhardt">rleonhardt</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/157">Issue 157</a>
+		tooltip element is no longer assigned multiple mouseover event listeners. Thanks <a href="http://github.com/ankostyuk">ankostyuk</a>.
+	</li>
+</ul>
+
+<h3>Tabs</h3>
+
+<ul>	
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/165">Issue 165</a>
+		a single tab can (again) be opened with an URL anchor. Thanks <a href="http://github.com/Stiropor">Stiropor</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/169">Issue 169</a>
+		slideshow behaviour now similar to autoscroll. hitting play() won't proceed to next tab automatically. simplified code. Thanks <a href="http://github.com/HenrikBechmann">HenrikBechmann</a>.
+	</li>
+</ul>
+
+<h3>Rangeinput</h3>
+
+<ul>	
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/170">Issue 170</a>
+		rangeinput now respects zero initial value. Thanks <a href="http://github.com/rumyagent">rumyagent</a>.
+	</li>
+	<li>
+		<a href="http://github.com/jquerytools/jquerytools/issues/177">Issue 177</a>
+		rangeinput now recalculates it's internal state every time sliding begins. makes it work better on different/unexpected scenarios. Thanks <a href="http://github.com/area51mafia">area51mafia</a>.
+	</li>
+</ul>
+
 
 <a name="1.2.4"></a>
-<h2 class="first">Aug 17, 2010. Version 1.2.4</h2>
+<h2>Aug 17, 2010. Version 1.2.4</h2>
 
 	
 <h3>Validator</h3>

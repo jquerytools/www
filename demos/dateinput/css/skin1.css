@@ -7,14 +7,16 @@
 	font-size:18px;
 	padding:4px;
 	text-align:center;
-	width:194px;		
+	width:194px;
+	
 	-moz-box-shadow:0 0 10px #eee inset;
+	-webkit-box-shadow:0 0 10px #eee inset;
 }
 
 /* calendar root element */
 #calroot {
 	/* place on top of other elements. set a higher value if nessessary */
-	z-index:1;
+	z-index:10000;
 	
 	margin-top:-1px;
 	width:198px;
@@ -22,8 +24,10 @@
 	background-color:#fff;
 	font-size:11px;
 	border:1px solid #ccc;
+	
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
+	
 	-moz-box-shadow: 0 0 15px #666;
 	-webkit-box-shadow: 0 0 15px #666;	
 }
