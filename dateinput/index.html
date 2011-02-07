@@ -246,7 +246,18 @@
 $(":date").dateinput({ value: new Date(2010, 3, 3), min: -10, max: 30 });
 
 // supply date values from the API
-$(":date").data("dateinput").setValue('2012-10-10').setMax(10);
+var api = $(":date").data("dateinput");
+
+api.setValue('2012-10-10');
+
+// set as JavaScript Date object
+api.setValue(date);
+
+// an empty argument moves the calendar to currently selected month
+api.setValue();
+
+// chaining is possible
+api.setValue(date).setMax(10); 
 
 <!-- supply a date value from an input attribute -->
 <input type="date" min="-20" max="2013-03-10" />
