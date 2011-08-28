@@ -206,7 +206,7 @@
 	</p>
 	
 	<p>
-		If you want to contribute please email your thougths from Github and send the contributions through <a href="http://github.com/jquerytools/jquerytools/forkqueue" class="external">fork queue</a>.
+		If you want to contribute please email your thoughts from Github and send the contributions through <a href="http://github.com/jquerytools/jquerytools/forkqueue" class="external">fork queue</a>.
 	</p>
 	
 </c:if>
