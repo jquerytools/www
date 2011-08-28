@@ -206,7 +206,12 @@
 	</p>
 	
 	<p>
-		If you want to contribute please email your thoughts from Github and send the contributions through <a href="http://github.com/jquerytools/jquerytools/forkqueue" class="external">fork queue</a>.
+		If you want to contribute, please
+		<a class="external" href="http://github.com/inbox/new/jquerytools">email me your thoughts on Github</a>
+		and
+		<a class="external" href="https://github.com/jquerytools/jquerytools/issues/new">open an issue</a>
+		or
+		<a class="external" href="http://help.github.com/pull-requests/">send a pull request</a>.
 	</p>
 	
 </c:if>
