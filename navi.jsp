@@ -1,4 +1,3 @@
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="/WEB-INF/flowplayer.tld" prefix="f" %>
@@ -207,7 +206,7 @@
 	</p>
 	
 	<p>
-		If you want to contribute please email your thougths from Github and send the contributions trough <a href="http://github.com/jquerytools/jquerytools/forkqueue" class="external">fork queue</a>.
+		If you want to contribute please email your thougths from Github and send the contributions through <a href="http://github.com/jquerytools/jquerytools/forkqueue" class="external">fork queue</a>.
 	</p>
 	
 </c:if>
