@@ -51,7 +51,7 @@ ul.tabs a.current, ul.tabs a.current:hover, ul.tabs li.current a {
 	color:#000 !important;
 }
 
-/* Different widths for tabs: use a class name: w1, w2, w3 or w2 */
+/* Different widths for tabs: use a class name: s, l, xl */
 
 
 /* width 1 */
@@ -60,9 +60,9 @@ ul.tabs a.s:hover 	{ background-position: -553px -31px; }
 ul.tabs a.s.current  { background-position: -553px -62px; }
 
 /* width 2 */
-ul.tabs a.l 			{ background-position: -248px -0px; width:174px; }
-ul.tabs a.l:hover 	{ background-position: -248px -31px; }
-ul.tabs a.l.current  { background-position: -248px -62px; }
+ul.tabs a.l 			{ background-position: -247px -0px; width:174px; }
+ul.tabs a.l:hover 	{ background-position: -247px -31px; }
+ul.tabs a.l.current  { background-position: -247px -62px; }
 
 
 /* width 3 */
