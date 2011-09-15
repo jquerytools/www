@@ -418,7 +418,7 @@ var api = $("ul.tabs").data("tabs");
 api.next();
 
 // send google analytics when tabs are clicked
-api.onClick(function(index) {
+api.onClick(function(e, index) {
 	_tracker._trackEvent("Documentation", "Tabs", "tab " + index);
 });
 </pii:code>
