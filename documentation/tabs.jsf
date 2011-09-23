@@ -2,8 +2,8 @@
 <script>
 $(function() { 
 	var page = location.href.split("/").pop().split("#").shift() || 'index.html';
-	$("ul.tabs a[href*=" +page+ "]").addClass("current");
-	$("#right ul a[href*=/configuration]").addClass("selected");	
+	$("ul.tabs a[href*='" +page+ "']").addClass("current");
+	$("#right ul a[href*='/configuration']").addClass("selected");	
 	$("#biglink").addClass("current").click(function() { return false; });
 });
 </script>
